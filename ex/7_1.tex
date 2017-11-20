@@ -1,0 +1,119 @@
+\begin{exercises}
+
+\ex{7.1.1}
+Integrate each of the following.
+\begin{exenum}
+\x
+$\int x \cos x \; dx$
+\x
+$\int (x+2) e^{2x} \; dx$
+\x
+$\int \arctan x \; dx$
+\x
+$\int x^2\sin 7x \; dx$
+\x
+$\int x^3 \ln x \; dx$
+\x
+$\int (x^3-7x+2) \sin x \; dx$
+\x
+$\int e^{3x} \sin 2x \; dx$
+\x
+$\int \sec^3x \; dx$
+\x
+$\int x^2\ln(x+1) \; dx$
+\x
+$\int \ln(x^2+2) \; dx$.
+\end{exenum}
+
+\ex{7.1.2}
+Do Example \exampref{7.1.3} again,
+first letting $u = \cos 3x$ and then
+$u_1 = \sin 3x$.
+
+\ex{7.1.3}
+Find formulas for
+\begin{exenum}
+\x
+$\int e^{\alpha x} \cos bx \; dx$
+\x
+$\int e^{\alpha x} \sin bx \; dx$.
+\end{exenum}
+
+\ex{7.1.4}
+Derive the recursion formula analogous to
+\thref{7.1.2}: \emph{For every integer} $n \geq 2$,
+\[
+\int \sin^nx \; dx =
+-\frac{\sin^{n-1}x \cos x}n + \frac{n-1}n
+\int \sin^{n-2} x \; dx
+.
+\]
+
+\ex{7.1.5}
+Evaluate
+\begin{exenum}
+\x
+$\int \cos^2x \; dx$
+\x
+$\int \sin^2x \; dx$
+\end{exenum}
+by the recursion formulas
+[see \thref{7.1.2} and Problem \exref{7.1.4}],
+and also using the trigonometric identities
+\[
+\cos^2x = \frac12 (1+\cos2x)
+,
+\]
+\[
+\sin^2x = \frac12 (1-\cos2x)
+.
+\]
+Show that the results obtained are the same.
+(The preceding identities can be read off
+at once from two more basic ones:
+\[
+1 = \cos^2x + \sin^2x
+\]
+\[
+\cos 2x = \cos^2x - \sin^2x
+.)
+\]
+
+\ex{7.1.6}
+Use integration by parts to find recursion formulas,
+expressing the given integral in terms of an integral
+with a lower power:
+\begin{exenum}
+\x
+Show that
+$\int x^ne^xdx = x^ne^x - n\int x^{n-1}e^xdx$.
+\x
+Show that
+$\int \sec^nx \; dx =
+\frac{\sec^{n-2}x \tan x}{n-1} +
+\frac{n-2}{n-1} \int \sec^{n-2} x \; dx$.
+\x
+Find a reduction formula, expressing
+$\int(\ln |ax + b|)^n dx$ in terms of
+$\int(\ln|ax + b|)^{n-1}dx$.
+\end{exenum}
+
+\ex{7.1.7}
+Use the formulas derived in \thref{7.1.2}
+and in Problems \exref{7.1.4} and \exref{7.1.6} to find
+\begin{exenum}
+\x
+$\int x^5e^x \; dx$
+\x
+$\int \sin^4x \; dx$
+\x
+$\int \cos^35x\; dx$
+\x
+$\int(\ln|3x+7|)^6 \; dx$
+\x
+$\int_0^{\frac{\pi}2} \sin^3x \; dx$
+\x
+$\int_0^1 x^3e^x \; dx$.
+\end{exenum}
+
+\end{exercises}

@@ -1,0 +1,298 @@
+\section{Homogeneous Differential Equations.} For a given function $F(x)$ and a given polynomial
+$$
+p(t) = t^n + a_{n-1}t^{n-1} + \cdots + a_1t + a_0,
+$$
+let us consider the differential equation
+\begin{equation}
+p(D)y = F(x).  
+\label{eq11.4.1}
+\end{equation}
+The simplification of the theory gained by enlarging the set of possible solutions to include complex-valued functions of a real variable was demonstrated in Section 3, and we shall continue to use this technique. Nevertheless, our primary concern is still that of finding real-valued solutions to real differential equations. For this reason, we shall assume throughout that the coefficients $a_0, \cdots, a_{n-1}$ of the polynomial $p(t)$ are real numbers and that $F(x)$ is a real-valued function. Associated with the differential equation (1) is the homogeneous differential equation
+\begin{equation}
+p(D)y = 0,   
+\label{eq11.4.2}
+\end{equation}
+called the \textbf{associated homogeneous equation} of $p(D)y = F(x)$. A theorem of basic importance is the following:
+
+\begin{theorem} If $y_0$ is any particular solution of (1) and if $y$ is the general solution of (2), then $y + y_0$ is the general solution of (1).
+\end{theorem}
+
+\begin{proof}
+Once the statement of this theorem is understood, its proof becomes almost a triviality. First, one should realize that, strictly speaking, the general solution of a differential equation is the set of all its solutions. Referring to a function $y$ as the general solution is actually a common and very convenient misuse of language. What it really means is that $y$ depends not only on $x$; but also on one or more other variables which are arbitrary constants of integration and can take on any real, or complex, values. That is, we have a function $\varphi(x, u_1, \cdots, u_n)$, and, for every set of real (or complex) numbers $c_1, \cdots , c_n$, the function $y$ defined by
+$$
+y = \varphi(x, c_1, \cdots , c_n) 
+$$
+is a solution of the differential equation. Conversely, corresponding to
+every solution $f(x)$, there exist numbers $c_1, . . ., c_n$ such that $f(x) = \varphi(x, c_1, \cdots , c_n)$.
+Thus $y$, as expressed in the above equation, does exhibit the set of all solutions.
+
+With this understanding, it follows that (4.1) is equivalent to the following proposition. \textit{Let $y_0$ be an arbitrary solution of equation} (1). \textit{Then:}
+
+\begin{description}
+\item[(i)] \textit{If $y_1$ is any solution of} \textrm{(1)}, \textit{then there exists a solution $y_2$ of} \textrm{(2)} \textit{such that $y_1 = y_2 + y_0$} 
+\smallskip
+
+\item[(ii)] \textit{If $y_2$ is any solution of} \textrm{(2)}, \textit{then $y_2 + y_0$ is a solution of} \textrm{(1)}.
+\end{description}
+
+The proofs use only the fact that $p(D)$ is a linear operator. To prove (i), we set $y_2 = y_1 - y_0$ and check that $y_2$ is a solution of (2). We get
+\begin{eqnarray*}
+P(D)y_2 = p(D)(y_1 - y_0) &=& p(D)y_1 - p(D)y_0 \\
+                                           &=& F(x) - F(x) = 0. 
+\end{eqnarray*}
+For (ii), we need only verify that $y_2 + y_0$ is a solution of (1). We have
+\begin{eqnarray*}
+P(D)(y_2 + yy_0) &=& P(D)y_2 + p(D)y_0 \\
+                            &=& 0 + F(x) = F(x), 
+\end{eqnarray*}
+and the proof of (4.1) is complete.
+\end{proof}
+
+As a result of this theorem, our approach to the problem of solving the differential equation $p(D)y = F(x)$ will be divided into two parts. We shall first concentrate on finding the general solution of the associated homogeneous equation $p(D)y = 0$, and then consider methods of finding a particular solution to the original nonhomogeneous equation. The remainder of this section will be devoted to the first part.
+
+We begin with the second-order linear homogeneous differential equation with constant coefficients:
+\begin{equation}
+(D^2 + aD + b)y = 0. 
+\label{eq11.4.3}
+\end{equation}
+The general solution of this equation has been presented earlier (see page 617), but without proof. We shall supply the proof now by factoring the linear operator $D^2 + aD + b$ and solving the equation by the iterative technique of Section 3. The characteristic polynomial can be written as the product
+$$
+t^2 + at + b = (t - r_1)(t - r_2),
+$$
+where the roots $r_1$ and $r_2$ are either both real or distinct conjugate complex numbers. Equation (3) can therefore be written
+\begin{equation}
+(D - r_1)(D - r_2)y = 0. 
+\label{eq11.4.4}
+\end{equation}
+
+\begin{theorem}
+%(4.2) THEOREM. 
+The general solution of the differential equation (3) [or equivalently, of (4)] is:
+ 
+\begin{quote}
+\begin{description}
+\item[(i)] $y = c_1e^{r_1x} + c_2e^{r_2x}, \;\mbox{if}\; r_1 \neq r_2, \;\mbox{or}$
+\item[(ii)] $y = (c_1x + c_2)e^{rx},  \;\mbox{if}\; r_1 = r_2 = r,$ 
+\end{description}
+
+\end{quote} 
+\noindent where $c_1$ and $c_2$ are arbitrary complex numbers.
+\end{theorem}
+%642 DIFFERENTIAL EQUATIONS [CHAP. 11
+
+Note that these solutions include all the real-valued ones, since the set of all real numbers is a subset of the set of all complex numbers.
+
+\begin{proof}
+Let $y$ be an arbitrary solution of (4). We define the function $u$ by setting $u = (D - r_2)y$.  Then (4) is equivalent to the two first-order linear equations:
+$$\left \{ \begin{array}{l}
+(D - r_1)u = 0, \\
+(D - r_2)y = u.
+\end{array}
+\right .
+$$
+An integrating factor for the first of these is $e^{-r_1 x}$, because, in the notation of first-order linear equations, we have $P(x) = -r_1$. It follows that
+$$
+\frac{d}{dx} (e^{-r_1 x} u) = 0 .
+$$
+Integration yields $e^{-r_1 x}u = c_1$, whence
+$$
+u = c_1 e^{-r_1 x}, \;\;\;\mbox{for some complex number}\; c_1.
+$$
+Substituting the expression for $u$ into the second differential equation above, we obtain
+$$
+(D - r_2)y = c_1e^{r_1 x}.
+$$
+This time an integrating factor is $e^{-r_2 x}$, and so
+\begin{equation}
+\frac{d}{dx} (e^{-r_2x} y) = c_1 e^{(r_1- r_2)x} .
+\label{eq11.4.5}
+\end{equation}
+We now distinguish two cases.
+
+\textit{Case 1.} $r_1 \neq r_2$. Integration of (5) yields
+$$
+e^{-r_2 x} y = \frac{1}{r_1 - r_2} c_1e^{(r_1 - r_2)x} + c_2,
+$$
+for some complex number $c_2$. Multiplying both sides by $e^{r_2x}$ and replacing $\frac{c_1}{r_1 - r_2}$ by simply $c_1$, we get
+$$
+y = c_1e^{r_1x} + c_2e^{r_2x}. 
+$$
+
+\textit{Case 2.} $r_1 = r_2 = r$. Then $e^{(r_1 - r_2)x} = e^0 = 1$, and (5) reduces to
+$$
+\frac{d}{dx} (e^{-rx} y) = c_1.
+$$
+Integrating, we obtain $e^{-rx}y = c_1 x + c_2$, for some complex number $c_2$, and it follows that
+$$
+y = (c_1x + c_2)e^{rx}.
+$$
+
+We have now proved that, if $y$ is an arbitrary solution of the original differential equation (4), then there exist complex numbers $c_1$ and $c_2$ (either or both of which may perfectly well be real every real number is a special
+case of a complex number) such that $y$ is of form (i) if $r_1 \neq r_2$ and of form (ii) if $r_1 = r_2 = r$. Conversely, it is a simple matter to check by substitution that, for any complex numbers $c_1$ and $c_2$, the function $c_1e^{r_1x} + c_2e^{r_2x}$ is a solution if $r_1 \neq r_2$ and the function $(c_1x + c_2)e^{rx}$ is a solution if $r_1 = r_2 = r$. This completes the proof of the theorem.
+\end{proof}
+
+
+\medskip
+How can we use Theorem (4.2) to obtain the general real-valued solution of the differential equation $(D^2 + a D + b)y = (D - r_1)(D - r_2)y = 0?$ Suppose, to begin with, that $r_1$ and $r_2$ are both real and that $r_1 \neq r_2$. It follows from part (i) of Theorem (4.2) that the function defined by
+\begin{equation}
+y = c_1e^{r_1x} + c_2e^{r_2x}, \;\;\;\mbox{for any two real numbers $c_1$ and $c_2$,}
+\label{eq11.4.6}
+\end{equation}
+is a solution, and it is certainly real-valued. There is only one obstacle in the way of the conclusion that (6) is the general real-valued solution. This is the 
+\textit{a priori} possibility that there might exist complex numbers $c_1$ and $c_2$, which are not both real, but are such that $c_1e^{r_1x} + c_2e^{r_1x}$ is a real-valued function. This, in fact, cannot happen, as the following argument shows: Let $c_1 = \gamma_1, + i\delta_1$, and $c_2 = \gamma_2 + i\delta_2$. Since
+$$
+(\gamma_1 + i\delta_1)e^{r_1x} + (\gamma_2 + i\delta_2)e^{r_2x}
+$$
+is by assumption real-valued, then so is
+$$
+(\gamma_1 + i\delta_1)e^{r_1x} + (\gamma_2 + i\delta_2)e^{r_2x} - \gamma_1 e^{r_1x} - \gamma_2 e^{r_2x} = i(\delta_1 e^{r_1x} + \delta_2 e^{r_2x}).
+$$
+Hence 
+$$
+\delta_1e^{r_1x} + \delta_2e^{r_2x} = 0 ,
+$$
+and so
+$$
+\delta_1 e^{(r_1- r_2)x} = -\delta_2.
+$$
+This equation holds for all real values of $x$. But, since $r_1 - r_2 \neq 0$, the left side has constant value only if $\delta_1 = 0$, which in turn immediately implies that $\delta_2 = 0$. Hence $\delta_1 = \delta_2 = 0$, and the argument is complete. With this problem disposed of, it now follows from (4.2)(i) that, if $r_1$ and $r_2$ are real and unequal, then the general real-valued solution of the differential equation is given by (6).
+
+A similar situation arises if $r_1 = r_2 = r$. In this case $r$ must be a real number, and it is a corollary of part (ii) of Theorem (4.2) that the function defined by
+\begin{equation}
+y = (c_1x + c_2)e^{rx}, \;\;\;\mbox{for any two real numbers $c_1$ and $c_2$,} 
+\label{eq11.4.7}
+\end{equation}
+is a solution, and, of course, it is real-valued. Again, we must show that it is not possible to have complex numbers $c_1$ and $c_2$, not both real, such that $(c_1x + c_2)e^{rx}$ is a real-valued function. The proof of this fact is similar to that of the analogous result in the preceding paragraph, and we leave it as an
+%644 DIFFERENTIAL EQUATIONS [CHAP. 11
+exercise. It then follows from (4.2)(ii) that the general real-valued solution is given by (7).
+
+The third and final possibility is that the roots $r_1$ and $r_2$ of the characteristic polynomial are distinct conjugate complex numbers. In this case, we need the lemma:
+
+\begin{theorem}  If $r_1 = \alpha + i\beta, r_2 = \alpha - i\beta$, and $\beta \neq 0$, then the function defined by
+$$
+y = c_1e^{r_1x} + c_2e^{r_2x} \;\;\;\mbox{for arbitrary complex numbers $c_1$ and $c_2$,}
+$$
+is real-valued if and only if $c_1$ and $c_2$ are complex conjugates. Moreover, if $c_1 = \gamma + i \delta$ and $c_2 = - i \delta$, then
+$$
+y= e^{\alpha x}(2 \gamma \cos \beta x - 2 \delta \sin \beta x).
+$$
+\end{theorem}
+
+A proof in the ``if" direction is given in detail in (8.3) on page 347. In addition, the above equation giving $y$ in terms of $\alpha, \beta, \gamma$,  and $\delta$, is also derived there. The ``only if" direction can be proved in the same direct manner as the analogous results for the other two cases: Let $c_1 = \gamma_1 + i\beta_1$ and $c_2 = \gamma_2 + i\delta_2$, substitute these values into $c_1e^{r_1 x} + c_2e^{r_2 x}$, and impose the condition that $y$ is real-valued. It will then follow that $\gamma_1 = \gamma_2$ and that $\delta_1 = -\delta_2$. Again, we leave this task as an exercise.
+
+Let us replace the real constants $2\gamma$ and $-2\delta$ which appear in the equation in the last line of (4.3) by $c_1$ and $c_2$, respectively. It is then a corollary of (4.3) and (4.2)(i) that the general real-valued solution of the differential equation $(D^2 + aD + b)y = (D - r_1)(D - r_2)y = 0$ is
+\begin{equation}
+y = e^{\alpha x}(c_1 \cos \beta x + c_2 \sin \beta x), \;\;\;\mbox{for any two real numbers $c_1$ and $c_2$,} 
+\label{eq11.4.8}
+\end{equation}
+provided $r_1 = \alpha + i\beta, r_2 = \alpha - i\beta$, and $\beta \neq 0$.
+
+This completes the proof that second-order, homogeneous, linear differential equations with real constant coefficients have the general solutions first described in Section 8 of Chapter 6 and again in Section 1 of this chapter.
+
+The higher-order homogeneous equations can be solved in the same way. If 
+$$
+p(t) = t^n + a_{n-1}t^{n-1} + \cdots + a_1t + a_0,
+$$
+then the general solution of the differential equation $p(D)y = 0$ can be obtained by first factoring $p(D)$ to obtain an equivalent set of $n$ first-order linear differential equations which are then solved successively to find $y$. As an illustration, we shall solve a third-order equation by this method. Following this example, we shall give (without proof) the form of the general real-valued solution for arbitrary order $n$.
+%SEC. 4] HOMOGENEOUS DIFFERENTIAL EQUATIONS  645
+%EXAMPLE 1. 
+\begin{example} Find the general solution of the differential equation
+$$
+\frac{d^3y}{dx^3} - 3 \frac{d^2y}{dx^2} + 4y = 0. 
+$$
+The characteristic polynomial is $p(t) = t^3 - 3t^2 + 4$. Substituting -1 for
+$t$, we obtain $p(-1) = 0$, from which it follows that $(t + 1)$ is a factor of $p(t)$. Dividing, we find that 
+$$
+t^3 - 3t^2 + 4 = (t + 1)(t^2 - 4t + 4) = (t + 1)(t - 2)^2. 
+$$
+Hence the differential equation can be written 
+$$
+(D + 1)(D - 2)^2 y = 0. 
+$$
+We set $u_1 = (D - 2)^2y$ and $u_2 = (D - 2)y$ and, by so doing, obtain the equivalent set of three first-order equations
+$$
+\left \{ \begin{array}{rl}
+(D + 1)u_1 &= 0, \\
+(D - 2)u_2 &= u_1,\\
+    (D - 2)y &= u_2 .
+\end{array}
+\right .
+$$
+The general solution of the first of these is $u_1 = c_1e^{-x}$, and the second equation is therefore
+$$
+(D - 2)u_2 = c_1e^{-x}. 
+$$
+An integrating factor is $e^{-2x}$, and so
+$$
+\frac{d}{dx} (e^{-2x} u_2) = e^{-2x} c_1 e^{-x} = c_1e^{-3x}.
+$$
+Hence
+$$
+e^{-2x} u_2 = -\frac{c_1}{3} e^{-3x}  + c_2, 
+$$
+from which it follows by multiplying both sides by $e^{2x}$ and replacing $-\frac{c_1}{3}$ by simply $c_1$ that  
+$$
+u_2 = c_1e^{-x} + c_2e^{2x}.
+$$
+The third equation is now seen to be 
+$$
+(D - 2)y = c_1e^{-x} + c_2e^{2x} .
+$$ 
+Again, $e^{-2x}$ is an integrating factor, and we have
+$$
+\frac{d}{dx} (e^{-2x}y) = e^{-2x}(c_1e^{-x} + c_2e^{2x}) = c_1e^{-3x} + c_2.
+$$
+Integration yields
+$$
+e^{-2x} y = -\frac{c_1}{3} e^{-3x} + c_2x + c_3.
+$$
+%646 DIFFERENTIAL I5Q VA TIONS [CHAP. 1 1
+Multiplying both sides by $e^{2x}$ and replacing $-\frac{c_1}{3}$ by simply $c_1$ again, we have 
+
+$$
+y = c_1e^{-x} + (c_2x + c_3)e^{2x},
+$$
+where $c_1$, $c_2$, and $c_3$ are arbitrary real constants. This is the general realvalued solution and completes the example.
+\end{example}
+
+We now give the general solution for arbitrary order $n$. Let 
+$$
+p(t) = t^n + a_{n - 1}t^{n-1} + \cdots + a_1t + a_0,
+$$
+and suppose that factorization into real-valued irreducible factors yields the product
+$$
+p(t) = (t - r_1)^{m_1} \cdots (t - r_k)^{m_k}(t^2 + c_1t + d_1)^{n_1} \cdots (t^2 + c_lt + d_l)^{nl},
+$$
+where $m_1, . . ., m_k$ and $n_1, . . ., n_l$ are positive integers, the factors $t - r_i$ are all distinct, and the factors $t^2 + c_jt + d_j$ are all distinct. For each factor $(t-r_i)^{m_i}$, define the function
+\begin{eqnarray*}
+f_i(x) &=& (c_{i1}x^{m_i -1} + c_{i2}x^{m_i - 2} + \cdots + C_{im_i} )e^{r_ix},  \\
+&&\mbox{for arbitrary real numbers}\; C_{i1}, . . ., C_{im_i}. \;\;\;\;\;\;\;\;\;\;\;\; (9)
+\end{eqnarray*}
+For each factor $(t^2 + c_jt + d_j)^{n_j}$, let $\alpha_j + i\beta_j$ and $\alpha_j - i\beta_j$ be the roots of $t^2 + c_jt + d_j$, and define the function
+\begin{eqnarray*}
+g_j(x) &=& (A_{j1} x^{n_j-1} + A_{j2} x^{n_j - 2} + \cdots + A_{jnj})e^{\alpha_j x} \cos \beta_j x \\
+&+&(\beta_{j1} x^{n_j-1} + B_{j2} x^{n_j-2} + \cdots + B_{jn_j})e^{\alpha_j x} \sin \beta_j x, \\
+&&\;\;\;\mbox{for arbitrary real numbers $A_{j1}, . . ., A_{jn_j}$ and $B_{j1}, . . ., B_{jn_j}$} . \;\;\;\;\;\; (10)
+\end{eqnarray*}
+Then it can be proved that
+
+\begin{theorem} The general real-valued solution of the homogeneous differential equation $p(D)y = 0$ is the sum
+$$
+y = f_1(x) + \cdots + f_k(x) + g_1(x) + \cdots + g_l(x) .
+$$
+\end{theorem}
+
+Note that, since  $m_1 + \cdots + m_k + 2n_1 + \cdots + 2n_l = n$, the number of arbitrary constants in the general solution is equal to $n$, the order of the differential equation.
+%SEC. 4] HOMOGENEOUS DIFFERENTIAL EQUATIONS  647
+%EXAMPLE 2. 
+\begin{example} Find the general solution of the differential equation 
+$$
+(D + 2)(D - 5)^3(D^2 + D + 1)^2 y = 0. 
+$$
+This is an equation of order 8. The polynomial $t^2 + t + 1$ is irreducible with roots equal to $-\frac{1}{2} + i\frac{\sqrt 3}{2}$ and $-\frac{1}{2} - i \frac{\sqrt 3}{2}$. It follows directly from (4.4) that the general real-valued solution is
+\begin{eqnarray*}
+y &=& C_1e^{-2x} + (C_2x^2 + C_3x + C_4)e^{5x} \\
+   &  & + (C_5x + C_6)e^{-(1/2)x} \cos \frac{\sqrt 3}{2}x + (C_7x + C_8)e^{-(1/2)x} \sin \frac{\sqrt 3}{2} x,
+\end{eqnarray*}
+for any set of real numbers $C_1, C_2, \ldots, C_8$.
+\end{example}

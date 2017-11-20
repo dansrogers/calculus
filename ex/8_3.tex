@@ -1,0 +1,138 @@
+\begin{exercises}
+
+\ex{8.3.1}
+Use the Midpoint Rule with $n=4$ to compute
+approximations to the following integrals.
+In \exref{8.3.1a}, \exref{8.3.1b}, \exref{8.3.1c},
+\exref{8.3.1d}, and \exref{8.3.1e} compare
+the result obtained with the true value.
+\begin{exenum}
+\x
+\xlab{8.3.1a}
+$\int_0^1 (x^2+1)\;dx$
+\x
+\xlab{8.3.1b}
+$\int_{-1}^3 (6x-5)\;dx$
+\x
+\xlab{8.3.1c}
+$\int_1^3 \frac1{x^2} dx$
+\x
+\xlab{8.3.1d}
+$\int_0^3 \frac1{1+x} dx$
+\x
+\xlab{8.3.1e}
+$\int_0^3 \sqrt{1+x}\;dx$
+\x
+$\int_0^{2\pi} \sin^2x\;dx$
+\x
+$\int_0^1 e^{-x^2} dx$
+\x
+\xlab{8.3.1h}
+$\int_0^1 \sqrt{1+x^3}\; dx$.
+\end{exenum}
+
+\ex{8.3.2}
+\exref{8.3.1a} through \exref{8.3.1h}.
+Compare $M_4$, the Midpoint Approximation
+computed in Problem \exref{8.3.1}, to
+$T_4$, the corresponding
+Trapezoid Approximation.
+
+\ex{8.3.3}
+\exref{8.3.1a} through \exref{8.3.1h}.
+Use Simpson's Rule with $n=4$ to compute
+an approximation to the corresponding definite
+integral in Problem \exref{8.3.1}.
+
+\ex{8.3.4}
+Show geometrically that, if the graph of $f$
+is concave up at every point of the interval
+$[a,b]$, then the Midpoint Approximation
+is too small and the Trapezoid Approximation
+is too big; i.e.,
+\[
+M_n < \int_a^b f < T_n
+.
+\]
+
+\ex{8.3.5}
+Do Problem \exref{8.3.4} analytically
+by using the remainder formulas
+\thref{8.2.4} and \thref{8.3.3}.
+
+\ex{8.3.6}
+Show that Simpson's Approximation is the
+weighted average of the Trapezoid Approximation
+and the Midpoint Approximation.
+Specifically, for any even positive integer
+$n=2m$, show that
+\[
+S_n = \frac13T_m + \frac23 M_m
+.
+\]
+
+\ex{8.3.7}
+Prove Theorem \thref{8.3.5}, i.e.,
+if $f$ is integrable over $[a,b]$, then
+\[
+\lim_{n\goesto\infty} S_n = \int_a^b f
+,
+\]
+by showing that it is a direct corollary of the
+result of Problem \exref{8.3.6} and the two
+corresponding theorems,
+$\lim_{n\goesto\infty}T_n=\int_a^b f$ and
+$\lim_{n\goesto\infty}M_n=\int_a^b f$.
+
+\ex{8.3.8}
+For each of the following integrals and each of
+the three methods of numerical integration
+(Trapezoid Rule, Midpoint Rule, and
+Simpson's Rule), find the smallest integer $n$
+such that the error obtained is less that
+$10^{-4}$.
+As the basis for finding $n$, use Theorems
+\thref{8.2.4}, \thref{8.3.3}, and \thref{8.3.6}.
+\begin{exenum}
+\x
+$\int_1^4 \left(\frac1{2x^2} + \frac{x^2}2\right)\;dx$
+\x
+$\int_0^2 \frac1{2x+1} dx$.
+\end{exenum}
+
+\ex{8.3.9}
+This problem is analogous to Problem \exref{8.3.6}.
+Show that, for any positive integer $n$,
+\[
+T_{2n} = \frac12T_n + \frac12M_n
+.
+\]
+
+\ex{8.3.10}
+Suppose that the graph of $f$ is concave
+up at every point of the interval $[a,b]$.
+\begin{exenum}
+\x
+Using the results of Problems \exref{8.3.4}
+and \exref{8.3.9}, show that
+\[
+T_{2n} - (T_n - T_{2n}) < \int_a^b f<T_{2n}
+,
+\]
+for every positive integer $n$.
+\x
+\xlab{8.3.10b}
+Hence show that the error $|\int_a^b f-T_{2n}|$
+in the Trapezoid Approximation satisfies
+\[
+\left| \int_a^b f-T_{2n}\right|
+< |T_n - T_{2n}|
+.
+\]
+\x
+Show that \exref{8.3.10b} also holds if the graph
+of $f$ is concave down at every point of
+$[a,b]$.
+\end{exenum}
+
+\end{exercises}

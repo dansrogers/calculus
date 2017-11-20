@@ -1,0 +1,121 @@
+\section{Inverse Function Theorems.}\label{sec 5.3}  
+In this section we shall prove some basic theorems about
+continuous functions and the inverses of monotonic functions, which we have already used in studying the exponential function. These theorems are all geometrically obvious. We shall show that they also follow
+% 258 LOGARITHMS AND EXPONENTIAL FUNCTIONS [CHAP. 5
+logically from the definitions of continuity and monotonicity using the least upper bound property of the real numbers. This shows, as much as anything, that these definitions say what we want them to say. To put it facetiously, if these theorems could not be proved, we would
+change the definitions until they could be.
+
+
+\begin{theorem} INTERMEDIATE VALUE THEOREM. %(3.1)
+If $f$ is continuous on the closed interval $[a, b]$ and $w$ is
+any real number such that $f (a) < w < f (b)$, then there exists at least one real number $c$ such that $a < c < b$ and $f(c) = w$.
+\end{theorem}
+
+A similar theorem is obtained if the inequalities $f(a) < w < f(b)$ are replaced by $f(a) > w > f (b)$. The proof, in all essentials, is the same. To see that (3.1) is geometrically obvious, look at Figure \f{5.5}. The horizontal line $y = w$ must certainly cut the curve $y = f (x)$ at least once.
+
+\putfig{3truein}{scanfig5_5}{}{fig 5.5}
+
+\begin{proof}
+Consider the subset $L$ of the interval $[a, b]$ that consists of all numbers $x$ in $[a, b]$ such that $f(x) < w$. The set $L$ is not empty because in particular it contains  $a$. Since every
+number in $L$ is less than $b$, the number $b$ is an upper bound for $L$. It follows by the Least Upper Bound Property of the real numbers (page 7) that $L$ has a least upper bound, which we denote by $c$. Moreover, $c$ lies in $[a, b]$. There are three possibilities:
+\begin{quote}
+\begin{description}
+\item[(i) $f (c) < w,$]
+\item[(ii) $f (c) > w,$]
+\item[(iii) $f (c)= w.$]
+\end{description}
+\end{quote} 
+
+We shall show that (i) and (ii) are, in fact, not possible. Suppose that
+(i) holds. Since $f(b) > w$, it follows that $c < b$. Set $\epsilon = w - f(c)$, which is positive. Since $f$ is continuous at $c$, there exists a positive number $\delta$ such that whenever $|x - c|< \delta$ and $x$ is in $[a, b]$, then $|f(x) - f(c)| < \epsilon$. Hence,
+there exist numbers $x$ in $[a, b]$ larger than $c$ for which $|f(x) - f(c)| < \epsilon$. For any such $x$, 
+$$
+f(x) - f(c) \leq |f(x) - f(c)| < \epsilon = w - f(c),
+$$
+and so $f(x) < w$, which implies that $x$ belongs to $L$. Thus there are numbers in $L$ which are larger than $c$, which contradicts the fact that $c$ is an upper bound.
+
+Next suppose that (ii) holds. Since $f(a) < w$, it follows that $a < c$. This time set $\epsilon = f(c) - w$, which is positive. The continuity of $f$ at $c$ implies the existence of a positive number $\delta$ such that
+if $| x-c | < \delta$ and $x$ is in $[a, b]$, then $|f(x) - f(c)| < \epsilon$. Pick $x_0$ in $[a, b]$ such that $|x_{0} - c | < \delta$ and $x_{0} < c$. We contend that $x_0$ is also an upper bound for $L$. For if $x$ is any
+number such that $x_{0} \leq x \leq c$, then $|f(x) - f(c)| < \epsilon$. Consequently,
+$$
+- f(x) + f(c) \leq |f(x) - f(c)|< \epsilon = f(c) - w,
+$$
+and so $-f(x) < -w$, or, equivalently, $f(x) > w$, which implies that $x$ is not in $L$. This proves the contention that $x_0$ is an upper bound for $L$, which contradicts the fact that $c$ is the least
+upper bound.
+
+The only remaining possibility is (iii). Hence $f(c) = w$, and the proof is complete.
+\end{proof}
+
+This theorem, (3.1), was used in Section 2, where it was asserted that, for any real number $x$, there exists a number $y$ such that $x = \ln y$. We have previously shown that the natural logarithm takes on arbitrarily large positive and negative values. Hence we can ``surround" a given number $x$ with values of $\ln$. That is, there exist numbers $a$ and $b$ for which $\ln a < x < \ln b$. The existence of a number $y$ sueh that $x = \ln y$ now follows immediately from (3.1).
+
+An interval was defined on page 4 to be any subset $I$ of the set of all real numbers with the property that, if $a$ and $c$ belong to $I$ and $a \leq b \leq c$, then $b$ also belongs to $I$. The following proposition is therefore fully equivalent to Theorem (3.1). [More precisely, it is equivalent to the conjunction of (3.1) and its companion theorem with the inequality $f(a) > w > f(b)$.]
+
+\begin{theorem} %(3.2)
+If the domain of a continuous real-valuedfunction is an interval, then so is its range.
+\end{theorem}
+
+The reader should verify that (3.1) and (3.2) are equivalent.
+
+We have already proved that every strictly monotonic function has an inverse [see (2.4), page 250]. However, more is needed than simply existence:
+
+\begin{theorem} %(3.3) 
+If $f$ is a strictly increasing continuousfunction whose domain is an interval, then the same is true of the inuerse function $f^{-1}$.
+\end{theorem}
+%260 1 OGARITHMS AND EXPONENTIAL FUNCTIONS [CHAP. 5
+
+A companion theorem is obtained if ``increasing" is replaced by ``decreasing. "
+
+\begin{proof}
+There are three things to be proved: (i) $f^{-1}$ is strictly increasing, (ii) the domain of $f^{-1}$ is an interval, and (iii) $f^{-1}$ is a continuous function. The first is completely straightforward,
+and we leave it as a problem. The second follows at once from (3.2) and the observation that the domain of $f^{-1}$ is equal to the range of $f$: In proving (iii), we shall assume that the interval which is the domain of $f$ is neither empty nor consists of a single point. This is reasonable, because in these two cases the assumption that fis continuous is not particularly meaningful. Let $b$ be a number in the domain of $f^{-1}$, let $a = f^{-1}(b)$, and let $\epsilon$ be an arbitrary positive number. If $a$ is an endpoint of the interval which is the domain of $f$, the following argument must be modified slightly. We shall assume that $a$ is not an endpoint and also that $\epsilon$ is sufficiently small that both $a + \epsilon$ and $a - \epsilon$ are in the domain of $f$ (see Figure \f{5.6}). Set $\delta$ equal to the smaller of the two numbers $f(a + \epsilon) - b$ and $b - f(a - \epsilon)$. Then, 
+if $y$ is any number in the domain of $f^{-1}$ such that $|y - b| < \delta$, we know that 
+$$
+f(a - \epsilon) < y < f(a + \epsilon).
+$$
+\putfig{4.5truein}{scanfig5_6}{}{fig 5.6}
+Since $f^{-1}$ is strictly increasing, we have
+$$
+a - \epsilon = f^{-1}(f(a - \epsilon)) < f^{-1}(y) < f^{-1}(f(a + \epsilon)) = a + \epsilon,
+$$
+which implies that $-\epsilon  < f^{-1}(y) -a < \epsilon$. Since $a = f^{-1}(b)$, the latter inequalities are equivalent to
+$$
+| f^{-1}(y) - f^{-1}(b)| < \epsilon,
+$$
+which proves that $f^{-1}$ is continuous. This completes the proof.
+\end{proof}
+
+Our final theorem concerns the differentiability of an inverse function. It was used in Section 2, where we asserted that the exponential function $\exp$ is differentiable.
+ 
+\begin{theorem}
+\label{thm 5.3.4}
+Let $f$ be a strictly monotonic differentiable function whose domain is an interval. If $b = f$ (a) and if $f'(a) \neq 0$, then $f^{-1}$ is differentiable at $b$. Moreover,
+$$
+(f^{-1})'(b)=  \frac{1}{f'(a)}.
+$$
+\end{theorem}
+
+\begin{proof}
+According to the definition of the derivative, we must show that
+$$
+\lim_{y \rightarrow b} \frac{ f^{-1}(y) - f^{-1}(b)}{y - b} =\frac{1}{f'(a)}.  
+$$
+Let $x = f^{-1}(y)$. Then $y = f(x)$ and, of course, $a = f^{-1}(b)$. Hence
+$$
+\frac{f^{-1}(y) - f^{-1}(b)}{y - b} = \frac{x - a}{f(x) - f(a)} = \frac{1}{\frac{f(x) - f(a)}{x-a}}.
+$$
+Since the reciprocal of a limit is the limit of the reciprocal, we know that 
+$$
+\frac{1}{f'(a)} = \frac{1}{\lim_{x \rightarrow a} \frac{f(x)-f(a)}{x-a}} = \lim_{x \rightarrow a} \frac{1}{\frac{ f(x)-f(a)} {x-a}}.
+$$
+It is a simple matter to finish the proof provided we know that $x$ approaches $a$ as $y$ approaches $b$. But this is just the assertion that $f^{-1}$ is continuous at $b$, which we know to be true
+as a result of Theorem (3.3).  Hence
+\begin{eqnarray*}
+\frac{1}{f'(a)} &=& \lim_{y \rightarrow b} \frac{1}{ \frac{f(x) - f(a)}{ x-a}}\\
+                     &=& \lim_{y \rightarrow b} \frac {f^{-1}(y) - f^{-1}(b)}{y - b} = (f^{-1})'(b),
+\end{eqnarray*}
+and the proof is complete.
+\end{proof}
+
+We have also used Theorem \thref{5.3.4} before to establish the differentiability of the function $g$ defined by $g(x) = x^{1/n}$, where $n$ is a positive integer and $x$ is any positive real number (see
+page 72). The inverse function $f$, defined by $f(x) = x^n$, for every positive real number $x$, is strictly increasing and has a positive derivative at every point in the interval $(0, \infty)$.
+Theorem \thref{5.3.4} tells us at once that $g$ is a differentiable function.

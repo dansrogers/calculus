@@ -1,0 +1,91 @@
+\begin{exercises}
+
+\ex{8.6.1}
+Determine whether or not each of the following
+functions is integrable over the proposed interval
+(see Example \exampref{8.6.3}).
+Give a reason for your answer.
+\begin{exenum}
+\x
+$\cos \frac1x$, over $[0,1]$
+\x
+$\frac{x^2+x-2}{x-1}$, over $[0,1]$
+\x
+$\frac{x^2+x-2}{x-1}$, over $[0,2]$
+\x
+$\frac{x^2+x+2}{x-1}$, over $[0,2]$.
+\end{exenum}
+
+\ex{8.6.2}
+Is each of the following integrals defined?
+(See Example \exampref{8.6.3}.)
+Give a reason for your answer.
+\begin{exenum}
+\x
+$\int_0^1 \frac{\sin x}x dx$
+\x
+$\int_0^{\frac12} \frac{\tan 2x}x dx$
+\x
+$\int_0^1 \frac1x dx$
+\x
+$\int_0^{\frac1e} \frac1{\ln x}dx$
+\x
+$\int_0^e \ln x \; dx$.
+\end{exenum}
+
+\ex{8.6.3}
+Draw the graph of $f$, and evaluate
+$\int_a^b f(x) \; dx$ in each of the
+following examples.
+\begin{exenum}
+\x
+$\trilemma{1 & \mbox{if $-\infty < x \leq 0$},}
+{5 & \mbox{if $0 < x < 2$},}
+{3 & \mbox{if $2 \leq x < \infty$},}$
+and $[a,b] = [-3,3]$.
+\x
+$f(x) = \dilemma{x^2&\mbox{if $-\infty<x<0$},}
+{2-x^2&\mbox{if $0\leq x<\infty$},}$
+
+and $[a,b] = [-2,2]$.
+\x
+$f(x) = n$ \quad if $n \leq x < n+1$
+where $n$ is any integer,
+and $[a,b] = [0,5]$.
+\end{exenum}
+
+\ex{8.6.4}
+Prove that if a function $f$ is bounded on an open
+interval $(a,b)$ and, if $f(a)$ and $f(b)$ are any
+two real number, then $f$ is also bounded
+on the closed interval $[a,b]$.
+
+\ex{8.6.5}
+Compute
+\begin{exenum}
+\x
+$\lim_{n\goesto0+} \int_t^1 \frac1x dx$
+\x
+$\lim_{t\goesto1-} \int_0^t \tan \frac{\pi}2 x \; dx$.
+\end{exenum}
+How does the result give insight into the fact
+that neither integrand is integrable over the interval
+$[0,1]$?
+
+\ex{8.6.6}
+A function $f$ is said to be \dt{piecewise continuous}
+on an interval $[a,b]$ if it is continuous at all
+but possibly a finite number of points of the
+interval, and if, for every point $c$ of discontinuity
+in the interval, there exist number $k$ and $l$
+such that
+\[
+\lim_{x\goesto c+} f(x) = k \quad \mbox{and}
+\quad \lim_{x\goesto c-} f(x) = l
+.
+\]
+Using Theorems \thref{8.6.2} and \thref{8.6.3},
+prove that if $f$ is piecewise continuous
+on $[a,b]$, then it is integrable over $[a,b]$.
+
+\end{exercises}

@@ -1,0 +1,357 @@
+\chapter{Logarithms and Exponential Functions}\label{chp 5}
+ 
+\section{The Natural Logarithm.}\label{sec 5.1} 
+ If $f$ is any real-valued function of a real variable which is continuous on some interval, we have seen that there exists an antiderivative, or indefinite integral, $F$ such that $F'(x) = f(x)$ for every $x$ in the interval. For some functions we have been able to write their antiderivatives explicitly. For example, if $f(x) = x^r$ and $r$ is a rational number different from -1, then the general antiderivative is
+
+$$
+\int x^{r} dx = \frac{x^{r + 1}}{r + 1} + c,
+$$
+
+\noindent where $c$ is an arbitrary constant. This formula is not applicable if $r = - 1$. Nevertheless, $\frac{1}{x}$ is certainly continuous on the interval $(0, \infty)$, and therefore some function has it for a derivative. For every positive number $a$, we can define such a function by writing
+$$
+F(x) = \int_{a}^{x} \frac{dt}{t}, \;\;\;\mbox{for every}\; x > 0.
+$$
+For then by the Fundamental Theorem of Calculus [see Theorem (5.2), page 200],
+$$
+F'(x)= \frac{1}{x}.
+$$
+To be specific, we choose $a = 1$ and select $\int_{1}^{x} \frac{dt}{t}$ for a particular antiderivative of $\frac{1}{x}$. As we shall see, this function is interesting enough to have a special name and a special notation. The notation we shall use is $\ln\;(x)$, or, more briefly, $\ln\; x$, and we shall save the name and reason for its choice until we have investigated its properties.
+For now, we define
+
+$$
+\ln\; x = \int_{1}^{x} \frac{dt}{t}, \;\;\;\mbox{ for every}\; x > 0. 
+$$
+%238
+%SEC. 1] THE NATURAL LOGARITHM  239
+\noindent The reason that $x$ must be positive in this definition is that the function $\frac{1}{t}$ has a discontinuity at $t = 0$. If $x$ is negative, the integral does not exist and $\ln x$ is not defined.
+
+Geometrically, In $x$ is an area or the negative of an area. If $x > 1$, then $\ln x$ is the area of the region bounded by the hyperbola $y = \frac{1}{t}$, the $t$-axis, and the lines $t = 1$ and $t = x$ [see Figure \f{5.1}(a)]. On the other hand, if $0 < x < 1$, we have
+
+$$
+\ln\; x = \int_{1}^{x} \frac{dt}{t} = -\int_{x}^{1} \frac{dt}{t},
+$$
+
+\noindent and $\ln x$ is the negative of the area shown in Figure \f{5.1}(b). Thus we have the following properties of the function $\ln$.
+
+\begin{theorem}
+%(1.1) 
+$$
+\left \{ \begin{array}{l}
+                           \ln\; 1 = 0,\\
+                           \ln\; x > 0, \;\;\;\mbox{if} \;x > 1, \\
+                           \ln\; x < 0, \;\;\;\mbox{if} \;0 < x < 1. 
+     \end{array}
+\right.
+$$
+\end{theorem}
+
+\putfig{4.5truein}{scanfig5_1}{}{fig 5.1}
+
+Another interesting property is obtained by taking the derivative $\frac{d}{dx} \ln\; kx$, where $k$ is an arbitrary positive constant. By the Chain Rule,
+$$
+\frac{d}{dx} \ln\; kx = \frac{1}{kx} \frac{d}{dx} kx = \frac{1}{kx} \cdot k = \frac{1}{x}. 
+$$
+\noindent Hence the functions $\ln kx$ and $\ln x$ have the same derivative.
+We know that two functions which have the same derivative over an interval, in this case
+%240 LOGARITHMS AND EXPONENTIAL FUNCTIONS [CHAP. 5
+all positive real numbers, differ by a constant. Hence 
+
+$$
+\ln\; kx - \ln\; x = c,
+$$
+
+\noindent for some real number $c$ and all positive $x$. We evaluate $c$ by substituting a particular value for $x$. Since the value of $\ln 1$ is known, we let $x = 1$, getting 
+
+$$\ln\; k - \ln\; 1 = c.
+$$
+
+\noindent Since $\ln 1 = 0$, we know that $c = \ln\; k$. Hence $\ln kx - \ln x = \ln k$, or, equivalently,
+$$
+\ln\; kx = \ln\; k + \ln\; x.
+$$
+\noindent In deriving this equation we have used the fact that $k$ is a constant and $x$ a variable.  Once we have derived it, and know that it is valid for every positive $k$ and $x$, we can forget the distinction and write
+
+\begin{theorem}
+%(1.2)
+$$ 
+\ln\; ab = \ln\; a + \ln\; b, \;\;\;\mbox{for all positioe real numbers $a$ and $b$}.
+$$
+\end{theorem}
+
+If $a$ is positive, then $\frac{1}{a}$ is also positive and a substitution of $\frac{1}{a}$ for $b$ in (1.2) gives the equation $\ln\; 1 = \ln\; a + \ln\; \frac{1}{a} $. Since $\ln 1 = 0$, we have
+ 
+\begin{theorem}
+%(1.3)
+$$
+\ln\; \frac{1}{a} = - \ln\; a,  \;\;\;a > 0.
+$$
+\end{theorem}
+
+Applying (1.2) to the product of the two numbers $a$ and $\frac{1}{b}$, and using (1.3), we obtain 
+$\ln\; \frac{a}{b} = \ln\; \Bigl( a \cdot \frac{1}{b} \Bigr) = \ln\; a + \ln\; \frac{1}{b} 
+= \ln\; a - \ln\; b$. That is,
+
+\begin{theorem}
+%(1.4) 
+$$
+\ln\;\frac{a}{b} = \ln\; a - \ln\; b,  \;\;\; a > 0 \; \mbox{and} \;b > 0.
+$$
+\end{theorem}
+
+In summary: The function $\ln$ applied to a product is equal to the sum of the values obtained when the function is applied to the factors. Applied to the quotient, the value of In is the difference between the values of the function applied to the numerator and to the denominator.
+
+Let $r$ be any rational number, and consider the derivative $\frac{d}{dx} \ln\; x^r$.
+By the Chain Rule again, 
+
+$$
+\frac{d}{dx} \ln\; x^r = \frac{1}{x^r} \frac{d}{dx} x^r = \frac{1}{x^r} r x^{r-1} = r \frac{1}{x}. 
+$$
+\noindent Moreover, 
+
+$$
+\frac{d}{dx} r \ln\; x = r \frac{d}{dx} \ln\; x = r \frac{1}{x}.
+$$
+
+\noindent Thus $\ln\; x^r$ and $r \ln\; x$ have the same derivative and so must differ by a constant:
+$$
+\ln\; x^r - r \ln\; x = c.
+$$
+%SEC. 1] THE NATURAL LOGARITHM  241
+
+\noindent Substitution of 1 for $x$ tells us that $c = 0$, and therefore $\ln\; x^r = r \ln\; x$ for every positive number $x$. For uniformity in appearance with properties (1.2), (1.3), and (1.4), we set $x = a$ and obtain
+
+
+\begin{theorem} %(1.5) 
+$$
+\ln\; a^r = r \ln\; a, \;\mbox{for every rational number $r$ and every positive real number $a$.}
+$$
+\end{theorem}
+
+The properties we have derived for the function In should be recognized by anyone who has been exposed to logarithms. However, $\ln$ is not the same as the function $\log_{10}$ or the function $\log_{2}$, which the student may have seen earlier. It has many of the same properties though and is called the \textbf{natural logarithm}, hence the abbreviation $\ln$.
+
+We next draw the graph of the function $\ln$. Since $\frac{d}{dx} \ln\; x = \frac{1}{x}$ and since $\frac{1}{x}$ is positive for all $x$ for which $\ln\; x$ is defined, the slope of the tangent line to the graph is always positive. From this we can see that $\ln\; x$ always increases as $x$ increases; that is, the function $\ln$ is strictly increasing. To prove this analytically, we use the Mean Value Theorem, page 113. Suppose that $0 < a < b$. By the Mean Value Theorem there exists a number $c$ such that $a < c < b$ and
+
+$$
+\ln\; b - \ln\; a = (b - a) \Bigl( \frac{d}{dx} \ln\; x \Bigr) (c) = (b - a) \frac{1}{c} > 0.
+$$
+
+\putfig{3truein}{scanfig5_2}{}{fig 5.2}
+
+\noindent Hence $\ln\; a < \ln\; b$, and the monotonicity of the natural logarithm is proved. Since $\frac{d^2}{dx^2} \ln\; x = - \frac{1}{x^2}$, the graph of $\ln x$ is concave downward for all $x$. With this information and the fact that $\ln 1 = 0$, we can make a reasonable sketch of the graph. This appears in Figure \f{5.2}. Note that the graph is steep and the values of the function negative for very small values of $x$. The values increase and the curve goes up to the right, passing through (1, 0) with a
+%242 LOGARITHMS AND EXPONENTIAL FUNCTIONS [CHAP, 5 
+slope of 1. Since $\frac{d}{dx} \ln\; x = \frac{1}{x}$, the slope decreases as $x$ increases. This raises the question of whether $\ln x$ becomes arbitrarily large as $x$ increases without bound, or possibly tends toward some limiting value. However, it is obvious that the inequality $\frac{1}{t} \geq \frac{1}{2}$ is true for every real number in the closed interval [1, 2]. It follows from one of the fundamental properties of the integral [specifically, from (4.3) on page 191] that
+
+$$
+\int_{1}^{2} \frac{1}{ t} dt \geq \int_{1}^{2} \frac{1}{2} dt.
+$$
+
+\noindent The left side of this inequality is equal to $\ln 2$, and the right side to $\frac{1}{2}$. Thus we have proved that
+$$
+\ln\; 2 \geq \frac{1}{2},
+$$
+
+\noindent [a fact which can also be obtained geometrically by looking at Figure \f{5.1}(a) and considering the area under the curve $y = \frac{1}{t}$ between $t = 1$ and  $t = 2$]. Hence for every rational number $r$, we have $\ln\; 2^r = r \ln\; 2 \geq \frac{r}{2}$ . By taking $r$ large enough, we can make $\frac{r}{2}$ and, consequently $\ln\; 2^r$, as large as we like. We conclude that
+$$
+\lim_{x \rightarrow \infty} \ln\; x = \infty.
+$$
+
+%EXAMPLE 1. 
+\begin{example}
+If $\ln\; 2 = a$ and $\ln\; 3 = b$, evaluate each of the following in terms of $a$ and $b$.
+$$
+\begin{array}{lll}
+(a)\;\;\; \ln\; 4,  \;\;\;&(c)\;\;\; \ln\; \frac{1}{6},   \;\;\;&(e)\;\;\; \ln\; \frac{2}{9},\\
+(b)\;\;\; \ln\; 6,  \;\;\;&(d)\;\;\; \ln\; 24,  \;\;\;&(f)\;\;\; \ln\; 2^{m}3^{n}.
+\end{array}
+$$
+
+\noindent Using the various properties of logarithms developed above, we find 
+ 
+\begin{quote}
+\begin{description}
+\item[(a)] $\ln 4 = \ln 2^{2} = 2 \ln 2 = 2a,$
+\item[(b)] $\ln 6 = \ln (2 \cdot 3) = \ln 2 + \ln 3 = a + b,$
+\item[(c)] $\ln 6 =  - \ln 6 = - (a + b) =  - a - b,$
+\item[(d)] $\ln 24 = \ln (8 \cdot 3) = \ln 8 + \ln 3 = \ln 2^{3} + \ln 3 = 3 \ln 2 + \ln 3 = 3a + b,$
+\item[(e)] $\ln \frac{2}{9} = \ln 2 - \ln 9 = \ln 2 - \ln 3^{2} = \ln 2 - 2 \ln 3 = a - 2b,$ 
+\item[(f)] $\ln 2^{m}3^{n} = \ln 2^{m} + \ln 3^{n} = m \ln 2 + n \ln 3 = ma + nb.$
+
+\end{description}
+\end{quote} 
+\end{example}
+%SEC. 1] THE NATURAL LOGARITHM  243
+
+The derivative of the natural logarithm of a differentiable function is found by means of the Chain Rule. Thus \textit{if} $F(x) = \ln(f(x))$, \textit{then} $F'(x) = \ln'\; (f(x))f' (x) = \frac{1}{f(x)} f'(x) = \frac{f'(x)}{f(x)}$. If the variable $u$ is used to denote a differentiable function of $x$, then the same result can be written
+
+$$
+\frac{d}{dx} \ln\; u = \frac{1}{u} \cdot \frac{du}{dx}.
+$$
+\medskip
+
+%EXAMPLE 2. 
+\begin{example}
+Find the derivatives of (a) $\ln (x^2 - 3)$, (b) $\ln \sqrt{4x + 7}$. Using the Chain Rule in (a), we obtain
+$$
+\frac{d}{dx} \ln(x^2 - 3) = \frac{1}{x^2 - 3} \cdot 2x = \frac{2x}{x^2 - 3}.
+$$
+\noindent Note that the original function, $\ln (x^2 - 3)$, is defined only for $|x| > \sqrt{3}$, although the function which is its derivative can be defined for all $x$ except $\pm \sqrt{3}$. We can do (b) either by use of the Chain Rule directly, as
+$$
+\frac{d}{dx} \ln \sqrt{4x + 7}  = \frac{1}{\sqrt (4x + 7)} \cdot \frac{1}{2} (4x + 7)^{-1/2} \cdot 4 = \frac{2}{4x + 7},
+$$
+
+\noindent or more simply by noting that $\ln \sqrt{4x + 7} = \frac{1}{2} \ln(4x + 7)$. Then
+$$
+\frac{d}{dx} \ln \sqrt{4x + 7} = \frac{1}{2} \frac{d}{dx} \ln(4x + 7) = \frac{1}{2} \frac{1}{4x + 7} \cdot 4 = \frac{2}{4x + 7}.
+$$
+
+\noindent The latter method would be much shorter for finding the derivative of $\ln(x^2 + 2)(x - 3)(x + 5)^3$. The expanded form $\ln (x^2 + 2) + \ln (x - 3) + 3 \ln (x + 5)$ is certainly simpler to differentiate.
+\end{example}
+\medskip
+
+Since the natural logarithm is defined only for positive numbers, it follows that the function In $x$ is an antiderivative of $\frac{1}{x}$ only for $x > 0$. It is natural to ask whether or not $\frac{1}{x}$, which is defined and continuous for all $x$ except 0, has an antiderivative for $x < 0$. The answer is yes; $\ln (-x)$ is an antiderivative. Of course, if $x$ is negative, then $-x$ is positive and so $\ln (-x)$ is defined. By the Chain Rule,
+
+$$
+\frac{d}{dx} \ln\;(-x) = \frac{1}{(-x)} \frac{d}{dx} (-x) = \frac{1}{(-x)} \cdot  (-1) = \frac{1}{x} .
+$$
+%244 LOGARITHMS AND EXPONI NTIAL FUNCTIONS [CHAP. 5
+This equation may be combined with the equation $\frac{d}{dx} \ln x = \frac{1}{x}$, which holds for all positive $x$, into the single equation  
+$$
+\frac{d}{dx} \ln |x| = \frac{1}{x}, \;\;\;\mbox{for all $x$ except 0}.
+$$
+\noindent The corresponding formula for the indefinite integral is 
+
+\begin{theorem}
+%(1.6) 
+$$
+\int \frac{dx}{x} dx = \ln | x | +  c.
+$$
+\end{theorem}
+
+If $f$ is a differentiable function, the Chain Rule implies that
+$$
+\frac{d}{dx} \ln | f(x) | = \frac{1}{f(x)} \cdot  f'(x) = \frac{f'(x)}{f(x)}.
+$$
+
+Hence, we have the integration formula
+
+\begin{theorem} %(1.7)
+$$
+\int \frac{f'(x)}{f(x)}dx = \ln |f(x)| + c.
+$$
+\end{theorem}
+
+%EXAMPLE 3. 
+\begin{example} Integrate (a) $\int \frac{dx}{3x}$, (b) $\int \frac{x + 7}{x^2 + 14x + 5} dx$. To do (a), we use (1.6) and the fact that the integral of a constant times a function is the constant times the integral of the function.
+
+$$
+\int \frac{dx}{3x} = \frac{1}{3} \int \frac{dx}{x} = \frac{1}{3} \ln |x| + c.
+$$
+
+\noindent For (b), formula (1.7) is applicable because the numerator is $\frac{1}{2}$ times the derivative of the denominator.
+
+$$
+\int \frac{x + 7}{x^2 + 14x + 5} dx = \frac{1}{2} \int \frac{2x + 14}{x^2 + 14x + 5} dx = \frac{1}{2} \ln |x^2 + 14x + 5| + c.
+$$
+
+Alternative ways of writing the integration formula (1.7) are obtained by letting $u = f(x)$. We then get
+
+$$
+\int \frac{1}{u} \frac{du}{dx} dx = \ln |u| + c .
+$$
+
+\noindent Using the theory of differentials, we have $du = \frac{du}{dx}dx$, and the formula becomes
+$$
+\int \frac{u}{du} = \ln |u| + c. 
+$$
+\end{example}
+
+%SEC. 1] THE NATURAL LOGARTTHM 245
+%EXAMPLE 4. 
+\begin{example} Compute the definite integral $\int_{0}^{2} \frac{x^{2}dx}{x^3 - 17}$ . Let $u = x^3 - 17$. Then $du = 3x^{2}dx$, or, equivalently, $x^2dx = \frac{du}{3}$. Hence 
+
+$$
+\frac{x^2 dx}{x^3 - 17} = \frac{1}{u} \frac{du}{3} = \frac{1}{3} \frac{du}{u},
+$$
+
+\noindent and so
+
+\begin{eqnarray*}
+\int \frac{x^2 dx}{x^3 - 17} &=& \frac{1}{3} \int \frac{du}{u} = \frac{1}{3} \ln |u| + c\\
+                                          &=& \frac{1}{3} \ln | x^3 - 17 | + c.
+\end{eqnarray*}
+
+\noindent Finally, therefore, 
+
+\begin{eqnarray*}
+\int_{0}^{2} \frac{x^{2}dx}{x^{3} - 17} 
+&=& \frac{1}{3} \ln |x^3 - 17| \Big|_{0}^{2}  
+= \frac{1}{3} \ln |8 - 17| - \frac{1}{3} \ln |-17| \\ 
+&=& \frac{1}{3} \ln 9 - \frac{1}{3} \ln 17 = \frac{1}{3} \ln \frac{9}{17}. 
+\end{eqnarray*}
+
+\noindent Note that, if we had neglected the absolute value, we would have encountered the undefined quantities $\ln(- 9)$ and $\ln( - 17)$.
+\end{example}
+\medskip
+
+Since $\log_{10} 10 = 1$ and $\log_{2}2 = 1$, it is reasonable to ask for that value of $x$ for which $\ln x = 1$ and to call this number the base for natural logarithms. We know that such a number exists, since $\ln x$ increases as $x$ increases and since the graph of $y = \ln x$ crosses the line $y = 1$. An accurate graph would show that the abscissa of the point where they cross is between 2.7 and 2.8, more accurately between 2.71 and 2.72, and more accurately still between 2.718 and 2.719. Although this number is irrational, we can find better and better decimal approximations to it. They start out 2.71828.... This number, denoted by $e$, is
+therefore defined by the equation $\ln e = 1$.
+
+The sequence of rational numbers $1 + 1, 1 + \frac{1}{2}, 1 + \frac{1}{3}, 1 + \frac{1}{4}, ... , 1 + \frac{1}{n}, . . .$ approaches 1 as a limit. The chord connecting points (1, 0) and $\Bigl( 1 + \frac{1}{n}, \ln \Bigl( 1 + \frac{1}{n} \Bigr) \Bigr)$ on the graph of $y = \ln x$ has a slope equal to
+
+$$
+\frac{\ln \Bigl( 1 + \frac{1}{n} \Bigr) - 0}{\Bigl( 1 + \frac{1}{n} \Bigr) - 1} = n \ln \Bigl( 1 + \frac{1}{n} \Bigr).
+$$
+%246 LOGARITHMS AND EXPONENTIAL FUNCTIONS [CHAP. 5 
+\noindent Hence, by (1.5), the slope is $\ln \Bigl( 1 + \frac{1}{n} \Bigr)^n$. As $n \rightarrow \infty$, we have $\frac{1}{n} \rightarrow 0$, and the chord approaches the tangent to the curve at (1, 0), which has slope equal to 1. Hence
+$$
+\lim_{n \rightarrow \infty} \ln \Bigl (1 + \frac{1}{n} \Bigr)^{n} =  1
+$$
+
+\medskip
+\begin{table}
+\centering
+\begin{tabular}{r|l} \hline
+n       & $(1 + \frac{1}{n})^n$ \\ \hline
+1       & 2.        \\
+2       & 2.25    \\
+10     & 2.594  \\
+50     & 2.692  \\
+1000 & 2.717        \\ \hline
+$e$   & 2.71828 ...\\ \hline
+\end{tabular}
+\label{table 5.1}
+\caption{}
+\end{table}
+\medskip
+ 
+\putfig{3truein}{scanfig5_3}{}{fig 5.3}
+
+\noindent Furthermore, as can be seen from Figure \f{5.3}, the slope of the chord increases as $n$ increases. Hence $\ln \Bigl(1 + \frac{1}{n} \Bigr)^{n}$ increases, and because $\ln$ is an increasing function,  it follows that the numbers $\Bigl( 1 + \frac{1}{n} \Bigr)^{n}$ also increase. Since
+$$
+\ln \Bigl(1 + \frac{1}{n} \Bigr)^{n}  < 1 = \ln e, 
+$$
+we know that
+
+$$
+\Bigl(1 + \frac{1}{n} \Bigr)^{n} < e.
+$$
+
+\noindent It follows immediately from the least upper bound property of the real numbers that a bounded sequence of increasing real numbers must have a limit. Hence 
+
+$$
+\lim_{n \rightarrow \infty} \Bigl(1 + \frac{1}{n} \Bigr)^{n}\;\mbox{exists}.
+$$
+
+\noindent Since $\ln$ is a continuous function, the limit of a natural logarithm approaches the natural logarithm of the limit, and so
+$$
+1 = \lim_{n \rightarrow \infty} \ln \Bigl( 1 +\frac{1}{n} \Bigr)^n = \ln 
+[\lim_{n \rightarrow \infty} \Bigl(1 + \frac{1}{n} \Bigr)^n ].
+$$
+%SEC, 1] THE NATURAL LOGARITHM  247
+\noindent Since $1 = \ln e$ and since there is only one number whose logarithm is 1, we conclude that
+$$
+\lim_{n \rightarrow \infty} \Bigl( 1 + \frac{1}{n} \Bigr)^n = e.  
+$$
+
+\noindent In Table 1 values of $\Bigl( 1 + \frac{1}{n} \Bigr)^n$ for several values of $n$ are compared with the limiting value $e$.
+

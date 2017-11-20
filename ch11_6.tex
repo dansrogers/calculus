@@ -1,0 +1,137 @@
+\section{Hyperbolic Functions.} In solving linear differential equations, we have encountered many combinations of $e^{r_1x}$ and $e^{r_2x}$. Among these, two particular linear combinations occur sufficiently often that they have been given special names. These are the two functions $\frac{1}{2} e^x + \frac{1}{2} e^{-x}$ and $\frac{1}{2} e^x - \frac{1}{2} e^{-x}$.
+%658 DIFFERENTIAL EQ UA TIONS [CHAP. I l
+
+Let us look at some of the properties of these two functions, which motivate their names. First, we observe that each is the derivative of the other: 
+\begin{eqnarray*}
+\frac{d}{dx} (\frac{1}{2} e^x + \frac{1}{2} e^{-x}) = \frac{1}{2} e^x - \frac{1}{2} e^{-x} ,\\
+\frac{d}{dx} (\frac{1}{2} e^x - \frac{1}{2} e^{-x}) = \frac{1}{2} e^x + \frac{1}{2} e^{-x} .
+\end{eqnarray*}
+This fact implies, of course, that each function is its own second derivative. There is a clear analogy here with the trigonometric functions cosine and sine, each of which is, up to sign, the derivative of the other and each of which is the negative of its own second derivative.
+
+The result of squaring these two functions is 
+\begin{eqnarray*}
+(\frac{1}{2} e^x + \frac{1}{2} e^x)^2 = \frac{1}{4} e^{2x} + \frac{1}{2} + \frac{1}{4} e^{-2x},\\
+(\frac{1}{2} e^x - \frac{1}{2} e^x)^2 =  \frac{1}{4} e^{2x} + \frac{1}{2} + \frac{1}{4} e^{-2x},
+\end{eqnarray*} 
+from which it follows that
+
+\begin{equation}
+(\frac{1}{2} e^x + \frac{1}{2} e^{-x})^2 - (\frac{1}{2} e^x - \frac{1}{2} e^{-x})^2 = 1.  
+\label{eq11.6.1}
+\end{equation}
+Thus the difference of their squares is equal to 1, and this fact is analogous to the trigonometric identity $\cos^2x + \sin^2x = 1$. It is a consequence of equation (1) that, for every real number $t$, the ordered pair
+$$
+(x,y) = (\frac{1}{2} e^t + \frac{1}{2} e^{-t}, \frac{1}{2} e^t - \frac{1}{2} e^{-t})
+$$
+satisfies the equation $x^2 - y^2 = 1$ of an equilateral hyperbola. Similarly, we know that, for every real number $t$, the ordered pair
+$$
+(x, y) = (\cos t, \sin t)
+$$
+is a point on the unit circle $x^2 + y^2 = 1$. With this motivation, we define the \textbf{hyperbolic cosine,} abbreviated $\cosh$, and the \textbf{hyperbolic sine,} abbreviated $\sinh$, by setting
+
+\begin{equation}
+\begin{array}{ll}
+\cosh x &= \frac{1}{2}e^x + \frac{1}{2}e^{-x},  \\ 
+\sinh x &= \frac{1}{2}e^x - \frac{1}{2}e^{x}, \;\;\;\mbox{for every real number}\; x.  
+\label{eq11.6.2}
+\end{array}
+\end{equation}
+It is trivial to verify that 
+
+\begin{theorem}
+\begin{eqnarray*}
+\cosh(-x) &=& \cosh x, \\
+ \sinh(-x) &=& -\sinh x,\;\;\;\mbox{for every real number}\; x. 
+\end{eqnarray*}
+\end{theorem}
+%SEC. 6] HYPERBOLIC FUNCTIONS  659
+\noindent Thus, like their respective trigonometric counterparts, the hyperbolic cosine is an even function, and the hyperbolic sine is an odd function.
+
+Equation (1) now becomes the identity 
+\begin{theorem}
+$$
+\cosh^2 x - \sinh^2 x = 1, \;\;\;\mbox{for every real number}\; x,  
+$$
+\end{theorem}
+\noindent and we have also already established the two derivative formulas
+\begin{theorem}
+$$
+\frac{d}{dx} \cosh x = \sinh x,   
+$$
+\end{theorem}
+\noindent and
+\begin{theorem}
+$$
+\frac{d}{dx} \sinh x = \cosh x.  
+$$
+\end{theorem}
+
+Sinee each of the two functions, $\cosh$ and $\sinh$, is equal to its own second derivative, eaeh is a solution of the differential equation $(D^2 - 1)y = 0$. More generally, the functions $\cosh kx$ and $\sinh kx$, where $k$ is an arbitrary real constant, are both solutions of the differential equation
+\begin{equation}
+(D^2 - k^2) y = 0.  
+\label{eq11.6.3}
+\end{equation}
+From the linearity of the differential operator $D^2 - k^2$ it follows that the function defined by
+\begin{equation}
+y = c_1 \cosh kx + c_2 \sinh kx,
+\label{eq11.6.4}
+\end{equation}
+for any two real numbers $c_1$ and $c_2$, is also a solution. In fact, (4) \textit{is an alternative form of the general solution of the differential equation} (3).
+
+To prove this faet, let $y_0$ be an arbitrary solution of (3). The characteristic polynomial is $t^2 - k^2$, which equals the product $(t - k)(t + k)$. Henee there exist real numbers $A$ and $B$ such that
+$$
+y_0 = Ae^{kx} + Be^{-kx} .
+$$
+However, we have
+
+\begin{eqnarray*}
+\cosh kx + \sinh kx = \frac{e^{kx}}{2} + \frac{e^{-kx}}{2} + \frac{e^{kx}}{2} - \frac{e^{-kx}}{2} = e^{kx}, \\
+\cosh kx - \sinh kx = \frac{e^{kx}}{2} + \frac{e^{-kx}}{2} - \frac{e^{kx}}{2} + \frac{e^{-kx}}{2} = e^{-kx}
+\end{eqnarray*}
+%660 DIFFERENTIAL EQUATIONS [CHAP. 
+It follows that 
+\begin{eqnarray*}
+y_0 = A(\cosh kx + \sinh kx) + B(\cosh kx - \sinh kx) \\
+       = (A + B) \cosh kx + (A - B) \sinh kx,
+\end{eqnarray*}
+which is of the form of (4). This completes the proof.
+
+In drawing the graphs of the hyperbolic functions, we make use of the fact that cosh is an even function, and sinh is an odd function. In addition, each of the following simple results follows quickly from the definition of the relevant function:
+
+\begin{theorem}
+$$
+\left \{ \begin{array}{rl}
+\mathrm{(i)}\; & \cosh 0 = 1, \vspace{.1in}\\
+\mathrm{(ii)}\;& \sinh0 = 0, \vspace{.1in}\\
+\mathrm{(iii)}\;& \cosh x > 0, \;\mbox{for every real number}\; x, \vspace{.1in}\\
+\mathrm{(iv)}\;& \sinh x = 0 \;\mbox{if and only if}\; x = 0, \vspace{.1in}\\
+\mathrm{(v)}\; & \sinh x > 0, \;\mbox{for every}\; x > 0.
+\end{array}
+\right .
+$$
+\end{theorem}
+Applying these facts to the first and second derivatives, we conclude that the graph of sinh $x$ has positive slope everywhere, has therefore no local maximum or minimum points, and passes through the origin with slope 1. Moreover, it is concave upward if $x$ is positive, is concave downward if $x$ is negative, and as a result has one point of inflection at the origin. Similarly, the graph of cosh $x$ has positive slope if $x$ is positive, negative slope if $x$ is negative, and one critical point at (0, 1). It is concave upward everywhere, from which it follows that there are no points of inflection and the critical point at (0, 1) is a local minimum. The graphs of the two functions are drawn in the same $xy$-plane in Figure 2.
+
+The curve which is the graph of the equation $y = \cosh x$ is called a \textbf{catenary.} More generally, a catenary is the graph of an equation of the form $y = a \cosh (\frac{x}{a})$, where $a$ is a nonzero constant. The word comes from the a latin word meaning ``chain," and it can be shown that, if a chain or cable with a uniform weight per unit length is suspended between two points, then it hangs in the shape of a catenary.
+
+In a manner completely analogous to that for defining the other four trigonometric functions from the sine and cosine, we define four other hyperbolic functions. They are the \textbf{hyperbolic tangent,} denoted by tanh; the \textbf{hyperbolic secant,} denoted by sech; the \textbf{hyperbolic cosecant,} denoted by csch; and the \textbf{hyperbolic cotangent,} denoted by cotta. The definitions are
+
+\begin{equation}
+\begin{array}{ll}
+\tanh x = \frac{\sinh x}{\cosh x},  \;\;\; &   \mbox{sech}\; x = \frac{1}{\cosh x} \vspace{.1in}  \\
+\coth x = \frac{\cosh x}{\sinh x},  \;\;\; &   \mbox{csch}\; x = \frac{1}{\sinh x} . 
+\end{array}
+\label{eq11.6.5}
+\end{equation}
+%SEC. 6] HYPERBOLIC FUNCTIONS 661
+%Figure 2
+\putfig{3.5truein}{scanfig11_2}{}{fig 11.2}
+
+\noindent In the problems at the end of the section you are asked to find the derivatives of these functions. These derivative formulas, and also the many identities among the hyperbolic functions, are all closely akin to those for the trigonometric functions.
+
+The inverse hyperbolic functions are also defined. For example, $y$ is the inverse hyperbolic cosine of $x$ if and only if $x$ is the hyperbolic cosine of $y$. That is,
+$$
+y = \mbox{arccosh}\; x \;\;\;\mbox{if and only if}\; x = \cosh y.  
+$$
+The domain of the inverse hyperbolic cosine arccosh is the set of all real numbers greater than or equal to 1, and the range is chosen to be the set of all nonnegative real numbers. The definitions of the other inverse hyperbolic functions follow the same pattern.
+%662 DIFFERENTIAL EQUATIONS [CHAP.

@@ -1,0 +1,329 @@
+\section{Trigonometric Substitutions.}
+In this section we shall study a technique of integration which
+is particularly useful for finding integrals of functions of $\sqrt{a^2 - x^2}$, $\sqrt{a^2 + x^2}$, and $\sqrt{x^2 - a^2}$. The technique is that of trigonometric substitutions and is based on some of the elementary trigonometric identities developed in Chapter 6. We shall develop the method by doing specific examples.
+
+\putfig{4truein}{scanfig7_1}{}{fig 7.1}
+
+Consider the problem of evaluating $\int \sqrt{a^2 - x^2}dx$. The domain of the function $\sqrt{a^2 - x^2}$ is the closed interval $[-|a|, |a|]$. In what follows it will be convenient to view this interval as lying on the vertical axis, and, for this reason, the traditional positions of the $x$-axis and the $y$-axis will be interchanged. For every real number $x$ in the domain $[-|a|, |a|]$, the point $(\sqrt{a^2 - x^2}, x)$ lies on the semicircle in the right half-plane with radius lal and center at the origin (see Figure 1). It follows from the definition of the trigonometric functions sine and cosine on page 282 that this point $(\sqrt{a^2 - x^2}, x)$ is equal to $(|a| \cos \theta, |a| \sin \theta)$, where $\theta$ is the radian measure of the angle denoted by the same letter in Figure 1. Hence
+
+\begin{equation}
+\left \{
+         \begin{array}{rl}
+\sqrt{a^{2} - x^2} &= |a| \cos \theta,  \\
+                       x  &= |a| \sin \theta. 
+          \end{array}
+\right.
+\label{eq7.3.1}
+\end{equation}
+\noindent We shall restrict $\theta$ to the interval $\Bigl[-\frac{\pi}{2}, \frac{\pi}{2}\Bigr]$. Then $\theta$ is uniquely defined by equations (1), and, as $\theta$ takes on all values in this interval, $x$ assumes all values in the domain of the function $\sqrt{a^2 - x^2}$. Using equations (1), we obtain $dx = |a| \cos \theta d\theta$ and
+
+
+$$
+\int \sqrt{a^{2} - x^{2}} dx = \int |a| \cos \theta \cdot |a| \cos \theta d\theta 
+= a^{2} \int \cos^{2}\theta d\theta.
+$$
+
+\noindent Since $\cos^{2} \theta = \frac{1}{2}(\cos 2 \theta + 1)$, 
+
+\begin{eqnarray*}
+\int \sqrt{a^2 - x^2} dx = \frac{a^2}{2} \int (\cos 2\theta + 1) d\theta \\
+= \frac{a^2}{2} (\frac{1}{2} \sin 2\theta + \theta) + c.
+\end{eqnarray*}
+
+\noindent But $\theta = \arcsin \frac{x}{|a|}$ and
+
+$$
+\frac{1}{2} \sin 2\theta = \sin \theta \cos \theta = \frac{x}{|a|} \frac{\sqrt {a^2 - x^2}}{|a|}  = \frac{x \sqrt{a^2 - x^2}}{a^2} 
+$$
+
+\noindent Substituting back, we get 
+
+\begin{eqnarray*}
+\int \sqrt{a^2 - x^2}dx 
+&=& \frac{a^2}{2} \Bigl( \frac{x \sqrt{a^2 - x^2}}{a^2} + \arcsin \frac{x}{|a|} \Bigr) + c\\
+&=& \frac{1}{2} \Bigl( x \sqrt{a^2 - x^2} + a^{2} \arcsin \frac{x}{|a|} \Bigr ) + c.
+\end{eqnarray*}
+
+In general, with any integral involving $\sqrt{a^2 - x^2}$, we make the trigonometric substitutions based on equations (1); i.e., we replace $x$ by $|a| \sin \theta, \sqrt{a^2 - x^2}$, by $|a| cos \theta$, and $dx$ by $|a| \cos \theta d\theta$. Note that there is an equivalent alternative procedure: We may set $x = |a| \cos \theta$ and restrict $\theta$ to the interval $[0, \pi]$. Then $x$ can take on all values in the interval $[-|a|, |a|]$ as
+%376 TECHNIQUES OF INTEGRATION [CHAP. 7
+before, and, in addition, $sin $ will be nonnegative. Since $\cos^{2}\theta + \sin^{2}\theta = 1$, we will have
+$$
+\sqrt{a^2 - x^2} = \sqrt{a^2 - a^{2}\cos^{2}\theta} = \sqrt{a^{2} \sin^{2} \theta}
+ = |a| \sin \theta.
+$$
+\noindent Thus the integral may be evaluated equally well using the equations
+
+
+\begin{equation}
+\left \{ 
+\begin{array}{rl}
+                      x &= |a| \cos \theta,  \\
+\sqrt{a^2 - x^2} &= |a| \sin \theta.
+\end{array}
+\right.
+\label{eq7.3.2}
+\end{equation}
+\noindent Of course, if these substitutions are used, then $dx = - |a| \sin \theta d\theta$. Geometrically, equations (2) are obtained by starting from the point $(x, \sqrt{a^2 - x^2})$, which lies on the semicircle in the \textit{upper} half-plane instead of the right half-plane.
+
+A definite integral may be simpler to evaluate than an indefinite integral, since we may use the Change of Variable Theorem for Definite Integrals (see page 215) and thereby avoid the substitution back to the original variable.
+
+%EXAMPLE 1. 
+\begin{example}
+Evaluate the definite integral 
+
+$$  
+\int^{2\sqrt3}_{2} \frac{x^{2} dx}{\sqrt{16 - x^2}}
+$$
+
+\noindent Using equations (1), we define $\theta$ by setting $x = 4 \sin \theta$ and $\sqrt{a^{2} - x^{2}} = 4 \cos \theta$. It follows
+that $dx = 4 \cos \theta d\theta$. If $x = 2$, then $\sin \theta = \frac{1}{2}$ and so
+$\theta = \frac{\pi}{6}$. If $x = 2\sqrt3$, then $\sin \theta = \frac{\sqrt3}{2}$ and $\theta = \frac{\pi}{3}$. Hence
+
+
+\begin{eqnarray*}
+\int^{2\sqrt3}_{2} \frac{x^{2}dx}{\sqrt{16 - x^2}}
+&=& \int^{\pi/3}_{\pi/6} \frac{16 \sin^{2}\theta \cdot 4\cos \theta d\theta}{4\cos \theta} \\
+&=& 16 \int^{\pi/3}_{\pi/6} \sin^{2}\theta d\theta.  
+\end{eqnarray*}
+
+\noindent Since $\sin^{2} \theta = \frac{1}{2}(1 - \cos 2\theta)$, we obtain
+
+
+\begin{eqnarray*}
+\int^{2\sqrt3}_{2} \frac{x^{2} dx}{\sqrt{16 - x^2}}
+&=& 8 \int^{\pi/3}_{\pi/6} (1- \cos 2\theta) d\theta \\
+&=& (8\theta - 4 \sin 2\theta) \Big|^{\pi/3}_{\pi/6} \\
+&=& \Bigl( 8 \cdot \frac{\pi}{3} - 4\sin \frac{2\pi}{3} \Bigr) - \Bigl( 8 \cdot \frac{\pi}{6} 
+- 4 \sin \frac{2\pi}{6} \Bigr) \\
+&=& \frac{8\pi}{3} - 4 \cdot \frac{\sqrt3}{2} - \frac{8\pi}{6} + 4 \cdot \frac{\sqrt3}{2} 
+= \frac{4\pi}{3}.
+\end{eqnarray*}
+\end{example}
+%SEC. 3] TRIGONOMETRIC SUBSTITUTIONS  377
+
+Next we consider integrals involving $\sqrt{a^2 + x^2}$. The domain of the function $\sqrt{a^2 + x^2}$ is the set of all real numbers, i.e., the unbounded interval $(-\infty, \infty)$. Geometrically, we shall again find it convenient to place this domain on the vertical axis and to interchange the usual $x$-axis and $y$-axis in the picture. For every real number $x$, consider the point $(|a|, x)$, and let $\theta$ be the radian measure of the angle shown in Figure 2. It follows that
+
+\putfig{2.75truein}{scanfig7_2}{}{fig 7.2}
+
+\begin{equation}
+\left \{ \begin{array}{rl}
+                        x &= |a| \tan \theta, \\
+\sqrt{a^2 + x^2} &= |a| \sec \theta. 
+          \end{array}
+\right.
+\label{eq7.3.3}
+\end{equation}
+\noindent We restrict $\theta$ to the open interval $\Bigl(-\frac{\pi}{2}, \frac{\pi}{2} \Bigr)$. In this way, $\theta$ is uniquely determined by $x$ according to equations (3), and the interval $(-\infty, \infty)$ of all possible values of $x$ corresponds in a one-to-one fashion to the interval $\Bigl(-\frac{\pi}{2}, \frac{\pi}{2} \Bigr)$ of all values of $\theta$. It follows from the equation $x = |a| \tan \theta$ that $dx = |a| \sec^{2} \theta d\theta$. Hence, if we substitute 
+$|a| \tan \theta$ for $x$, we substitute $|a| \sec \theta$ for $\sqrt{a^2 + x^2}$ and $|a| \sec^{2}\theta d\theta$ for $dx$.
+
+Algebraically, the substitutions given by equations (3) arise from the trigonometric identity $1 + \tan^{2} \theta = \sec^{2}\theta$. If we set 
+$x = |a| \tan \theta$, then $x$ will assume all real values as $\theta$ 
+takes on all values in the open interval $\Bigl(-\frac{\pi}{2}, \frac{\pi}{2}\Bigr)$. Moreover, $\sec \theta$ is positive in this interval. It follows that
+
+$$
+\sqrt{a^2 + x^2} = \sqrt{a^{2}(1 + \tan^{2} \theta)} = \sqrt{a^{2}\sec^{2}\theta} = |a| \sec \theta.
+$$
+
+%EXAMPLE 2. 
+\begin{example}
+Integrate $\int \frac{dx}{\sqrt{a^2 + x^2}}$ . Letting $x = |a| \tan \theta$, we obtain $\sqrt{a^2 + x^2}= |a| \sec \theta$ and $dx = |a| \sec^{2}\theta d\theta$.
+% 378 TECHNIQUES OF INTEGRATION [CHAP. 7 
+\noindent Henee
+$$
+\int \frac{dx}{\sqrt{a^2 + x^2}} = \int \frac{|a| \sec^{2} \theta d\theta}{|a| \sec \theta} 
+=  \int  \sec \theta d\theta.
+$$
+
+\noindent It was shown in Section 2 that
+$$
+\int \sec \theta d\theta = \ln |\sec \theta + \tan \theta| + c.
+$$
+\noindent Consequently, 
+
+\begin{eqnarray*}
+\int \frac{dx}{\sqrt{a^2 + x^2}} 
+&=& \ln |\sec \theta + \tan \theta| + c \\
+&=& \ln \Big| \frac{\sqrt{a^2 + x^2}}{|a|} + \frac{x}{|a|} \Big| + c = \ln \Big| \frac{\sqrt{a^2 + x^2} + x}{|a|} \Big| + c.
+\end{eqnarray*}
+
+\noindent Using the properties of the logarithm, we may write
+$$
+\ln \Big| \frac{\sqrt{a^2 + x^2} + x}{|a|} \Big| = \ln |\sqrt{a^2 + x^2} + x| - \ln |a|.
+$$
+
+\noindent Since $-\ln|a|+ c$ is no more or less arbitrary as a constant than $c$ itself, we conclude that
+$$
+\int \frac{dx}{\sqrt{a^2 + x^2}} =  \ln | \sqrt{a^2 + x^2} + x | + c.
+$$
+\end{example}
+
+By trigonometric substitutions, functions of $\sqrt{x^2 -a^2}$ may frequently be put in a 
+form so that integration is possible. Since $\sqrt{x^2 - a^2}$ is defined if and only if $|x| \geq |a|$, the domain of the function $\sqrt{x^2 - a^2}$, unlike the others, is the union of two intervals: $(-\infty, -|a|]$ and $[|a|, \infty)$. In this ease we shall set $x = |a| \sec \theta$. Using the identity $1 + \tan^{2}\theta = \sec^{2} \theta$, we obtain
+
+$$
+\sqrt{x^2 - a^2} = \sqrt {a^{2}(\sec^{2} \theta - 1)}
+= \sqrt{a^{2} \tan^{2} \theta} = | a \tan \theta |.
+$$
+
+\noindent If $\theta$ is restricted to the interval $\Bigl[0, \frac{\pi}{2}\Bigr)$, 
+then $\tan \theta$ is nonnegative, and, as $\theta$ takes on all values
+in this interval, $x$ assumes all values in $[|a|, \infty)$. Similarly, if $\theta$ is restricted to the interval $\Bigl[-\pi, -\frac{\pi}{2}\Bigr)$ then $\tan \theta$ is again nonnegative, and, as $\theta$ runs through this interval, $x$ correspondingly traverses $(-\infty,-|a|]$ (in the opposite direction). Thus we have defined a new variable $\theta$ by the equations
+
+
+\begin{equation}
+\left \{
+\begin{array}{rl}
+                      x &= |a| \sec \theta, \\
+\sqrt{x^2 - a^2} &= |a| \tan \theta.
+\end{array}
+\right. 
+\label{eq7.3.4}
+\end{equation}
+%SEC. 3] TRIGONOM' TRIC SUBSTITUTIONS  379
+\noindent These equations can also be obtained geometrically. Figure 3 illustrates the situation for $x \geq |a|$. For every such $x$, consider the point $(|a|, \sqrt{x^2 - a^2})$ in the plane, and let $\theta$ be the radian measure of the angle shown. Since $x$ appears only as the hypotenuse of a right triangle, we have used letters other than $x$ and $y$ in labeling the horizontal and vertical axes.
+
+\putfig{2.75truein}{scanfig7_3}{}{fig 7.3}
+
+It follows from $x = |a| \sec \theta$ that $dx = |a| \sec \theta \tan \theta d\theta$. Hence if we make the trigonometric substitutions based on equations (4), we substitute $|a| \sec \theta \tan \theta d\theta$ for $dx$.
+
+%EXAMPt E 3. 
+\begin{example}
+Find the indefinite integral
+$$
+(a)\int  \frac{dx}{\sqrt{x^2 - a^2}} dx ,
+$$
+
+\noindent and evaluate the definite integral
+$$
+(b) \int^{-3\sqrt 2}_{-6} x^{3} \sqrt{x^2 - 9}dx.
+$$
+
+For part (a), we let $x = |a| \sec \theta$ and $\sqrt{x^2 - a^2} = |a| \tan \theta$. Then $dx = |a| \sec \theta \tan\theta d\theta$ and
+
+$$
+\int \frac{dx}{\sqrt{x^2 - a^2}} = \int \frac{|a| \sec \theta \tan \theta d\theta}{|a| \tan \theta} = \int \sec \theta d\theta.
+$$
+
+\noindent It was shown in Section 2 that
+$$
+\int  \sec \theta d\theta = \ln |\sec \theta + \tan \theta | + c .
+$$ 
+%380 TECtINIQUES OF INTEGRATION [CHAP. 7
+
+\noindent Hence         
+$$
+\int \frac{dx}{\sqrt{x^2 - a^2}}  = \ln |\sec \theta + \tan \theta | + c.
+$$
+
+
+\noindent But $\sec \theta = \frac{x}{|a|}$ and $\tan \theta = \frac{\sqrt{x^2 - a^2}}{|a|}$ and, substituting back, we therefore obtain
+
+$$
+\int \frac{dx}{\sqrt{x^2 - a^2}} 
+= \ln \Big| \frac{x}{|a|} + \frac{\sqrt{x^2 - a^2}}{|a|} \Big| + c.
+$$
+
+\noindent Since $\ln \Big| \frac{x}{|a|} + \frac{\sqrt{x^2 - a^2}}{|a|} \Big|  
+= \ln | x + \sqrt{a^2 - x^2} | - \ln |a|$ and since $c$ is an arbitrary constant, 
+we may incorporate the term $-\ln |a|$ into the constant of integration and conclude that
+
+$$
+\int  \frac{dx}{\sqrt{a^2 - x^2}} = \ln | x + dx \sqrt{x^2 - a^2} | + c.
+$$
+\end{example}
+
+For the definite integral in part (b), we introduce $\theta$ as the variable of integration by letting $x = 3 \sec \theta$. Then $\sqrt{x^2 - 9} = 3 \tan \theta$ and $dx = 3 \sec \theta \tan \theta d\theta$. Restricting $\theta$ to the interval $\Bigl[-\pi, - \frac{\pi}{2}\Bigr )$ we see that, when $x = - 6$, 
+$\sec \theta = - 2$ and so $\theta = - \frac{2\pi}{3}$. Similarly, when 
+$x = - 3\sqrt 2$, $\sec \theta = -\sqrt 2$ and $\theta = - \frac{3\pi}{4}$. With these substitutions and the Change of Variable Theorem for Definite Integrals, we obtain
+
+
+\begin{eqnarray*} 
+\int^{-3 \sqrt2}_{-6} x^{3} \sqrt{x^2 - 9} dx
+&=& \int^{-3\pi/4}_{-2\pi/3} 27 \sec^{3}\theta \cdot 3 \tan \theta \cdot 3 \sec \theta \tan \theta d \theta\\   
+&=& 243 \int^{-3\pi/4}_{-2\pi/3} \sec^{4} \theta \tan^{2} \theta d\theta. 
+\end{eqnarray*} 
+
+\noindent To integrate this, we replace a factor of  $\sec^{2}\theta $in the integrand by $1 + \tan^{2} \theta$. The integral then becomes
+
+\begin{eqnarray*} 
+\int^{-3 \sqrt2}_{-6} x^{3} \sqrt{x^2 - 9} dx
+&=& 243 \int^{-3\pi/4}_{-2\pi/3} (1 + \tan^{2}\theta) \tan^{2}\theta \sec^{2} \theta d\theta \\
+&=& 243 \int^{-3\pi/4}_{-2\pi/3} \tan^{2}\theta \sec^{2}\theta d\theta 
++ 243 \int^{-3\pi/4}_{-2\pi/3} \tan^{4}\theta \sec^{2}\theta d\theta.
+\end{eqnarray*}
+
+%SEC. 3] TRIGONOMETRIC SUBSTITUTIONS  381
+
+\noindent Since $d \tan \theta = \sec^{2}\theta d\theta$, it is easy to find antiderivatives of $\tan^{2}\theta \sec^{2} \theta$ and $\tan^{4}\theta \sec^{2}\theta$. Hence
+
+\begin{eqnarray*}
+\int_{-6}^{-3\sqrt2} x^{3} \sqrt{x^2 - 9} dx &=& 243(\frac{1}{3} \tan^{3}\theta + \frac{1}{5} \tan^{5} \theta) \Big|^{-3\pi/4}_{-2\pi/3} \\
+&=& 243 [(\frac{1}{3} \cdot 1 + \frac{1}{5} \cdot 1) - (\frac{1}{3} \cdot 3\sqrt3 + \frac{1}{5} \cdot 9\sqrt 3)]\\
+&=& 243 \Bigl( \frac{8}{15} - \frac{14 \sqrt 3}{5} \Bigr) \\
+&=& \frac{81}{5}(8 - 42\sqrt 3),
+\end{eqnarray*}
+
+\noindent and the example is finished.
+
+Although the trigonometric substitutions developed in this section have been primarily directed at integrands containing certain square roots, we can equally well apply them to other functions of $a^2 - x^2$, $a^2 + x^2$, and $x^2 - a^2$. For example, if we let $x = |a| \tan \theta$, then $a^2 + x^2 = a^{2}(1 + \tan^{2}\theta) = a^{2} \sec^{2} \theta$ and $dx = |a| \sec^{2}\theta d\theta$. We then obtain
+
+
+\begin{eqnarray*}
+\int  \frac{dx}{a^2 + x^2} = \int \frac{ |a| \sec^{2}\theta d\theta}{a^{2} \sec^{2} \theta} 
+= \frac{1}{|a|} \int d \theta &=& \frac{1}{|a|} \theta + c  \\
+&=& \frac{1}{|a|} \arctan\frac{x}{ |a|} + c.
+\end{eqnarray*}
+
+\noindent Given a choice, one would probably not evaluate $\int \frac{dx}{a^2 + x^2}$ by this method. It is more likely that one would do the problem directly,  remembering the formula $\int \frac{dx}{1 + x^2} = \arctan x + c$.
+
+\noindent We conclude this section with consideration of the integral
+
+
+\begin{equation}
+\int  \frac{dx}{(ax^2 + bx + c)^n}, 
+\label{eq7.3.5}
+\end{equation}
+\noindent where $n$ is any positive integer and the polynomial $ax^2 + bx + c$ is irreducible over the real numbers. To say that a quadratic polynomial is \textbf{irreducible} means that it cannot be written as the product of two linear factors. It follows from the familiar quadratic formula that $ax^2 + bx + c$ is irreducible over the real numbers if and only if $b^2 - 4ac < 0$. 
+We shall show, by means of the trigonometric substitution used in the preceding paragraph, that the integral (5) can be changed to
+
+\begin{equation}
+K \int \cos^{2n-2} \theta d\theta,
+\label{eq7.3.6}
+\end{equation}
+\noindent where $K$ is a constant. This latter integral, as we saw in Section 2, 
+can always be integrated, and this means that it is always possible to integrate (5). This
+%382 TECHNIQUE;5 OF INTEGRATION [CHAP. 7
+fact, which is of interest in itself, will play a part in a more general theory to be developed in Section 4.
+
+By first factoring and then completing the square, we obtain
+
+\begin{eqnarray*}
+ax^2 + bx + c 
+&=& a \Bigl(x^2 + \frac{b}{a} x + \frac{c}{a} \Bigr) \\
+&=& a \Bigl(x^2 + \frac{b}{a} x + \frac{b^2}{4a^2} + \frac{c}{a} - \frac{b^2}{4a^2} \Bigr)\\
+&=& a \Bigl[ \Bigl( x + \frac{b}{2a} \Bigr)^2 + \Bigl( \frac{\sqrt{4ac - b^2}}{2a} \Bigr)^2 \Bigr]. 
+\end{eqnarray*}
+
+\noindent Note that, since $b^2 - 4ac < 0$, we know both that $a \neq 0$ and that $\sqrt{4ac - b^2}$ is real. For convenience, we shall let $y = x +\frac{b}{2a}$ and $k = \frac{\sqrt{4ac - b^2}}{2a}$. Then
+
+$$
+ax^2 + bx + c = a(y^2 + k^2), 
+$$
+
+\noindent and $dy = dx$. Making the trigonometric substitution $y = |k| \tan \theta$,
+we have 
+
+$$
+ax^2 + bx + c = a(y^2 + k^2) = ak^2(\tan^{2} \theta + 1) = ak^{2} \sec^{2} \theta , 
+$$
+
+\noindent and $dx = dy = |k| \sec^{2}\theta d\theta$. It therefore follows that
+
+\begin{eqnarray*} 
+\int  \frac{dx}{(ax^2 + bx + c)^n} &=& \int \frac{|k| \sec^{2} \theta d\theta}{(ak^{2}\sec^{2} \theta)^n}
+= \frac{|k|}{a^{n} k^{2n}} \int \frac{1}{(\sec \theta)^{2n -2}} d\theta\\
+&=& K \int \cos^{2n-2} \theta d\theta , 
+\end{eqnarray*}
+
+\noindent where $k = \frac{|k|}{a^{n} k^{2n}}$. Thus, every integral (5) can be integrated by first changing it into the integral of a power of a cosine by trigonometric substitutions and then by reducing the power of the cosine with the reduction formula on page 359.
+

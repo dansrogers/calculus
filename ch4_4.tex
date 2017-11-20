@@ -1,0 +1,231 @@
+\section{Properties of the Definite Integral.} 
+If a function $f$ is integrable over an interval $[a, b]$, then in the definite integral 
+
+$$
+\int_{a}^{b} f = \int_{a}^{b} f(x) dx
+$$
+
+\noindent the function $f$ is called the \bf{integrand}, \rm{and the numbers $a$ and $b$ the} \bf{limits of integration}.
+
+\rm{The basic properties of the definite integral are contained in the following five theorems.}
+%SEC. 4] PROPERTIES OF THE DEFINITE INTEGRAL  191
+
+ 
+\begin{theorem} %(4.1)
+If $f (x) = k$ for every $x$ in the interval $[a, b]$, then 
+$$
+\int_{a}^{b} f(x) dx = \int_{a}^{b} k dx = k(b - a).
+$$
+\end{theorem}
+
+\begin{theorem} %(4.2)
+The function $f$ is integrable over the intervals $[a, b]$ and $[b, c]$ if and only if it is integrable over their union $[a, c]$. Furthermore,
+$$
+\int_{a}^{b} f(x) dx + \int_{b}^{c} f(x) dx = \int_{a}^{c} f(x) dx.
+$$
+\end{theorem}
+
+\begin{theorem} %(4.3)
+If $f$ and $g$ are integrable over $[a, b]$ and if $f (x) \leq g(x)$ for every $x$ in $[a, b]$, then
+
+$$
+\int_{a}^{b} f(x)dx \leq  \int_{a}^{b} g(x)dx.
+$$
+\end{theorem}
+
+\begin{theorem} %(4.4)
+If $f$ is integrable over $[a, b]$ and if $k$ is any real number, then the product $kf$ is integrable and
+$$
+\int_{a}^{b} k f (x) dx = k \int_{a}^{b} f (x) dx.
+$$
+\end{theorem}
+
+ 
+\begin{theorem} %(4.5)
+If $f$ and $g$ are integrable over $[a, b]$, then so is their sum and
+$$
+\int_{a}^{b} [f(x) + g(x)] dx = \int_{a}^{b} f(x) dx + \int_{a}^{b} g(x) dx.
+$$
+\end{theorem}
+
+None of the proofs of these theorems is deep in the sense of requiring great ingenuity or any techniques beyond the use of least upper bounds and greatest lower bounds. However, they vary considerably in the amount of detail required. The proof of (4.1) is a triviality. For if $f$ has the constant value $k$ on the interval $[a, b]$, then, for every partition $\sigma$ of $[a, b]$, the upper sum $U_{\sigma}$ of $f$ relative to $\sigma$ is equal to $k(b - a)$, and so is the lower sum. Thus
+
+$$
+L_{\sigma} = k(b - a) = U_{\sigma},
+$$
+\noindent which proves both that $f$ is integrable and that the value of the integral is $k(b - a)$.
+
+The proof of (4.3) is slightly more difficult and probably most easily obtained by contradiction. Suppose the premise true and the conclusion false. That is, we assume that $\int_{a}^{b} f > \int_{a}^{b} g$. The definition of integrability asserts that if a function is integrable over an interval, then there exist upper and lower sums Iying arbitrarily close to the definite integral. Therefore, since g is integrable and since ia $\int_{a}^{b} g < \int_{a}^{b} f$ there must exist an upper sum for $g$ which is less than $\int_{a}^{b} f$.  Specifically, there exists a partition $\sigma$ of $[a, b]$ such
+%192 1~FE C RA T10 N [CHAP. 4
+that the upper sum of $g$ relative to $\sigma$, which we shall denote by $U_{\sigma}(g)$, satisfies the inequality 
+
+$$
+\int_{a}^{b} g \leq U_{\sigma}(g) < \int_{a}^{b} f.
+$$
+\noindent But since $f(x) \leq g(x)$ for every $x$ in $[a, b]$, the corresponding upper sum of $f$, denoted $U_{\sigma}(f)$ is less than or equal to $U_{\sigma}(g)$. Thus we obtain the inequalities 
+
+$$
+U_{\sigma}(f) \leq U_{\sigma}(g) < \int_{a}^{b} f.
+$$
+\noindent However, every upper sum of $f$ is greater than or equal to the integral $\int_{a}^{b} f$. Hence we have arrived at a contradiction, and (4.3) is proved. The proofs of (4.2) and (4.5) are given in Appendix B, and that of (4.4) is assigned as a problem at the end of the section.
+
+The additivity property of the integral stated in Theorem (4.2) obviously extends to any finite number of intervals. Thus if $\sigma = \{ x_0, . . ., x_n \} $ is a partition of $[a, b]$ with $a = x_0 \leq x_1 \leq ... \leq x_{n} = b$, and if $f$ is integrable over each subinterval $[x_{i-1}, x_i]$, then by repeated application of (4.2) it follows that $f$ is integrable over $[a, b]$ and that
+
+\begin{equation}
+\int_{a}^{b} f(x) dx = \sum_{i = 1}^{n} \int_{x_{i-1}}^{x_{i}} f(x) dx.  
+\label{eq4.4.1}
+\end{equation}
+
+In Section 3 it was proved that if a function is monotonic on a closed interval, then it is integrable over that interval. Theorem (4.2), as extended in equation (1), increases the scope of this result enormously. For although a function $f$ may not be monotonic on a given interval $[a, b]$, it is frequently possible to partition $[a, b]$ into subintervals on each of which $f$ is monotonic. It then follows that $f$ is integrable over the entire interval; i.e., $\int_{a}^{b} f(x) dx$ exists.
+
+%EXAMPLE 1.
+ \begin{example}
+For every nonnegative integer $n$ and interval $[a, b]$, show that the definite integral
+$$
+ \int_{a}^{b} x^{n} dx
+$$
+\noindent exists. To say that $\int_{a}^{b} x^{n} dx$ exists is just another way of saying that the function $f$ defined by $f(x) = x^n$ is integrable over $[a, b]$. We now prove that this is so. For every nonnegative integer $n$, the function $x^n$ is an increasing function on the interval $[0, \infty)$, and it is an increasing or a decreasing function on $(-\infty, 0]$ according as $n$ is odd or even. Hence if $[a, b]$ is a subset of $[0, \infty)$ or a subset of $(-\infty, 0]$, then the function $x^n$ is monotonic on $[a, b]$ and is
+therefore integrable over that interval. The remaining possibility is that
+%SEC. 4] PROPERTIES OF THE DEFINITE INTEGRAL  193
+$a < 0 < b$. In this case, $x^n$ is integrable over the intervals $[a, 0]$ and $[0, b]$ separately. It then follows that $x^n$ is integrable over their union, which is $[a, b]$, and the proof is complete.
+\end{example}
+\medskip
+
+Just as Theorem (4.2) was generalized to more than two intervals, Theorem (4.5) can be extended to any finite number of functions. Thus if each one of the functions $f_{1}, ..., f_{n}$ is integrable over $[a, b]$, then by repeated
+applications of (4.5) it follows that the sum $f_{1} + ... + f_{n}$ is integrable over $[a, b]$ and that
+
+\begin{equation}
+\int_{a}^{b} [f_{1}(x) + ... + f_{n}(x)] dx = \int_{a}^{b} f_{1}(x) dx +... + \int_{a}^{b} f_{n}(x) dx. 
+\label{eq4.4.2}
+\end{equation}
+
+%EXAMPLE 2. 
+\begin{example}
+Consider an arbitrary polynomial 
+
+$$
+p(x) = a_{n}x^{n} + a_{n-1} x^{n - 1} + ... + a_{1}x + a_0
+$$
+\noindent and a closed interval $[a, b]$. Then, for each $i = 0,... , n$, we know from Example 1 that $\int_{a}^{b} x^{i }dx$ exists. It follows by (4.4) that each function $a_{i}x^{i}$ is integrable over $[a, b]$ and that $\int_{a}^{b} a_{i}x^{i}dx = a_{i }\int_{a}^{b} x^{i} dx$. We conclude from the preceding
+paragraph that the polynomial $p(x)$, which is the sum of the functions $a_{i}x^{i}$, is integrable and that 
+
+\begin{equation}
+\int_{a}^{b}  p(x) dx = \sum_{i = 0}^{n} a_{i} \int_{a}^{b} x^{i} dx.  
+\label{eq4.4.3}
+\end{equation}
+\noindent As a concrete example of equation (3), consider the polynomial $7x^5 - 3x^3 + x^2 + 3$. We have immediately 
+
+$$
+\int_{a}^{b} (7x^5 - 3x^3 + x^2 + 3) dx
+= 7 \int_{a}^{b} x^5 dx - 3 \int_{a}^{b} x^3 dx + \int_{a}^{b} x^{2} dx + 3 \int_{a}^{b} 1 dx.
+$$
+\noindent Since we know from (4.1) that $\int_{a}^{b} 1 dx = b - a$, the last term in the above equation can be replaced by $3(b - a)$.
+\end{example}
+
+Summarizing Examples 1 and 2, we conclude that all polynomials are integrable and that the problem of computing their integrals reduces to the problem of computing the integrals of the positive powers of $x$.
+
+The interpretation of the definite integral as an area will now be generalized to include functions which may take on negative values. To begin with, suppose that a function $f$ is integrable over $[a, b]$ and, in addition, that
+%194 INTEGRATION [CHAP. 
+$f (x) \leq 0$ for all $x$ in $[a, b]$. The graphs of both $f$ and $-f$ are drawn
+in Figure \f{4.12}. As shown in the figure, we denote by $P$ the region consisting of all points $(x, y)$ such that $a \leq x \leq b$ end $f(x) \leq y \leq 0$, and, similarly, by $Q$ the region defined by $a \leq x \leq b$ and $0 \leq y \leq -f(x)$. It is obvious that 
+
+$$
+area(P) = area(Q).
+$$
+
+\putfig{3.25truein}{scanfig4_12}{}{fig 4.12}
+
+\noindent It follows from Theorem (4.4), by taking $k = -1$, that the function $-f$ is integrable over $[a, b]$ and that   
+$$
+\int_{a}^{b} (-f(x)) dx = - \int_{a}^{b} f(x) dx.
+$$
+Since$-f(x) \geq 0$ for every $x$ in $[a, b]$, we know that 
+ 
+$$
+\int_{a}^{b} (-f(x)) dx = area(Q).
+$$
+\noindent Combining the preceding three equations, we conclude that  
+
+$$
+\int_{a}^{b} f (x) dx = -area(P).
+$$
+
+Next, we suppose that $f$ is integrable over $[a, b]$ and takes on both positive and negative values. Specifically, let $[a, b]$ be partitionea by inequalities
+
+$$
+a = x_0 \leq x_1 \leq ... \leq x_n  = b
+$$
+\noindent so that on each subinterval $[x_{i -1}, x_i]$ the function $f$ is either nonnegative or nonpositive. We denote by $P^{+}$ the set of all points $(x, y)$ such that $a \leq x \leq b$ and $0 \leq y \leq f(x)$, and by $P^{-}$ the set of all points $(x, y)$ such that $a \leq x \leq b$
+%SEC. 4] PROPERT! ES OF THE DEFINITE INTEG RAL  195
+and $f(x) \leq y \leq 0$ (see Figure \f{4.13}). It follows from the conclusion of the preceding paragraph and from the additivity of the integral, as generalized in equation (1), that
+
+
+\begin{theorem} %(4.6) 
+$$
+\int_{a}^{b} f(x) dx = area(P^{+}) - area(P^{-}).
+$$
+\end{theorem}
+
+\noindent This is the principal geometric interpretation of the integral.
+
+\putfig{4.5truein}{scanfig4_13}{}{fig 4.13}
+
+%EXAMPLE 3. 
+\begin{example}
+Evaluate $\int_{-2}^{2} (x^3 - 3x) dx$. The integrand, $f(x) = x^3 - 3x$, is an an odd function; i.e., the equation $f(- x) = - f(x)$ is satisfied for every $x$. Its graph, drawn in Figure \f{4.14}, is therefore symmetric under reflection first about the $x$-axis and then about the $y$-axis. It follows that the region $P^{+}$ above the $x$-axis has the same areas as the region $P^{-}$ below it. 
+We conclude that
+
+$$
+\int_{-2}^{2} (x^3 - 3x) dx = 0.
+$$
+\end{example}
+
+\putfig{3.25truein}{scanfig4_14}{}{fig 4.14}
+
+ %196 INTEGRATION [CHAP. 4
+The final topic of this section is an extension of the definition of the integral. Up to this point, $\int_{a}^{b} f(x) dx$ has been defined only if $a \leq b$. It turns out to be algebraically more convenient to remove this restriction. We do so by decree: If $f$ is integrable over the interval $[a, b]$, then we now define 
+
+\begin{equation}
+\int_{b}^{a} f(x) dx = - \int_{a}^{b} f(x) dx.
+\label{eq4.4.4}
+\end{equation}
+
+It is a simple matter to verify that the equations which form the conclusions of Theorems (4.1), (4.4), and (4.5) remain true, in the light of the extended definition of the integral, if $a$ and $b$ are interchanged. Thus
+
+\begin{eqnarray*}
+                \int_{a}^{b} k dx &=& k(b - a),\\
+           \int_{a}^{b} k f(x)dx &=& k\int_{a}^{b} f(x) dx,\\
+\int_{a}^{b} [f (x) + g(x)] dx &=& \int_{a}^{b} f (x) dx + \int_{a}^{b} g(x) dx,
+\end{eqnarray*}
+
+\noindent are valid equations regardless of whether $a \leq b$ or $b \leq a$.
+
+On the other hand, if $a$ and $b$ are interchanged in the conclusion of Theorem (4.3), then the direction of the inequality must be reversed.
+
+Less trivial to verify, but equally important, is the generalized form of (4.2):
+
+
+\begin{theorem} %(4.7) 
+If $f$ is integrable over the smallest closed interoal which contains the numbers $a$, $b$, and $c$, then
+
+$$
+\int_{a}^{b} f(x)dx + \int_{b}^{c} f(x)dx = \int_{a}^{c} f(x)dx.
+$$
+\end{theorem}
+
+The proof is obtained from (4.2) and the definition (4) by simply checking each of the six possible cases in turn: 
+ 
+\begin{quote}
+\begin{description}
+\item[(i)  $a \leq b \leq c.$ ]
+\item[(ii) $a \leq c \leq b.$ ]
+\item[(iii) $b \leq a \leq c.$ ]
+\item[(iv) $b \leq c \leq a.$ ]
+\item[(v)  $c \leq a \leq b.$ ]
+\item[(vi) $c \leq b \leq a.$] 
+\end{description}
+\end{quote}
+\noindent The details are tedious, and we omit them.
+
+%SEC. 41 PROPERTIES OF THE DEFINITE INTEGRAL  197
+

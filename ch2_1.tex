@@ -1,0 +1,176 @@
+\chapter{Applications of the Derivative} \label{chp 2}
+
+\section{Curve Sketching.}\label{sec 2.1}
+The slope of the tangent line to the graph of a function is one interpretation of the derivative, and the rate of change of $y$ with respect to $x$ is another. Both interpretations aid us in the sketching of graphs. A little practice will show that we need plot relatively few points for a sketch if we know the slope of the graph at each of these points. Let us consider the function $f$ defined by
+
+$$
+f(x) = \frac{1}{3} x^3 - 4x^2 + 12x - 5.
+$$
+Its domain is $R$, and, for each real value of $x$, we find the corresponding value $f(x)$. To help us make the sketch, we look at the derivative:
+
+$$
+f'(x) = x^2 - 8x + 12 = (x - 2)(x - 6).
+$$
+
+If $x < 2$, each of the factors of $f'(x)$ is negative, and hence their product is positive. Thus the first derivative is positive for each value of $x$ less than 2. With the rate-of-change interpretation, this means that the rate of change of $f$ with respect to $x$ is positive or that $f(x)$ increases whenever $x$ does. Thus, as $x$ increases from $-\infty$ to 2, $f(x)$ increases. The graph goes up as one moves to the right until $x = 2$.
+
+If $x = 2$, then $f'(x) = 0$, and the tangent, having a slope of 0, is horizontal. If $2 < x < 6$, the first factor of $f'(x)$ is positive, the second factor is negative, and their product is negative. With a negative rate of change, $f(x)$ must decrease as $x$ increases. Thus, as $x$ increases from 2 to 6, $f(x)$ decreases. The graph goes down as one moves to the right from $x = 2$ to $x= 6$.
+
+If $x = 6$, then $f'(x) = 0$, and the tangent to the graph is again horizontal.
+
+If $x > 6$, both factors of $f'(x)$ are positive, and hence their product is positive. Thus $f(x)$ increases as one goes to the right beyond $x = 6$. 
+Since $f(2) = \frac{1}{3} \cdot 8 - 4 \cdot 4 + 12 \cdot 2 - 5 = 5\frac{2}{3}$ and $f(6) = \frac{1}{3} \cdot 216 - 4 \cdot 36 + 12 \cdot 6 - 5 = 5\frac{2}{3}$, we plot the points $(2, 5\frac{2}{3})$ and $(6, -5)$. At each of these points we sketch a horizontal line segment. An additional point may be found by inspection: Since $f(0) = -5$, the point $(0, -5)$ is also plotted on Figure \figref{2.1}.
+
+We now know that the graph comes up from lower left through $(0, -5)$ to $(2, 5\frac{2}{3})$, goes down from $(2, 5\frac{2}{3})$ to $(6, -5)$, and then goes up to the right from $(6, -5)$. But we do not know its shape. 
+Further information on this may be obtained from the second derivative:
+
+$$
+f''(x) = 2x - 8 = 2(x - 4).
+$$
+%SEC. 1] CURVE SKETCHING  85
+%Figure I
+\putfig{2.5truein}{scanfig2_1}{}{fig 2.1}
+
+If $x < 4$, then $f''(x)$ is negative. Since $f''$ is the rate of change of $f'$ with respect to $x$, this means that $f'$ is decreasing as $x$ is increasing from $-\infty$ to 4. If we interpret $f'$ as the slope of the tangent, then this means that the slope of the tangent decreases as $x$ increases.
+We can get some idea of shape here if we plot three points on Figure \figref{2.2}(a), the middle one the highest and with a horizontal tangent drawn through it. Note that the tangent through the middle point has slope less than that of the tangent through the left point
+%86 APPLICATIONS OF THE~ DERIVATIVE [CHAP. 2
+and that the tangent through the right point has a slope which is still less. The slopes of tangents at intermediate points will take on intermediate values, and thus a curve passing through these three points with these three tangents must be concave downward or must ``bend" down. Whenever $f''(x) < 0$, the graph of $f(x)$ will be bending down. The part of the curve through the three points of Figure \figref{2.2}(a) with the appropriate tangents is drawn in Figure \figref{2.2}(b).
+
+\putfig{4.5truein}{scanfig2_2}{}{fig 2.2}
+
+If $x = 4$, then $f''(x) = 0$, and the rate of change of $f'$ with respect to $x$ is 0. Thus the slope of the tangent has ceased decreasing.
+
+If $x > 4$, then $f''(x) > 0$, and $f'$ increases as $x$ increases. Thus the slope of the tangent increases as $x$ increases. Again we plot three points, the middle one the lowest and with a horizontal tangent drawn through it. These are shown in Figure \figref{2.3}(a). Since the slope increases as $x$ increases, the tangent through the middle point has slope greater than that of the tangent through the left point, and the tangent through the right point has a slope which is still greater. The slopes of tangents at intermediate points take on intermediate values, and thus a curve passing through these three points with these tangents must be concave upward or must ``bend" up. Whenever $f''(x) > 0$, the graph of $f(x)$ will be bending up. The part of the curve through the three points of Figure \figref{2.3}(a) with the appropriate tangents is drawn in Figure \figref{2.3}(b).
+
+\putfig{4.5truein}{scanfig2_3}{}{fig 2.3}
+
+After finding that $f(4) = \frac{1}{3} \cdot  64 - 4 \cdot 16 + 12 \cdot 4 - 5 = \frac{1}{3}$, we are ready to sketch the graph in Figure \figref{2.4}. The graph is concave downward from the far left through $(0, -5)$ to a high point at $(2, 5\frac{2}{3})$ and on to $(4, \frac{1}{3})$. It is then concave upward from $(4, \frac{1}{3})$ to a low point at $(6, -5)$ and on upward to the right. The graph is, of course, incomplete, since it continues indefinitely both downward to the left and upward to the right. The point $(2, 5\frac{2}{3})$, being higher than any nearby point on the graph, is called a local, or relative, maximum point. It is certainly not the highest point on the graph, hence the
+%SEC. 1] C URV E SK ETCH I NG  87
+word ``local," or ``relative." Similarly, the point $(6, -5)$ is a local, or relative, minimum.
+
+\putfig{3.25truein}{scanfig2_4}{}{fig 2.4}
+
+In summary, the graph of a function is concave downward when the second derivative of the function is negative and concave upward when the second derivative of the function is positive. The graph has horizontal tangents when the first derivative is 0. The points where the tangent is horizontal may be local maximum points or local minimum points or, as we shall see in Example 1, points of horizontal inflection.
+
+It is important to understand clearly the definitions of the various expressions used in sketching graphs. The ordered pair $(a,f(a))$ is a \textbf{local maximum point} or a \textbf{local minimum point} of the function $f$ if there is an open interval of the $x$-axis containing a such that, for every number $x$ in that interval, 
+
+$$
+f(a) \geq f(x)  \;\;\; \mbox{or} \;\;\; f(a) \leq f(x),
+$$
+\noindent respectively. As we have indicated, the words relative maximum and relative minimum are also used. On the other hand, the pair $(a, f(a))$ is an \textbf{absolute maximum point} if, for every $x$ in the domain of $f$,
+
+$$
+f(a) \geq f(x),
+$$
+and an \textbf{absolute minimum} point if
+
+$$
+f(a) \leq f(x).
+$$
+An \textbf{extreme point} is one that is either a maximum or minimum point (local or absolute). If $(a, f(a))$ is an extreme point, we shall call $f(a)$ the 
+%88 APPLICATIONS OF THE DERIVATIVE [CHAP. 2
+\textbf{extreme value} of the function and shall say that the function has the extreme value \textbf{at} $a$.  For example, we say that the function $f$ in Figure \figref{2.4} has a local minimum value of $-5$ which occurs at $x = 6$. However, this function has no absolute maximum or minimum points.
+
+Any point $(a, f(a))$, where $f'(a) = 0$, is called a \textbf{critical point} of $f$.
+
+A point of inflection is a point where the concavity changes sign. Thus $(a,f(a))$ is a \textbf{point of inflection} of the function $f$ if there is an open interval on the$x$-axis containing a such that, for any numbers $x_1$ and $x_2$ in that interval,
+
+\begin{equation}
+f''(x_1)f''(x_2) < 0 
+\label{eq2.1.1}
+\end{equation}
+\noindent whenever $x_1 < a$ and $x_2 > a$. The inequality (1) simply says that $f''(x_1)$ and $f''(x_2)$ are of opposite sign. A characteristic of a point of inflection of a function is that its tangent line crosses the graph of the function at that point. The different possibilities are illustrated in Figure \figref{2.5}. Of the points $P, Q$, and $R$, only $R$ is a point of inflection. \textit{If a function has a point of inflection $(a, f(a))$ and the second derivative $f''(a)$ exists, then $f''(a) = 0$.} However, it is possible to have a point of inflection at a point where there is no second derivative (see Problem 10 at the end of this section).
+\medskip
+
+\putfig{4.5truein}{scanfig2_5}{}{fig 2.5}
+
+%EXAMPLE 1.
+\begin{example} 
+Sketch the graph of $f(x) = {(x + 1)^3}(x- 1)$. We first compute the derivatives:
+
+\begin{eqnarray*}
+f'(x) &=& (x + 1)^3 + (x - 1)3(x + 1)^2 = {(x + 1)^2}(4x - 2),\\
+f''(x) &=& {(x + 1)^2}4 + (4x - 2)2(x + 1) = 12x(x + 1).
+\end{eqnarray*}
+Setting $f'(x) = 0$, we obtain $x = -1$ and $x = \frac{1}{2}$. Thus $(-1, 0)$ and $(\frac{1}{2}, -\frac{27}{16})$ are critical points and the tangents through these points are horizontal. Setting $f''(x) = 0$, we get solutions $x = -1$ and $x = 0$. Thus, if
+%SEC. 1] CUE VE SICETCHING  89
+there are any points of inflection, they must occur at these two places. It is easy to see that the sign of the second derivative for values of $x$ along the $x$-axis follows the pattern
+
+
+\begin{center}
+\begin{picture}(400,60)(0,0)
+\put(0,17){\line(20,0){200}}
+\put(60,17){\line(0,1){20}}
+\put(110,17){\line(0,1){20}}
+\put(15,22){positive}
+\put(120,22){positive}
+\put(70,22){negative}
+\put(60,5){-1}
+\put(110,5){0}
+\put(190,5){x-axis}
+\end{picture}
+\end{center}
+
+\noindent We conclude that $(-1, 0)$ and $(0, -1)$ are in fact points of inflection. The point $(-1, 0)$, being both a critical point and a point of inflection, is a point of horizontal inflection. The graph is shown in Figure \f{2.6}. Note that the graph crosses the tangent at the point of horizontal inflection and that the slope of the tangent line does not change sign at that point. The first derivative (hence the slope of the tangent) increases to zero, as we go from the left to $x = -1$ and then decreases again through negative values, from $x = -1$ to $x = 0$. The point $(\frac{1}{2}, -\frac{27}{16})$, being the lowest point on the graph, is not only a local minimum point but also an absolute minimum point.  $-\frac{27}{16}$ is the absolute minimum value of this function.
+\end{example}
+\medskip
+
+\putfig{3.75truein}{scanfig2_6}{}{fig 2.6}
+
+In the plotting of graphs of polynomial functions, we are frequently helped by knowing that a straight line can cut the graph of a polynomial function of the nth degree in at most n points. This is a consequence of the algebraic fact that, if $p(x)$ is a polynomial function of degree $n$, then the equa
+%90 APPLICATIONS OF THE DERIVATIVE [CHAP. 2
+tion $p(x) = 0$ can have at most n distinct real roots. The function in Example 1 may be expanded to show that it is a polynomial of degree 4. It is possible to draw a straight line which will cut its graph in four points, but no straight line which will cut it in as many as five points.
+
+%EXAMPLE 2. 
+\begin{example}
+Sketch the graph of $f(x) = 1 - x^{2/3}$. As before, we find derivatives:
+
+\begin{eqnarray*}
+f'(x) &=& - \frac{2}{3}x^{-1/3},\\
+f''(x) &=& \frac{2}{9} x^{-4/3}.
+\end{eqnarray*}
+\noindent For no values of $x$ will we have $f'(x) = 0$, and so there are no critical points. On the other hand, $f'(0)$ is not defined and the graph has a vertical tangent at (0, 1). The first derivative is defined for all other values of $x$ and is positive for $x < 0$ and negative for $x > 0$. Thus, at each point on the graph to the left of the vertical axis, the slope of the tangent is positive, increasing without limit as $x \rightarrow 0-$. At each point on the graph to the right of the vertical axis, the slope of the tangent is negative, increasing from negative numbers large in absolute value as $x$ increases from 0. The second derivative $f''(x)$ is positive for all values of $x$ except for $x = 0$, where it is not defined. It follows that there are no points of inflection. The graph is nowhere concave downward.  
+
+\putfig{4.5truein}{scanfig2_7}{}{fig 2.7}
+
+Note in Figure \f{2.7} that the portion of the graph which lies to the right of the vertical axis is the ``mirror reflection" across that axis of the portion which lies to the left of the vertical axis. Note also that $f(-x) = f(x)$. Such a function, where $f(-x) = f(x)$, is called an \textbf{even function} and its graph will always contain two halves which can be brought into coincidence with each other by folding the graph along the vertical axis (Figure \f{2.8}). The problem of graphing an even function is simplified by graphing it for positive values of $x$ and drawing, for negative values of $x$, a reflection over the vertical axis of the right half of the graph.
+\end{example}
+\medskip
+%SEC. 1] CURVE SKETCHING 9
+\putfig{4.5truein}{scanfig2_8}{}{fig 2.8}
+
+%EXAMPLE 3. 
+\begin{example} Sketch the graph of $f(x) = x + \frac{4}{x}$. The derivatives are 
+
+\begin{eqnarray*}
+f'(x) &=& 1- \frac{4}{x^2},\\
+f''(x) &=& \frac{8}{x^3}
+\end{eqnarray*}
+
+\noindent The first derivative vanishes for$x = 2$ and $x = -2$, and thus we see that (2, 4) and $(-2, -4)$ are critical points. The second derivative is negative when $x$ is negative, so the curve is bending down at $(-2, -4)$ and that point must be a local maximum point. Similarly, $f''(2) > 0$ and (2, 4) is a local minimum point. $f(0)$ is unclefined and $|f(x)|$ increases as $x \rightarrow 0$. Behavior for large values of $|x|$ can be seen, since $f(x)$ approaches $x$ as $x$ increases or decreases without bound.
+
+% Figore 9
+\putfig{3.75truein}{scanfig2_9}{}{fig 2.9}
+%92 APPLICATIONS OF THE DERIVATIVE ICHAF. 2
+
+From Figure \f{2.9}, one can see the graph approaching the vertical axis as $x \rightarrow 0$ from either side, and also approaching the graph of the equation $y = x$ as $|x|$ increases without bound. Note that the two parts of the graph are reflections of each other across the origin, and also that $f(-x) = -f(x)$. Any function $f$ for which $f(-x) = -f(x)$ is called an \textbf{odd function}.  The graph of an odd function may be obtained by first drawing the graph of $f(x)$, where $x > 0$ (see Figure \f{2.10}). We may then obtain the remainder of the $y$-axis graph by first reflecting this positive part about the $y$-axis and then about the $x$-axis. The result of reflecting first about one axis and then about the other we shall call reflection about the origin.
+\end{example}
+
+\putfig{4.5truein}{scanfig2_10}{}{fig 2.10}
+
+Summarizing the techniques of curve sketching, we find the first and second derivatives of the function with respect to $x$, we find the points where either derivative vanishes, and we determine critical points and points of inflection. Points of general use in graphing $f(x)$ include:
+\smallskip
+
+\begin{enumerate}
+\item The tangent is horizontal if $f'(x) = 0$.
+
+\item The curve is concave downward if $f''(x)$ is negative, concave upward if $f''(x)$ is positive.
+
+\item $(a,f(a))$ is a local maximum point if $f'(a) = 0$ and $f''(a) < 0$, a local minimum point if $f'(a) = 0$ and $f''(a) > 0$.
+
+\item $(a,f(a))$ is a point of inflection if $f''(x)$ changes sign as $x$ increases through $a$.
+
+%SEC. 1] CUP(VE SKETCHING  93
+\item Even and odd functions need be investigated carefully only for $x \geq 0$. The rest of the graph of an even function is found by reflection across the vertical axis, of an odd function by reflection about the origin.
+\end{enumerate}
+

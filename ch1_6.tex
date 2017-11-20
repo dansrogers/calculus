@@ -1,0 +1,436 @@
+\section{The Derivative.}\label{sec 1.6}
+The concept of the line tangent to a curve at a point
+is an important one in geometry.
+However, it is not so simple an idea as it may first appear.
+Consider the graph of a function $f$
+and a point $P = (a, f(a))$ on the graph,
+as illustrated in Figure \figref{1.33}.
+\putfig{3truein}{scanfig1_33}{}{fig 1.33}
+Many people who would have little difficulty
+drawing the line tangent to the graph at $P$
+would not find it easy to give an accurate definition of the tangent line.
+For example,
+to say that the tangent line at $P$ is the line which cuts the graph
+at the single point $P$,
+although true for some curves,
+is obviously not correct in general
+(in particular, see Figure \figref{1.33}.
+We shall show that the problem of
+defining the tangent line to the graph of $f$ at $P$
+can be expressed in purely analytic terms involving the function $f$.
+In fact,
+the problem leads directly to the definition of
+the derivative of a function,
+the central idea in differential calculus.
+
+Let $t$ be an arbitrary nonzero real number,
+and consider the point $Q(t) = (a + t, f(a + t))$, which,
+together with $P = (a, f(a))$,
+lies on the graph of $f$
+(see Figure \figref{1.34}).
+\putfig{3.5truein}{scanfig1_34}{}{fig 1.34}
+The slope of the secant line $L_t$ containing $P$ and $Q(t)$ is equal to
+\begin{equation}
+m(P, Q(t)) = \frac{f(a + t) - f(a)}{t} .
+\label{eq1.6.1}
+\end{equation}
+If $t$ is small in absolute value, then $L_t$ is an approximation to what we shall define to be the tangent line.
+The smaller the value of $|t|$,
+the better the approximation will be.
+In some sense, therefore,
+we would like to define the tangent line $L$
+to be the limit,
+as $t$ approaches zero, of the lines $L_t$.
+We can do this,
+for although we have not defined a limit of lines,
+we have defined limits for functions,
+and hence we can express the limit of the slope of $L_t$.
+According to equation 1.6.1, it is given by
+\begin{equation}
+\lim_{t \rightarrow 0}{m(P,Q(t))} =
+\lim_{t \rightarrow 0}{\frac{f(a + t) - f(a)}{t}} .
+\label{eq1.6.2}
+\end{equation}
+We shall define the \dt{tangent line} to the graph of $f$ at $P$
+to be the line through $P$ having this limit as its slope,
+provided the limit exists.
+
+Leaving the geometric interpretation aside for the moment,
+we observe that the value of the limit in \eqref{1.6.2}
+depends only on the function $f$ and on the number $a$.
+Hence we give the following definitions:
+An arbitrary real-valued function $f$ of a real variable
+is \dt{differentiable at} a number $a$ in its domain if
+$$
+\lim_{t \rightarrow 0}{\frac{f(a + t) - f(a)}{t}}
+$$
+exists (i.e., is finite).
+The \dt{derivative of $f$ at} $a$, denoted $f'(a)$, is this limit.
+Thus
+$$
+f'(a) = \lim_{t \rightarrow 0}{\frac{f(a + t) - f(a)}{t}} .
+$$
+If $f$ is differentiable at every number in its domain,
+it is simply called a \dt{differentiable function.}
+
+Thus the slope of the line tangent to the graph of $f$
+at the point $(a, f(a))$
+is equal to the derivative $f'(a)$.
+It follows that an arbitrary point $(x, y)$ lies on this line
+if and only if
+$$
+y - f(a) = f'(a)(x - a) ,
+$$
+and we therefore obtain the following equation of the tangent line:
+$$
+y = f(a) + f'(a)(x - a) .
+$$
+Note that the only variables that appear in this equation are $x$ and $y$,
+and these occur with exponent 1.
+The equation therefore defines $y$ as a linear function of $x$.
+
+\begin{example}{\label{exam 1.6.1}}
+Find the derivative of the function
+$f(x) = x^2 + 2$ at $x = 2$,
+and write an equation of the line
+tangent to the graph of $f$
+at the point $(2, 6)$.
+As we have seen above,
+the slope of the tangent line is the derivative $f'(2)$, and
+$$
+f'(2) = \lim_{t \rightarrow 0} {\frac{f(2 + t) - f(2)}{t}} .
+$$
+We have
+$f(2) = 6$, and $f(2 + t) = (2 + t)^2 + 2 = t^2 + 4t + 6 .$
+Hence
+$$
+\frac{f(2 + t) - f(2)}{t} = \frac{t^2 + 4t}{t} = t + 4, \;\;\;\mbox{if} t \neq 0.
+$$
+So
+$$
+f'(2) = \lim_{t \rightarrow 0} (t + 4) = 4 .
+$$
+The tangent line passes through (2, 6) and has slope 4.
+Hence $(x, y)$ lies on the tangent if
+$$
+\frac{y - 6}{x - 2} = 4, \;\;\; x \neq 2 ,
+$$
+and we therefore obtain
+$$
+y - 6 = 4(x - 2) \;\;\; \mbox{or}\;\;\; 4x - y - 2 = 0 ,
+$$
+as an equation of the line.
+\end{example}
+
+\begin{example}{\label{exam 1.6.2}}
+Consider the function $g$ defined by
+$$
+g(x)= \frac{1}{x + 2} ,  \;\;\; x \neq -2 .
+$$
+Compute the derivative $g'(3)$. By definition,
+$$
+g'(3) = \lim_{x \rightarrow 0} {\frac{g(3 + t) - g(3)}{t}} .
+$$
+We have $g(3) = \frac{1}{5}$, and $g(3 + t) = \frac{1}{t + 5}$ .
+\begin{eqnarray*}
+\frac{g(3 + t) - g(3)}{t}
+&=&  \frac{1}{t} \Bigl( \frac{1}{t + 5} - \frac{1}{5} \Bigr)\\
+&=&  \frac{5 - (t + 5)}{5t (t + 5)} \\
+&=&  - \frac{t}{5t (t + 5)} \\
+&=&  - \frac{1}{5 (t + 5)}, \provx{if $t \neq 0$} .
+\end{eqnarray*}
+We conclude that
+$$
+g'(3) = \lim_{t \rightarrow 0} \Bigl(- \frac{1}{5(t + 5)} \Bigr) = - \frac{1}{25} .
+$$
+\end{example}
+
+\begin{example}{\label{exam 1.6.3}}
+Find $F'(a)$, where $a > 0$ and $F$ is the function
+$$
+F(x) = \frac{1}{x^{\frac{1}{2}}}, \;\;\;   0 < x < \infty ,
+$$
+and write an equation of the line
+tangent to the graph of $F$ at the point (4, $\frac{1}{2}$).
+By the definition of the derivative,
+$$
+F'(a) = \lim_{x \rightarrow 0} { \frac{F(a + t) - F(a)}{t} } .
+$$
+In this case,
+$$
+\frac{F(a + t) - F(a)}{t} = \frac{1}{t} \Bigl( \frac{1}{\sqrt{a + t}} -
+\frac{1}{\sqrt a} \Bigr) .
+$$
+The problem in computing any derivative from the definition
+is always the same.
+We set up the fraction $\frac{F(a + t) - F(a)}{t}$
+and then compute the limit.
+To begin with,
+we are faced with a fraction
+both the numerator and denominator of which approach zero.
+The limit we seek is
+the relative rate at which numerator and denominator go to zero.
+With most examples it is not possible to tell from a cursory glance
+just what that relative rate is.
+So we experiment, performing various algebraic manipulations
+that hopefully will finally change the fraction into a form
+from which we can tell what the limit is.
+In the present example the following manipulation will do the trick:
+\begin{eqnarray*}
+\frac{1}{t} \Bigl( \frac{1}{\sqrt{a + t}} - \frac{1}{\sqrt a} \Bigr)
+&=& 
+{\frac{1}{t}}
+{\frac{\sqrt{a} - \sqrt(a + t)}{\sqrt{a} \sqrt{a + t}} }
+{\frac{\sqrt{a} + \sqrt{a + t}}{\sqrt{a} + \sqrt{a + t}} }  \\
+&=& 
+{\frac{1}{t}}
+{\frac{a - (a + t)}{\sqrt{a} \sqrt{a + t}
+(\sqrt{a} + \sqrt{a + t})}  }\\
+&=& 
+\frac {-1} {\sqrt{a^2 + at} (\sqrt{a} + \sqrt{a + t} ) },
+\provx{if $t \neq 0$}.
+\end{eqnarray*}
+It is now possible to see what happens as $t \rightarrow 0$.
+$$
+F'(a)
+=
+\lim_{x \rightarrow 0}
+{ \frac{-1}{ \sqrt{a^2 + at}
+(\sqrt{a} + \sqrt{a + t}) }  }
+=
+\frac{-1}{2a \sqrt{a}} = - \frac{1}{2a^{3/2}} .
+$$
+Our principal interpretation of the derivative $F'(a)$
+is that it is the slope of the line tangent to the graph of $F$
+at the point $(a, F(a))$.
+For this particular function $F$,
+an equation of the tangent line at
+$(4, \frac{1}{2})$
+is therefore found by writing
+$$
+\frac{y - \frac{1}{2}}{x - 4} = F'(4) = -\frac{1}{2 \cdot 4^{\frac{3}{2}}} = -\frac{1}{16} .
+$$
+Hence an equation of the tangent is
+$$
+y - \frac{1}{2} = - {\frac{1}{16}} (x - 4).
+$$
+\end{example}
+
+The notation $f'(a)$ for the derivative
+suggests that we regard $f'$
+as a new function whose value at $a$
+is the number $f'(a)$.
+The domain of $f'$ is the set of all real numbers $a$
+for which
+$\lim_{t \rightarrow 0} \frac{f(a + t) - f(a)}{t}$ exists.
+With this point of view,
+it is natural to think of the derivative evaluated
+not only at an arbitrary, but fixed, number $a$
+but also at a variable $x$.
+In so doing, we are admitting the same dual interpretations
+that were discussed in Section \secref{1.3}.
+That is, we can interpret $f'(x)$
+either as the value of the function $f'$ at the number $x$,
+whence
+$$
+f'(x) = \lim_{t \rightarrow 0} \frac{f(x + t) - f(x)}{t},
+$$
+or as the composition of the variable $x$ with the function $f'$.
+
+\begin{example}{\label{exam 1.6.4}}
+If $f(x) = x^3 - 1$,
+plot the graph of the derived function $f'$.
+For any real number $x$,
+$$
+f'(x) = \lim_{t \rightarrow 0} \frac {f(x + t) - f(x)}{t} .
+$$
+We have
+\begin{eqnarray*}
+f(x + t) - f(x)
+&=& ((x + t)^3 - 1) - (x^3 - 1) \\
+&=& 3x^2t + 3xt^2 + t^3 ,
+\end{eqnarray*}
+and so
+$$
+\frac {f(x + t) - f(x)}{t} = 3x^2 + 3xt + t^2,
+\provx{if $t \neq 0$}.
+$$
+Consequently,
+$$
+f'(x) =
+\lim_{t \rightarrow 0} (3x^2 + 3xt + t^2) = 3x^2 .
+$$
+The graph of the function $f'(x) = 3x^2$
+is the parabola shown in Figure \figref{1.35},
+\putfig{4truein}{scanfig1_35}{}{fig 1.35}
+on which the graph of the original function $f(x) = x^3 - 1$
+has also been drawn.
+\end{example}
+
+It is not surprising that there are
+several common notations for the derivative of a function.
+One strong tradition reflects the basic fact that
+the derivative is the limit of a ratio by writing it as a ratio.
+Thus
+$$
+\frac{df}{dx} = f' .
+$$
+This way of writing the derivative
+is called the differential notation.
+Using it,
+we denote the derivative of $f$ at $a$ by
+$$
+\frac{df}{dx} (a) = f'(a) .
+$$
+
+
+\begin{example}{\label{exam 1.6.5}}
+Let $f(x) = x^3 - 1$. It was shown in Example \exampref{1.6.4}
+that $f'(x) = 3x^2$.
+Each of the following equations
+is an example of acceptable notation.
+\begin{eqnarray*}
+\frac{df}{dx} (2)
+&=&  3 \cdot 2^2 = 12 ,  \\
+\frac{df}{dx} (a)
+&=&  3a^2 ,    \\
+\frac{df}{dx}
+&=&  3x^2 ,    \\
+\frac{d}{dx} (x^3 - 1)
+&=&  3x^2 .
+\end{eqnarray*}
+One could also write $\frac{df}{dx} (x) = f'(x) = 3x^2$.
+There is no need for it, however,
+since $f'(x)$ becomes identified with $f'$
+when it is regarded as the composition of the independent variable $x$
+with the function $f'$.
+\end{example}
+
+It should be emphasized that
+although the notation $\frac{df}{dx}$ suggests a ratio,
+the derivative as we have defined it is \emph{not} a ratio---even though
+it is the limit of one.
+$\frac{df}{dx}$ is simply an abbreviation of $f'$.
+
+There are a few variations on the two notations
+that we have given for the derivative
+which we shall also use frequently.
+If $y = f(x)$, we may write any one of
+$$
+y' = \frac{dy}{dx}  = f' = \frac{df}{dx}
+$$
+for the derivative.
+Similarly, for the derivative at a real number $a$,
+we have
+$$
+y'(a) = {\frac{dy}{dx}} (a) = f'(a) = {\frac{df}{dx}} (a) .
+$$
+Still other notations for the derivative,
+which we shall seldom use,
+but which the reader may encounter in other books are
+$$
+Df = D_{x}f = Dy = D_{x}y = \dot{y} ,
+$$
+where it is assumed that $y = f(x)$.
+
+\begin{example}{\label{exam 1.6.6}}
+It follows from the computation in Example \exampref{1.6.3}
+that if $F(x) = x^{-1/2}$, $x > 0$,
+then the derivative is given by
+$F'(x) = -\frac{1}{2} x^{-3/2}$.
+If we write $y = x^{-1/2}, x > 0$,
+the derivative is also written
+$$
+y' = \frac{dy}{dx} = - \frac{1}{2 x^{3/2}} .
+$$
+The value of the derivative at 4 is
+$$
+y'(4) = {\frac{dy}{dx}} (4) = - \frac{1}{2 \cdot 4^{3/2}} = - \frac{1}{16} .
+$$
+\end{example}
+
+The slope of a straight line is the ratio of
+a change in $y$ to a change in $x$.
+It therefore measures the rate of change of $y$ per unit change in $x$
+for the ordered pairs $(x, y)$ that make up the line.
+Consider the two lines defined by
+$y = 10x - 3$  and $y = x - 3$ respectively.
+The rate of change of $y$ to $x$ is $10$ for the first
+and 1 for the second.
+For a function whose graph is not a straight line, however,
+the concept of the rate of change of $y$, or $f(x)$,
+with respect to $x$ is more profound.
+There is the problem that
+the change in functional values $f(x)$ per unit change in $x$
+will not be constant along the graph.
+More basic, however,
+is the question of the precise meaning or definition
+of the rate of change.
+The answer is provided by the derivative.
+Since $f'(a)$ is the slope of the line tangent to the graph of $f$
+at the point $(a, f(a))$,
+it measures the rate of change of $f(x)$
+with respect to $x$ at that point.
+In Example \exampref{1.6.1}
+we showed that if $f(x) = x^2 + 2$,
+then $f'(2) = 4$.
+We interpret the number 4
+not only as the slope of the line tangent to the graph of $f$ at $(2, 6)$
+but also as the rate of change of $f(x)$ with respect to $x$ there.
+From the picture of the graph in Figure \figref{1.36}
+\putfig{3truein}{scanfig1_36}{}{fig 1.36}
+it is apparent that at $(2, 6)$
+a small change in $x$
+produces a corresponding change four times as great in $f(x)$.
+In Section \secref{1.4} the idea of limit was introduced by examples
+and by exploiting the reader's intuitive understanding
+of continuity and continuous curves.
+We then gave a formal definition
+and proceeded in terms of it to go back and define continuity precisely.
+We shall do an analogous thing here and now define the
+\dt{slope of the graph of $f$ at the point $(a, f(a))$},
+or more simply the
+\dt{slope of the curve $y = f(x)$ at $(a,f(a))$},
+to be the derivative $f'(a)$.
+
+We conclude this section with the theorem
+
+\begin{prop}\label{thm 1.6.1}
+If a function $f$ is differentiable at $a$, then it is continuous there.
+\end{prop}
+
+\begin{proof}
+The hypothesis that
+$$
+\lim_{t \rightarrow 0} {\frac{f(a + t) - f(a)}{t}}
+$$
+exists implies tacitly that $a$ is in the domain of $f$.
+If a quotient approaches a finite limit as the denominator approaches zero,
+then the numerator must also approach zero.
+This fact is a consequence of the theorem that
+the limit of a product is the product of the limits
+[see part (iii) of Theorem \thref{1.4.1}].
+In this case, we have
+\begin{eqnarray*}
+\lim_{t \rightarrow 0} [f(a + t) - f(a)]
+&=&  \lim_{t \rightarrow 0}
+\Bigl[ {\frac{f(a + t) - f(a)}{t}} \cdot t \Bigr]  \\
+&=&  \lim_{t \rightarrow 0}
+\Bigl[ \frac {f(a + t) - f(a)}{t} \Bigr] \cdot \lim_{t \rightarrow 0} t \\
+&=&  f'(a) \cdot 0 = 0 .
+\end{eqnarray*}
+The equation $\lim_{t \rightarrow 0} {[f(a + t) - f(a)]} = 0$
+is equivalent to
+\begin{equation}
+\lim_{t \rightarrow 0} f(a + t) = f(a) .
+\label{eq1.6.3}
+\end{equation}
+If we set $x = a + t$,
+then $x$ approaches $a$ as $t$ approaches 0,
+and conversely.
+So \eqref{1.6.3} becomes
+$$
+\lim_{x \rightarrow a} f(x) = f(a) ,
+$$
+and the proof is complete.
+\end{proof}

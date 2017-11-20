@@ -1,0 +1,308 @@
+\section{Inverse Trigonometric Functions.} 
+The function $\sin$ does not have an inverse function. The reason is that it is perfectly possible to have $a \neq b$ and $\sin a = \sin b$. Another way to reach the same conclusion is to consider the equation $x = \sin y$. Its graph is the curve in Figure 14. It does not define a function of $x$ because it does not satisfy the condition in the definition of function (see page 14) which asserts that every vertical line intersects the graph of a function in at most one point.
+
+%Figure 14
+\putfig{2.25truein}{scanfig6_14}{}{fig 6.14}
+
+However, on the interval $\Bigl[-\frac{\pi}{2}, \frac{\pi}{2}\Bigr]$ the function $\sin$ is a strictly increasing function. Hence, although $\sin$ does not have an inverse, it follows by Theorem (2.4), page 250,
+that the function $\sin$ \textit{with domain restricted to} $\Bigl[-\frac{\pi}{2}, \frac{\pi}{2}\Bigr]$ does have an inverse. This inverse function is denoted by either $\sin^{-1}$ or $\arcsin$, and in this book we shall use the latter notation.  Thus
+
+$$
+\begin{array}{c}
+ y = \arcsin x \;\;\;\mbox{if and only if}\;\;\;  x = \sin y \\ 
+\mbox{and}\;\;\;  -\frac{\pi}{2} \leq y \leq \frac{\pi}{2}.
+\end{array}
+$$
+%312 TRIGONOMETRIC FUNCTIONS [CHAP. 6
+
+The graph of the function $\arcsin$ is shown in Figure 15(b). It is that part of the graph of the
+equation $x = \sin y$ for which $y$ satisfies the inequality $-\frac{\pi}{2} \leq y \leq \frac{\pi}{2}$. Note that the graph of $\arcsin$ is obtained from the graph of the restricted function $\sin$ by reflection across the diagonal line $y = x$. It follows both from the definition of $\arcsin$ and also from the illustration that \textit{the domain of $\arcsin$ is the closed interval $[ -1, 1]$ and the range is the closed interval $\Bigl[-\frac{\pi}{2}, \frac{\pi}{2}\Bigr]$.}
+
+%Figure 1S
+\putfig{4.5truein}{scanfig6_15}{}{fig 6.15}
+
+It is a consequence of Theorem (3.4), page 261, that the function $\arcsin$ is differentiable at every point of its domain except at -1 and +1. [In applying (3.4), let $f$ be the function $\sin$ restricted to $\Bigl[-\frac{\pi}{2}, \frac{\pi}{2}\Bigr]$ and then $f^{-1} = \arcsin$.] We may compute the formula for the derivative either directly from (3.4) or by implicit differentiation. Choosing the latter method, we begin with $y = \arcsin x$ and seek to find $\frac{dy}{dx}$. If $y = \arcsin x$, then $x = \sin y$, and so
+
+$$
+\frac{d}{dx} x = \frac{d}{dx} \sin y,  \;\;\; \mbox{or}\;\;\; 1 = \cos y \frac{dy}{dx}
+$$
+Hence
+$$
+\frac{dy}{dx} = \frac{1}{\cos y}.
+$$
+%SEC. 4] INVERSE TRIGONOMETRIC FUNCTIONS  313
+\noindent To express $\cos y$ in terms of $x$, we use the identity $\cos^{2} y + \sin^{2} y = 1$ 
+and the fact that $x = \sin y$.  Hence $\cos^{2} y + x^{2} = 1$, and therefore
+
+$$
+\cos y = \pm \sqrt {1 - x^2} .
+$$
+However, $y$ is restricted by the inequality $-\frac{\pi}{2} \leq y \leq \frac{\pi}{2}$ and in this interval $\cos y$ is never negative. Hence the positive square root is the correct one, and we conclude that $\frac{dy}{dx}  = \frac{1}{\sqrt{1 - x^2}}$. Thus
+
+\begin{theorem} %(4.1 ) 
+$$
+\frac{d}{dx} \arcsin x = \frac{1}{\sqrt{1 - x^2}}.
+$$
+\end{theorem}
+
+%EXAMPLE 1. 
+\begin{example} 
+Find the domain, range, and derivative of each of the composite functions
+$$
+\mbox{(a)}\;\;\; \arcsin \frac{1}{1 + x^2}, \;\;\; \mbox{(b)}\;\;\; \arcsin(\ln x).
+$$
+The quantity $\frac{1}{1 + x^2}$ is defined for every real number $x$ and also satisfies the inequalities $0 < \frac{1}{1 + x^{2}} \leq 1$. Hence, $\arcsin \frac{1}{1 + x^{2}}$ is defined for every $x$; i.e., its domain is the set of all real numbers. The range of the function $\frac{1}{1 + x^{2}}$, however, is the half-open interval (0, 1].  It can be seen from Figure 15(b) that the function $\arcsin$ maps the interval (0, 1] on the $x$-axis onto the interval $\Bigl(0, \frac{\pi}{2}\Bigr]$ on the $y$-axis. It follows that the range of the composition $\arcsin \frac{1}{1 + x^{2}}$ is the half-open interval $\Bigl(0, \frac{\pi}{2}\Bigr]$. The derivative is found using (4.1) and the Chain Rule:
+
+
+\begin{eqnarray*}
+\frac{d}{dx} \arcsin \frac{1}{1 + x^{2}} 
+&=& \frac{1}{\sqrt{1 - \Bigl(\frac{1}{1 + x^2}\Bigr)^2}} \frac{d}{dx} \Bigl(\frac{1}{1 + x^2}\Bigr) \\
+&=& \frac{1}{\sqrt {   \frac{(1 + x^2)^2 - 1}{(1 + x^2)^2}  } } \frac{-2x}{(1 + x^2)^2}    \\
+&=& \frac{-2x}{(1 + x^2) \sqrt {2x^{2} + x^{4}}}= \frac{-2x}{(1 + x^2) |x| \sqrt {2 + x^2}}.
+\end{eqnarray*} 
+\end{example}
+
+% 314 TRlCONOME7-RlC FUNCTIONS [CHAP. 6
+
+For any particular value of $x$, the quantity $\arcsin(\ln x)$ is defined if and only if $\ln x$ is defined and also lies in the domain of the function $\arcsin$, which is the interval [ - 1, 1].  Thus $x$ must be positive, and $\ln x$ must satisfy the inequalities $-1 \leq \ln x \leq 1$. Hence $x$ must satisfy $\frac{1}{e} \leq x \leq e$.  The domain of $\arcsin (\ln x)$ is therefore the interval $\Bigl[\frac{1}{e}, e\Bigr]$, and the range is the same as that of $\arcsin$, i.e., the interval $\Bigl[ -\frac{\pi}{2}, \frac{\pi}{2} \Bigr]$. The derivative is given by
+
+$$
+\frac{d}{dx} \arcsin(\ln x) = \frac{1}{\sqrt {1 - (\ln x)^2}} \frac{d}{dx} \ln x 
+=  \frac{1}{x \sqrt{1 - (\ln x)^2}} .
+$$
+
+The integral formula corresponding to (4.1) is
+
+\begin{theorem} %( 4.2 )
+$$
+\int \frac{dx}{\sqrt {1 - x^2}}  = \arcsin x + c.  
+$$
+\end{theorem}
+
+%EXAMPLE 2. 
+\begin{example}
+Find $\int \frac{x dx}{\sqrt 4 - x^4}$. The first thing we do is to write the denominator, as closely as possible, in the form $\sqrt {1 - u^2}$. 
+
+$$
+ \frac{1}{\sqrt{4 - x^4}} = \frac{1}{\sqrt{4 \Bigl(1 - \frac{x^4}{4}\Bigr)}} = \frac{1}{2 \sqrt {1 - \Bigl(\frac{x^2}{2}\Bigr)^2}}
+$$
+Hence, letting $u = \frac{x^2}{2}$, we have $\frac{du}{dx} = x$ and 
+$$
+\int \frac{x dx}{\sqrt{4 - x^4}} 
+= \frac{1}{2} \int \frac{x dx}{\sqrt {1 - \Bigl(\frac{x^2}{2}\Bigr)^2} } 
+= \frac{1}{2} \int \frac{1}{\sqrt{1 - u^2}} \frac {du}{dx} dx .
+$$
+By (4.2), 
+$$
+\frac{1}{2} \int \frac{1}{\sqrt {1 - u^2}} \frac{du}{dx} dx  = \frac{1}{2} \arcsin u + c. 
+$$
+Finally, substituting $\frac{x^2}{2}$ for $u$, we obtain
+$$
+\int \frac{xdx}{\sqrt {4 - x^4}} = \frac{1}{2} \arcsin \frac{x^2}{2} + c.
+$$
+\end{example}
+%SEC. 4] INVERSE TRIGONOMETRIC FUNCTIONS  315
+
+%Figure16
+\putfig{4.5truein}{scanfig6_16}{}{fig 6.16}
+
+The function $\cos$ does not have an inverse for the same reason that $\sin$ does not. However, a partial inverse can be obtained, just as before, by restricting the domain to an interval on which $\cos$ is either increasing or decreasing. Any such interval can be chosen. With the function $\sin$ it was natural to choose the largest possible interval containing the number 0---the closed interval $\Bigl[ -\frac{\pi}{2}, \frac{\pi}{2}\Bigr]$. With $\cos$ the choice is less obvious. However, we shall select the interval $[0, \pi]$, on which $\cos$ is strictly decreasing [see Figure 16(a)]. The function $\cos$ with domain restricted to $[0, \pi]$ then has an inverse, which is denoted $\cos^{-1}$ or $\arccos$. As before, we shall use the second notation. Thus
+
+$$
+\begin{array}{c}
+ y = \arccos x \;\;\; \mbox{if and only if}\;\;\;  x = \cos y  \\
+ \mbox{and}\;\;\; 0 \leq y \leq \pi.
+\end{array}
+$$
+The graph of $\arccos$ is shown in Figure 16(b).
+
+It should come as no surprise that the two functions $\arcsin$ and $\arccos$ are closely related. In fact, 
+
+\begin{theorem} %( 4.3 )  
+$$
+\arcsin x = \frac{\pi}{2} - \arccos x.
+$$
+\end{theorem}
+
+
+\begin{proof}
+Let $y = \frac{\pi}{2} - \arccos x$. Then $\arccos x = \frac{\pi}{2} - y$, and so 
+$x = \cos \Bigl(\frac{\pi}{2} - y \Bigr)$.
+Hence 
+$$
+x = \cos \Bigl(\frac{\pi}{2} - y \Bigr) = \cos \frac{\pi}{2} \cos y + \sin \frac{\pi}{2} \sin y = \sin y.
+$$
+Since $0 \leq \arccos x \leq \pi$, it follows that $-\pi \leq - \arccos x \leq 0$ and hence 
+$- \frac{\pi}{2} \leq \frac{\pi}{2} -\arccos x \leq \frac{\pi}{2}$ or, equivalently, $- \frac{\pi}{2} \leq y \leq \frac{\pi}{2}$ . This, together with $x = \sin y$, implies that $y = \arcsin x$, and the proof is complete.
+\end{proof}
+
+Note that the validity of (4.3) depends on our having chosen $\arccos$ so that its range is the interval $[0, \pi]$.
+
+It follows from (4.3) that the derivative of $\arccos$ is the negative of the derivative of $\arcsin$. Thus
+
+\begin{theorem} %(4.4)
+$$
+\frac{d}{dx} \arccos x = -\frac{1}{\sqrt{1 - x^2}}.
+$$
+\end{theorem}
+
+From (4.4) we see that another indefinite integral of $\frac{1}{\sqrt{1 - x^2}}$ is $-\arccos x$.
+
+Obviously, not one of the six trigonometric functions with unrestricted domain has an inverse.
+The function $\tan$ with its domain restricted to the open interval $\Bigl( -\frac{\pi}{2}, \frac{\pi}{2} \Bigr)$ is strictly increasing and so has an inverse function, which we denote $\tan^{-1}$ or $\arctan$.
+
+$$ 
+\begin{array}{c}
+y = \arctan x \;\;\; \mbox{if and only if} \;\;\; x = \tan y  \\
+\mbox{and}\;\;\; -\frac{\pi}{2} < y < \frac{\pi}{2}.
+\end{array}
+$$
+
+The graph of $\arctan$ is obtained by reflecting the graph of $\tan$ with domain restricted to 
+$\Bigl( -\frac{\pi}{2}, \frac{\pi}{2}\Bigr)$ across the diagonal line $y = x$. It is shown in Figure 17(b). 
+As can be seen from Figure 17(a), the function $\tan$ maps the open interval $\Bigl( -\frac{\pi}{2}, \frac{\pi}{2}\Bigr )$ onto the entire set of real numbers.  That is, for every real number $y$, 
+there exists a real number $x$ in $\Bigl( -\frac{\pi}{2}, \frac{\pi}{2} \Bigr)$ such that $y = \tan x$.  
+Hence \textit{the domain of arctun is the whole real line $( -\infty, \infty)$. The range is the interval 
+$\Bigl( -\frac{\pi}{2}, \frac{\pi}{2}\Bigr)$.}
+%SEC. 4] INVERSE TRIGONOMETRIC FUNCTIONS 317 
+
+%Figure 17
+\putfig{4.5truein}{scanfig6_17}{}{fig 6.17}
+
+It is a corollary of Theorem (3.4), page 261, that $\arctan$ is a differentiable function. 
+We compute the derivative by implicit differentiation. Let $y = \arctan x$.  Then $x = \tan y$, and
+
+$$
+\frac{d}{dx} x = \frac{d}{dx} \tan y \;\;\;\mbox{or}\;\;\; 1 = \sec^{2}y \frac{dy}{dx}.
+$$
+Hence
+$$
+\frac{dy}{dx} = \frac{1}{\sec^{2} y}. 
+$$
+From the identity $\sec^{2} y = 1 + \tan^{2} y$, we get $\sec^{2} y = 1 + x^{2}$. 
+It follows that $\frac{d}{dx} = \frac{1}{1 + x^2}$. Thus  
+
+\begin{theorem} %(4.5)
+$$
+\frac{d}{dx} \arctan x = \frac{1}{1 + x^{2}}.
+$$\end{theorem}
+
+The corresponding integral formula is
+
+\begin{theorem} %(4.6)
+$$ 
+\int \frac{dx}{1 + x^2} = \arctan x + c .
+$$
+\end{theorem}
+% 318 TRIGONOMFIRIC FUNCTIONS [CHAP. 6 
+
+%EXAMPLE 3. 
+\begin{example} Compute the definite integral $\int_{0}^{1} \frac{dx}{1 + x^2}$. We get immediately
+
+$$
+\int_{0}^{1} \frac{dx}{1 + x^2} = \arctan x \big |_{0}^{1} = \arctan 1 - \arctan 0.
+$$
+Since $\tan 0 = 0$ and $\tan \frac{\pi}{4} = 1$, we know that $0 = \arctan 0$ 
+and $\frac{\pi}{4} = \arctan 1$.  Hence 
+$$
+\int_{0}^{1} \frac{dx}{1 + x^2} = \frac{\pi}{4}.
+$$
+This is a fascinating result: The number $\pi$ is equal to four times the area bounded by the curve $y = \frac{1}{1 + x^2}$, the $x$-axis, and the lines $x= 0$ and $x = 1$.
+\end{example}
+
+The function $\cot$ is strictly decreasing on the open interval $(0, \pi)$. With its domain restricted to this interval, $\cot$ therefore has an inverse function, which we denote $\cot^{-1}$ or $\mathrm{arccot}$. 
+The relation between the two functions $\mathrm{arccot}$ and $\arctan$ is the same as that between $\arccos$ and $\arcsin$,
+
+\begin{theorem} %(4.7 )  
+$$
+\mbox{arccot} x = \frac{\pi}{2} - \arctan x.
+$$
+\end{theorem}
+
+The proof is analogous to the proof of (4.3) and is left to the reader as an exercise. It is a corollary that the derivative of $\mathrm{arccot}$ is the negative of the derivative of $\arctan$. Hence
+
+\begin{theorem} %(4.8 )
+$$
+\frac{d}{dx}  \mathrm{arccot}\; x = - \frac{1}{1 + x^{2}}.
+$$
+\end{theorem}
+
+Here again, we see another indefinite integral of $\frac{1}{1 + x^2}$, the function $-\mathrm{arccot}\; x$.
+
+The union of the two half-open intervals $\Bigl[0, \frac{\pi}{2}\Bigr)$ and $(\frac{\pi}{2}, \pi]$ consists
+of all real numbers $x$ such that $0 \leq x \leq \pi$ and $x \neq \frac{\pi}{2}$. It can be seen from 
+the graph of the equation $y = \sec x$ in Figure 13, page 308, that if $a$ and $b$ are two numbers 
+in the union $[0, \frac{\pi}{2}) \cup (\frac{\pi}{2}, \pi]$ and if $a \neq b$, then
+%SEC. 4] INVERSE TRIGONOMETRIC FUNCTIONS  319
+$\sec a \neq \sec b$. We omit $\frac{\pi}{2}$ because the secant of that number is not defined. 
+It follows that the function $\sec$ with domain restricted to $\Bigl[0, \frac{\pi}{2}\Bigr) \cup \Bigl(\frac{\pi}{2}, \pi\Bigr]$ has an inverse, which is denoted $\sec^{-1}$ or $\mathrm{arcsec}$.  Thus
+
+$$
+\begin{array}{c}
+ y = \mathrm{arcsec}\; x \;\;\; \mbox{if and only if} \;\;\; x = \sec y  \\
+ \mbox{and $y$ is in}\; [0, \frac{\pi}{2}) \cup (\frac{\pi}{2}, \pi].
+\end{array}
+$$
+
+The graph of the function $\mathrm{arcsec}$ is shown in Figure 18(b). \textit{Its range is the union} $\Bigl[0,\frac{\pi}{2}\Bigr) \cup \Bigl(\frac{\pi}{2}, \pi \Bigr]$. As can be seen from Figure 18(a), the function sec maps the set $\Bigl[0, \frac{\pi}{2}\Bigr) \cup \Bigl(\frac{\pi}{2}, \pi \Bigr]$ onto the set of all real numbers with absolute value greater than or equal to 1. Hence \textit{the domain of $\mathrm{arcsec}$ is the set of all real numbers $x$ such that $|x| \geq 1$.}
+
+%Figure 18
+\putfig{4.5truein}{scanfig6_18}{}{fig 6.18}
+
+The derivative can again be found by implicit differentiation. Let $y = \mathrm{arcsec}\; x$.  Then $x = \sec y$ and
+$$
+\frac{d}{dx} x = \frac{d}{dx} \sec y, \;\;\;\mbox{which implies}\;\;\; 1 = \sec y \tan y \frac{dy}{dx}.
+$$
+Thus 
+$$
+\frac{dy}{dx} = \frac{ 1} {\sec y \tan y}.
+$$
+%320 TR/GONOMETRIC FUNCTIONS [CHAP. 6
+\noindent Using the identity $\sec^{2} y = 1 + \tan^{2} y$ and the equation $x = \sec y$, we obtain 
+
+$$
+\sec y \tan y = \pm x \sqrt{x^{2} - 1}.
+$$
+If $x \geq 1$, then $0 \leq y < \frac{\pi}{2}$, and so $\sec y \tan y$ is nonnegative. Hence
+$$
+\sec y \tan y = x \sqrt{x^{2} - 1} \;\;\;\mbox{if}\; x \geq 1.
+$$
+On the other hand, if $x \leq -1$, then $\frac{\pi}{2} < y \leq \pi$, and in this case both $\sec y$ and $\tan y$ are nonpositive. Their product is therefore again nonnegative; i.e., 
+
+$$
+\sec y \tan y = -x \sqrt{x^{2} - 1}\;\;\;  \mbox{if}\; x \leq -1.
+$$
+It follows that both cases are covered by the single equation $\sec y \tan y = |x| \sqrt{x^{2} -1}$. Hence $\frac{dy}{dx} = \frac{1}{|x| \sqrt{x^2 - 1}}$, and we have derived the formula
+
+\begin{theorem} %( 4.9 ) 
+$$
+\frac{d}{dx} \mathrm{arcsec}\; x = \frac{1}{|x| \sqrt{x^{2} - 1}}.
+$$
+\end{theorem}
+
+The final inverse trigonometric function is the inverse of the cosecant with domain restricted to the union $\Bigl[ -\frac{\pi}{2}, 0\Bigr) \cup \Bigl(0, \frac{\pi}{2}\Bigr]$.  This function, denoted $\csc^{-1}$ or $\mathrm{arccsc}$, has range equal to $\Bigl[ - \frac{\pi}{2}, 0\Bigr) \cup \Bigl(0, \frac{\pi}{2}\Bigr]$ and domain equal to the set of all real numbers $x$ such that $|x| \geq 1$. The analogue of (4.3) and (4.7) is valid. That is,
+
+\begin{theorem} %( 4.10 ) 
+$$
+ \mathrm{arcsec}\; x = \frac{\pi}{2} -  \mathrm{arccsc}\; x.
+$$
+\end{theorem}
+
+
+\begin{proof}
+The proof mimics that of (4.3). Let $y = -\frac{\pi}{2} - \mathrm{arccsc}\; x$. 
+Then $\mathrm{arccsc}\; x = \frac{\pi}{2} - y$, and so $x = \csc \Bigl(\frac{\pi}{2} - y \Bigr)$. Thus
+$$
+x = \csc \Bigl(\frac{\pi}{2} - y \Bigr) = \frac{1}{\sin \Bigl(\frac{\pi}{2} - y \Bigr)} = \frac{1}{\cos y} = \sec y.
+$$
+Since $-\frac{\pi}{2} \leq \mathrm{arccsc}\; x \leq \frac{\pi}{2}$ it follows that $0 \leq \frac{\pi}{2} - \mathrm{arccsc}\; x \leq \pi$, or, equivalently, that $0 \leq y \leq \pi$. This, together with $x = \sec y$, implies that $y = \mathrm{arcsec}\; x$, and the proof is complete.
+\end{proof}
+
+From this it follows at once that
+
+\begin{theorem} %(4.11 ) 
+$$
+\frac{d}{dx} \mathrm{arccsc}\; x 
+= -\frac{1}{|x| \sqrt{x^{2} - 1}} .
+$$
+\end{theorem}

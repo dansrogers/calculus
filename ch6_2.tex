@@ -1,0 +1,355 @@
+\section{Calculus of Sine and Cosine.}
+ The formulas for the derivative and integral of the functions $\sin$
+and $\cos$ follow in a straightforward way from one fundamental limit theorem. It is
+
+\begin{theorem} %( 2.1 ) 
+$$
+\lim_{t \rightarrow 0} \frac{\sin t}{t} = 1.  
+$$
+\end{theorem}
+
+%Figure 6
+\putfig{4truein}{scanfig6_6}{}{fig 6.6}
+
+
+\begin{proof}
+It is convenient first to impose the restriction that $t > 0$ and prove that the limit from
+the right equals 1; i.e.,
+\begin{equation}
+\lim_{t \rightarrow 0+} \frac{\sin t}{t} = 1.  
+\label{eq6.2.1}
+\end{equation}
+Since, in proving (1), we are concerned only with small values of $t$, we may assume 
+that $t < \frac{\pi}{2}$.  Thus we have $0 < t < \frac{\pi}{2}$ and, as a consequence,
+$\sin t > 0$ and $\cos t > 0$. Let $S$ be the region in the plane bounded by the circle $x^2 + y^2 = 1$, 
+the positive $x$-axis, and the line segment which joins the origin to the point $(\cos t, \sin t)$; i.e., 
+$S$ is the shaded sector in Figure 6. Since  
+the area of the circle is $\pi$ and the circumference is $2\pi$, the area of $S$ is equal to 
+$\frac{t}{2\pi} \cdot \pi = \frac{t}{2}$.  Next, consider the right triangle $T_{1}$ with vertices (0, 0),
+$(\cos t, \sin t)$, and $(\cos t, 0)$. Since the area of any triangle is one half the base times the
+altitude, it follows that $area(T_{1}) = \frac{1}{2} \cos t \sin t$. The line which passes through (0,0) 
+and $(\cos t, \sin t)$ has slope $\frac{\sin t}{\cos t}$ and equation $y =\frac{\sin t}{\cos t}x$. 
+Setting $x = 1$, we see that it passes through the point
+$\Bigl(1,\frac{\sin t}{\cos t} \Bigr)$, as shown in Figure 6. Hence if $T_{2}$ is the right triangle with  
+vertices (0,0), $\Bigl(1, \frac{\sin t}{\cos t} \Bigr)$, and (1, 0), then
+$$
+area(T_{2}) = \frac{1}{2} \cdot 1 \cdot \frac{\sin t}{\cos t} = \frac{1}{2} \frac{\sin t}{\cos t}.
+$$
+Since $T_{1}$ is a subset of $S$ and since $S$ is a subset of $T_{2}$, it follows by a fundamental property of area [see (1.3), page 171] that
+$$
+area(T_{1}) \leq area(S) \leq area(T_{2}).
+$$
+Hence
+$$
+\frac{1}{2} \cos t \sin t \leq \frac{t}{2} \leq \frac{1}{2} \frac{\sin t}{\cos t} .
+$$
+If we multiply through by $\frac{2}{\sin t}$, we get  
+$$
+\cos t \leq \frac{t}{\sin t} \leq \frac{ 1}{\cos t}.
+$$
+Taking reciprocals and reversing the direction of the inequalities, we obtain finally
+\begin{equation}
+\frac{1}{\cos t} \geq \frac{\sin t}{t} \geq \cos t.  
+\label{eq6.2.2}
+\end{equation}
+With these inequalities, the proof of (1) is essentially finished. Since the function $\cos$ is continuous, we have $\lim_{t \rightarrow 0+} \cos t = \cos 0 = 1$. Moreover, the limit of a quotient is the quotient of the limits, and so $\lim_{t \rightarrow 0+} \frac{1}{\cos t} = \frac{1}{1} = 1$.
+ Thus $\frac{\sin t}{t}$ lies between two quantities both of which approach 1 as $t$ approaches zero from the right. It follows that 
+$$
+\lim_{t \rightarrow 0+} \frac{\sin t}{t} = 1.  
+$$
+
+It is now a simple matter to remove the restriction $t > 0$. Since $\frac{\sin t}{t} = \frac{- \sin t}{-t} = \frac{\sin(-t)}{-t}$,  we know that
+\begin{equation}
+\frac{\sin t}{t} = \frac{\sin |t|}{|t|}.
+\label{eq6.2.3}
+\end{equation}
+As $t$ approaches zero, so does $|t|$; and as $|t|$ approaches zero, we have just proved that the right side of (3) approaches 1. The left side, therefore, also a pproaches 1, and so the proof is complete.
+\end{proof}
+
+It is interesting to compare actual numerical values of $t$ and $\sin t$.
+Table 1 illustrates the limit theorem (2.1) quite effectively.
+\medskip
+
+%TABLE I
+\begin{table}
+\centering
+\begin{tabular}{c|c}\hline
+\centering
+  $t$ & $\sin t$ \\ \hline
+0.50 & 0.4794 \\
+0.40 & 0.3894 \\
+0.30 & 0.2955 \\
+0.20 & 0.1987 \\
+0.10 & 0.0998 \\
+0.08 & 0.0799 \\
+0.06 & 0.0600 \\
+0.04 & 0.0400 \\
+0.02 & 0.0200 \\ \hline
+\end{tabular}
+\caption{}
+\label{table 6.1}
+\end{table}
+\medskip
+
+A useful corollary of (2.1) is
+
+\begin{theorem} %(2.2) 
+$$
+\lim_{t \rightarrow 0} \frac{1 - \cos t}{t} = 0. 
+$$
+\end{theorem}
+
+
+\begin{proof}
+Using trigonometric identities, we write $\frac{1 - \cos t}{t}$ in such a form that (2.1) is applicable. 
+$$
+\begin{array}{rcll}
+      1 &=&                                                & \cos^{2} \frac{t}{2} + \sin^{2}\frac{t}{ 2},\\
+\cos t &=& \cos (\frac{t}{2} + \frac{t}{2}) =& \cos^{2} \frac{t}{2} - \sin^{2} \frac{t}{2}.
+\end{array}
+$$
+Hence $1 -  \cos t = 2 \sin^{2} \frac{t}{2}$, and 
+$$
+\frac{1 - \cos t}{t} = \frac{t}{2} \sin^{2} \frac{t}{2} 
+= \Bigl(\frac{\sin \frac{t}{2}}{\frac{t}{2}} \Bigr) \sin \frac{t}{2}.
+$$
+As $t$ approaches zero, $\frac{t}{2}$ also approaches zero, so, by (2.1), the quantity 
+$$
+\frac{\sin \frac{t}{2}}{\frac{t}{2}}
+$$
+approaches 1.  Moreover, $\sin$ is a continuous function, and therefore $\sin \frac{t}{2}$ approaches $\sin 0 = 0$. The product therefore approaches $1 \cdot 0 = 0$, and the proof is complete.
+\end{proof}
+
+In writing values of the functions $\sin$ and $\cos$, we have thus far avoided the letter $x$ and have not written $\sin x$ and $\cos x$ simply because the point on the circle $x^{2} + y^{2} = 1$ whose coordinates define the value of $\cos$ and $\sin$ has nothing to do with, and generally does not lie on, the $x$-axis. However, when we study $\sin$ and $\cos$ as two real-valued functions of a real variable, it is natural to use $x$ as the independent variable. 
+We shall not hesitate to do so from now on.
+
+
+%EXAMPLE 1. 
+\begin{example} Evaluate the limits 
+$$
+\mbox{(a)}\;\;\; \lim_{x \rightarrow 0} \frac{\sin 3x}{\sin 7x},\;\;\;   
+\mbox{(b)}\;\;\; \lim_{x \rightarrow 0} \frac{1 - \cos^{2} x}{x}, \;\;\; 
+\mbox{(c)}\;\;\; \lim_{x \rightarrow 0} \frac{\cos x}{\sin x}.
+$$
+
+\noindent We evaluate the first two limits by writing the quotients in such a form that the fundamental trigonometric limit theorem, $\lim_{x \rightarrow 0} \frac{\sin x}{x} = 1$, is applicable. For (a),
+
+$$
+\frac{\sin 3x}{\sin 7x} = \frac{\sin 3x}{3x} \frac{7x}{\sin 7x} \frac{3}{7}.
+$$
+\noindent As $x$ approaches zero, so does $3x$ and so does $7x$. Hence $\frac{\sin 3x}{3x}$ approaches 1, and $\frac{7x}{\sin 7x} = \Bigl(\frac{\sin 7x}{7x} \Bigr)^{-1}$ approaches $1^{-1} = 1$. 
+We conclude that
+
+
+$$
+\lim_{x \rightarrow 0} \frac{\sin 3x}{\sin 7x} = 1 \cdot 1 \cdot \frac{3}{7} = \frac{3}{7}. 
+$$
+\noindent To do (b), we use the identity $\cos^{2} x + \sin^{2} x = 1$. Thus 
+
+$$
+\frac{1 - \cos^{2}x}{x} = \frac{\sin^{2} x}{x} = \sin x \frac{\sin x}{x}.
+$$
+\noindent As $x$ approaches zero, $\sin x$ approaches $\sin 0 = 0$, and $\frac{\sin x}{x}$ approaches 1. Hence
+
+$$
+\lim_{x \rightarrow 0} \frac{1 - \cos^{2}x}{x} = 0 \cdot 1 = 0.
+$$
+\noindent For (c), no limit exists. The numerator approaches 1, and the denominator approaches zero.  Note that we cannot even write the limit as $+\infty$ or $-\infty$ because $\sin x$ may be either positive or negative. As a result, $\frac{\cos x}{\sin x}$ takes on both arbitrarily large positive values and arbitrarily large negative values as $x$ approaches zero.
+\end{example}
+% 294 TRIGONOMETRIC FUNCTIONS [CHAP. 6
+
+We are now ready to find $\frac{d}{dx} \sin x$. The value of the derivative at an arbitrary number $a$ is by definition
+
+$$
+\Bigl(\frac{d}{dx} \sin x \Bigr) (a) = \lim_{t \rightarrow 0} \frac{\sin (a + t) - \sin a}{t}.
+$$
+\noindent As always, the game is to manipulate the quotient into a form in which we can see what the limit is. Since $\sin(a + t) = \sin a \cos t + \cos a \sin t$, we have 
+
+\begin{eqnarray*}
+\frac{\sin(a + t) - \sin a}{t} &=& \frac{\sin a \cos t + \cos a \sin t - \sin a}{t}\\
+                                         &=& \cos a \frac{\sin t}{t} - \sin a \frac{1 - \cos t}{t}.
+\end{eqnarray*}
+\noindent As $t$ approaches 0, the quantities $\cos a$ and $\sin a$ stay fixed. Moreover, $\frac{\sin t}{t}$   approaches 1, and $\frac{1 - \cos t}{t}$ approaches 0. Hence, the right side of the above equation approaches 
+$(\cos a) \cdot 1 - (\sin a) \cdot 0 = \cos a$. We conclude that
+
+$$
+\Bigl (\frac{d}{dx} \sin x \Bigr) (a) = \cos a, \;\;\;\mbox{for every real number}\; a.
+$$
+\noindent Writing this result as an equality between functions, we get the simpler form
+
+\begin{theorem} %(2.3)
+$$
+\frac{d}{dx} \sin x= \cos x.
+$$
+\end{theorem}
+
+The derivative of the cosine may be found from the derivative of the sine using the Chain Rule
+and the twin identities $\cos x = \sin \Bigl(\frac{\pi}{2} - x \Bigr)$ and $\sin x = \cos \Bigl(\frac{\pi}{2} - x \Bigr)$ [see (1 6), page 286].
+
+
+\begin{eqnarray*}
+\frac{d}{dx} \cos x = \frac{d}{dx} \sin \Bigl(\frac{\pi}{2} - x \Bigr) 
+&=& \cos \Bigl(\frac{\pi}{2} - x \Bigr) \frac{d}{dx} \Bigl(\frac{\pi}{2} - x \Bigr) \\
+&=& \cos \Bigl(\frac{\pi}{2} - x \Bigr) (-1) = - \sin x.
+\end{eqnarray*}
+\noindent Writing this result in a single equation, we have
+
+\begin{theorem} %(2.4) 
+$$
+\frac{d}{dx} \cos x = - \sin x.  
+$$
+\end{theorem}
+%sec. 23 CALCULUS OF SINK AND COSINE  295
+
+%EXAMPLE 2. 
+\begin{example}
+Find the following derivatives.
+
+$$
+\begin{array}{ll}
+\mbox{(a)}\;\;\; \frac{d}{dx} \sin(x^{2} + 1), &\;\;\; \mbox{(c)}\;\;\; \frac{d}{dt} \sin e^{t}, \\
+\mbox{(b)}\;\;\; \frac{d}{dx} \cos 7x,            &\;\;\; \mbox{(d)}\;\;\; \frac{d}{dx} \ln (\cos x)^2.
+\end{array}
+$$
+
+These are routine exercises which combine the basic derivatives with the Chain Rule. 
+For (a) we have 
+
+$$
+\frac{d}{dt} \sin(x^2 + 1 ) = \cos(x^2 + 1 ) \frac{d}{dx} (x^{2} + 1 ) = 2x \cos(x^{2} + 1 ).
+$$
+\noindent The solution to (b) is
+
+$$
+\frac{d}{dx} \cos 7x = - \sin 7x \frac{d}{dx} 7x = - 7 \sin 7x. 
+$$
+\noindent For (c), 
+
+$$
+\frac{d}{dt} \sin e^{t} = \cos e^{t} \frac{d}{dt} e^{t} = e^{t} \cos e^{t}, 
+$$
+\noindent and for (d),
+
+
+\begin{eqnarray*}
+\frac{d}{dx} \ln (\cos x)^2 &=& \frac{1}{(\cos x)^{2}} \frac{d}{dx} (\cos x)^2 \\
+                                       &=& \frac{1}{(\cos x)^{2}} 2 \cos x \frac{d}{dx} \cos x \\
+                                       &=& \frac{-2\cos x \sin x}{(\cos x)^{2}} = -\frac{2 \sin x}{\cos x}.
+\end{eqnarray*}
+\end{example}
+
+Every derivative formula has its corresponding integral formula. For the trigonometric
+functions $\sin$ and $\cos$, they are
+
+\begin{theorem} %(2.5) 
+\begin{eqnarray*}
+ \int \sin x dx &=& -\cos x + c,  \\
+\int \cos x dx &=& \sin x + c. 
+\end{eqnarray*}
+\end{theorem}
+% 296 TRIGONOMETRIC FUNCTIONS [CHAP. 6
+
+The proofs consist of simply verifying that the derivative of the proposed integral is the integrand. For example, 
+
+$$
+\frac{d}{dx} (-\cos x + c) = - \frac{d}{dx} \cos x = \sin x.
+$$
+
+%EXAMPLE 3. 
+\begin{example} Find the following integrals.
+$$
+(a)\; \int \sin 8x dx, \;\;\;(b)\; \int x \cos(x^2) dx, \;\;\;(c)\; \int \cos^{5}x \sin x dx.
+$$
+
+The solutions use only the basic integral formulas and the fact that if $F' = f$, then $\int f(u) \frac{du}{dx} = F(u) + c$. Integral (a) is simple enough to write down at a glance:
+$$
+\int \sin 8x dx = - \frac{1}{8} \cos 8x + c.
+$$
+
+
+To do (b), let $u = x^2$. Then $\frac{du}{dx} = 2x$, and
+
+\begin{eqnarray*}
+\int x \cos(x^2) dx &=& \frac{1}{2}(\cos(x^2))2x dx \\
+                             &=& \frac{1}{2} \int (\cos u) \frac{du}{dx}dx \\
+                             &=& \frac{1}{2} \sin u + c \\
+                             &=& 2 \sin (x^2) + c.
+\end{eqnarray*}
+
+For (c), we let $u = \cos x$. Then $\frac{du}{dx} = -\sin x$. Hence 
+
+\begin{eqnarray*}
+\int \cos^{5} x \sin x dx &=& - \int \cos^{5} x (- \sin x) dx  \\
+&=& - \int u^{5} \frac{du}{dx} dx \\
+&=& - \frac{1}{6} u^{6} + c \\
+&=& - \frac{1}{6} \cos^{6} x + c.
+\end{eqnarray*}
+\end{example}
+
+The graphs of the functions $\sin$ and $\cos$ are extremely interesting and important curves. 
+To begin with, let us consider the graph of $\sin x$ only for $0 \leq x \leq \frac{\pi}{2}$.  A few isolated points can be plotted immediately (see Table 2).
+%SEC. 21 CALCULUS OF SINE AND COSINE  297
+\medskip
+
+%TABLE 2
+\begin{table}
+\centering
+\begin{tabular}{r|l}\hline
+                $x$ & $y = \sin x$ \\ \hline
+                    0 & 0\\
+$\frac{\pi}{6}$ & $\frac{1}{2}$ \\
+$\frac{\pi}{4}$ & $\frac{1}{2} \sqrt 2$ = 0.71 (approximately) \\
+$\frac{\pi}{3}$ & $\frac{1}{2} \sqrt 3$ = 0.87 (approximately) \\
+$\frac{\pi}{2}$ & 1\\\hline
+\end{tabular}
+\caption{}
+\label{table 6.2}
+\end{table}
+\medskip
+
+\noindent The slope of the graph is given by the derivative, $\frac{d}{dx} \sin x = \cos x$. 
+At the origin it is $\cos 0 = 1$, and, where $x = \frac{\pi}{2}$ the slope is $\cos \frac{\pi}{2} = 0$. 
+Since
+$$
+\frac{d}{dx} \sin x = \cos x > 0 \;\;\;\mbox{if}\; 0 < x < \frac{\pi}{2},
+$$
+\noindent we know that $\sin x$ is a strictly increasing function on the open interval $\Bigl(0, \frac{\pi}{2} \Bigr)$.  In addition, there are no points of inflection on the open interval and the curve is concave downward there because
+
+$$
+\frac{d^2}{dx^2} \sin x = \frac{d}{dx} \cos x = -\sin x < 0 \;\;\; \mbox{if}\; 0 < x < \frac{\pi}{2}.
+$$
+\noindent On the other hand, the second derivative changes sign at $x = 0$, and so there is a point of inflection at the origin. With all these facts we can draw quite an accurate graph. It is shown in Figure 7.  
+
+% Figure 7
+\putfig{4truein}{scanfig6_7}{}{fig 6.7}
+%298 TRIGONOMETRIC FUNCTIONS [CHAP. 6
+
+It is now a simple matter to fill in as much of the rest of the graph of $\sin x$ as we like. For every
+real number $x$, the points $x$ and $\pi - x$ on the real number line are symmetrically located about the point $\frac{\pi}{2}$. The midpoint between $x$ and $\pi - x$ is given by $\frac{x + (\pi - x)}{2} = \frac{\pi}{2}$. As $x$ increases from 0 to $\frac{\pi}{2}$ the number $\pi - x$ decreases from $\pi$ to $\frac{\pi}{2}$.   Moreover,
+
+
+\begin{eqnarray*}
+\sin(\pi - x) &=& \sin \pi \cos x - \cos \pi \sin x \\
+&=& 0 \cdot \cos x - (-1) \cdot \sin x \\
+&=& \sin x.
+\end{eqnarray*}
+\noindent It follows that the graph of $\sin x$ on the interval $\Bigl[\frac{\pi}{2}, \pi \Bigr]$ is the mirror image of the graph on $\Bigl[0, \frac{\pi}{2} \Bigr]$ reflected across the line $x = \frac{\pi}{2}$ . This is the dashed curve in Figure 7. Now, because $\sin x$ is an odd function, its graph for $x \leq 0$ is obtained by reflecting the graph for $x \geq 0$ about the origin (i.e., reflecting first about one coordinate axis and then the other). This gives us the graph for $-\pi \leq x \leq \pi$.  Finally, since $\sin x$ is a periodic function with period $2\pi$, its values repeat after intervals of length $2\pi$. It follows that the entire graph of $\sin x$ is the infinite wave, part of which is shown in Figure 8.
+
+%Figure 8
+\putfig{4.5truein}{scanfig6_8}{}{fig 6.8}
+
+The graph of $\cos x$ is obtained by translating (sliding) the graph of $\sin x$ to the left a distance $\frac{\pi}{2}$. This geometric assertion is equivalent to the algebraic equation $\cos x = \sin \Bigl(x + \frac{\pi}{2} \Bigr).$  But this follows from the trigonometric identity 
+
+\begin{eqnarray*}
+\sin \Bigl(x + \frac{\pi}{2} \Bigr) &=& \sin x \cos \frac{\pi}{2} + \cos x \sin \frac{\pi}{2}\\
+&=& (\sin x) \cdot 0 + (\cos x) \cdot 1\\
+&=& \cos x.
+\end{eqnarray*}
+%SEC. 2] CALCULUS OF SINE AND COSINE 299
+
+The graphs of $\cos x$ and $\sin x$ are shown together in Figure 9.
+
+%Figure 9
+\putfig{4.5truein}{scanfig6_9}{}{fig 6.9}
+
+

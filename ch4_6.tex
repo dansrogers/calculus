@@ -1,0 +1,376 @@
+\section{Indefinite Integrals.} 
+In this section we shall study the problem of finding a function given its
+derivative. The topic is a large one, and the present treatment is only an introduction. Many techniques for finding a function whose derivative is known have been developed, and some of these will be studied in Chapter 7.
+
+Recall that an antiderivative of a function $f$ is any differentiable function $F$ with the property that $F'(x) = f(x)$ for every $x$ in the domain of $f$. An antiderivative of $f$ is also called an \textbf{indefinite integral} of $f$ and is denoted by $\int f(x) dx$. If $F' = f$, we write
+$$
+\int f(x) dx = F(x) + c.
+$$
+\noindent Since the most we know about $\int f(x) dx$ and $F(x)$ is that they have the same derivative $f(x)$, they may very well differ by a nonzero constant. If the constant $c$ is omitted, there is a very real possibility of making an error, since a particular indefinite integral may not be the one which is the solution to the problem at hand.
+
+%EXAMPLE 1. 
+\begin{example}
+At every point $(x,f(x))$ on the graph of a given function $f$, there is a tangent line with slope equal to $x^2$. If the graph passes through the point (3, 2), find $f$. The solution is based on the fact that the slope of the tangent line is given by the derivative. Hence $f'(x) = x^2$. One function with this derivative is $\frac{x^3}{3}$, and so
+
+\begin{equation}
+f(x)= \frac{x^3}{3} + c, 
+\label{eq4.6.1}
+\end{equation}
+%210 INIECRATION [CHAP, 4 
+\noindent for some constant $c$. We also write 
+$$
+\int x^2 dx = \frac{x^3}{3} + c. 
+$$
+
+\noindent Since the point (3, 2) lies on the graph, we know that $f(3) = 2$. Thus
+$$
+2 = f(3) = \frac{3^3}{3} + c = 9 + c, 
+$$
+\noindent whence $c = - 7$, and we conclude that
+$$
+ f(x) = \frac{x^3}{3} - 7. 
+$$
+\noindent Omission of the $c$ in equation (1) would have lead to the incorrect answer $f(x) = \frac{x^3}{3}$.
+\end{example}
+\medskip
+
+The reason for calling an antiderivative of a function $f$ an indefinite integral and for denoting it by $\int f(x) dx$ is its close connection with the definite integral. Let $f$ be continuous on an interval containing $a$ and $b$. Since $\frac{d}{dx} {\int f(x) dx} = f(x)$, we obtain the formula
+
+\begin{equation}
+\int_{a}^{b} f(x) dx = \int f(x) dx \Big|_{a}^{b}
+\label{eq4.6.2}
+\end{equation}
+\noindent by applying Corollary (5.3) of the Fundamental Theorem of Calculus. The value of $\int f(x)dx|_{a}^{b}$ is the same for any two indefinite integrals of $f$ and there is therefore no need to include the constant c in applications of equation (2). For example, even though
+$$
+\int (2x + 1) dx = x^2 + x + c,
+$$
+\noindent for an arbitrary real number $c$, we may write
+$$
+\int_{0}^{2} (2x + 1 ) dx = \int (2x + 1 ) dx \Big|_{0}^{2} 
+= (x^2 + x) \Big|_{0}^{2} = 6.
+$$
+
+The integration techniques that we shall consider are expressed in formulas for finding indefinite integrals. The first four of these, (6.1), (6.2), (6.3), and (6.4), have already been used in computing definite integrals. We
+%SEC. 6] INDEFINITE INTEGRALS 211
+write them down only to make them explicit. They are:
+
+\begin{theorem} %(6.1) 
+$$\int [f(x) + g(x)]dx = \int f(x)dx + \int g(x)dx.$$
+\end{theorem}
+
+\begin{theorem} %(6.2)
+$$
+\int kf(x) dx = k \int f(x) dx, \;\mbox{for every constant}\; k. 
+$$
+\end{theorem}
+
+\begin{theorem} %(6.3) 
+$$\int dx = x + c. $$ 
+\end{theorem}
+
+\begin{theorem} %(6.4)
+$$
+\int x^r dx =  \frac{x^{r + 1}}{r + 1} + c, \;\mbox{where $r$ is a rational number different from -1.}
+$$
+\end{theorem}
+
+Since an indefinite integral is determined only to within an additive constant, (6.1) and (6.2) are open to a possible (but unlikely) false interpretation. The precise statement of (6.1) is: \textit{If $F$ is an indefinite integral of $f$ and if $G$ is an indefinite integral of $g$, then $F + G$ is an indefinite integral of $f + g$}. The proof takes one line:
+$$
+(F+ G)' = F' + G' = f + g.
+$$
+\noindent On the other hand, if $F$, $G$, and $H$ are three arbitrary indefinite integrals of $f$, $g$, and $f + g$, respectively, we certainly cannot infer that $H = F + G$. All we know is that $H' = F' + G'$, whence $H = F + G + c$. Similarly, (6.2) should be read: \textit{If $F$ is an indeknite integral of $f$, then $kF$ is an indefinite integral of $kf$}. The proof:
+$$
+(kF)' = kF' = kf.
+$$
+\noindent The proof of (6.4) is the equation
+$$
+\frac{d}{dx} \Bigl( \frac{x^{r + 1}}{r + 1} + c \Bigr) = x^r,
+$$
+\noindent and (6.3) is simply the special case of (6.4) obtained by setting $r = 0$. Note that each of these four integration formulas is the inverse of one of the basic rules for differentiation derived in Section 7 of Chapter 1. 
+\medskip
+
+%EXAMPLE 2. 
+\begin{example} Evaluate the following three integrals:
+ 
+\begin{quote}
+\begin{description}
+\item[(i) $\int \Bigl( 2x^2 + \frac{2}{x^2} \Bigr)dx,$]
+\item[(ii) $\int (y^3 + 2y^2 + 2y + 1 )dy,$]
+\item[(iii) $\int_{1}^{5} (s^{2/3} + 1)ds.$]
+\end{description}
+\end{quote}
+%212 INTEGRATION [CHAP 4 
+\noindent Computation of the indefinite integrals follows directly from (6.1),
+(6.2), (6.3), and (6 4) Thus 
+\begin{eqnarray*}
+\int  \Bigl( 2x^2 + \frac{2}{x^2} \Bigr) dx &=& 2 \int x^2 dx + 2 \int x^{-2} dx \\
+                                            &=& 2 \frac{x^3}{3} + 2 \frac{x^{-1}}{-1} + c \\
+                                            &=& \frac{2}{3} x^3 - \frac{2}{x} + c.
+\end{eqnarray*}
+\noindent Since separately we would write $2 \int x^2 dx = \frac{2}{3} x^3 + c$ and also $2 \int x^{-2} dx = -\frac{2}{x} + c$, one might think that two constants of integration should appear in the sum, i.e., that the answer should have been written
+
+$$
+\int \Bigl( 2x^2 + \frac{2}{x^2} \Bigr) dx = \frac{2}{3} x^3 + c_1 - \frac{2}{x} + c_2.
+$$
+\noindent Although this last equation is not false, it is unnecessarily complicated and also misleading. If $F$ is one indefinite integral of a function, the specification of any other requires the specification of one additional number, not two. Remember that, for a given $F$, the set of all functions $F + c$ such that $c$ is an arbitrary real number is identical to the set of all functions $F + c_1 + c_2$ such that $c_1$ and $c_2$ are arbitrary real numbers. The sum of two arbitrary constants is still an arbitrary constant.
+
+To do (ii), one must realize that the sum rule (6.1) implies an analogous rule for integrating the sum of three functions, or four, or any finite number. We get 
+
+\begin{eqnarray*} 
+\int (y^3 + 2y^2 + 2y + 1) dy &=&
+\int y^3 dy + 2 \int y^2 dy + 2 \int y dy + \int dy \\
+&=& \frac{y^4}{4} +2\frac{y^3}{3} +2\frac{y^2}{2} +y + c \\
+&=& \frac{1}{4}y^4 + \frac{2}{3}y^3 + y^2 + y + c.
+\end{eqnarray*}
+
+Finally, to evaluate (iii), we combine the above rules of integration with equation (2) to obtain
+
+\begin{eqnarray*}
+\int_{1}^{5} (s^{2 /3} + 1) ds &=& \Bigl( \frac{s^{5/3}}{5/3} + s \Bigr) \Big|_{1}^{5}\\
+&=& [\frac{3}{5}(5)^{5/3} + 5] - [\frac{3}{5} (1)^{5/3} + 1] \\
+&=& 3(5)^{2/3} + \frac{17}{5}.
+\end{eqnarray*}
+\end{example}
+% SEC. 6] INDEFINITE ~NTEGRALS  213
+
+The Chain Rule provides an extremely useful technique for computing integrals. Suppose that $F$ is an antiderivative of $f$ and that $g$ is a differentiable function. Aecording to the Chain Rule,
+
+$$
+[F(g)]' = F'(g)g'.
+$$
+\noindent Since $F' = f$, we conclude that
+
+$$
+[F(g)]' = F'(g)g' = f(g)g';
+$$
+\noindent i.e., \textit{the composition $F(g)$ is an antiderivative, or indefinite integral, of $f(g)g'$}. 
+Thus we have proved:
+
+\begin{theorem} %(6.5) 
+If $F$ is any indefinite integral of $f$, then
+$$
+\int f(g(x))g'(x) dx = F(g(x)) + c.
+$$
+\end{theorem}
+
+This formula tells us that we can integrate a function of the form $f(g(x))g'(x)$ provided we know how to integrate $f(x)$.
+\medskip
+
+%EXAMPLE3. 
+\begin{example}
+Compute  $\int \sqrt {x^3 + x + 1} (3x^2 + 1)dx$. The integrand is the product of two functions. The first factor, $\sqrt{x^3 + x + 1}$, is the composition of $x^3 + x + 1$ with the square root, and we know how to integrate $\sqrt{x}$. The second factor is $3x^2 + 1$, which is the derivative of $x^3 + x + 1$.  Hence (6.5) is applicable. We have
+
+\begin{eqnarray*}
+g(x) &=& x^3+x+ 1,\\
+ f(x) &=& \sqrt{x}.
+\end{eqnarray*}
+\noindent Since 
+$$
+\int \sqrt{x} dx = \int x^{1/2} dx = \frac{2}{3} x^{3/2} + c,
+$$
+\noindent we take $F(x) = \frac{2}{3}x^{3/2}$. According to (6.5), the answer to the problem is
+$$
+F(g(x)) + c = \frac{2}{3}(x^3 + x + 1)^{3/2} + c. 
+$$
+\noindent That is,
+$$
+\int \sqrt{x^3 + x + 1} (3x^2 + 1) dx = \frac{2}{3}(x^3 + x + 1)^{3/2} + c.
+$$
+\noindent We can check this answer by taking its derivative. We obtain
+$$
+\frac{d}{dx} [\frac{2}{3} (x^3 + x + 1)^{3/2} + c] = (x^3 + x + 1)^{1/2} (3x^2 + 1),
+$$
+\noindent which is the original integrand.
+\end{example}
+% 214 INTEGRATION [CHAP. 4
+
+%EXAMPLE 4. 
+\begin{example}
+Evaluate $\int (x^2 + 1)^5 dx$. It is possible to do this problem by first expanding $(x^2 + 1)^5$ by the Binomial Theorem, but formula (6.5) makes this unnecessary. Again, the integrand is the product of two functions. The first is $(x^2 + 1)^5$, which is the composition $f(g(x))$ of the two functions $g(x) = x^2 + 1$ and $f(x) = x^5$. The latter we know how to integrate:
+
+$$
+\int x^5 dx = \frac{x^6}{6} + c,
+$$
+\noindent so we take $F(x) = \frac{x^6}{6}$. The second factor in the integrand is $x$, which is not equal to $g'(x) = 2x$, but is a constant multiple of it. This is just as good because of the general rule $\int kf (x) dx = k \int f (x) dx$. In this case, we may write
+
+\begin{eqnarray*}
+\int (x^2 + 1)^{5} x dx &=& \frac{2}{2} \int (x^2 + 1)^{5} xdx \\
+&=& \frac{1}{2} \int (x^2 + 1)^{5}(2x)dx \\
+&=& \frac{1}{2} \int f(g(x))g'(x) dx\\
+&=& \frac{1}{2}F(g(x)) + c.
+\end{eqnarray*}
+\noindent Since $F(x) = \frac{x^6}{6}$, we have $F(g(x)) = \frac{(x^2 + 1)^6}{6}$ and so 
+
+\begin{eqnarray*}
+\int (x^2 + 1 )^{5} x dx 
+&=& \Bigl( \frac{1}{2} \Bigr) \Bigl[ \frac{(x^2 + 1)^6}{6} \Bigr] + c\\
+&=& \frac{(x^2 + 1)^6}{12} + c.
+\end{eqnarray*}
+\noindent The derivative of the indefinite integral should be the function which was integrated, i.e., the integrand. Checking, we get
+
+$$
+\frac{d}{dx} \Bigl[ \frac{(x^2 + 1)^6}{12} + c \Bigr] = \frac{6}{12}(x^2 + 1)^{5} 2x = (x^2 + 1)^{5}x.
+$$
+\end{example}
+
+To summarize: Formula (6.5) is applicable if the integrand is a product of two functions one of which is a composition $f(g(x))$ and the other of which is $g'(x)$ or possibly a constant multiple of $g'(x)$. With a little practice the
+%SEC. 6] INDEFINITE INTEGRALS  215
+reader should be able to recognize immediately, for example, that of the three integrals   
+
+$$
+\begin{array}{l}
+\int \sqrt{x^2 + 2}dx,\\
+\\
+\int \sqrt{x^2 + 2}xdx,\\
+\\
+\int \sqrt{x^2 + 2}x^2dx,
+\end{array}
+$$
+\noindent only the middle one can be successfully attacked by this method.
+
+Formula (6.5) implies an analogous fact about definite integrals. Called the \textbf{Change of Variable Theorem for Definite Integrals}, it is the following:
+
+\begin{theorem} %(6.6) 
+If both integrands are continuous functions on their respective intervals of integration, then
+
+$$
+\int_{a}^{b} f (g(x))g'(x) dx = \int_{g(a)}^{g(b)} f (y) dy.
+$$
+\end{theorem}
+
+\begin{proof}
+Since the integrands are continuous, both integrals exist. Let $F$ be an indefinite integral of $f$. By the definition of the definite integral,
+$$
+\int_{g(a)}^{g(b)} f(y) dy = F(y) \Big|_{g(a)}^{g(b)} = F(g(b)) - F(g(a)).
+$$
+By (6.5),
+$$
+\int_{a}^{b} f(g(x))g'(x)dx = F(g(x)) \Big|_{a}^{b} = F(g(b)) - F(g(a)).
+$$
+This completes the proof.
+\end{proof}
+
+%EXA LE 5. 
+\begin{example}
+Compute $\int_{-2}^{2} \frac{x + 1}{\sqrt{x^2 + 2x + 2}} dx$. We first check that the integrand is continuous on the interval [ - 2, 2]. Since the minimum value of $x^2 + 2x + 2$ is 1, which is positive, we know that the denominator is never zero, and so the integral is defined. Set $g(x) = x^2 + 2x + 2$ and $f (y) = y^{-1/2}$. Then $g'(x) = 2x + 2$, $g(- 2) = 2$, and $g(2) = 10$.  Hence
+\begin{eqnarray*}
+\int_{-2}^{2} \frac{x + 1}{\sqrt{x^2 +  2x + 2}}  dx 
+&=& \frac{1}{2} \int_{-2}^{2} \frac{2x + 2}{\sqrt{x^2 + 2x + 2}} dx \\
+&=& \frac{1}{2} \int_{-2}^{2}  f(g(x))g'(x)dx\\
+&=& \frac{1}{2}\int_{2}^{10} y^{-1/2} dy.
+\end{eqnarray*}
+Since $\int y^{-1/2} dy = 2y^{1/2} + c$, we obtain  
+$$
+\frac{1}{2} \int_{2}^{10} y^{-1/2} dy = y^{1/2} \Big|_{2}^{10} = \sqrt 10 -\sqrt 2.
+$$
+We conclude that 
+$$
+\int_{-2}^{2} \frac{x+1}{\sqrt{x^2 + 2x +2}} dx = \sqrt 10 -\sqrt 2.
+$$
+\end{example}
+
+The differential of a function $F$ was defined in Section 6 of Chapter 2,
+and was shown to satisfy the basic equation $dF(x) = F'(x) dx$.
+If $F' = f$, we therefore obtain 
+\begin{equation}
+dF(x) = F'(x) dx = f (x) dx.
+\label{eq4.6.3}
+\end{equation}
+In this section we have expressed the fact that $F$ is an antiderivative of $f$ by writing  
+
+\begin{equation}
+\int f(x) dx = F(x) + c.  
+\label{eq4.6.4}
+\end{equation}
+\noindent Equations (3) and (4) suggest that we interpret the symbol $dx$ that appears to the right of the integral sign not merely as a piece of notation but as a differential. With this interpretation, the symbol $\int$ becomes a notation for the operation which is the inverse of taking differentials. Thus, for any differentiable function $F$, we define
+
+\begin{equation}
+\int dF(x) = F(x) + c.   
+\label{eq4.6.5}
+\end{equation}
+\noindent If $f(x)$ is given and we find $F(x)$ such that $dF(x) = f(x) dx$, then
+$$
+\int f(x) dx = \int dF(x) = F(x) + c.
+$$
+
+If a function is denoted by a variable $u$, the definition (5) has the simple form $\int du = u + c$. Moreover, in terms of differentials, Theorem (6.5) also has the following simple form:
+
+\begin{theorem} %(6.7)
+If $F' = f$ and if $u$ is a differentiable function, then
+$$
+\int f(u) du = F(u) + c.
+$$
+\end{theorem}
+% SEC. 6] INDEFINITE INTEGRALS  217
+ 
+\begin{proof}
+If $u = g(x)$, then $du = g'(x) dx$. The above equation therefore becomes
+$$
+\int f(g(x))g'(x) dx = F(g(x)) + c,
+$$
+\noindent and this is just (6.5).
+\end{proof}
+
+Another way of proving (6.7) is to start from the equation 
+\begin{equation}
+dF(u) = F'(u) du,   
+\label{eq4.6.6}
+\end{equation}
+[see Theorem (6.1), Chapter 2].
+From this follows $dF(u) = f(u) du$, and so
+$$
+F(u) + c = \int  dF(u) = \int  f(u) du.
+$$
+
+It is worth noting that Theorem (6.5) is simply an inverse statement of the Chain Rule. The Chain Rule was also the \textit{raison d'\^{e}tre} behind equation (6). The differential is a handy device solely because this important theorem is true.
+
+%EXAMPLE 6. 
+\begin{example}
+Evaluate the integrals
+
+\begin{quote}
+\begin{description}
+\item[(i)  $\int \sqrt{5x + 2} dx,$]
+\item[(ii) $\int s(s^2 - 1)^{125} ds.$]
+
+\end{description}
+\end{quote}
+\noindent To do (i), set $u = 5x + 2$. Then $du = 5 dx$, and so $dx = \frac{1}{5} du$. Hence
+
+\begin{eqnarray*}
+\int \sqrt{5x + 2} dx 
+&=& \frac{1}{5} \int \sqrt{u} du = \frac{1}{5}\frac{2}{3} u^{3/2} + c \\
+&=& \frac{2}{15}(5x + 2)^{3/2} + c.
+\end{eqnarray*}
+\noindent Similarly, in (ii), let $u = s^2 - 1$. We get $du = 2s ds$ and
+
+\begin{eqnarray*}
+\int s(s^2 - 1)^{125} ds = \frac{1}{2} \int u^{125} du 
+&=& \frac{1}{2} \frac{1}{126} u^{126} + c  \\
+&=& \frac{1}{252} (s^2 - 1)^{126} + c.
+\end{eqnarray*}
+\noindent In each of these examples the reader should verify that the derivative of the answer gives back the original integrand.
+\end{example}
+\medskip
+
+Each of the integral formulas (6.1), (6.2), (6.3), and (6.4) can be written as a fact about the integral of certain differentials. Let $u$ and $v$ be
+% 218 INTEGRATION [CHAP. 4 
+differentiable functions and $c$ an arbitrary constant. Then
+
+\begin{theorem} (6.1')
+$$\int (du + dv) = \int du + \int dv.$$
+\end{theorem}
+
+\begin{theorem} (6.2')
+$$
+\int k du = k \int du,\; \mbox{for ecery constant $k$}.
+$$
+\end{theorem}
+
+\begin{theorem} (6.3')
+$$\int du = u + c.$$
+\end{theorem}
+
+\begin{theorem} (6.4') 
+$$\int u' du = \frac{u ^{r + 1}}{r + 1} + c, \;\mbox{where $r$ is a rational number and $r \neq -1$}.$$
+\end{theorem}

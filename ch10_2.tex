@@ -1,0 +1,275 @@
+\section{Arc Length of a Parametrized Curve.} The straight-line distance in the plane between two points $P = (x_1, y_1)$ and $Q = (x_2, y_2)$ is defined in Section 2 of Chapter 1 by the formula
+
+
+\begin{equation}
+distance(P, Q) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}   .
+\label{eq10.2.1}
+\end{equation}
+\noindent In this section we shall consider the harder problem of defining distance, or arc length, along a parametrized curve.
+
+Let $C$ be a curve parametrically defined by a continuous function $P: I \rightarrow R^2$, and let $a$ and $b$ be two numbers in the interval $I$ such that $a < b$. As we have seen in Section \secref{10.1}, $C$ is the set of all points
+$$
+P(t) = (x(t), y(t)), \;\;\;\mbox{for every $t$ in $I$.}
+$$
+%SEC. 2] ARC LENGTH OF A PARAMETRIZED CURVE  551
+\noindent Consider a partition $\sigma = \{ t_0, . . . , t_n \}$ of the closed interval $[a, b]$ such that 
+
+$$
+a = t_0 \leq t_1 \leq \cdots \leq t_n = b,
+$$
+
+\noindent and set $P(t_i) = P_i$, for every $i = 0, . . ., n$. We shall take the number $L_\sigma$ defined by
+
+\begin{equation}
+L_\sigma = \sum_{i=1}^n distance (P_{i-1}, P_i) 
+\label{eq10.2.2}
+\end{equation}
+\noindent as an approximation to the arc length along $C$ from $P(a)$ to $P(b)$. In Figure 6, the number $L_\sigma$ is the sum of the lengths of the straight-line segments joining the points along the curve. Using (1), we may also write  
+$$
+L_\sigma = \sum_{i=1}^n \sqrt{[x(t_i) - x(t_{i-1})]^2 + [y(t_i) - y(t_{i-1})]^2} .
+$$
+\setcounter{figure}{5}
+%Figure 6
+\putfig{3.25truein}{scanfig10_6}{}{fig 10.6}
+
+The principle which motivates the definition of arc length is the fact that if one partition $\sigma$ of $[a, b]$ is a subset of another partition $\tau$, then $L_\tau$ is in general a better approximation than $L_\sigma$. The basic reason for this is simply that the finer partition $\tau$ determines more points on the curve. As an example, consider Figure 7, in which $L_\sigma$ is the sum of the lengths of the solid straightline segments, and $L_\tau$ is the sum of the lengths of the dashed-line segments. It is clear from the picture that $L_\tau$ is closer than $L_\sigma$ to our intuitive idea of the arc length of the curve. Moreover,
+
+%Figure 7
+\putfig{2.75truein}{scanfig10_7}{}{fig 10.7}
+
+%552 GEOMETRY IN THE PLANE [CHAP. 1O
+\begin{theorem} If one partition $\sigma$ of $[a, b]$ is a subset of another $\tau$, then $L_\sigma \leq L_\tau$.
+\end{theorem}
+
+\begin{proof}
+This fact is geometrically apparent from Figure 7. The argument can be reduced to consideration of a single triangle by the realization that, since $\tau$ can be obtained from $\sigma$ by adjoining one new point at a time, it will be sufficient to prove the result under the assumption that $\tau$ differs from $\sigma$ by the inclusion of only one additional point, which we denote by $t_{*}$. Let $P_{*} = P(t_{*})$. For some integer $i$, we have $t_{i-1} < t_{*} < t_i$. Then the expressions for $L_\sigma$ and $L_\tau$ are obviously the same except that the term $distance(P_{i-1}, P_i)$, in $L_\sigma$ is replaced by the sum $distance(P_{i-1}, P_{*}) + distance(P_{*}, P_i)$ in $L_\tau$. Hence
+$$
+L_\tau - L_\sigma = distance(P_{i-1}, P_{*}) + distance(P_{*}, P_i)
+- distance(P_{i-1}, P_i).
+$$
+It is clear from the triangle in Figure 8 that the right side of the preceding equation cannot be negative. We conclude that $L_\tau - L_\sigma \geq 0$, or, equivalently, that $L_\tau \geq L_\sigma$, and the proof is complete.
+\end{proof}
+
+\putfig{2truein}{scanfig10_8}{}{fig 10.8}
+
+Thus partitions with more points result in approximations at least as large. This brings us to the definition of arc length: Let $C$ be a curve parametrized by a continuous function $P: I \rightarrow R^2$, and let $a$ and $b$ be two numbers in $I$ with $a \leq b$. We consider the set of all real numbers $L_\sigma$ formed from all partitions $\sigma$ of the interval $[a, b]$. This set, denoted by $\{ L_\sigma \}$, either has an upper bound or it does not. The \textbf{arc length} of the parametrized curve $C$ from $P(a)$ to $P(b)$ will be denoted by $L_a^b$ and is defined by
+
+$$
+L_a^b = \left \{ \begin{array}{ll}
+\mbox{the least upper bound of the set}\; \{L_\sigma \}, 
+& \mbox{if an upper bound exists,}\\
+\infty,                                           
+& \mbox{if}\; \{ L_\sigma \} \;\mbox{has no upper bound.}
+\end{array}
+\right .
+$$
+
+A curve parametrized by a continuous function $P:[a, b] \rightarrow R^2$ is said to be \textbf{rectifiable} if its arc length $L_a^b$ is finite.
+
+The main difficulty with the above definition, like that of the definite integral, is that it is by no means immediately apparent how to use it to compute the arc lengths of even very simple rectifiable curves. We shall now show that if the parametrization satisfies a simple differentiability condition, then the arc length is given by a definite integral.
+%SEC. 2] ARC LENGTH OF A PAF<AMETRIZED CURVE  553
+\begin{theorem} \textbf{THEOREM.} Consider a parametrization defined by $P(t) = (x(t), y(t))$, for every $t$ in an interval $[a, b]$. If the derivatives $x'$ and $y'$ are continuous functions, then the curve $C$ parametrized by $P$ is rectifiable and its arc length is given by 
+$$
+L_a^b = \int_a^b \sqrt{x'(t)^2 + y'(t)^2} \;dt .
+$$
+
+(Note that we have used $x'(t)^2$ for $[x'(t)]^2$ and $y'(t)^2$ for $[y'(t)]^2$. This is a common abbreviation, which we shall not hesitate to use whenever it causes no ambiguity.)
+\end{theorem}
+
+\begin{proof}
+If $a = b$, then $L_a^b$ is certainly equal to zero, as is the integral; so we assume that $a < b$. Let $\sigma = \{ t_0, . . ., t_n \}$ be a partition of $[a, b]$ with
+$$
+a = t_0 < t_1 <  \cdots < t_n = b,
+$$
+and set $P_i = P(t_i)$. In each open subinterval $(t_{i-1}, t_i)$ there exist, by the Mean Value Theorem, numbers $t_{i1}$ and $t_{i2}$ such that
+\begin{eqnarray*}
+x(t_i) - x(t_{i-1}) &=& x'(t_{i1})(t_i - t_{i-1}), \\
+y(t_i) - y(t_{i-1}) &=& y'(t_{i2})(t_i - t_{i-1}).
+\end{eqnarray*}
+Hence
+\begin{eqnarray*}
+distance(P_{i-1}, P_i) 
+&=& \sqrt {[x(t_i) - x(t_{i-1})]^2 + [y(t_i) - y(t_{i-1})]^2} \\
+&=& \sqrt {x'(t_{i1})^2 + y'(t_{i2})^2} \;(t_i - t_{i-1}) ,
+\end{eqnarray*}
+and so
+\begin{equation}
+L_\sigma = \sum_{i=1}^n \sqrt {x'(t_{i1})^2 + y'(t_{i2})^2} \;(t_i - t_{i-1}). 
+\label{eq10.2.3}
+\end{equation}
+The conclusion of the theorem should now seem a natural one. Since $x'(t)$ and $y'(t)$ are continuous functions, so is $\sqrt{x'(t)^2 + y'(t)^2}$. We know that continuous functions are integrable. It is therefore very reasonable to suppose that, for successively finer and finer partitions, the right side of equation (3) approaches the integral $\int_a^b \sqrt{x'(t)^2 + y'(t)^2} dt$. If this is so, it follows in a straightforward manner from (2.1) that the set $\{ L_\sigma \}$, for all partitions $\sigma$, must have the integral as a least upper bound, and the proof is then finished.
+
+To complete the argument, it therefore remains to prove that 
+$$
+\lim_{|| \sigma || \rightarrow 0} L_\sigma = \int_a^b \sqrt{x'(t)^2 + y'(t)^2} \;dt. 
+$$
+We recall that the fineness of a partition $\sigma$ is measured by its mesh $|| \sigma ||$, defined on page 413 to be the length of a subinterval of maximum length.
+Unfortunately, the preceding equation does not follow directly from the theory of Riemann sums because $L_\sigma$, as it is given by equation (3), is not a Riemann sum for the function $\sqrt{x'(t)^2 + y'(t)^2}$. It fails to be one because, in each subinterval of the partition, we have chosen \textit{two} numbers $t_{i1}$ and $t_{i2}$ instead of one. To overcome this difficulty, we shall use a theorem about continuous functions of two variables, whose proof, although not deep, requires the concept of uniform continuity and we shall omit. From equation (3), we write the identity
+\begin{eqnarray*}
+L_\sigma 
+&=& \sum_{i=1}^n \sqrt{x'(t_{i1})^2 + y'(t_{i1})^2} \;(t_i - t_{i-1})  \\
+&+& \sum_{i=1}^n  \Big[\sqrt{x'(t_{i1})^2 + y'(t_{i2})^2} - \sqrt {x(t_{i1})^2 + y (t_{i1})^2} \Big] \;(t_i - t_{i-1}) .
+\end{eqnarray*}
+The first expression on the right \textit{is} a Riemann sum for $\sqrt{x'(t)^2 + y'(t)^2}$ relative to $\sigma$, and we shall abbreviate it by $R_\sigma$. Next, let $F$ be the function of two variables defined by
+$$
+F(t, s) = \sqrt{x'(t)^2 + y'(s)^2} - \sqrt{x'(t)^2 + y'(t)^2},
+$$
+for every $t$ and $s$ in the interval $[a, b]$. As a result, we can write the above expression for $L_\sigma$ as
+$$
+L_\sigma = R_\sigma + \sum_{i=1}^n F(t_{i1}, t_{i2})(t_i - t_{i-1}).
+$$
+Hence  
+$$
+L_\sigma - R_\sigma = \sum_{i=1}^n F(t_{i1}, t_{i2})(t_i - t_{i-1}),  
+$$
+which implies that
+\begin{equation}
+|L_\sigma - R_\sigma| \leq \sum_{i=1}^n |F(t_{i1}, t_{i2})| (t_i - t_{i-1}). 
+\label{eq10.2.4}
+\end{equation}
+The function $F$ is continuous, and, as is obvious from its definition, $F(t, t) = 0$ for every $t$ in $[a, b]$. As a result, it can be proved that $|F(t, s)|$ is arbitrarily small provided the difference $|t - s|$ is sufficiently small. This is the theorem which we shall assume without proof. It follows that, for any positive number $\epsilon$, there exists a positive number $\delta$ such that, if $\sigma$ is any partition with mesh less than $\delta$, then
+$$
+|F(t_{i1}, t_{i2})| < \epsilon, \;\;\;\mbox{for every}\; i.
+$$
+Hence, by the inequality (4), we obtain
+$$
+|L_\sigma - R_\sigma|  \leq \sum_{i=1}^n \epsilon(t_i - t_{i-1}) = \epsilon (b - a),
+$$
+for every partition a for which $\parallel \sigma \parallel < \delta$. Since $\epsilon$ can be chosen so that $\epsilon (b - a)$ is arbitrarily small, we may conclude that $\lim_{\parallel \sigma \parallel \rightarrow 0} (L_\sigma - R_\sigma) = 0$. The proof is now virtually finished. We write 
+$$
+L_\sigma = R_\sigma + (L_\sigma - R_\sigma).
+$$
+Since $R_\sigma$ is a Riemann sum, we know that
+$$
+\lim_{\parallel \sigma \parallel \rightarrow 0} R_\sigma = \int_a^b \sqrt {x'(t)^2 + y'(t)^2} \;dt.
+$$
+Hence 
+\begin{eqnarray*}
+\lim_{\parallel \sigma \parallel \rightarrow 0} L_\sigma 
+&=& \lim_{\parallel \sigma \parallel \rightarrow 0} R_\sigma + \lim_{\parallel \sigma \parallel \rightarrow 0} (L_\sigma - R_\sigma) \\
+&=& \int_a^b \sqrt{x'(t)^2 + y'(t)^2} \;dt + 0,
+\end{eqnarray*}
+and Theorem (2.2) is proved.
+\end{proof}
+
+
+\begin{example}
+Compute the arc length of the curve $C$ defined parametrically by $P(t) = (x(t), y(t))$, where 
+$$
+\left \{ \begin{array}{l}
+x(t) = a(t - \sin t),\\
+y(t) = a(1 - \cos t), \;\;\;a > 0,
+\end{array}
+\right .
+$$
+
+\noindent between $P(0) = (0, 0)$ and $P(2\pi) = (2\pi a, 0)$. The curve $C$ is the cycloid discussed at the end of Section \secref{10.1} and illustrated in Figure 4. We have 
+\begin{eqnarray*}
+x'(t) &=& a(1- \cos t), \\
+y'(t) &=& a \sin t.
+\end{eqnarray*}
+
+\noindent These are obviously continuous functions, and the arc length is therefore given by the integral formula. We obtain
+
+
+\begin{eqnarray*}
+x'(t)^2 + y'(t)^2 &=& a^2[(1 - \cos t)^2 + \sin^2 t] \\
+                        &=& a^2[1 - 2 \cos t + \cos^2 t + \sin^2 t] \\
+                        &=& a^2[1 - 2 \cos t + 1 ] = 2a^2 [ 1 - \cos t]. 
+\end{eqnarray*}
+
+\noindent However, we have the trigonometric identities 
+
+\begin{eqnarray*}
+\cos t &=& \cos2 \cdot \frac{t}{2} = \cos^2 \frac{t}{2} - \sin^2 \frac{t}{2} , \\
+       1 &=&  \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; \cos^2 \frac{t}{2} + \sin^2\frac{t}{2} , 
+\end{eqnarray*}
+
+\noindent from which it follows that
+$$
+1 - \cos t = 2 \sin^2 \frac{t}{2} .
+$$
+%556 GE;OMETRY IN THE PLANE [CHAP. ]O
+\noindent Hence
+$$
+x'(t)^2 + y'(t)^2 = 4a^2 \sin^2 \frac{t}{2} . 
+$$
+\noindent Since $\sin \frac{t}{2}$ is nonnegative for every $t$ in the interval $[0, 2\pi]$, we conclude that 
+$$
+\sqrt{x'(t)^2 + y'(t)^2} = 2a \sin \frac{t}{2}, \;\;\;\mbox{for}\; 0 \leq t \leq 2\pi.
+$$
+\noindent Thus the arc length $L = L_0^{2\pi}$ is given by
+
+\begin{eqnarray*}
+L &=& \int_0^{2\pi} \sqrt{x'(t)^2 + y'(t)^2} \;dt = \int_0^{2\pi} 2a \sin \frac{t}{2} dt \\
+&=& - 4a \cos \frac{t}{2} \Big|_0^{2\pi} = - 4a \cos \pi + 4a \cos 0 = 8a.
+\end{eqnarray*}
+\end{example}
+
+Suppose that a curve is given as the graph of a continuously differentiable function. In more detail: Let the derivative $f'$ of a function $f$ be continuous at every $x$ in some interval $[a, b]$. The graph of the equation $y = f(x)$ is a curve which can be parametrically defined by
+$$
+\left \{ \begin{array}{l}
+x(t)= t,\\
+y(t) = f(t), \;\;\; a \leq t \leq b.
+\end{array}
+\right .
+$$
+
+\noindent Then $x'(t) = 1$ and $y'(t) = f'(t)$. Since $x'$ is a constant function, it is certainly continuous. Since $f'$ is by assumption continuous on $[a, b]$ and since $y' = f'$, the function $y'$ is also continuous. Hence the arc length $L_a^b$ is given by
+
+$$
+L_a^b = \int_a^b \sqrt{x'(t)^2 + y'(t)^2} \;dt = \int_a^b \sqrt{1 + f'(t)^2} \;dt . 
+$$
+\noindent The variable of integration which appears in a definite integral is a dummy variable (see page 171), and we may therefore replace $t$ by $x$ in the right integral. Thus, we have proved, as a corollary of Theorem (2.2),
+
+\begin{theorem} If the derivative of a function $f$ is continuous at every $x$ in an interval $[a, b]$, then the graph of $y = f(x)$ is a rectifiable curve and its arc length $L_a^b$ is given by 
+$$
+L_a^b = \int_a^b \sqrt{1 + f'(x)^2} \;dx .
+$$
+\end{theorem}
+%SEC. 2] ARC LENGTH OF A pARAMETRrzED cuRvr-  557
+
+
+\begin{example}
+Find the arc length $L$ of the graph of the equation $y = x^2$ from the point (0, 0) to the point (2, 4). The curve is the familiar parabola shown in Figure 9. Using the result of the preceding theorem, we have
+
+$$
+L = \int_0^2 \sqrt{1 + \Bigl(\frac{dy}{dx}\Bigr)^2} \;dx .
+$$
+\noindent Since $\frac{dy}{dx} = 2x$,
+$$
+L = \int_0^2 \sqrt{1 + 4x^2} \;dx .
+$$
+%Figure 9
+\putfig{3truein}{scanfig10_9}{}{fig 10.9}
+
+\noindent This integral can be evaluated by means of the trigonometric substitution $x =  \frac{1}{2} \tan \theta$, or, equivalently, $2x = \tan \theta$. If $x = 0$, then $ \theta = 0$, and, similarly, if $x = 2$, then $ \theta = \arctan 4$. For convenience we shall set $\arctan 4 = \theta_0$. The substitution yields $ \sqrt{1 + 4x^2} = \sqrt{1 + \tan^2 \theta} = \sec \theta$, and $dx = \frac{1}{2} \sec^2 \theta d \theta$. Hence using the Change of Variable Theorem for Definite Integrals, we obtain
+$$
+\int_0^2 \sqrt{1 + 4x^2} \;dx = \frac{1}{2} \int_0^{\theta_0} \sec^3 \theta d\theta.
+$$
+\noindent The reduction formula on page 369 gives 
+$$
+\int \sec^3 \theta = \frac{\sec \theta \tan \theta}{2} + \frac{1}{2} \int \sec \theta d\theta , 
+$$
+\noindent and also on page 369 we have
+$$
+\int \sec \theta d\theta = \ln |\sec \theta + \tan \theta| + c.
+$$
+%558 GEOMETRY IN THE PLANE [CHAP. 1O
+\noindent It follows that 
+
+\begin{eqnarray*}
+L = \frac{1}{2} \int_0^{\theta_0} \sec^3 \theta d\theta 
+&=& \left[ \frac{\sec \theta \tan \theta}{4} + \frac{1}{4} \ln |\sec \theta + \tan \theta| \right]_0^{\theta_0} \\
+&=& \frac{1}{4} [ \sec \theta_0 \tan \theta_0 + \ln |\sec \theta_0 + \tan \theta_0| ].
+\end{eqnarray*}
+
+\noindent Since $\theta_0 = \arctan 4$, we have $\tan \theta_0 = 4$ and $\sec \theta_0 = \sqrt{1 + \tan^2 \theta_0} = \sqrt{17}$.  Hence the arc length $L$ is equal to
+
+\begin{eqnarray*}
+L &=& \frac{1}{4}[\sqrt{17} \cdot 4 + \ln(\sqrt{17} + 4)] \\
+   &=& \sqrt{17} + \frac{1}{4} \ln(\sqrt{17} + 4) \\
+   &=& 4.64\;(\mathrm{approximately}).
+\end{eqnarray*}
+\end{example}
+

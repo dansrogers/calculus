@@ -1,0 +1,336 @@
+\section{Operations with Functions.}\label{sec 1.3}
+If $f$ and $g$ are two functions,
+a new function $f(g)$,
+called the \dt{composition} of $g$ with $f$,
+is defined by
+\[
+(f(g))(x) = f(g(x)).
+\]
+For example,
+if $f(x) = x^3 - 1$ and $g(x) = \frac{x + 1}{x - 1}$,
+then
+\begin{eqnarray}
+\label{eq1.3.1}
+(f(g))(x)
+&=& f(g(x))
+ = (g(x))^3 - 1 \\
+&=& \biggl( \frac{x + 1}{x - 1}\biggr)^3 - 1
+ = \frac{2(3x^2 + 1)}{(x - 1)^3} . 
+\end{eqnarray}
+The composition of two functions
+is the function obtained by applying one after the other.
+If $f$ and $g$ are regarded as computing machines,
+then $f(g)$ is the composite machine
+constructed by feeding the output of $g$
+into the input of $f$
+as indicated in Figure \figref{1.17}.
+\putfig{3truein}{scanfig1_17}{}{fig 1.17}
+
+In general it is not true that $f(g) = g(f)$.
+In the above example we have
+\begin{eqnarray}
+\label{eq1.3.2}
+(g(f))(x)
+&=& g(f(x)) 
+ = \frac{f(x) + 1}{f(x) - 1} \\
+&=& \frac{(x^3 - 1) + 1}{(x^3 - 1) - 1}
+ = \frac{x^3}{x^3 - 2} ,  
+\end{eqnarray}
+and the two functions are certainly not the same.
+In terms of ordered pairs the composition $f(g)$ of $g$ with $f$
+is formally defined to be
+the set of all ordered pairs $(a, c)$
+for which there is an element $b$
+such that $b = g(a)$ and $c = f(b)$.
+
+If $f$ and $g$ are two real-valued functions,
+we can perform the usual arithmetic operations of
+addition, subtraction, multiplication, and division.
+Thus for the functions
+$f(x) = x^3 - 1$ and $g(x) = \frac{x + 1}{x - 1}$,
+we have
+\begin{eqnarray*}
+f(x) + g(x)
+&=& x^3 - 1 + \frac{x + 1}{x - 1} ,     \\
+f(x) - g(x)
+&=& x^3 - 1 - \frac{x + 1}{x - 1} ,     \\
+f(x)g(x)
+&=& (x^3 -1) \frac{x + 1}{x - 1} ,      \\
+&=& (x^2 + x + 1)(x + 1)   \provx{if $x \neq 1$},   \\
+f(x)/g(x)
+&=& \frac{x^3 - 1}{\frac{x + 1}{x - 1}} \\
+&=& \frac{(x^3 - 1)(x - 1)}{x + 1}.
+\end{eqnarray*}
+Just as with the composition of two functions,
+each arithmetic operation
+provides a method of constructing a new function
+from the two given functions $f$ and $g$.
+The natural notations for these new functions are
+$f + g$, $f - g$, $fg$, and $\frac{f}{g}$.
+They are defined by the formulas 
+\begin{eqnarray*}
+(f + g)(x)
+&=& f(x) + g(x), \\
+(f - g)(x)
+&=& f(x) - g(x),  \\
+(fg)(x)
+&=& f(x)g(x),     \\
+{\frac{f}{g}}(x)
+&=& \frac{f(x)}{g(x)} \provx{if $g(x) \neq 0$}.
+\end{eqnarray*}
+The product function $fg$ should not be confused with
+the composite function $f(g)$.
+For example, if $f(x) = x^5$ and $g(x) = x^3$,
+then we have $(fg)(x) = f(x)g(x) = {x^5} \cdot {x^3} = x^8$,
+whereas
+\[
+(f(g))(x) = f(g(x)) = (x^3)^5 = x^{15}.
+\]
+We may also form the product $af$ of an arbitrary real number $a$
+and real-valued function $f$.
+The product function is defined by
+\[
+(af)(x)= af(x).
+\]
+
+
+\begin{example}\label{exam 1.3.1}
+Let functions $f$ and $g$ be defined by
+$f(x) = x - 2$ and $g(x) = x^2 - 5x + 6$.
+Draw the graphs of $f$, $g$, $2f$, and $f + g$.
+We compute the function values
+corresponding to several different numbers $x$ in
+Tables \tabref{1.3} and \tabref{1.4}.
+The resulting graphs of $f$ and $g$ are, respectively,
+the straight line and parabola shown in Figure \figref{1.18}(a).
+\putfig{4.5truein}{scanfig1_18}{}{fig 1.18}
+It turns out that the graphs of $2f$ and $f + g$
+are also a straight line and a parabola.
+They are drawn in Figure \figref{1.18}(b).
+To see why the graph of $f + g$ is a parabola,
+observe that 
+\begin{eqnarray*}
+(f + g)(x)
+&=& f(x) + g(x)
+ = (x - 2) + (x^2 - 5x + 6) = x^2 - 4x + 4 \\
+&=& (x - 2)^2.
+\end{eqnarray*}
+It follows that $f + g$ is very much like
+the function defined by $y = x^2$.
+Instead of simply squaring a number,
+$f + g$ first subtracts $2$ and then squares.
+Its graph will be just like that of $y = x^2$
+except that it will be shifted two units to the right.
+\end{example}
+
+\begin{table}
+\[
+\begin{array}{r|r|c}
+\hline
+  x   &  f(x)  &  2f(x)  \\
+\hline
+  0   &  -2    &  -4     \\
+  1   &  -1    &  -2     \\
+  2   &   0    &   0     \\
+  3   &   1    &   2     \\
+\hline
+\end{array}
+\]
+\caption{}
+\label{table 1.3}
+\end{table}
+
+\begin{table}
+\centering
+\[
+\begin{array}{r|c}
+\hline 
+x               &  g(x)     \\
+\hline 
+0               &  6        \\ 
+5               &  6        \\
+\frac{5}{2}     &  -\frac{1}{4}   \\
+1               &  2        \\
+4               &  2        \\
+\hline
+\end{array}
+\]
+\caption{}
+\label{table 1.4}
+\end{table}
+
+Up to this point
+we have used the letters
+$f$, $g$, $h$, $F$, $G$, and $H$
+to denote functions,
+and the letters $x$, $y$, $a$, $b$, and $c$
+to denote elements of sets---usually real numbers.
+However, the letters in the second set
+are sometimes also used as functions.
+This occurs, for example,
+when we speak of $x$ as a real variable.
+As such, it not only is the name of a real number
+but also can take on many different values:
+$5$, or $-7$, or $\pi$, or \ldots.
+Thus the variable $x$ is a function.
+Specifically, it is the very simple function
+that assigns the value $5$ to the number $5$,
+the value $-7$ to the number $-7$,
+the value $\pi$ to $\pi$, \ldots.
+For every real number $a$, we have
+\[
+x(a) = a.
+\]
+This function is called the \dt{identity function}.
+
+Suppose, for example,
+that $s$ is used to denote the distance
+that a stone falling freely in space has fallen.
+The value of $s$ increases as the stone falls
+and depends on the length of time $t$ that it has fallen
+according to the equation
+$s= {\frac{1}{2}}g{t^2}$,
+where $g$ is the constant gravitational acceleration.
+(This formula assumes no air resistance,
+that the stone was at rest at time $t = 0$,
+and that distance is measured from the starting point.)
+Thus $s$ has the value ${\frac{9}{2}}g$
+if $t$ has the value $3$,
+and, more generally,
+the value ${\frac{1}{2}}g{a^2}$
+when $t$ has the value $a$.
+If we consider $t$ to be another name for the identity function,
+then $s$ may be regarded as the function whose value is
+\[
+s(a) = {\frac{1}{2}}{g{a^2}} = {\frac{1}{2}}{g(t(a))^2}
+\]
+for every real number $a$.
+The original equation $s = {\frac{1}{2}}g{t^2}$ then states
+the relation between the two functions $s$ and $t$.
+The fact that $s$ and $t$ take on different values
+is also expressed by referring to them as variables.
+A \dt{variable} is simply a name of a function.
+In our example $s$ is called a dependent variable,
+and $t$ an independent variable,
+because the values of $s$ depend on those of $t$
+according to $s = {\frac{1}{2}}g{t^2}$.
+Thus an \dt{independent variable}
+is a name for the identity function,
+and a \dt{dependent variable} is one that is not independent.
+
+A real variable is therefore a name of a real-valued function.
+Since the arithmetic operations of
+addition, subtraction, multiplication, and division
+have been defined for real-valued functions,
+they are automatically defined for real variables.
+
+We shall generally use the letter $x$
+to denote an independent variable.
+This raises the question:
+How does one tell whether an occurrence of $x$
+denotes a real number or the identity function?
+The answer is that the notation alone does not tell,
+but the context and the reader's understanding should.
+However, a more practical reply
+is that it doesn't really make much difference.
+We may regard $f(x)$ as either
+the value of the function $f$ at the number $x$
+or as the composition of $f$ with the variable $x$.
+If $x$ is an independent variable,
+the function  $f(x)$ is then the same thing as $f$.
+
+\begin{example}\label{exam 1.3.2}
+The conventions that we have adopted
+concerning the use of variables
+give our notations a flexibility
+that is both consistent and extremely useful.
+Consider, for example, the equation
+\[
+y= 2x^2 - 3x.
+\]
+On the one hand,
+we may consider the subset of $\R^2$, pictured in
+Fifure \figref{1.19},
+\putfig{3.5truein}{scanfig1_19}{}{fig 1.19}
+that consists of all ordered pairs $(x, y)$ such that $y = 2x^2 - 3x$.
+This subset is a function $f$
+whose value at an arbitrary real number $x$
+is the real number $f(x) = 2x^2 - 3x$.
+Alternatively,
+we may regard $x$ as an independent variable,
+i.e., the identity function.
+The composition of $f$ with $x$ is then the
+function $f(x) = 2x^2 - 3x$, whose value at $2$,
+for instance, is
+\[
+(f(x))(2) = f(x(2)) = f(2) = 8 - 6 = 2.
+\]
+A third interpretation
+is that $y$ is a dependent variable that depends on $x$
+according to the equation $y = 2x^2 - 3x$.
+That is, $y$ is the name of the function $2x^2 - 3x$.
+\end{example}
+
+\begin{example}\label{exam 1.3.3}
+Let $F$ be the function defined by
+$F(x) = x^3 + x + 1$. If $u = \sqrt{x - 2}$,
+then
+\begin{eqnarray*}
+F(u)
+&=&  u^3 + u + 1  \\
+&=&  (x - 2)^{3/2} + (x - 2)^{1/2} + 1.
+\end{eqnarray*}
+If we denote the function $F(x)$ by $w$, then 
+\[
+u + w =  \sqrt{x - 2} + x^3 + x + 1,
+\]
+\[
+uw = (x - 2)^{1/2} (x^3 + x + 1).
+\]
+On the other hand,
+we may let $G$ be the function defined by
+$G(x) = \sqrt{x - 2}$
+for every real number $x \geq 2$.
+Then $G + F$ and $GF$ are the functions defined, respectively, by
+\begin{eqnarray*}
+(G + F)(x)
+&=&  G(x) + F(x) \\
+&=&  \sqrt{x - 2} + x^3 + x + 1, \\
+(GF)(x)
+&=& G(x)F(x) \\
+&=&  (x - 2)^{1/2} (x^3 + x + 1).
+\end{eqnarray*}
+\end{example}
+
+To say that $a$ is a real \dt{constant}
+means first that it is a real number.
+Second, it may or may not matter which real number $a$ is,
+but it is fixed for the duration of the discussion in which it occurs.
+Similarly, a \dt{constant function} is one which takes on just one value;
+i.e., its range consists of a single element.
+For example, consider the constant function $f$ defined by
+\[
+f(x) = 5, \;\;\; - \infty < x < \infty.
+\]
+The graph of $f$ is the straight line parallel to the $x$-axis
+that intersects the $y$-axis in the point (0, 5);
+see Figure \figref{1.20}.
+\putfig{3truein}{scanfig1_20}{}{fig 1.20}
+We shall commonly use lower-case letters
+at the beginning of the alphabet,
+e.g., $a$, $b$, $c$,...,
+to denote both constants and constant functions.
+
+\begin{example}\label{exam 1.3.4}
+Consider the function $ax + b$,
+where $a$ and $b$ are constants,
+$a \neq 0$,
+and $x$ is an independent variable.
+The graph of this function is a straight line
+that cuts the $y$-axis at $b$ and the $x$-axis at $-\frac{b}{a}$.
+It is drawn in Figure \figref{1.21}.
+\putfig{2truein}{scanfig1_21}{}{fig 1.21}
+This function is the sum of the constant function $b$
+and the function which is the product of the constant function $a$
+and the identity function $x$.
+\end{example}

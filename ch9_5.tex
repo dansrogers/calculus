@@ -1,0 +1,296 @@
+\section{Absolute and Conditional Convergence.} 
+An infinite series $\sum_{i=m}^{\infty} a_i$ is said to be \textbf{absolutely convergent} if the corresponding series of absolute values $\sum_{i=m}^{\infty} |a_i|$ is convergent. If a series $\sum_{i=m}^{\infty} a_i$ converges, but $\sum_{i=m}^{\infty} |a_i|$ does not, then we say that $\sum_{i=m}^{\infty} a_i$ is \textbf{conditionally convergent.} An example of a conditionally convergent series is the alternating harmonic series: We have shown that
+$$
+\sum_{i=1}^{\infty} a_i = \sum_{i=1}^{\infty} (- 1)^{i+1} \frac{1}{i} = 1 - \frac{1}{2} + \frac{1}{3}  - \frac{1}{4} + \cdots  
+$$
+%SEC. 5] ABSOLUTE AND CONDITIONAL CONVERGENCE 503
+\noindent converges, but that
+$$
+\sum_{i=1}^{\infty} |a_i| = \sum_{i=1}^{\infty} \frac{1}{i} = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \cdots
+$$
+\noindent diverges.
+
+There are many examples of series for which both $\sum_{i=m}^{\infty} a_i$ and $\sum_{i=m}^{\infty} |a_i|$ converge, and also many where both diverge. (In particular, for nonnegative series, the two are the same.) There is the remaining possibility that $\sum_{i=m}^{\infty} |a_i|$ might converge, and $\sum_{i=m}^{\infty} |a_i|$ diverge. However, the following theorem shows that this cannot happen.
+
+%(5.1)  
+\begin{theorem} If the infinite series $\sum_{i=m}^{\infty} a_i$ is absolutely convergent, then it is convergent.
+\end{theorem}
+
+\begin{proof}
+Since $|a_i| \geq -a_i$, we have $a_i + |a_i| \geq 0$, for every integer $i \geq m$. Hence the series $\sum_{i=m}^{\infty}  (a_i + |a_i|)$ is nonnegative. Since $a_i \leq |a_i|$, we also have
+\begin{equation}
+a_i + |a_i| \leq |a_i| + |a_i| = 2|a_i|,  
+\label{eq9.5.1}
+\end{equation}
+for every integer $i \geq m$. The assumption that $\sum_{i=m}^{\infty} a_i$ is absolutely convergent means that the series $\sum_{i=m}^{\infty} |a_i|$ converges, and, hence, so does the series $\sum_{i=m}^{\infty} 2|a_i|$. It therefore follows from (1) by the Comparison Test that the nonnegative series $\sum_{i=m}^{\infty}  (a_i + |a_i|)$ is convergent. We conclude from Theorem (2.2), page 485, that
+$$
+\sum_{i=m}^{\infty} a_i = \sum_{i=m}^{\infty} (a_i + |a_i |) - \sum_{i=m}^{\infty} |a_i| 
+$$
+and that $\sum_{i=m}^{\infty} a_i$ converges. This completes the proof.
+\end{proof}
+
+Thus the only possibilities for a given series are those illustrated. by the following scheme:
+
+
+\begin{centering}
+\begin{picture}(160,80)(0,0)
+\put(0,30){\line(3,1){30}}
+
+\put(0,30){\line(3,-1){30}}
+\put(40,40){convergent}
+
+\put(40,15){divergent}
+\put(100,50){\line(3,1){30}}
+
+\put(100,50){\line(3,-1){30}}
+\put(140,35){conditionally convergent}
+
+\put(140,60){absolutely convergent}
+\end{picture}
+\end{centering}
+\medskip 
+
+% EXAMPLE 1.
+\begin{example} Classify each of the following infinite series as absolutely convergent, conditionally convergent, or divergent.
+$$
+\mbox{(a)}\;\;\; \sum_{k=1}^\infty (-1)^k \frac{1}{\sqrt {k+1}} , \;\;\; 
+\mbox{(b)}\;\;\; \sum_{k=1}^\infty (-1)^k \frac{1}{2k^2 - 15} .
+$$
+%504 INFINITE SERIES [CEIAP. 9
+
+If we let $a_k = (-1)^k \frac{1}{\sqrt {k+1}}$, the alternating series in (a) will converge if:
+ 
+\begin{quote}
+\begin{description}
+\item[(i)] $|a_{k+1}| \leq |a_k|, \mathrm{for every integer} k \geq 1, \;\mathrm{and}$ 
+\item[(ii)] $\lim_{k \rightarrow \infty} |a_k| = 0.$
+\end{description}
+\end{quote}
+
+\noindent  [See Theorem (4.1), page 498.] We have
+$$
+|a_k| = \frac{1}{\sqrt{k + 1}}\;\;\;  \mbox{and}\;\;\;    |a_{k+1}| = \frac{1}{\sqrt{k + 2}} .
+$$
+\noindent Hence condition (i) becomes
+$$
+\frac{1}{\sqrt{k + 2}} \leq \frac{1}{\sqrt{k + 1}}, \;\;\;\mbox{for every  integer}\; k \geq 1,
+$$
+\noindent which is certainly true. Condition (ii) is also satisfied, since
+$$
+ \lim_{k \rightarrow \infty} \frac{1}{\sqrt{k + 1}} = 0,
+$$
+\noindent and it follows that the series $\sum_{k=1}^\infty a_k$ converges. However, it is easy to show that $\sum_{k=1}^\infty |a_k|$ diverges by either the Comparison Test or the Integral Test. Using the latter, we consider the function $f$ defined by $f(x) = \frac{1}{\sqrt{x+1}}$, which is nonnegative and decreasing on the interval $[1, \infty)$. We have $f(k) = \frac{1}{\sqrt{k+1}} = |a_k|$ and
+ 
+\begin{eqnarray*}
+\int_1^\infty f(x) dx &=& \int_1^\infty \frac{1}{\sqrt{x + 1}} dx = \lim_{b \rightarrow \infty} [2 \sqrt{x + 1}|_1^b ] \\
+&=& \lim_{b \rightarrow \infty} [2\sqrt{b + 1} - 2 \sqrt2] = \infty .
+\end{eqnarray*}
+
+\noindent The divergence of the integral implies the divergence of the corresponding series $\sum_{k=1}^\infty |a_k|$, and we conclude that the series (a) is conditionally convergent.
+
+For the series in (b), we might apply the same technique: Test first for convergence and then for absolute convergence. However, if we suspect that the series is absolutely convergent, we may save a step by first testing for absolute convergence. In this particular case, the corresponding series of absolute values is $ \sum_{k = 1}^\infty \frac{1}{|2k^2 - 15|}$. The latter can be shown to be convergent
+%SEC. 5] ABSOLUTE AND CONDITIONAL CONVERGENCE  505
+by the CoMparison Test. For a test series we choose the convergent series $\sum_{k=1}^\infty \frac{2}{k^2}$. The condition of the test is that the inequality
+
+$$
+\frac{1}{|2k^2 - 15|} \leq \frac{2}{k^2}
+$$
+\noindent must be true eventually. We shall consider only integers $k \geq 3$, since, for these values, $2k^2 \geq18$ and hence $|2k^2 - 15| = 2k^2 - 15$. For those integers for which $k \geq 3$, the inequality
+
+$$
+\frac{1}{2k^2 - 15} \leq \frac{2}{k^2}
+$$
+\noindent is equivalent to $k^2 \leq 4k^2 - 30$, which in turn is equivalent to $k^2 \geq 10$. The last is true for every integer $k \geq 4$. Hence
+
+$$
+\frac{1}{|2k^2 - 15|} \leq \frac{2}{k^2}, \;\;\;\mbox{for every integer}\; k \geq 4.
+$$
+
+\noindent lt follows that $\sum_{k=1}^\infty \frac{1}{|2k^2 - 15|}$ converges, and therefore that the series (b) is absolutely convergent.
+\end{example}
+
+%(5.2) 
+\begin{theorem} RATIO TEST. Let $\sum_{i=m}^\infty a_i$ be an infinite series for which \linebreak
+$\lim_{n \rightarrow \infty} \frac{|a_{n+1}|}{|a_n|} = q$ (or $\infty$). 
+
+\begin{quote}
+\begin{description}
+\item[(i)] If $q < 1$, then the series is absolutely convergent.
+\item[(ii)] If $q > 1$ (including $q = \infty$ ), then the series is divergent.
+\item[(iii)] If $q = 1$, then the series may either converge or diverge; i.e., the test fails.
+\end{description}
+\end{quote}
+\end{theorem}
+
+
+\begin{proof}
+Suppose, first of all, that $\lim_{n \rightarrow \infty} \frac{|a_{n+1}|}{|a_n|} = q < 1$. This implies that the ratio $\frac{|a_{n+1}|}{|a_n|}$ is arbitrarily close to $q$ if $n$ is sufficiently large. Hence if we pick an arbitrary number $r$ such that $q < r < 1$, then there exists an integer $N \geq m$ such that
+\begin{equation}
+\frac{|a_{n+1}|}{|a_n|} \leq r, \;\;\;\mbox{for every integer}\; n \geq N. 
+\label{eq9.5.2}
+\end{equation}
+We shall show by mathematical induction that (2) implies that
+\begin{equation}
+|a_{N+i}| \leq r^{i}|a_N|, \;\;\;\mbox{for every integer}\; i \geq 0. \label{eq9.5.3}
+\end{equation}
+If $i = 0$, then the inequality in (3) becomes $|a_{N+0}| \leq r^{0}|a_N|$, which is true. In the second part of an inductive proof we need to show that, if the inequality
+(3) is true for $i = k$, then it is also true for $i = k + 1$. The assumption. then, is that
+\begin{equation}
+|a_{N+1}| \leq r^k |a_N|, 
+\label{eq9.5.4}
+\end{equation}
+and we want to prove that
+$$
+|a_{N+k+1}| \leq r^{k+1} |a_N| .
+$$
+If we multiply both sides of inequality (4) by the positive number $r$, we get
+\begin{equation}
+r |a_{N+k}| \leq r^{k+1} |a_N| .
+\label{eq9.5.5}
+\end{equation}
+But, inequality (2) tells us that  
+$$
+\frac{|a_{N+k+1}|}{|a_{N+k}|} \leq r,
+$$
+and hence that
+\begin{equation}
+|a_{N+k+1}| \leq r|a_{N+k}|
+\label{eq9.5.6}
+\end{equation}
+Combining inequalities (5) and (6) we have
+$$
+|a_{N+k+1}| \leq r^{k+1} |a_{N}|,
+$$
+completing the inductive proof. Since $|r|< 1$, the geometric series $\sum_{i=0}^\infty |a_N| r^i$ converges, and it follows from (3) by the Comparison Test that the series $\sum_{i=0}^\infty |a_{N+i}|$ converges. However,
+$$
+\sum_{i=0}^\infty |a_{N+i}| = \sum_{i=N}^\infty |a_i| ,
+$$
+and the convergence of $\sum_{i=N}^{\infty} |a_i|$ implies the convergence of $\sum_{i=m}^\infty |a_i|$. Hence the series $\sum_{i=m}^\infty a_i$ converges absolutely, and the proof of part (i) of the theorem is complete.
+
+We next assume that $\lim_{n \rightarrow \infty} |\frac{a_{n+1}}{a_n} |= q > 1$, and let $r$ be an arbitrary number such that $1 < r < q$. Then there exists an integer $N \geq m$ such that
+$$
+\frac{|a_{n+1}|}{|a_n|} \geq r, \;\;\;\mbox{for every integer}\; n \geq N.
+$$
+In the same way in which we proved that (2) implies (3), it follows by induction from the preceding inequality that
+$$
+|a_{N+i}| \geq r^i |a_N|, \;\;\;\mbox{for every integer}\; i \geq 0.
+$$
+Since $r > 1$, we know that $\lim_{i \rightarrow \infty} r^i = \infty$ (see Problem 5, page 481), and therefore also that 
+$$
+\lim_{n \rightarrow \infty} |a_n| = \lim_{n \rightarrow \infty} |a_{N+i} | = \infty .
+$$
+However, if the series $\sum_{i=m}^\infty a_i$ converges, then it necessarily follows that $\lim_{n \rightarrow \infty} |a_n| = \lim_{n \rightarrow \infty} a_n = 0$. [See Theorem (2.1), page 483, and Problem 2, page 502.] Hence $\sum_{i=m}^\infty a_i$ diverges, and part (ii) is proved.
+
+Part (iii) is proved by giving an example of an absolutely convergent series and one of a divergent series such that $q = 1$ for each of them. Consider the convergent $p$-series $\sum_{i=1}^\infty \frac{1}{i^2}$, which, being nonnegative, is also absolutely convergent. Setting $a_n = \frac{1}{n^2}$, we obtain
+$$
+a_{n+1} = \frac{1}{(n+ 1)^2} = \frac{1}{n^2 + 2n + 1}
+$$
+and
+$$
+\frac{|a_{n+1}|}{|a_n|} = \frac{a_{n+1}}{a_n} = \frac{n^2}{n^2 + 2n + 1} = \frac{1}{1 + \frac{2}{n} + \frac{1}{n^2}}  .
+$$
+Hence
+$$
+\lim_{n \rightarrow \infty} \frac{|a_{n+1}|}{|a_n|} = \lim_{n \rightarrow \infty} \frac{1}{1 + \frac{2}{n} + \frac{1}{n^2}} = 1.
+$$ 
+For the second example, we take the divergent harmonic series $\sum_{i=1}^\infty \frac{1}{i}$. If we let $a_n = \frac{1}{n}$, then $a_{n+1} = \frac{1}{n + 1}$ and
+$$
+\frac{|a_{n+1}|}{|a_n|} = \frac{a_{n+1}}{a_n} = \frac{n}{n + 1} = \frac{1}{1 + \frac{1}{n}} .
+$$
+For this series we also get
+$$
+\lim_{n \rightarrow \infty} \frac{|a_{n+1}|}{|a_n|} = \lim_{n \rightarrow \infty} \frac{1}{1 + \frac{1}{n}} = 1.
+$$
+The Ratio Test is therefore inconclusive if`$q = 1$, and this completes the proof.
+\end{proof}
+
+If $n$ is an arbitrary positive integer, the product $n(n - 1) \cdots 3 \cdot  2 \cdot 1$ is called \textbf{$n$ factorial} and is denoted by $n!$ Thus $3! = 3 \cdot 2 \cdot 1 = 6$ and $5! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 120$. Although it may seem strange, $0!$ is also defined and has the value 1. A convenient recursive definition of the factorial is given by the formulas
+\begin{eqnarray*}
+        0! &=&  1,\\
+(n + 1)! &=& (n + 1)n!, \;\;\;\mbox{for every integer}\; n \geq 0.
+\end{eqnarray*}
+
+%EXAMPLE 2. 
+\begin{example} 
+Prove that the following series converges:
+$$
+\sum_{n=0}^\infty \frac{1}{n!} = 1 + 1 + \frac{1}{2!} + \frac{1}{3!} + \cdots .
+$$
+%508 INFINITE SERIES [CHAP. 9 
+\noindent We write the series as $\sum_{i=0}^{\infty} a_n $ by defining $a_n = \frac{1}{n!}$ for every integer $n \geq 0$. Then 
+
+\begin{eqnarray*}
+\frac{|a_{n+1}|}{|a_n|} 
+&=& \frac{\frac{1}{(n+1)!} }{\frac{1}{n!}} = \frac{n!}{(n+1)!}\\
+&=&\frac{n!}{(n+1)n!} = \frac{1}{n+1} .
+\end{eqnarray*}
+
+\noindent Hence
+$$
+q = \lim_{n \rightarrow \infty} \frac{|a_{n+1}|}{|a_n|}  = \lim_{n \rightarrow \infty} \frac{1}{n + 1} = 0.
+$$
+
+\noindent Since $q < 1$, it follows from the Ratio Test that the series is absolutely convergent. But absolute convergence implies convergence [Theorem (5.1)], and we conclude that the series $\sum_{n=0}^{\infty} \frac{1}{n!}$ converges.
+\end{example}
+
+%EXAMPLE 3. 
+\begin{example} Show that the infinite series 
+$$
+\sum_{i=1}^{\infty} ir^{i-1}  = 1 + 2r + 3r^2 + 4r^3 + \cdots
+$$
+\noindent  converges absolutely if $|r| < 1$ and diverges if $|r| \geq 1$. This series is related to the geometric series $\sum_{i=0}^{\infty} r^i = 1 + r + r^2 + \cdots $, and in a later section we shall make use of the relationship. To settle the immediate question of convergence, however, we set $a_i = ir^{i-1}$ for every positive integer $i$, and write the series as $\sum_{i=1}^{\infty} a_i$. Observe, first of all, that if $|r| \geq 1$, then $|a_n| = n|r|^{n-1}$ and
+$$
+\lim_{n \rightarrow \infty} |a_n| = \lim_{n \rightarrow \infty} n|r|^{n-1} = \infty .
+$$
+\noindent Hence, if $|r| \geq 1$, the series must diverge, since convergence would imply $\lim_{n \rightarrow \infty} |a_n| = 0$. This proves the second part of what is asked, and we now assume that $|r| < 1$. lf $r = 0$, the series is absolutely convergent with value 1, so we further assume that $r \neq 0$. Then
+$$
+\frac{|a_{n+1}|}{|a_n|} = \frac{(n+1) |r|^n}{n |r|^{n-1}} = \frac{n+1}{n} |r| = (1 + \frac{1}{n}) |r|,
+$$
+\noindent and so 
+$$
+\lim_{n \rightarrow \infty} \frac{|a_{n+1}|}{|a_n|} = \lim_{n \rightarrow \infty}  (1 + \frac{1}{n}) |r| = |r|.
+$$
+%SEC. 5] ABSOLUTE AND CONDITIONAL CONVERGENCE  509
+\noindent Thus $q = |r| < 1$, and the Ratio Test therefore implies that the series is absolutely convergent.
+\end{example}
+
+The next theorem, with which we conclude the section, establishes a ttseful inequality.
+
+
+\begin{theorem} %(5.3) 
+If the series $\sum_{i=m}^{\infty} a_i$ converges, then $|\sum_{i=m}^{\infty} a_i| \leq \sum_{i=m}^{\infty} |a_i|$.
+\end{theorem}
+
+The result is true even if $\sum_{i=m}^{\infty} a_i$ is not absolutely convergent, for in that case $\sum_{i=m}^{\infty} |a_i| = \infty$, and the inequality becomes $\sum_{i=m}^{\infty} |a_i| \leq \infty$.
+
+\begin{proof}
+In view of the preceding remark, we shall assume throughout the proof that $\sum_{i=m}^{\infty} |a_i|$ converges. Let $\{s_n\}$ be the sequence of partial sums corresponding to the series $\sum_{i=m}^{\infty} a_i$. Then
+$$
+s_n = \sum_{i=m}^{\infty} a_i, \;\;\;\mbox{for every integer}\; n \geq m,  
+$$
+\noindent and the assumption that $\sum_{i=m}^{\infty} a_i$ converges means that the sequence $\{ s_n \}$ converges and that  
+\begin{equation}
+\lim_{n \rightarrow \infty} s_n = \sum_{i=m}^{\infty} a_i .  
+\label{eq9.5.7}
+\end{equation}
+The general fact that $|a + b| \leq |a| + |b|$, for any two real numbers $a$ and $b$, can be extended to any finite number of summands, and we therefore have
+$$
+|s_n| = |\sum_{i=m}^{n} a_i| \leq \sum_{i=m}^{n} |a_i| .
+$$
+Furthermore,
+$$
+\sum_{i=m}^{n} |a_i| \leq \sum_{i=m}^{\infty} |a_i|
+$$
+[see (3.2), page 490, and (1.3)1 page 478). Hence
+\begin{equation}
+|s_n| \leq \sum_{i=m}^{\infty} |a_i|, \;\;\;\mbox{for every integer}\; n \geq m. 
+\label{eq9.5.8}
+\end{equation}
+It follows from (8) that  
+\begin{equation}
+|\lim_{n \rightarrow \infty} s_n | \leq \sum_{i=m}^{\infty} |a_i| .
+\label{eq9.5.9}
+\end{equation}
+[It is easy to see that (8) implies (9) if we regard the numbers $s_n$ and $\sum_{i=m}^{\infty} |a_i|$ as points on the line. The geometric statement of (8) is that all the points $s_n$ lie in the closed interval whose endpoints are $-\sum_{i=m}^{\infty} |a_i|$ and $\sum_{i=m}^{\infty} |a_i|$. If
+(9) were false, it would mean that $\lim_{n \rightarrow \infty} s_n$ lay outside this interval, a positive distance away from it. But this cannot happen, since Sn is arbitrarily close to $\lim_{n \rightarrow \infty} s_n$ for $n$ sufficiently large.] Combining (7) and (9), we obtain the in-equality which was to be proved.
+\end{proof}

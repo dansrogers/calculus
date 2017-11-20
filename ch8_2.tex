@@ -1,0 +1,249 @@
+\section{Riemann Sums and the Trapezoid Rule.}\label{sec 8.2} 
+This section is divided into two parts. The first is devoted to an alternative approach to the definite integral, which is useful for many purposes. The second is an application of the first part to the problem of computing definite integrals by numerical approximations. We begin by reviewing briefly the definitions in Section 1 of Chapter 4. If the function $f$ is bounded on the closed interval $[a, b]$, then, for every partition $\sigma$ of $[a, b]$, there are defined an upper sum $U_\sigma$ and a lower sum $L_\sigma$, which approximate the definite integral from above and below, respectively. The function $f$ is defined to be integrable over $[a, b]$ if there exists one and only one number, denoted by $\int_a^b f$, with the property that 
+$$
+L_\sigma \leq \int_a^b f \leq U_\tau, 
+$$
+\noindent for every pair of partitions $\sigma$ and $\tau$ of $[a, b]$.
+
+In the alternative description of the integral, the details are similar, but not the same. As above, let $\sigma = \{ x_0, . . ., x_n \}$ be a partition of $[a, b]$, which satisfies the inequalities 
+$$
+a = x_0 \leq x_1 \leq ... \leq x_n = b.
+$$
+\noindent In each subinterval $[x_{i-1}, x_i]$ we select an arbitrary number, which we shall denote by $x_i^{*}$. Then the sum
+$$
+R_\sigma = \sum_{i = 1}^{n} f(x_i^{*})(x_i - x_{i-1})  
+$$
+%SEC. 2] RIEMANN SUMS AND THE TRAPEZOID RULE  413
+
+\noindent is called a \textbf{Riemann sum} for $f$ relative to the partition $\sigma$. (The name commemorates the great mathematician Bernhard Riemann, 1826-1866.) It is important to realize that since $x_i^{*}$ may be any number which satisfies $x_{i-1} \leq x_i^{*} \leq x_i$, there are in general infinitely many Riemann sums $R_\sigma$ for a given $f$ and partition $\sigma$. However, every $R_\sigma$ lies between the corresponding upper and lower sums $U_\sigma$ and $L_\sigma$. For, if the least upper bound of the values of $f$ on $[x_{i-1}, x_i]$ is denoted by $M_i$ and the greatest lower bound by $m_i$, then $f(x_i^{*})$ is an intermediate value and
+$$
+m_i \leq f(x_i^{*}) \leq M_i, 
+$$
+\noindent as shown in Figure 4. It follows that
+$$
+\sum_{i=1}^n m_{i}(x_i - x_{i - 1}) \leq \sum_{i=1}^n f(x_i^{*})(x_i - x_{i - 1}) \leq \sum_{i=1}^n M_i(x_i - x_{i-1}),
+$$
+\noindent which states that
+$$
+L_\sigma \leq R_\sigma \leq U_\sigma, 
+$$
+\noindent for every Riemann sum $R_\sigma$ for $f$ relative to $\sigma$.  
+
+%Figure 4
+\putfig{3.5truein}{scanfig8_4}{}{fig 8.4}
+
+Every Riemann sum is an approximation to the definite integral. By taking partitions which subdivide the interval of integration into smaller and smaller subintervals, we should expect to get better and better approximations to $\int_a^b f$. One number which measures the fineness of a given partition $\sigma$ is the length of the largest subinterval into which $\sigma$ subdivides $[a, b]$. This number is called the \textbf{mesh} of the partition and is denoted by $||\sigma ||$. Thus if $\sigma = \{ x_0, ..., x_n \}$ is a partition of $[a, b]$ with
+$$
+a = x_0 \leq x_1 \leq \cdots \leq x_n = b,
+$$
+%414 THE DEFINITE INTEGRAL (CON7~INUED) [CHAP. 8 
+\noindent then 
+$$
+||\sigma || = \mbox{maximum} \{ (x_i - x_{i-1}) \} . \;\;\; 1 \leq  i \leq n
+$$
+\noindent The following definition states precisely what we mean when we say that the Riemann sums approach a limit as the mesh tends to zero. Let the function $f$ be bounded on the interval $[a, b]$. We shall write 
+$$
+\lim_{||\sigma || \rightarrow 0} R_\sigma = L,
+$$
+\noindent where $L$ is a real number, if the difference between the number $L$ and any Riemann sum $R_\sigma$ for $f$ is arbitrarily small provided the mesh $||\sigma||$ is sufficiently small. Stated formally, the limit exists if: For any positive real number $\epsilon$, there exists a positive real number $\delta$ such that, if $R_\sigma$ is any Riemann sum for $f$ relative to a partition $\sigma$ of $[a, b]$ and if $|| \sigma || < \delta$, then $ | R_\sigma - L | < \epsilon$.
+
+The fundamental fact that integrability is equivalent to the existence of the limit of Riemann sums is expressed in the following theorem.
+
+%(2.1) THEOREM. 
+\begin{theorem} %(2.1)
+Let $f$ be bounded on $[a, b]$. Then $f$ is integrable over $[a, b]$ if and only if $\lim_{|| \sigma || \rightarrow 0} R_\sigma$ exists. If this limit exists, then it is equal to $\int_a^b f$.
+\end{theorem}
+
+The proof is given in Appendix C.
+
+%EXAMPLE 1. 
+\begin{example} Using the fact that the definite integral is the limit of Riemann sums, evaluate
+$$
+\lim_{n \rightarrow \infty} \frac{\sqrt 1 + \sqrt 2 + ... + \sqrt n}{n^{3/2}}.
+$$
+\noindent The numerator of this fraction suggests trying the function $f$ defined by $f(x) = \sqrt x$. If $ \sigma = \{ x_0, . . ., x_n \}$ is the partition of the interval $[0, 1]$ into subintervals of length $\frac{1}{n}$, then 
+$$
+\begin{array}{rl}
+x_0 = 0, \;\;\; x_1 = \frac{1}{n},\;\;\;& x_2 = \frac{2}{n}, ... , x_i = \frac{i}{n},\\
+x_i - x_{i-1} = \frac{1}{n},\;\;\;& \;\;\;\mbox{for}\; i = 1, ... , n.
+\end{array}
+$$
+\noindent In each subinterval $[x_{i-1}, x_i]$ we take $x_{i}^{*} = x_i$. Then 
+$$
+f(x_i^{*}) = f(x_i) = \sqrt {\frac{i}{n}} = \frac{\sqrt i}{\sqrt n},
+$$
+%SEC. 2] RIEMANN SUMS AND THE TRAPEZOID RULE 415
+\noindent and the resulting Riemann sum, denoted by $R_n$, is given by 
+\begin{eqnarray*}
+R_n &=& \sum_{i = 1}^{n} f(x_{i}^{*})(x_i - x_{i-1}) = \sum_{i = 1}^{n} \frac{\sqrt i}{\sqrt n} \frac{1}{n} \\
+       &=& \frac{1}{n^{3/2}} \sum_{i = 1}^{n} \sqrt i \\
+       &=& \frac{\sqrt 1 + \sqrt 2 + ... + \sqrt n}{n^{3/2}} .
+\end{eqnarray*}
+
+\noindent The function $\sqrt x$ is continuous and hence integrable over the interval $[0, 1]$. Since $|| \sigma || \rightarrow 0$ as $n \rightarrow \infty$, it follows from Theorem (2.1) that
+$$
+\int_a^b f = \int_0^1 \sqrt x dx = \lim_{n \rightarrow \infty} R_n.
+$$
+
+\noindent Hence
+\begin{eqnarray*}
+\lim_{n \rightarrow \infty} \frac{\sqrt 1 + \sqrt 2 + ... + \sqrt n}{n^{3/2}} 
+&=& \int_0^1 \sqrt x dx \\
+&=& \frac{2}{3} x^{3/2} \Big|_0^1 = \frac{2}{3}, 
+\end{eqnarray*}
+\noindent and the problem is solved.
+\end{example}
+
+Theorem (2.1) shows that it is immaterial whether we define the definite integral in terms of upper and lower sums (as is done in this book) or as the limit of Riemann sums. Hence there is no logical necessity for introducing the latter at all. However, a striking illustration of the practical use of Riemann sums arises in studying the problem of evaluating definite integrals by numerical methods.
+
+In spite of the variety of techniques which exist for finding antiderivatives and the existence of tables of indefinite integrals,there are still many functions for which we cannog find an antiderivative. More often than not, the only way of computing $\int_a^b f(x) dx$ is by numerical approximation. However, the increasing availability of high-speed computers has placed these methods in an entirely new light. Evaluating $\int_a^b f (x) dx$ by numerical approximation is no longer to be regarded as a last resort to be used only if all else fails. It is an interesting, instructive, and simple task to write a machine program to do the job, and the hundreds, thousands, or even millions of arithmetic operations which may be needed to obtain the answer to a desired accuracy can be performed by a machine in a matter of seconds or minutes.
+%416 THE D~ NITE INTEGRIIL (CONTINUED) [CHAP. 8
+
+One of the simplest and best of the techniques of numerical integration is the Trapezoid Rule, which we now describe. Suppose that the function $f$ is integrable over the interval $[a, b]$. For every positive integer $n$, let $\sigma_n$ be the partition which subdivides $[a, b]$ into $n$ subintervals of equal length $h$. Thus $\sigma_n = \{ x_0, . . ., x_n \}$ and
+$$
+h = \frac{b - a}{n} = x_i - x_{i-1}, \;\;\; i = 1, ... , n.
+$$
+\noindent It is convenient to set
+$$
+y_i = f(x_i), \;\;\; i = 0, 1, ... , n.
+$$
+\noindent Then the Riemann sum obtained by choosing $x_i^*$ to be the left endpoint of each subinterval $[x_{i-1}, x_i]$, i.e., by choosing $x_{i}^{*} = x_{i-1}$, is given by
+$$
+\sum_{i=1}^{n} f (x_{i}^{*})(x_i - x_{i-1}) = \sum_{i=1}^{n} f (x_{i-1})h = h \sum_{i=1}^{n} y_{i-1} .  
+$$
+\noindent Similarly, the Riemann sum obtained by choosing $x_{i}^{*}$ to be the right endpoint, i.e., by taking $x_{i}^{*} = x_i$, is
+$$
+\sum_{i=1}^{n} f(x_{i}^{*})(x_i - x_{i-1}) = \sum_{i=1}^{n}  f(x_i) h = h \sum_{i=1}^{n} y_i .
+$$
+\noindent The approximation to $\int_a^b f$ prescribed by the Trapezoid Rule, which we denote by $T_n$ is by definition the average of these two Riemann sums. Thus
+
+\begin{equation}
+\begin{array}{ll}
+T_n &= \frac{h \sum_{i=1}^{n} y_{i-1} + h \sum_{i=1}^{n} y_i}{2} \vspace{.1in}\\
+       &= \frac{h}{2} \Bigl( \sum_{i=1}^{n} y_{i - 1} + \sum_{i=1}^{n} y_i \Bigr) .
+\end{array}
+\label{eq8.2.1}
+\end{equation}
+\noindent The last expression above can be simplified by observing that
+$$
+\sum_{i=1}^{n} y_{i - 1} + \sum_{i=1}^{n} y_i = y_0 + 2\sum_{i=1}^{n-1} y_i + y_n .
+$$ 
+\noindent Hence
+
+\begin{equation}
+T_n = h(\frac{1}{2} y_0 + \sum_{i=1}^{n-1} y_i + \frac{1}{2}y_n) .
+\label{eq8.2.2}
+\end{equation}
+%SEC. 2] R!EMANN SUMS AND THE TRAPEZO!D RULE  417
+\noindent We shall express the fact that $T_n$ is an approximation to the integral $\int_a^b f$ by writing $\int_a^b f \approx T_n$. The \textbf{Trapezoid Rule} then appears as the formula
+
+\begin{theorem} %(2.2)
+$$\int_a^b f \approx T_n = h (\frac{1}{2}y_0 + y_1 + \cdots + y_{n-1} + \frac{1}{2} y_n) .
+$$
+\end{theorem}
+
+Why is this formula called the Trapezoid Rule? Suppose that $f(x) \geq 0$ for every $x$ in $[a, b]$, and observe that
+$$
+\int_a^b f = \int_{x_0}^{x_1} f + \int_{x_1}^{x_2} f + \cdots + \int_{x_{n-1}}^{x_n} f.
+$$
+\noindent The area of the shaded trapezoid shown in Figure 5 is an approximation to $\int_{x_{i-1}}^{x_i} f$. This trapezoid has bases $y_{i-1} = f(x_{i-1})$ and $y_i = f(x_i)$ and altitude $h$. By a well-known formula, its area is therefore equal to $\frac{h}{2} (y_{i-1} + y_i)$. The integral $\int_a^b f$ is therefore approximated by the sum of the areas of the trapezoids, which is equal to
+$$
+\sum \frac{h}{2} (y_{i-1} + y_i) = \frac{h}{2} \Bigl( \sum_{i=1}^{n} y_{i -1} + \sum _{i=1}^{n} y_i \Bigr).
+$$
+\noindent Equation (1) shows that this number is equal to $T_n$.
+
+%Figure 5
+\putfig{2.75truein}{scanfig8_5}{}{fig 8.5}
+%418 THE DEFINITE INTEGRAL (CONTINUED) [CHAP. 8
+%EXAMPLE 2. 
+\begin{example} Using the Trapezoid Rule, find an approximate value for $\int_{-1}^1 (x^3 + x^2) dx$. We shall subdivide the interval $[-1, 1]$ into $n = 8$ subintervals each of length $h = \frac{1}{4}$. The relevant numbers are compiled in Table 1.
+
+\begin{table}\label{table 8.1}
+\centering
+\begin{tabular}{l|r|r} \hline
+$i$  & $x_i$           &$y_i = x_i^2 + x_i^3$  \vspace {1ex}\\ \hline
+0     &$-1$             &$1 - 1 = 0\;\;$  \\
+1     &$-\frac{3}{4}$&$\frac{9}{16} - \frac{27}{64} =  \frac{9}{64}$ \\
+2     &$-\frac{2}{4}$&$\frac{4}{16} - \frac{8}{64}   =  \frac{8}{64}$ \\
+3     &$-\frac{1}{4}$&$\frac{1}{16} - \frac{1}{64}   =  \frac{3}{64}$ \\
+4     &  0             &$0 + 0 = 0\;\;$    \\
+5     &$\frac{1}{4}$  &$\frac{1}{16} + \frac{1}{64}   =  \frac{5}{64}$  \\
+6     &$\frac{2}{4}$  &$\frac{4}{16} + \frac{8}{64}   =  \frac{24}{64}$ \\
+7     &$\frac{3}{4}$  &$\frac{9}{16} + \frac{27}{64} =  \frac{63}{64}$ \\
+8     &   1             &$1 + 1 = 2\;\;$      \\ \hline
+\end{tabular}
+\caption{}
+\end{table}
+
+\noindent Hence 
+\begin{eqnarray*}
+T_8 
+&=& \frac{1}{4} (\frac{1}{2}y_0 + y_1 + \cdots + y_7 + \frac{1}{2}y_8)\\ &=& \frac{1}{4} \Bigl( 0 + \frac{9+8+3+0+5+24+63}{64} + 1 \Bigr)\\
+&=& \frac{1}{4} \frac{176}{64} = \frac{11}{16}.
+\end{eqnarray*}
+\noindent With the Fundamental Theorem of Calculus it is easy in this case to compute the integral exactly. We get
+$$
+\int_{-1}^1 (x^3 + x^2)dx = \Bigl( \frac{x^4}{4} + \frac{x^3}{3} \Bigr) \Big|_{-1}^1 = \frac{2}{3}.
+$$
+\noindent The error obtained using the Trapezoid Rule is, therefore,
+$$
+\frac{11}{16} - \frac{2}{3} = \frac{33}{48} - \frac{22}{48} = \frac{1}{48}.
+$$
+\end{example}
+
+In Example 2, the error can be reduced by taking a larger value of $n$, or, equivalently, a smaller value of $h = \frac{b - a}{n}$. Indeed, it is easy to show that in any application of the Trapezoid Rule the error approaches zero as $h$ increases without bound (or as $h$ approaches zero). That is, we have the theorem
+
+\begin{theorem} %(2.3)
+$$ 
+\lim_{n \rightarrow \infty} T_n = \int_a^b f(x) dx .
+$$
+\end{theorem}
+
+\begin{proof}
+It follows from equation (1) that
+$$
+T_n = \frac{1}{2} \Bigl( h \sum_{i = 1}^{n} y_{i - 1} + h \sum_{i = 1}^{n} y_i \Bigr)
+$$
+Both $h \sum_{i = 1}^{n} y_{i - 1}$ and $h \sum_{i = 1}^{n} y_i$ are Riemann sums for $f$. Hence, by Theorem (2.1), both approach the integral as $n \rightarrow \infty$. Thus
+\begin{eqnarray*}
+\lim_{n \rightarrow \infty} h \sum_{i = 1}^{n} y_{i - 1} &=& \int_a^b f(x) dx,\\
+\lim_{n \rightarrow \infty} h \sum_{i = 1}^{n} y_{i} &=& \int_a^b f(x) dx,
+\end{eqnarray*}
+and so 
+$$
+\lim_{n \rightarrow \infty} T_n = \frac{1}{2} \Bigl[ \int_a^b f(x) dx + \int_a^b f(x) dx \Bigr] = \int_a^b f(x)dx, 
+$$
+and the proof is complete.
+\end{proof}
+
+As a practical aid to computation, Theorem (2.3) is actually of little value. What is needed instead is a method of estimating the error, which is equal to
+$$
+\big| \int_a^b f - T_n \big|,
+$$
+\noindent for a particular choice of $n$ used in a particular application of the Trapezoid Rule. For this purpose the following theorem is useful.
+
+\begin{theorem} %(2.4) 
+If the second derivative $f''$ is continuous at every point of $[a, b]$, then there exists a number $c$ such that $a < c < b$ and
+$$
+\int_a^b f = T_n -\frac{b -a}{12} f''(c)h^2.
+$$
+\end{theorem}
+
+An outline of a proof of this theorem can be found in J. M. H. Olmsted, \textit{Advanced Calculus}, Appleton-Century-Crofts, 1961, pages 118 and 119.
+
+To see how this theorem can be used, consider Example 2, in which $f(x) = x^3 + x^2$ and in which the interval of integration is $[-1, 1]$. In this case $f''(x) = 6x + 2$, from which it is easy to see that
+$$
+f''(x) \leq 8, \;\;\;\mbox{for every} x\; \mbox{in}\; [-1, 1].
+$$
+%420 TIIE DEFINITE INTEGRAL (CONTINUED) [CHAP. 8
+\noindent Applying (2.4), we have
+$$
+\int_{-1}^{1} (x^3 + x^2) dx - T_n = - \frac{1 - (-1)}{12} f''(c)h^2.
+$$
+\noindent Hence the error satisfies
+\begin{eqnarray*}
+\big| \int_{-1}^{1} (x^3 + x^2) dx - T_n \big| 
+&=& \frac{1}{6} | f''(c) | h^2 \\
+&\leq& \frac{1}{6} \cdot 8 \cdot h^2 = \frac{4}{3}h^2.
+\end{eqnarray*}
+\noindent It follows that by halving $h$, we could have quartered the error. If we were to replace $h$ by $\frac{h}{10}$, which would be no harder with a machine, we would divide the error by 100.

@@ -1,0 +1,301 @@
+\section{The Exponential Function.}\label{sec 5.2} 
+According to the definition in Chapter 1, page 13, a function $f$ is a set of ordered pairs with the property that the first member $x$ of any pair $(x, y)$ in the set determines the second member $y$, which we call $f(x)$. For example, the set $\{(1, 3), (2, 5), (4, 3))\}$ is a function. Suppose, for a given functionf, we consider the set of all pairs $(y, x)$ such that $(x, y)$ is in $f$. This set may or may not be a function. In our example it is the set $\{(3, 1), (5, 2), (3, 4)\}$, which is not a function because it contains both (3, 1) and (3, 4). Hence the first member does not determine the second uniquely. However, if the new set is a function, it is called the \textbf{inverse function} of $f$ and is denoted by $f^{-1}$.
+
+If $f$ is the function defined by $f(x) = 7x$, for every real number $x$, then the inverse function $f^{-1}$ exists and is defined by $f^{-1}(x) = \frac{1}{7}x$. On the other hand, the function $f$ defined by
+
+$$
+f(x) = x^2, \;\;\; -\infty < x < \infty,
+$$
+
+\noindent does not have an inverse. The reason is that if $f(x) = x^2 = 4$, for example, we have no way of knowing whether $x = 2$ or $x = - 2$. If we restrict the domain of $f$ to the set of nonnegative real numbers, i.e.,
+$$
+f(x) = x^2, \;\;\; 0 \leq x, 
+$$
+
+\noindent then $f^{-1}$ exists and is the function defined by
+
+$$
+f^{-1}(x) = \sqrt x, \;\;\; 0 \leq x.
+$$
+
+The following three elementary properties of functions and their inverses
+should be noted: 
+
+\begin{theorem} %(2.1)
+$$
+(f^{-1})^{-1} = f. 
+$$
+\end{theorem}
+
+ 
+\begin{theorem} %(2.2)
+$$
+y = f (x) \;\mbox{if and only if}\; x = f^{-1}(y).
+$$
+\end{theorem}
+
+\begin{theorem} %(2.3)
+Two functions $f$ and $g$ are inverses of each other if and only if 
+
+$$
+\begin{array}{ll}
+f(g(x)) = x, &\;\;\; \mbox{for every}\; x \;\mbox{in the domain of}\; g,\\
+g(f(x)) = x, &\;\;\; \mbox{for every}\; x \;\mbox{in the domain of}\; f. 
+\end{array}
+$$
+\end{theorem}
+%250 LOGARITHMS AND EXPONENTIAL FUNCTIONS [CHAP. 5
+
+The first of these, $(f^{-1})^{-1} = f$, follows at once from the definition of $f^{-1}$.
+
+To prove (2.2), suppose first that $y = f (x)$. This means that the ordered pair $(x, y)$ belongs to the set $f$. Hence the pair $(y, x)$ belongs to $f^{-1}$. But this says that $x = f^{-1}(y)$. To prove the converse, suppose that $x = f^{-1}(y)$. Hence, by what we have just proved, we know that $y = (f^{-1})^{-1}(x)$. Since $(f^{-1})^{-1} = f$, we obtain $y = f (x)$.
+
+The importance of (2.3) is that it provides a simple criterion for deciding when two functions are inverses of each other. For example, if $f(x) = 3x + 5$ and $g(x) = \frac{x - 5}{3}$, then
+
+\begin{eqnarray*}
+f(g(x)) &=& f \Bigl( \frac{x - 5}{3} \Bigr) = 3 \Bigl(\frac{x - 5}{3} \Bigr) + 5 = x, \\
+g(f(x)) &=& g(3x + 5) = \frac{(3x + 5) - 5}{3} = x,
+\end{eqnarray*}
+
+\noindent and we may therefore conclude that $g = f^{-1}$ and that $g^{-1} = f$. The proof is completely straightforward (and rather tedious), and we omit it.
+
+The only way a function $f$ can fail to have an inverse is if there exist at least two elements $a$ and $b$ in its domain for which $a \neq b$ and $f(a) = f(b)$. Suppose that $f$ is a strictly increasing function and that $a$ and $b$ are two distinct numbers in its domain. Then either $a < b$ or $b < a$. If $a < b$, then $f(a) < f(b)$; and if $b < a$, then $f(b) < f(a)$. Thus it is impossible that $f(a) = f(b)$, and we conclude that $f^{-1}$ exists. A similar argument applies to any function that is strictly decreasing,
+and so
+
+\begin{theorem} %(2.4)
+If $f$ is strictly increasing or strictly decreasing, then $f$ has an inverse.
+\end{theorem}
+
+The natural logarithm has been shown to be a strictly increasing function, and hence must have an inverse. Let us call this function $\exp (x)$ and justify the name after we have looked at its properties. Thus, by (2.2),
+
+$$
+y = \exp (x) \;\;\; \mbox{if and only if}\; x = \ln\; y. 
+$$
+
+Since $\ln y$ is defined only for positive $y$, we see immediately that $\exp(x)$ is always positive. Furthermore, for any real number $x$, there exists a number y such that $x = \ln y$ because the graph of the equation $x = \ln y$ crosses every vertical line. Hence $\exp (x)$ is defined for every real number $x$. Finally, since $0 = \ln 1$, we obtain $1 = \exp(0)$. Summarizing, we have
+  
+\begin{theorem} %(2.5)
+$$
+\left \{
+\begin{array}{ll}
+\exp(x) > 0, &\;\;\; -\infty < x < \infty, \\
+\exp(0) = 1. &
+\end{array}
+ \right.
+$$
+\end{theorem}
+
+To develop the algebraic properties of the function $\exp$, let $p = \exp (a)$ and $q = \exp (b)$.  Then $a = \ln p$ and $b = \ln q$. Hence
+$$
+a + b = \ln p + \ln q = \ln pq,
+$$
+%SEC. 2] THE EXPONENTIAL FUNCTION  251
+\noindent and therefore $pq = \exp(a + b)$. Replacing $p$ and $q$ in this last equation, we obtain the important fact that 
+
+\begin{theorem} %(2.6)
+$$
+\exp(a) \cdot \exp(b) = \exp(a + b).
+$$
+\end{theorem}
+
+Similarly, $-a = -\ln p = \ln {\frac{1}{p}}$, and therefore $\frac{1}{p} = \exp (-a)$. 
+Replacing $p$ in this equation, we find that
+
+\begin{theorem} %(2.7) 
+$$
+\frac{1}{\exp (a)} = \exp (-a).
+$$
+\end{theorem}
+
+If we apply (2.6) to the sum of the two numbers $a$ and $-b$, we get 
+
+$$
+\exp (a - b) = \exp [a + (-b)] = \exp(a) \cdot \exp(-b).
+$$ 
+\noindent Since 
+$$
+\exp(-b) = \frac{1}{\exp(b)},
+$$
+
+\noindent it follows that
+
+\begin{theorem} %(2.8) 
+$$
+\frac{\exp(a)}{\exp(b)} = \exp(a - b).
+$$
+\end{theorem}
+
+If a function $f$ has an inverse, then the ordered pairs which comprise it become the ordered pairs of $f^{-1}$when we interchange the order of each pair. Hence the graph of $f^{-1}$ may be obtained from the graph of $f$ by interchanging $x$ and $y$. This is equivalent to a reflection across the line $y = x$. The graph of $y = \exp(x)$ is thus the reflection of the graph of $y = \ln\; x$ across this line, and it is shown in Figure \f{5.4}. The curve passes through (0, 1) and gets closer and closer to the $x$-axis as 
+$x$ decreases without bound. As $x$ increases without bound, so also does $\exp(x)$.
+
+\putfig{3.25truein}{scanfig5_4}{}{fig 5.4}
+
+% 252 LOGARITHMS AND EXPONENTIAL FUNCTIONS [CEIAP. 5
+The graph of $y = \exp(x)$ is a smooth curve, and it is obvious geometrically that there is a tangent line at every point. We conclude that $\exp$ is a differentiable function. [For an analytic proof of this fact, see Theorem (3.4) in the next section.] We may compute the derivative by implicit differentiation. Consider the equation $y = \exp(x)$ and its equivalent equation $\ln y = x$. The latter implicitly defines $\exp(x)$ since $\ln [\exp (x)] = x$. Hence from $\ln y = x$ we obtain
+
+\begin{eqnarray*} 
+     \frac{d}{dx} \ln y &=& \frac{d}{dx} x,\\
+    \frac{1}{y} \frac{dy}{dx} &=& 1,\\
+                \frac{dy}{dx} &=& y.
+\end{eqnarray*}
+
+\noindent  Replacing $y$ by $\exp (x)$, we get
+
+\begin{theorem} %(2.9) 
+$$
+\frac{d}{dx} \exp (x) = \exp (x).
+$$
+\end{theorem}
+
+\noindent Alternatively we may write: \textit{If} $f(x) = \exp (x)$, \textit{then} $f'(x) = \exp(x)$  \textit{for every real number} $x$.
+
+Thus $\exp (x)$ is a most remarkable function, one which is equal to its own derivative. It is quite easy to show that this function and constant multiples of it are the only functions with this property. [See Problem 8 at the end of this section.]
+
+Another property of $\exp$ arises as a consequence of the logarithmic equation, $\ln p^r = r \ln p$, for positive $p$ and rational $r$. If we again let $a = \ln p$, then $p = \exp (a)$ and $ar= r \ln p = \ln p^r$. Equivalent to $ar = \ln p^r$ is $p^r = \exp (ar)$. Since $p$ stood for $\exp (a)$, we conclude that
+
+\begin{theorem} %(2.10) 
+$$
+[\exp(a)]^{r} = \exp(ar),  \;\;\; \mbox{for all $a$ and rational $r$}.
+$$
+\end{theorem}
+
+We know that $\exp(0) = 1$ and may wonder what $\exp(1)$ is. If we set $y = \exp (1)$, then $1 = \ln y$. But $e$ is the only number with a natural logarithm equal to 1. Hence, $\exp(1) = e$.
+
+As an application of (2.10), we see that if $x$ is a rational number, then 
+
+$$
+e^{x} = [\exp (1)]^{x} = \exp (1 \cdot x) = \exp(x).
+$$
+
+\noindent What about $e^{x}$ if $x$ is real but not rational? Note that if $a$ is any positive number, we have previously encountered a raised only to rational powers. For example, at this point we have no idea what $3^{\sqrt 2}$ even means. For the number $e$, however, there is a very natural way to define $e^{x}$ for all real numbers $x$. We have just shown that if $x$ is rational, then $e^{x} = \exp (x)$.
+%SEC.2] THE EXPONENTIAL FUNCTION  253
+Since the function $\exp$ has every real number in its domain, we shall \textit{define} $e^{x}$ to be $\exp (x)$ if $x$ is not rational. Hence
+
+$$
+e^{x} = \exp(x), \;\;\;\mbox{for every real number}\; x.  
+$$
+\noindent We shall define $a^{x}$, for an arbitrary positive number $a$ and real $x$, in Section 4, and then $3^{\sqrt 2}$ will make sense.
+
+The reason for the term ``exp," which is an abbreviation for ``exponential," should now be clear. The function agrees with our previous idea of an exponential for rational values, and it has the following properties translated from those derived earlier in this section:
+
+\begin{equation}
+\left \{
+\begin{array}{c}
+e^{0} = 1,\\
+\\
+e^{a} \cdot e^{b} = e^{a + b},\\
+\\
+e^{-a} = \frac{1}{e^a},\\
+\\
+\frac{e^a}{e^b} = e^{a-b}.
+\end{array}
+\right.
+\label{eq5.2.1}
+\end{equation}
+
+\noindent Thus $e^{x}$ obeys the familiar laws of exponents. In addition,
+
+\begin{equation}
+\frac{d}{dx} e^{x} = e^{x}.
+\label{eq5.2.2}
+\end{equation}
+
+If $u$ is a differentiable function of $x$, then the Chain Rule implies that
+$\frac{d}{dx} e^u = \Bigl( \frac{d}{du} e^{u} \Bigr) \frac{du}{dx}$. Since$ \frac{d}{du} e^u = e^u$, we have 
+
+\begin{equation}
+\frac{d}{dx} e^u = e^u \frac{du}{dx}.
+\label{eq5.2.3}
+\end{equation} 
+
+%EXAMPLE1. 
+\begin{example} Find the derivative of each of the composite functions
+$$
+(a)\; e^{2x+7}, \;\;\; (b)\; e^{x^2}, \;\;\; (c)\; \frac{1}{e^{2x^3}}.
+$$
+
+\noindent For the first, we have $\frac{d}{dx} e^{2x+7} = e^{2x + 7} \frac{d}{dx} (2x + 7) = 2e^{2x+7}$. For (b), $\frac{d}{dx} e^{x^2} = e^{x^2} \frac{d}{dx} x^2 = 2xe^{x^2}$. For (c), we writ $\frac{1}{e^{2x^3}}$ as $e^{-2x^3}$ and differentiate to get $e^{-2x^3} (-6x^2)$ or $-\frac{6x^2}{ e^{2x^3}}$.
+\end{example}
+\medskip
+%254 LOGARITHMS AND I5XPONENTIAL FUNCTIONS [CHAP. 5
+
+Since $e^{x}$ is its own derivative, it is also its own indefinite integral. Hence
+
+\begin{theorem} %(2.11)
+$$ 
+\int e^{x} dx = e^{x} + c.
+$$
+\end{theorem}
+
+More generally, from (3) [or, equivalently, from (6.5), page 213] we obtain the integral formula
+
+ 
+\begin{theorem} %(2.12)
+$$
+\int e^{u} \frac{du}{dt} dx = e^u + c.
+$$
+\end{theorem}
+
+%EXAMPLE 2. 
+\begin{example} Compute the following integrals:
+$$
+(a) \int e^{5x} dx, \;\;\; (b) \int x^{2} e^{x^{3} +7} dx,\;\;\; (c) \int \frac{e^{x} dx}{4e^{x} - 3}. 
+$$
+
+\noindent To solve (a), we let $u = 5x$. Then $\frac{du}{dx} = 5$, and multiplying by $\frac{5}{5}$, we have 
+
+\begin{eqnarray*}
+\int e^{5x} dx &=& \frac{1}{5} \int e^{u} 5 dx = \frac{1}{5} \int e^{u} \frac{du}{dx} dx\\
+               &=& \frac{1}{5} e^{u} + c = \frac{1}{5}e^{5x} + c.
+\end{eqnarray*}
+
+\noindent In the same manner we solve (b) by letting $u = x^3 + 7$. Then $\frac{du}{dx} = 3x^2$. Omitting the explicit substitution of the variable $u$, we write
+
+$$
+\int x^{2} e^{x^{3} +7} dx = \frac{1}{3} \int e^{x^{3}+7} 3x^{2} dx = \frac{1}{3} e^{x^{3}+7} + c.
+$$
+
+\noindent Part (c) combines logarithms and exponentials. Since $e^{x}$ lacks only a factor of 4 to be the derivative of $4e^{x} - 3$, we can supply the 4, and the integral is
+then of the form $\int \frac{1}{u} \frac{du}{dx} dx$, which is equal to $\ln |u| + c$. Hence
+
+$$
+\int \frac{e^{x} dx}{4e^{x} - 3} = \frac{1}{4} \int \frac{1}{4e^{x} -3} 4e^{x} dx = \frac{1}{4} \ln |4e^{x}-3| + c.
+$$
+
+\noindent Each of these answers can be checked by differentiating to see if we get back the original integrand. For example, in (b) we get
+
+\begin{eqnarray*}
+\frac{d}{dx} (\frac{1}{3}e^{x^{3}+7} + c) 
+&=& \frac{1}{3}e^{x^{3} + 7} \frac{d}{dx} (x^3 + 7)\\
+&=& \frac{1}{3}e^{x^{3} +7} 3x^2 = x^{2} e^{x^{3}+7}.
+\end{eqnarray*}
+%SEC. 2] THE EXPONENTIAL FUNCTION  255
+
+\noindent In (c), 
+\begin{eqnarray*}
+\frac{d}{dx} (\frac{1}{4} \ln |4e^{x} - 3| + c) 
+&=& \frac{1}{4} \frac{1}{4e^{x} - 3} \frac{d}{dx} (4e^{x} - 3)\\
+&=& \frac{e^{x}}{4e^{x} - 3}.
+\end{eqnarray*}
+
+Since the natural logarithm and the exponential functions are inverses of each other, an application of (2.3) gives the two useful formulas
+
+\begin{eqnarray*}
+  \ln e^x &=& x, \;\;\; -\infty < x < \infty,\\
+e^{\ln x} &=& x, \;\;\; 0< x< \infty.
+\end{eqnarray*}
+\end{example}
+\medskip
+
+%EXAMPLE 3. 
+\begin{example}
+Simplify (a) $e^{2 \ln x}$ and (b) $e^{3 + 5 \ln x}$. For the first, since $2 \ln x = \ln x^2$,  we have
+$$
+e^{2 \ln x} = e^{\ln x^2} = x^2.
+$$
+
+\noindent For part (b),
+$$
+ e^{3+ 5 \ln x} = e^{3} e^{5 \ln x} = e^{3} e^{\ln x^5} = e^{3}x^{5}.
+$$
+\end{example}

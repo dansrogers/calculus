@@ -1,0 +1,264 @@
+\section{Introduction to Differential Equations.} \label{sec 5.5} 
+For a given differentiable function, we are frequently interested in an equation which contains the derivative of the function and which is true for every number in the domain of the function. These equations arise naturally in physics and in many applied branches of mathematics. An example of such an equation is obtained if $y$ is the function of $x$ defined by $y = 2e^{3x}$. Since $\frac{dy}{dx} = 3(2e^{3x}) = 3y$, the equation
+
+$$
+\frac{dy}{dx} - 3y = 0
+$$
+\noindent holds for this particular function $y$ and all real values of $x$. For another example, let $y$ be the function defined by $y = x^{3} - x^{2}$. It is easy to verify by differentiation and substitution that the equation
+$$
+x \frac{dy}{dx} - 3y = x^2
+$$
+\noindent is true for this function and all real values of $x$.
+
+The two equations in the preceding paragraph are examples of differential equations. They are called first-order differential equations because they involve the first derivative of the function but no higher derivatives. In each example above we started with a function and then found an equation containing its derivative. More commonly we encounter the differential equation and then set out to find the function. For example, for what function $y$ is the equation
+$$
+\frac{dy}{dx} = \frac{x}{y}
+$$
+\noindent true for all values of $x$ in the domain of $y$? If such a function exists, it is called a solution to the differential equation. Generally speaking, if a differential equation has one solution, it has infinitely many. We may be required to find one solution to a given differential equation, or possibly all solutions.
+
+Let us try to fix the ideas in the above examples by giving a general definition. Consider an equation in three variables $x$, $y$, and $z$, which we write
+$$
+F(x, y, z) = 0. 
+$$
+\noindent Not all the variables need occur in the equation, but at least $z$ must. Substituting $\frac{dy}{dx}$ for $z$, we obtain the equation
+
+\begin{equation}
+F \Bigl( x, y, \frac{dy}{dx} \Bigr) = 0,
+\label{eq5.5.1}
+\end{equation}
+which is a \textbf{first-order differential equation.} This equation, however, is merely a formal statement of equality containing the symbols $x, y$, and $\frac{dy}{dx}$. As such, it is neither true nor false. By a \textbf{solution} to (1) we mean any differentiable
+%SEC. 5] INTRODUCTION TO DIFFERENTIAL EQUATIONS  273
+function $f$ such that the equation
+$$
+F(x, f(x), f'(x)) = 0
+$$
+\noindent is true for every $x$ in the domain of $f$.
+
+The reader should realize, of course, that there is nothing sacred about the letters $x$ and $y$ which we have thus far used to denote the independent and dependent variable, respectively. For example, the differential equation
+$$
+t\frac{dx}{dt} + x = e^{t} 
+$$
+\noindent has for a solution the function of $t$ defined by $x = \frac{e^{t}}{t}$.
+\medskip
+
+In this section we shall consider some simple types of first-order differential equations and the techniques for solving them. Other first-order differential equations and differential equations of higher order will be studied in Chapters 6 and 11.
+
+The first type to be studied has already been solved in this book. Let $f$ be a given continuous function, and consider the differential equation
+
+\begin{equation}
+\frac{dy}{dx} = f(x).
+\label{eq5.5.2}
+\end{equation}
+\noindent A solution is any function $y$ with the property that its derivative is the functionf. That is, a function is a solution if and only if it is an antiderivative, or indefinite integral, of $f$. Hence, if $F'(x) = f(x)$, we have
+
+\begin{equation}
+y = \int f(x) dx = F(x) + c,  
+\label{eq5.5.3}
+\end{equation}
+\noindent where $c$ is an arbitrary constant. Thus solving the differential equation is the same thing as finding the indefinite integral. As $c$ ranges over all real numbers, we get all antiderivatives and therefore all solutions to the differential equation (2). For this reason, (3) is called the \textbf{general solution} to the differential equation.
+
+%EXAMPLE L 
+\begin{example} 
+Find the general solution of each of the following differential equations:
+ 
+\begin{quote}
+\begin{description}
+\item[(a) $\frac{dy}{dx} = 3x^{2} + 2x - 1,$]
+\item[(b) $\frac{dx}{dt} = e^{t} - 1,$]
+\item[(c) $x \frac{dy}{dx} = (\ln x)^{2}.$]
+\end{description}
+\end{quote}
+%274 LOC iRlTHMS AND EXPONENTIAL FUNCTIONS [CHAP. 5
+\noindent Solving (a), we obtain
+$$
+y = \int (3x^{2} + 2x - 1) dx = x^{3} + x^{2} - x + c.
+$$
+Similarly, for (b),
+$$
+x = \int (e^{t} - 1)dt = e^{t} - t + c.
+$$
+\noindent As it stands, (c) is not in the form of (2). However, an equivalent equation is 
+$\frac{dy}{dx} = \frac{1}{x}(\ln x)$, and so
+
+$$
+y = \int (\ln x)^{2} \frac{1}{x} dx.
+$$
+
+\noindent The integral is of the form $\int u^{2} \frac{du}{dx}$, where $u = \ln x$; hence  
+
+$$
+y = \frac{(\ln x)^3}{3} + c.
+$$
+\end{example}
+\medskip
+
+The second type of differential equation which we consider in this section arises when we are given two continuous functions $f$ and $g$ and form the differential equation
+
+\begin{equation}
+\frac{dy}{dx} = \frac{f(x)}{g(y)}.
+\label{eq5.5.4}
+\end{equation}
+\noindent A differential equation of this form is called \textbf{separable}. An equivalent equation is $g(y)\frac{dy}{dx} = f(x)$, where the variables have been ``separated" in the sense that on the right we have a function of $x$ and on the left a function of $y$ and the derivative of $y$. The differential equation can be readily solved provided we can find antiderivatives of $f$ and $g$.  From the latter equation we obtain
+
+\begin{equation}
+\int g(y) \frac{dy}{dx} dx = \int f(x)dx.
+\label{eq5.5.5}
+\end{equation}
+\noindent Suppose that $F'(x) = f(x)$ and that $G'(y) = g(y) $. That is,
+\begin{eqnarray*}
+\int f (x) dx &=& F(x) + c, \\
+ \int g(y)dy &=& G(y) + k.
+\end{eqnarray*}
+
+%SEC. 51 INTRODUCTION TO DIFFERENTIAL EQUATIONS 275 .  _.
+\noindent Then it is also true that 
+
+$$
+\int g(y) \frac{dy}{dx} dx = G(y) + k, 
+$$
+\noindent because, by the Chain Rule,
+
+$$
+\frac{d}{dx}[G(y) + k] = G'(y)\frac{dy}{dx} = g(y) \frac{dy}{dx}.
+$$
+
+\noindent It follows from (5) that $G(y) + k = F(x) + c$. This tells us that $G(y)$ and $F(x)$ differ by the constant $c-k$, which for convenience we rename simply $c$. Therefore, we finally obtain the equation
+
+\begin{equation}
+G(y) = F(x) + c,     
+\label{eq5.5.6}
+\end{equation}
+\noindent which implicitly defines any solution $y$ of the original differential equation.
+
+Conversely, if we differentiate (6) with respect to $x$, we get (4) again: 
+\begin{eqnarray*}
+\frac{d}{dx} G(y) = \frac{d}{dx} [F(x) + c], \\
+G'(y) \frac{dy}{dx} = f (x), \\
+g(y) \frac{dy}{dx} = f (x),\\
+\frac{dy}{dx}= \frac{f(x)}{g(y)}.
+\end{eqnarray*}
+
+\noindent Thus, for any value of the constant $c$, every differentiable function $y$ defined implicitly by (6) is a solution. Hence (6) defines the \textbf{general solution} to the separable differential equation (4).
+\medskip
+
+%EXANIPLE 2. 
+\begin{example} 
+(a) Find the general solution to the differential equation $\frac{dy}{dx} = \frac{x}{y}$. 
+(b) Find the particular solution whose graph passes through the point (2, 1). This is a separable differential equation, and ``separating variables" we replace it by the equivalent form $y\frac{dy}{dx} = x, y \neq 0$. It follows that   
+$$
+\int y \frac{dy}{dx} dx = \int x dx,
+$$
+%276 I OCARITHMS AND EXPONENTIAL FUNCTIONS [CHAT. 5 
+\noindent and, integrating both sides, we obtain
+$$
+\frac{y^{2}}{2} = \frac{x^{2}}{2} + c.
+$$
+\noindent If we multiply by 2, we get $y^{2} = x^{2} + 2c$. But twice an arbitrary constant is still an arbitrary constant, so we replace $2c$ by simply $c$. Hence the general solution to $\frac{dy}{dx} = \frac{x}{y}$ is implicitly defined by the equation  
+
+\begin{equation}
+y^2 = x^{2} + c.  
+\label{eq5.5.7}
+\end{equation}
+\noindent Solving for $y$ explicitly, we obtain 
+
+$$
+y = \pm \sqrt{x^{2} + c}
+$$
+\noindent as the answer to part (a). To find the particular solution that passes through (2, 1), we substitute $x = 2$ and $y = 1$ in (7) to get $1 = 4 + c$, whence $c = - 3$. Since $y$ takes on the value 1, which is positive, we choose the positive square root, and the answer to part (b) is therefore the function defined by
+$$
+y= \sqrt{x^{2} - 3}.
+$$
+\end{example}
+\medskip
+
+A first-order differential equation $F \Bigl(x, y, \frac{dy}{dx} \Bigr) = 0$ is called \textbf{linear} if the corresponding function $F(x, y, z)$ is a polynomial of first degree in $y$ and $z$, i.e., if $F(x, y, z) = f(x)y + g(x)z + h(x)$. Thus among the differential equations
+
+\begin{eqnarray*}
+  \frac{dy}{dx} - 3y &=& 0, \\
+x \frac{dy}{dx} - 3y &=& x^{2},\\
+       \frac{dy}{dx} &=& \frac{x}{y},
+\end{eqnarray*}
+
+\noindent the first two are linear and the third is not. The last type of differential equation which we study in this section is the simplest linear type,
+
+\begin{equation}
+\frac{dy}{dx} +ky = 0,
+\label{eq5.5.8}
+\end{equation}
+where $k$ is an arbitrary constant.
+
+Actually every such differential equation is also separable, since it can be written in the form $\frac{dy}{dx} = -\frac{k}{1/y}$. We treat it as a third type because it is
+%SEC. 5] INTRODUCTION TO DIFFERENTIAL EQUATIONS  277
+linear and because it has many interesting applications. Solving it as a separable differential equation, however, we first replace it by the equivalent
+equation $ \frac{1}{y} \frac{dy}{dx} = - k$. Then  
+$$
+\int \frac{1}{y} \frac{dy}{dx} dx = - \int k dx.
+$$
+\noindent Integrating, we obtain 
+
+$$
+\ln |y| = -kx + c,
+$$
+\noindent which defines the general solution implicitly. Since the natural logarithm and the exponential are inverse functions, we can solve for $|y|$, getting
+
+\begin{equation}
+\begin{array}{rl}
+|y| &= e^{-kx+c} = e^{c} e^{-kx}, \vspace{.1in}\\
+  y &= (\pm e^{c})e^{-kx}.   
+\end{array}
+\label{eq5.5.9}
+\end{equation}
+\noindent As $c$ takes on all real values, the quantity $e^c$ takes on all positive real values. Thus $e^c$ is simply an arbitrary positive constant, and $\pm e^{c}$ is therefore an arbitrary nonzero constant. The original differential equation $\frac{dy}{dx} + ky = 0$ certainly also has the constant function $y = 0$ as a solution. From this fact and (9) we conclude that the general solution to the linear differential equation (8) is
+
+\begin{equation}
+y = ce^{-kx} ,
+\label{eq5.5.10}
+\end{equation}
+\noindent where $c$ is an arbitrary constant.
+\medskip
+
+%EXAMPLE 3.
+\begin{example} Let $x$ be the amount of radium present in a pile at time $t$. Thus $x$ is a function of $t$.  It is known that the rate of radioactive decay of the pile of radium is proportional to the amount $x$ that remains in the pile.
+
+(a) Show that the length of time $T$ for an amount $x$ to diminish by radioactive decay to an amount $\frac{x}{2}$ is independent of $x$. The number $T$ is called the \textbf{half-life} of radium. It is equal 
+to approximately 1550 years.
+
+(b) If 0.01 grams of radium is present at $t = 0$, how much is present after 500 years?
+
+The rate of change of the amount of radium present with respect to time is given by the derivative $\frac{dx}{dt}$. This is positive for growth and negative for decay. Since the rate of decay is proportional to the amount present, i.e., to $x$, we know that
+$$
+\frac{dx}{dt} = -kx,
+$$
+%278 LOGARITHMS AND EXPONE:NTIAL FUNCTIONS [CHAP. 5
+\noindent where $k$ is some positive constant of proportionality. This is the differential equation governing the physical process. We have shown that the general solution is 
+
+\begin{equation}
+x = ce^{-kt},
+\label{eq5.5.11}
+\end{equation}
+\noindent where $c$ is an arbitrary constant. If after an interval of time equal to $T$ the amount has dwindled to $\frac{x}{2}$ we have
+$$
+\frac{x}{2} = ce^{-k( t+T)}.
+$$
+
+\noindent Solving this equation for x and using (11), we get $x = 2ce^{-k(t + T)} = ce^{-kt}$, from which it follows that $2e^{-kT} = 1$, or $2 = e^{kT}$. Hence, $\ln 2 = \ln(e^{kT}) = kT$, and we conclude that
+$$
+T = \frac{\ln 2}{k},
+$$
+\noindent which is independent of $x$.
+\medskip
+
+To do part (b), let us denote by $x_{0}$ the amount of radium present at time $t = 0$. Hence from (11) we get
+$$
+x_{0} = ce^{-k \cdot 0} = c, 
+$$
+\noindent and so $x = x_{0}e^{-kt}$. Since $k = \frac{\ln 2}{T}$, we obtain the formula
+$$
+x = x_{0}e^{-(\ln 2/T)t},
+$$
+\noindent which expresses the amount of radium present at time $t$ in terms of the original amount at time $t = 0$ and the half-life of radium. In our problem $x_{0} = 0.01$ grams, $t = 500$ years, and $T = 1550$ years. Hence, the answer is $x$ grams, where
+
+$$
+x = (0.01)e^{-(500/1550) \ln 2} = 0.008\; (\mbox{approximately}).
+$$
+\end{example}

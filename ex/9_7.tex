@@ -1,0 +1,149 @@
+\begin{exercises}
+
+\ex{9.7.1}
+Let $f$ be the function defined by
+\[
+f(x) = \sum_{i=1}^\infty \frac{x^i}{i^2}.
+\]
+\begin{exenum}
+\x
+Find the radius of convergence of the power series
+and also the domain of $f$.
+\x
+Write the derived series, and find its radius of
+convergence directly
+[i.e., verify Theorem \thref{9.7.1} for
+this particular series].
+\x
+Find the domain of the function defined
+by the derived series.
+\end{exenum}
+
+\ex{9.7.2}
+Let $f$ be the function defined by
+$f(x) = \sum_{i=1}^\infty \frac1{i2^i} (x-2)^i$,
+and follow the same instructions as in
+Problem \exref{9.7.1}.
+
+\ex{9.7.3}
+Let $f$ be the function defined by
+$f(x) = \sum_{i=1}^\infty \frac1{\sqrt{i}} (x-2)^i$,
+and follow the same instructions as in
+Problem \exref{9.7.1}.
+
+\ex{9.7.4}
+Let $f$ be the function defined by
+$f(x) = \sum_{i=0}^\infty \frac{(x-1)^i}{\sqrt{i+1}}$,
+and follow the same instructions as in
+Problem \exref{9.7.1}.
+
+\ex{9.7.5}
+Find the domains of the functions $f$ and $g$
+defined by the following power series.
+\begin{exenum}
+\x
+$f(x) = \sum_{i=1}^\infty \frac{(-1)^{i-1}}
+{(2i-1)!} x^{2i-1}$
+\x
+$g(x) = \sum_{i=0}^\infty \frac{(-1)^{i}}
+{(2i)!} x^{2i}$.
+\end{exenum}
+
+\ex{9.7.6}
+If $f$ and $g$ are the two functions defined
+in Problem \exref{9.7.5}, show that
+\begin{exenum}
+\x
+$f^\prime (x) = g(x)$
+\x
+$g^\prime (x) = - f(x)$.
+\end{exenum}
+
+\ex{9.7.7}
+Let $f$ and $g$ be the two functions defined in
+Problem \exref{9.7.5} (see also Problem \exref{9.7.6}).
+\begin{exenum}
+\x
+\xlab{9.7.7a}
+Evaluate $f(0)$, $f^\prime(0)$, $g(0)$,
+and $g^\prime(0)$.
+\x
+\xlab{9.7.7b}
+Show that $f$ and $g$ are both solutions of the
+differential equation $\frac{d^2y}{dx^2} + y = 0$.
+\x
+Write the general solution of the differential equation
+in \exref{9.7.7b}, and thence, using the results of
+part \exref{9.7.7a}, show that $f(x) = \sin x$
+and that $g(x) = \cos x$.
+\end{exenum}
+
+\ex{9.7.8}
+Show as is claimed at the beginning of the proof
+of Theorem \thref{9.7.2}, that it is a direct
+consequence of the Chain Rule that if this
+theorem is proved for $a=0$, then it is
+true for an arbitrary real number $a$.
+
+\ex{9.7.9}
+Prove that every power series can be integrated,
+term by term.  Specifically,
+prove the following two theorems.
+\begin{exenum}
+\x
+\emph{A power series
+$\sum_{i=0}^\infty a_i(x-a)^i$ and its integrated
+series
+\[
+\sum_{i=0}^\infty \frac{a_i}{i+1} (x-a)^{i+1}
+\]
+have the same radius of convergence.}
+\x
+\emph{If the radius of convergence $\rho$
+of the power series
+$\sum_{i=0}^\infty a_i(x-a)^i$
+is not zero and if $f$ and $F$ are the functions
+defined, respectively, by
+\[
+f(x) = \sum_{i=0}^\infty a_i(x-a)^i \quad \mbox{and}
+\quad F(x) = \sum_{i=0}^\infty \frac{a_i}{i+1} (x-a)^{i+1}
+,
+\]
+then
+\[
+F(x) = \int f(x) \; dx + c
+.
+\]
+}
+\end{exenum}
+
+\ex{9.7.10}
+Starting from the geometric series
+\[
+\sum_{i=0}^\infty (-1)^ix^{2i} =
+1 - x^2 + x^4 - x^6 + \cdots
+\]
+and the results of Problem \exref{9.7.9}, show that
+\[
+\arctan x = \sum_{i=0}^\infty
+\frac{(-1)^i}{2i+1} x^{2i+1}
+,
+\]
+for every $x$ such that $|x| < 1$.
+
+\ex{9.7.11}
+\begin{exenum}
+\x
+Show that the interval of convergence of the
+integrated series in Problem \exref{9.7.10}
+is the closed interval $[-1,1]$.
+\x
+True or false?
+\[
+\frac{\pi}4 = \arctan 1 = \arctan x = \sum_{i=0}^\infty
+\frac{(-1)^i}{2i+1}
+.
+\]
+\end{exenum}
+
+\end{exercises}

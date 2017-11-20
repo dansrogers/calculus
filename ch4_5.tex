@@ -1,0 +1,284 @@
+\section{The Fundamental Theorem of Calculus.} 
+In spite of the fact that we have thus far developed a
+sign)ficant amount of the theory of the definite integral, the actual evaluation of $ \int_{a}^{b} f(x) dx$, for even a very simple function $f$, is generally an arduous task. For a wide class of functions, the problem of computation is solved by a theorem which relates the definite integral to the derivative and which has become known as the Fundamental Theorem of Calculus.
+
+To understand clearly our presentation of this important result, it is necessary to be aware of the following integrability theorem.
+
+\begin{theorem} %(5.1) 
+If the function $f$ is continuous at every $x$ in the closed interval $[a, b]$, then $f$ is integrable over $[a, b]$.
+\end{theorem}
+
+We shall give only a brief outline of the proof, which shows that the result is plausible. Since $f$ is continuous, its values do not vary widely over a small interval. Recall that the $n$th upper and lower sums are defined by
+$$
+\begin{array}{l}
+U_n = M_{1}(x_{1} - x_0) + ... + M_{n}(x_{n} - x_{n-1}), \\
+\\
+L_n = m_{1}(x_{1} - x_0) + ... + m_{n}(x_{n} -  x_{n-1}),
+\end{array}
+$$
+\noindent where $M_i$ and $m_i$ are, respectively, the maximum and minimum values of $f$ on the $i$th subinterval. We assume that $n$ is large and each subinterval small. By the continuity of $f$, therefore, the difference $M_{i} - m_{i}$ is small for each $i = 1, . . ., n$. This in turn implies that
+$U_{n} - L_{n}$ is small. In fact, $U_{n} - L_{n}$ can be made arbitrarily small by taking $n$ sufficiently large; i.e., $\lim_{n \rightarrow \infty} (U_{n} - L_{n}) = 0$. This limit is sufficient to prove that $f$ is integrable over $[a, b]$, as shown in Theorem (3.2). To change this outline into a complete proof, it is necessary to introduce the concept of uniform continuity, which we shall not do in this book.
+
+We shall now show how the definite integral can be used to define a new function. Suppose that $f$ is a given function which is continuous at every $x$ in some interval $I$. Let $a$ be an arbitrary number in $I$. A new function $F$ is defined, for every number $t$ in $I$, by the equation
+$$
+F(t) = \int_{a}^{t} f(x) dx. 
+$$
+\noindent The existence of $\int_{a}^{t} f(x) dx$ follows from the continuity of $f$ and the integrability Theorem (5.1).  Thus the function $F$ is well defined by the above equation.
+
+Using the interpretation of the integral as area, we can give geometric meaning to $F(t)$. Suppose that $a \leq t$ and that $f(x) \geq 0$ for every $x$ in the interval $[a, t]$, as shown in Figure \f{4.15}(a). The integral $\int_{a}^{t} f(x) dx$ is then equal to the area of the region $P$ bounded by the graph of $f$, 
+the $x$-axis, and the lines $x= a$ and $x= t$. Thus
+$$
+F(t) = area(P).
+$$
+%200 INTEGRATION [CHAP. 4
+
+On the other hand, if $t \leq a$ and $f(x) \geq 0$ for every $x$ in $[t, a]$, which is the situation shown in Figure \f{4.15}(b), then the area of $P$ is equal to the integral $\int_{t}^{a} f(x) dx$. Hence, in this case, we have  
+$$
+F(t) = \int_{a}^{t} f(x) dx = -\int_{t}^{a}  f(x) dx = -area(P).
+$$
+
+\putfig{4.5truein}{scanfig4_15}{}{fig 4.15}
+
+\noindent In the general case, of course, $f$ may take on both positive and negative values. If the region bounded by the graph of $f$, the $x$-axis, and the lines $x = a$ and $x = t$ is expressed as the union of the part $P^{+}$ above the axis and the part $P^{-}$ below the axis, then
+$$
+F (t) = \pm [area(P^{+}) - area(P^{-})],
+$$
+\noindent where we take + or - according as $a \leq t$ or $t \leq a$. 
+
+We come now to the main result of the section.
+
+\begin{prop}[The Fundamental Theorem of Calculus.]
+\label{thm 4.5.2}
+Let $f$ be continuous at every $x$ in some interval $I$, and let $a$ be a number in $I$. If the function $F$ is defined by
+
+$$
+F(t) = \int_{a}^{t} f(x) dx,\;\;\; \mbox{for every}\; t\; \mbox{in}\; I,
+$$
+\noindent then $F$ is a differentiable function and 
+
+$$
+F'(t) = f (t), \;\;\;\mbox{for every}\; t\; \mbox{in}\; I.
+$$
+\end{prop}
+
+\begin{proof}
+According to the definition of the derivative, we must prove that
+$$
+\lim_{h \rightarrow 0} \frac{F(t + h) - F(t)}{h} = f(t).
+$$
+By the definition of the function $F$,
+$$
+ F(t + h) = \int_{a}^{t + h}  f(x) dx.
+$$
+Hence
+$$
+F(t + h) - F(t) = \int_{a}^{t + h}  f(x) dx - \int_{a}^{t}  f(x) dx.
+$$
+By Theorem (4.7) we have 
+$$
+\int_{a}^{t} f(x) dx + \int_{t}^{t + h} f(x) dx = \int_{a}^{t + h} f(x) dx, 
+$$
+and the preceding two equations therefore imply that  
+$$
+F(t + h) - F(t) = \int_{t}^{t + h}  f(x) dx.
+$$
+Consequently,
+\begin{equation}
+\frac{F(t + h) - F(t)}{h} = \frac{1}{h} \int_{t}^{t + h}  f(x) dx.  
+\label{eq4.5.1}
+\end{equation}
+These steps are illustrated geometrically in Figure \f{4.16}.
+\putfig{4.5truein}{scanfig4_16}{}{fig 4.16}
+Let the maximum and minimum values of $f$ between $t$ and $t + h$ be denoted by $f_{M}$ and $f_{m}$, respectively. Thus
+$$
+f_{m} \leq f(x) \leq f_{M},
+$$
+for every $x$ between $t$ and $t + h$. If $h$ is positive (as it is in Figure \f{4.16}), then it follows by Theorem (4.3) that
+$$
+\int_{t}^{t + h}  f_{m} dx \leq \int_{t}^{t + h} f (x) dx \leq \int_{t}^{t + h} f_{M} dx.
+$$
+Since $f_{m}$ and $f_{M}$ are constants, Theorem (4.1) implies that 
+\begin{eqnarray*}
+\int_{t}^{t + h} f_{m} dx &=& f_{m} \cdot  (t + h - t) = f_{m} \cdot h,   \\
+\int_{t}^{t + h} f_{M} dx &=&  f_{M} \cdot  (t + h - t) = f_{M} \cdot h.
+\end{eqnarray*}
+Hence
+$$
+ f_{m} \cdot h \leq  \int_{t}^{t + h} f(x) dx \leq f_{M} \cdot h,
+$$
+\noindent or, equivalently,
+\begin{equation}
+f_{m} \leq \frac{1}{h} \int_{t}^{t + h} f(x)dx \leq f_{M}. 
+\label{eq4.5.2}
+\end{equation}
+If, on the other hand, $h$ is negative, it is a straightforward (and logically necessary) matter to verify that the same inequalities (2) follow. Combining (1) and (2), we therefore obtain
+\begin{equation}
+f_{m} \leq \frac{ F(t + h) - F(t)}{h} \leq  f_{M}.
+\label{eq4.5.3}
+\end{equation}
+
+Finally, since $f$ is continuous at $t$, we know that 
+$$
+\lim_{h \rightarrow 0} f_{m} = f(t) = \lim_{h \rightarrow 0} f_{M}.
+$$
+The fraction $\frac{F(t + h) - F(t)}{h}$ is thus seen in (3) to be caught between two quantities both of which approach $f(t)$ as $h$ approaches zero. It, too, must therefore approach $f(t)$ as a limit. We conclude that
+$$
+F'(t) = \lim_{h \rightarrow 0} \frac{F(t + h) - F( t)}{h} = f(t),
+$$
+\noindent and the proof of the Fundamental Theorem is completed.
+\end{proof}
+
+Before reaping the computational rewards of this theorem, we give a concrete example to emphasize precisely what the theorem says.
+%SEC. 5] THE. FUNDAMENTAL THEOREM OF CALCULUS 203 
+
+%EXAMPLE 1.
+\begin{example} 
+If $F(t) = \int_{0}^{t} \frac{1}{x^2 + 1}dx$, find $F'(1), F'(2)$, and $F'(x)$.  The
+integrand in this example is the continuous function $f$ defined by $f (x) = \frac{1}{x^2 + 1} $. In this case, therefore, the interval $I$ can be taken to be the whole real line. By the Fundamental Theorem,
+
+$$
+F'(t) = f(t) = \frac{1}{t^2 + 1}.
+$$
+\noindent In particular, 
+
+\begin{eqnarray*}
+F'(1) = \frac{1}{1^2 + 1} = \frac{1}{ 2},\\
+F'(2) = \frac{1}{2^2 + 1} = \frac{1}{5}, 
+\end{eqnarray*}
+\noindent and, in general,
+$$
+F'(x) = \frac{1}{x^2 + 1}, \;\;\; \mbox{for every real number}\; x.
+$$
+\end{example}
+\medskip
+
+As the preceding example illustrates, the conclusion of the Fundamental Theorem can equally well be written
+$$
+F' (x) = f(x), \;\;\; \mbox{for every $x$ in $I$}.
+$$
+\noindent We used the letter $t$ in the statement of the theorem simply to avoid confusion with the dummy variable $x$ which appears in the integral. We might just as well have written
+$$
+\mbox{If}\; F(x) = \int_{a}^{x} f(t) dt, \;\mbox{then}\; F'(x) = f(x), 
+$$
+\noindent or, perhaps better yet,
+
+$$
+\mbox{If}\; F(x) = \int_{a}^{x} f, \;\mbox{then}\; F'(x) = f(x).
+$$
+\noindent The important thing to remember is that the derivative of $F$ at any point in the given interval is equal to the value of the integrand $f$ at that same point.
+
+We now consider the implications of the Fundamental Theorem. By an \textbf{antiderivative} of a function $f$ is meant any differentiable function $F$ with the property that $F'(x) = f(x)$ for every $x$ in the domain of $f$. Similarly, we shall say that a function $F$ is an \textbf{antiderivative of $f$ on an interval} $I$ if $F' (x) = f(x)$ for every $x$ in $I$. Thus the function $\frac{x^3}{3}$ is an antiderivative  of $x^2$ because
+
+$$
+\frac{d}{dx} \Bigl( \frac{x^3}{3} \Bigr) = \frac{3x^2}{3} = x^2.
+$$
+%204 INTEGRATION [CHAP. 4 X3
+\noindent Of course, $\frac{x^2}{3}$ is an antiderivative of $x^2$ on any interval we care to name. The Fundamental Theorem states that if $f$ is continuous at every point of $I$, then the function $F$ defined by
+$$
+F(x) = \int_{a}^{x} f
+$$
+\noindent is an antiderivative of $f$ on $I$.
+
+If a function $f$ has one antiderivative $F$, then it has infinitely many because, for every constant
+$c$,
+$$
+(F + c)' = F' + c' = F' + 0 = f.
+$$
+\noindent Conversely, we have proved that any two functions which have the same derivative differ by a constant [see Theorem (5.4), page 114]. Hence, if $F' = f$, then the set of all antiderivatives of $f$ is the set of all functions $F + c$ for every real number $c$. Combining these facts, we obtain
+ 
+\begin{prop}{Corollary of the Fundamental Theorem.}
+\label{thm 4.5.3}
+Let $f$ be a function which is continuous at every $x$ in some interval $I$. Then $f$ has an antiderivative on $I$. Furthermore, if $F$ is any antiderivative whatever of $f$ on $I$, then, for any $a$ and $b$ in $I$,
+$$
+\int_{a}^{b} f (x) dx = F(b) - F(a).
+$$
+\end{prop}
+
+This theorem is the computation tool which we have been seeking. Before giving the proof, which is easy, let us see how it works.
+
+%EXAMPLE 2. 
+\begin{example}
+Evaluate the definite integrals
+ 
+\begin{quote}
+\begin{description}
+\item[(a) $\int_{0}^{2} x^2 dx,$]
+\item[(b) $\int_{1}^{4} (5 - x) dx.$]
+\end{description}
+\end{quote}
+
+\noindent Both integrands are obviously continuous functions. As already observed, the function $F$ defined by $F(x) = \frac{x^3}{3}$ is an antiderivative of $x^2$. Hence, by Theorem \thref{4.5.3} 
+\begin{eqnarray*}
+\int_{0}^{2} x^2 dx &=& F(2) - F(0) \\
+                    &=& \frac{2^3}{3} - \frac{0^3}{3} = \frac{8}{3}.
+\end{eqnarray*}
+
+\noindent Similarly, we can see by inspection that the function $G$ defined by $G(x) = 5x - \frac{x^2}{ 2}$ is an antiderivative of $5 - x$, since 
+$$
+\frac{d}{dx} \Bigl( 5x - \frac{x^2}{2} \Bigr) = 5 - x.
+$$
+\noindent It therefore follows by Theorem (5.3) that  
+
+\begin{eqnarray*}
+\int_{1}^{4} (5 - x)dx &=& G(4) - G(1)  \\
+&=& \Bigl( 5 \cdot 4 - \frac{4^2}{2} \Bigr) - \Bigl( 5 \cdot 1 - \frac{1^2}{2} \Bigr) \\
+&=& 12 - 4\frac{1}{2} = 7\frac{1}{2}.
+\end{eqnarray*}
+\noindent These are the two integrals whose values were computed in Section 3 by finding the limits of upper and lower sums. The difference in the magnitude of the computations there and here should render unnecessary any comments on the significance of the results of the present section.
+\end{example}
+\medskip
+
+\begin{proof}[Proof of Theorem \thref{4.5.3}]
+The assertion that $f$ has an antiderivative on $I$ is verified by the Fundamental Theorem. Let $G$ be the antiderivative defined by
+\begin{equation}
+G(x) = \int_{a}^{x} f,\;\;\;\mbox{for every $x$ in $I$}.   
+\label{eq4.5.4}
+\end{equation}
+
+Suppose now that $F$ is an arbitrary antiderivative of $f$ on $I$. Then
+$$
+G'(x) = f(x) = F'(x), \;\;\;\mbox{for every $x$ in $I$}.
+$$
+It follows by Theorem (5.4), page 114, that on the interval $I$ the two functions $G$ and $F$ differ by a constant. That is, there exists a real number $c$ such that
+$$
+G(x) = F(x) + c, \;\;\;\mbox{for every $x$ in $I$}.
+$$
+
+Substituting $x = b$ in equation (4), we obtain
+$$
+G(b) = \int_{a}^{b} f.
+$$
+Moreover, we know that $G(a) =\int_{a}^{a} f = 0$. Hence
+\begin{eqnarray*}
+\int_{a}^{b} f(x)dx &=& \int_{a}^{b} f= G(b) - G(a) \\
+                    &=& [F(b) + c] - [F(a) + c] \\
+                    &=& F(b) - F(a),
+\end{eqnarray*}
+and the proof of \thref{4.5.3} is complete.
+\end{proof}
+
+The following is an extremely useful notational device.
+For any realvalued function $F$ of one variable, we abbreviate $F(b) - F(a)$ by $F(x)|_{a}^{b}$. If $F$ is an antiderivative of the continuous function $f$ on some interval containing the numbers $a$ and $b$, then we may write the value of the definite integral as
+$$
+\int_{a}^{b} f(x)dx = F(x) \Big|_{a}^{b} .
+$$
+The advantage of this notation is that the order of writing is the same as the logical order in which the problem is done. Thus one first writes the antiderivative, and then indicates the numbers at which it is to be evaluated. As a result, the whole problem can frequently be done in a single line. For example,
+$$
+\int_{0}^{2} x^2 dx = \frac{x^3}{3} \Big|_{0}^{2} = \frac{2^3}{3} - \frac{0^3}{3} = \frac{8}{3}.
+$$
+
+%EXAMPLE 3. 
+\begin{example}
+Evaluate the definite integral $\int_{-1}^{1} (y^5 - 3y^2 + 2) dy$.
+
+Note that we get the same answer whether the dummy variable of integration is $y$, $x$, or anything else. The integral is the function $f$ defined by $f(y) = y^5 - 3y^2 + 2$. An antiderivative of $y^5$ is easily seen to be $\frac{y^6}{6}$ an antiderivative of $3y^2$ is $y^3$, and an antiderivative  of 2 is obviously $2y$. Hence $\frac{y^6}{6}  - y^3 + 2y$ is an antiderivative of $f$. We conclude that
+
+\begin{eqnarray*}
+\int_{-1}^{1} (y^5 - 3y^2 + 2) dy &=& \Bigl( \frac{y^6}{6} - y^3 + 2y \Bigr) \Big|_{-1}^{1}\\
+&=& \Bigl( \frac{1^6}{6} - 1^3 + 2 \cdot 1 \Bigr) - \Bigl( \frac{( -1)^6}{6} - (- 1)^3 + 2(- 1) \Bigr) \\
+&=& (\frac{1}{6} -1 + 2) - (\frac{1}{6} + 1 - 2)\\
+&=& 2.
+\end{eqnarray*}
+\end{example}
+
+

@@ -1,0 +1,71 @@
+\newcommand{\figref}[1]{\ref{fig #1}}
+\newcommand{\f}{\figref}
+\newcommand{\thref}[1]{\ref{thm #1}}
+\newcommand{\exref}[1]{\ref{ex#1}}
+\newcommand{\exampref}[1]{\ref{exam #1}}
+\newcommand{\secref}[1]{\ref{sec #1}}
+\newcommand{\chref}[1]{\ref{chp #1}}
+\newcommand{\tabref}[1]{\ref{table #1}}
+%\renewcommand{\eqref}[1]{(\ref{eq#1})}
+\newcommand{\eqref}[1]{(\ref{eq#1})}
+
+\newenvironment{exercises}
+{\subsection*{Problems} \begin{enumerate}}
+{\end{enumerate}}
+\newcommand{\ex}[1]{\item \label{ex#1}}
+\newenvironment{exenum}{\begin{enumerate}}{\end{enumerate}}
+\newcommand{\sx}{\item}
+\newcommand{\x}{\sx}
+\newcommand{\sxlab}[1]{\label{ex#1}}
+\newcommand{\xlab}{\sxlab}
+
+\newcommand{\prov}[1] {\quad #1}
+\newcommand{\provx}[1] {\quad \mbox{#1}}
+\newcommand{\intext}[1]{\quad \mbox{#1} \quad}
+\newcommand{\cond}[1] {
+\begin{array}{ll}
+#1
+\end{array}
+}
+\newcommand{\dilemma}[2] {
+\left\{
+\begin{array}{ll}
+#1 \\
+#2
+\end{array}
+\right.
+}
+\newcommand{\trilemma}[3] {
+\left\{
+\begin{array}{ll}
+#1 \\
+#2 \\
+#3
+\end{array}
+\right.
+}
+
+\newcommand{\R}{\mathrm{\bf R}}
+\newcommand{\Q}{\mathrm{\bf Q}}
+\newcommand{\Z}{\mathrm{\bf Z}}
+\newcommand{\C}{\mathrm{\bf C}}
+\newcommand{\dt}{\textbf}
+\newcommand{\goesto}{\rightarrow}
+\newcommand{\ddxof}[1]{\frac{d #1}{d x}}
+\newcommand{\ddx}{\frac{d}{dx}}
+\newcommand{\ddt}{\frac{d}{dt}}
+\newcommand{\dydx}{\ddxof y}
+\newcommand{\nxder}[3]{\frac{d^{#1}{#2}}{d{#3}^{#1}}}
+\newcommand{\deriv}[2]{\frac{d^{#1}{#2}}{dx^{#1}}}
+\renewcommand{\d}{d}
+\newcommand{\dist}{\mathrm{distance}}
+\newcommand{\arccot}{\mathrm{arccot\:}}
+\newcommand{\arccsc}{\mathrm{arccsc\:}}
+\newcommand{\arcsec}{\mathrm{arcsec\:}}
+\newcommand{\arctanh}{\mathrm{arctanh\:}}
+\newcommand{\arcsinh}{\mathrm{arcsinh\:}}
+\newcommand{\arccosh}{\mathrm{arccosh\:}}
+\newcommand{\sech}{\mathrm{sech\:}}
+\newcommand{\csch}{\mathrm{csch\:}}
+\newcommand{\conj}[1]{\overline{#1}}
+\renewcommand{\vec}[1]{\mathrm{\bf #1}}

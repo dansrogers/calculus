@@ -1,0 +1,256 @@
+\section{Functions Defined by Power Series.} For every power series
+$$
+\sum_{i=0}^\infty a_i(x - a)^i,
+$$
+\noindent the \textbf{function defined by the power series} is the function $f$ which, to every real number $c$ at which the power series converges, assigns the real number $f(c)$ given by
+$$
+f(c) = \sum_{i=0}^\infty a_i(c - a)^i.
+$$
+
+\noindent The domain of $f$ is obviously equal to the interval of convergence of the power series. Speaking more casually, we say simply that the function $f$ is defined by the equation
+$$
+f(x) = \sum_{i=0}^\infty  a_i(x - a)^i.  
+$$
+\noindent As an example, let $f$ be the function defined by
+$$
+f(x) = \sum_{i=0}^\infty \frac{x^i}{ i!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots .
+$$
+\noindent This power series was studied in Example 1 of Section 6 and was shown to converge for all values of $x$. Thus the domain of the function which the series defines is the set of all real numbers.
+%520 INFINITE SERIES [CHAP. 9
+
+Functions defined by power series have excellent analytic properties. One of the most important is the fact that every such function is differentiable and that its derivative is the function defined by the power series obtained by differentiating the original series term by term. That
+is, if
+
+$$
+f(x) =  \sum_{i=0}^\infty a_{i}(x-a)^i = a_0 + a_{1}(x-a) + a_{2}(x-a)^2 + \cdots , 
+$$
+\noindent then
+$$
+f'(x) = \sum_{i=1}^\infty i a_{i} (x-a)^{i-1} = a_{1} + 2a_{2}(x-a) + 3a_{3}(x-a)^2 + \cdots .
+$$
+
+\noindent This is not a trivial result. To prove it, we begin with the following theorem:
+
+%(7.1) 
+\begin{theorem} A power series $\sum_{i=0}^\infty a_{i}(x-a)^i$ and its derived series $\sum_{i=1}^\infty ia_{i} (x-a)^{i-1}$ have the same radius of convergence.
+\end{theorem}
+
+In Section 6 we showed that the essential difference between the power series $\sum_{i=0}^\infty a_{i}(x-a)^i$ and the corresponding series $\sum_{i=0}^\infty a_{i}x^i$ is that the interval of convergence of one is obtained from that of the other by translation. In particular, both series have the same radius of convergence. To prove (7.1), it is therefore sufficient (and rotationally easier) to prove the same result for power series about the origin 0. We shall therefore prove the following: \textit{If the power series $\sum_{i=0}^\infty a_{i}x^i$ has radius of convergence $\rho$ and if the derived series $\sum_{i=1}^\infty ia_{i}x^{i-1}$ has radius of convergence $\rho'$, then $\rho = \rho'$.}
+
+\begin{proof}
+Suppose that $\rho < \rho'$, and let $c$ be an arbitrary real number such that $\rho < c < \rho'$. Then the series $\sum_{i=0}^\infty a_{i}c^i$ diverges, whereas the series $\sum_{i=1}^\infty i a_{i}c^{i-1}$ converges absolutely. Since $c$ is positive,
+$$
+c \sum_{i=1}^\infty |ia_{i}c^{i-1}| = \sum_{i=1}^\infty |ia_{i}c^i|,  
+$$
+and it follows that the series $\sum_{i=1}^\infty = ia_{i}c^i$ is also absolutely convergent. However, it is obvious that, for every positive integer $i$, 
+$$
+|a_{i}c^i| \leq i |a_{i}c^i| = |ia_{i}c^i|.
+$$
+The Comparison Test therefore implies that the series $\sum_{i=1}^\infty |a_{i}c^i|$ converges, and this fact implies the convergence of $\sum_{i=0}^\infty a_{i}c^i$, which is a contradiction. Hence the original assumption is false, and we conclude that
+\begin{equation}
+\rho' \leq \rho. 
+\label{eq9.7.1}
+\end{equation}
+
+Next, suppose that $\rho' < \rho$. We shall derive a contradiction from this assumption also, which, together with the inequality (1), proves that $\rho' = \rho$. Let $b$ and $c$ be any two real numbers such that $\rho' < b < c < \rho$. It follows
+from the definition of $\rho'$ that the series $\sum_{i=1}^\infty ia_{i}b^{i-1}$ diverges. Similarly, from the definition of $\rho$, we know that the series $\sum_{i=0}^\infty a_{i}c^i$ converges, and therefore $\lim_{i \rightarrow \infty} a_ic^i = 0$. Because $c$ is positive, it follows that there exists a positive integer $N$ such that, for every integer $i \geq N$,
+$$
+|a_{i}c^i| < c.
+$$
+But $|a_ic^i| = |a_i|c^i$, and so the preceding inequality becomes $|a_i|c^i < c$, or, equivalently,
+$$
+|a_i| < \frac{1}{c^{i-1}}.
+$$
+Hence, since $b$ is also positive, we obtain
+$$
+|ia_{i}b^{i-1}| = ib^{i-1} |a_i| < i \frac{b^{i-1}}{c^{i-1}} = i\Bigl(\frac{b}{c}\Bigr)^{i-1} ,
+$$
+for every integer $i \geq N$. Let us set $\frac{b}{c} = r$. Then $0 < r < 1$, and we have shown that   
+$$
+|ia_{i}b^{i-1}| < ir^{i-1}, \;\;\;\mbox{for every integer}\; i \geq N .
+$$
+However, it is shown in Example 3, page 508, that the series $\sum_{i=1}^\infty ir^{i-1}$ converges if $|r| < 1$. Hence the preceding inequality and the Comparison Text imply that the series $\sum_{i=1}^\infty |ia_{i}b^{i-1}|$ converges, and this contradicts the above conclusion that $\sum_{i=1}^\infty ia_{i}b^{i-1}$ diverges. This completes the proof that $\rho' = \rho$, and, as we have remarked, also proves (7.1).
+\end{proof}
+
+Note that Theorem (7.1) does not state that a power series $\sum_{i=0}^\infty a_{i}(x-a)^i$ and its derived series have the same \textit{intertval} of convergence, but only that they have the same \textit{radius} of convergence. For example, in Example 1(b), page 514, the interval of convergence of the power series $\sum_{k=1}^\infty (-1)^{k-1} \frac{x^k}{k}$ is shown to be the half-open interval $(-1,1]$. However, the derived series is
+
+\begin{eqnarray*}
+\sum_{k=1}^\infty (-1)^{k-1} k \frac{x^{k-1}}{k} 
+&=& \sum_{k=1}^\infty ( -1)^{k-1} x^{k-1} \\
+&=& 1 - x + x^2 - x^3 + \cdots ,
+\end{eqnarray*}
+
+\noindent which does not converge for $x = 1$. It is a geometric series having the open interval of convergence $(-1, 1)$.
+
+Let $\sum_{i=0}^\infty a_{i}(x-a)^i$ be a power series, and let $f$ and $g$ be the two functions defined respectively by $f(x) = \sum_{i=0}^\infty a_{i}(x-a)^i$ and by $g(x) = \sum_{i=1}^\infty ia_{i}(x -a)^{i-1}$. We have proved that there is an interval, which, with the
+%522 INFINITE SERI~ [CHAP. 9
+possible exception of its endpoints, is the common domain of $f$ and $g$. However, we have not yet proved that the function $g$ is the derivative of the function $f$. This fact is the content of the following theorem.
+
+
+%(7.2)
+\begin{theorem} THEOREM. If the radius of convergence $\rho$ of the power series $\sum_{i=0}^\infty a_i (x-a)^i$ is not zero, then the function $f$ defined by $f(x) = \sum_{i=0}^\infty a_i(x-a)^i$ is differentiable at ecery $x$ such that $|x-a| < \rho$ and
+$$
+ f'(x) = \sum_{i=1}^\infty ia_i(x-a)^{i-1}.
+$$
+\end{theorem}
+
+\begin{proof}
+It is a direct consequence of the Chain Rule that if (7.2) is proved for $a = 0$, then it is true in general. We shall therefore assume that $f(x) = \sum_{i=0}^\infty a_ix^i$. Let $g$ be the function defined by $g(x) = \sum_{i=1}^\infty i a_i x^{i-1}$, and let $c$ be an arbitrary number such that $|c| < \rho$. We must prove that $f'(c)$, which can be defined by
+$$
+f'(c) = \lim_{x \rightarrow c} \frac{f(x)- f(c)}{x - c} ,
+$$
+exists and is equal to $g(c)$. Hence the proof is complete when we show that 
+\begin{equation}
+ \lim_{x \rightarrow c} \Bigl(\frac{f(x) - f(c)}{x-c} - g(c)\Bigr) = 0.
+\label{eq9.7.2}
+\end{equation}
+Let $d$ be an arbitrary real number such that $|c| < d < \rho$ (see Figure 9).
+%Figure 9
+\putfig{4.25truein}{scanfig9_9}{}{fig 9.9}
+Henceforth, we shall consider only values of $x$ which lie in the closed interval $[-d, d]$. For every such $x$ other than $c$, we have
+\begin{eqnarray*}
+\frac{f(x) - f(c)}{x-c} 
+&=& \frac{1}{x - c} \Bigl(\sum_{i=0}^\infty a_i x^i  - \sum_{i=0}^\infty a_i c^i\Bigr)\\
+&=& \sum_{i=1}^\infty a_i \Bigl(\frac{x^i - c^i}{x-c} \Bigl).
+\end{eqnarray*}
+For each integer $i \geq 1$, we apply the Mean Value Theorem to the function $x^i$, whose derivative is $ix^{i-1}$. The conclusion is that, for each $i$, there exists a real number $c_i$ in the open interval whose endpoints are $c$ and $x$ such that $x^i - c^i = ic_{i}^{i-1}(x-c)$. Hence
+$$
+\frac{x^i - c^i}{x-c} = ic_i^{i-1} ,
+$$
+and so
+$$
+\frac{f(x) - f(c)}{x - c} = \sum_{i=1}^\infty ia_i c_i^{i-1} .
+$$
+From this it follows that
+\begin{eqnarray*}
+\frac{f(x) - f(c)}{x - c} - g(c) 
+&=& \sum_{i=1}^\infty ia_ic_i^{i -1} - \sum_{i=1}^\infty ia_i c^{i -1} \\
+&=& \sum_{i=2}^\infty ia_i(c_i^{i -1} - c^{i-1}).
+\end{eqnarray*}
+noindent For each integer $i \geq 2$, we now apply the Mean Value Theorem to the function $x^{i-1}$, whose derivative is $(i-1)x^{i-2}$. We conclude that there exists a real number $b_i$ in the open interval whose endpoints are $c$ and $c_i$ such that 
+$$
+c_i^{i-1} - c^{i-1} = (i- 1)b_i^{i-2}(c_i - c).
+$$
+Hence
+$$
+\frac{f(x) - f(c)}{x-c} - g(c) = \sum_{i=2}^\infty i(i-1 )a_i b_i^{i-2} (c_i - c).
+$$
+Since $|c_i-c| \leq |x-c|$, for every $i$, we obtain, using Theorem (5.3), page 509,
+\begin{equation}
+\Big|\frac{f(x) - f(c)}{x-c} - g(c)\Big| \leq |x - c| \sum_{i=2}^\infty |i(i-1)a_ib_i^{i-2} | . 
+\label{eq9.7.3}
+\end{equation}
+Two applications of (7.1) imply that the power series $\sum_{i=2}^\infty i(i-1) a_i x^{i-2}$, which is the derived series of $\sum_{i=1}^\infty i a_ix^{i-1}$, also has radius of convergence equal to $\rho$, and it is therefore absolutely convergent for $x = d$. Moreover, $|b_i| < d$ for each $i$, and so
+$$
+|i(i- 1)a_i b_i^{i -2}| \leq | i(i-1)a_id^{i -2}|,
+$$
+for every integer $i \geq 2$. It follows from the Comparison Test that
+\begin{equation}
+\sum_{i=2}^\infty |i(i- 1)a_ib_i^{i-2}| \leq \sum_{i=2}^\infty |i(i- 1)a_id^{i -2}. 
+\label{eq9.7.4}
+\end{equation}
+The value of the series on the right in (4) does not depend on $x$, and we denote it by $M$. Combining (3) and (4), we therefore finally obtain
+$$
+\Big|\frac{f(x)- f(c)}{x-c} - g(c)\Big| \leq |x - c| M.
+$$
+The left side of this inequality can be made arbitrarily small by taking $|x-c|$ sufficiently small. But this is precisely the meaning of the assertion in (2), and so the proof is finished.
+\end{proof}
+
+%EXAMPLE 1. 
+\begin{example}
+(a) Show that 
+$$
+e^x = \sum_{i=0}^\infty \frac{x^i}{i!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots .
+$$
+\noindent for every real number $x$, and (b) show that
+$$
+\ln(1 + x) = \sum_{k=1}^\infty (-1)^{k-1} \frac{x^k}{k} =  x - \frac{x^2}{2!} + \frac{x^3}{3!} - \cdots .
+$$
+\noindent for every real number $x$ such that $|x| < 1$.
+
+For (a), let $f$ be the function defined by $f(x) = \sum_{i=0}^\infty \frac{x^i}{i!}$. We have already shown that the domain of $f$ is the set of all real numbers; i.e., the radius of convergence is infinite. It follows from the preceding theorem that
+$$
+f'(x) = \sum_{i=1}^\infty i \frac{x^{i-1}}{i!} , \;\;\;\mbox{for every real number}\; x.
+$$
+\noindent Since $\frac{i}{i!} = \frac{1}{(i- 1)!}$, we obtain
+$$
+\sum_{i=1}^\infty \frac{ix^{i-1}}{i!} = \sum_{i=1}^\infty \frac{x^{i-1}}{(i-1)!} = \sum_{k=0}^\infty \frac{x^k}{k!},
+$$
+\noindent where the last equation is obtained by replacing $i - 1$ by $k$. Thus we have proved that
+$$
+f'(x) = f(x)\;\;\;\mbox{for every real number}\; x. 
+$$
+\noindent The function $f$ therefore satisfies the differential equation $\frac{dy}{dx} = y$, whose general solution is $y = ce^x$. Hence $f(x) = ce^x$ for some constant $c$. But it is obvious from the series which defines $f$ that $f(0) = 1$. It follows that $c = 1$, and (a) is proved.
+
+A similar technique is used for (b). Let $f(x) = \sum_{k=1}^\infty (-1)^{k-1} \frac{x^k}{k}$. The domain of $f$ is the half-open interval $(-1, 1]$, and the radius of convergence is 1. Hence
+
+\begin{eqnarray*}
+f'(x) &=& \sum_{k=1}^\infty (-1)^{k-1} \frac{k-1}{k} 
+= \sum_{k=1}^\infty (-1 )^{k-1} x^{k-1}\\
+&=& 1 - x + x^2 - x^3 + \cdots ,
+\end{eqnarray*}
+%SEC. 7] FUNCTIoNS DEFINED BY POWER SERIES 525
+for $|x| < 1$. The latter is a geometric series with sum equal to $\frac{1}{1 + x}$. Hence we have shown that  
+$$
+f'(x) = \frac{dx}{1+x}, \;\;\;\mbox{for every $x$ such that}\; |x| < 1.
+$$
+\noindent Integration yields
+$$
+f(x) = \int \frac{dx}{1+x} = \ln |1 +x| + c.
+$$
+\noindent Since $|x| < 1$, we have $|1 + x| = (1 + x)$. From the series which defines $f$ we see that $f(0) = 0$. Hence
+$$
+0 = f(0) = \ln(1 + 0) + c = 0 + c = c.
+$$
+\noindent lt follows that $f(x) = \ln(1 + x)$ for every real number $x$ such that $|x| < 1$, and (b) is therefore established.
+\end{example}
+
+Example 1 illustrates an important point. The domain of the function $f$ defined by $f(x) = \sum_{k=1}^\infty (-1)^{k-1} \frac{x^k}{k} $ is the half-open interval $(-1, 1]$. On the other hand, the domain of the function $\ln(1 + x)$ is the unbounded interval $(-1, \infty)$. It is essential to realize that the equation
+$$
+\ln (1 + x) = \sum_{k=1}^\infty (-1)^{k-1} \frac{x^k}{k} 
+$$
+\noindent has been shown to hold \textit{only for values of $x$ which are interior points of the interval of convergence of the power series.} It certainly does not hold at points outside the interval of convergence where the series diverges. As far as the endpoints of the interval are concerned, it can be proved that a function defined by a power series is continuous at every point of its interval of convergence. Hence the above equation does in fact hold for $x = 1$, and we therefore obtain the following formula for the sum of the alternating harmonic series:
+$$
+\ln 2 = \sum_{k=1}^\infty (-1)^{k-1} \frac{1}{k} = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots .
+$$
+
+Let $\sum_{i=0}^\infty a_{i}(x - a)^i$ be a power series with a nonzero radius of convergence $\rho$, and let $f$ be the function defined by the power series 
+
+$$
+f(x) = \sum_{i=0}^\infty a_{i}(x - a)^i, 
+$$
+%526 INFINITE SERIES [CHAP. 9
+for every $x$ in the interval of convergence. By iterated applications of Theorem (7.2), i.e., first to the series, then to the derived series, then to the derived series of the derived series, etc., we may conclude that $f$ has derivatives of arbitrarily high order within the radius of convergence. The formula for the nth derivative is easily seen to be
+
+\begin{theorem} %(7.3)
+$$
+f^{(n)}(x) = \sum_{i=n}^\infty i(i - 1) \cdots (i - n + 1)a_i(x - a)^{i-n} ,
+$$
+\noindent \textit{for every $x$ such that $|x - a| < \rho$}.
+\end{theorem}
+
+Is it possible for a function $f$ to be defined by two different power series about the same number $a$? The answer is no, provided the domain of $f$ is not just the single number $a$. The reason, as the following corollary of Theorem (7.3) shows, is that the coefficients of any power series about $a$ which defines $f$ are uniquely determined by the function $f$.
+
+\begin{theorem} %(7.4)
+lf $f(x) = \sum_{i=0}^\infty a_i(x-a)^i$ and if the radius of convergence of the power series is not zero, then, for every integer $n \geq 0$,
+$$
+a_n = \frac{1}{n!} f^{(n)}(a).
+$$
+\end{theorem}
+
+[By the zeroth derivative $f^{(0)}$ we mean simply $f$ itself. Hence, for $n = 0$, the conclusion is the obviously true equation $a_0 = f(a)$.]
+
+
+\begin{proof}
+The radius of convergence $\rho$ is not zero, and so the formula in (7.3) holds. Since $i(i-1) \cdots (i - n + 1) = \frac{i!}{(i-n)!}$, we obtain
+\begin{eqnarray*}
+f^{(n)}(x) &=& \sum_{i=n}^\infty \frac{i!}{(i - n)!} a_i (x - a)^{i-n} \\
+               &=& n! a_n + (n + 1)! a_{n+1}(x - a) + \frac{(n+2)!}{2!} a_{n+2}(x - a)^2 + \cdots ,
+\end{eqnarray*}
+for every $x$ such that $|x-a| < \rho$. Setting $x = a$, we obtain
+$$
+f^{(n)}(a)= n!a_n, 
+$$
+from which the desired conclusion follows.
+\end{proof}
+

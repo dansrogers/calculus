@@ -1,0 +1,235 @@
+\section{The Differential.}\label{sec 2.6}
+If $y = f(x)$, we have denoted the derivative of $f$ by $f'$, or $\frac{df}{dx}$, or $\frac{dy}{dx}$. The value of the derivative at a number a is written $f'(a)$, or $\frac{df}{dx} (a)$, or $\frac{dy}{dx} (a)$. Up to this point, the expressions $df$, $dy$, and $dx$ by themselves have had no meaning other than as parts of notations for the derivative. However, the cancellation suggested by the Chain Rule
+$$
+\frac{dy}{dx} = \frac{dy}{du} \frac{du}{dx}
+$$
+\noindent indicates that the derivative behaves like a ratio and suggests that it may be possible to sensibly regard it as such. In this section we shall define a mathematical object called the differential of a function, examples of which are $df$, $dy$, and $dx$. The ratio of $df$, or $dy$, to $dx$ will be equal to the derivative.
+
+\putfig{3.75truein}{scanfig2_20}{}{fig 2.20}
+
+If $f$ is a function having a derivative at $a$, we define its \textbf{differential at} $a$, denoted by $d_{a}f$,  to be the linear function whose value for any number $t$ is
+$$
+(d_{a}f)(t) = f'(a)t.
+$$
+For example, if $f(x) = x^2 - 2x$, then the differential $d_{a}f$ is the function of $t$ defined by $f'(a)t =  (2a - 2)t$. In particular,
+
+$$
+(d_{3}f)(t)= [2 \cdot 3 - 2]t = 4t.
+$$
+\noindent The value of the differential for a typical function $f$ is illustrated in Figure \f{2.20}.
+
+By simply $df$ we mean the rule (or function) that assigns the linear function $d_{x}f$ to each number $x$ in the domain of $f'$.
+
+\begin{theorem}
+If $f$ and $u$ are differentiablefunctions, then 
+
+\begin{equation}
+ df(u) = f'(u)du. 
+\label{eq2.6.1}
+\end{equation}
+\end{theorem}
+\begin{proof}
+This formula is an abbreviation of the equation 
+\begin{equation}
+d_{x} f(u) = f'(u(x)) d_{x}u.  
+\label{eq2.6.2}
+\end{equation}
+The proof is an application of the Chain Rule.
+We first write down the two linear functions $d_{x}f(u)$ and $d_{x}u$. By the definition of the differential they are
+\begin{eqnarray*}
+   (d_{x}u)(t) &=& u'(x)t,\\
+(d_{x}f(u))(t) &=& [[f(u)]'(x)]t.
+\end{eqnarray*}
+The Chain Rule says that $[f(u)]'(x) = f'(u(x))u'(x)$. Hence
+\begin{eqnarray*}
+(d_{x} f(u) )(t) &=& [f'(u(x) )u'(x)]t  \\
+                        &=& f'(u(x))(d_{x}u)(t).
+\end{eqnarray*}
+Thus (2) appears as an equality between linear functions,
+and the proof is complete.
+\end{proof}
+
+If $u$ is the independent variable $x$, then (6.1) reduces to the formula
+
+\begin{equation}
+ df(x) = f'(x)dx. 
+\label{eq2.6.3}
+\end{equation}
+
+\begin{example}
+%EXAMPLE 1. 
+Evaluate the following differentials:
+
+\begin{quote}
+\begin{description}
+\item[(a) $d(x^2 + 2)$,]
+\item[(b) $d\sqrt{x^2 + 3}$, ]
+\item[(c) $d(2x^2-x)^7$.] 
+\end{description}
+\end{quote}
+
+\noindent Using formula (3), we get immediately 
+
+\begin{quote}
+\begin{description}
+\item[(a') $d(x^2 + 2) = 2xdx$]
+\item[(b') $d\sqrt{x^2 + 3} = x(x^2 + 3)^{-1/2} dx$]
+\item[(c') $d(2x^2-x)^7 = 7(2x^2-x)^6(4x-1)dx$.]
+\end{description}
+\end{quote}
+
+\noindent It is worthwhile learning to use the stronger formula (1). In problem (b), let $f$ be the function $f(u) = \sqrt{u}$. If we set $u = x^2 + 3$, then $du = 2x dx$ and
+
+\begin{eqnarray*}
+d\sqrt{x^2 + 3} &=& df(u) = f'(u) du\\
+                        &=& \frac{1}{2}u^{-1/2}du\\
+                        &=& \frac{1}{2}(x^2 + 3)^{-1/2}2x dx.
+\end{eqnarray*}
+\noindent Let us also do problem (c) using (1), but without explicitly making the substitution $u = 2x^2 - x$. We get
+
+\begin{eqnarray*}
+d(2x^2 - x)^7 &=& 7(2x^2 - x)^{6} d(2x^2 - x)\\
+                     &=& 7(2x^2 - x)^{6} (4x - 1) dx.
+\end{eqnarray*}
+%118 APPLICATIONS OF THE DERIVATIVE [CHAP. 2
+
+Formula (3) establishes the fact that the ratio of $df$ to $dx$ is equal to the derivative $f'$. We can see this in greater detail by going back to the definitions:
+
+\begin{eqnarray*}
+(d_{a}f)(t) &=& f'(a)t, \\
+(d_{a}x)(t) &=& x'(a)t.
+\end{eqnarray*}
+
+\noindent Since $x$ is the identity function, its derivative is the constant function 1. Hence $(d_{a}x)(t) = t.$ The ratio of the two linear functions $d_{a}f$ and $d_{a}x$ is thus the constant function
+$$
+\frac{d_{a}f}{d_{a}x} = \frac{f'(a)t}{t} = f'(a).
+$$
+Having proved this formula for every a in the domain of $f'$, we can write it simply as
+$$
+\frac{df}{dx} (a) = f'(a) \;\;\; \mbox{or} \;\;\; \frac{df}{dx} = f'.
+$$
+
+If $f$ and $g$ are differentiable functions, then it is easy to show that $d_{a}(f + g) = d_{a}f + d_{a}g$. The proof involves only the definition of the differential plus the fact that the derivative of a sum is the sum of the derivatives. In detail:
+
+\begin{eqnarray*}
+[d_{a}(f + g)](t) &=& [(f + g)'(a)] t = [f' (a) + g'(a)] t\\
+                         &=& f'(a)t + g'(a)t = (d_{a}f)(t) + (d_{a}g)(t)\\
+                         &=& [d_{a}f + d_{a}g](t) .
+\end{eqnarray*}
+The result is simply the equation
+$$
+d(f + g) = df + dg.
+$$
+An analogous argument using the Product Rule for differentiation shows that $d_{a}(fg) = f(a)d_{a}g + g(a)d_{a}f$, or, more simply,
+$$
+d(fg) = f dg + g df.
+$$
+For each one of the six differentiation rules \thref{ddxrules}
+proved in Section \secref{1.7} of Chapter \chref{1},
+there is an analogous rule in terms of differentials:
+Let $u$ and $v$ be differentiable functions, and $c$ a constant. Then
+\begin{prop}
+\label{thm drules}
+\begin{quote}
+\begin{description}
+\item [(i)] $d(u + v) = du + dv$,
+\item [(ii)] $d(cu)= cdu$,
+\item [(iii)] $dc= 0$,
+\item [(iv)] $d(uv) = u dv + v du$,
+\item [(v)]
+$du^r = ru^{r-1}du, \provx{where $r$ is any rational number,}$  
+\item [(vi)] $d \biggl(\frac{u}{v} \biggr) = \frac{vdu - udv}{v^2}$.
+\end{description}
+\end{quote} 
+\end{prop}
+
+Note that we have replaced the analogue of (v)
+in the list in Section \secref{1.7} of Chapter \chref{1}
+by the formula corresponding to the more powerful theorem
+\thref{1.8.2} of Chapter \chref{1}.
+\end{example}
+
+\begin{example}
+%EXAMPLE 2. 
+Find the differential $d(x^3 + \sqrt{x^2 + 2x})^7$. Applying the above formulas successively, we get
+
+\begin{eqnarray*}
+d(x^3 + \sqrt{x^2 + 2x})^7
+&=& 7(x^3 + \sqrt{x^2 + 2x})^6 d(x^3 + \sqrt{x^2 + 2x})  \;\;\;\mbox{by (v)}\\
+&=& 7(x^3 + \sqrt{x^2 + 2x})^6 (dx^3 + d\sqrt{x^2 + 2x}) \;\;\;\mbox{by (i)}\\
+&=& 7(x^3 + \sqrt{x^2 + 2x})^6 [3x^2 dx + \frac{1}{2}(x^2 + 2x)^{-1/2} d(x^2 + 2x)] \\
+& & \hspace{2.5in} \mbox{by (v)}\\
+&=& 7(x^3 + \sqrt{x^2 + 2x})^6 [3x^2 dx + \frac{1}{2}(x^2 + 2x)^{-1/2} (2x dx + 2 dx)] \\ 
+& &\hspace{2in} \mbox{by (i) and (ii)} \\ 
+&=& 7(x^3 + \sqrt{x^2 + 2x})^6 \biggl( 3x^2 +\frac{x+1}{\sqrt{x^2 +
+2x}}\biggr) dx.
+\end{eqnarray*}
+\noindent The derivative is therefore given by
+$$
+\frac{d(x^3 + \sqrt{x^2 + 2x})^7}{dx} = 7(x^3 + \sqrt{x^2 + 2x})^6 \biggl(3x^2 + \frac{x +
+1}{\sqrt{x^2 + 2x}}\biggr).
+$$
+\end{example}
+
+The task of computing the differential of a complicated function of $x$ amounts to successively working the differential operator d through the given expression from left to right. At each stage one uses the correct one of formulas (i) through (vi), or formula (1), until one finally reaches $dx$, and the process stops. The derivative can then be obtained by dividing the resulting equation by $dx$. Note that an equation of the form $df(x) = ...$ will always contain the symbol $d$ on the right side. Equations such as $dx^5 = 5x^4$ are not only false; they are nonsense. (Correct version: $dx^5 = 5x^4 dx$.)
+
+%EXAMPLE 3. 
+\begin{example} 
+Consider the functions 
+
+\begin{quote}
+\begin{description}
+\item [(a) $y = (4x^3 + 3x^2 + 1)^2,$]
+\item [(b) $y = \frac{x^2 -1}{x^2 + 1}$]
+\item [(c) $z = 3y^{5/3}.$]
+\end{description}
+\end{quote}
+\noindent Find the differential of each:
+
+\begin{eqnarray*}
+\mbox{(a')}\; dy &=& 2(4x^3 + 3x^2 + 1) d(4x^3 + 3x^2 + 1) \\
+           &=& 2(4x^3 + 3x^2 + 1)(12x^2 dx + 6x dx) \\
+           &=& 12x(4x^3 + 3x^2 + 1)(2x + 1) dx,
+\end{eqnarray*}
+%120 APPLICA TIONS OF THE DERI VATI VE [CHAP. 2
+\begin{eqnarray*}
+\mbox{(b')}\; dy &=& \frac{(x^2 + 1 ) d(x^2 - 1 ) - (x^2 - 1 ) d(x^2 + 1 )}{(x^2 + 1 )^2}\\
+           &=& \frac{(x^2 + 1)2xdx - (x^2 - 1)2xdx}{(x^2 + 1)^2} = \frac{4x dx}{(x^2 + 1)^2},
+\end{eqnarray*}
+
+$$
+\mbox{(c')}\; dz = (3)(\frac{5}{3})y^{2/3}dy= 5y^{2/3}dy.
+$$
+\noindent If we consider the composition of the function $y$ in (b) with the function $z$ in (c), we get for the differential of the composition
+
+$$
+dz = 5y^{2/3} \frac{4x dx}{(x^2 + 1)^2} = 5 \biggl(\frac{x^2 - 1}{x^2 + 1} \biggr)^{2/3} \frac{4x}{(x^2 + 1)^2} dx. 
+$$
+\end{example}
+
+One traditional interpretation of the differential, which is especially useful in physics, is that of an ``infinitesimal." If $y = f(x)$, we know that $dy = f'(x) dx$. Now $dx$ is the function that assigns to every real number a the linear function defined by $(d_{a}x)(t) = x'(a)t = t$; i.e., it assigns the identity function. Hence we can interpret $dx$ as simply another independent variable. Then $dy$ is the variable whose value for a given $x$ and $dx$ is shown in Figure \f{2.21}. (Compare this illustration with Figure \f{2.20}.) The difference between the value of $f$ at $x$ and at $x + dx$ is denoted by $\Delta y$ in the figure. If $dx$ is chosen $y$-axis very small, then the difference between $dy$ and $\Delta y$ is relatively negligible. Hence $dy$ measures the resulting change in the value of $y = f(x)$ corresponding to an infinitesimal change $dx$ in the variable $x$.
+
+\putfig{3.7truein}{scanfig2_21}{}{fig 2.21}
+
+%EXAMPLE 4. 
+\begin{example}
+
+The height $h$ of a square pyramid is found to be 100 feet, and the length $x$ of one edge of its base is measured to be 160 feet. The volume $V$ of the pyramid is given by the formula $V = \frac{1}{3}hx^2$.  What error in the computed
+%SEC. 6] THE DIFFERENTIAL  121
+volume will result from an error of 4 inches in the measurement of $x$? If we consider $h$ as fixed, and $V$ as a function of $x$, then 
+
+$$
+dV = \frac{1}{3}h dx^2 = \frac{2}{3}hx dx.
+$$
+\noindent Since 4 inches is small compared with 160 feet, we set $dx$ = 4 inches = $\frac{1}{3}$ foot. The resulting change in volume is then approximately 
+
+$$
+dV = \frac{2}{3}(100)(160)\frac{1}{3} = \frac{32}{9} 1000 = 3555 \;\mbox{feet}^3.
+$$
+\noindent The percentage error in volume is
+
+$$
+ \frac{dV}{V} = \frac{ {\frac{2}{3}} hx dx}{{\frac{1}{3}}hx^2} = 2 \frac{dx}{x}.
+$$
+\noindent We compute $\frac{dx}{x} = \frac{\frac{1}{3}}{160} = 0.0021 = 0.21\%$, and so the percentage error in volume is only $0.42\%$.
+\end{example}

@@ -1,0 +1,372 @@
+\section{Taylor Series.} 
+The subject of Section 7 was the function defined by a given power series. In contrast, in this section we start with a given function and ask whether or not there exists a power series which defines it. More precisely, if $f$ is a function containing the number $a$ in its domain, then does there exist a power series $\sum_{i=0}^\infty a_i (x - a)^i$ with nonzero radius of convergence which defines a function equal to $f$ on the interval of convergence of the power series? If the answer is yes, then the power series is uniquely determined. Specifically, it follows from Theorem (7.4), page 526, that $a_i = \frac{1}{i!} f^{(i)}(a)$, for every integer $i \geq 0$. Hence
+
+\begin{eqnarray*}
+f(x) &=& \sum_{i=0}^\infty \frac{1}{i!} f^{(i)}(a)(x - a)^i \\
+      &=& f(a) + f'(a)(x - a) + \frac{1}{2!} f''(a)(x - a)^2 + \cdots,
+\end{eqnarray*}
+
+\noindent for every $x$ in the interval of convergence of the power series.
+
+Let $f$ be a function which has derivatives of every order at $a$. The power series $\sum_{i=0}^\infty \frac{1}{i!} f^{(i)}(a)(x - a)^i$ is called the \textbf{Taylor series} of the function $f$ about the number $a$. The existence of this series, whose definition is motivated by the preceding paragraph, requires only the existence of every derivative $f^{(i)}(a)$. However, the natural inference that the existence of the Taylor series for a given function implies the convergence of the series to the values of the function is false. In a later theorem we shall give an additional condition which makes the inference true. Two examples of Taylor series are the
+%SEC. 8] TAYLOR SERIES  529
+series for $e^x$ and the series for $\ln(1 + x)$ developed in Example 1 of Section 7.
+
+The value of a convergent infinite series can be approximated by its partial sums. For a Taylor series $\sum_{i=0}^\infty \frac{1}{i!} f^{(i)}(a)(x-a)^i$, the nth partial sum is a polynomial in $(x-a)$, which we shall denote by $T_n$. The definition is as follows: Let $n$ be a nonnegative integer and $f$ a function such that $f^{(i)}(a)$ exists for every integer $i = 0, . . ., n$. Then the $n$\textbf{th Taylor approximation} to the function $f$ about the number $a$ is the polynomial $T_n$ given by
+
+\begin{equation}
+\begin{array}{ll}
+T_n(x) &= \sum_{i=0}^n \frac{1}{i!} f^{(i)}(a)(x-a)^i \vspace{.1in}\\ 
+           &= f(a) + f'(a)(x-a) + \cdots + \frac{1}{n!} f^{(n)}(a)(x-a)^n ,   
+\end{array}
+\label{eq9.8.1}
+\end{equation}
+\noindent for every real number $x$.
+
+For each integer $k = 0, . . ., n$, direct computation of the $k$th derivative at $a$ of the Taylor polynomial $T_n$ shows that it is equal to $f^{(k)}(a)$. Thus we have the simple but important result:
+
+%(8.1) 
+\begin{theorem}  The $n$th Taylor approximation  $T_n$ to the function $f$ about a satisfies 
+
+$$
+T_n^{(k)}(a) = f^{(k)}(a), \;\;\;\mathrm{for each}\; k = 0, . . ., n. 
+$$
+\end{theorem}
+%EXAMPLE 1. 
+\begin{example}
+Let $f$ be the function defined by $f(x) = \frac{1}{x}$. For $n$ = 0, 1, 2,
+and 3, compute the Taylor polynomial $T_n$ for the function $f$ about the number 1, and superimpose the graph of each on the graph of $f$. The derivatives are:
+
+\begin{eqnarray*}
+f (x) &=& -\frac{1}{x^2}, \;\;\;\mbox{whence}\; f'(1) = -1, \\
+f' (x) &=& \frac{2}{x^3},  \;\;\;\;\;\mbox{whence}\; f''(1)= 2,  \\
+f''' (x) &=& -\frac{6}{x^4} \;\;\;\;\mbox{whence}\; f'''(1) = - 6.
+\end{eqnarray*}
+
+\noindent From the definition in (1), we therefore obtain 
+\begin{eqnarray*}
+T_0(x) &=& f(1) = 1, \\
+T_1(x) &=& 1 - (x - 1), \\
+T_2(x) &=& 1 - (x - 1) + (x - 1)^2, \\
+T_3(x) &=& 1 - (x - 1) + (x - 1)^2 - (x - 1)^3.
+\end{eqnarray*}
+%530 lAfFlNlTE SERIES [CHAP. 9
+\noindent These equations express the functions $T_n$ as polynomials in $x - 1$ rather than as polynomials in $x$. The advantage of this form is that it exhibits most clearly the behavior of each approximation in the vicinity of the number 1. Each one can, of course, be expanded to get a polynomial in $x$. If we do this, we obtain
+
+\begin{eqnarray*}
+T_0(x) &=& 1, \\
+T_1(x) &=& -x + 2, \\
+T_2(x) &=& x^2 - 3x + 3,\\
+T_3(x) &=& -x^3 + 4x^2 - 6x + 4.
+\end{eqnarray*}
+
+\noindent The graphs are shown in Figure 10. The larger the degree of the approximating polynomial, the more closely its graph ``hugs" the graph of $f$ for values of $x$ close to 1.
+\end{example}
+
+%Figure 10
+\putfig{4.5truein}{scanfig9_10}{}{fig 9.10}
+
+The basic relation between a function $f$ and the approximating Taylor polynomials $T_n$ will be presented in Theorem (8.3). In proving it, we shall use the following lemma, which is an extension of Rolle's Theorem (see pages 111 ancl 112).
+%SEC. 81 TAYLOR SERIES  531
+
+%(8.2)
+\begin{theorem} Let $F$ be a function with the property that the $(n + 1)$st derivative $F^{(n+1)}(t)$ exists for every $t$ in a closed interval $[a, b]$, where $a < b$. If
+ 
+\begin{quote}
+\begin{description}
+\item[(i)] $F^{i}(a) = 0, \;\;\;\mathrm{for}\; i = 0, 1, . . ., n, \;\mathrm{and} $
+\item[(ii)] $F(b)= 0,$
+
+\end{description}
+\end{quote} 
+\noindent then there exists $a$ real number $c$ in the open interval $(a, b)$ such that $F^{(n+1)}(c) = 0$.
+\end{theorem}
+
+\begin{proof}
+The idea of the proof is to apply Rolle's Theorem over and over again, starting with $i = 0$ and finishing with $i = n$. (In checking the continuity requirements of Rolle's Theorem, remember that if a function has a derivative at a point, then it is continuous there.) A proof by
+induction on $n$ proceeds as follows: If $n = 0$, the result is a direct consequence of Rolle's Theorem. We must next prove from the assumption that if the lemma is true for $n = k$, then it is also true for $n = k + 1$. Thus we assume that there exists a real number $c$ in the open interval $(a, b)$ such that $F^{(k+1)}(c) = 0$ and shall prove that there exists another real number $c'$ in $(a, b)$ such that $F^{(k+2)}(c') = 0$. The hypotheses of (8.2) with $n = k + 1$ assure us that $F^{(k+2)}(t)$ exists for every $t$ in $[a, b]$ and that $F^{(k+1)}(a) = 0$. The function $F^{(k +1)}$ satisfies the premises of Rolle's Theorem, since it is continuous on $[a, c]$, differentiable on $(a, c)$, and $F^{(k+1)}(a) = F^{(k+1)}(c) = 0$. Hence there exists a real number $c'$ in $(a, c)$ with the property that $F^{(k+2)}(c') = 0$. Since $(a, c)$ is a subset of $(a, b)$, the number $c'$ is also in $(a, b)$, and this completes the proof.
+\end{proof}
+
+We come now to the main theorem of the section:
+
+%(8.3) 
+\begin{theorem}
+TAYLOR'S THEOREM. (8.3) Let $f$ be a function wifh the property that the $(n + 1)$st derivative $f^{(n+1)}(t)$ exists for every $t$ in the closed interval $[a, b]$, where $a < b$. Then there exists a real number $c$ in the open interval $(a, b)$ such that
+$$
+f(b) = \sum_{i=0}^n \frac{1}{i!} f^{(i)}(a)(b - a)^i + R_n,
+$$
+\noindent where
+$$
+R_n = \frac{1}{(n +1)!} f^{(n+1)}(c)(b - a)^{n+1} .
+$$
+\end{theorem}
+
+Using the approximating Taylor polynomials, we can write the conclusion of this theorem equivalently as
+
+\begin{equation}
+f(b) = T_n(b) + \frac{1}{(n + 1)!} f^{(n+1)}(c)(b-a)^{n+1} . 
+\label{eq9.8.2}
+\end{equation}
+\noindent Note that the particular value of $c$ depends not only on the function $f$ and the numbers $a$ and $b$ but also on the integer $n$.
+%532 INFINITE SERIES [CHAP. 9
+
+\begin{proof}
+Let the real number $K$ be defined by the equation 
+$$
+f(b) = T_n(b) + K(b - a)^{n+1}. 
+$$
+The proof of Taylor's Theorem is completed by showing that
+$$
+K = \frac{1}{(n + 1)!} f^{(n+1)}(c),
+$$
+for some real number $c$ in $(a, b)$. For this purpose, we define a new function $F$ by setting
+$$
+F(t) = f(t) - T_n(t) - K(t - a)^{n+1}, 
+$$
+for every $t$ in $[a, b]$. From the equation which defines  $K$ it follows at once that 
+$$
+f (b) - T_n(b) - K(b - a)^{n+1} = 0,
+$$
+and hence that $F(b) = 0$. In computing the derivatives of the function $F$, we observe that any derivative of $K(t-a)^{n+1}$ of order less than $n + 1$ will contain a factor of $t - a$, and therefore
+$$
+\frac{d^i}{dt^i} K(t-a)^{n+1}|_{t=a} = 0, \;\;\;\mbox{for}\; i = 0, ... , n.
+$$
+Since $f^{i}(a) = T_n^{(i)}(a)$, for every integer $i = 0, . . ., n$, [see (8.1)], we conclude that
+$$
+F^{i}  (a) = f^{i}(a) - T_n^{(i)}(a) - 0 = 0, \;\;\; i = 0,...,n. 
+$$
+Hence, by Lemma (8.2), there exists a real number $c$ in $(a, b)$ such that
+$$
+F^{(n+1)} (c) = 0. 
+$$
+Finally, we compute $F^{(n+1)}(t)$ for an arbitrary $t$ in $[a, b]$. Since the degree of the polynomial $T_n$ is at most $n$, its $(n + 1)$st derivative must be zero. Moreover, the $(n + 1)$st derivative of $K(t - a)^{n+1}$ is equal to $(n + 1)!K$. Hence 
+$$
+F^{(n+1)}(t) = f^{(n+1)} (t) - (n + 1)! K.
+$$
+Letting $t = c$, we obtain
+$$
+0 = F^{(n+1)}(c) = f^{(n+1)} (c) - (n + 1)! K, 
+$$
+from which it follows that $K = \frac{1}{(n+1)!} f^{(n+1)}(c)$. This completes the proof.
+\end{proof}
+
+It has been assumed in the statement and proof of Taylor's Theorem that $a < b$. However, if $b < a$, the same statement is true except that the $(n + 1)$st derivative exists in $[b, a]$ and the number $c$ lies in $(b, a)$. Except for the obvious modifications, the proof is identical to the one given. Suppose now that we are given a function $f$ such that $f^{(n+1)}$ exists at every point of some interval $I$ containing the number $a$. Since Taylor's Theorem holds for \textit{any} choice of $b$ in $I$ other than $a$, we may regard $b$ as the value of a variable. If we denote the variable by $x$, we have:
+%SEC. 8] TAYLOR SERIES  533
+
+%(8.4) 
+\begin{theorem} 
+ALTERNATIVE FORM OF TAYLOR'S THEOREM. If $f^{(n+1)}(t)$ exists for every $t$ in an interval $I$ containing the number $a$, then, for every $x$ in $I$ other than $a$, there exists a real number $c$ in the open interval with endpoints $a$ and $x$ such that
+$$
+f(x) = f(a) + f'(a)(x-a) + \cdots + \frac{1}{n!} f^{(n)}(a)(x-a)^n + R_n, 
+$$
+\noindent where
+$$
+R_n = \frac{1}{(n+1)!} f^{(n+1)} (c) (x - a)^{n+1} .
+$$
+\end{theorem}
+
+The conclusion of this theorem is frequently called \textbf{Taylor's Formula} and $R_n$ is called the \textbf{Remainder.} As before, using the notation for the approximating Taylor polynomials, we can write the formula succinctly as
+
+\begin{equation}
+f(x) = T_n(x) + R_n  . 
+\label{eq9.8.3}
+\end{equation}
+
+%EXA.MPLE 2. 
+\begin{example}
+(a) Compute Taylor's Formula with the Remainder where $f(x) = \sin x, a = 0$, and $n$ is arbitrary. (b) Draw the graphs of $\sin x$ and of the polynomials $T_n(x)$, for $n$ = 1, 2, and 3. (c) Prove that, for every real number $x$, 
+
+$$
+\sin x = \sum_{i=1}^\infty (-1)^{i-1} \frac{x^{2i-1}}{(2i - 1)!} = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots .
+$$
+
+The first four derivatives are given by
+\begin{eqnarray*}
+\frac{d}{dx} \sin x &=& \cos x, \\
+\frac{d^2}{dx^2} \sin x &=& -\sin x, \\
+\frac{d^3}{dx^3} \sin x &=& -\cos x,\\
+\frac{d^4}{dx^4} \sin x &=& \sin x.
+\end{eqnarray*}
+
+\noindent Thus the derivatives of $\sin x$ follow a regular cycle which repeats after every fourth derivation. In general, the even-order derivatives are given by
+
+$$
+\frac{d^{2i}}{dx^{2i}} \sin x = (-1)^i \sin x, \;\;\; i= 0, 1,2,\cdots , 
+$$
+\noindent and the odd-order derivatives by
+$$
+\frac{d^{2i-1}}{dx^{2i-1}} \sin x = (-1)^{i-1} \cos x, \;\;\; i = 1, 2, 3, \cdots .
+$$
+%534 INFINITE SERIES [CHAP. 9
+\noindent If we set $f(x) = \sin x$, then 
+$$
+\begin{array}{ll}
+f^{(2i)}(0) = (-1)^i \sin 0 = 0,                     & \;\;\; i = 0, 1, 2, .... \\
+f^{(2i-1)}(0) = (-1)^{i-1} \cos 0 = (-1)^{i-1},& \;\;\; i = 1, 2, 3, .... 
+\end{array}
+$$
+
+\noindent Hence the $n$th Taylor approximation is the polynomial
+$$
+T_n(x) = \sum_{i=0}^n \frac{1}{i!} f^{(i)} (0)x^i,
+$$
+\noindent in which the coefficient of every even power of $x$ is zero. To handle this alternation, we define the integer $k$ by the rule
+
+\begin{equation}
+k = \left \{ \begin{array}{ll}
+\frac{n}{2}, \;\;\;       &\mathrm{if}~n~\mathrm{is~even,} \\
+\frac{n + 1}{2}, \;\;\; &\mathrm{if}~n~\mathrm{is~odd.} 
+\end{array}
+\right .
+\label{eq9.8.4}
+\end{equation} 
+\noindent It then follows that 
+
+\begin{equation}
+T_n(x) = \sum_{i=1}^k \frac{1}{(2i -1)!} (-1)^{i - 1} x^{2i - 1} 
+= \sum_{i=1}^k (-1)^{i- 1} \frac{x^{2i - 1}}{(2i - 1)!} . \label{eq9.8.5}
+\end{equation}
+\noindent [If $n = 0$, we have the exception $T_0(x) = 0$.] For the remainder, we obtain 
+
+\begin{equation}
+\begin{array}{ll}
+R_n &= \frac{1}{(n+1)!} f^{(n + 1)} (c) x^{n+1} 
+\vspace{.1in}\\
+        &= \left \{ \begin{array}{ll}
+\frac{x^{n+1}}{(n+1)!} & (-1)^k \cos c, \;\;\;\mathrm{if}~n~\mathrm{is~even}, \vspace{.1in}\\
+\frac{x^{n+1}}{(n+1)!} & (-1)^k \sin c,  \;\;\;\mathrm{if}~n~\mathrm{is~odd},
+\end{array}
+\right .
+\end{array}
+\label{eq9.8.6}
+\end{equation}
+
+\noindent for some real number $c$ (which depends on both $x$ and $n$) such that $|c| < |x|$. The Taylor formula for $\sin x$ about the number 0 is therefore given by 
+$$
+\sin x = \sum_{i=1}^k (-1)^{i-1} \frac{x^{2i-1}}{(2i-1)!} + R_n ,
+$$
+
+\noindent where $k$ is defined by equation (4), and the remainder $R_n$ by (6).
+
+For part (b), the approximating polynomials $T_1, T_2,$ and $T_3$ can be read directly from equation (5) [together with (4)]. We obtain 
+\begin{eqnarray*}
+T_1(x) &=& x, \\
+T_2(x) &=& x, \\
+T_3(x) &=& x - \frac{x^3}{3!} = x - \frac{x^3}{6} .
+\end{eqnarray*}
+
+\noindent Their graphs together with the graph of $\sin x$ are shown in Figure 11.
+% SEC. 8] TAYLOR SEF`lES 535  
+
+%Figure 1 1
+\putfig{4.5truein}{scanfig9_11}{}{fig 9.11}
+
+To prove that $\sin x$ can be defined by the infinite power series given in (c), we must show that, for every real number $x$,
+
+\begin{eqnarray*}
+\sin x &=& \lim_{n \rightarrow \infty} T_n(x) \\
+         &=& \lim_{k \rightarrow \infty} \sum_{i=1}^k (-1)^{i-1} \frac{x^{2i-1}}{(2i-1)!} ,
+\end{eqnarray*}
+
+\noindent where $k$ is the integer defined in (4). Since $\sin x = T_n(x) + R_n$, an equivalent proposition is
+$$
+\lim_{n \rightarrow \infty} R_n = 0 .
+$$
+\noindent To prove the latter, we use the important fact that the absolute values of the functions sine and cosine are never greater than 1. Hence, in the expression for $R_n$ in (6), we know that $|\cos c| \leq 1$ and $|\sin c| \leq 1$. It therefore follows from (6) that
+$$
+|R_n| \leq \frac{|x|^{n+1}}{(n+1)!}.
+$$
+\noindent It is easy to show by the Ratio Test [see Problem 4(b), page 510] that $\lim_{n \rightarrow \infty} \frac{|x|^{n+1}}{(n+1)!}  = 0$. Hence $\lim_{n \rightarrow \infty} R_n = 0$, and we have proved that
+$$
+\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots .
+$$
+\end{example}
+
+The form of the remainder in Taylor's Theorem provides one answer to the question posed at the beginning of the section, which, briefly stated, was: When can a given function be defined by a power series? The answer provided in the following theorem is obtained by a direct
+generalization of the method used to establish the convergence of the Taylor series for $\sin x$.
+% 536 INFINITE SE;RIES [CHAP. 9
+
+%(8.5) 
+\begin{theorem} 
+Let $f$ be a function which has derivatives of every order at every point of an interval $I$ containing the number $a$. If the derivatives are uniformly bounded on $I$, i.e., if there exists a real number $B$ such that $|f^{(n)}(t)| \leq B$, for every integer $n \geq 0$ and every $t$ in $I$, then
+$$
+f(x) = \sum_{i=0}^\infty \frac{1}{i!} f^{(i)}(a)(x - a)^i,
+$$
+\noindent for every real number $x$ in $I$.
+\end{theorem}
+
+\begin{proof}
+Since $f(x) = T_n(x) + R_n$ [see Theorem (8.4) and formula (3)], we must prove that $f(x) = \lim_{n \rightarrow \infty} T_n(x)$, or, equivalently, that $\lim_{n \rightarrow \infty} R_n = 0$. Generally speaking, the number $c$ which appears in the expression for the remainder $R_n$ will be different for each integer $n$ and each $x$ in $I$. But since the number $B$ is a bound for the absolute values of \textit{all} derivatives of $f$ \textit{everywhere} in $I$, we have $|f^{(n+1)}(c)| \leq B$. Hence
+\begin{eqnarray*}
+|R_n| &=&  \Big|\frac{1}{(n+1)!} f^{(n+1)} (c) (x-a)^{n+1}\Big|\\
+          &=&  \frac{|x - a|^{n+1}}{(n+1)!}|f^{(n+1)} (c)| \leq \frac{|x - a|^{n+1}}{(n+1)!} B.
+\end{eqnarray*} 
+However [see Problem 4(b), page 510],
+$$
+\lim_{n \rightarrow \infty} \frac{|x - a|^{n+1}}{(n+1)!} B = 0 \cdot B = 0,
+$$
+from which it follows that $\lim_{n \rightarrow \infty} R_n = 0$. This completes the proof.  
+\end{proof}
+
+It is an important fact, referred to at the beginning of the section, that the convergence of the Taylor series to the values of the function which defines it cannot be inferred from the existence of the derivatives alone. In Theorem (8.5), for example, we added the very strong hypothesis that all the derivatives of $f$ are uniformly bounded on $I$. The following function
+defined by
+$$
+f(x)= \left \{ \begin{array}{ll}
+0 				& \;\;\;\mbox{if}\; x = 0 ,\\
+e^{-1/x^2} & \;\;\;\mbox{if}\; x \neq 0 ,
+\end{array}
+\right.
+$$
+
+\noindent has the property that $f^n(x)$ exists for every integer $n \geq 0$ and every real number $x$. Moreover, it can be shown that $f^n(0) = 0$, for every $n \geq 0$. It follows that the Taylor series about 0 for this function is the trivial power series $\sum_{i=0}^\infty 0 \cdot x^i$. This series converges to 0 for every real number $x$, and does not converge to $f(x)$, except for $x = 0$.
+
+When a Taylor polynomial or series is computed about the number zero, as in Example 2, there is a tradition for associating with it the name of the
+%SEC. 8] TAYLOR SERIES  537
+mathematician Maclaurin instead of that of Taylor. Thus the \textbf{Maclaurin series} for a given function is a power series in $x$, and is simply the special case of the Taylor series in which $a = 0$.
+
+Suppose that, for a given $n$, we replace the values of a function $f$ by those of the $n$th Taylor approximation to the function about some number $a$. How good is the resulting approximation? The answer depends on the interval (containing $a$) over which we wish to use the values of the polynomial $T_n$. Since $f(x) - T_n(x) = R_n$, the problem becomes one of finding a bound for $|R_n|$ over the interval in question.
+
+%EXAMPLE 3. 
+\begin{example}
+(a) Compute the first three terms of the Taylor series of the function $f(x) = (x +1)^{1/3}$ about $x = 7$. That is, compute
+$$
+T_2(x) = f(7) + f'(7)(x-7) + \frac{1}{2!} f''(7)(x-7)^2 .
+$$
+\noindent (b) Show that $T_2(x)$ approximates $f(x)$ to within $\frac{5}{3^4 \cdot 2^8} = 0.00024$ (approximately) for every $x$ in the interval [7, 8].
+
+Taking derivatives, we get 
+\begin{eqnarray*}
+f'(x) &=& \frac{1}{3} (x + 1)^{-2/3} = \frac{1}{3(x+1)^{2/3}}, \\
+f''(x) &=& - \frac{2}{9}(x + 1)^{-5/3} = -\frac{2}{9(x+1)^{5/3}}, \\
+f'''(x) &=& \frac{2 \cdot 5}{9 \cdot 3} (x + 1)^{-8/3} = \frac{2 \cdot 5}{3^3(x + 1 )^{8/3}} . 
+\end{eqnarray*}
+
+\noindent Hence 
+
+\begin{eqnarray*}
+f(7) &=& 8^{1/3} = 2,\\
+f'(7) &=& \frac{1}{3 \cdot 2^2} = \frac{1}{12},\\
+f''(7) &=& -\frac{2}{9 \cdot 2^5} = - \frac{1}{3^2 \cdot 2^4} = - \frac{1}{144} , 
+\end{eqnarray*}
+
+\noindent and the polynomial approximation to $f(x)$ called for in (a) is therefore
+$$
+T_2(x) = 2 + \frac{1}{12}(x-7) - \frac{1}{288}(x - 7)^2 .
+$$
+For part (b), we have $|f(x)-T_2(x)| = |R_2|$ and
+$$
+R_2 = \frac{1}{3!} f'''(c)(x-7)^3,
+$$
+\noindent for some number $c$ which is between $x$ and 7. To obtain a bound for $|R_2|$ over the prescribed interval [7, 8], we observe that in that interval the
+%538 INFINITE SERI~ [CHAP. 9
+maximum value of $(x - 7)$ occurs when $x = 8$ and the maximum value of $|f'''|$ occurs when $x = 7$. Hence
+$$
+|R_2| \leq \frac{1}{3!} If'''(7)| |8 - 7|^3 . 
+$$
+\noindent Since $f'''(7) = \frac{2 \cdot 5}{3^3 \cdot 2^8}$, we get
+$$
+|R_2| \leq \frac{1}{3 \cdot 2} \frac{2 \cdot 5}{3^3 \cdot 2^8} \cdot 1^3 = \frac{5}{3^4 \cdot 2^8}
+$$
+\noindent Hence for every $x$ in the interval [7, 8], the difference in absolute value between $(x + 1)^{1/3}$ and the quadratic polynomial $T_2(x)$ is less than 0.00025.
+\end{example}
+

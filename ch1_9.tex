@@ -1,0 +1,179 @@
+\section{Implicit Differentiation.} \label{sec 1.9}
+The subset $C$ of the $xy$-plane consisting of all ordered pairs $(x, y)$ that satisfy the equation
+\begin{equation}
+\frac{x^2}{9} - \frac{y^2}{4} = 1               
+\label{eq1.9.1}
+\end{equation}
+is the hyperbola shown in Figure \figref{1.37}.
+It is apparent from the figure that the whole set $C$ is not a function, since it is easy to find instances of ordered pairs $(a, b)$ and $(a, c)$ in $C$ with $b \neq C$. For example, both $(6, 2\sqrt3)$ and $(6, - 2\sqrt3)$ lie on the curve. On the other hand, many subsets of $C$ are functions. For instance, the set of all ordered pairs $(x, y)$ in $C$ for which $x > 3$ and $y > 0$, which is drawn with a heavy curve in Figure \figref{1.37}, is a function $f(x)$. Central to the ideas that follow is the fact that since the points $(x, f(x))$ that comprise
+$f$ belong to $C$, they satisfy the equation of the hyperbola. That is, 
+
+\begin{equation}
+\frac{x^2}{9} - \frac{ (f(x))^2}{4} = 1, 
+\label{eq1.9.2}
+\end{equation}
+
+for every $x > 3$. We say that the function $f$ is defined \dt{implicitly} by (1).
+
+It is geometrically obvious that the hyperbola has a tangent line at every point, and we therefore conclude that the function $f(x)$ is differentiable except at $x = 3$, where the tangent is vertical. We can compute $f'(x)$ most easily by observing that since (2) holds for every $x$ in the domain of $f$, it is an $y$-axis equality between two functions. Specifically, the composite function $\frac{x^2}{9} - \frac{(f(4))^2}{4}$ is equal to the constant function 1. Equal functions have equal derivatives. Hence
+
+\putfig{4.25truein}{scanfig1_37}{}{fig 1.37}
+
+$$
+\Bigl[\frac{x^2}{9} - \frac{(f(x))^2}{4} \Bigr]' =  1'.
+$$
+
+The rules of differentiation yield
+
+$$
+\frac{2x}{9} -\frac{2}{4} f(x)f'(x) = 0 , 
+$$
+
+and solving for $f'(x)$, we obtain
+
+\begin{equation}
+f'(x) = \frac{4x}{9f(x)}.
+\label{eq1.9.3}
+\end{equation}
+In particular, if $x = 6$, then $f(x) = 2\sqrt3$, and
+
+$$
+f'(6)= \frac{4 \cdot 6}{9 \cdot 2\sqrt3} = \frac{4}{3\sqrt3} .
+$$
+
+It is important to realize that there is no single function $f$ defined implicitly by equation \eqref{1.9.1}.
+The set of all points $(x, y)$ of $C$ for which $y < 0$ is another such function, and it includes the point $(6, - 2\sqrt3)$. Note that if this were the function that we denoted by $f$, we would still obtain equations (2) and (3). For thief, however, we have $f(6) = - 2 \sqrt 3$. Hence, this time,
+
+$$
+f'(6) = \frac{4 \cdot 6}{9(-2\sqrt3)} = - \frac{4}{3\sqrt3}.
+$$
+  
+%EXAMPLE 1. 
+\begin{example}
+The set of all points $(x, y)$ that satisfy the equation
+ 
+\begin{equation}
+5x^2 - 6xy + 5y^2 = 8
+\label{eq1.9.4}
+\end{equation}
+
+\putfig{3truein}{scanfig1_38}{}{fig 1.38}
+
+can be shown to be the ellipse shown in Figure \figref{1.38}.
+What is the slope of the line tangent to the ellipse at $(0, 2\sqrt{\frac{2}{5}})$? It is clear from the figure that the set $y$-axis of all pairs $(x, y)$ on the ellipse for which $y > 0$ and $y > x$ (drawn with a heavy curve in the figure) is a differentiable function $f(x)$. This function is implicitly defined by equation \eqref{1.9.4}.
+Thus
+
+$$
+5x^2 - 6xf(x) + 5(f(x))^2 = 8,
+$$
+
+for every $x$ in the domain of $f$. Since this is an equality between two functions we obtain by differentiating both sides, 
+
+$$
+10x - 6f(x) - 6xf'(x) + 10f(x)f'(x) = 0.
+$$
+Solving for $f'(x)$, we get
+
+$$
+f'(x)= \frac{3f(x) - 5x}{5f(x) - 3x}.
+$$
+
+This problem deals with an implicitly defined function whose graph passes through the point $(0, 2\sqrt{\frac{2}{5}})$. Hence $f(0) = 2\sqrt{\frac{2}{5}}$ and therefore $f'(0) = \frac{3}{5}$, which is the slope of the desired tangent line.
+\end{example}
+\medskip
+
+The definition, which we have thus far illustrated with two equations, is the following:
+A function $f(x)$ is \dt{defined implicitly by an equation $F(x, y) = c$},
+where $c$ is a constant,
+if $F(x, f(x)) = c$ for every $x$ in the domain of $f$.
+We emphasize that, in general, an equation in $x$ and $y$ defines $y$ as a function of $x$ in many ways.
+The most we can hope for in the way of uniqueness is that,
+for a given point $(a, b)$ such that $F(a, b) = c$,
+we can choose an open interval containing $a$
+which is the domain of precisely one continuous function $f(x)$
+defined implicitly by $F(x, y) = c$ with $f(a) = b$.
+
+Note that in both our examples
+the derivative $f'$ of the implicitly defined function
+was computed without solving the original equation for $f$.
+The fact that this is always possible
+is almost too good to be true---especially for an equation
+where first solving for $y$ in terms of $x$
+is either impractical or even impossible (except by numerical techniques).
+This method of finding the derivative of an implicitly defined function
+by differentiating both sides of the equation that defines the function
+is called \dt{implicit differentiation.}
+
+%EXAMPLE 2. 
+\begin{example}
+The point (2, 1) lies on the curve defined by the equation
+
+$$
+{x^3}y + xy^3 = 10.
+$$
+
+Assuming that this equation implicitly defines a differentiable function $f(x)$ whose graph passes through (2, 1), compute $f'(2)$. Letting $y$ stand for $f(x)$, we obtain by implicit differentiation
+
+$$
+3{x^2}y + {x^3} \frac{dy}{dx} + y^3 + {x^3}{y^2} \frac{dy}{xd} = 0.
+$$
+
+Hence
+
+$$
+\frac{dy}{dx} = -\frac{3{x^2}y+ y^3}{3x{y^2} + x^3} .
+$$
+
+At the point $x = 2, y = 1$, we therefore get
+
+$$
+\frac{dy}{dx} \Big|_{\begin{array}{l}
+                                x=2 \\ y=1
+                              \end{array}
+} = -\frac{13}{14}.
+$$
+\end{example}
+%EXAMPLE 3.
+\begin{example} 
+The set of all pairs $(x, y)$ that satisfy the equation
+
+\begin{equation}
+y^3 + yx^2 + ax^2 -3ay^2 = 0 
+\label{eq1.9.5}
+\end{equation}
+
+is the curve, called a \dt{trisectrix}, shown in Figure \figref{1.39}.
+Find $\frac{dy}{dx}$ when $x = a$. So stated, the problem is impossible. There are three distinct points on the $y$-axis curve with $x$-coordinate equal to $a$, which may be found by substituting $a = x$ in equation \eqref{1.9.5} and then solving for $y$. The points are $(a, a)$, $(a, (1 + \sqrt2)a)$, and $(a, (1 - \sqrt2)a)$.  As shown in the figure, we may select a small interval about $a$ to serve as the domain of three different implicitly defined functions. To find the derivative of each one at $x = a$, we proceed by implicit differentiation:
+
+\putfig{4.5truein}{scanfig1_39}{}{fig 1.39}
+
+$$
+3y^2 \frac{dy}{dx} + x^2 \frac{dy}{dx} + 2xy + 2ax - 6ay \frac{dy}{dx} = 0.
+$$
+
+Hence 
+
+$$
+\frac{dy}{dx} = \frac{2xy + 2ax}{6ay-x^2 - 3y^2}.
+$$
+
+Thus the derivatives at a of the three differentiable functions defined implicitly by equation \eqref{1.9.5} are, respectively,
+\begin{eqnarray*}
+\frac{dy}{dx} \Big|_{\begin{array}{l}
+                  x=a \\ y=a
+                 \end{array}
+                } &=& 2,\\
+\frac{dy}{dx} \Big|_{\begin{array}{l}
+                  x=a \\ y=a(1+\sqrt2)
+                 \end{array} 
+                } &=& -1 - \frac{\sqrt2}{2},\\
+\frac{dy}{dx} \Big|_{\begin{array}{l}
+                  x=a \\ y=a(1-\sqrt2)
+                 \end{array} 
+                } &=& -1 + \frac{\sqrt2}{2}.
+\end{eqnarray*}
+
+The reader should note that in each of the above examples of implicit differentiation the existence of an implicitly defined differentiable function has either been assumed outright or just)fied geometrically from a picture. The problem of giving analytic conditions which ensure that an equation $F(x, y) = c$ implicitly defines $y$ as a differentiable function of $x$ in the neighborhood of a point $(a, b)$ is the subject of the Implicit Function Theorem. A discussion and proof of this famous theorem may be found in any standard text in advanced calculus.
+\end{example}
+
+

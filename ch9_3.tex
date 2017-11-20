@@ -1,0 +1,223 @@
+\section{Nonnegative Series.} The theory of convergence of infinite series is in many respects simpler for those series which do not contain both positive and negative terms. A series which contains no negative terms is called \textbf{nonnegative}. Thus $\sum_{i=m}^\infty a_i$ is nonnegative if and only if $a_i \geq 0$ for every integer $i \geq m$. In this section we shall study two convergence criteria for such series: The Integral Test and the Comparison Test.
+
+Let $\sum_{i=m}^\infty a_i$ be an arbitrary infinite series (not necessarily nonnegative), and let $\{ s_n \}$ be the corresponding sequence of partial sums. We recall that $s_n = \sum_{i=m}^n a_i$, for every integer $n \geq m$, and that, if $\{ s_n \}$ converges, then $\sum_{i=m}^\infty a_i = \lim_{n \rightarrow \infty} s_n$. We shall extend the convention regarding the symbol $\infty$ and write  
+$$
+\sum_{i=m}^{\infty} a_i = \infty \;\;\;(\mbox{or}\; -\infty)
+$$
+\noindent if and only if $\lim_{n \rightarrow \infty} s_n = \infty \; (\mbox{or}\; - \infty)$. 
+
+It may very well happen that a series neither converges nor satisfies $\sum_{i=m}^{\infty} a_i = \pm \infty$. For example, the divergent series
+$$
+\sum_{i=0}^{\infty} (-1)^i = 1 - 1 + 1 - 1 + 1 - \cdots
+$$
+\noindent has for its sequence of partial sums the oscillating sequence 1, 0, 1, 0, 1, .... However, for nonnegative series, there are only two alternatives:
+
+\begin{theorem} %(3.1) 
+Every nonnegative series $\sum_{i=m}^{\infty} a_i$ either convefges or satisfies $\sum_{i=m}^{\infty} a_i = \infty$ .
+\end{theorem}
+
+The proof of this fact follows directly from the following two lemmas:
+
+\begin{theorem} %(3.2)
+If $\sum_{i=m}^{\infty} a_i$ is a nonnegative series, then the corresponding sequence $\{s\}$ of partial sums is an increasing sequence.
+\end{theorem}
+
+\begin{proof}
+For every integer $n \geq m$, we have $s_{n+1} = s_n + a_{n+1}$. Since the series is nonnegative, it follows that $s_{n+1} - s_n = a_{n+1} \geq 0$. Hence
+$$
+s_{n+1} \geq s_n, \;\;\;\mbox{for every integer}\; n \geq m, 
+$$
+which is the definition of an increasing sequence.
+\end{proof}
+
+\begin{theorem} %(3.3) 
+If $\{ s_n \}$ is an increasing infinite sequence of real numbers, then either it is bounded above and therefore converges or else $\lim_{n \rightarrow \infty} s_n = \infty$.
+\end{theorem}
+
+\begin{proof}
+If the sequence is bounded above, then it is proved in Theorem ( 1.4), page 479, that it must converge. Suppose it is not so bounded. Then, for every real number $B$, there exists an integer $N$ such that $s_N > B$. Since the sequence is increasing, it follows that $s_n \geq s_N$ for every $n > N$. Hence $s_n > B$, for every integer $n > N$, and this is precisely the definition of the expression $\lim_{n \rightarrow \infty} s_n = \infty$.
+\end{proof}
+
+We come now to the first of the tests for convergence of nonnegative infinite series. It is a generalization of the method used in Section 2 to prove the divergence of the harmonic series.
+
+\begin{theorem} %(3.4) 
+INTEGRAL TEST. Let $f$ be a function which is nonnegative and decreasing on the interval $[m, \infty)$. Then the infinite series $\sum_{i=m}^{\infty} a_i$ defined by
+$$
+a_i = f(i), \;\;\;\mbox{for every integer}\; i \geq m, 
+$$
+\noindent is convergent if and only if the improper integral $\int_m^\infty f(x) dx$ is convergent.
+\end{theorem}
+
+
+%Figure 4
+\putfig{4truein}{scanfig9_4}{}{fig 9.4}
+
+\begin{proof}
+The series $\sum_{i=m}^\infty a_i$ is nonnegative, and its corresponding sequence $\{ s_n \}$ of partial sums is therefore increasing. Figure 4 illustrates the graph of the function $f$ over an interval $[m, n]$, where $n$ is an arbitrary integer greater than $m$. Since $f$ is decreasing, its maximum value on each subinterval of the partition $\sigma = \{ m, m + 1, . . ., n \}$, occurs at the left endpoint. Moreover, each subinterval has length 1. Hence the upper sum $U_\sigma$, which is equal to the sum of the areas of the rectangles Iying above the graph in the figure, is given by
+$$
+U_\sigma = \sum_{i=m}^{n-1} f(i) = \sum_{i=m}^{n-1} a_i = s_{n-1}.
+$$
+Similarly, the lower sum $L_\sigma$ is equal to
+$$
+L_\sigma = \sum_{i=m+1}^n f(i) = \sum_{i=m+1}^n a_i = s_n - a_m. 
+$$
+As always, we have
+$$
+L_\sigma \leq \int_m^n f(x) dx \leq U_\sigma,  
+$$
+and it follows that
+\begin{equation}
+s_n - a_m \leq \int_m^n f(x) dx \leq s_{n-1}.  
+\label{eq9.3.1}
+\end{equation}
+The crux of the proof of the Integral Test is in the inequalities (1). In completing the argument, we consider the ``if" and ``only if" parts of the theorem separately.
+
+``\textit{If.}"  Let $\int_m^\infty f(x) dx$ be a convergent improper integral. That is, $\lim_{b \rightarrow \infty} \int_m^b f(x) dx$ exists. Since $f$ is nonnegative on $[m, \infty)$, the integral $\int_m^b f(x) dx$ is an increasing function of $b$. Hence 
+$$
+\int_m^n f(x)dx \leq \int_m^\infty f(x) dx, \;\;\;\mbox{for every integer}\; n \geq m,  
+$$
+[see (1.3'), page 479]. From (1) it follows that
+$$
+s_n \leq a_m + \int_m^n f(x) dx \leq a_m + \int_m^\infty f(x) dx,  
+$$
+for every integer $n > m$. Hence the increasing sequence $\{ s_n \}$ is bounded above and therefore converges. The convergence of the sequence of partial sums is equivalent to the convergence of the corresponding infinite series, so we conclude that $\sum_{i=m}^\infty a_i$ converges.
+
+``\textit{Only if.}" Suppose that $\sum_{i=m}^\infty a_i$ converges. Then 
+$$
+s_{n-1} \leq s_n \leq \sum_{i=m}^\infty a_i ,
+$$
+for every integer $n > m$ [see (1.3), page 478]. For any real number $b$ in $[m, \infty)$, choose an integer $n > b$. Since $\int_m^b f(x) dx$ is an increasing function
+of $b$, we obtain from (1)
+$$
+\int_m^b f(x) dx \leq \int_m^n f(x) dx \leq s_{n-1}.
+$$
+Hence
+$$
+\int_m^b f(x) dx \leq \sum_{i=m}^\infty a_i. 
+$$
+The integral is therefore bounded above, and it follows that $\lim_{b \rightarrow \infty} \int_m^b f(x) dx$ exists [see (1.4'), page 480]. Hence $\int_m^\infty f(x) dx$ is a convergent improper integral, and the proof of the Integral Test is complete.
+\end{proof}
+
+The convergence or divergence of many infinite series can be determined easily by the Integral Test. Important among these are series of the form
+$$
+\sum_{i=1}^\infty \frac{1}{i^p} = 1 + \frac{1}{2^p} + \frac{1}{3^p} + \cdots ,
+$$
+where $p$ is a positive real number. Such a series is called a \textbf{$p$-series.}  An example is the divergent harmonic series, for which $p = 1$. The basic convergence theorem is
+
+\begin{theorem} %(3.5) 
+The $p$-series $\sum_{i=1}^\infty \frac{1}{i^p}$ converges if and only if $p > 1$.
+\end{theorem}
+
+\begin{proof}
+The function $f$ defined by $f(x) = \frac{1}{x^p}$ is nonnegative on the interval $[1, \infty)$, and is also decreasing on that interval since we have made the assumption that $p > 0$. Moreover, it is obvious that $f(i) = \frac{1}{i^p}$ for every positive integer $i$. If $p \neq 1$, then 
+$$
+\int \frac{1}{x^p} dx = \frac{1}{1-p}x^{1-p} + c.
+$$
+Hence we have the three computations:
+\begin{eqnarray*}
+0 < &p& < 1: \int_1^\infty \frac{1}{x^p} dx = \frac{1}{1 - p} \lim_{b \rightarrow \infty}  (b^{1-p} - 1) = \infty, \\
+&p& = 1: \int_1^\infty \frac{1}{x^p} dx = \int_1^\infty \frac{1}{x} dx = \lim_{b \rightarrow \infty} \ln b = \infty, \\
+&p& > 1: \int_1^\infty \frac{1}{x^p} dx = \frac{1}{1-p} \lim_{b \rightarrow \infty} (\frac{1}{b^{p-1}} - 1) = \frac{1}{p-1}.
+\end{eqnarray*}
+It follows that $\int_1^\infty \frac{1}{x^p}dx$ is convergent if and only if $p > 1$, and the Integral Test therefore completes the proof.
+\end{proof}
+
+Thus the first of the following three p-series diverges, and the last two converge:
+\begin{eqnarray*}
+\sum_{i=1}^\infty \frac{1}{\sqrt i} &=& 1+ \frac{1}{\sqrt 2} + \frac{1}{\sqrt 3} + \cdots , \\
+\sum_{i=1}^\infty \frac{1}{k ^{3/2}} &=& 1 + \frac{1}{2 \sqrt 2} + \frac{1}{3 \sqrt 3} + \cdots ,\\
+\sum_{i=1}^\infty \frac{1}{j^2}  &=& 1 +  \frac{1}{2^2} + \frac{1}{3^2} + \cdots .
+\end{eqnarray*}
+
+%EXAMPLE 1. 
+\begin{example} Determine whether the series $\sum_{i=1}^\infty \frac{1}{2k^2 + 1}$ converges or diverges. The function $f$ defined by $f(x) = \frac{1}{2x^2 + 1}$ is nonnegative and decreasing on the interval $[1, \infty)$, and obviously $f(k) = \frac{1}{2k^2 + 1}$. Since 
+
+$$
+\int \frac{1}{2x^2 + 1} dx = \frac{1}{\sqrt 2} \arctan \sqrt 2 x + c, 
+$$
+\noindent we have 
+\begin{eqnarray*}
+\int_1^\infty \frac{1}{2x^2 + 1} dx &=& \frac{1}{\sqrt 2} (\arctan \sqrt{2} b - \arctan \sqrt 2)\\
+&=& \frac{1}{\sqrt 2} (\frac{\pi}{2} - \arctan \sqrt 2) .
+\end{eqnarray*}
+\noindent Hence the integral is convergent, and therefore so is the series.
+\end{example}
+
+We come now to the second of our convergence tests.
+
+\begin{theorem} %(3.6) 
+COMPARISON TEST. $\sum_{i=m}^\infty a_i$ is a nonnegative series and if $\sum_{i=m}^\infty b_i$ is a convergent series with $a_i \leq b_i$ for every $i \geq m$, then $\sum_{i=m}^\infty a_i$ converges and $\sum_{i=m}^\infty a_i \leq \sum_{i=m}^\infty b_i$ .
+\end{theorem}
+%SEC. 3] NoNNrGATIvE SERTES  495
+
+\begin{proof}
+Let $\{s_n\}$ and $\{t_n\}$ be the sequences of partial sums for $\sum_{i=m}^\infty a_i$ and $\sum_{i=m}^\infty b_i$, respectively. The hypotheses $0 \leq a_i \leq b_i$ imply that
+\begin{equation}
+s_n \leq t_n, \;\;\;\mbox{for every integer}\; n \geq m,   
+\label{eq9.3.2}
+\end{equation}
+and also that both series are nonnegative. Hence both $\{s_n\}$ and $\{t_n\}$ are increasing sequences. The convergence of $\sum_{t=m}^\infty b_i$ means that $\{t_n\}$ converges and that $\lim_{n \rightarrow \infty} t_n = \sum_{i=m}^\infty b_i$. It follows that
+$$
+t_n \leq \sum_{i=m}^\infty b_i, \;\;\;\mbox{for every integer}\; n \geq m  
+$$
+[see (1.3), page 478]. Hence, by (2),
+$$
+s_n \leq \sum_{i=m}^\infty b_i, \;\;\;\mbox{for every integer}\; n \geq m.
+$$
+Thus $\{s_n\}$ is increasing and bounded above by $\sum_{i=m}^\infty b_i$. The sequence therefore converges and
+$$
+\lim_{n \rightarrow \infty} s_n \leq \sum_{i=m}^\infty b_i 
+$$
+[see (1.4), page 479]. The convergence of $s_n$ implies the convergence of
+$\sum_{i=m}^\infty a_i$ and that the value of the series is $\lim_{n \rightarrow \infty} s_n$. Hence 
+$$
+\sum_{i=m}^\infty a_i \leq \sum_{i=m}^\infty b_i,
+$$
+and the proof is complete.
+\end{proof}
+
+%EXAMPLE 2. 
+\begin{example} Use the Comparison Test to prove that the series $\sum_{i=0}^\infty \frac{1}{2i^2 - 7}$ converges. We first observe that the first two terms of the series are negative. However, $2i^2 - 7 > 0$ provided $i \geq 2$, and so the series $\sum_{i=2}^\infty \frac{1}{2i^2 - 7}$ is nonnegative. It is sufficient to prove the latter series convergent because of the important fact that the convergence of an infinite series is unaffected by any finite number of terms at the beginning. As our test series we take the convergent $p$-series $\sum_{i=1}^\infty \frac{1}{i^2}$. To use the Comparison Test, we wish to show that
+
+\begin{equation}
+\frac{1}{2i^2 - 7} \leq \frac{1}{i^2}, \;\;\;\mbox{for every integer}\; i \geq 2.  
+\label{eq9.3.3}
+\end{equation}
+\noindent This inequality is equivalent to $i^2 \leq 2i^2 - 7$, which in turn is equivalent to $i^2 \geq 7$. The last is clearly true provided $i \geq 3$. Thus we have proved
+
+\begin{equation}
+\frac{1}{2i^2 - 7} \leq \frac{1}{i^2}, \;\;\;\mbox{for every integer}\; i \geq 3,  
+\label{eq9.3.4}
+\end{equation}
+%496 INFINITE SERIES [CHAP. 9
+\noindent which is slightly weaker than (3). However, (4) is certainly sufficient. We know that the series $\sum_{i=3}^\infty \frac{1}{i^2}$ , converges. It follows from (4) by the Comparison Test that $\sum_{i=3}^\infty \frac{1}{2i^2 - 7}$ converges and, as a result, the original series $\sum_{i=0}^\infty \frac{1}{2i^2 - 7}$ does also.
+\end{example}
+
+Example 2 illustrates a useful extension of the Comparison Test: \textit{The series $\sum_{i=m}^\infty a_i$ converges if there exists a convergent series $\sum_{i=m}^\infty b_i$ such that $0 \leq a_i \leq b_i$ eventually.} The assertion that $0 \leq a_i \leq b_i$ \textbf{eventually} means simply that there exists an integer $N$ such that $0 \leq a_i \leq b_i$ for every integer $i \geq N$. The just)fication for this extension is Theorem (2.3), page 486. A similar observation should be made about the Integral Test. It may be necessary to drop a finite number of terms from the beginning of the series under consideration before a convenient function $f$ can be found which satisfies the conditions of the test.
+
+The Comparison Test is as useful for proving divergence as convergence. It is an immediate corollary that \textit{if the nonnegative series $\sum_{i=m}^\infty a_i$ diverges and if $a_i \leq b_i$ for every $i \geq m$, then $\sum_{i=m}^\infty b_i$ also diverges.}  For if $\sum_{i=m}^\infty b_i$ converges, the Comparison Test implies that $\sum_{i=m}^\infty a_i$ converges, which is contrary to assumption.
+
+%EXAMPLE 3. 
+\begin{example} Determine whether the series $\sum_{k=1}^\infty \frac{1}{(k^2 + 5)^{1/3}}$ converges or diverges. If we use the Comparison Test, we must decide whether to look for a convergent test series with larger terms to prove convergence, or a divergent test series with smaller terms to prove divergence. To decide which, observe that for large values of $k$, the number $k^2 + 5$ is not very different from $k^2$, and therefore $\frac{1}{(k^2 + 5)^{1/3}}$ is approximately equal to $\frac{1}{k^{2/3}}$. Stated more formally, we have
+
+\begin{eqnarray*}
+\lim_{k \rightarrow \infty} \frac{(k^2 + 5)^{1/3}}{k^{2/3}} &=& \lim_{k \rightarrow \infty} (\frac{k^2 + 5}{k^2})^{1/3}  \\
+&=& \lim_{k \rightarrow \infty}(1 + \frac{5}{k^2})^{1/3} = 1.
+\end{eqnarray*}
+
+\noindent This comparison, together with the divergence of the $p$-series $\sum_{k=1}^\infty \frac{1}{k^{2/3}}$, leads us to believe that the series $\sum_{k=1}^\infty \frac{1}{(k^2 + 5)^{1/3}}$ diverges. Hence we shall try a
+%SEC. 3] NONNEGATIVE SERIES  497
+\noindent divergent test series. The most obvious candidate, $\sum_{k=1}^\infty \frac{1}{k^{2/3}}$, fails to be useful, since the necessary inequality,  
+$$
+\frac{1}{k^{2/3}} \leq \frac{1}{(k^2 + 5)^{1/3}},   
+$$
+\noindent is clearly false for every value of $k$. However, the series $\sum_{k=1}^\infty \frac{1}{2k^{2/3}}$ is also divergent, and we may ask whether or not it is true that
+
+
+\begin{equation}
+\frac{1}{2k^{2/3}} \leq \frac{1}{(k^2 + 5)^{1/3}}
+\label{eq9.3.5}
+\end{equation}
+\noindent This inequality is equivalent to $8k^2 \geq k^2 + 5$, and hence to $7k^2 \geq 5$, which is certainly true for every positive integer $k$. Hence (5) holds for every integer $k \geq 1$, and it therefore follows by the Comparison Test that the series $\sum_{k=1}^\infty \frac{1}{(k^2 + 5)^{1/3}}$ diverges.
+\end{example}
+

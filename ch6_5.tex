@@ -1,0 +1,150 @@
+\section{Algebraic and Transcendental Functions.}
+ We recall that a real-valued function $f$ of one variable is a polynomial if there exist real numbers $a_{0}, a_{1}, . . ., a_{n}$ such that, for every real number $x$, 
+
+$$
+f(x) = a_{0} + a_{1}x + ... + a_{n}x^{n} = \sum_{k = 0}^{n} a_{k}x^k.
+$$
+
+\noindent Thus, among the different functions $f$ defined respectively by
+
+$$
+\begin{array}{ll}
+\mbox{(a)}\;\;\; f(x) = x^3 + 17x - 2, \;\;\; &\mbox{(f)}\;\;\; f(x) = \frac{1}{x}, \\
+\mbox{(b)}\;\;\; f(x) = \pi x^2,                  &\mbox{(g)}\;\;\; f(x) = \frac{1}{1 + x^2},\\
+\mbox{(c)}\;\;\; f(x) = e^{x},                     &\mbox{(h)}\;\;\; f(x) = 5, \\
+\mbox{(d)}\;\;\; f(x) = x^{e},                     &\mbox{(i)}\;\;\; f(x) = \sqrt{x + 1}, \\
+\mbox{(e)}\;\;\; f(x) = \sin x,                    &\mbox{(j)}\;\;\; f(x) = e(x - 1),
+\end{array}
+$$
+
+\noindent only those defined in (a), (b), (h), and (j) are polynomials, and the rest are not. In asserting,
+for example, that the trigonometric function $\sin$ is not a polynomial, it is important to realize
+that we are stating more than just the obvious fact that $\sin x$ does not look like a finite sum of
+terms of the form $a_{k}x^k$. We are asserting that it is impossible to write $\sin x$ in this form. 
+The easiest way to prove this is to find some one property which every polynomial has and which
+$\sin$ does not have. For example, if $f$ is a polynomial, then the derivative $f'$ is a polynomial of
+degree one less. Hence the $j$th derivative $f^{(j)}$ is the constant function zero, if $j$ is chosen big
+enough. On the other hand, the $j$th derivative $\frac{d^j}{dx^j} \sin x$ is equal to $\pm \cos x$ or $\pm \sin x$, and is therefore never a constant. This proves that the function $\sin$ is not a polynomial.
+
+Similarly, a real-valued function $F$ of two variables will be defined to be a \textbf{polynomial} if there exist real numbers $a_{ij}, i = 0, . . ., m$ and $j = 0, . . ., n$, such that, for every pair of real
+numbers $x$ and $y$,
+
+$$
+F(x, y) = \sum_{i = 0}^{m} \sum_{j = 0}^{n} a_{i j} x^{i} y^{j}.
+$$
+
+\noindent An alternative formulation, which avoids writing the double sum, is to define a polynomial in
+two variables to be a function which is the sum of functions
+%324 TRlCONOME:lRlC FUNCTIONS [CHAP. 6
+each one of which is defined by an expression $ax^{i}y^{j}$, where $a$ is a constant, and $i$ and $j$ are nonnegative integers. Examples of polynomials in two variables are those functions defined by
+
+$$
+\begin{array}{ll}
+\mbox{(a)}\;\;\; & F(x, y) = x^3 + 2x^{2}y + xy^{3}, \\
+\mbox{(b)}\;\;\; & G(x, y) = (x + y)yx, \\
+\mbox{(c)}\;\;\; & f(x, y) = 17xy, \\
+\mbox{(d)}\;\;\; & H(x, y) = 7x + 2,\\
+\mbox{(e)}\;\;\; & h(x, y) = 3.
+\end{array}
+$$
+
+We come now to the two principal definitions of this section. A function $f$ of one variable is said
+to be an \textbf{algebraic function} if there exists a polynomial $F$ in two variables such that $F(x, f(x)) = 0$, for every $x$ in the domain of $f$.  A  \textbf{transcendental function} is one which is not algebraic.
+
+%EXAMPLE 1.
+\begin{example} The two functions 
+$$
+(a)\; f(x) = \frac{x^2 + 1}{2x^3 - 1},  \;\;\;(b)\; g(x) = \sqrt{x^3 + 2},
+$$
+\noindent are both algebraic. To show that $f$ is an algebraic function, let $y = \frac{x^2 + 1}{2x^3 - 1}$. Then $y(2x^3 - 1) = x^2 + 1$, or, equivalently, $ 2x^{3}y - y - x^{2} -1 = 0$. Hence if we let $F$ be the
+polynomial defined by
+
+$$
+F(x, y) = 2x^{3}y - y - x^{2} - 1,
+$$
+
+\noindent it will be true that $F(x, f(x)) = 0$. This is not surprising, since the polynomial $F(x, y)$ was
+invented precisely to make the last equation true. Checking, we get
+
+
+\begin{eqnarray*}
+F(x, f(x)) &=& 2x^{3} \frac{x^{2} + 1}{2x^3 - 1} - \frac{x^{2} + 1}{2x^{3} - 1} - x^2 - 1\\
+              &=& (2x^3 - 1) \frac{x^2 +1}{2x^3 - 1}  - x^2 - 1 \\
+              &=&  x^2 + 1 - x^2 - 1 = 0.
+\end{eqnarray*}
+\end{example}
+
+The function $g$ can be shown to be algebraic by letting $y = \sqrt{x^3 + 2}$. Squaring both sides, we
+obtain $y^2 = x^3 + 2$, which is equivalent to $y^2 - x^3 - 2 = 0$. Hence if we define the polynomial $F$ by the equation
+
+$$
+F(x, y) = y^2 - x^3 - 2, 
+$$
+
+\noindent then $F(x, g(x)) = 0$. Checking, we have
+
+\begin{eqnarray*}
+F(x, g(x)) &=& (\sqrt {x^3 + 2})^2 - x^3 - 2\\
+               &=& x^3 + 2 - x^3 - 2 = 0.
+\end{eqnarray*}
+
+%SEC. 5] ALGEBRAIC AND TRANSCENDENTAL FUNCTIONS  725
+
+A rational function is one which can be expressed as the ratio of two polynomials. That is, a
+function $f$ of one variable is rational if there exist polynomials $p$ and $q$ of one variable such that $f(x) = \frac{p(x)}{q(x)}$. The technique used in Example 1 to show that the function $\frac{x^2 + 1}{2x^3 - 1}$ is algebraic can be applied to any rational function of one variable. Thus we have the theorem
+
+\begin{theorem} %(5.1) 
+Any rationalfunction $f$ of one variable is algebraic.
+\end{theorem}
+
+
+\begin{proof}
+Since $f$ is rational, there exist polynomials $p$ and $q$ such that $f(x) = \frac{p(x)}{q(x)}$.
+Letting $y = \frac{p(x)}{q(x)}$, we obtain $yq(x) = p(x)$, which is equivalent to $yq(x)-p(x) = 0$. The function $F$ defined by
+$$
+F(x, y) = yq(x) - p(x)
+$$
+is a polynomial in $x$ and $y$. Substituting $f(x)$ for $y$, and then $\frac{p(x)}{q(x)}$ for $f(x)$, 
+we obtain 
+\begin{eqnarray*}
+F(x, f(x)) &=& f(x)q(x) - p(x)\\
+              &=& \frac{p(x)}{q(x)} q(x) - p(x)\\
+              &=& p(x) - p(x) = 0, 
+\end{eqnarray*}
+which completes the proof.
+\end{proof}
+
+The function $g$ defined by $g(x) = \sqrt{x^3 + 2}$ is an example of an algebraic function which is not rational.  (A simple proof of this fact is suggested in Problem 2.) Thus the set of all rational functions of one variable is a proper subset of the larger set of all algebraic functions of one variable.
+
+It is by no means obvious that transcendental functions exist. However, we have actually
+encountered quite a few such functions already. Although a proof of the next theorem is too
+advanced to give in this book, it is important to know that it is true.
+
+\begin{theorem} %(5.2) 
+The following functions are transcendental:
+
+ 
+\begin{description}
+\item[(i)] $\ln x,$  
+\item[(ii)] $e^{x},$
+\item[(iii)] $a^{x}, \;\mathrm{for any}\; a > 0, a \neq 1,$
+\item[(iv)] $\log_{a}x, \;\mathrm{for any}\; a > 0, a \neq 1,$
+\item[(v)] $\sin x, \cos x, \tan x, \cot x, \sec x, \csc x,$
+\item[(vi)] $\arcsin x, \arccos x, \arctan x, \mathrm{arccot} x, \mathrm{arcsec} x, \mathrm{arccsc} x.$
+\end{description}
+ 
+\end{theorem}
+%326 TRIGONOMETRIC FUNCTIONS [CHAP. 6
+
+Another theorem [not so deep as (5.2), but still beyond the scope of this book] states that if $f$ is
+an algebraic function, then the derivative $f'$ is also algebraic. However, the converse is false. In
+particular, we know that
+$$
+\frac{d}{dx} \ln x = \frac{1}{x}, 
+$$
+\noindent and $\frac{1}{x}$ is not only algebraic, but also rational. In addition, the formulas in
+Section 4 for the derivatives of the inverse trigonometric functions show that every one of
+these six transcendental functions has a derivative which is algebraic.
+
+
+

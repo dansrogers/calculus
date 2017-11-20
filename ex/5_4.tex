@@ -1,0 +1,221 @@
+\begin{exercises}
+
+\ex{5.4.1}
+Find the derivative with respect to $x$
+of each of the following functions.
+\begin{exenum}
+\x
+$4^{x+1}$
+\x
+$\log_{10}(x^2+1)$
+\x
+$\log_{10}4^{x+1}$
+\x
+$e^{x^2+x+2}$
+\x
+$xa^x$
+\x
+$2^xx^2$
+\x
+$xe^{-x}$
+\x
+$log_4 (x^2-4^x)$
+\x
+$x^{x-1}$
+\x
+$x^{(x^2)}$
+\x
+$(x^x)^2$.
+\end{exenum}
+
+\ex{5.4.2}
+If $a$ and $b$ are positive numbers not equal
+to $1$, prove that $\log_ab = \frac1{\log_ba}$.
+
+\ex{5.4.3}
+Prove that
+\begin{exenum}
+\x
+$\ln x = (\ln a)(log_a x)$
+\x
+$\ln x = \frac{\log_ax}{\log_ae}$.
+\end{exenum}
+
+\ex{5.4.4}
+Integrate each of the following.
+\begin{exenum}
+\x
+$\int 7^x \; dx$
+\x
+$\int x^22^{3x^3+4} \; dx$
+\x
+$\int \frac1{x+2} \ln |x+2| \; dx$
+\x
+$\int \frac1x \ln \left|\frac1x\right| \; dx$
+\x
+$\int \log_2e^{7x-5} \; dx$
+\x
+$\int \frac1{x+3} 3^{\ln |x+3|} \; dx$
+\x
+$\int e^x5^{(e^x)} \; dx$.
+\end{exenum}
+
+\ex{5.4.5}
+\begin{exenum}
+\x
+\xlab{5.4.5a}
+Differentiate logarithmically
+$y = \sqrt{\frac{(x-1)(x+3)}{(x+2)(x-4)}}$.
+\x
+For what values of $x$ is the differentiation
+in \exref{5.4.5a} valid?
+\end{exenum}
+
+\ex{5.4.6}
+If $u$ is a positive function of $x$ and $a$ is
+positive but not equal to $1$,
+show that
+$\log_au = \frac{\ln u}{\ln a}$.
+
+\ex{5.4.7}
+Differentiate each of the following functions
+with respect to $x$.
+\begin{exenum}
+\x
+$x^{\ln x}$
+\x
+$(\ln x)^x$
+\x
+$(e^x)^{x^2+1}$
+\x
+$(\ln x)^{\ln x}$.
+\end{exenum}
+
+\ex{5.4.8}
+\begin{exenum}
+\x
+Given only that $\log_a1=0$ and that
+$\log_apq = \log_ap +\log_aq$,
+prove that
+$\log_a \left(\frac1p \right) = -\log_ap$.
+\x
+Then prove that
+$\log_a \frac{p}{q} = \log_ap - \log_aq$.
+\end{exenum}
+
+\ex{5.4.9}
+Prove all the properties listed in \thref{5.4.7}
+(see Problem \exref{5.4.8}).
+
+\ex{5.4.10}
+Using the Mean Value Theorem, Theorem \thref{2.5.2},
+prove that if $f^\prime(x) > 0$ for all $x$,
+then $f$ is a strictly increasing function.
+
+\ex{5.4.11}
+Assume that $a  > 1$.
+\begin{exenum}
+\x
+\xlab{5.4.11a}
+Using the definition of $a^x$, show that
+\[
+\lim_{x\goesto\infty} a^x = \infty
+.
+\]
+\x
+\xlab{5.4.11b}
+Using the result of \exref{5.4.11a}, prove that
+\[
+\lim_{x\goesto-\infty} a^x = 0
+.
+\]
+\x
+\xlab{5.4.11c}
+Using \exref{5.4.11a}, show that
+\[
+\lim_{x\goesto\infty} \frac{d}{dx} a^x = \infty
+.
+\]
+\x
+\xlab{5.4.11d}
+Using \exref{5.4.11b}, show that
+\[
+\lim_{x\goesto-\infty} \frac{d}{dx} a^x = 0
+.
+\]
+\x
+What do \exref{5.4.11a}, \exref{5.4.11b}, \exref{5.4.11c},
+and \exref{5.4.11d} say geometrically about the graph
+of the function $a^x$?
+\end{exenum}
+
+\ex{5.4.12}
+Assume that $a_1 > a_2 > 1$.
+\begin{exenum}
+\x
+\xlab{5.4.12a}
+Using the definition of $a^x$,
+show that, if $x > 0$, then ${a_1}^x > {a_2}^x$.
+\x
+Using \exref{5.4.12a}, show that, if $x < 0$,
+then ${a_1}^x < {a_2}^x$.
+\end{exenum}
+
+\ex{5.4.13}
+Evaluation of a limit of the form
+$\lim_{x\goesto a} f(x)^{g(x)}$
+is not obvious if any one of the following
+three possibilities occurs.
+
+(i) \quad $\lim_{x\goesto a} f(x) = \lim_{x\goesto a} g(x) = 0$.
+
+(ii) \quad $\lim_{x\goesto a} f(x) = 1$ and
+$\lim_{x\goesto a} g(x) = \infty$.
+
+(iii) \quad $\lim_{x\goesto a} f(x) = \infty$ and
+$\lim_{x\goesto a} g(x) = 0$.
+
+These three types are usually referred to,
+respectively, as the \dt{indeterminate forms}
+$0^0$, $1^\infty$, and $\infty^0$.
+The standard attack, akin to logarithmic differentiation,
+is the following:  Let
+\[
+h(x) = \ln f(x)^{g(x)} = g(x) \ln f(x) =
+\frac{\ln f(x)}{\frac1{g(x)}}
+.
+\]
+One then applies L'H\^opital's Rule to the quotient,
+thereby hopefully discovering that
+$\lim_{x\goesto a} h(x)$ exists and what its value is.
+If it does exist, it follows by the continuity
+of the exponential function that
+\[
+e^{\left[ \lim_{x\goesto a} h(x)\right]} =
+\lim_{x\goesto a} e^{h(x)}
+.
+\]
+But, since
+\[
+e^{h(x)} = e^{\ln f(x)^{g(x)}} = f(x)^{g(x)}
+,
+\]
+we therefore conclude that
+\[
+\lim_{x\goesto a} f(x)^{g(x)} =
+e^{\left[ \lim_{x\goesto a} h(x)\right]}
+,
+\]
+and the problem is solved.
+
+Apply this method to evaluate the following limits.
+\begin{exenum}
+\x
+$\lim_{x\goesto0+} x^x$
+\x
+$\lim_{x\goesto\infty} x^{\frac1x}$
+\x
+$\lim_{x\goesto0} (1+2x)^{\frac1x}$.
+\end{exenum}
+
+\end{exercises}

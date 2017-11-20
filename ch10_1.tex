@@ -1,0 +1,247 @@
+\chapter{Geometry in the Plane} \label{chp 10}
+Suppose that we are concerned with the motion of a particle as it moves in a plane. At any time $t$ during the motion, the position of the particle is given by its two coordinates, which depend on time, and may therefore be denoted by $x(t)$ and $y(t)$, respectively. The set of points traced out by the particle as it moves during a given interval of time is a curve. The function which describes the position of the particle is called a parametrization, and a curve described by such a function is said to be parametrized. In the first sections of this chapter we shall develop the mathematical theory of parametrized curves, abstracting from the picture of a physical particle in motion. Later we shall return to this application and define the notions of velocity and acceleration of such particles.
+
+Parametrized curves represent an important generalization of the curves encountered thus far as the graphs of functions. As we shall see, a parametrized curve is not necessarily the graph of an equation $y = f(x)$.
+
+\section{Parametrically Defined Curves.}\label{sec 10.1} 
+When we speak of the plane in this book, we assume, unless otherwise stated, that a pair of coordinate axes has been chosen. As a result, we identify the set of points in the plane with the set $R^2$ of all ordered pairs of real numbers. A convenient notation for a function $P$ whose domain is an interval $I$ of real numbers and whose range is a subset of the plane is $P : I \rightarrow R^2$. Every function $P : I \rightarrow R^2$ defines two \textbf{coordinate functions,} the functions which assign to every $t$ in $I$ the two coordinates of the point $P(t)$. If we denote the first coordinate function by $f$, and the second one by $g$, then they are defined by the equation
+
+
+\begin{equation}
+P(t) = (f(t), g(t)), \;\;\;\mbox{for every $t$ in $I$.}  
+\label{eq10.1.1}
+\end{equation}
+Conversely, of course, every ordered pair of real-valued functions $f$ and $g$ with an interval $I$ as common domain defines a function $P : I \rightarrow R^2$ by equation (1).
+
+Since the first and second coordinates of an element of $R^2$ are usually the $x$- and $y$-coordinates, respectively, we may alternatively define a function
+%542 GEOMETRY IN THE PLANE [CHAP. 1O 
+$P : I \rightarrow R^2$ by a pair of equations 
+
+$$
+\left \{ \begin{array}{l}
+x = f(t), \\
+y = g(t),
+
+\end{array}
+\right .
+$$
+\noindent where $f$ and $g$ are real-valued functions with domain $I$. Then, for every $t$ in $I$, we have $P(t) = (x, y) = (f(t), g(t))$. It is also common practice to denote the coordinate functions themselves by $x$ and $y$. When this is done, we do not hesitate to write the equations $x = x(t)$ and $y = y(t)$, and the function $P : I \rightarrow R^2$ is defined by
+$$
+P(t) = (x(t), y(t)), \;\;\;\mbox{for every $t$ in $I$.}
+$$
+
+A function $P : I \rightarrow R^2$ is said to be \textbf{continuous at} $t_0$ if both coordinate functions are continuous at $t_0$. If the coordinate functions are denoted by $x$ and $y$, then we define
+$$
+\lim_{t \rightarrow t_0} P(t) = (\lim_{t \rightarrow t_0} x(t), \lim_{t \rightarrow t_0} y(t)).
+$$
+
+\noindent As a result, the definition of continuity for $P$ is entirely analogous to that for a real-valued function: $P$ is continuous at $t_0$ if $t_0$ is in the domain of $P$ and if $\lim_{t \rightarrow t_0} P(t) = P(t_0)$. As before, the function $P$ is simply said to be \textbf{continuous} if it is continuous at every number in its domain.
+
+A \textbf{curve} in the plane is by definition a subset of $R^2$ which is the range of some continuous function $P : I \rightarrow R^2$. Every curve is the range of many such functions, and, as a result, it is necessary to choose our terminology carefully. We shall call a continuous function $P : I \rightarrow R^2$, a \textbf{parametrization} of the curve $C$ which is the range of $P$, and we shall say that $C$ is \textbf{parametrically defined} by $P : I \rightarrow R^2$. The points of the curve $C$ obviously consist of the set of all points $P(t)$, for every $t$ in $I$. By a \textbf{parametrized curve} we shall mean the range of a specified continuous function $P : I \rightarrow R^2$. Speaking more casually, we shall refer to the curve defined parametrically by
+
+$$
+P(t)= (x(t), y(t)), 
+$$
+\noindent or, equivalently, to the curve defined parametrically by the equations 
+$$
+\left \{ \begin{array}{l}
+x = x(t), \\
+y = y(t),
+\end{array}
+\right .
+$$
+\noindent for every $t$ in some interval $I$ which is the common domain of the continuous functions $x$ and $y$. If $t$ is regarded as an independent variable, it is called the \textbf{parameter} of the parametrized curve.
+
+%SEC. 1] PARAMETRICALLY DEFINED CURVES 543
+\begin{example} Draw the curve defined parametrically by
+$$
+P(t) = (t^2, t), \;\;\; -\infty < t < \infty.
+$$
+\noindent This is, of course, also the curve defined by the equations
+$$
+\left \{ \begin{array}{l}
+
+x = t^2,\\
+y = t, \;\;\; -\infty < t < \infty.
+\end{array}
+\right .
+$$
+\noindent It is plotted in Figure 1. Since the set of all points $(x, y)$ which satisfy the above two equations is equal to the set of all points $(x, y)$ such that $x = y^2$, we recognize the curve as a parabola.
+\end{example}
+
+%Figure I
+
+\putfig{3.25truein}{scanfig10_1}{}{fig 10.1}
+
+\begin{table}
+\centering
+\begin{tabular}{r|l}
+\hline
+t    & (x, y) \\ \hline
+0   & (0, 0) \\
+1   & (1, 1) \\
+-1  & (1, -1) \\
+2   & (4, 2) \\
+-2  & (4, -2) \\ \hline
+\end{tabular}
+\caption{}
+\label{table 10.1}
+\end{table}
+\medskip
+
+It is worth noting that every curve which we have previously encountered as the graph of a continuous function $f$ can be defined parametrically. The graph is the set of all points $(x, y)$ such that $x$ is in the domain of $f$ and such that $y = f(x)$. This set is obviously equal to the set of all points $(x, y)$ such that
+
+ 
+\begin{equation}
+\left \{ \begin{array}{l}
+x = t,\\
+y = f(t), \;\;\;\mbox{and $t$ is in the domain of $f$.}   
+\end{array}
+\right .
+\label{eq10.1.2}
+\end{equation}
+
+\noindent Hence the graph of $f$ is defined parametrically by equations (2).
+
+A function $P : I \rightarrow R^2$ is \textbf{differentiable at} $t_0$ if the derivatives of both coordinate functions exist at $t_0$. Moreover, following the usual style, we say that $P$ is a \textbf{differentiable function} if it is differentiable at every number in its domain. This terminology is also applied to parametrized curves. That is, a curve defined parametrically by $P : I \rightarrow R^2$ is said to be differentiable at $t_0$, or simply differentiable, according as $P$ is differentiable at $t_0$, or is a differentiable function.
+%544 GEOMETRY IN THE PLANE [CHAP. 1O 
+\begin{example} Draw and identify the curve $C$ defined parametrically by
+
+$$
+P(t) = (x(t), y(t)) = (4\cos t, 3\sin t), 
+$$
+\noindent for every real number $t$. If $(x, y)$ is an arbitrary point on the curve, then 
+ 
+$$
+ \{ \begin{array}{l}
+x = 4 \cos t, \\
+y = 3 \sin t,
+\end{array}
+$$
+
+\noindent for some value of $t$. Hence, $\frac{x}{4} = \cos t$ and $\frac{y}{3} = \sin t$, and, consequently, 
+$$
+\frac{x^2}{16} + \frac{y^2}{9} = \cos^2 t + \sin^2 t = 1 .
+$$
+\noindent Thus for every point $(x, y)$ on the curve, we have shown that 
+
+\begin{equation}
+\frac{x^2}{16} + \frac{y^2}{9} = 1.  
+\label{eq10.1.3}
+\end{equation}
+
+
+\noindent The latter is an equation of the ellipse shown in Figure 2, and it follows that the curve $C$ is a subset of the ellipse. Conversely, let $(x, y)$ be an arbitrary point on the ellipse. Then $|x| \leq 4$, and so there exists a number $t$ such that
+$x = 4 \cos t$. Since $\cos t = \cos(-t)$ and $\sin t = -\sin(-t)$, we may choose $t$ so that $\sin t$ and $y$ have the same sign. Then, solving equation (3) for $y$ and setting $x = 4 \cos t$, we obtain
+
+%Figure 2
+\putfig{3.5truein}{scanfig10_2}{}{fig 10.2}
+
+
+\begin{eqnarray*}
+y^2 &=& 9 \Big(1 - \frac{x^2}{16} \Big) = 9 \Big(1 - \frac{16 \cos^2 t}{16} \Big) = 9(1 - \cos^2 t) \\
+      &=& 9 \sin^2t.
+\end{eqnarray*}
+
+%SEC, 1] PARAMETRICALLY DEFINED CURVES  545
+\noindent Since $y$ and $\sin t$ have the same sign, it follows that $y = 3 \sin t$. We have therefore proved that, if $(x, y)$ is an arbitrary point on the ellipse, then there exists a real number $t$ such that
+$$
+(x, y) = (4 \cos t, 3 \sin t) = P(t).
+$$
+\noindent That is, every point on the ellipse also lies on $C$. We have already shown that the converse is true, and we therefore conclude that the parametrized curve $C$ is equal to the ellipse.
+\end{example}
+
+Consider a curve $C$ defined parametrically by a differentiable function $P : I \rightarrow R^2$, and let $t_0$ be an interior point of the interval $I$. A typical example is shown in Figure 3. Generally it will not be the case that the whole curve is a function of $x$, since there may be distinct points on $C$ with the same $x$-coordinate. However, it can happen that a subset of $C$ containing the point $P(t_0)$ is a differentiable function. Such a subset is shown in Figure 3, drawn with a heavy line. Thus if $P(t) = (x(t), y(t))$ for every $t$ in $I$, then there may exist a differentiable function $f$ such that
+
+%Figure 3
+\putfig{4.5truein}{scanfig10_3}{}{fig 10.3}
+
+\begin{equation}
+y(t) = f(x(t)),  
+\label{eq10.1.4}
+\end{equation}
+
+
+\noindent for every $t$ in some subinterval of $I$ containing $t_0$ in its interior. If such a function does exist, we shall say that $y$ \textit{is a differentiable function of $x$ on the parametrized curve $P(t) = (x(t), y(t))$ in a neighborhood of the point $P(t_0)$.}  Applying the Chain Rule to equation (4), we obtain
+$$
+y'(t) = f'(x(t)) x'(t) .
+$$
+%546 GEOMETRY IN THE PLANE [CHAP. 1O 
+\noindent Hence
+
+\begin{equation}
+f'(x(t)) = \frac{y'(t)}{x'(t)},
+\label{eq10.1.5}
+\end{equation}
+
+\noindent for every $t$ in the subinterval, for which $x'(t) \neq 0$. If we write $y = f(x)$ and use the differential notation for the derivative, formula (5) becomes
+
+
+\begin{equation}
+\frac{dy}{dx} = \frac{\frac{dy}{dt}}{\frac{dx}{dt}}. 
+\label{eq10.1.6}
+\end{equation}
+\noindent It should be apparent that $f'(x(t))$, or, equivalently, $\frac{dy}{dx}$ at $t$, is equal to the slope of the curve $C$ at the point $P(t)$.  
+
+
+\begin{example} Find the slope, when $t = \frac{\pi}{3}$, of the parametrized ellipse in Example 2. The parametrization is defined by the equations
+$$
+\left \{ \begin{array}{l}
+x= 4\cos t, \\
+y = 3 \sin t.
+\end{array}
+\right.
+$$
+ 
+\noindent We shall assume the analytic result that $y$ is defined as a differentiable function of $x$ in a neighborhood of the point
+$$
+\Big(4 \cos \frac{\pi}{3},  3 \sin \frac{\pi}{3} \Big).
+$$
+
+\noindent Since
+
+$$
+\Big(4 \cos \frac{\pi}{3}, 3 \sin \frac{\pi}{3} \Big) = \Big(4 \cdot \frac{1}{2}, 3 \cdot \frac{\sqrt 3}{2} \Big) = \Big(2 , \frac{3 \sqrt 3}{2} \Big) ,
+$$
+
+\noindent one can see by simply looking at Figure 2 that this should certainly be true since the curve passes smoothly through the point and, in the immediate vicinity of the point, does not double back on itself. We have
+
+\begin{eqnarray*}
+\frac{dx}{dt} &=& \frac{d}{dt} 4 \cos t = - 4 \sin t ,\\
+\frac{dy}{dt} &=& \frac{d}{dt} 3 \sin t = 3 \cos t ,
+\end{eqnarray*}
+
+%SEC. 1] PARAMETRICALLY DEFINED CURVES 547
+
+\noindent and so
+\begin{eqnarray*}
+\frac{dx}{dt}\Big|_{t=\pi/3} &=& -4 \sin \frac{\pi}{3} = -4 \frac{\sqrt 3}{2} = - 2\sqrt 3, \\
+\frac{dy}{dt}\Big|_{t=\pi/3} &=& 3 \cos \frac{\pi}{3} = \frac{3}{2} . 
+\end{eqnarray*}
+
+\noindent Hence, by formula (6), the slope is equal to
+$$
+\frac{dy}{dx}\Big|_{t=\pi/3} = \frac{\frac{dy}{dt}\Big|_{t=\pi/3}}{\frac{dx}{dt}\Big|_{t=\pi/3}} = \frac{\frac{3}{2}}{-2 \sqrt 3} = - \frac{3}{4 \sqrt 3} .
+$$
+\end{example}
+
+The problem of giving analytic conditions which imply that $y$ is a differentiable function of $x$ on a parametrized curve in the neighborhood of a point is akin to the problem of determining when an equation $F(x, y) = c$ implicitly defines $y$ as a differentiable function of $x$ in a neighborhood of a point. As mentioned on page 81, the latter is solved by the Implicit Function Theorem, and the techniques needed here are similar.
+
+As a final example, let us consider the curve traced by a point fixed on the circumference of a wheel as the wheel rolls along a straight line. We take the $x$-axis for the straight line. The radius of the wheel we denote by $a$, and the point on the circumference by $(x,y)$. If we assume that the point passes through the origin as the wheel rolls by to the right, then the curve is
+defined parametrically by the equations
+$$
+\left \{ \begin{array}{l}
+x = a(\theta - \sin \theta),\\
+y = a(1 - \cos \theta), \;\;\; -\infty < \theta < \infty,
+\end{array}
+\right .
+$$
+
+\noindent where the parameter $\theta$ is the radian measure of the angle with vertex the center of the wheel, initial side the half-line pointing vertically downward, and terminal side the half-line through $(x, y)$ (see Figure 4). (An alternative
+geometric interpretation of the parameter is that $a\theta$ is the coordinate of the point of tangency of the wheel on the $x$-axis.) The curve is called a \textbf{cycloid.} Note that the parametric equations are quite simple, whereas it would be difficult to express $y$ as a function of $x$.
+
+
+%Figure 4
+\putfig{4.5truein}{scanfig10_4}{}{fig 10.4}
+
+%548 GEOMETRY IN THE PLANE [CHAP. 1O

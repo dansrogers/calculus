@@ -1,0 +1,222 @@
+\section{Volume.}
+ In this section we shall use Riemann sums to derive several integral formulas for the volume of solids. The concept of volume is a familiar one, and we shall not give a mathematical definition of it. As a result, the
+%SEC. 4] v o L U M E  433
+formulas will be derived from properties of volume which seem intuitively natural and which we shall assume. By a solid we mean a subset of threedimensional space.
+
+A subset $Q$ of three-dimensional space is said to be \textbf{bounded} if there exists a real number $k$ such that, for any two points $p$ and $q$ in $Q$, the straightline distance in space between $p$ and $q$ is less than $k$. Alternatively, $Q$ is bounded if and only if there exists a sphere in space which contains $Q$ in its interior. In finding volumes of solids, we shall restrict ourselves to bounded subsets of three-dimensional space.
+
+Let $Q$ be a bounded solid, such as the one shown in Figure 11. We choose an arbitrary straight line in space for a coordinate axis. Any point
+on the line may be chosen for the origin and either direction as the direction of increasing numbers. The scale on the line must agree with the scale of distance in space. That is, if two points on the line correspond to the numbers $x$ and $y$, then $|x - y|$ must equal the straight-line distance in space between the two points.
+
+% Figure 11
+\putfig{2.75truein}{scanfig8_11}{}{fig 8.11}
+
+For every number $x$, let $P_x$ be the plane figure which is the intersection of the solid $Q$ and the plane perpendicular to the coordinate axis at $x$ (see Figure 11). The second assumption we make about $Q$ is that every set $P_x$ has a well-defined area. We then define a \textbf{cross-sectional area function} $A$ by setting
+$$
+A(x)= area(P_x).
+$$
+\noindent One consequence of the fact that $Q$ is bounded is that there exists an interval $[a, b]$ such that, for every $x$ outside of $[a, b]$, the set $P_x$ is empty and so $A(x)= 0$. Another consequence is that the function $A$ is bounded on $[a, b]$.
+
+Let us now consider a partition $ \sigma = \{ x_0, ..., x_n \}$ of the interval $[a, b]$ which satisfies the inequalities 
+$$
+a = x_0 \leq x_1 \leq \cdots  \leq x_n = b .
+$$
+%434 THE DEFINITE 7NTEGRAL (CONTINUED) [CHAP. 8
+\noindent In each subinterval $[x_{i-1}, x_i]$, we choose an arbitrary number $x_i^*$. The product $A(x_i^*)(x_i - x_{i-1})$ is equal to the volume of a right cylindrical slab with constant cross-sectional area $A(x_i^*)$ and thickness $x_i - x_{i-1}$. If $x_i - x_{i-1}$ is small, then we should expect $A(x_i^*)(x_i - x_{i-1})$ to be a good approximation to the volume of the slice of $Q$ which lies between the parallel planes at $x_{i-1}$ and $x_i$ (see Figure 12). Hence if the mesh of the partition $\sigma$ is small, then the Riemann sum
+
+%Figure 12
+\putfig{2.75truein}{scanfig8_12}{}{fig 8.12}
+
+$$
+\sum_{i=1}^n A(x_i^*)(x_i - x_{i-1})
+$$
+\noindent will be a good approximation to the volume of $Q$. Moreover, the smaller the mesh, the better the approximation ought to be. Therefore, we shall assume that if the volume of $Q$ is defined, then it is given by
+$$
+ vol(Q) = \lim_{|| \sigma || \rightarrow 0} \sum_{i=1}^n A(x_i^*)(x_i - x_{i-1}).  
+$$
+\noindent It follows immediately from the integrability criterion, Theorem (2.1), page 414, that
+
+\begin{theorem} %(4.1) 
+$$
+vol(Q) = \int_a^b A(x)dx.  
+$$
+\end{theorem}
+
+\noindent This is a basic integral formula for volume.
+%SEC. 4] VOLUME  435
+
+
+%Figure 13
+\putfig{4truein}{scanfig8_13}{}{fig 8.13}
+
+%EXAMPLE 1. 
+\begin{example}
+Find the volume $V$ of a pyramid of height $h$ with a square base of length $a$ on a side. The pyramid is shown in Figure 13(a). We choose a vertical $x$-axis with origin at the apex and which cuts the center of the base at $x = h$. The cross-sectional area $A(x)$ of the intersection of the pyramid and the plane perpendicular to the coordinate axis at $x$ is easily seen from the side view [Figure 13(b)]. Since corresponding parts of similar triangles are proportional, it follows that 
+$$
+\frac{y}{ x} = \frac{a}{h} .
+$$ 
+\noindent Hence
+$$
+A(x) = y^2 = \frac{a^2 x^2}{h^2},
+$$
+
+\noindent and so
+\begin{eqnarray*}
+V &=& \int_0^h A(x) dx = \frac{a^2}{h^2} \int_0^h x^2 dx \\
+&=& \frac{a^2}{h^2} \frac{h^3}{3} = \frac{1}{3} a^2h .
+\end{eqnarray*}
+
+\noindent This is the well-known result that the volume of a pyramid is equal to one third the product of the height and the area of the base.
+\end{example}
+
+%EXAMPLE 2. 
+\begin{example}
+The axes of two right circular cylinders $P$ and $Q$ of equal radii $a$ intersect at right angles as shown in Figure 14(a). Find the volume of the intersection $P \cap Q$. We choose an $x$-axis perpendicular to the axes of both cylinders and which passes through their point of intersection. This point is chosen for the origin, and the direction of increasing $x$ is upward.
+%436 THE DEFINITE INTEGRAL (CONTINUED) [CHAP. 8
+Figure 14(b) helps one to see that the cross sections of $P \cap Q$ perpendicular to the $x$-axis are squares. From the end-on view in Figure 14(c), it is apparent that the cross section at $x$ is a square with an edge of length $2\sqrt {a^2 - x^2}$. Hence
+
+%Figure 14
+\putfig{4.5truein}{scanfig8_14}{}{fig 8.14}
+
+$$
+A(x) = (2\sqrt{a^2 - x^2})^2 = 4(a^2 - x^2), \;\;\; -a \leq x \leq a.
+$$
+\noindent By the integral formula for volume, therefore,
+$$
+vol(P \cap Q) = \int_{-a}^a A(x) dx = 4\int_{-a}^a (a^2 - x^2) dx.
+$$
+\noindent Since $a^2 - x^2$ is an even function, the integral from $-a$ to $a$ is twice the integral from 0 to $a$. Thus 
+\begin{eqnarray*}
+vol(P \cap Q) &=& 8 \int_0^a (a^2 - x^2) dx\\
+                     &=& 8 (a^2x - \frac{x^3}{3} )\big|_0^a = 8 (a^3 - \frac{a^3}{3}) \\
+                     &=& \frac{16a^3}{3} .
+\end{eqnarray*}
+\end{example}
+%SEC. 4] VOLUME  437
+
+Consider a plane in three-dimensional space containing a region $R$ and a line $L$. The solid generated by rotating $R$ in space about $L$ is called a \textbf{solid of revolution.} Among the solids of revolution are those described by rotating a portion of the graph of a function in the $xy$-plane about the $x$-axis (or the $y$-axis). We shall give an integral formula for the volumes of these solids, which is a special case of (4.1). Let $f$ be a function integrable over the closed interval $[a, b]$, and consider the solid of revolution $Q$ swept out by rotating about the $x$-axis the region bounded by the graph of $f$, the $x$-axis, and the $y$-axis lines $x = a$ and $x = b$. Such a region is illustrated in Figure 15(a), and the corresponding solid in Figure 15(b). For every $x$ in $[a, b]$, the cross section of $Q$ perpendicular to the $x$-axis at $x$ is a circular disk, of radius $|f(x)|$. Hence
+$$
+A(x)= \pi | f(x) |^2= \pi [f(x)]^2.
+$$
+\noindent By formula (4.1), therefore, the volume of the solid of revolution $Q$ is given by
+
+\begin{theorem} %(4.2)
+$$
+vol(Q) = \pi \int_a^b [f(x)]^2 dx.  
+$$
+\end{theorem}
+%Figure 15 
+\putfig{4.5truein}{scanfig8_15}{}{fig 8.15}
+
+
+%EXAMPLE 3. 
+\begin{example}
+Let $R$ be the region in the upper half-plane bounded by the parabola $y^2 = 4x$, the x-axis, and the line $x = 4$. Find the volume of $Q$, the solid of revolution obtained by rotating this region about the $x$-axis. The region and the solid are drawn in Figure 16. That part of the parabola in the upper half-plane is the set of all points $(x, y)$ such that $y^2 = 4x$ and $y \geq 0$. This set is the graph of the equation $y= \sqrt {4x}$, and we therefore take $f(x) = \sqrt {4x}$ in formula (4.2), obtaining
+
+\begin{eqnarray*}
+vol(Q) &=& \pi \int_0^4 [f(x)]^2 dx = \pi \int_0^4 4xdx \\
+           &=& 4\pi \frac{x^2}{2} \big|_0^4 = 32\pi .
+\end{eqnarray*}
+\end{example}
+%438 THE DEFINITE INTEGRAL (CONTINUED) [CHAP. 8
+%Figure 16 
+\putfig{4.5truein}{scanfig8_16}{}{fig 8.16}
+
+%EXAMPLE 4. 
+\begin{example}
+Let $R$ be the region in Example 3, and let $S$ be the region bounded by the parabola $y^2 = 4x$, the $y$-axis, and the line $y = 4$. Both regions are shown in Figure 16(a). Find the volumes of the two solids of revolution $Q_1$ and $Q_2$, obtained by rotating $S$ and $R$, respectively, about the $y$-axis. The two solids are illustrated in Figure 17. The easiest way to find the volume of $Q_1$ is to use the counterpart of formula (4.2) for functions of $y$. The equation $y^2 = 4x$ is equivalent to the equation $x = \frac{y^2}{4}$, and the parabola is therefore the graph of the function of $y$ defined by $f(y) = \frac{y^2}{4}$ . By symmetry therefore, 
+
+\begin{eqnarray*}
+vol(Q_1) &=& \pi \int_0^4 [f(y)]^2 dy = \pi \int_0^4 \frac{y^4}{16} dy \\
+               &=& \frac{\pi}{16} \frac{y^5}{5} \big|_0^4 = \frac{64 \pi}{5} .
+\end{eqnarray*}
+% Figure 17
+\putfig{4.5truein}{scanfig8_17}{}{fig 8.17}
+%SEC. 4] VOLUME  439
+
+The union of $Q_1$ and $Q_2$ is a right circular cylinder of radius 4 and height 4. Hence
+$$
+vol(Q_1 \cup Q_2) = (\pi 4^2) \cdot 4 = 64 \pi.
+$$
+\noindent It is obvious that
+$$
+vol(Q_1 \cup Q_2) = vol(Q_1) + vol(Q_2).
+$$
+\noindent Hence 
+\begin{eqnarray*}
+vol(Q_2) &=& vol(Q_1 \cup Q_2) - vol(Q_1) \\
+               &=& 64 \pi - \frac{64\pi}{5} = \frac{256 \pi}{5} .
+\end{eqnarray*}
+\end{example}
+
+Another way of computing the volumes of certain solids of revolution is the method of \textbf{cylindrical shells.} It may be used, for example, to find the volume of the solid $Q_2$ in Figure 17(b) directly, and it constitutes another interesting application of the integral as a limit of Riemann sums. Let $f$ be a function which is nonnegative and continuous at every point of a closed interval $[a, b]$, where $a \geq 0$. Let $R$ be the region bounded by the graph of $f$, the $x$-axis, and the lines $x = a$ and $x = b$. We shall derive a formula for the volume of $P$, the solid of revolution obtained by revolving the region $R$ about the $y$-axis (see Figure 18).
+
+%Figure 18 
+\putfig{4.5truein}{scanfig8_18}{}{fig 8.18}
+%Figure 19
+\putfig{4.5truein}{scanfig8_19}{}{fig 8.19}
+
+
+Consider a partition $\sigma = \{x_0, ..., x_n \}$ of the interval $[a, b]$ such that
+$$
+a = x_0 \leq x_1 \leq \cdots \leq x_n = b, 
+$$
+\noindent and choose numbers $x_i^*,..., x_n^*$ such that $x_{i-1} \leq x_i^* \leq x_i$ for each $i = 1, ... , n$. Then $\pi (x_i^2 -x_{i-1}^2)$ is the area of the shaded annulus shown
+%440 THE DEFINITE INTEGRAL (CONTINUED) [CHAP. 8
+in Figure 19(a), and $\pi f(x_i^*)(x_i^2 - x_{i-1}^2)$ is the volume of the cylindrical shell of height $f(x_i^*)$ and thickness $x_i - x_{i-1}$ shown in Figure 19(b). The essential idea in the derivation is that, if $x_i - x_{i-1}$ is small, then the volume of this shell should be a good approximation to the volume of that part of the solid $P$ that lies between the two cylinders of radii $x_{i-1}$ and $x_i$. Hence if the mesh of the partition $\sigma$ is small, then the sum of the volumes of the shells, i.e., the sum
+$$
+\sum_{i=1}^n \pi f (x_i^*)(x_i^2 - x_{i-1}^2),  
+$$
+\noindent should be a good approximation to the volume of $P$. Specifically, we shall assume that
+
+\begin{equation}
+vol(P) = \lim_{||\sigma|| \rightarrow 0} \sum_{i = 1}^n \pi f(x_i^*)(x_i^2 - x_{i-1}^2).  
+\label{eq8.4.1}
+\end{equation}
+\noindent On the basis of this assumption we now prove the theorem
+
+
+\begin{theorem} %(4.3)   
+$$
+vol(P) = 2 \pi \int_a^b x f(x) dx.  
+$$
+\end{theorem}
+ 
+\begin{proof}
+Since each $x_i^*$ may be any number in the subinterval $[x_{i-1}, x_i]$, let us for convenience choose it to be the midpoint. This means that $x_i^* = \frac{x_i + x_{i-1}}{2}$ or, equivalently, that $x_i + x_{i-1} = 2x_i^*$. Hence
+\begin{eqnarray*}
+x_i^2 - x_{i - 1}^2 &=& (x_i + x_{i - 1})(x_i - x_{i - 1})\\
+&=& 2x_i^*(x_i - x_{i-1}),
+\end{eqnarray*}
+and it follows that  
+$$
+\sum_{i=1}^n \pi f (x_i^*)(x_i^2 - x_{i-1}^2) = \sum_{i=1}^n 2\pi x_i^* f(x_i^*)(x_i - x_{i-1}) .  
+$$
+By our assumption (1), the left side of this equation approaches $vol(P)$ as a limit as the mesh $|| \sigma ||$ approaches zero. The right side is a Riemann sum for the continuous function $2\pi xf(x)$ and therefore approaches the integral $\int_a^b 2\pi xf(x) dx$ as a limit as $|| \sigma ||$ all approaches zero. This completes the proof.
+\end{proof}
+
+The region $R$ in Figure 16(a), when rotated about the $y$-axis, generates the solid of revolution $Q_2$ illustrated in Figure 17(b). Let us compute the volume of $Q_2$ by the method of cylindrical shells. The function $f$ in the formula is in this case the one defined by $f(x) = \sqrt{4x} = 2x^{1/2}$. In addition, $a = 0$ and $b = 4$. We therefore obtain
+
+\begin{eqnarray*}
+vol(Q_2) &=& 2\pi \int_0^4 x 2x^{1/2} dx \\
+&=& 4\pi \int_0^4 x^{3/2} dx = 4 \pi \cdot \frac{2}{5} \cdot x^{5/2} \big|_0^4 \\
+&=& 4 \pi \cdot \frac{2}{5} \cdot 32 = \frac{256 \pi}{5} ,
+\end{eqnarray*}
+
+\noindent which agrees with the value obtained in Example 4.  
+
+
+%Figure 20
+\putfig{2.5truein}{scanfig8_20}{}{fig 8.20}
+
+It was pointed out in Section 6 of Chapter 4 that the $dx$ which appears in $\int f(x) dx$ can be legitimately regarded as a differential. Moreover, it was remarked in Section 6 of Chapter 2 that the traditional attitude toward a differential is that it represents an infinitesimally small quantity. These ideas are a good aid to the imagination here, too. Thus, as the meshes of the subdivisions in the Riemann sums $\sum_{i=1}^n f(x_i^*)(x_i-x_{i-1})$ become infinitesimally small, the differences $x_i - x_{i-1}$ become $dx$ and the summation
+%442 THE DEFINITE INTEGRAL (CONTINUED) [CHAP. 8
+$\sum$ becomes the integral $\int$. Consider the following rough-and-ready derivation of the formula used in the method of cylindrical shells. We imagine a shell of infinitesimal thickness at each $x$ in the interval $[a, b]$. The radius is $x$, the thickness $dx$, and the height $f(x)$ (see Figure 20). The circumference of the shell is $2\pi x$, and the area of the edge is the product of the circumference and the thickness, $2\pi xdx$. Multiplying by the height, we get the infinitesimal volume $2\pi xf(x)dx$. The total volume is obtained by adding all the infinitesimal volumes. We get $\sum 2 \pi x f(x) dx$ or, actually,
+$$
+ \int_a^b 2\pi x f (x) dx = 2\pi \int_a^b xf (x) dx
+$$
+for the answer.
+
+The derivation of integral formulas by this process of ``summing infinitesimals" is extremely useful both as a guide to memory and in helping one to discover the right formula in the first place. Of course, any such heuristic approach is just)fied mathematically only if it can be supplemented by careful analysis.
+ 
+ 

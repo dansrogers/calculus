@@ -1,0 +1,312 @@
+\section{L'H\^{o}pital's Rule.}\label{sec 2.7}
+This section contains a number of theorems which provide an important technique for finding the limit of the quotient of two functions. These theorems are usually referred to collectively as L'H\^{o}pital's Rule. Two examples of problems which are readily solved by this technique are the computations of the limits:  
+
+$$
+\lim_{x \rightarrow 2}\frac{\sqrt x - \sqrt 2}{\sqrt[3]{x} - \sqrt[3]{2}}
+\;\;\;\mbox{and}\;\;\; \lim_{x \rightarrow \infty}\frac{\sqrt[3]{x + 1}}{x + 4}.
+$$
+\noindent Properly speaking, this section is a continuation of Section 5, since all the results are corollaries of Rolle's Theorem and of the Mean Value Theorem.
+
+The following proposition, known as the Generalized Mean Value Theorem, is the basic lemma used in proving the theorems which make up L'H\^{o}pital's Rule. (A lemma is a theorem included as a reference in proving other theorems.)
+
+\begin{theorem} %(7.1) 
+\textbf{GENERALIZED MEAN VALUE THEOREM.}  Assume that $a < b$, and let $f$ and $g$ be functions which are continuous on the closed interval $[a, b]$ and differentiable on the open interval $(a, b)$. If $g'(x) \neq 0$ for every$ x$ in $(a, b)$, then there exists a real number $c$ in $(a, b)$ such that
+$$
+\frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f'(c)}{g'(c)}.
+$$
+\end{theorem}
+
+Note that $g(b)-g(a) \neq 0$. For otherwise the Mean Value Theorem would imply that $g'(x) = 0$ for some $x$ in $(a, b)$, which is contrary to hypothesis.
+
+\begin{proof}
+Let $h$ be the function defined by 
+$$
+h(x) = f(x) - f(a) -\frac{f(b) - f(a)}{g(b) - g(a)} (g(x) - g(a)),
+$$
+for every $x$ in $[a, b]$. The function $h$ is continuous on $[a, b]$, differentiable on $(a, b)$, and, in addition, $h(a) = h(b) = 0$. Hence, by Rolle's Theorem, there
+exists a real number $c$ in $(a, b)$ such that $h'(c) = 0$. Since
+$$
+h'(x) = f'(x) - {\frac{f(b) - f(a)}{g(b) - g(a)}} g'(x), 
+$$
+we obtain
+$$
+0 = f'(c) - {\frac{f(b) - f(a)}{g(b) - g(a)}} g'(c), 
+$$
+and from this equation the conclusion of the theorem follows at once.
+\end{proof}
+
+We first present L'H\^{o}pital's Rule as a theorem about one-sided limits.
+
+\begin{theorem} %(7.2) 
+\textbf{L'H\^{O}PITAL'S RULE I.}  Let $f$ and $g$ be functions which are differentiable on a nonempty open interval $(a, b)$ with $g'(x) \neq 0$ for every $x$ in $(a, b)$. If, in addition,
+ 
+\begin{quote}
+\begin{description}
+\item[(i) $\lim_{x \rightarrow a+} f(x) = \lim_{x \rightarrow a+} g(x)= 0$,] 
+\item[(ii) $\lim_{x \rightarrow a+} \frac{f'(x)}{g'(x)} = L$,]
+
+\end{description}
+\end{quote} 
+
+\noindent then
+
+$$
+\lim_{x \rightarrow a+}\frac{f(x)}{g(x)} = L.
+$$
+\end{theorem}
+
+\begin{proof}
+We may assume that $f(a) = g(a) = 0$. (If this is not the case to begin with, we simply define, or redefine, the values of $f$ and $g$ to be zero at $a$.) Thus we ensure that $f$ and $g$ are continuous on $[a, b)$. Let $x$ be an arbitrary number in $(a, b)$. Then $f$ and $g$ are continuous on $[a, x]$ (recall that differentiability at a point implies continuity) and are differentiable on $(a, x)$. Moreover, the derivative $g'$ does not take on the value zero in $(a, x)$. Hence, by the Generalized Mean Value Theorem and the fact that $f(a) = g(a) = 0$, we obtain
+$$
+\frac{f'(y)}{g'(y)} = \frac{f(x) - 0}{g(x) - 0} = \frac{f(x)}{g(x)},  
+$$
+for some number $y$ in $(a, x)$. As $x$ approaches a from the right, so also does $y$, and hence $\lim_{x \rightarrow a+} \frac{f(x)}{g(x)} = \lim_{y \rightarrow a+}\frac{f'(y)}{g'(x)} = L$. This completes the proof. 
+\end{proof}
+
+%EXAMPLE 1. 
+\begin{example}
+Compute $\lim_{x \rightarrow 2+}\frac{\sqrt x - \sqrt 2}{\sqrt{x-2}}.$ Let $f (x) = \sqrt x - \sqrt 2$ and $g(x) = \sqrt {x - 2}$. Obviously, $\lim_{x \rightarrow 2+} f(x) = \lim_{x \rightarrow 2+} g(x) = 0$, and, since
+$$
+f'(x)= \frac{1}{2\sqrt x} \;\;\; \mbox{and}\;\;\; g'(x)= \frac{1}{2\sqrt{x - 2}},
+$$
+$f$ and $g$ are differentiable, and  $g'$ does not take on the value zero on any open interval with left endpoint equal to 2. We obtain
+\begin{eqnarray*}
+\lim_{x \rightarrow 2+}\frac{f'(x)}{g'(x)} 
+&=& \lim_{x \rightarrow 2+} \frac { \frac{1}{2 \sqrt x}} {\frac{1}{2 \sqrt{x - 2}} }\\
+&=& \lim_{x \rightarrow 2+} \frac{\sqrt{x - 2}}{\sqrt x} = \frac{0}{\sqrt 2} = 0.
+\end{eqnarray*}
+And it follows by L'H\^{o}pital's Rule that $\lim_{x \rightarrow 2+} \frac{\sqrt x - \sqrt 2}{\sqrt{x-2}} = 0$.
+
+It is a simple matter to verify that Theorem (7.2) remains true if $(a, b)$ is replaced throughout by $(b, a)$, and $\lim_{x \rightarrow a+}$ is replaced throughout by $\lim_{x \rightarrow a-}$.  This fact, significant in itself, also implies the following two-sided form of L'H\^{o}pital's Rule.
+\end{example}
+
+\begin{theorem} %(7.3)
+\textbf{L'H\^{O}PITAL'S RULE II.}  Consider an open interval containing the number $a$, and let $f$ and $g$ be functions differentiable and with $g'(x) \neq 0$ at every point of the interval except possibly at $a$. If
+
+
+\begin{quote}
+\begin{description}
+\item[(i) $\lim_{x \rightarrow a} f(x) = \lim_{x \rightarrow a} g(x) = 0$,]
+\item[(ii) $\lim_{x \rightarrow a} \frac{f'(x)}{g'(x)} = L$,]
+\end{description}
+\end{quote} 
+
+\noindent then 
+
+$$
+\lim_{x \rightarrow a}\frac{ f(x)}{g(x)} = L.
+$$
+
+The hypotheses of (7.3) have been taken as weak as possible. If, as frequently happens, the functions $f$ and $g$ are also continuous at $a$, then (i) can be replaced by the simpler condition $f(a) = g(a) = 0$.
+\end{theorem}
+
+%EXAMPLE 2. 
+\begin{example}
+Evaluate $\lim_{x \rightarrow a}\frac{x^{1/2} - a^{1/2}}{x^{1/3} - a^{1/3}}$, where $a > 0$. If $f(x) = x^{1/2} - a^{1/2}$ and if $g(x) = x^{1/3} - a^{1/3}$, then the derivatives are given by $f' (x) = \frac{1}{2x^{1/2}}$ and $g'(x) = \frac{1}{3x^{2/3}}$, and it is clear that $f$ and $g$ are differentiable (and hence continuous) and $g'$ is not zero on an open interval containing $a$.  Moreover,
+%SEC. 7] ~ HOPITAL S RUI e  125
+$f(a) = g(a) = 0$. Hence, by L'H\^{o}pital's Rule,
+
+$$
+\lim_{x \rightarrow a}\frac{x^{1/2} - a^{1/2}}{x^{1/3} -a^{1/3}} 
+= \lim_{x \rightarrow a} \frac {\frac{1}{2x^{1/2}}}{\frac{1}{3x^{2/3}}} = \frac{3a^{2/3}}{2a^{1/2}} = \frac{3}{2} a^{1/6}.
+$$
+\end{example}
+\medskip
+
+%EXAMPLE 3 
+\begin{example}
+Compute $\lim_{x \rightarrow a}\frac{x - a}{x^2 - a^2}$ where $a \neq 0 $. Doing this problem by L'H\^{o}pital's Rule is somewhat akin to smashing a peanut with a sledgehammer. The fact that
+
+$$
+\frac{x - a}{x^2 - a^2} = \frac{x - a}{(x - a)(x + a)} = \frac{1}{x + a}  \;\;\; \mbox{if} \;\;\; x \neq a,
+$$
+\noindent immediately implies that 
+
+$$\lim_{x \rightarrow a}\frac{x - a}{x^2 - a^2}  = \lim_{x \rightarrow a} \frac{1}{x + a} = \frac{1}{2a}.
+$$
+
+\noindent Of course, the same answer is obtained by L'H\^{o}pital's Rule. If we let $f(x) = x - a$ and $g(x) = x^2 - a^2$, then $f(a) = g(a) = 0$ and $f'(x) = 1$ and $g'(x) = 2x$. Hence
+
+$$
+\lim_{x \rightarrow a} \frac{x - a}{x^2 - a^2} = \lim_{x \rightarrow a}\frac{1}{2x} = \frac{1}{2a}.
+$$
+\end{example}
+
+It is important to realize that L'H\^{o}pital's Rule II can be applied only if the function $\frac{f(x)}{g(x)}$ is unclefined at $x = a$ and if $\lim_{x \rightarrow a}f(x) = \lim_{x \rightarrow a} g(x) = 0.$  For example, if $f(x) = x^2 + 3x - 10$ and $g(x) = 3x$, then 
+
+$$
+\lim_{x \rightarrow 2} \frac{f(x)}{g(x)} = \lim_{x \rightarrow 2}\frac{x^2 + 3x -10}{3x} = \frac{0}{6} = 0,
+$$
+\noindent but 
+
+$$
+\lim_{x \rightarrow 2}\frac{f'(x)}{g'(x)} = \lim_{x \rightarrow 2} \frac{2x + 3}{3} = \frac{7}{3}.
+$$
+
+If the hypotheses of Theorem (7.3) are satisfied for the functions $f'$ and $g'$, that is, for the derivatives of $f$ and $g$, respectively, then we can conclude that
+
+$$
+\lim_{x \rightarrow a}\frac{f'(x)}{g'(x)} = \lim_{x \rightarrow a} \frac{f''(x)}{g''(x)}.
+$$
+This fact suggests the possibility of applying L'H\^{o}pital's Rule more than once, and in some problems it is necessary to take second or higher derivatives to find the limit.
+%126 APPLICATIONS OF THE DIERI VATI VlE [CHAP. 2 
+\begin{example}
+%EXAMPLE 4. 
+Evaluate $\lim_{x \rightarrow 1}\frac{ 3x^{1/3} - x - 2}{3x^2 - 6x + 3}$. Let $f(x) = 3x^{1/3} - x - 2$ and $g(x) = 3x^2 - 6x + 3$. Then $f(1) = g(1) = 0$, and the derivatives are given by $f'(x) = x^{-2/3} - 1$ and $g'(x) = 6x - 6$. However, the value of
+
+$$
+\lim_{x \rightarrow 1} \frac{f'(x)}{g'(x)} = \lim_{x \rightarrow 1}\frac{x^{-2/3} - 1}{6x - 6}
+$$
+\noindent is not obvious because $f'(1) = g'(1) = 0$. Taking derivatives again, we get $f''(x) = - \frac{2}{3}x^{-5/3}$ and $g''(x) = 6$, and it follows that
+
+$$\lim_{x \rightarrow 1}\frac{f''(x)}{g''(x)} = \lim_{x \rightarrow 1}\frac{-\frac{2}{3} x^{-5/3}}{6} = -\frac{1}{9}.
+$$ 
+\noindent Thus two applications of L'H\^{o}pital's Rule yield 
+
+$$\lim_{x \rightarrow 1}\frac{f(x)}{g(x)} = \lim_{x \rightarrow 1}\frac{f'(x)}{g'(x)}  = \lim_{x \rightarrow 1}\frac{f''(x)}{g''(x)} = -\frac{1}{9}.
+$$
+\end{example}
+\medskip
+
+A variation of (7.2), not difficult to prove, is the following:
+ 
+\begin{theorem} %(7.4)
+\textbf{L'H\^{O}PITAL'S RULE III.}  Let $f$ and $g$ be differentiable on an open interval $(a, \infty)$ with $g'(x) \neq 0$ for $x > a$. If
+
+
+\begin{quote}
+\begin{description}
+\item[(i) $\lim_{x \rightarrow \infty} f(x) = \lim_{x \rightarrow \infty} g(x) = 0$, ]
+\item[(ii) $\lim_{x \rightarrow \infty}\frac{ f'(x)}{g'(x)} = L$,]
+\end{description}
+\end{quote} 
+
+\noindent then 
+$$
+\lim_{x \rightarrow \infty} \frac{f(x)}{g(x)} = L.
+$$
+
+An analogous theorem holds if $(a, \infty)$ is replaced by $(-\infty, a)$ and if $\lim_{x \rightarrow \infty}$ is replaced throughout by $\lim_{x \rightarrow -\infty}$.
+\end{theorem}
+
+\begin{proof}
+The result is a corollary of (7.2) and the Chain Rule. Let $t = \frac{1}{x}$, and set $F(t) = f \Bigl( \frac{1}{t} \Bigr) = f(x)$ and $G(t) = g \Bigl( \frac{1}{t} \Bigr) = g(x)$. Since $t$ approaches 0 from the right if and only if $x$ increases without bound,
+\begin{eqnarray*}
+\lim_{t \rightarrow 0+} F(t) &=& \lim_{t \rightarrow 0+} f \Bigl( \frac{1}{t} \Bigr) = \lim_{x \rightarrow
+\infty} f(x) = 0,
+\\ \lim_{t \rightarrow 0+} G(t) &=& \lim_{t \rightarrow 0+} g \Bigl( \frac{1}{t} \Bigr) = \lim_{x \rightarrow
+\infty} g(x) = 0. 
+\end{eqnarray*}
+By the Chain Rule, $F'(t) = f' \Bigl( \frac{1}{t} \Bigr) \Bigl(-\frac{1}{t^2} \Bigr)$ and $G'(t) = g' \Bigl( \frac{1}{t} \Bigr) \Bigl( -\frac{1}{t^2} \Bigr)$.
+\noindent Hence
+$$
+\lim_{t \rightarrow 0+} \frac{ F'(t)}{G'(t)} = \lim_{t \rightarrow 0+}
+\frac{f'\Bigl( \frac{1}{t} \Bigr) \Bigl( -\frac{1}{t^2} \Bigr)}{g' \Bigl( \frac{1}{t} \Bigr)
+\Bigl( -\frac{1}{t^2} \Bigr)} 
+= \lim_{t \rightarrow 0+}\frac{f' \Bigl( \frac{1}{t} \Bigr)}{g' \Bigl( \frac{1}{t} \Bigr)}.
+$$
+The last limit exists and is equal to $L$ since 
+$$
+\lim_{t \rightarrow 0+}\frac{f' \Bigl( \frac{1}{t} \Bigr)}{g' \Bigl(\frac{1}{t} \Bigr)} 
+= \lim_{x \rightarrow \infty} \frac{f'(x)}{g'(x)} = L.
+$$
+By L'H\^{o} pital's Rule I it follows that $\lim_{t \rightarrow 0+} \frac{F(t)}{G(t)} = L$. Hence 
+$$
+\lim_{x \rightarrow \infty} \frac{f(x)}{g(x)} = \lim_{t \rightarrow 0+} \frac{F(t)}{G(t)} = L,
+$$
+\noindent and the proof is complete.
+\end{proof}
+
+An important observation is that all the forms of L'H\^{o}pital's Rule developed so far are valid whether $L$ is finite or not. This fact requires no new proof and has really already been established. The reason is that the basic conclusion of Theorem (7.2) is the equation
+
+$$
+\lim_{x \rightarrow a+}\frac{f(x)}{g(x)} = \lim_{x \rightarrow a+}\frac{f'(x)}{g'(x)},
+$$
+\noindent and this holds good whether or not $\lim_{x \rightarrow a+}\frac{f'(x)}{g'(x)}$ is finite or infinite.
+\smallskip
+
+There is another significant variation of L'H\^{o}pital's Rule, whose proof, although requiring only the Generalized Mean Value Theorem, cannot (as far as we know) be obtained from (7.2) by a simple substitution. It states that the several forms of condition (i), $\lim f(x) = \lim g(x)= 0$, can be replaced by $\lim |g(x)| = \infty$. The specific statement which we prove is the following:
+
+\begin{theorem} %(7.5) 
+\textbf{L'H\^{O}PITAL'S RULE IV.}  Let $f$ and $g$ be functions which are differentiable on a nonempty open interval $(a, b)$ with $g'(x) \neq 0$ for every $x$ in $(a, b)$. If
+
+
+\begin{quote}
+\begin{description}
+\item[(i) $\lim_{t \rightarrow a+} |g(x)| = \infty$,]
+\item[(ii) $\lim_{t \rightarrow a+} \frac{f'(x)}{g'(x)} = L$,]
+
+\end{description}
+\end{quote}
+% I Z8 APPLICATIONS OF THE DERI VATI VE [CUAP. 2 then
+
+\noindent then
+$$
+\lim_{t \rightarrow a+} \frac{f(x)}{g(x)} = L,
+$$
+\end{theorem}
+
+\begin{proof}
+Let $\varepsilon$ be an arbitrary positive number. By hypothesis (ii), there exists a real number $c$ in $(a, b)$ such that
+$$
+\Big| \frac{f'(x)}{g'(x)} - L \Big| < \varepsilon, \;\;\; \mbox{for every $x$ in $(a, c)$}. 
+$$
+By hypothesis (i) there exists a real number $d$ in $(a, b)$, which we shall for convenience assume to be in $(a, c)$, such that, for every $x$ in $(a, d)$, the following three inequalities hold:
+$$
+g(x) \neq 0, \;\; \Big| \frac{f(c)}{g(x)} \Big| < \varepsilon, \;\; \Big|\frac{g(c)}{g(x)} \Big| < \varepsilon
+$$
+(see Figure \f{2.22}).
+\putfig{2.7truein}{scanfig2_22}{}{fig 2.22}
+It is a consequence of the last inequality that
+$$
+\Big| 1 - \frac{g(c)}{g(x)} \Big| < 1 + \varepsilon, \;\;\; \mbox{for every $x$ in $(a, d)$}.
+$$
+
+Now let $x$ be an arbitrary real number in $(a, d)$. By the Generalized Mean Value Theorem, there exists a real number $y$ in $(x, c)$ such that
+$$
+\frac{f(x)-f(c)}{g(x)- g(c)} = \frac{f'(y)}{g'(y)}.
+$$
+Hence
+$$
+ f(x) = \frac{f'(y)}{g'(y)}(g(x) - g(c)) + f(c).
+$$
+\noindent Dividing by $g(x)$, which cannot be zero, we get 
+$$
+\frac{f(x)}{g(x)} = \frac{f'(y)}{g'(y)} \biggl(1 - \frac{g(c)}{g(x)}\biggr) + \frac{f(c)}{g(x) }.
+$$
+An equivalent equation is
+$$
+\frac{f(x)}{g(x)} - L = \biggl( \frac{f'(y)}{g'(y)} - L\biggr) \biggl(1 - \frac{g(c)}{g(x)}
+\biggr) - L \frac{g(c)}{g(x)} + \frac{f(c)}{g(x)}.
+$$
+%SEC. 7] L HOPITAL'S RULE  129
+\noindent From the general properties of the absolute value [see specifically (1.3) and (1.4), page 7], it follows that
+$$
+\Big| \frac{f(x)}{g(x)} - L \Big| \leq \Big| \frac{f'(x)}{g'(x)} - L \Big|  \Big| 1 - \frac{g(c)}{g(x)} \Big| + | L | \Big| \frac{g(c)}{g(x)} \Big| + \Big| \frac{f(c)}{g(x)} \Big|.
+$$
+Hence, the inequalities established in the first paragraph of the proof imply that
+$$
+\Big| \frac{f(x)}{g(x)} - L \Big| \leq \varepsilon (1 + \varepsilon) + |L| \varepsilon + \varepsilon.
+$$
+Since the right side of this inequality can be made arbitrarily small by taking $\varepsilon$ sufficiently small, it follows that $\lim_{t \rightarrow a+} \frac{f(x)}{g(x)} = L$, and the proof is complete. 
+\end{proof}
+
+It is not difficult to derive variations of the preceding theorem analogous to the modified versions of (7.2) described above. Thus, with the obvious changes in the hypotheses, this last form of L'H\^{o}pital's Rule also holds for two-sided limits and with $a$ or $L$ (or both) replaced by $\pm \infty$.
+
+%EXAMPLE 5. 
+\begin{example}
+Compute $\lim_{t \rightarrow \infty} \frac{\sqrt[3]{x + 1}}{x + 4} $. Let $f$ and $g$ be the functions  defined by $f(x) = \sqrt[3]{x + 1}$ and $g(x) = x + 4$, respectively. Since $f'(x) = \frac{1}{3(x + 1)^{2/3}}$ and $g'(x) = 1$, we see that $f$ and $g$ are differentiable on the interval $(1, \infty)$ and that $g'(x) \neq 0$. Moreover, $\lim_{t \rightarrow \infty} |g(x)| = \lim_{t \rightarrow \infty} |x + 4| = \infty$, and
+
+$$
+\lim_{x \rightarrow \infty} \frac{f'(x)}{g'(x)} = \lim_{x \rightarrow \infty} \frac{\frac{1}{3(x + 1)^{2/3}}}{1} = 0. 
+$$
+It follows by L'H\^{o}pital's Rule that 
+$$
+\lim_{x \rightarrow \infty}\frac{\sqrt[3]{x + 1}}{x + 4} = \lim_{x \rightarrow
+\infty}\frac{f(x)}{g(x)} = 0.
+$$
+
+The several forms of L'H\^{o}pital's Rule which we have derived in this section fall naturally into two types, symbolically denoted as the $\frac{0}{0}$ type and the $\frac{*}{\infty}$ type. Theorems (7.2), (7.3), and (7.4) are all examples of the first type, whereas the harder Theorem (7.5) is the prototype of the second type. The full power of the $\frac{*}{\infty}$ forms will be realized later in the book in conjunction with the logarithmic, exponential, and trigonometric functions.
+\end{example}
+%130 APPLICATIONS OF THE DERIVATIVE [CHAP. 2
+

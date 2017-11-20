@@ -1,0 +1,339 @@
+\section{Area and Arc Length in Polar Coordinates.} This section is divided into two parts. In the first, which is the longer of the two, we shall study the problem of finding the areas of regions bounded by curves defined by equations in polar coordinates. To solve this problem, an integral formula for area in polar coordinates will be derived. The second part is concerned with the computation of the arc lengths of polar curves by applying the methods developed in Section 2.
+%602 GEOMETRY IN THE PLANE [CHAP. 1O 
+
+Let $f$ be a continuous function which contains the closed interval $[a, b]$ in its domain. We have already observed that the polar graph of the equation
+
+\begin{equation}
+r = f(\theta),  
+\label{eq10.7.1}
+\end{equation}
+\noindent where $\theta$ takes on all values in the interval $[a, b]$, is the parametrized curve defined by the equations
+
+\begin{equation}
+\left \{ \begin{array}{ll}
+x(\theta) = r \cos \theta = f(\theta) \cos \theta,       &\\
+y(\theta) = r \sin \theta = f(\theta) \sin \theta,  \;\;\; &a \leq \theta \leq b.
+\end{array}
+\right .
+\label{eq10.7.2}
+\end{equation}
+
+For the area problem, we shall assume to begin with that the interval $[a, b]$ has length no greater than $2\pi$, i.e., that
+
+\begin{equation}
+b - a  \leq 2\pi, 
+\label{eq10.7.3}
+\end{equation}
+\noindent and also that $f$ is nonnegative on $[a, b]$: 
+
+\begin{equation}
+f(\theta) \geq 0, \;\;\;\mbox{for every number $\theta$ in $[a, b]$.}  
+\label{eq10.7.4}
+\end{equation}
+\noindent Let $R$ be the subset of the plane consisting of all points which have polar coordinates $(r, \theta)$ such that $a \leq \theta \leq b$ and $0 \leq r \leq f(\theta)$. An example is the shaded region $R$ shown in Figure 30. The problem is to compute the area of $R$. The effect of the two assumptions (3) and (4) is that every point of $R$ has precisely one pair of polar coordinates $(r, \theta)$ with $a \leq \theta \leq b$ (except, if $b - a = 2\pi$, for those points of $R$ along the line defined by $\theta = a$).
+
+%Figure 30 
+\putfig{2.6truein}{scanfig10_30}{}{fig 10.30}
+
+To derive a formula for the area of $R$, we consider an arbitrary partition
+$\sigma = \{ \theta_0, . . . ,\theta_n \}$ of $[a, b]$ with the property that 
+$$
+a = \theta_0 \leq \theta_1 \leq ... \leq \theta_n = b .
+$$
+\noindent For each $i = 1, . . . ,n$, let $m_i$ and $M_i$ be, respectively, the minimum and maximum values of the function $f$ in the subinterval $[\theta_{i-1}, \theta_i]$. In addition,
+%SEC.7] AREA AND ARC LENGTHIN POLAR COORDINATES  603
+let $R_i$ be the subset of $R$ consisting of all points with polar coordinates $(r, \theta)$ such that $\theta_{i-1} \leq \theta \leq \theta_i$ and $0 \leq r \leq f(\theta)$, as illustrated in Figure 31. It follows from the preceding paragraph that except for their boundaries the sets $R_1, . . ., R_n$ are pairwise disjoint. Hence
+
+\begin{equation}
+area(R) = area(R_1) + + area(R_n). 
+\label{eq10.7.5}
+\end{equation}
+
+%Figure 31
+\putfig{3truein}{scanfig10_31}{}{fig 10.31}
+
+\noindent Each set $R_i$ is contained in a sector of the circle of radius $M_i$ and center the origin with angle equal to $\theta_i - \theta_{i-1}$ radians, and it contains a sector of the circle of radius $m_i$ with the same center and the same angle. Since any sector of a circle of radius $\rho$ and angle $\alpha$ radians has area equal to $\frac{1}{2}\rho^2 \alpha$, we conclude that 
+$$
+\frac{1}{2} m_i^2 (\theta_i - \theta_{i - 1}) \leq area(R_i) \leq \frac{1}{2}M_i^2 (\theta_i - \theta_{i-1}),
+$$
+\noindent for each $i = 1, . . ., n$. Adding inequalities and using equation (5), we get    
+$$
+\sum_{i=1}^n (\frac{m_i^2}{2}(\theta_i - \theta_{i-1}) \leq area(R) \leq \sum_{i=1}^n \frac{M_i^2}{2} (\theta_i - \theta_{i-1}).  
+$$
+\noindent However, $\sum_{i=1}^n (\frac{m_i^2}{2}(\theta_i - \theta_{i-1})$ and $\sum_{i=1}^n \frac{M_i^2}{2} (\theta_i - \theta_{i-1})$ are, respectively, the lower and upper sums for the function $\frac{f^2}{2}$ relative to the partition $\sigma$ (see page 165). Denoting them by $L_\sigma \Big(\frac{f^2}{2}\Big)$ and $U_\sigma \Big(\frac{f^2}{2}\Big)$ respectively, we have proved
+
+
+\begin{equation}
+L_\sigma \Big( \frac{f^2}{2} \Big) \leq area(R) \leq U_\sigma \Big( \frac{f^2}{2} \Big), 
+\label{eq10.7.6}
+\end{equation}
+%604 GEOMETRY IN THE PLANE [CHAP. 10 f2
+\noindent for every partition $\sigma$ of $[a, b]$. Since $f$ is continuous, so is $\frac{f^2}{2}$, and every function which is continuous on a closed bounded interval is integrable over that interval [see Theorem (5.1), page 1991. Hence the function $\frac{f^2}{2}$ is integrable over $[a, b]$, and it therefore follows immediately from the inequalities (6) and the definition of integrability on page 168 that
+$$
+area(R)= \int_a^b \frac{f^2}{2} .
+$$
+\noindent Summarizing, we have proved:
+
+
+\begin{theorem}
+lf the function $f$ is continuous and nonnegative at every point of the closed interval $[a, b]$ and if $b - a \leq 2\pi$, then the area of the region $R$ bounded by the polar graphs of the equations $r = f (\theta), \theta = a$, and $\theta = b$ is given by
+$$
+area(R) = \frac{1}{2} \int_a^b f (\theta)^2 d\theta = \frac{1}{2} \int_a^b r^2 d\theta .
+$$
+\end{theorem}
+
+%Figure 32
+\putfig{3truein}{scanfig10_32}{}{fig 10.32}
+
+%EXAMPLE 1. 
+\begin{example} The curve defined by the equation  $r = 1 + \cos \theta$ in polar coordinates, and drawn in Figure 32, is a cardioid. Compute the area of the region $R$ which it bounds. Since this curve is symmetric about the $x$-axis, it is sufficient (but in this example no easier) to find the area of that part of $R$ lying on or above the $x$-axis and to multiply the result by 2. The function $f$ defined by 
+$$
+f(\theta) = 1 + \cos \theta,  \;\;\; 0 \leq \theta \leq \pi,
+$$
+%SEC. 7] AF<EA AND ARC LENGTH IN POLAR COORDINATES 605 
+\noindent is both continuous and nonnegative. It follows from (7.1) that 
+\begin{eqnarray*}
+area(R) &=& 2 \left[ \frac{1}{2} \int_0^\pi (1 + \cos \theta)^2 d\theta \right]\\
+&=& \int_0^\pi (1 + 2 \cos \theta + \cos^2 \theta) d\theta \\
+&=& \int_0^\pi [ 1 + 2\cos \theta + \frac{1}{2}(1+\cos2 \theta)] d\theta \\
+&=& \int_0^\pi (\frac{3}{2} + 2 \cos \theta + \frac{1}{2} \cos 2 \theta) d\theta\\
+&=& (\frac{3}{2} \theta + 2 \sin \theta + \frac{1}{4} \sin 2\theta)|_0^\pi \\
+&=& \frac{3}{2} \pi .
+\end{eqnarray*}
+\end{example}
+
+If $f$ is negative on the interval $[a, b]$, the integral $\frac{1}{2}\int_a^b f(\theta)^2 d\theta$ is also equal to an area. Specifically, let us assume that $f$ is continuous on $[a, b]$, that $b - a \leq 2\pi$, and that $f(\theta) \leq 0$ for every $\theta$ in $[a, b]$. Let $R$ be the set of all points which have polar coordinates $(r, \theta)$ such that $a \leq \theta \leq b$ and $f(\theta) \leq r \leq 0$ (see Figure 33). Then the following formula is still valid: 
+
+\begin{theorem}
+$$
+area(R) = \frac{1}{2} \int_a^b f (\theta)^2 d\theta .
+$$
+\end{theorem}
+
+%Figure 33
+\putfig{4.5truein}{scanfig10_33}{}{fig 10.33}
+
+\begin{proof}
+Let $g$ be the function defined by $g(\theta) = -f(\theta)$, and let $S$ be the set of all points with polar coordinates $(r, \theta)$ such that $a \leq \theta \leq b$ and $0 \leq r \leq g(\theta)$. The set $S$ is symmetric about the origin to the set $R$, and we therefore conclude that 
+$$
+area(R) = area(S).
+$$
+But, by (7.1), 
+\begin{eqnarray*}
+area(S) 
+&=& \frac{1}{2} \int_a^b  g(\theta)^2 d\theta = \frac{1}{2} \int_a^b  [-f(\theta)]^2 d\theta \\
+&=& \frac{1}{2} \int_a^b f(\theta)^2 d\theta,
+\end{eqnarray*}
+which completes the proof.
+\end{proof}
+
+If the function $f$ can take on both positive and negative values in the interval $[a, b]$ or if $b - a >2\pi$ (or both), then the integral $\frac{1}{2} \int_a^b f(\theta)^2 d\theta$ will in general give the sum of the areas of nondisjoint (i.e., overlapping) regions. It is frequently necessary to subdivide the interval $[a, b]$ into subintervals and to compute the integrals of $\frac{f^2}{2}$ over these subintervals separately to find a desired area.  
+
+%Figure 34
+\putfig{4.25truein}{scanfig10_34}{}{fig 10.34}
+
+%EXAMPLE 2. 
+\begin{example} The polar graph of the equation $r = 1 + 2 \sin \theta$ is the lima\c{c}on shown in Figure \figref{10.34}.
+The function $f$ defined by $f(\theta) = 1 + 2 \sin \theta$ satisfies the inequalities
+
+$$
+\begin{array}{ll}
+f(\theta) \geq 0 \;\;\;&\mbox{if} \;\;\; -\frac{\pi}{6} \leq \theta \leq \pi + \frac{\pi}{6}, \\
+f(\theta) \leq 0 \;\;\;&\mbox{if} \;\;\;  \frac{\pi}{6} - \pi \leq \theta \leq - \frac{\pi}{6} .
+\end{array}
+$$
+\noindent
+Let $R$ and $S$ be, respectively,
+the regions bounded by the outer and inner loops of the curve,
+as shown in the figure.
+Then
+
+\begin{equation}
+area(R) = 2\int_{-\pi/6}^{7\pi/6} (1 + 2 \sin \theta) d\theta,
+\label{eq10.7.7}
+\end{equation}
+
+\begin{equation}
+area(S) = 2\int_{-5\pi/6}^{-\pi/6} (1 + 2 \sin \theta) d\theta. 
+\label{eq10.7.8}
+\end{equation}
+\noindent If we integrate $\frac{1}{2}f(\theta)^2$ from 0 to $2\pi$, the result will be equal to the area of $R$ plus the area of $S$. That is, we will pick up the area of $S$ twice and get
+
+\begin{equation}
+area(R) + area(S) = \frac{1}{2} \int_0^{2\pi} (1 + 2 \sin \theta)^2 d\theta.  
+\label{eq10.7.9}
+\end{equation}
+\noindent The consistency of equations
+\eqref{10.7.7},
+\eqref{10.7.8},
+and \eqref{10.7.9}
+can be checked as follows:
+From
+\eqref{10.7.7},
+\eqref{10.7.8},
+and the additivity of the definite integral, we get
+
+\begin{eqnarray*}
+area(S) + area(R) 
+&=& \left[ \frac{1}{2} \int_{-5\pi/6}^{-\pi/6} \int (1 + 2 \sin \theta)^2 d\theta + \int_{-\pi/6}^{7\pi/6} (1 + 2 \sin \theta)^2 d\theta \right] \\
+&=& \frac{1}{2} \int_{-5\pi/6}^{7\pi/6} (1 + 2 \sin \theta)^2 d\theta.
+\end{eqnarray*}
+
+\noindent Since the function $(1 + 2 \sin \theta)^2$ has period $2\pi$, its definite integral over every interval of length $2\pi$ will be the same. In particular,
+
+\begin{eqnarray*}
+area(S) + area(R) 
+&=& \frac{1}{2} \int_{-5\pi/6}^{7\pi/6}  (1 + 2 \sin \theta)^2 d\theta \\
+&=& \frac{1}{2} \int_{0}^{2\pi} (1 + 2 \sin \theta)^2 d\theta,
+\end{eqnarray*}
+
+\noindent in agreement with
+\eqref{10.7.9}.
+Evaluation of the integrals is left to the reader. The results are
+
+\begin{eqnarray*}
+area(R) &=& \frac{1}{2} \int_{-\pi/6}^{7\pi/6} (1 + 2 \sin \theta)^2 d\theta = 2\pi + \frac{3}{2} \sqrt 3, \\
+area(S) &=& \frac{1}{2} \int_{-5\pi/6}^{-\pi/6} (1 + 2 \sin \theta)^2 d\theta = \pi - \frac{3}{2} \sqrt 3.
+\end{eqnarray*}
+
+\noindent It follows that the area of the region between the two loops of the lima\c{c}on is equal to the difference, $\pi + 3 \sqrt 3$.
+\end{example}
+%608 GEOMETRY IN THE PLANE [CHAP. 1O
+%EXAMPLE 3. 
+\begin{example} Find the area $A$ of the region bounded by the positive $y$-axis and the Archimedean spiral $r = a\theta (a > 0)$, where $0 \leq \theta \leq \frac{5\pi}{2}$. The region, shown in Figure 35, is the union of two subsets $R_1$ and $R_2$. The set $R_1$ consists of all points with polar coordinates $(r, \theta)$ which satisfy the inequalities $0 \leq \theta \leq 2\pi$ and $0 \leq r \leq a\theta$; i.e., it is the region bounded by the positive $x$-axis and that part of the spiral for which $0 \leq \theta \leq 2\pi$. We find
+
+\begin{eqnarray*}
+area(R_1) &=& \frac{1}{2} \int_0^{2\pi} r^2 d\theta = \frac{1}{2} \int_0^{2\pi} a^2 \theta^2 d \theta \\
+&=& \frac{a^2}{2} \frac{\theta^3}{3} \Big|_0^{2\pi} = \frac{4a^2 {\pi}^3}{3}.
+\end{eqnarray*}
+
+%Figure 35 
+\putfig{4.5truein}{scanfig10_35}{}{fig 10.35}
+ 
+\noindent The set $R_2$ consists of all points with polar coordinates $(r, \theta)$ which satisfy the inequalities $2\pi \leq \theta \leq \frac{5\pi}{2}$ and $a(\theta - 2\pi) \leq r \leq a\theta$ (see Figure 35). This region can be equivalently described as that bounded by the lines $\theta = 0$ and $\theta = \frac{\pi}{2}$ and the two polar curves: 
+$$
+\left \{ \begin{array}{ll}
+r_1 = a\theta,                    &\\
+r_2 = a(\theta + 2\pi), \;\;\; & 0 \leq \theta \leq \frac{\pi}{2} .
+\end{array}
+\right .
+$$
+%SEC. 7] AREA AND ARC LENGTH IN POLAR COORDINATES  609
+\noindent Since $0 \leq r_1(\theta) \leq r_2(\theta)$ for every $\theta$ on the interval $\Big[0, \frac{\pi}{2}\Big]$, the area of $R_2$ is obviously given by the formula 
+
+\begin{eqnarray*}
+area(R_2) &=& \frac{1}{2} \int_0^{\pi/2} (r_2^2 - r_1^2) d\theta  \\
+&=& \frac{1}{2} \int_0^{\pi/2} [a^2 (\theta + 2\pi)^2 - a^2 \theta^2] d\theta \\
+&=& \frac{a^2}{2} \int_0^{\pi/2} (4 \pi \theta + 4\pi^2) d\theta \\
+&=& 2\pi a^2 \Big(\frac{\theta^2}{2} + \pi \theta\Big) \Big|_0^{\pi/2} = 2\pi a^2 \Big(\frac{\pi^2}{8} + \frac{\pi^2}{2}\Big) \\
+&=& \frac{5a^2 \pi^3}{4} .
+\end{eqnarray*}
+
+\noindent We conclude that
+\begin{eqnarray*}
+A &=& aren(R_1) + area(R_2)\\
+    &=& \frac{4a^2 \pi^3}{3} + \frac{5a^2 \pi^3}{4} = \frac{31a^2 \pi^3}{12} .
+\end{eqnarray*}
+
+\noindent An alternative way of finding the answer is to realize that the integral 
+$$
+\frac{1}{2} \int_0^{5\pi/2} r^2 d\theta = \frac{1}{2} \int_0^{5\pi/2} a^2 \theta^2 d\theta
+$$
+
+\noindent is equal to the area $A$ except for the fact that it counts twice the area bounded by the lines $\theta = 0$ and $\theta = \frac{\pi}{2}$ and the curve $r = a\theta$ for $0 \leq \theta \leq \frac{\pi}{2}$. Hence we also obtain
+
+\begin{eqnarray*}
+A &=& \frac{1}{2} \int_0^{5\pi/2} a^2 \theta^2 d\theta - \frac{1}{2} \int_0^{\pi/2} a^2 \theta^2 d\theta \\
+   &=& \frac{31a^2 \pi^3}{12} .
+\end{eqnarray*}
+\end{example}
+
+The second topic of this section is the computation of the arc length of a curve defined by an equation in polar coordinates. No new methods are needed, since the problem is simply a special case of the more general one of finding the arc length of a parametrized curve. As noted in the second
+%610 GEOMEJRY IN JHE PLANE [CHAP. 1O
+paragraph of this section, if $f$ is a continuous function containing the interval $[a, b]$ in its domain, then the polar graph of the equation 
+$$
+r = f(\theta), \;\;\;\mbox{with}\; a \leq \theta \leq b,
+$$
+\noindent is a parametrized curve [see equations (2)]. Specifically, the curve is the range of the parametrization $P: [a, b] \rightarrow R^2$ defined by
+$$
+P(\theta) = (x(\theta), y(\theta)) = (f(\theta) \cos \theta, f(\theta) \sin \theta),
+$$
+\noindent for every $\theta$ in $[a, b]$. We shall make the assumption that the derivative $f'$ is a continuous function on $[a, b]$, and this implies that the derivatives $x'$ and $y'$ are also continuous. It then follows directly from Theorem (2.2), page 553, that the arc length of the curve from $P(a)$ to $P(b)$ is given by  
+$$
+L_a^b = \int_a^b \sqrt{x'(\theta)^2 + y'(\theta)^2} \;d\theta. 
+$$
+\noindent Since
+
+\begin{eqnarray*}
+x'(\theta) = f'(\theta) \cos \theta - f(\theta) \sin \theta,\\
+y'(\theta) = f'(\theta) \sin \theta + f(\theta) \cos \theta, 
+\end{eqnarray*}
+
+\noindent we find that
+
+\begin{eqnarray*}
+x'(\theta)^2 + y'(\theta)^2 &=& f'(\theta)^2 \cos^2 \theta - 2f'(\theta)f(\theta) \sin \theta \cos \theta + f(\theta)^2 \sin^2 \theta\\
+&&+ f'(\theta)^2 \sin^2 \theta + 2f'(\theta)f (\theta) \sin \theta \cos \theta + f(\theta)^2 \cos^2 \theta\\
+&=& f'(\theta)^2 + f(\theta)^2.
+\end{eqnarray*}
+\noindent Thus we obtain the following integral formula for the arc length $L_a^b$ of the polar graph of the equation $r = f(\theta)$, in which $a \leq \theta \leq b$:
+
+\begin{theorem} (7.3)
+$$
+L_a^b = \int_a^b \sqrt{f'(\theta)^2 + f(\theta)^2} \;d\theta.
+$$
+\end{theorem}
+
+\noindent Alternatively, if we set $r = f(\theta)$ in the formula and write $f'(\theta) = \frac{dr}{d\theta}$, we have   
+
+\begin{theorem} (7.3')
+$$
+L_a^b = \int_a^b \sqrt{ \Big(\frac{dr}{d\theta} \Big)^2 + r^2} \;d\theta .
+$$
+\end{theorem}
+
+\begin{example}
+%EXAMPLE 4. 
+Find the arc length of the cardioid defined in polar coordinates by the equation $r = 1 + \cos \theta$. This curve is shown in Figure 32, and the area of the region which it bounds is computed in Example 1. We have
+
+\begin{eqnarray*}
+\frac{dr}{d\theta} &=& - \sin \theta,\\
+r^2 &=& (1 + \cos \theta)^2 = 1 + 2 \cos \theta + \cos^2 \theta.
+\end{eqnarray*}
+%SEC. 7] AREA AND ARC LENGTH IN POLAR COORDINATES 611
+
+\noindent Hence
+\begin{eqnarray*}
+r^2 + \Big( \frac{dr}{d \theta} \Big)^2 
+&=& 1 + 2 \cos \theta + \cos^2 \theta + \sin^2 \theta \\
+&=& 2(1 + \cos \theta). 
+\end{eqnarray*}
+
+\noindent The trigonometric identity 
+$$
+\cos^2 \frac{\theta}{2} = \frac{1}{2} (1 + \cos \theta) 
+$$
+\noindent implies that
+$$
+r^2 + \Big( \frac{dr}{d \theta} \Big)^2 = 4 \cos^2 \frac{\theta}{2} ,
+$$
+
+\noindent and it follows from the integral formula (7.3') that the arc length $L$ of the cardioid is given by
+
+$$
+L = \int_0^{2\pi} \sqrt{4\cos^2 \frac{\theta}{2}} \;d\theta = 2\int_0^{2\pi} \Big| \cos \frac{\theta}{2} \Big| \;d\theta.
+$$
+
+\noindent However, because the cardioid is symmetric about the $x$-axis, we conclude that
+
+$$
+L= 2 \int_0^\pi \sqrt{4\cos^2 \frac{\theta}{2}} \;d\theta = 4 \int_0^\pi \Big|\cos \frac{\theta}{2} \Big| \;d\theta. 
+$$
+
+\noindent lf $0 \leq \theta  \leq \pi$, then $\cos \frac{\theta}{2} \geq 0$ and so $\Big|\cos \frac{\theta}{2}\Big| = \cos \frac{\theta}{2}$. Hence the arc length $L$ is equal to
+
+$$
+L = 4\int_0^\pi \cos \frac{\theta}{2} d\theta = 8 \sin \frac{\theta}{2} \Big|_0^\pi = 8. 
+$$
+\end{example}
+ 

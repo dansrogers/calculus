@@ -1,0 +1,60 @@
+\section{Approximate Values.}\label{sec 2.4}
+If we can find the values of a function and its derivative at some particular number a, then there is a useful method for obtaining an approximation to the value of the function at any number near $a$. For example, knowing that $\sqrt 9 = 3$, we can easily obtain a good approximation to $\sqrt 9.1$. Similarly, we can use this method to find simple approximations to such numbers as $\frac{1}{4.02}$, $\sqrt[3]{26.8}$, and $(32.1)^{1/5}$.
+
+To obtain the approximation for  $\sqrt 9.1$, we consider the graph of the function $f$ defined by $f(x) = \sqrt x$ and drawn in Figure 17. The tangent line to the curve at the point (9, 3) touches the curve at that point and is not very far away from it for values of $x$ near 9. Although it is tedious to find a decimal approximation for the ordinate of the point on the curve $y = \sqrt x$ with an abscissa of 9.1, it is relatively easy to find one for the point on the tangent line with that abscissa, and the two points are not very far apart.  Since $\frac{d}{dx} \sqrt x = \frac{1}{2 \sqrt x}$, the tangent line has a slope of $\frac{1}{2 \sqrt 9} = \frac{1}{6}$ and has an equation
+
+%Figure 17
+\putfig{4.5truein}{scanfig2_17}{}{fig 2.17}
+
+$$
+y - 3 = \frac{1}{6}(x - 9).
+$$
+\noindent If $x = 9.1$, $y = 3 + \frac{1}{6}(0.1) = 3\frac{1}{60}$, or 3.017. Thus 3.017 is our approximation for $\sqrt 9.1$. That it is a good approximation may be seen by checking a table of square roots to find $\sqrt 9.1 = 3.016621$. The same tangent line may be used to approximate $\sqrt 10$, but the accuracy will not be as good. If $x = 10$, $y = 3 + \frac{1}{6} = 3.167$. The tables give 3.162278 for $\sqrt 10$.
+
+The technique used in the problem above is the computation of an approximate value of $f(x)$ under the assumption that the difference $x - a$ is small in absolute value and that both $f(a)$ and $f'(a)$ are known, or can be easily evaluated. We write an equation of the tangent line to the graph of the function $f$ at $(a, f(a))$ and take the ordinate of the point on the line
+%110 APPLICAT/ONS OF THE DERIVATIVE [CHAP. 2
+with abscissa $x$ as the approximation tof(x). The tangent line has equation $y - f(a) = f'(a)(x - a)$, or, equivalently,
+
+$$
+y = f(a) + f'(a)(x - a).
+$$
+
+The function $f(a) + f'(a)(x - a)$ is a linear function of $x$, and is the linear function which best approximates $f(x)$ for values of $x$ near $a$. The approximation consists of simply replacing the true value $f(x)$ by the corresponding value of the linear function. The result is summarized in the formula
+
+\begin{equation}
+ f(x) \approx f(a) + f'(a)(x - a),  
+\label{eq2.4.1}
+\end{equation}
+\noindent in which it is assumed that $|x-a|$ is small and the symbol $\approx$ indicates approximate equality.
+\medskip
+
+%EXAMPLE 1. 
+\begin{example}
+Find an approximate value of $\frac{1}{4.02}$. If we define $f(x) = \frac{1}{x}$, then $f(4) = \frac{1}{4} = 0.25$ is easily evaluated. Moreover, $f'(4) = - \frac{1}{4^2} = - \frac{1}{16} = -0.0625$, and 0.02, the difference between 4.02 and 4, is small. Thus $\frac{1}{4.02}$ is approximately equal to $\frac{1}{4} - \frac{1}{16}(4.02 - 4) = 0.25 - (0.0625)(0.02) = 0.24875$.
+\end{example}
+\medskip
+
+%EXAMPLE 2. 
+\begin{example}
+Compute $\sqrt[3]{26.8}$ approximately. If we let $f(x) = x^{1/3}$, then $f(27) = 3$. Since $f'(x) = \frac{1}{3}x^{-2/3}$, we obtain $f'(27) = \frac{1}{3}(27)^{-2/3} = \frac{1}{27}$. The difference $| 26.8 - 27 | = 0.2$ is small. Thus we approximate $\sqrt[3]{26.8}$ by $3 + \frac{1}{27}(26.8 - 27) = 3 + \frac{1}{27}( -0.2) = 2.9926$. A table of cube roots gives a more exact value of 2.992574, but the linear approximation gives fourdecimal accuracy.
+\end{example}
+
+An alternative point of view is obtained if we substitute $x = a + t$ in (1). The left side of the formula becomes $f(a + t)$ and the right side is then $f(a) + f'(a)((a + t) - a) = f(a) + tf'(a)$. Hence, we obtain the equivalent formula
+
+\begin{equation}
+ f(a + t) \approx f(a) + tf'(a), 
+\label{eq2.4.2}
+\end{equation}
+\noindent which gives an approximate value of $f(a + t)$ in terms of the known quantities $f(a), f'(a)$, and $t$.  The same result can also be obtained easily from the definition of the derivative of the function $f$ at $a$,
+
+$$
+f'(a) = \lim_{t \rightarrow 0} \frac{ f(a + t) - f(a)}{t}.
+$$
+%SEC. 5] P~OLLE ´ THEOREM AND ITS CONSEQUENCES  lil
+\noindent It follows that if $t$ is nonzero and small in absolute value, then $f'(a)$ is given approximately by
+
+$$
+f'(a) \approx \frac{f(a + t) -  f(a)}{t}, 
+$$
+\noindent which immediately implies (2).
+

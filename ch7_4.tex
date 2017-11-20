@@ -1,0 +1,437 @@
+\section{Partial Fractions.}
+A rational function is by definition one which can be expressed as the ratio
+of two polynomials. A simple example is the function $f$, defined by
+$$
+f(x) = \frac{1}{(x^2 + 1)(x - 2)} =   \frac{1}{x^3 - 2x^2 + x - 2},
+$$
+\noindent for every real value of $x$ except 2. At present, we have no way of integrating this function. However, in this section we shall develop a method of integration which is applicable to any rational function. It is called the method of partial fractions.
+
+To illustrate the method, consider the equation
+$$
+\frac{1}{x - 2} - \frac{x + 2}{x^2 + 1} = \frac{5}{(x^2 + 1)(x - 2)},
+$$
+\noindent which is easily seen to be true for all real values of $x$
+except 2. It follows that
+
+\begin{eqnarray*}
+\frac{1}{(x^2 + 1)(x - 2)} 
+&=& \frac{1}{5} \frac{1}{x - 2} - \frac{1}{5} \frac{x + 2}{x^2 + 1}\\
+&=& \frac{1}{5} \frac{1}{x - 2} - \frac{1}{5} \frac{x}{x^2 + 1} - \frac{2}{5} \frac{1}{x^2 + 1}. 
+\end{eqnarray*}
+
+\noindent Hence
+
+\begin{eqnarray*}
+\int \frac{dx}{(x^2 + 1)(x - 2)} 
+&=& \frac{1}{5} \int \frac{dx}{x - 2} - \frac{1}{5} \int \frac{x dx}{x^2 + 1} - \frac{2}{5} \int \frac{dx}{x^2 + 1}\\
+&=& \frac{1}{5} \ln |x - 2| - \frac{1}{10} \ln(x^2 + 1) - \frac{2}{5} \arctan x + c.  
+\end{eqnarray*}
+
+\noindent Thus $\frac{1}{(x^2 + 1)(x -2)}$ can be integrated, since it can be written as a sum of simpler rational functions, each of which can be integrated separately. The method of integration by partial fractions is based on the fact that such a decomposition exists for every rational function. In this example, we have given no indication of how the decomposition is to be found. However, the general method, which we now describe, consists of just such a prescription.
+
+We begin with the result from algebra that it is always possible by means
+%SEC. 4] P ARTI A L F F A CT} ON5  385
+of division to express any given rational function as the sum of a polynomial
+and a rational function in which the degree of the numerator is less than the degree of the denominator. Stated formally, this theorem says that, if $N(x)$ and $D(x)$ are any two polynomials and if $D(x)$ is not the zero function, then there exist uniquely determined polynomials $Q(x)$ and $R(x)$ such that 
+
+\begin{equation}
+\frac{N(x)}{D(x)} = Q(x) + \frac{R(x)}{D(x)},
+\label{eq7.4.1}
+\end{equation}
+\noindent and such that the degree of $R(x)$ is less than the degree of $D(x)$. (The letters $N$, $D$, $Q$, and $R$ have been used to suggest, respectively, the words ``numerator," ``denominator," ``quotient," and
+``remainder.") The first step in the method of integration by partial fractions is to write the given rational function $\frac{N(x)}{D(x)}$ in the form of equation (1). Since we can obviously integrate the polynomial $Q(x)$, we need next consider only rational functions in which the degree of the numerator is less than the degree of the denominator. If we start with such a function, then no division is necessary.
+
+%EXAMPLE 1. 
+\begin{example}
+Write the function $\frac{x^4 - 4x^3 + 8x^2 - 7x +3}{x^3 - 2x^2 + 3x - 4}$ as the sum of a polynomial and a rational function in which the degree of the numerator is less than the degree of the denominator. Dividing, we have
+
+$$
+\begin{array}{rl}
+                               &\;\;x - 2   \\       
+ x^3 - 2x^2 + 3x - 4&)\;\overline {x^4 - 4x^3 + 8x^2 - 7x + 3}   \\ 
+                              &\hspace{.1in}x^4 - 2x^3 + 3x^2 - 4x \\    
+                              &\overline{\;\;\;\;\;\;\;\, -2x^3 + 5x^2 - 3x + 3} \\   
+                               &\hspace{.3in}\underline{-2x^3 + 4x^2 - 6x + 8} \\   
+                               &\hspace{.85in}x^2 + 3x - 5. 
+\end{array}
+$$
+\noindent It follows that 
+
+$$
+\frac{x^4 - 4x^3 + 8x^2 - 7x + 3}{x^3 - 2x^2 + 3x - 4} 
+= (x - 2) + \frac{x^2 + 3x - 5}{x^3 - 2x^2 + 3x - 4},
+$$
+\noindent which gives the required sum.
+\end{example}
+
+Another algebraic fact about polynomials, which we shall not prove, but shall assume and use, is that any nonconstant polynomial (i.e., of degree at least 1) with real coefficients can be written as a product of linear and quad
+%386 TECHNIQUES OF INTEGRATION [CHAP. 7
+ratic factors, each with real coefficients. By a linear factor we mean a polynomial $L(x)$ of degree 1; that is, $L(x) = ax + b$ and $a \neq 0$. Similarly, a quadratic factor is a polynomial $Q(x)$ of degree 2; thus 
+$Q(x) = cx^2 + dx + e$ and $c \neq 0$. The theorem states that, for any polynomial
+$$
+f(x) = a_{n}x^n + ... + a_{1}x + a_{0}
+$$
+\noindent with real coefficients $a_i$ and with $n \geq 1$ and $a_n \neq 0$, there exist linear factors $L_{1}(x), \cdots, L_{p}(x)$ and quadratic factors $Q_1(x), \cdots, Q_q(x)$ with real coefficients such that
+$$
+f(x)= L_1(x) \cdots L_p(x)Q_1(x) \cdots Q_q(x).
+$$
+\noindent Note that either $p$ or $q$ may be zero. In actual practice, such a factorization of $f(x)$ may be very difficult to find, but the theorem assures us that it exists.
+
+A polynomial is said to be \textbf{irreducible} if it cannot be written as the product of two polynomials each of degree greater than or equal to 1. The degree of the product of two polynomials is equal to the sum of the degrees of the factors, and it therefore follows that every linear polynomial is irreducible. It was pointed out in Section 3 that a quadratic polynomial $cx^2 + dx + e$ is irreducible over the reals if and only if its discriminant $d^2 - 4ce$ is negative. For example, the polynomials $x^2 + 1$ and $x^2 + x + 1$ are irreducible, whereas $x^2 + 2x + 1$ and $x^2 + 2x - 1$ are not. If a quadratic polynomial is not irreducible, it can be factored and written as the product of two linear polynomials. Hence the factorization of an arbitrary nonconstant polynomial into linear and quadratic factors, as described in the preceding paragraph, can always be done so that all the factors are irreducible.
+
+Returning specifically to the method of integration by partial fractions, we consider a rational function $\frac{N(x)}{D(x)}$, with the degree of $D(x)$ greater than the degree of $N(x)$. The second step is to write the denominator $D(x)$ as a product of irreducible factors. Having done so, we have
+
+\begin{equation}
+D(x) = L_1(x) \cdots L_p(x)Q_1(x) \cdots Q_q(x),   
+\label{eq7.4.2}
+\end{equation}
+
+\noindent where, for each $i = 1, . . ., p$,
+$$
+L_i(x) = a_{i}x + b_{i}, \;\;\; a_i \neq 0, 
+$$
+\noindent and, for each $j = 1, . . ., q$,
+
+$$
+Q_j(x) = c_{j}x^2 + d_{j} x + e_{j}, \;\;\; d_{j}^2 - 4c_{j}e_{j} < 0.
+$$
+\noindent There is no reason to suppose that the factors which appear in equation (2) will all be distinct, and it may very well happen that 
+$L_{1}(x) = L_{2}(x)$, etc.
+%SEC. 4] PA RT I AL F RA CTI ONS  387
+However, the theory is simpler if no repetitions occur, and we shall consider that case first.
+
+\textit{Case 1. The irreducible factors of $D(x)$ are all distinct.}  
+The algebraic theory of partial fractions, which we shall assume, tells us that we can write $\frac{N(x)}{D(x)}$ as a sum of rational functions each of which has one of the factors of $D(x)$ as its denominator and such that in each term the degree of the numerator is less than the degree of the denominator. Moreover, given the factorization of $D(x)$ into irreducibles, this decomposition is unique except for the order in which the terms are written. Thus
+
+\begin{eqnarray*}
+\frac{N(x)}{D(x)} &=& \frac{A_1}{a_{1}x + b_{1}} + \frac{A_2}{a_{2}x + b_{2}} + \cdots + \frac{A_p}{a_{p}x + b_{p}}\\
+&& + \frac{B_{1}x + C_1} {c_{1}x^2 + d_{1}x + e_{1}} + \frac{B_{2}x + C_2}{c_{2}x^2 + d_{2}x + e_2}\\
+&& + \cdots 
++ \frac{B_{q}x + C_q}{c_{q}x^2 + d_{q}x + e_q},
+\end{eqnarray*}
+
+\noindent where each of the letters $A_i$, $B_j$ and $C_k$ represents a uniquely determined real constant. The rational functions which appear on the right side are called the \textbf{partial fractions} of the decomposition of $\frac{N(x)}{D(x)}$.
+
+We shall show by means of examples how the constants in the partial fractions decomposition are determined. Consider the rational function
+$\frac{1}{(x^2 + 1)(x - 2)}$ discussed at the beginning of the section. The degree of the numerator, zero, is already less than 3, the degree of the denominator. Moreover, the denominator is already factored into irreducibles. Hence, we seek constants $A$, $B$, and $C$ such that
+$$
+\frac{1}{(x^2 + 1)(x - 2)} = \frac{A}{x - 2} + \frac{Bx + C}{x^2 + 1}.
+$$
+\noindent Adding the two fractions on the right side, we have
+
+$$
+\frac{1}{(x^2 + 1)(x - 2)} = \frac{A(x^2 + 1) + (Bx + C)(x - 2)}{(x^2 + 1)(x - 2)}.
+$$
+\noindent The fact that a nonzero polynomial of degree $n$ has at most $n$ distinct roots implies that two rational functions with the same denominator are equal if and only if their numerators are equal (see Problem 8 at the end of this section). Hence the equation
+
+\begin{equation}
+1 = A(x^2 + 1) + (Bx + C)(x - 2)
+\label{eq7.4.3}
+\end{equation}
+%388 TECHNI Q UES OF INTEfiRATlON [CHAP. 7
+\noindent is true for all real values of $x$. There are two common ways to find the constants $A$, $B$, and $C$. One is to multiply and regroup the terms in (3) to obtain the equation
+
+$$
+0 = (A + B)x^2 + (C - 2B)x + (A - 2C - 1),
+$$
+\noindent which also holds for all real values of $x$. The only polynomial with infinitely many roots is the zero polynomial, i.e., the polynomial with no nonzero coefficients. Hence the three coefficients on the right side of the preceding equation are all equal to zero, and we can therefore find $A$, $B$, and $C$ by solving the system of equations
+
+$$
+\begin{array}{ccrcrc}
+A  &   + &    B &     &     & = 0,\\
+    &    - &  2B & +  &  C & = 0,\\
+A  &      &       &  - & 2C & = 1.
+\end{array}
+$$
+\noindent Usually simpler is the technique in which we take advantage of the fact that (3) must be true for all values of $x$, and we choose values cleverly to help evaluate the constants. For example, letting $x = 2$ in (3), we have
+
+\begin{eqnarray*}
+1 &=& A(2^2 + 1) + (B \cdot 2 + C)(2 - 2)\\
+   &=& 5A.
+\end{eqnarray*}
+\noindent Hence $A = \frac{1}{5}$. lf we then let $x = 0$, we have  
+ 
+\begin{eqnarray*}
+1 &=& \frac{1}{5}(0^2 + 1) + (B \cdot 0 + C)(0 - 2) \\
+   &=& \frac{1}{5} - 2C,
+\end{eqnarray*}
+ 
+\noindent or, equivalently, $2C = \frac{1}{5} - 1$, and so $C = - \frac{2}{5}$. Finally, choosing $x = 1$, we get
+
+\begin{eqnarray*}
+1 &=&\frac{1}{5}(1^2 + 1) + (B \cdot 1 - \frac{2}{5})(1 - 2)\\
+   &=& \frac{2}{5} - B + \frac{2}{5},
+\end{eqnarray*}
+\noindent from which we conclude that $B = - \frac{1}{5}$. Whichever method we use, we have $A = \frac{1}{5}$, $B = - \frac{1}{5}$, and $C = -\frac{2}{5}$, from which it follows that
+
+$$
+\frac{1}{(x^2+ 1)(x - 2)} 
+= \frac{1}{ 5}\frac{1}{ x-2} - \frac{1}{ 5} \frac{x + 2}{x^2+ 1},
+$$
+\noindent the form which we integrated at the beginning of the section.
+
+%EXAMPLE 2. 
+\begin{example}
+Integrate $\int \frac{dx}{a^2 - x^2}$. Since $a^2 - x^2 = (a - x)(a + x)$, we
+decompose $\frac{1}{a^2 - x^2}$ into partial fractions $\frac{A}{a + x}$ and $\frac{B}{a - x}$. Thus 
+
+$$
+\frac{1}{a^2 - x^2} =  \frac{A}{a + x} + \frac{B}{a - x} 
+= \frac{A(a - x) + B(a + x)}{a^2 - x^2}.
+$$
+%SEC. 4] PARTIAL FRACTIONS  389
+\noindent Equating numerators on the left and right, we get
+$$
+1 = A(a - x) + B(a + x).
+$$
+
+Letting $x = a$, we obtain the equation $1 = A \cdot 0 + B \cdot 2a$, and so $B = \frac{1}{2a}$. Similarly, setting $x = - a$, we get $1 = A \cdot 2a 
++ B \cdot 0$, from which it follows that $A = \frac{1}{2a}$. Thus  
+ 
+$$
+\frac{1}{a^2 - x^2} = \frac{1}{2a} \frac{1}{a + x} + \frac{1}{2a} \frac{1}{a - x}, 
+$$
+\noindent and, therefore,
+
+\begin{eqnarray*}
+\int \frac{ dx}{a^2 - x^2} 
+&=& \frac{1}{2a} \int \frac{dx}{a + x} + \frac{1}{2a} \int \frac{dx}{a - x}\\
+&=& \frac{1}{2a} \ln |a + x| - \frac{1}{2a} \ln |a - x| + c \\
+&=& \frac{1}{2a} \ln \Big| \frac{a + x}{a - x} \Big|  + c.
+\end{eqnarray*}
+\end{example}
+
+Thus the third step in applying this method of integration is the decomposition into partial fractions, and the fourth and final step is the integration of the partial fractions. We shall show later in the section that it is always possible to carry out the last step, but, as the next example shows, doing so can be tedious.
+
+%EXAMPLE 3. 
+\begin{example}
+Integrate $\int \frac{3x^3 + x^2 -14x + 46}{(x^2 + x + 1)(x^2 - 5x - 14)} dx$. The degree of the numerator is 3 and that of the denominator is 4, so we proceed to the factorization of the denominator into irreducibles. It is already written as the product of two quadratics, of which $x^2 + x + 1$ is irreducible but $x^2 - 5x -14$ is not, since $x^2 - 5x - 14 = (x - 7)(x + 2)$. Hence the form of the partial fractions decomposition is
+
+$$
+\frac{3x^3 + x^2 -14x + 46}{(x^2 + x + 1)(x - 7)(x + 2)} 
+= \frac{Ax + B}{x^2 + x + 1} + \frac{C}{x - 7} + \frac{D}{x + 2}.
+$$
+\noindent The sum of the three fractions on the right side is
+
+$$
+\begin{array}{l}
+(Ax + B)(x - 7)(x + 2)\\
+\underline{\hspace{.75in}+ C(x^2 + x + 1)(x + 2) + D(x^2 + x + 1)(x - 7)} \\ 
+\hspace{1in}(x^2 + x + 1)(x - 7)(x + 2)
+\end{array}.
+$$
+%390 TECHNIQUES OF INTEGRATION [CHAP. 7 
+\noindent Equating numerators, we have 
+\begin{eqnarray*}
+&&(Ax + B)(x-7)(x+ 2) + C(x^2 + x + 1)(x + 2) + D(x^2 + x + 1)(x-7) \\
+&& = 3x^3 + x^2 - 14x + 46.
+\end{eqnarray*}
+\noindent If we set $x = 7$ in this equation, then
+$$
+C \cdot 513= 1026 \;\;\;\mbox{or}\;\;\; C = 2.
+$$
+Letting $x = - 2$, we obtain
+$$
+D \cdot (- 27) = 54 \;\;\; \mbox{or} \;\;\; D = - 2.
+$$
+If we let $x = 0$, then
+$$
+B \cdot (- 14) + C \cdot 2 + D \cdot ( - 7) = 46
+$$
+\noindent or
+$$
+-14B = 46 - 2C + 7D = 46 - 4 - 14 = 28 \;\;\;\mbox{or} \;\;\; B = - 2.
+$$
+\noindent Finally, letting $x = - 1$, we have
+$$
+(-A + B) \cdot (-8) + C + D \cdot (-8) = 58 
+$$
+\noindent or
+$$
+8A = 58 + 8B - C + 8D = 58 - 16 - 2 - 16 = 24 \;\;\; \mbox{or} \;\;\; A = 3.
+$$
+\noindent The partial fractions decomposition is, therefore, 
+
+\begin{equation}
+\frac{3x^3 + x^2 - 14x + 46}{(x^2 + x + 1)(x^2 - 5x -14)} = \frac{3x - 2}{x^2 + x + 1} + \frac{2}{x - 7} - \frac{2}{x + 2}.
+\label{eq7.4.4}
+\end{equation}
+
+\noindent Except for the first, the terms on the right side are easily integrated. The first term can be integrated by writing it as the sum of two fractions. We use the identity
+$$
+\frac{Bx + C}{cx^2+ dx+e} = \frac{B}{2c} \frac{2cx + d}{cx^2+ dx + e} 
++ \Bigl(C - \frac{dB}{2c} \Bigr) \frac{1}{cx^2+ dx + e}.
+$$
+\noindent Note that the numerator $2cx + d$ is the derivative of $cx^2 + dx + e$. Both of these fractions can be integrated. In this example, we have
+
+$$
+\frac{3x - 2}{x^2 + x + 1} = \frac{3}{2} \frac{2x + 1}{x^2 + x + 1} 
+- \frac{7}{2} \frac{1}{x^2 + x + 1}.
+$$
+\noindent Then
+$$
+\int \frac{2x + 1}{x^2 + x + 1} dx = \ln (x^2 + x + 1) + c.
+$$
+%sec. 4] PARTIAL FRACIION5  391
+\noindent For the second fraction, we complete the square in the denominator. The result is
+$$
+\frac{1}{x^2 + x + 1} = \frac{1}{\Bigl(x + \frac{1}{2}\Bigr)^2 + \Bigl(\frac{\sqrt 3}{2}\Bigr)^2}, 
+$$
+\noindent and, since $\int \frac{dy}{y^2 + a^2} = \frac{1}{|a|} \arctan \frac{y}{|a|}$, it follows that 
+
+\begin{eqnarray*}
+\int \frac{dx}{x^2 + x + 1} = \int \frac{dx}{\Bigl(x + \frac{1}{2}\Bigr)^2 + \Bigl(\frac{\sqrt 3}{2}\Bigr)^2} 
+&=& \frac{2}{\sqrt 3} \arctan \Bigl(\frac{x + \frac{1}{2}}{\frac{\sqrt 3}{2}} \Bigr) + c\\
+&=& \frac{2}{\sqrt 3} \arctan \Bigl(\frac{2x + 1}{\sqrt 3} \Bigr) + c.
+\end{eqnarray*}
+
+\noindent Hence
+$$
+\int \frac{3x - 2}{x^2 + x + 1} dx = \frac{3}{2} \ln(x^2 + x + 1) - \frac{7}{\sqrt 3} \arctan \Bigl(\frac{2x + 1}{\sqrt 3} \Bigr) + c.
+$$
+\noindent Returning to equation (4), we therefore get the final integral 
+
+\begin{eqnarray*}
+\int \frac{3x^3 + x^2 -14x + 46}{(x^2 + x + 1)(x^2 - 5x - 14)} dx 
+&=& \frac{3}{2} \ln(x^2 + x + 1) - \frac{7}{\sqrt 3} \arctan \Bigl(\frac{2x+ 1}{\sqrt 3} \Bigr)\\
+&& + 2 \ln |x - 7| - 2 \ln |x + 2| + c, 
+\end{eqnarray*}
+
+\noindent and this completes the example.
+\end{example}
+
+We consider next the situation in which the factorization of the denominator of $\frac{N(x)}{D(x)}$ as shown in equation (2), contains repeated factors.
+\medskip
+
+\textit{Case 2. The irreducible factors of $D(x)$ are not all distinct.} 
+We assume, as in Case 1, that the degree of $N(x)$ is less than the degree of $D(x)$. There is still a unique decomposition of $\frac{N(x)}{D(x)}$ into the sum of partial fractions, but now it is more complicated. By regrouping, we may write the factorization of $D(x)$ into irreducibles as
+
+\begin{equation}
+D(x) = [L_{1}(x)]^{m_1} \cdots  [L_{r}(x)]^{m_r} [Q1(x)]^{n_1} \cdots [Q_{s}(x)]^{n_s}, 
+\label{eq7.4.5}
+\end{equation}
+%392 Ti C/lN/QUES OF INTEGRATION [CHAP. 7
+\noindent where $m_1, ... , m_r$ and $n_1, ... , n_s$ are positive integers, 
+the factors $L_{i}(x) = a_{i}x + b_{i}$ are all distinct, and the factors 
+$Q_{j}(x) = c_{j}x^2 + d_{j}x + e_{j}$ are all distinct In this case, $\frac{N(x)}{D(x)}$ is the total sum of the following individual sums 
+of partial fractions: For each $i = 1, . . ., r$, there is the sum
+
+$$
+\frac{A_{i1}}{a_{i}x + b_{i}} + \frac{A_{i2}}{(a_{i}x + b_{i})^2} + \cdots + \frac{A_{im_i}}{(a_{i}x + b_{i})^{m_i}},  
+$$
+\noindent in which the $Aik$ are uniquely determined real constants. Similarly, for each $j = 1, ... , s$, there is the sum
+
+$$
+\frac{B_{j1}x + C_{j1}}{c_{j}x^2+ d_{j}x + e_{j}}  
++ \frac{B_{j2}x + C_{j2}}{(c_{j}x^2 + d_{j}x + e_{j})^2}
++ \cdots
++ \frac{B_{jn_j}x + C_{jn_j}} {(c_{j}x^2 + d_{j}x + e_{j})^{n_j}},
+$$
+\noindent in which the $B_{jk}$ and $C_{jk}$ are uniquely
+determined real constants.
+
+%EXAMPLE 4. 
+\begin{example}
+Integrate the rational function $\frac{2x^2 + x + 2}{x(x - 1)^3}$ by the method of partial fractions. The degree of the numerator, 2, is less than that of the denominator, 4. So we turn at once to the decomposition into partial fractions. Since the irreducible factor $x - 1$ is repeated three times, the decomposition is of the form
+
+$$
+\frac{2x^2 + x + 2}{x(x - 1)^3} 
+= \frac{A}{x - 1} + \frac{B}{(x - 1)^2} + \frac{C}{(x - 1)^3} + \frac{D}{x}.
+$$
+\noindent The sum on the right side is equal to
+$$
+\frac{Ax(x - 1)^2 + Bx(x - 1) + Cx + D(x -1)^3}{x(x - 1)^3}.
+$$
+\noindent Equating numerators, we obtain the equation
+
+\begin{equation}
+Ax(x - 1)^2 + Bx(x - 1) + Cx + D(x - 1)^3 = 2x^2 + x + 2,
+\label{eq7.4.6}
+\end{equation}
+\noindent which holds for all real values of $x$. Setting $x = 1$, we obtain 
+
+$$
+C \cdot 1 = 2 \cdot 1^2 + 1 + 2, \;\;\;\mbox{whence}\; C = 5.
+$$
+\noindent If we let $x = 0$, then 
+
+$$
+D \cdot ( - 1)^3 = 2, \;\;\; \mbox{whence}\; D = - 2. 
+$$
+\noindent Thus, equation (6) has become
+
+$$
+Ax(x - 1)^2 + Bx(x - 1) + 5x -2(x - 1)^3 = 2x^2 + x + 2.
+$$
+%SEC. 4] PARTIAL FRACTIONS 393
+\noindent In this equation we let $x = 2$, getting 
+
+$$
+A \cdot 2 + B \cdot 2 + 10 - 2 = 8 + 2 + 2
+$$
+\noindent or 
+
+\begin{equation}
+2A + 2B = 4.  
+\label{eq7.4.7}
+\end{equation}
+\noindent Next, setting $x = - 1$, we have 
+
+$$
+A \cdot (- 1)(- 2)^2 + B \cdot (- 1)(- 2) - 5 + 16 = 2 - 1 + 2
+$$
+\noindent or 
+
+\begin{equation}
+-4A + 2B = - 8. 
+\label{eq7.4.8}
+\end{equation}
+
+\noindent Subtracting (8) from (7), we get $6A = 12$ and so $A = 2$. It follows that $B = 0$, and we have therefore found the partial fractions decomposition to be
+
+$$
+\frac{2x^2 + x + 2}{x(x - 1)^3} = \frac{2}{x - 1} + \frac{5}{(x - 1)^3} - \frac{2}{x}. 
+$$
+
+\noindent Hence
+\begin{eqnarray*}
+\int \frac{2x^2 + x + 2}{x(x -1)^3} dx 
+&=& 2\int \frac{dx}{x - 1} + 5 \int \frac{dx}{(x - 1)^3} - 2 \int \frac{dx}{x}\\
+&=& 2 \ln | x - 1| - \frac{5}{2} \frac{1}{(x - 1)^2} - 2 \ln |x| + c, 
+\end{eqnarray*}
+
+\noindent and this completes the example. 
+\end{example}
+
+Since any rational function can be written as the sum of a polynomial and a series of partial fractions, the general problem of integrating a rational function reduces to three integration problems: (1) integration of a polynomial; (2) integration of functions of the form $\frac{A}{(ax + b)^m}$, where $m$ is a positive integer and $a \neq 0$; and (3) integration of functions of the form $\frac{Bx + C}{(cx^2 + dx + e)^n}$ where $n$ is a positive integer and $d^2 - 4ce < 0$. The first, of course, offers no difficulties whatever. The second is also simple, since $\frac{A}{(ax + b)^m} = \frac{A}{a} \frac{a}
+{(ax + b)^m}$, and so   
+
+$$
+\int \frac{A}{(ax + b)^m} dx = \frac{A}{a} \int \frac{a}{(ax + b)^m}dx\\
+= \left \{ 
+               \begin{array}{ll}
+\frac{A}{a(1 - m)} \frac{1}{(ax + b)^{m-1}} + c   &\mbox{if}\; m \neq 1,\\
+\frac{A}{a} \ln | ax + b | + c                               &\mbox{if}\; m = 1.
+               \end{array}
+\right.
+$$
+%394 TECHNIQUES OF INTEGRATION [CHAP. 7
+
+\noindent The third problem can be solved, but we have seen in Example 3 that it is complicated even with $n = 1$. It is attacked by writing
+$$
+\frac{Bx + C} {(cx^2 + dx + e)^n} = \frac{B}{2c} \frac{2cx + d}{(cx^2 + dx + e)^n} + \Bigl(C - \frac{dB}{2c} \Bigr) \frac{1}{ (cx^2 + dx +
+e)^n}. 
+$$
+\noindent The integra $\int \frac{2cx + d}{(cx^2 + dx + e)^n} dx$ is easily found, since it is of the form $\int \frac{du}{u^n}$ with $u = cx^2 + dx + e$.
+The problem therefore reduces to finding $\int \frac{dx}{(cx^2 + dx + e)^n}$. However it was demonstrated at the end of Section 3 that this integral can be evaluated by trigonometric substitution, which reduces it to an integral of the form $\int \cos^{2n-2} \theta d\theta$. An alternative method is to use the reduction formula given in Problem 9, page 384.
+
+Thus all possible partial fractions resulting from the decomposition of a rational function can be integrated. It follows that every rational function can be integrated. The factoring of the denominator into irreducibles may be difficult, and the decomposition into partial fractions and the resulting integrations may be tedious, but the following important result has been established.
+
+%THEORENI. 
+\begin{theorem} %(4.1) 
+Every rational function can be integrated by the method of partialfractions.
+\end{theorem}
+
+A table of integrals will show how to integrate many of the functions which are the partial fractions of a rational fraction. For this reason, there is no need to memorize the formulas for integration. However, it is necessary to know the technique of separating a rational function into its partial fractions in order to replace an apparently nonintegrable function by a sum of obviously integrable functions.
+
+

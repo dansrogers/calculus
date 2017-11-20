@@ -1,0 +1,331 @@
+\section{Vector Velocity and Acceleration.} In this section we shall consider the motion of a particle in the plane during an interval of time. We shall assume that the particle moves without jumping. As a result, if $P$ is the function which associates to every instant of time in the interval the corresponding position of the particle in the plane, then $P$ is continuous; i.e., it is a parametrization. The points $P(t)$ trace out the parametrized curve over which the particle moves.
+
+Velocity is a vector concept which combines two ingredients: the number which measures how fast the particle is moving, and the direction of the motion. If the position of a particle during an interval of time $I$ is described by a differentiable parametrization $P: I \rightarrow R^2$, then the \textbf{velocity} of the particle at any time t during the interval will be denoted by $v(t)$ and defined to be the derived vector of $P$ at $t$. Thus
+
+\begin{equation}
+\mbox{\bf{v}}(t) = \mbox{\bf{d}}P(t)   
+\label{eq10.5.1}
+\end{equation}
+Since the derived vector is a tangent vector, the velocity is also one. Specifically, $\mbox{\bf{v}}(t)$ is a tangent vector at $t$ to the parametrized curve defined by $P$. If we write $P(t) = (x(t), y(t))$, then it follows from the formula for the derived vector [see (4.1), page 571] that the velocity vector is given by
+
+\begin{equation}
+\mbox{\bf{v}}(t) = (x'(t), y'(t))_{p(t)}.  
+\label{eq10.5.2}
+\end{equation}
+The \textbf{speed} of the particle at time $t$ is defined to be the length $|\mbox{\bf{v}}(t)|$ of the velocity vector. The equation for the length of a vector in terms of its coordinates [see (3.1), page 561] implies that the speed is equal to
+
+\begin{equation}
+|\mbox{\bf{v}}(t)| = \sqrt{x'(t)^2 + y'(t)^2}.   
+\label{eq10.5.3}
+\end{equation}
+%EXAMPLE 1. 
+\begin{example} A particle moves in the plane during the time interval $[0, 2]$, and its position at any time $t$ in this interval is given by
+$$
+P(t) = (x(t), y(t)) = (\cos \pi t^2, \sin \pi t^2).
+$$
+Assume that time is measured in seconds and that the unit of distance in the plane is 1 foot.
+\smallskip
+
+\begin{description}
+\item[(a)] Identify and draw the curve traced out by the particle, and describe its motion during the interval $[0, 2]$.
+%SEC. 5] VECTOR VELOCITY AND ACCELE~ATION  579
+\item[(b)] Compute the position, velocity, and speed of the particle at $t = 0$, $t = \frac{1}{2}$, $t = 1$, and $t = \frac{3}{2}$. Show these four positions, and draw the corresponding velocity vectors in the figure in (a).
+\item[(c)] How does the speed of the particle depend on time during the entire interval of motion?
+
+\end{description}
+\medskip
+
+The parametrized curve over which the particle moves is the set of all points $(x, y)$ such that
+$$
+\left \{ \begin{array}{l}
+x = \cos \pi ^2, \\
+y = \sin \pi t^2,     \;\;\;       0 \leq t \leq 2.
+\end{array}
+\right .
+$$
+
+\noindent Hence the coordinates of every point $(x, y)$ on the curve satisfy
+$$
+x^2 + y^2 = (\cos \pi t^2)^2 + (\sin \pi t^2)^2 = 1.
+$$
+The equation $x^2 + y^2 = 1$ is the familiar equation of the circle $C$ with radius 1 and center the origin, and the particle therefore moves on this circle. In accordance with the definition of the functions sine and cosine in Chapter 6, the quantity $\pi t^2$ is the arc length along $C$ in the counterclockwise direction from the point (1, 0) to the point $P(t) = (x, y)$. As $t$ increases from 0 to 2, the values of $\pi t^2$ increase monotonically from 0 to $4 \pi$, which is twice the circumference of the circle. We conclude that the particle starts from (1, 0) at time $t = 0$, moves counterclockwise around the circle as time increases, and at $t = 2$ has gone completely around twice and has come back to its starting position at $P(2) = (\cos 4 \pi, \sin 4 \pi) = (1, 0)$. The curve of motion, i.e., the circle $C$, is shown in Figure 17.
+
+Since $P(t) = (\cos \pi t^2, \sin \pi t^2)$, the position of the particle at each of the four values of t given in (b) is easily computed:
+
+\begin{eqnarray*}
+              P(0) &=& (\cos 0, \sin 0) = (1, 0), \\
+P(\frac{1}{2}) &=& (\cos \pi \cdot \frac{1}{4}, \sin \pi \cdot \frac{1}{4}) = \Big( \frac{\sqrt 2}{2}, \frac{\sqrt 2}{2} \Big) , \\
+              P(1) &=& (\cos \pi, \sin \pi) = ( -1, 0),\\
+P(\frac{3}{2}) &=& (\cos \pi \cdot \frac{9}{4}, \sin \pi \cdot \frac{9}{4}) = \Big( \frac{\sqrt 2}{2},  \frac{\sqrt 2}{2} \Big) .
+\end{eqnarray*}
+The velocity vector is
+
+%(4)
+\begin{eqnarray*}
+\mbox{\bf{v}}(t) &=& (x'(t),y'(t))_{P(t)}\\
+      &=& (- 2\pi t \sin \pi t^2, 2\pi t \cos \pi t^2)_{P(t)}.\\
+\mbox{\bf{v}}(t) &=& 2\pi t (-\sin \pi t^2, cos \pi t^2)_{P(t)} . 
+\end{eqnarray*}
+\setcounter{equation}{4}
+%580 GEOMETRY IN THE PLANE [CHAP. IO
+%Figure 17
+\putfig{3.5truein}{scanfig10_17}{}{fig 10.17}
+
+\noindent Hence 
+\begin{eqnarray*}
+              \mbox{\bf{v}}(0) &=& \mbox{\bf{0}} = (0, 0)_{P(0)},\\
+\mbox{\bf{v}}(\frac{1}{2}) &=& 2 \pi \frac{1}{2} \Big( -\sin \frac{\pi}{4}, \cos \frac{\pi}{4} \Big)_{P(1/2)} = \frac{\pi \sqrt 2}{2} (- 1, 1)_{P(1/2)},\\
+              \mbox{\bf{v}}(1) &=& 2\pi (-\sin \pi, \cos \pi)_{P(1)} = 2 \pi (0, -1)_{P(1)},\\
+\mbox{\bf{v}}(\frac{3}{2}) &=& 2\pi \frac{3}{2} \Big( -\sin \frac{\pi 9}{4}, \cos \frac{\pi 9}{4} \Big)_{P(3/2)} = \frac{3 \pi \sqrt 2}{2} (-1, 1)_{P(3/2)} .
+\end{eqnarray*}
+The speed is by definition the length of the velocity vector. If $(b, c)_P$ is any vector, and $a$ any real number, then the length of the scalar product $a(b, c)_P$, is given by
+$$
+|a(b, c)_P| = |a| \sqrt{b^2 + c^2} . 
+$$
+
+Thus the four speeds are 
+\begin{eqnarray*}
+|\mbox{\bf{v}}(0)| &=& 0 \;\mathrm{feet~per~second,} \\
+|\mbox{\bf{v}}(\frac{1}{2})| &=& \frac{\pi \sqrt 2}{2} \sqrt{(-1)^2 + 1^2} = \pi \;\mathrm{feet~per~second,}\\
+% SEC. 5] VECTOR VELOCITY AND ACCELERATION  581
+|\mbox{\bf{v}}(1)| &=& 2 \pi \sqrt{0^2 + (-1)^2} = 2\pi \;\mathrm{feet~per~ second,}\\
+|\mbox{\bf{v}}(\frac{3}{2})| &=& \frac{3\pi \sqrt 2}{2} \sqrt{(-1 )^2 + 1^2} = 3 \pi \;\mathrm{feet~per~second.}
+\end{eqnarray*}
+Since each of the velocity vectors is tangent to the curve at its initial point and since we know their lengths, they can be drawn without difficulty (see Figure 17).
+
+From the preceding computations it appears that the speed of the particle increases as time goes on. By computing the speed $|\mbox{\bf{v}}(t)|$ for an arbitrary $t$ in the interval [0, 2], we can see that this inference is correct. Using equation (4) we get
+$$
+|\mbox{\bf{v}}(t)| = 2\pi t \sqrt{(-\sin \pi t^2)^2 + (\cos \pi t^2)^2} = 2 \pi t,
+$$
+which shows that the speed increases linearly with time over the interval. At $t = 0$, the particle is at rest, and 2 seconds later, at $t = 2$, its speed has increased to $4 \pi$ feet per second.
+\end{example}
+
+The motion of a particle along a straight line was studied in Section 3 of Chapter 2 and again in Section 8 of Chapter 4. When the motion is restricted to a straight line, which for convenience we may take to be the $x$-axis, then the velocity vector has only one nonzero coordinate, $x'(t)$. In this case velocity may be identified with $x'(t)$, and it is not necessary to consider it as a vector. In our earlier treatments $x'(t)$ was defined to be the velocity and it was denoted by $v(t)$. The distance on the line which the particle moves during the time interval $[a, b]$ was defined by the formula
+
+
+\begin{equation}
+distance\Big|_a^b = \int_a^b |v(t)| \;dt   
+\label{eq10.5.5}
+\end{equation}
+(see page 232). We shall show that this definition is consistent with the more sophisticated notions of vector velocity and arc length of parametrized curves, which we are studying in this chapter. Consider a particle in the plane whose position is given by a parametrization $P: [a, b] \rightarrow R^2$. By the \textbf{distance} which the particle moves along the curve parametrized by $P$ during the time interval from $t = a$ to $t = b$ we shall mean the arc length $L_a^b$. Let
+$$
+P(t) = (x(t), y(t)), \;\;\;\mathrm{for~every~} t \mathrm{~such~that~} a \leq t \leq b.
+$$
+We shall assume that the derivatives $x'$ and $y'$ exist and are continuous on $[a, b]$. From Theorem (2.2), page 553, it follows that
+
+$$
+L_a^b = \int_a^b \sqrt{x'(t)^2 + y'(t)^2} \;dt.  
+$$
+% 582 GEOMETRY IN THE PLANE [CHAP. 1O
+The speed of the particle at any $t$ in $[a, b]$ is given by
+$$
+|\mbox{\bf{v}}(t)| = \sqrt{x'(t)^2 + y'(t)^2} .
+$$
+Hence \textit{the distance traveled by the particle along the parametrized curve from $t = a$ to $t = b$ is equal to}
+
+\begin{theorem} 
+$$
+L_a^b = \int_a^b |\mbox{\bf{v}}(t)| \;dt .
+$$
+
+Formula (5.1) is the generalization of the distance formula (5) from rectilinear to curvilinear motion.
+\end{theorem}
+
+%EXAMPLE 2. 
+\begin{example} A steel ball is rolling on a plane during an interval from $t = 0$ to $t = 4$ seconds. It has an $x$-coordinate of velocity which is constant and equal to 2 feet per second. Its $y$-coordinate of velocity is $\frac{1}{2}t$ feet per second, for every $t$ in the interval. (a) Write a definite integral equal to the distance (in feet) which the ball rolls during the interval from $t = 0$ to $t = 4$ seconds. (b) Identify and draw the curve on which the ball rolls.
+
+The coordinates of the velocity vector $\mbox{\bf{v}}(t)$ are $x'(t)$ and $y'(t)$. Hence 
+
+\begin{equation}
+\left \{ \begin{array}{l}
+x'(t) = 2, \\
+y'(t) = \frac{1}{2} t,  \;\;\; 0 \leq t \leq 4.   
+\end{array}
+\right .
+\end{equation}
+It follows at once from (5.1) that the distance which the ball rolls is equal to
+\begin{eqnarray*}
+L_0^4 &=& \int_0^4 \sqrt{4 + \frac{1}{4} t^2} \;dt \\
+           &=& \frac{1}{2} \int_0^4 \sqrt{16 + t^2} \;dt.
+\end{eqnarray*}
+This answers part (a). Using a table of integrals or integration by trigonometric substitution, one can obtain
+\begin{eqnarray*}
+\int_0^4 \sqrt{16 + t^2} \;dt &=& 8 \sqrt 2 + 8 \ln (1 + \sqrt 2) \\
+                                         &=& 18.3 \;\mathrm{(approximately).}
+\end{eqnarray*}
+
+Hence the distance the ball rolls is half this quantity, approximately 9.2 feet.
+\end{example}
+%SEC. 5] VECTOR VELOCITY AND ACCELERATION  583
+
+A parametrization which defines the position of the ball may be found by integrating the functions $x'$ and $y'$. From equations (6), we get
+$$
+\left \{ \begin{array}{l}
+x(t) = 2t + c_1,\\
+y(t) = \frac{t^2}{4} + c_2, \;\;\; 0 \leq t \leq 4.
+\end{array}
+\right .
+$$
+
+\noindent Nothing in the statement of the problem specifies the position of the ball at $t = 0$, so, for simplicity, we shall choose it to be the origin. This choice is equivalent to setting $c_1 = c_2 = 0$. It follows that the parametrized curve in which the ball rolls is the set of all points $(x, y)$ such that
+$$
+\left \{ \begin{array}{l}
+x= 2t, \\
+y= \frac{t^2}{4}, \;\;\; 0 \leq t \leq 4.
+\end{array}
+\right .
+$$
+From the first equation, we get $t = \frac{x}{2}$. Hence the two equations together with the inequality are equivalent to
+$$
+y = \frac{x^2}{16},  \;\;\; 0 \leq x \leq 8.
+$$
+The graph of this equation is the parabola shown in Figure 18, and the curve over which the ball rolls is that portion of the parabola indicated by the heavy line.
+
+%Figure 18
+\putfig{4.5truein}{scanfig10_18}{}{fig 10.18}
+
+We next consider what is meant by the acceleration of a moving particle. The intuitive idea is that acceleration is the rate of change of the velocity vector. To be more precise: Let the position of the particle during an interval of time $I$ be given by a differentiable parametrization $P: I \rightarrow R$, and let $t_0$ be in $I$. If $t$ is a number in $I$ distinct from $t_0$, then the velocity vectors $\mbox{\bf{v}}(t_0)$ and $\mbox{\bf{v}}(t)$ are tangent vectors with initial points $P(t_0)$ and $P(t)$, respectively, as
+%584 GEOMETRY IN THE PLANE [CHAP. ]
+illustrated in Figure 19. In defining the acceleration at $t_0$, we should like to form the scalar product of $\frac{1}{t - t_0}$ and the difference $\mbox{\bf{v}}(t) - \mbox{\bf{v}}(t_0)$, and to take the limit of this product as $t$ approaches $t_0$. The difficulty is that, since the points $P(t)$ and $P(t_0)$ are usually distinct, the difference $\mbox{\bf{v}}(t) - \mbox{\bf{v}}(t_0)$ is generally not defined. (Recall that two vectors can be added or subtracted if and only if they have the same initial point.) It is for this reason that, before defining acceleration, we introduce the notion of parallel translation of vectors in $R^2$.
+
+
+%Figure 19
+\putfig{1.75truein}{scanfig10_19}{}{fig 10.19}
+
+Let $P_0$ be an arbitrary point in $R^2$. We shall define a function $T_{P_0}$ whose domain is the set $\mathcal{V}$ of all vectors in $R^2$ and whose range is the vector space $\mathcal{V}_{P_0}$ of all vectors with initial point $P_0$. The definition is as follows: For every vector $\mbox{\bf{u}}$ in $\mathcal{V}$, the value $T_{P_0}(\mbox{\bf{u}})$ is the vector with the same coordinates as $\mbox{\bf{u}}$, but with initial point $P_0$. Thus
+$$
+if\; \mbox{\bf{u}} = (u_1, u_2)_Q, \;\;\;\mbox{then}\; T_{P_0}(\mbox{\bf{u}}) = (u_1, u_2)_{P_0} .
+$$
+Geometrically, the vector $T_{P_0}(\mbox{\bf{u}})$ is obtained from $\mbox{\bf{u}}$ by moving the arrow representing the vector $\mbox{\bf{u}}$ parallel to itself until its initial point coincides with $P_0$. The process is illustrated in Figure 20, and we call the function $T_{P_0}$ the operation of \textbf{parallel translation} of vectors to the point $P_0$.
+
+%Figure 20
+\putfig{2.0truein}{scanfig10_20}{}{fig 10.20}
+
+%SEC. 5] VECTOR VELOCITY AND ACCELERATION  585
+
+We can now define the acceleration of a moving particle. As before, let the position be defined by the differentiable parametrization $P: I \rightarrow R^2$. We consider $t_0$ in $I$, and set $P(t_0) = P_0$. Then the \textbf{acceleration} of the particle at $t_0$ is the vector $\mbox{\bf{a}}(t_0)$ defined by
+
+
+\begin{equation}
+\mbox{\bf{a}}(t_0) = \lim_{t \rightarrow t_0} \frac{1}{t - t_0} [T_{P_0}(\mbox{\bf{v}}(t) ) - \mbox{\bf{v}}(t_0)] .
+\label{eq10.5.7}
+\end{equation}
+Thus, acceleration, like velocity, is a vector.
+\medskip
+
+We can derive a simple formula for acceleration in terms of the coordinate functions of $P$. Let $P(t) = (x(t), y(t))$, as usual. Then 
+\begin{eqnarray*}
+\mbox{\bf{v}}(t_0) &=& (x'(t_0), y'(t_0))_{P(t_0)}, \\
+    \mbox{\bf{v}}(t) &=& (x'(t), y'(t))_{P(t)}, 
+\end{eqnarray*}
+and, if $P_0 = P(t_0)$, then
+
+$$
+T_{P_0} (\mbox{\bf{v}}(t)) = (x'(t), y (t))_{P(t_0)} .
+$$
+lt follows that
+$$
+T_{P_0} (\mbox{\bf{v}}(t)) - \mbox{\bf{v}}(t_0) = (x'(t) - x'(t_0), y'(t) - y'(t_0))_{P(t_0)},
+$$
+and thence that
+$$
+\frac{1}{t - t_0} [T_{P_0} (\mbox{\bf{v}}(t)) - \mbox{\bf{v}}(t_0)] = \Big( \frac{x'(t) - x'(t_0)}{t - t_0}, \frac{y'(t) - y'(t_0)}{t - t_0} \Big)_{P_(t_0)}.
+$$
+Hence
+\begin{eqnarray*}
+\mbox{\bf{a}}(t_0) &=& \lim_{t \rightarrow t_0} \frac{1}{t - t_0} [T_{P_0}(\mbox{\bf{v}}(t)) - \mbox{\bf{v}}(t_0)]  \\
+          &=& \Big( \lim_{t \rightarrow t_0} \frac{x'(t) - x'(t_0)}{t - t_0}, 
+                   \lim_{t \rightarrow t_0} \frac{y'(t) - y'(t_0)}{t - t_0} \Big)_{P(t_0)}.
+\end{eqnarray*}
+If the two limits which are the coordinates of the preceding vector exist, they are by definition equal to the second derivatives $x''(t_0)$ and $y''(t_0)$, respectively. It follows that
+
+\begin{theorem} 
+If $P(t) = (x(t), y(t))$, then the acceleration vector $\mbox{\bf{a}}(t_0)$ exists if and only if the second derivatives $X,'(t_0)$ and $y',(t_0)$ exist. lf they do exist, then
+$$
+\mbox{\bf{a}}(t_0) = (x''(t_0), y''(t_0))_{P(t_0)}. 
+$$
+\end{theorem}
+
+%EXAMPLE 3. 
+\begin{example}
+A particle is moving with constant speed $k$ in a fixed circle of radius $a$. Show that, at any time $t$ during the interval of motion, the acceleration
+%586 GEOMETRY IN THE PLANE [CHAP. 1O 
+vector $\mbox{\bf{a}}(t)$ has constant length equal to $\frac{k^2}{a}$ and always points directly toward the center of the circle (see Figure 21).
+  
+%Figure 21
+\putfig{4truein}{scanfig10_21}{}{fig 10.21}
+
+We shall take the center of the circle to be the origin in the $xy$-plane. The position of the particle can then be defined by a parametrization $P(t) = (x(t), y(t)) = (x, y)$ for which
+
+\begin{equation}
+\left \{ \begin{array}{l}
+x = a \cos u, \\
+y = a \sin u,
+\end{array}
+\right .
+\label{eq10.5.8}
+\end{equation}
+and $u$ is some function of $t$ having as domain the interval of time of the motion. To be specific, we shall assume that 0 is in the domain, and that, when $t = 0$, the particle is at the point $(a, 0)$ on the circle. Hence $u = 0$ when $t = 0$. We shall make the analytic assumption that the second derivative $u''(t)$ exists, for every $t$ in the interval, and it follows that $x''(t)$ and $y''(t)$ also exist. Differentiating with respect to $t$ in equations (8), we obtain
+
+\begin{equation}
+\left \{ \begin{array}{l}
+x' = -au' \sin u, \\
+y' = au' \cos u.
+\end{array}
+\right .
+\label{eq10.5.9}
+\end{equation}
+Thus the speed of the particle is 
+$$
+|\mbox{\bf{v}}(t)| = \sqrt{{x'}^2 + {y'}^2} = \sqrt{a^2{u'}^2(\sin^2 u + \cos^2 u)} = a|u'|, 
+$$
+which is assumed to be the constant $k$. Hence $|u'| = \frac{k}{a}$. Since $u'$ is continuous and has constant positive absolute value, it is either always positive or always negative (depending on whether the particle is moving counter
+%SEC. 5] VECTOR VELOCITY AND ACCELERATION  587
+clockwise or clockwise). We shall assume the former and conclude that $u' = \frac{k}{a}$. Integrating, we obtain
+$$
+u = \frac{k}{a} t + c.  
+$$
+Since $u = 0$, when $t = 0$, it follows that 
+
+$$
+u = \frac{k}{a} t .  
+$$
+Substituting this value back into equations (9), we have 
+\begin{eqnarray*}
+x' &=& -a \frac{k}{a} \sin \frac{k}{a} t = -k \sin \frac{k}{a} t,\\
+y' &=& a \frac{k}{a} \cos \frac{k}{a} t = k \cos \frac{k}{a} t.  
+\end{eqnarray*}
+Hence
+\begin{eqnarray*}
+x'' &=& - \frac{k^2}{a} \cos \frac{k}{a} t = - \frac{k^2}{a} \cos u,  \\
+y'' &=& - \frac{k^2}{a} \sin \frac{k}{a} t = - \frac{k^2}{a} \sin u,
+\end{eqnarray*}
+or, equivalently, 
+
+\begin{eqnarray*}
+x'' &=& - \frac{k^2}{a^2} a \cos u = - \frac{k^2}{a^2} x,\\
+y'' &=& - \frac{k^2}{a^2} a \sin u = - \frac{k^2}{a^2} y.
+\end{eqnarray*}
+We know from (5.2) that the acceleration vector is given by 
+
+$$
+\mbox{\bf{a}}(t) = (x'', y'')_{P(t)} .
+$$ 
+Hence
+\begin{eqnarray*}
+\mbox{\bf{a}}(t) &=& \Big( -\frac{k^2}{a^2} x, -\frac{k^2}{a^2} y \Big)_{P(t)} \\
+                         &=& \frac{k^2}{a^2} (-x, -y)_{P(t)}. 
+\end{eqnarray*}
+Since $P(t) = (x,y)$, the terminal point of the vector $(-x,-y)_{P(t)}$ is the point (0, 0). Thus the acceleration vector $\mbox{\bf{a}}(t)$ is a positive scalar multiple of the vector with initial point $P(t)$ and terminal point the origin. This proves that $\mbox{\bf{a}}(t)$ is always pointing directly toward the center of the circle. The length
+% 588 GEOMETRY IN THE PLANE [CHAP. 1O
+of the acceleration vector is easily computed from the preceding equation. We get 
+
+\begin{eqnarray*}
+|\mbox{\bf{a}}(t)| &=& \frac{k^2}{a^2} \sqrt{(-x)^2 + (-y^2)} 
+= \frac{k^2}{a^2} \sqrt{x^2 + y^2} \\
+&=& \frac{k^2}{a^2} \cdot a = \frac{k^2}{a} .
+\end{eqnarray*}
+This completes the problem. The acceleration in this example is called 
+centripetal acceleration, and the force acting on the particle necessary to provide this acceleration is the centripetal force. In the case of a planet moving in orbit, the force is the force of gravity.
+\end{example}
+ 

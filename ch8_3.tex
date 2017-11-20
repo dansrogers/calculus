@@ -1,0 +1,296 @@
+\section{Numerical Approximations (Continued).}\label{sec 8.3} 
+Two additional methods of integration by numerical approximations, which we shall describe in this section, are the Midpoint Rule and Simpson's Rule.
+
+In the Midpoint Rule the approximation to the integral $\int_a^b f$ is a Riemann sum $\sum_{i=1}^{n} f(x_i^*)(x_i - x_{i-1})$ in which each $x_i^*$ is taken to be the midpoint of the subinterval $[x_{i-1}, x_i]$. In more detail: Let $f$ be a function which is integrable over $[a, b]$. For every positive integer $n$, let $h = \frac{b - a}{n}$, and let $\sigma_n = \{ x_0, . . ., x_n \}$ be the partition defined by
+$$
+x_i = a + ih, \;\;\; i = 0, ... , n. 
+$$
+\noindent As a result, it follows that 
+$$
+x_i - x_{i-1} = h, \;\;\; i = 1, ... , n.
+$$
+\noindent If we take $x_i^*$ to be the midpoint of the subinterval $[x_{i-1}, x_i]$, then
+$$
+x_i^* = \frac{x_{i-1} + x_i}{2}, \;\;\;  i = 1, ... , n.
+$$
+\noindent The Riemann sum used as the approximation to the integral in the Midpoint Rule will be denoted by $M_n$. It is given by
+$$
+M_n = \sum_{i=1}^n f(x_i^*)(x_i - x_{i-1}) = h \sum_{i=1}^n f \Bigl(\frac{x_{i-1}+ x_i}{2} \Bigr) .
+$$
+\noindent In studying the Trapezoid Rule, we found it convenient to use the abbreviation $y_i = f(x_i)$, for $i = 0, ... , n.$ By analogy, we shall here let
+$$
+y_{i-1/2} = f \Bigl( \frac{x_{i-1} + x_i}{2} \Bigr), \;\;\;  i = 1, ... , n .
+$$
+\noindent Then  
+$$
+M_n = h \sum_{i=1}^n y_{i-1/2} = h (y_{1/2} + y_{3/2} + \cdots + y_{n-1/2}),  
+$$
+% SEC. 3] NUMERICAL APPROXIMATIONS (CONTINUED)  423
+\noindent and we express the \textbf{Midpoint Rule} for numerical integration by the formula
+
+\begin{theorem} %(3.1)
+$$
+\int_a^b f \approx M_n = h (y_{1/2} + y_{3/2} + \cdots + y_{n-1/2}) . 
+$$
+\end{theorem}
+
+If $f(x) \geq 0$ for every $x$ in $[a, b]$, the Midpoint Rule approximates the integral $\int_a^b f$, which is the area under the curve, by a sum of areas of rectangles, as illustrated in Figure 6.
+
+%Figure 6
+\putfig{3.5truein}{scanfig8_6}{}{fig 8.6}
+
+An alternative to approximating the integral by a Riemann sum is to use straight-line segments which are tangent to the curve $y = f(x)$ at the midpoints of the subintervals. An example is shown in Figure 7, in which  
+%Figure 7
+\putfig{3.5truein}{scanfig8_7}{}{fig 8.7}
+%424 THE DEFINITE INTEGRAL (CONTINUED) [CHAP. 8
+$\int_a^b f$ is approximated by the sum of the areas of the three shaded trapezoids. This method yields the so-called \textbf{Tangent Formula.}  It turns out, however, that the Tangent Formula is the same as the Midpoint Rule. The reason can be seen by looking at Figure 8, in which the area of the shaded trapezoid with one side tangent to the curve is the ith term in the approximating sum used in the Tangent Formula. The area of this trapezoid is equal to $\frac{h}{2} (y' + y'')$, where $y'$ and $y''$ are the lengths of the bases. However, by elementary geometry the trapezoid can be seen to have the same area as the rectangle with base $[x_{i-1}, x_i]$ and altitude $y_{i-1/2}$ The area of the rectangle is $h \cdot y_{i-1/2}$, and so
+
+%Figure 8 
+\putfig{2.75truein}{scanfig8_8}{}{fig 8.8}
+$$
+\frac{h}{2} (y' + y'') = h \cdot y_{i-1/2}.
+$$
+\noindent (Incidentally, note that this equation is true regardless of whether $y'$, $y''$, and $y_{i-1/2}$ are positive, negative, or zero.) Since the product $h \cdot y_{i-1/2}$ is the ith term in the midpoint approximation $M_n$, we conclude that the Tangent Formula and the Midpoint Rule, although differently motivated, are in fact the same.
+
+%EXAMPLE 1. 
+\begin{example}
+Approximate $\int_{-1}^1 (x^2 + x^3) dx$ using the Midpoint Rule. This is the same integral which we evaluated in Section 2 by the Trapezoid Rule. To compare the two methods, we shall again take $n = 8$ and
+$$
+h = \frac{1- (-1)}{8} = \frac{1}{4}.
+$$
+\noindent Since, for an arbitrary interval $[a, b]$, we have
+$$
+x_i = a + ih, \;\;\; i = 0, ... ,n,
+$$
+%SEC. 3] NUMERICAL APPROXIMATIONS (CONTINUED) 425
+\noindent it follows that
+\begin{eqnarray*}  
+x_i^{*} &=& \frac{x_{i-1} + x_i}{2} = \frac{[a + (i - 1)h] + (a + ih)}{2}\\
+           &=& a + (i - \frac{1}{2})h 
+\end{eqnarray*} 
+\noindent In addition, since $y_{i-1/2} = f(x_i^{*})$, we have a pair of useful formulas: 
+$$
+    \begin{array}{rl}
+   x_i^{*} &= a + (i - \frac{1}{2})h  \\
+y_{i-1/2} &= f(a + (i - \frac{1}{2})h)  
+   \end{array}
+                              \} i = 1, ... , n.
+$$
+\noindent In the present example, $a = -1$, $h = \frac{1}{4}$, and $f(x) = x^2 + x^3$. Hence 
+\begin{eqnarray*}  
+    x_i^{*} &=& -1 + (i - \frac{1}{2})\frac{1}{4} = \frac{2i - 9}{8}, \\
+y_{i- 1/2} &=& \Bigl( \frac{2i - 9}{8} \Bigr)^2 + \Bigl( \frac{2i - 9}{8} \Bigr)^3 = \frac{8(2i - 9)^2 + (2i - 9)^3}{8^3} \\
+               &=& \frac{(2i - 9)^2(2i - 1)}{8^3}  .
+\end{eqnarray*} 
+\noindent Table 2 contains the numbers for the computation of $M_8$.
+
+%TABLE 2
+\begin{table}\label{table 8.2}
+\centering
+\begin{tabular}{c|l} \hline  
+$i$& $y_{i - 1/2} = \frac{(2i - 9)^2(2i - 1)}{8^3}$   \vspace {1ex}\\ \hline
+1   & $y_{1/2} = \frac{49}{8^3}$   \\
+2   & $y_{3/2} = \frac{25 \cdot 3}{8^3} = \frac{75}{8^3}$   \\
+3   & $y_{5/2} = \frac{9 \cdot 5}{8^3} = \frac{45}{8^3}$   \\
+4   & $y_{7/2} = \frac{7}{8^3}$  \\
+5   & $y_{9/2} = \frac{9}{8^3}$ \\
+6   & $y_{11/2} = \frac{9 \cdot 11}{8^3} = \frac{99}{8^3}$  \\
+7   & $y_{13/2} = \frac{25 \cdot 13}{8^3} = \frac{325}{8^3}$ \\
+8   & $y_{15/2} = \frac{49 \cdot 15}{8^3} = \frac{735}{8^3}$  \\  \hline
+\end{tabular}
+\caption{}
+\end{table}
+
+% 426 THE DEFINITE IN7-EGRAL (CONTINUED) [CHAP. 8
+
+\noindent Hence we obtain  
+\begin{eqnarray*} 
+M_8 &=& \frac{1}{4}(y_{1/2} + \cdots  + y_{15/2})\\
+&=& \frac{1}{4 \cdot 8^3} (49 + 75 + 45 + 7 + 9 + 99 + 325 + 735) \\
+&=& \frac{1344}{ 4 \cdot 8^3} = \frac{21}{32}
+\end{eqnarray*} 
+\noindent as an approximation to the integral $\int_{-1}^1 (x^2 + x^3) dx$. The value obtained earlier with the Trapezoid Rule was $T_8 = \frac{11}{16}$. Since the true value is given by
+$$
+\int_{-1}^1 (x^2 + x^3) dx = \frac{2}{3},
+$$
+\noindent it follows that the error using the Midpoint Rule is equal to
+$$
+| \frac{2}{3} - \frac{21}{32} | = \frac{1}{96} .
+$$
+\noindent This is one half the error obtained using the Trapezoid Rule with the same value of $h$.
+\end{example}
+
+In any application of the Midpoint Rule, the error $| \int_a^b f - M_n |$ can be made arbitrarily small by taking $n$ sufficiently large. That is, we assert that
+
+\begin{theorem} %(3.2) 
+$$
+\lim_{n \rightarrow \infty} M_n = \int_a^b f .
+$$
+\end{theorem}
+
+This theorem is easier to prove than the corresponding one for the Trapezoid Rule because every approximation $M_n$ is, as it stands, a Riemann sum of $f$ relative to the partition $\sigma_n$ of $[a, b]$. Since $|| \sigma_n || \rightarrow 0$ as $n \rightarrow \infty$, it is a direct corollary of the fundamental theorem on the limit of Riemann sums [(2.1), page 414] that $\lim_{n \rightarrow \infty} M_n = \int_a^b f$.
+
+A means of estimating the error $| \int_a^b f - M_n |$ in a particular application of the Midpoint Rule is provided by the following theorem:
+
+\begin{theorem} %(3.3) 
+If the second derivative $f''$ is continuous at every point of $[a, b]$, then there exists a number $c$ such that $a < c < b$ and
+$$
+\int_a^b f = M_n + \frac{b -  a}{24} f''(c) h^2.
+$$
+\end{theorem}
+%SEC. 3] NUMERICAL APPROXIMATIONS (CONTINUED)  427
+
+As with the analogous theorem for the Trapezoid Rule [(2.4), page 419], this theorem can be proved by first reducing it to the case $n = 1$. A discussion of the error term can be found in $R$.  Courant and F. John, \textit{Introduction to Calculus and Analysis}, Volume I, Interscience Publishers (Wiley), 1965, pages 486 and 487.
+
+Theorem (3.3) can be used to obtain an upper bound on the error $|\int_a^b f - M_n|$ provided the second derivative $f''$ is bounded on the interval $[a, b]$. That is, if there exists a real number $K$ such that
+$$
+| f''(x) | \leq K, \;\;\; \mbox{for every $x$ in $[a, b]$,} 
+$$
+\noindent then, in particular $|f''(c)| \leq K$, and so
+\begin{eqnarray*} 
+\Big| \int_a^b  f - M_n \Big| &=& \frac{(b - a)h^2}{24} | f''(c) | \\ 
+                                           &\leq& \frac{(b - a)K}{24} h^2 .
+\end{eqnarray*}
+For the one integral we computed by both methods, the Midpoint Rule gave a better approximation than the Trapezoid Rule by a factor of 2. Comparison of Theorem (3.3) with (2.4) shows that in general this ratio can be expected.
+
+Geometrically, the different methods of numerical integration described thus far in this and the preceding section are all based on approximating the area under a curve by a sum of areas of rectangles or trapezoids. Analytically, in each method the approximation to $\int_a^b f$ has been obtained by replacing $f$ over every subinterval by a linear function. In Simpson's Rule, however, we shall replace $f$ over each subinterval by a quadratic polynomial $Ax^2 + Bx + C$. The corresponding area problem is the simple one of finding the area under a parabola (or a straight line, if $A = 0$). For most integrals, Simpson's Rule gives much greater accuracy for the same value of $h$.
+
+Let $f$ be a function which is integrable over the interval $[a, b]$. The procedure differs from the others in that we consider only partitions of $[a, b]$ into an even number of subintervals. Thus for an arbitrary \textit{even} integer $n > 0$, we set $h = \frac{b - a}{n}$, and let
+\begin{eqnarray*}
+x_i &=& a + ih,\\
+y_i &=& f (x_i), \;\;\; \mbox{for}\; i = 0, . . ., n.
+\end{eqnarray*}
+%428 THE; DEFINITE INTEGRAL (CON7~INUED) [CHAP. 8
+\noindent Since $n$ is even, there is an integral number of ``double" intervals $[x_{2i-2}, x_{2i}], i = 1, ... , \frac{n}{2}$ as illustrated in Figure 9, and
+
+%Figure 9
+\putfig{4.0truein}{scanfig8_9}{}{fig 8.9}
+$$ 
+\int_a^b f(x) dx= \sum_{i=1}^{n/2} \int_{x_{2i-2}}^{x_{2i}} f(x) dx. 
+$$
+\noindent There exists one and only one polynomial $q_i(x) = A_i x^2 + B_i x + C_i$ of degree less than three whose graph passes through the three points $(x_{2i-2}, y_{2i-2}), (x_{2i-1}, y_{2i-1})$, and $(x_{2i}, y_{2i})$ (see Figure 10). Over each double interval $[x_{2i-2}, x_{2i}]$ we shall approximate the integral of $f$ by the integral of $q_i$. Let us assume for the moment, and later prove, the fact that
+
+
+\begin{equation}
+\int_{x_{2i-2}}^{x_{2i}} q_i(x) dx = \frac{h}{3} (y_{2i-2} + 4y_{2i-1} + y_{2i}). 
+\label{eq8.3.1}
+\end{equation}
+
+%Figure 10
+\putfig{2.75truein}{scanfig8_10}{}{fig 8.10}
+%SEC. 3] NUMERICAL APPROXIMATIONS (CONTINUED)  429
+\noindent The sum of these integrals, which we shall denote $S_n$, is the approximation to $\int_a^b f$ prescribed by Simpson's Rule. Hence
+$$
+S_n = \frac{h}{3} \sum_{i=1}^{n/2} (y_{2i-2} + 4y_{2i-1} + y_{2i}) .
+$$
+\noindent If this sum is expanded, note the pattern of the coefficient of the $y_i$'s: If $i$ is odd, the coefficient of $y_i$ is 4. If $i$ is even, the coefficient is 2, with the exception of $y_0$ and $y_n$, each of which has coefficient 1. Thus \textbf{Simpson's Rule} is expressed in the formula
+
+
+\begin{theorem} %(3.4) 
+\begin{eqnarray*}
+\int_a^b f \approx S_n &=& \frac{h}{3} (y_0 + 4y_1 + 2y_2 + 4y_3 + 2y_4\\
+&& + \cdots + 2y_{n-2} + 4y_{n-1} + y_n) .
+\end{eqnarray*}
+\end{theorem}
+
+We now prove equation (1). The algebra is significantly simpler if we write $q_{i}(x)$ in terms of $x - x_{2i-1}$ instead of $x$ (see Figure 10). Hence we let
+
+\begin{equation}
+q_i(x) = \alpha_i(x - x_{2i-1})^2 + \beta_i(x- x_{2i-1}) + \gamma_i.  
+\label{eq8.3.2}
+\end{equation}
+\noindent The integral $\int_{x_{2i-2}}^{x_{2i}} q_i (x) dx$ may be computed by substituting $u = x - x_{2i-1}$ and using the Change of Variable Theorem for Definite Integrals (see page 215). Since $x_{2i-2} - x_{2i-1} = - h$ and $x_{2i} - x_{2i-1} = h$, the result is
+
+\begin{equation}
+\begin{array}{ll}
+\int_{x_{2i-2}}^{x_{2i}} q_i (x) dx 
+&= \int_{-h}^h (\alpha_i u^2 + \beta_i u + \gamma_i) du \vspace{.1in}\\
+&= \Bigl( \frac{\alpha_i u^3}{3} + \frac{\beta_i u^2}{2} + \gamma_i u \Bigr) \big|_{-h}^h  \vspace{.1in}\\
+&= \frac{h}{3} (2\alpha_i h^2 + 6\gamma_i). 
+\end{array}
+\label{eq8.3.3}
+\end{equation}
+
+
+\noindent Setting first $x = x_{2i-1}$ in equation (2), we obtain
+$$
+y_{2i-1} = q_i(x_{2i-1}) = \alpha_i \cdot 0^2 + \beta_i \cdot 0 + \gamma_i = \gamma_i.
+$$
+\noindent Next we let $x = x_{2i-2}$ and $x = x_{2i}$ to get
+$$
+y_{2i-2} = q_i(x_{2i-2}) = \alpha_i h^2 - \beta_{i}h + \gamma_i, 
+$$
+\noindent and
+$$
+y_{2i} = q_i(x_{2i}) = \alpha_i h^2 + \beta_i h + \gamma_i.
+$$
+\noindent Adding, we obtain
+$$
+y_{2i-2} + y_{2i} = 2\alpha_i h^2 + 2\gamma_i.
+$$
+%430 THE DEFINITE INTEGRAL (CONTlNUEI:)) [CHAP. 8
+\noindent Since $\gamma_i = y_{2i-1}$, it follows that
+$$
+2\alpha_i h^2 + 6\gamma_i = y_{2i-2} + 4y_{2i-1} + y_{2i}.
+$$
+\noindent Substituting this result in (3) yields the desired result (1), and the derivation of Simpson's Rule is complete.
+
+%EXAMPLE 2. 
+\begin{example}
+Using $n = 4$, find an approximate value of $\int_0^1 \frac{1}{1+ x^2} dx$ by Simpson's Rule. We have $h = \frac{1 - 0}{4} = \frac{1}{4}$, 
+\begin{eqnarray*}
+x_i &=& \frac{i}{4}, \;\;\; i = 0,1,..., 4,\\
+y_i &=& \frac{1}{1 + x_i^2} = \frac{1}{1 + \frac{i^2}{16}} = \frac{16}{16 + i^2}, \;\;\; i = 0, 1,..., 4.
+\end{eqnarray*}
+
+\noindent Table 3 contains the numbers necessary for the computation.
+
+%TABEE 3
+\begin{table}\label{table 8.3}
+\centering
+\begin{tabular}{c|c|c|c|c|c} \hline
+$i$& 0 & 1 & 2 & 3 & 4\vspace {1ex}\\ \hline
+$y_i = \frac{16}{16 + i^2}$ & 1 &$\frac{16}{17}$&$\frac{16}{20}$&$\frac{16}{25}$&$\frac{16}{32}$ \vspace {1ex}\\ \hline
+\end{tabular}
+\caption{}
+\end{table}
+
+\noindent Hence 
+\begin{eqnarray*}
+S_4 &=& \frac{h}{3} - (y_0 + 4y_1 + 2y_2 + 4y_3 + y_4)\\
+&=& \frac{1}{12} (1 + \frac{64}{17} + \frac{32}{20} + \frac{64}{25} + \frac{16}{32}) \\
+&=& 0.785392....
+\end{eqnarray*}
+\noindent We know that 
+$$
+\int_0^1\frac{1}{1 + x^2} dx = \arctan x \big|_0^1 = \frac{\pi}{4} = 0.785398....
+$$
+\noindent Hence the error $|\int_a^b f - S_4|$ is approximately 0.000006.
+\end{example}
+
+Just as with the other two methods of integration by numerical approximation, the error $| \int_a^b f - S_n |$ can be made arbitrarily small by taking $n$ aufficiently large. That is, we have the following theorem, which we state without proof.
+
+\begin{theorem} %(3.5)
+$$
+\lim_{n \rightarrow \infty} S_n = \int_a^b f .
+$$
+\end{theorem}
+%SEC. 3] NUMERICAL APPROXIMATIONS (CONTINUED)  431
+
+In addition, the next theorem can be used to estimate the error in a particular application of Simpson's Rule.
+
+\begin{theorem} %(3.6) 
+If the fourth derivative $f^{(4)}$ is continuous at every point of $[a, b]$, then there exists a number $c$ such that $a < c < b$ and
+$$
+\int_a^b f = S_n - \frac{b - a}{180} f^{(4)} (c)h^4.
+$$
+\end{theorem}
+
+For an outline of a proof, see J. M. H. Olmsted, Advanced Calculus, Appleton-Century-Crofts, 1961, page 119.
+
+The fourth derivative of every cubic polynomial is identically zero, for if
+$$
+f(x) = a_{3}x^3 + a_{2}x^2 + a_{1}x + a_0,
+$$
+\noindent then $f^{(4)} (x) = 0$. It is therefore a rather surprising corollary of Theorem(3.6) that Simpson's Rule will always give the exact value of the integral when applied to any polynomial of degree less than 4.
+

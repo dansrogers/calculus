@@ -1,0 +1,292 @@
+\section{Other Trigonometric Functions.}
+The other trigonometric functions are the tangent, cotangent, secant, and cosecant. They are abbreviated $\tan$, $\cot$ (or ctn), $\sec$, and $\csc$, respectively, and the definitions are
+
+$$
+\begin{array}{ll}
+\tan x = \frac{\sin x}{\cos x}     &    \sec x = \frac{1}{\cos x}\\
+\\
+\cot x = \frac{\cos x}{\sin x}     &    \csc x = \frac{1}{\sin x}.
+\end{array}
+$$
+\smallskip
+
+Unlike $\sin$ and $\cos$, these functions are not defined for all real values of $x$ since the
+denominators in the defining expressions are zero for some values of $x$. The set of all solutions
+to the equation $\cos x = 0$ is the set consisting of all odd multiples of $\frac{\pi}{2}$ . 
+Hence $\tan x$ and $\sec x$ are defined if and only if $x$ is not an odd multiple of $\frac{\pi}{2}$. Similarly, $\cot x$ and $\csc x$ are defined for all real numbers $x$ except integer multiples of $\pi$.
+
+Although sine and cosine were first defined with a domain of real numbers, we have shown that
+they also can be considered as functions with a domain of angles. Since the other four functions
+are defined in terms of sine and cosine, they may also be regarded as functions with a domain of
+angles. Thus it makes sense to speak of the tangent of the angle $\alpha$, written $\tan \alpha$, 
+and of the cosecant of an angle of $30^{\circ}$, written $\csc 30^{\circ}$. The former is defined if 
+and only if the radian measure of $\alpha$ is not an odd multiple of $\frac{\pi}{2}$ or, alternatively, 
+if the degree measure of $\alpha$ is not an odd multiple of 90. The latter is the reciprocal of 
+$\sin 30^{\circ}$ and is equal to $\frac{1}{\frac{1}{2}} = 2$.
+
+Two useful trigonometric identities, which are simply alternative statements of the basic equation $\cos^{2}x + \sin^{2}x = 1$, are derived as follows:
+Dividing first by $\cos^{2}x$, we have 
+
+$$
+\begin{array}{ccccc}
+\frac{\cos^{2}x}{\cos^{2} x} &+& \frac{ \sin^{2} x }{\cos ^{2} x} &=& \frac{1}{\cos^{2}{x}}\\ 
+\\
+          ||                               &  &                     ||                         & &                    ||\\
+\\
+          1                               &  &               \tan^{2} x                  & &             \sec^{2}x, 
+\end{array}
+$$
+\noindent hence $1 + \tan^{2}x = \sec^{2}x$. On the other hand, if we divide by $\sin^{2}x$, we have
+
+
+$$
+\begin{array}{ccccc}
+\frac{\cos^{2}x}{\sin^{2} x} &+& \frac{ \sin^{2} x }{\sin ^{2} x} &=& \frac{1}{\sin^{2}{x}}\\ 
+\\
+            ||                            &  &              ||                              &  &                ||\\
+\\
+         \cot^{2} x                  &  &              1                              &  &           \csc^{2}x, 
+\end{array}
+$$
+%302 TRIGONOMETRIC FUNCTIONS [CHAP. 6 
+\noindent and so $\cot^{2}x + 1 = \csc^{2}x$. Summarizing, we write
+
+\begin{theorem} %( 3.1 ) 
+\begin{eqnarray*}
+1 +\tan^{2}x &=& \sec^{2}x, \\
+\cot^{2}x + 1 &=& \csc^{2}x.
+\end{eqnarray*}
+\end{theorem}
+
+Another formula which we shall find useful is that for the tangent of the difference of two numbers, $a - b$, in terms of $\tan a$ and $\tan b$. First,
+$$
+\tan (a - b) = \frac{\sin (a - b)}{\cos(a - b)} = \frac{\sin a \cos b - \cos a \sin b}{\cos a \cos b + \sin a \sin b}.
+$$
+
+Dividing both numerator and denominator by $\cos a \cos b$, we get
+
+
+\begin{eqnarray*}
+\tan (a - b) &=& \frac{\frac{\sin a \cos b}{\cos a \cos b} - \frac{\cos a \sin b}{\cos a \cos b}}{\frac{\cos a \cos b}{\cos a \cos b} + \frac{\sin a \sin b}{\cos a \cos b}}\\
+&=& \frac{\frac{\sin a}{\cos a} - \frac{\sin b}{\cos b}}{ 1 + \frac{\sin a}{\cos a} \frac{\sin b}{\cos b}} .
+\end{eqnarray*}
+
+\noindent Hence
+
+\begin{theorem} %( 3.2 ) 
+$$
+\tan(a-b) = \frac{\tan a - \tan b}{1 + \tan a \tan b}.
+$$
+\end{theorem}
+
+The trigonometric identities developed in this section are handy tools, and we shall not hesitate
+to use them. In themselves, however, they are of secondary importance. Any one of them can be
+derived quickly and in a completely routine way from the basic identities in $\sin$ and $\cos$ derived
+in Section 1.
+
+An important application of the tangent function is in connection with the slope of a straight line. We define the angle of inclination $\alpha$ of a straight line $L$ as follows: If $L$ is horizontal, then $\alpha = 0$. If $L$ is not horizontal, then it intersects an arbitrary horizontal line $H$ in a single point $P$. Let $\alpha$ be the angle with vertex $P$, initial side the part of $H$ to the right of $P$, terminal side the part of $L$ above $P$, and whose measure in radians satisfies the inequality $0 < \alpha < \pi$ (see Figure 10). We contend that
+
+\begin{theorem} %(3.3) 
+The slope of a line is equal to the tangent of its angle of inclination.
+\end{theorem}
+
+
+\begin{proof}
+We refer again to Figure 10. The given line is $L$, its inclination is $\alpha$, and its slope is $m$. If $L'$ is drawn through the origin parallel to $L$, then $L'$ also has
+inclination $\alpha$ and slope $m$. Furthermore, the point $(\cos \alpha, \sin \alpha)$ lies on $L'$.
+Since (0,0) also lies on $L'$, the definition of slope yields
+$$
+m = \frac{\sin \alpha - 0}{\cos \alpha - 0} = \frac{\sin \alpha}{\cos \alpha} = \tan \alpha,  
+$$
+which completes the proof. If $L$ is vertical, its slope is not defined. But then the angle of inclination is $\frac{\pi}{2}$ and $\tan\frac{\pi}{2}$ is not defined either.
+\end{proof}
+
+
+\putfig{4truein}{scanfig6_10}{}{fig 6.10}
+\putfig{2.75truein}{scanfig6_11}{}{fig 6.11}
+
+The importance of (3.2) is apparent when we try to determine the angle between two nonvertical intersecting lines. Let $\alpha$ be the angle of inclination of one line and, $\beta$ the angle of inclination of the other. For convenience, we assume that $\alpha > \beta$.  It follows that $0 < \alpha - \beta < \pi$ and, from Figure 11
+%304 rRlCONOMETRlC FUNCTIONS [C~AP 6
+that the difference $\alpha - \beta$ is an angle between the two lines. We denote the slope of the first line by $m_{1}$, and that of the second by $m_{2}$. That is, we have $m_{1} = \tan \alpha$ and $m_{2} = \tan \beta$. By (3.2),
+
+$$
+\tan (\alpha - \beta) = \frac{\tan \alpha - \tan \beta}{1 + \tan \alpha \tan\beta} = \frac{m_{1} - m_{2}}{1 + m_{1}m_{2}}.
+$$
+\noindent If this number is positive, then $\alpha - \beta$ is the acute angle between the lines. If this number is negative, then $\alpha - \beta$ is the obtuse angle between the lines. If this number is unclefined, then $\alpha - \beta = \frac{\pi}{2}$ and the lines are perpendicular. The number $\frac{m_{1} - m_{2}}{1 + m_{1}m_{2}}$ is unclefined if and only if $1 + m_{1}m_{2} = 0$. Since this equation is equivalent to $m_{1} m_{2} = - 1$, it follows that we have proved the statement made on page 44 that two nonvertical lines with slopes $m_{1}$ and $m_{2}$, are perpendicular if and only if $m_{1}m_{2} = - 1$.
+
+The formulas for the derivatives of the remaining four trigonometric functions are found using
+the derivatives of $\sin$ and $\cos$ together with the usual rules of differentiation. They are
+
+ 
+\begin{theorem} %( 3.3 ) 
+\begin{eqnarray*}
+\frac{d}{dx} \tan x &=& \sec^{2}x,\\
+\frac{d}{dx} \cot x &=& - \csc^{2}x,\\
+\frac{d}{dx} \sec x &=& \sec x \tan x, \\
+\frac{d}{dx} \csc x &=&  - \csc x \cot x.
+\end{eqnarray*}
+\end{theorem}
+
+Proving the first of these, we have
+
+\begin{eqnarray*}
+\frac{d}{dx} \tan x &=& \frac{d}{dx} \frac{\sin x}{\cos x} = \frac{\cos x \frac{d}{dx} \sin x - \sin x \frac{d}{dx} \cos x}{\cos^{2} x}   \\
+&=& \frac{\cos^{2} x + \sin^{2} x}{\cos ^{2} x} = \frac{1}{\cos^{2} x} = \sec^{2} x.
+\end{eqnarray*}
+
+\noindent The others are left as exercises. We observe the following mnemonic device. 
+From any one of the six formulas for differentiating trigonometric functions another one is obtained by adding the prefix ``co" to every function which does not have one, removing the prefix ``co" from each function which has it already, and changing the sign. For example, this procedure transforms the equation $\frac{d}{dx} \sec x = \sec x \tan x$ into $\frac{d}{dx} \csc x= -\csc x \cot x$ and transforms
+%SEC. 3] OTHER TRIGONOMETRIC FUNCTIONS 305
+$\frac{d}{dx} \cos x = - \sin x$ into $\frac{d}{dx} \sin x= \cos x$. Hence the number of derivative formulas which need to be memorized can be cut in half.
+
+The integrals corresponding to the above derivatives are
+
+\begin{theorem} %(3.4)
+\begin{eqnarray*}
+&\int&\sec^{2}x dx = \tan x + c,\\
+&\int&\csc^{2}x dx = -\cot x + c,\\
+&\int&\sec x \tan x dx = \sec x + c,\\ 
+&\int&\csc x\cot x dx = - \csc x + c.
+\end{eqnarray*}
+\end{theorem}
+
+%EXAMPLE 1. 
+\begin{example} Find the following integrals:
+
+
+\begin{quote}
+\begin{description}
+\item[(a)] $\int x^{2} \sec^{2} (x^{3} + 1 ) dx,$
+\item[(b)] $\int \tan x dx,$
+\item[(c)] $\int \csc^{2}x \cot^{5}x dx.$
+\end{description}
+\end{quote}
+\noindent In (a) we observe that $\frac{d}{dx}(x^{3} + 1) = 3x^{2}$, or, equivalently,
+$$
+x^2 = \frac{1}{3} \frac{d}{dx} (x^{3} + 1).
+$$
+\noindent Hence
+
+
+\begin{eqnarray*}
+\int x^{2} \sec^{2}(x^{3} + 1) dx &=& \frac{1}{3} \int [\sec^{2} (x^{3} + 1)] \frac{d}{dx} (x^{3} + 1)dx\\
+&=& \frac{1}{3} \tan (x^{3}+ 1) + c.
+\end{eqnarray*}
+
+\noindent For (b), we have $\int \tan x dx = \int \frac{\sin x}{\cos x} dx$. If $u = \cos x$, then 
+$\frac{du}{dx} = -\sin x$, and so
+
+
+\begin{eqnarray*}
+\int \tan x dx &=& \int  \frac{\sin x}{\cos x} dx = - \int \frac{1}{u} \frac{du}{dx} dx\\
+                     &=& - \ln |u| + c = - \ln |\cos x| + c.
+\end{eqnarray*}
+
+%306 TRlGONOhIETRlC FUNCTIONS [CHAP. 6
+\noindent Finally, to do (c), we see that since $\frac{d}{dx} \cot x = - \csc^{2}x$, the integral is, 
+except for a minus sign, of the form $\int u^{5} \frac{du}{dx} dx$. Thus
+
+
+\begin{eqnarray*}
+\int \csc^{2} x \cot^{5}x dx &=& - \int (\cot^{5}x) \frac{d}{dx} \cot x dx\\
+&=& - \frac{1}{6} \cot^{6}x + c.
+\end{eqnarray*}
+
+\noindent Each of these integrals can be checked by differentiation.
+\end{example}
+
+The graph of $\tan x$ is an interesting curve, which we now describe. Note, first of all, that $\tan$ is an odd function, 
+
+$$
+\tan(-x) = \frac{\sin(-x)}{\cos(-x)} = \frac{-\sin x}{\cos x} = - \tan x,
+$$
+\noindent and the graph is therefore symmetric about the origin. Moreover, 
+
+\begin{eqnarray*}
+\tan(x + \pi) &=& \frac{\sin(x + \pi) }{\cos ( x + \pi)} = \frac{\sin x \cos \pi + \cos x \sin \pi}
+{\cos x \cos \pi - \sin x \sin \pi} \\
+&=& \frac{-\sin x}{-\cos x} = \tan x.
+\end{eqnarray*}
+
+\noindent Thus $\tan$ is a periodic function with period $\pi$. The slope of the graph is given by the derivative,
+
+$$
+\frac{d}{dx}\tan x = \sec^{2}x,
+$$
+\noindent which is positive for every value of $x$ for which $\tan x$ is defined. Hence $\tan x$ is a strictly increasing function in the interval $-\frac{\pi}{2} < x < \frac{\pi}{2}$. From the definition, $\tan x = \frac{\sin x}{\cos x}$, we see that $\tan x$ is positive when both functions $\cos x$ are positive, as they are for $0 < x < \frac{\pi}{2}$; is zero when $\sin x = 0$, as it is for $x = 0$; and is negative when the two functions have opposite sign, as they do for $-\frac{\pi}{2} < x < 0$. We also see that $\tan x $ takes on arbitrarily large positive values as $x$ approaches $\frac{\pi}{2}$ from the left, since $\sin x$ approaches 1 and $\cos x$ approaches 0. Thus 
+
+$$
+\lim_{x \rightarrow \frac{\pi}{2}-} \tan x = \infty.
+$$
+% sec. 3] OTHER TRIGONOMETRIC FUNCTIONS ~ 307
+\noindent The second derivative is given by 
+
+$$
+\frac{d^2}{dx^2} \tan x = 2 \sec^{2} x \tan x = \left\{
+\begin{array}{ll}
+<0    & \;\;\;\mbox{if}\; - \frac{\pi}{2} < x < 0,\\
+ = 0  & \;\;\;\mbox{if}\;  x = 0, \\
+ > 0  & \;\;\;\mbox{if}\;   0 < x < \frac{\pi}{2},
+\end{array}
+ \right .
+$$
+\noindent from which it follows that the graph is concave downward for $-\frac{\pi}{2} < x < 0$, 
+concave upward for $0 < x < \frac{\pi}{2}$ and has a point of inflection at the origin.
+Combining all these facts with the few isolated values shown in Table 3, we obtain the graph
+shown in Figure 12.
+
+%Figure 12 
+\putfig{4.5truein}{scanfig6_12}{}{fig 6.12}
+\medskip
+
+%TABLE 3
+\begin{table}
+\centering
+\begin{tabular}{l|l|l}\hline
+$x$ & $y$ = $\tan x$ & $\frac{dy}{dx} = \sec^{2}x$ \\\hline
+0 &       0        & 1\\
+$\frac{\pi}{6}$ & $\frac{1}{\sqrt 3}$ = 0.58 (approx.) & $\frac{4}{3}$ = 1.33 (approx.)\\
+$\frac{\pi}{4}$ & 1 & 2\\
+$\frac{\pi}{3}$ & $\sqrt 3$ = 1.73 (approx.) & 4\\ \hline
+\end{tabular}
+\caption{}
+\label{table 6.3}
+\end{table}
+\medskip
+% 308 TRIGONOMETRIC FUNCTIONS [CHAP. 6
+
+The graph of $\cot x$ can be obtained in the same way in which we worked out the graph of $\tan x$. However, there is a quicker way based on an identity. Since 
+
+\begin{eqnarray*}
+\tan \Bigl(x + \frac{\pi}{2} \Bigr) &=& \frac{\sin \Bigl(x + \frac{\pi}{2} \Bigr)}{ \cos \Bigl(x + \frac{\pi}{2} \Bigr)} 
+= \frac{\sin x \cos \frac{\pi}{2} + \cos x \sin \frac{\pi}{2}}{ \cos x \cos\frac{\pi}{2} 
+- \sin x \sin \frac{\pi}{2}}  \\
+&=& \frac{\cos x}{-\sin x} = - \cot x ,
+\end{eqnarray*}
+
+\noindent we know that
+$$
+\cot x = - \tan \Bigl(x + \frac{\pi}{2}\Bigr) .
+$$
+\noindent The geometric significance of this identity is that the graph of $\cot x$ is obtained by translating (sliding) the graph of $\tan x$ to the left a distance $\frac{\pi}{2}$ and then reflecting about the $x$-axis.
+
+From the definition, $\sec x = \frac{1}{\cos x}$, it is apparent that
+$$
+\sec n \pi = \frac{1}{\cos n\pi} = \{ \begin{array}{rl}
+1  &\;\;\;  \mbox{if $n$ is even}, \\
+-1 & \;\;\; \mbox{if $n$ is odd}.
+\end{array}
+$$
+\noindent If $a$ is any odd multiple of $\frac{\pi}{2}$, then $\cos a = 0$, and so 
+
+$$
+\lim_{x \rightarrow a} |\sec x| = \lim_{x \rightarrow a} \frac{1}{|\cos x|} = \infty.  
+$$
+
+%Figure 13
+\putfig{4.5truein}{scanfig6_13}{}{fig 6.13}
+%SEC. 3] OTHER TRIGONOMETRIC FVNCTIONS  309
+\noindent Moreover, on an interval where one function is increasing, its reciprocal function is decreasing, and vice versa. It follows that the over-all shape of the graph of $\sec x$ can be ascertained quite easily from the graph of its reciprocal function $\cos x$. The graph of $\sec x$ is shown in Figure 13.
+
+The graph of $\csc x$ is related to that of $\sec x$ in the same way as the graph of $\sin x$ is related to the graph of $\cos x$.
+

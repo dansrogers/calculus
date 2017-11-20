@@ -1,0 +1,146 @@
+\begin{exercises}
+
+\ex{8.2.1}
+For each of the following limits, find a function $f(x)$
+such that the limit is equal to $\int_0^1 f(x) \; dx$.
+Evaluate the limit.
+\begin{exenum}
+\x
+$\lim_{n\goesto\infty}
+\frac{1+2^2+3^2+\cdots+n^2}{n^3}$.
+\x
+$\lim_{n\goesto\infty}
+\frac{(1+n^2)+(2^2+n^2)+(3^2+n^2)+\cdots+(n^2+n^2)}
+{n^3}$.
+\x
+$\lim_{n\goesto\infty}
+\frac{\sqrt{1+n}+\sqrt{2+n}+\sqrt{3+n}+\cdots+\sqrt{n+n}}
+{n^{\frac32}}$.
+\x
+$\lim_{n\goesto\infty}
+\frac1{\sqrt n}
+\left(\frac1{\sqrt{1+n}}+\frac1{\sqrt{2+n}}+
+\frac1{\sqrt{3+n}}+\cdots+\frac1{\sqrt{n+n}}
+\right)$.
+\end{exenum}
+
+\ex{8.2.2}
+Prove that
+\begin{exenum}
+\x
+$\ln 2 = \lim_{n\goesto\infty}
+\left( \frac1{n+1}+\frac1{n+2}+\cdots+\frac1{n+n}
+\right)$.
+\x
+$\pi = \lim_{n\goesto\infty} \frac4{n^2}
+\left(\sqrt{n^2-1}+\sqrt{n^2-2}+\cdots+\sqrt{n^2-n^2}
+\right)$.
+\x
+$\int_1^3(x^2+1)\;dx=
+\lim_{n\goesto\infty} \frac4{n^3}
+\sum_{i=1}^n(n^2+2in+2i^2)$.
+\x
+$\frac{\pi}6 = \lim_{n\goesto\infty}
+\left(\frac{1}{\sqrt{4n^2-1}}+\frac{1}{\sqrt{4n^2-2^2}}+
+\cdots+\frac{1}{\sqrt{4n^2-n^2}}\right)$.
+\end{exenum}
+
+\ex{8.2.3}
+Use the Trapezoid Rule with $n=4$
+to compute approximations to the following
+integrals.
+In \exref{8.2.3a}, \exref{8.2.3b}, \exref{8.2.3c},
+and \exref{8.2.3d}, compare the approximation
+obtained with the true value.
+\begin{exenum}
+\x
+\xlab{8.2.3a}
+$\int_0^1 (x^2+1) \; dx$
+\x
+\xlab{8.2.3b}
+$\int_0^2 (x^2+1) \; dx$
+\x
+\xlab{8.2.3c}
+$\int_{-1}^3 (4x-1) \; dx$
+\x
+\xlab{8.2.3d}
+$\int_1^3 \frac1{x^2} dx$
+\x
+$\int_0^1 \frac1{1+x} dx$
+\x
+$\int_0^1 \frac{dx}{1+x^2}$
+\x
+$\int_0^1 e^{-x^2} dx$
+\x
+$\int_0^1 \frac1{x^2+x+1} dx$
+\x
+$\int_0^1 \frac{x^2-1}{x^2+1} dx$
+\x
+$\int_0^{\pi} \frac{\sin x}{x} dx$.
+\end{exenum}
+
+\ex{8.2.4}
+Show geometrically, without appealing to
+Theorem \thref{8.2.4}, that the approximation
+$T_n$ obtained with the Trapezoid Rule
+has the following properties.
+\begin{exenum}
+\x
+If $f^{\prime\prime}(x) \geq 0$
+for every $x$ is $[a,b]$, then
+$T_n \geq \int_a^b f$.
+\x
+If $f^{\prime\prime}(x) \leq 0$
+for every $x$ in $[a,b]$, then
+$T_n \leq \int_a^b f$.
+\end{exenum}
+
+\ex{8.2.5}
+For each of the following integrals,
+use Theorem \thref{8.2.4} as the basis
+for finding the smallest integer $n$
+such that the error
+$|\int_a^b f - T_n|$ in applying the
+Trapezoid Rule is less than
+(i) $\frac1{100}$, (ii) $\frac1{10000}$,
+and (iii) $10^{-8}$.
+\begin{exenum}
+\x
+$\int_1^4 \frac1{6x^2} dx$
+\x
+$\int_0^1 (8x^3-5x+3) \; dx$
+\x
+$\int_{-1}^2 (3x+1)\;dx$
+\x
+$\int_1^2 \frac1x dx$
+\x
+$\int_0^{12} \frac1{16x+2}dx$
+\x
+$\int_0^1 e^{-x^2} dx$.
+\end{exenum}
+
+\ex{8.2.6}
+(For those who have access to a
+high-speed digital computer and know how to use it.)
+Compute the Trapezoid approximation $T_n$
+to each of the following integrals.
+\begin{exenum}
+\x
+$\int_0^1 \frac1{1+x^3} dx$,
+for $n=10$, $100$, and $1000$.
+\x
+$\int_0^1 \frac1{1+x^2} dx$,
+for successive values of $n = 10,100,1000,\ldots$,
+until the error is less that $10^{-6}$.
+\x
+$\int_0^1 \sqrt{1+x^3} \; dx$,
+for $n = 5$, $50$, and $500$.
+\x
+$\int_0^{\pi} \frac{\sin x}x dx$,
+for $n = 2$, $4$, $8$, $16$, and $100$.
+\x
+$\int_0^1 e^{-x^2}dx$,
+for $n=10$, $100$, and $1000$.
+\end{exenum}
+
+\end{exercises}

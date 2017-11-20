@@ -1,0 +1,511 @@
+\chapter{Functions, Limits, and Derivatives} \label{chp 1}
+
+\section{Real Numbers, Inequalities, Absolute Values.}\label{sec 1.1} 
+
+Calculus deals with numerical-valued quantities and,
+in the beginning, with quantities whose values are real numbers.
+Some understanding of the basic set $\R$ of all real numbers
+is therefore essential.
+
+A \dt{real number} is one that can be written as a decimal:
+positive or negative or zero, terminating or nonterminating.
+Examples are
+\[
+1, \;-5, \;0, \;14,
+\]
+\[
+\frac{2}{3} = 0.666666 \ldots, \; \frac{3}{8} = 0.375,
+\]
+\[
+\sqrt{2} = 1.4142 \ldots,
+\]
+\[
+-\pi = -3.141592\ldots,
+\]
+\[
+176355.14233333 \ldots
+.
+\]
+
+The most familiar subset of $R$ is the set $\Z$ of \dt{integers}.
+These are the numbers
+\begin{equation}
+\ldots, -3, -2, -1, 0, 1, 2, 3,\ldots .   
+\label{eq1.1.1}
+\end{equation}
+Another subset is the set $\Q$ of all rational numbers.
+A real number $r$ is \dt {rational}
+if it can be expressed as the ratio of two integers,
+more precisely,
+if $r = \frac{m}{n}$,
+where $m$ and $n$ are integers and $n \neq 0$.
+Since every integer $m$ can be  written $\frac{m}{1}$,
+it follows that every integer is also a rational number.
+A scheme, analogous to \eqref{1.1.1},
+which lists all the positive rational
+numbers is the following:
+
+\begin{equation}
+\label{eq1.1.2}
+\begin{array}{ccccc}
+\frac{1}{1}, & \frac{2}{1}, & \frac{3}{1}, & \frac{4}{1}, & \ldots\\
+\frac{1}{2}, & \frac{2}{2}, & \frac{3}{2}, & \frac{4}{2}, & \ldots\\
+\frac{1}{3}, & \frac{2}{3}, & \frac{3}{3}, & \frac{4}{3}, & \ldots\\
+\vdots
+\end{array}
+\end{equation} 
+Of course there are infinitely many repetitions in this presentation since,
+for example,
+$\frac{2}{1} = \frac{4}{2} = \frac{6}{3} = \ldots.$
+An unsophisticated guess would be that all real numbers are rational.
+There are, however, many famous proofs that this is not so.
+For example,
+a very simple and beautiful argument shows that $\sqrt 2$ is not rational.
+(See Problem \exref{1.1.13} at the end of this section.)
+It is not hard to prove that a real number is rational
+if and only if its decimal expansion beyond some digit
+consists of a finite sequence of digits repeated forever.
+Thus the numbers
+\[
+1.71349213213213213213 \ldots \mbox{(forever)} ,
+\]
+\[
+1.500000000 \ldots \mbox{(forever)}
+\]
+are rational, but
+\[
+0.101001000100001000001 \ldots \mbox{(etc.)}
+\]
+is not.
+
+The fundamental algebraic operations on real numbers
+are addition and multiplication:
+For any two elements $a$ and $b$ in $\R$,
+two elements $a + b$ and $ab$ in $\R$ are uniquely determined.
+These elements,
+called the \dt{sum} and \dt{product} of $a$ and $b$, respectively,
+are defined so that the following six facts are true:
+
+
+\begin{axiom}[Associative Laws]
+\label{axiom.i}
+\[
+a + (b + c) = (a + b) + c,
+\]
+\[
+a(bc) = (ab)c.
+\]
+\end{axiom}
+
+\begin{axiom}[Commutative Laws]
+\label{axiom.ii}
+\[
+a + b = b + a,
+\]
+\[
+ab= ba.
+\]
+\end{axiom}
+
+\begin{axiom}[Distributive Law]
+\label{axiom.iii}
+\[
+(a + b) c = ac + bc.
+\]
+\end{axiom}
+
+\begin{axiom}[Existence of Identities]
+\label{axiom.iv}
+$\R$ contains two distinct elements $0$ and $1$
+with the properties that $0 + a = a$ and $1 \cdot a = a$
+for every $a$ in $\R$.
+\end{axiom}
+
+
+\begin{axiom}[Existence of Subtraction]
+\label{axiom.v}
+For every $a$ in $\R$,
+there is an element in $\R$ denoted by $-a$
+such that $a + (-a) = 0$.
+\begin{note}
+$a - b$ is an abbreviation of $a + (-b)$.
+\end{note}
+\end{axiom}
+
+
+\begin{axiom}[Existence of Division]
+\label{axiom.vi}
+For every $a \neq 0$ in $\R$,
+there is an element in $\R$ denoted by $a^{-1}$ or $\frac{1}{a}$
+such that $aa^{-1} = 1$.
+\begin{note}
+$\frac{a}{b}$ is an abbreviation of $ab^{-1}$.
+\end{note}
+\end{axiom}
+
+Addition and multiplication are here introduced as binary operations.
+However, as a result of the associative law of addition,
+$a + b + c$ is defined to be the
+common value of $(a + b) + c$ and $a + (b + c)$.
+In a like manner we may define the triple product $abc$ and,
+more generally,
+$a_{1} + \ldots + a_{n}$ and $a_{1} \ldots a_{n}$.
+Many theorems of algebra are consequences of the above six facts,
+and we shall assume them without proof.
+They are, in fact,
+frequently taken as part of a set of axioms for $\R$.
+
+Another essential property of the real numbers is that of order.
+We write $a < b$
+as an abbreviation of the statement that $a$ is less than $b$.
+Presumably the reader, given two decimals,
+knows how to tell which one is the smaller.
+The following four facts simply recall
+the basic properties governing inequalities.
+On the other hand,
+they may also be taken as axioms for an abstractly defined relation
+between elements of $\R$,
+which we choose to denote by $<$.
+ 
+\begin{axiom}[Transitive Law]
+\label{axiom.vii}
+If $a < b$ and $b < c$, then $a < c$.
+\end{axiom}
+
+\begin{axiom}[Law of Trichotomy]
+\label{axiom.viii}
+For every real number $a$,
+one and only one of the following alternatives holds:
+$a = 0$, or $a < 0$, or $0 < a$.
+\end{axiom}
+
+\begin{axiom}
+\label{axiom.ix}
+If $a < b$, then $a + c < b + c$.
+\end{axiom}
+
+\begin{axiom}
+\label{axiom.x}
+\emph{If $a < b$ and $0 < c$, then $ac < bc$.}
+\end{axiom}
+ 
+Note that each of the above Axioms except \ref{axiom.vi}
+remains true when restricted to the set $\Z$ of integers.
+Moreover,
+all the axioms are true for the set $\Q$ of rational numbers.
+Hence as a set of axioms for $\R$,
+they fail to distinguish between two very different sets:
+$\R$ and its subset $\Q$.
+Later in this section we shall add one more item to the list,
+which will complete the algebraic description of $\R$.
+
+A real number $a$ is if \dt{positive} $0 < a$
+and \dt{negative} if $a < 0$.
+Since the relation ``greater than" is just as useful as ``less than,"
+we adopt a symbol for it, too,
+and abbreviate the statement that $a$ is greater than $b$
+by writing $a > b$.
+Clearly $a > b$ if and only if $b < a$.
+Axiom \ref{axiom.x},
+when translated into English,
+says that the direction of an inequality is preserved
+if both sides are multiplied by the same positive number.
+Just the opposite happens if the number is negative:
+The inequality is reversed.
+That is,
+
+\begin{prop}
+\label{thm 1.1.1}
+If $a < b$  and  $c < 0$, then $ac > bc$.
+\end{prop}
+\begin{proof}
+Since $c < 0$, Axioms
+\ref{axiom.iv},
+\ref{axiom.v},
+and
+\ref{axiom.ix}
+imply
+\[
+0 = c + (-c) < 0 + (- c) = - c
+.
+\]
+So $-c$ is positive.
+Hence by $(x)$, we get $-ac < -bc$.
+By Axiom
+\ref{axiom.ix}
+again, 
+\[
+-ac + (bc + ac) < -bc + (bc + ac).
+\]
+Hence $bc < ac$,
+and this is equivalent to $ac > bc$.
+\end{proof}
+
+Two more abbreviations complete the mathematician's array of symbols
+for writing inequalities:
+
+$a \leq b$ means $a < b$ or $a=b$,
+
+$a \geq b$ means $a > b$ or $a=b$.
+
+The geometric interpretation of the set $\R$ of all real numbers
+as a straight line is familiar to anyone who has ever used a ruler,
+and it is essential to an understanding of calculus.
+To describe the assignment of points to numbers,
+consider an arbitrary straight line $L$,
+and choose on it two distinct points,
+one of which we assign to, or identify with, the number $0$,
+and the other to the number $1$.
+(See Figure \figref{1.1}.)
+\putfig{2truein}{scanfig1_1}
+{A line $L$ with two distinguished point $0$ and $1$.}{fig 1.1}
+The rest is automatic.
+The scale on $L$ is chosen so that the unit of distance is
+the length of the line segment between the points $0$ and $1$.
+Every positive number $a$ is assigned the point on the side of $0$
+containing $1$ which is $a$ units of distance from $0$.
+Every negative number $a$ is assigned the point on the side of $0$
+not containing $1$ which is $-a$ units of distance from $0$.
+Note that if $L$ is oriented so that $1$ lies to the right of $0$,
+then
+\emph{
+for any two numbers $a$ and $b$ (positive, negative, or zero),
+$a < b$ if and only if $a$ lies to the  left of $b$.}
+A line which has been identified with $\R$ under a correspondence
+such as the one just described is called a \dt{real number line}.
+(See Figure \figref{1.2}.)
+
+\putfig{3truein}{scanfig1_2}
+{A real number line.}{fig 1.2}
+
+An \dt{interval}
+is a subset $I$ of $\R$ with the property that
+whenever $a$ and $c$ belong to $I$ and $a \leq b \leq c$,
+then $b$ also belongs to $I$.
+Geometrically an interval is a connected piece of a real number line.
+A number d is called a \dt{lower bound} of a set $S$ of real numbers
+if $d \leq s$ for every $s$ in $S$.
+It is an \dt{upper bound} of $S$ if $s \leq d$ for every $s$ in $S$.
+A given subset of $\R$, and in particular an interval,
+is called \dt{bounded} if it has both an upper and lower bound.
+There are four different kinds of bounded intervals:
+\begin{quote}
+$(a, b)$, the set of all numbers $x$ such that  $a < x < b$;
+
+$[a, b]$, the set of all numbers $x$ such that  $a \leq x \leq b$;
+
+$[a, b)$, the set of all numbers $x$ such that  $a \leq x < b$;
+
+$(a, b]$, the set of all numbers $x$ such that  $a < x \leq b$.
+\end{quote}
+In each case the numbers $a$ and $b$
+are called the \dt{endpoints} of the interval.
+The set $[a, b]$ contains both its endpoints,
+whereas $(a, b)$ contains neither one.
+Clearly $[a, b)$ contains its left endpoint but not its right one,
+and an analogous remark holds for $(a, b]$.
+
+It is important to realize that
+there is no element $\infty$ (infinity) in the set $\R$.
+Nevertheless, the symbols $\infty$ and $-\infty$ are commonly used
+in denoting unbounded intervals.
+Thus
+\begin{quote}
+$(a, \infty)$ is the set of all numbers $x$ such that $a < x$;
+
+$[a, \infty)$ is the set of all numbers $x$ such that $a \leq x$;
+
+$(-\infty, a)$ is the set of all numbers $x$ such that $x < a$;
+
+$(-\infty, a]$ is the set of all numbers $x$ such that $x \leq a$;
+
+$(-\infty, \infty)$ is the entire set $\R$.
+\end{quote}
+The symbols $\infty$ and $-\infty$ also appear frequently
+in inequalities although they are really unnecessary,
+because, for example,
+\[
+\begin{array}{r}
+-\infty < x < a \;\;\; \mbox{is equivalent to $x < a$},  \vspace{.1in} \\
+a \leq x < \infty \;\;\;\mbox{is equivalent to $a \leq x$}, 
+\end{array}
+\]
+etc.
+Since $\infty$ is not an element of $\R$,
+we shall never use the notations $[a, \infty], x \leq \infty$, etc.
+An unbounded interval has either one endpoint or none;
+in each of the above cases it is the number $a$.
+We call an interval \dt{open} if it contains none of its endpoints,
+and \dt{closed} if it contains them all.
+Thus, for example, $(a, b)$ and $(-\infty, a)$ are open,
+but $[a, b]$ and $[a, \infty)$ are closed.
+The intervals $[a, b)$ and $(a, b]$ are neither open nor closed,
+although they are sometimes called half-open or half-closed.
+Since $(-\infty, \infty)$ has no endpoints,
+it vacuously both does and does not contain them.
+Hence $(-\infty, \infty)$ has the dubious distinction
+of being both open and closed.
+
+\putfig{4truein}{scanfig1_3}{Types of intervals.}{fig 1.3}
+
+\begin{example}
+\label{exam 1.1.1}
+Draw the intervals
+$[0, 1]$, $[-1, 4)$, $(2, \infty$), $(-\infty, -1]$, $(-1, 3)$,
+and identify them as open, closed, neither,
+or both (see Figure \figref{1.3}).
+\end{example}
+
+It is frequently necessary to talk about the size of a real number
+without regard to its sign, not caring whether it is positive or negative.
+This happens often enough to warrant a definition and special notation:
+The \dt{absolute value} of a real number $a$ is denoted by $|a|$
+and defined by
+\[
+|a| = \left \{  \begin{array}{rl}
+a    & \mbox{if $a \geq 0$}, \\
+-a   & \mbox{if $a < 0$}.
+                    \end{array}
+\right. 
+\]
+Thus $|3| = 3$, $|0| = 0$, $|- 3| = 3$.
+Obviously,
+\emph{the absolute value of a real number cannot be negative.}
+Geometrically,
+$|a|$ is the distance between the points $0$ and $a$
+on the real number line.
+A generalization that is of extreme importance is the fact that $|a - b|$
+\emph{is the distance between the
+points $a$ and $b$ on the real number line for any two numbers
+$a$ and $b$ whatsoever.}
+Probably the best way to convince oneself that this is true
+is to look at a few illustrations (see Figure \figref{1.4}).
+
+\putfig{4truein}{scanfig1_4}
+{Computing distances with the absolute value.}{fig 1.4}
+
+\begin{example}
+\label{exam 1.1.2}
+Describe the set $I$ of all real numbers $x$
+such that $|x - 5| < 3$.
+For any number $x$,
+the number $|x - 5|$ is the distance between $x$ and $5$
+on a real number line (see Figure \figref{1.5}).
+\putfig{3truein}{scanfig1_5} {An open ball in a one-dimensional space.}{fig 1.5}
+That distance will be less than $3$
+if and only if $x$ satisfies the inequalities $2 < x < 8$.
+We conclude that $I$ is the open interval $(2, 8)$.
+\end{example}
+
+
+There is an alternative way of writing the definition
+of the absolute value of a number $a$
+which requires only one equation:
+We do not have to give separate definitions for positive and negative $a$.
+This definition uses a square root,
+and before proceeding to it,
+we call attention to the following mathematical custom:
+Although every positive real number a has two square roots,
+in this book
+\emph{the expression $\sqrt a$ always denotes the positive root}.
+Thus the two solutions of the equation $x^2 = 5$ are
+$\sqrt 5$ and $-\sqrt 5$.
+Note that the two equations
+\[
+x^2 = a
+\]
+and
+\[
+x = \sqrt a 
+\]
+are not equivalent.
+The second implies the first, but not conversely.
+On the other hand,
+\[
+x^2 = a
+\]
+and
+\[
+|x| = \sqrt a 
+\]
+are equivalent.
+Having made these remarks, we observe that
+
+\begin{prop} 
+\label{thm 1.1.2}
+\[
+ |a| = \sqrt {a^2} .   
+\]
+\end{prop}
+
+The formulation \thref{1.1.2} is a handy one
+for establishing two of the basic properties of absolute value.
+They are
+
+\begin{prop} 
+\label{thm 1.1.3}
+\[
+ |ab| = |a| |b|.
+\]
+\end{prop}
+
+\begin{prop} 
+\label{thm 1.1.4}
+\[
+ |a + b| \leq |a| + |b|.
+\]
+\end{prop}
+
+\begin{proof}
+Since $(ab)^2 = {a^2}{b^2}$
+and since the positive square root of a product of two positive numbers
+is the product of their positive square roots,
+we get 
+\[
+|ab| = \sqrt {(ab)^2}  = \sqrt {{a^2}{b^2}}  = \sqrt{a^2} \sqrt{b^2} = |a| |b|.
+\]
+
+To prove \thref{1.1.4},
+we observe, first of all, that $ab \leq |ab|$.
+Hence
+\[
+a^2 + 2ab + b^2 \leq a^2 + 2|ab| + b^{2} = |a|^2 + 2|a| |b| + |b|^2.
+\]
+Thus,
+\[
+|a + b|^{2} = (a + b)^{2} \leq (|a| + |b|)^{2}.
+\]
+By taking the positive square root of each side of the inequality
+(see Problem \exref{1.1.9}), we get \thref{1.1.4}.
+\end{proof}
+
+As remarked above, our list of Axioms
+\ref{axiom.i} through \ref{axiom.x}
+about the set $\R$ of real numbers is incomplete.
+One important property of real numbers
+that together with the others gives a complete characterization
+is the following:
+
+
+\begin{axiom}[Least Upper Bound Property]
+\label{axiom.xi}
+Every nonempty subset of $\R$ which has an upper bound
+has a least upper bound.
+\end{axiom}
+
+Suppose $S$ is a nonempty subset of $\R$ which has an upper bound.
+What Axiom \ref{axiom.xi} says
+is that there is some number $b$ which
+(1) is an upper bound, i.e., $s \leq b$ for every $s$ in $S$, and
+(2) if $c$ is any other upper bound of $S$, then $b \leq c$.
+It is hard to see at first how such a statement can be so significant.
+Intuitively it says nothing more than this:
+If you cannot go on forever, you have to stop somewhere.
+Note, however, that the rational numbers do \emph{not} have this property.
+The set of all rational numbers less than the irrational number $\sqrt2$
+certainly has an upper bound.
+In fact, each of the numbers
+$2$, $1.5$, $1.42$, $1.415$, $1.4143$, and $1.41422$ is an upper bound.
+However, for every rational upper bound,
+there will always exist a smaller one.
+Hence there is no rational least upper bound.

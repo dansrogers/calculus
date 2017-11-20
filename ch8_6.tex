@@ -1,0 +1,220 @@
+\section{Integration of Discontinuous Functions.}
+If a function $f$ is continuous at every point of an interval $[a, b]$, then we know that $f$ is integrable over $[a, b]$ [see Theorem (5.1), page 199]. Continuity is certainly the most important criterion for integrability that we have. For example, in the fundamental theorem of calculus it is assumed that the integrand is continuous over the interval of integration. However, it is important to realize that a function does not have to be continuous to be integrable and that there are many simple discontinuous functions which can be integrated.
+
+We begin with the following theorem:
+
+\begin{theorem} %(6.1) 
+If $f$ is bounded on $[a, b]$ and is continuous at every point of $[a, b]$ except possibly at the endpoints, then $f$ is integrable over $[a, b]$.
+\end{theorem}
+
+
+\begin{proof}
+If $a = b$, the conclusion follows at once since $\int_a^b f = \int_a^a f = 0$. Hence we shall assume that $a < b$. To be specific, we shall furthermore assume that $f$ is continuous at every point of $[a, b]$ except at $a$. The necessary mod)fication in the argument if a discontinuity occurs at $b$ (or at both $a$ and $b$) should be obvious. According to the definition of integrability (page 168), it is sufficient to prove that there exist partitions $\sigma$ and $\tau$ of $[a, b]$ such that $U_\sigma - L_\tau$, the difference between the corresponding upper and lower sums, is arbitrarily small. For this purpose, we choose an arbitrary positive number $\epsilon$. Since $f$ is bounded on $[a, b]$, there exists a positive number $k$ such that $|f(x)| \leq k$, for every $x$ in $[a, b]$. We next pick a point $a'$ which is in $[a, b]$ and sufficiently close to a that
+$$
+0 < a' - a < \frac{\epsilon}{3k}
+$$
+(see Figure 26). Since $f$ is continuous on the smaller interval $[a', b]$, we know that $f$ is integrable over it. Hence there exist partitions $\sigma'$ and $\tau'$ of $[a', b]$ such that the upper sum $U_{\sigma'}$, and lower sum $L_{\tau'}$ for $f$ satisfy
+\begin{equation}
+| U_{\sigma'} - L_{\tau'} | < \frac{\epsilon}{3}.  
+\label{eq8.6.1}
+\end{equation}
+\putfig{4truein}{scanfig8_26}{}{fig 8.26}
+Let $\sigma$ and $\tau$ be the partitions of $[a, b]$ obtained from $\sigma'$ and $\tau'$ respectively, by adjoining the point $a$; i.e., $\sigma = \sigma' \cup \{ a \}$ and $\tau = \tau' \cup \{ a \}$. Since the maximum value of $|f(x)|$ on the subinterval $[a, a']$ is less than or equal to $k$, it follows that
+\begin{equation}
+| U_\sigma - U_{\sigma'} | \leq k (a' - a) < k \cdot \frac{\epsilon}{3k} = \frac{\epsilon}{3} . 
+\label{eq8.6.2}
+\end{equation}
+By the same argument, we have
+\begin{equation}
+| L_{\tau'} - L_{\tau} | \leq k (a' - a) < k \cdot \frac{\epsilon}{3k} = \frac{\epsilon}{3} . 
+\label{eq8.6.3}
+\end{equation}
+\noindent Next, consider the algebraic identity
+$$
+U_\sigma  - L_\tau = (U_\sigma - U_{\sigma'}) + (L_{\tau'} - L_\tau) + (U_{\sigma'} - L_{\tau'}). 
+$$
+The sum of three numbers is always less than or equal to the sum of their absolute values. Using this fact and the inequalities (1), (2), and (3), we obtain 
+\begin{eqnarray*}
+U_\sigma - L_\tau 
+&\leq& | U_\sigma - U_{\sigma'} | + | L_{\tau'} - L_\tau | + | U_{\sigma'} - L_{\tau'} | \\
+&<   &  \frac{\epsilon}{3} + \frac{\epsilon}{3}  + \frac{\epsilon}{3}  = \epsilon .
+\end{eqnarray*}
+Thus there exist upper and lower sums Iying arbitrarily close to each other, and the proof is complete.
+\end{proof}
+
+%EXAMPLE 1. 
+\begin{example}
+Let $f$ be the function defined by
+$$
+f(x) = \left\{ \begin{array}{ll}
+\sin \frac{\pi}{x}, &\;\;\;\mbox{if}\; x \neq 0,\\
+0                        &\;\;\;\mbox{if}\; x = 0.
+\end{array}
+\right .
+$$
+\noindent This function is continuous everywhere except at 0, and its values oscillate wildly as $x$ approaches 0. The graph, for values of $x$ in the interval [0, 2], is shown in Figure 27. Since $|f(x)|  \leq 1$ for every $x$, the function is bounded on every interval. It therefore follows by Theorem (6.1) that $f$ is integrable over [0,2].
+\end{example}
+
+%Figure 27
+\putfig{3truein}{scanfig8_27}{}{fig 8.27}
+
+An important extension of Theorem (6.1) is the following:
+
+\begin{theorem} %(6.2) 
+If $f$ is bounded on $[a, b]$ and is continuous at all but a finite number of points in the interval, then $f$ is integrable over $[a, b]$. Furthermore, if $a_1, ..., a_n$ are the points of discontinuity and if 
+$a \leq a_1 \leq \cdots \leq a_n \leq b$, then
+$$
+\int_a^b f =  \int_a^{a_1} f + \int_{a_1}^{a_2} f + \cdots + \int_{a_n}^b f. 
+$$
+\end{theorem}
+
+
+\begin{proof}
+It is a direct corollary of (6.1) that $f$ is integrable over each subinterval $[a, a_1], [a_1, a_2], ... , [a_n, b]$. By repeated applications of Theorem (4.2), page 191, we may then conclude that $f$ is integrable over $[a, b]$ and that
+$$
+\int_a^b f = \int_a^{a_1} f + \cdots + \int_{a_n}a^b f.
+$$
+This completes the proof.
+\end{proof}
+
+Consider the function $f$, whose graph is shown in Figure 28, and which is defined by 
+$$
+f(x) = \left\{  \begin{array}{rc}
+0           & -\infty < x < -1,  \\ 
+2           & -1 \leq x \leq 2, \\
+3           & 2 < x \leq 3, \\ 
+-1          & 3 < x < \infty.
+             \end{array}
+\right .
+$$
+
+%Figure 28
+\putfig{4.5truein}{scanfig8_28}{}{fig 8.28}
+
+This function, which is constant over certain intervals, is an example of a step function. A function whose domain is the entire set of real numbers is a \textbf{step function} if every bounded interval is the union of a finite number of subintervals on each of which the function is a constant. A step function is bounded on any bounded interval and is continuous there at all but possibly a finite number of points. In the present example the only discontinuities occur at $-1$, 2, and 3. Hence, Theorem (6.2) implies that $f$ is integrable over any interval $[a, b]$. In particular,
+$$
+\int_0^4 f = \int_0^2 f + \int_2^3 f + \int_3^4 f.
+$$
+\noindent For each of the three integrals on the right side of the preceding equation, the integrand $f$ is constant on the interval of integration except possibly at the endpoints. If we think of an integral as area or as an average value, we shall almost certainly support the conjecture that the value of an integral is not affected by isolated discontinuities in the integrand. Thus we expect that
+\begin{eqnarray*}
+\int_0^4 f &=& \int_0^2 f + \int_2^3 f + \int_3^4 f\\
+               &=& 2 \cdot (2 - 0) + 3 \cdot (3 - 2) + (- 1)(4 - 3) = 6.
+\end{eqnarray*}
+%456 THE DEFINITE INTEGRAL (CONTINUED) [CHAP 8
+\noindent This conjecture is correct (hence, so is the preceding computation), and is implied by the next theorem.
+
+\begin{theorem} %(6.3) 
+Let $[a, b]$ be a subset of the domains of two functions $f$ and $g$, and let $f (x) = g(x)$ for all but afinite number of values of $x$ in $[a, b]$. If $f$ is integrable over $[a, b]$, then so is $g$ and $\int_a^b f = \int_a^b g.$
+\end{theorem}
+
+\begin{proof}
+It is sufficient to prove this theorem under the assumption that the values of $f$ and $g$ differ at only a single point $c$ in the interval $[a, b]$ (because the result can then be iterated). To be specific, we shall assume that $f(c) < g(c)$. The proof is completed if we can show that there exist upper and lower sums for $g$ which differ from the integral $\int_a^b f$ by an arbitrarily small amount. For this purpose, we choose an arbitrary positive number $\epsilon$. Since $f$ is, by hypothesis, integrable over $[a, b]$, there exists a partition $\tau$ of $[a, b]$ such that the corresponding lower sum for $f$, which we denote by $L_\tau (f)$, satisfies
+$$
+\int_a^b f L_\tau (f) < \epsilon.
+$$
+However, every lower sum for $f$ is also a lower sum for $g$. Hence we may substitute $L_\tau (g)$ for $L_\tau (f)$ in the preceding inequality and obtain
+\begin{equation}
+\int_a^b f - L_\tau (g) < \epsilon.  
+\label{eq8.6.4}
+\end{equation}
+We next derive a similar inequality involving an upper sum for $g$. The integrability of $f$ also implies the existence of a partition $\sigma'$ of $[a, b]$ such that the corresponding upper sum for $f$ satisfies
+$$
+U_{\sigma'} (f) - \int_a^b f < \frac{\epsilon}{2}.
+$$
+By possibly adjoining to $\sigma'$ a point on either side of $c$, we can assure ourselves of getting a partition $\sigma = \{ x_0,  ..., x_n \}$ of $[a, b]$ with the property that if $c$ lies in the \textit{i}th subinterval $[x_{i-1}, x_i]$, then
+\begin{equation}
+x_i - x_{i-1} < \frac{\epsilon}{2[g(c) - f(c)]} .
+\label{eq8.6.5}
+\end{equation}
+We have already shown [see the proof of (1.1), page 168] that if one partition $\sigma$ is a refinement of another $\sigma'$ (i.e., if $\sigma'$ is a subset of $\sigma$), then $U_\sigma \leq U_{\sigma'}$. Thus $U_\sigma (f)$ is, if anything, a better approximation to $\int_a^b f$ than $U_{\sigma'} (f)$. Hence
+\begin{equation}
+U_\sigma (f) - \int_a^b f <  \frac{\epsilon}{2} 
+\label{eq8.6.6}
+\end{equation}
+Let $M_i$ and $N_i$ be the least upper bounds of the values of $f$ and $g$, respectively, on $[x_{i-1}, x_i]$. Since $f(x) = g(x)$ except at $c$, it follows that
+$$
+U_\sigma (g) - U_\sigma (f) = (N_i - M_i)(x_i - x_{i-1}).
+$$
+But the difference $N_i - M_i$ can be no more than $g(c) - f(c)$. Hence
+$$
+ U_\sigma (g) - U_\sigma (f) \leq [g(c) - f (c)](x_i - x_{i-1}), 
+$$
+and this inequality combined with (5) yields
+\begin{equation}
+U_\sigma (g) - U_\sigma (f) < \frac{\epsilon}{2}  .
+\label{eq8.6.7}
+\end{equation}
+Finally, adding the inequalities (6) and (7), we obtain 
+$$
+U_\sigma (g) - \int_a^b f < \epsilon .
+$$
+This is the analogue of (4) and completes the proof.
+\end{proof}
+
+
+%EXAMPLE 2. 
+\begin{example}
+Let $f$ be the function defined by 
+$$
+f(x) = \left\{ \begin{array}{lc}
+x^3           & -\infty < x \leq 0,  \\
+2 - x^2      &   0 < x \leq 2, \\
+2x - 5        &   2 < x < \infty. 
+\end{array}
+\right .
+$$
+\noindent The graph of $f$ is drawn in Figure 29. The function is clearly continuous except at 0 and at 2, and is bounded on any bounded interval. It follows by Theorem (6.2) that $f$ is integrable over the interval $[-1, 3]$ and that 
+$$
+\int_{-1}^3 f = \int_{-1}^0 f + \int_0^2 f + \int_2^3 f  .
+$$
+%Figure 29
+\putfig{3.75truein}{scanfig8_29}{}{fig 8.29}
+
+% 458 THE DEFINITE INTEGRAL (CONTINUED) [CHAP. 8 
+\noindent For every $x$ in $[-1, 0]$, we have $f(x) = x^3$, and so
+$$
+\int_{-1}^0 f = \int_{-1}^0 x^3 dx = \frac{x^4}{4} \Big|_{-1}^0 = - \frac{1}{4}.
+$$
+\noindent For every $x$ in $[0, 2]$, we have $f(x) = 2 - x^2$ except that $f(0) = 0$. Hence, by Theorem (6.3),
+$$
+\int_0^2 f = \int_0^2 (2 - x^2) dx = (2x - \frac{x^3}{3}) \Big|_0^2 = \frac{4}{3}.
+$$
+
+\noindent Similarly, $f(x) = 2x - 5$ for every $x$ in [2, 3] except that $f(2) = - 2$. Again, by Theorem (6.3),
+$$
+\int_2^3 f = \int_2^3 (2x - 5) dx = (x^2 - 5x)\big|_2^3 = - 6 - (- 6)= 0.
+$$
+\noindent Hence
+$$
+\int_{-1}^3 f = -\frac{1}{4} + \frac{4}{3} + 0 = \frac{13}{12}.
+$$
+\end{example}
+
+%EXAMPLE 3. 
+\begin{example} Is each of the following integrals defined?
+ 
+\begin{quote}
+\begin{description}
+\item[(a)] $\int_0^1 \sin \frac{1}{x} dx,$ 
+\item[(b)] $\int_1^2 \frac{\ln x}{1 - x} dx,$ 
+\item[(c)] $\int_0^{\pi/2} \tan x dx.$
+\end{description}
+\end{quote}
+ 
+\noindent This is the same as asking whether or not each function is integrable over its proposed interval of integration. Strictly speaking, the answer is no in every case, because each function fails to be defined at one of the endpoints of the interval. However, Theorem (6.3) shows that this answer is based on a technicality and misses the real point of the question. If a function $f$ is bounded on an open interval $(a, b)$ and if $f(a)$ end $f(b)$ are any real numbers whatever, then $f$ is also bounded on the closed interval $[a, b]$. Let us suppose, therefore, that $f$ is bounded and continuous on the open interval $(a, b)$. We may choose values $f(a)$ and $f(b)$ completely arbitrarily, and the resulting function will be integrable over $[a, b]$ as a result of Theorem (6.1). Furthermore, by Theorem (6.3), the integral $\int_a^b f$ is independent of the choice of $f(a)$ and $f(b)$. Hence, if $f$ is bounded and continuous on $(a, b)$, we shall
+%SEC. 6] INTEGRATION OF DISCONTINUOUS FUNCTIONS  459
+certainly adopbt the point of view that $f$ is integrable over $[a, b]$ and, equivalently, that $\int_a^b f$ is defined.
+\end{example}
+
+Following this convention, we see that the function $\sin \frac{1}{x}$ is bounded and continuous on (0, 1), and so $\int_0^1 \sin \frac{1}{x} dx$ is defined. Using L'H\^{o}pital's Rule (page 123), one can easily show that  
+$$
+\lim_{x \rightarrow 1_{+}} \frac{\ln x}{1 - x} = - 1 .
+$$
+\noindent Hence, $\frac{\ln x}{1 - x}$ is bounded and continuous on (1, 2), and so $\int_1^2  \frac{\ln x}{1 - x} dx$ exists. On the other hand, 
+$$
+\lim_{x \rightarrow (\pi/2)_{-}} \tan x = \infty,
+$$
+\noindent and we therefore conclude that tan $x$ is not integrable over the interval $[0, \frac{\pi}{2}]$.
+
+\vspace{.2in}
+

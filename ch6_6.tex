@@ -1,0 +1,318 @@
+\section{Complex Numbers.} 
+Since the square of a real number is never negative, the equation $x^2 = -1$ has no solution in the set $R$ of all real numbers. However, we shall show that $R$ can be considered as a subset of a larger set $C$ which has the following properties: 
+(i) The sum and product of any two elements in $C$ are defined, and addition and multiplication obey the ordinary laws of algebra. (ii) There is an element $i$ in $C$ such that $i^2 = - 1$. (iii) Every element in $C$ can be written in the form $x + iy$, where $x$ and $y$ are real numbers. The elements of the set $C$ are called \textbf{complex numbers}. Let us assume, for the moment, that the existence of $C$, obeying the three properties, has already been demonstrated. Then the sum of two complex numbers $x_{1} + iy_1$ and $x_{2} + iy_2$ is given by
+
+
+\begin{equation}
+(x_{1} + iy_{1}) + (x_{2} + iy_{2}) = (x_{1} + x_{2}) + i(y_{1} + y_{2}).  
+\label{eq6.6.1}
+\end{equation}
+\noindent For the product, we have
+ 
+\begin{eqnarray*}
+(x_{1} + iy_{1})(x_{2} + iy_{2}) &=& x_{1}x_{2} + iy_{1}x_{2} + iy_{2}x_{1} + i^{2}y_{1}y_{2} \\
+                                                &=& x_{1}x_{2} + i(x_{1}y_{2} + x_{2}y_{1}) + i^{2}y_{1}y_{2}.
+\end{eqnarray*}
+
+\noindent However, since $i^2 = -1$, we get
+
+\begin{equation}
+(x_{1} + iy_{1})(x_{2} + iy_{2}) = (x_{1}x_{2} - y_{1}y_{2}) +  i(x_{1}y_{2} + x_{2}y_{1}).  
+\label{eq6.6.2}
+\end{equation}
+\noindent For example, 
+
+\begin{eqnarray*}
+(2 + i) + (5 - i3) &=& 7 - i2, \\
+    (2 + i)(5 - i3) &=& 10 + i5 - i6 - i^{2}3 \\
+                         &=& 10 - i - (-1)3\\
+                         &=& 13 - i.
+\end{eqnarray*}
+
+We turn now to the task of showing that there is a set $C$ having the properties listed in (i), (ii), and (iii). We shall take for $C$ the set $R^2$ of all ordered pairs of real numbers, i.e., the $xy$-plane. Thus a complex number is by definition an ordered pair $(x, y)$ of real numbers.  Up to this point we have not ascribed any algebraic structure to the $xy$-plane, and so we must define what we mean by addition and multiplication of ordered pairs of real numbers. Later in this section we shall show how to express the ordered pair $(x, y)$ in the traditional form $x + iy$. Anticipating this, however, we use equations (1) and (2) to motivate the definitions of the sum and product of ordered pairs. We define
+
+\begin{equation}
+(x_{1}, y_{1}) + (x_{2}, y_{2}) = (x_{1} + x_{2}, y_{1} + y_{2}),  
+\label{eq6.6.3}
+\end{equation}
+
+\begin{equation}
+(x_{1}, y_{1})(x_{2}, y_{2}) = (x_{1}x_{2} - y_{1}y_{2}, x_{1}y_{2} + x_{2}y_{1}).  
+\label{eq6.6.4}
+\end{equation}
+
+It was stated that addition and multiplication of complex numbers are to obey the ordinary laws
+of algebra. By this we mean that the following six propositions are true. The basic algebraic
+properties which they describe
+%328 TRIGONOMETRIC FUNCTIONS [CHAP. 6
+are the same as those for the real numbers, and these six statements should be compared with
+the corresponding list on page 2. Abbreviating $(x_{1}, y_{1}), (x_{2}, y_{2})$, and $(x_{3}, y_{3})$ by $z_{1}, z_{2}$, and $z_{3}$, respectively, we have
+
+\begin{theorem} %(6.1) 
+\textbf{ASSOCIATIVE LAWS.}
+
+$$
+z_{1} + (z_{2} + z_{3}) = (z_{1} + z_{2}) + z_{3},\;\;\;  z_1(z_{2}z_{3}) = (z_{1}z_{2})z_{3}.
+$$
+\end{theorem}
+
+\begin{theorem} %(6.2) 
+\textbf{COMMUTATIVE LAWS.}
+$$
+z_{1} + z_{2} = z_{2} + z_{1},\;\;\; z_{1}z_{2} = z_{2}z_{1}.
+$$
+\end{theorem}
+
+\begin{theorem} %(6.3) 
+\textbf{DISTRIBUTIVE LAW.}
+$$
+(z_1 + z_2)z_3 = z_{1}z_{3} + z_{2}z_{3}. 
+$$
+\end{theorem}
+
+\begin{theorem} %(6.4) 
+\textbf{EXISTENCE OF IDENTITIES.} 
+The two complex numbers $0' = (0, 0)$ and $1' = (1, 0)$ have the properties that $0' + z = z$ 
+and $1'z = z$ for every $z$ in $C$.
+\end{theorem}
+
+\begin{theorem} %(6.5) 
+\textbf{EXISTENCE OF SUBTRACTION.} 
+For every complex number $z = (x, y)$, the complex number $(-x, -y)$ is denoted by $-z$ and has the property that $z + (-z) = 0'$. [The expression $z_1 - z_2$ is an abbreviation for $z_{1} + (-z_{2}).$]
+\end{theorem}
+
+\begin{theorem} %(6.6) 
+\textbf{EXISTENCE OF DIVISION.}
+For every complex number $z = (x, y)$ different from $0'$, the complex number $\Bigl(\frac{x}{x^2 + y^2}, \frac{-y}{x^2 + y^2}\Bigr)$ is denoted by $z^{-1}$ or $\frac{1}{z}$ and has the property that $zz^{-1} = 1'$. $\Bigl($ The expression $\frac{z_1}{z_2}$ is an abbreviation for 
+$z_{1}z_{2}^{-1}$. $\Bigr)$
+\end{theorem}
+
+
+\begin{proof}
+The proofs are simple exercises using the definitions and the algebraic properties of real
+numbers. We give the proofs of (6.4) and (6.6) and leave the others for the reader to supply. It
+is asserted in (6.4) that the complex number (0, 0), which is abbreviated $0'$ (and later simply
+as 0), is an additive identity. Letting $z = (x, y)$, we have
+$$
+0'+ z = (0,0) + (x, y) = (0 + x, 0 + y) = (x, y) = z,
+$$
+\noindent which proves the assertion. Similarly, for the multiplicative identity $1' = (1, 0)$ (later to be
+abbreviated simply by 1), we obtain
+$$
+1'z = (1, 0)(x, y) = (1x - 0y, 1y + x0) = (x, y) = z,
+$$
+\noindent and the proof of (6.4) is complete.
+
+To prove (6.6), let $z= (x,y)$ be a complex number different from $0' = (0, 0)$. It follows that $x^2
++ y^2$ is positive. Hence the ordered pair $\Bigl(\frac{x}{x^2 + y^2}, \frac{-y}{x^2 + y^2}\Bigr)$ is defined, and (in anticipation of the proof) is denoted $z^{-1}$. Multiplying, we get 
+\begin{eqnarray*}
+zz^{-1} &=& (x, y) \Bigl(\frac{x}{x^2 + y^2}, \frac{-y}{ x^2 + y^2} \Bigr)\\
+&=& \Bigl(\frac{x^2}{x^2 + y^2} - \frac{-y^2}{ x^2 + y^2}, \frac{-xy}{x^2 + y^2} + \frac{xy}{x^2  + y^2}\Bigr)\\
+&=& \Bigl(\frac{x^2 + y^2}{x^2 + y^2}, 0\Bigr) = (1,0)\\
+&=& 1',
+\end{eqnarray*}
+which completes the proof of (6.6).
+\end{proof}
+
+Assuming that the remaining four propositions have been proved, we have now satisfied requirement (i) in the first paragraph of the section for the set $C$ of complex numbers: 
+Addition and multiplication are defined and obey the ordinary laws of algebra. But what about the prior assumption that the set $R$ of all real numbers can be considered a subset of $C$? 
+Of course, it is not actually a subset, since no real number is also an ordered pair of real numbers. However, there is a subset of $C$ which has all the properties of $R$. This subset is the $x$-axis, the set of all complex numbers whose second coordinate is zero. Speaking informally, we shall identify $R$ with the $x$-axis in $C$ by identifying an arbitrary real number $x$ with the complex number $(x, 0)$. Proceeding formally, we define a function whose value for each real number $x$ is denoted by $x'$ and defined by $x' = (x, 0)$. This function sets up a one-to-one correspondence between the set $R$ and the $x$-axis in $C$. Essential, however, is the fact that this correspondence preserves the algebraic operations of addition and multiplication. To show that this is so, let $x_{1}$ and $x_{2}$ be any two real numbers. Then, for addition,
+
+
+$$
+x'_{1} + x'_{2} = (x_{1}, 0) + (x_{2}, 0) = (x_{1} + x_{2}, 0) = (x_{1} + x_{2})', 
+$$
+
+\noindent and for multiplication, 
+\begin{eqnarray*}
+x'_{1}x'_{2} = (x_{1}, 0)(x_{2}, 0) &=& (x_{1}x_{2} - 0 \cdot 0, x_{1} \cdot 0 + x_{2} \cdot 0)\\
+                                                    &=& (x_{1}x_{2}, 0) = (x_{1}x_{2})'.
+\end{eqnarray*}
+
+\noindent It follows that the algebraic properties of the set $R$ of all real numbers are identical with those of the $x$-axis in $C$. It is therefore legitimate to make the identification, and henceforth we shall denote $x'$ simply by $x$. Note that in so doing, the additive identity $0'$ and the multiplicative identity $1'$, referred to in (6.4), become simply 0 and 1, respectively.
+%330 TRIGONOMETRIC FUNCTIONS [CHAP. 6
+
+We now define $i$ to be the complex number (0, 1). Requirement (ii) in the first paragraph of
+this section is easily seen to be satisfied:
+\begin{eqnarray*}
+i^2 = (0, 1)(0, 1) &=& (0 \cdot 0 - 1 \cdot 1, 0 \cdot 1 + 0 \cdot 1)\\
+                          &=& (-1,0) = - (1,0).
+\end{eqnarray*}
+
+\noindent Since we have agreed to write $(1, 0) = 1' = 1$, we therefore obtain the famous equation
+
+\begin{theorem} %(6.7)  
+$$
+i^2 = -1.
+$$
+\end{theorem}
+
+Requirement (iii) is
+
+\begin{theorem} %(6.8)
+If $z = (x, y)$ is an arbitrary complex number, then $z = x + iy$.
+\end{theorem}
+
+
+\begin{proof}
+The expression $x + iy$ is an abbreviation for the more formal $x' + iy'$. Hence
+\begin{eqnarray*}
+x + iy &=& (x, 0) + (0, 1)(y, 0) \\
+         &=& (x, 0)+ (0 \cdot y - 1 \cdot 0, 0 \cdot 0 + y \cdot 1) \\
+         &=& (x, 0) + (0, y) = (x, y) \\
+         &=& z,
+\end{eqnarray*}
+completing the proof, and also our construction of the set $C$ of complex numbers.
+\end{proof}
+
+%EXAMPLE 1.
+\begin{example}
+ If $z_{1} = 4 + i3, z_{2} = 4 - i3$, and $z_{3} = 7 - i2$, then find $z_{1} + z_{2}, z_{1}z_{2}, 3z_{1} - 2z_{3}$, and $z_{1}z_{3}$. These are simply routine exercises involving the addition, subtraction, and multiplication of complex numbers.
+
+
+\begin{eqnarray*}
+   z_{1} + z_{2} &=& (4 + i3) + (4 - i3) = 8, \\
+       z_{1}z_{2} &=& (4 + i3)(4 - i3) = 16 + i 12 - i 12 - i^{2}9 \\
+                         &=& 16 - (-1) 9 = 25, \\
+3z_{1} - 2z_{3} &=& 3(4 + i3) - 2(7 - i2) \\
+                         &=& 12 + i9 - 14 + i4 = -2 + i13, \\
+        z_{1}z_{3} &=& (4 + i3)(7 - i2) = 28 + i21 - i8 - i^{2}6\\
+                          &=& 28 - (-1)6 + i 13 = 34 + i 13.
+\end{eqnarray*}
+\end{example}
+
+%SEC. 6] COMPLEX NUMBERS 331
+%EXAMPLE 2. 
+\begin{example}
+If $z_{1} = 2 + i3$ and $z_{2} = 3 - i$, plot $z_{1}, z_{2}$, and $z_{1} + z_{2}$ on the complex plane. We have
+$$
+z_{1} + z_{2} = (2+ i3) + (3 - i) = 5 + i2, 
+$$
+\noindent and the three points are shown in Figure 19.
+\end{example}
+
+%Figure 19
+\putfig{4truein}{scanfig6_19}{}{fig 6.19}
+
+A complex number is a point in the $xy$-plane and can be indicated in a picture by a dot. Another useful geometric representation of $z$ is an arrow with its tail at the origin and its head at the point $z$. We have drawn these arrows in Figure 19. Note that \textit{if $P$ is the parallelogram whose adjacent sides are the arrows representing $z_1$ and $z_2$, then the diagonal of $P$ which has the origin as an endpoint is the arrow representing the sum $z_{1} + z_{2}$.}  The definition of addition in $C$ implies that this parallelogram principle is valid for every pair of complex numbers. 
+It provides a good method for adding complex numbers geometrically.
+
+When the complex number $i$ was first introduced in mathematics, it was regarded as highly mysterious and was called an \textbf{imaginary number}, and this terminology has survived. If $z = x + iy$ is an arbitrary complex number, then by definition $x$ is the \textbf{real part} of $z$, and $y$ is the \textbf{imaginary part} of $z$. Note that the imaginary part of a complex number is a real number. A complex number whose real part is zero, i.e., one that lies on the $y$-axis, is called \textbf{pure imaginary.} It is important to remember that
+
+\begin{theorem} %(6.9) 
+Two complex numbers are equal if and only if their real parts are equal and their imaginary parts are equal. That is, $x_{1} + iy_{1} = x_{2} + iy_{2}$ if and only if $x_{1} = x_{2}$ and $y_{1} = y_{2}$.
+\end{theorem}
+%332 TRIGONOMETRIC FUNCTIONS [CHAP. 6
+
+
+\begin{proof}
+We know that $x_{1} + iy_{1} = (x_{1}, y_{1})$ and $x_{2} + iy_{2} = (x_{2}, y_{2})$. But two ordered pairs are equal if and only if their first coordinates are equal and their second coordinates are equal, and so (6.9) is proved. Another proof, which uses only the algebraic properties of complex numbers rather than their explicit construction as ordered pairs, is the following.  Suppose that $x_{1} + iy_{1} = x_{2} + iy_{2}$. Then $x_{1} - x_{2} = i(y_{2} - y_{1})$, and squaring both sides we obtain
+$$
+(x_{1} - x_{2})^2 = i^{2}(y_{2} - y_{1})^2 = - (y_{2} - y_{1})^2.
+$$
+The left side is a nonnegative real number, and the right side is a nonpositive real number. 
+They can be equal only if both are zero. Hence $x_{1} = x_{2}$ and $y_{2} = y_{1}$. 
+The converse proposition is, of course, trivial.
+\end{proof}
+
+The \textbf{absolute value,} or \textbf{modulus,}  of a complex number $z = x + iy$ is a nonnegative real number denoted by $|z|$ and defined by
+$$
+|z| = \sqrt{x^2 + y^2}.
+$$
+The geometric significance of $|z|$ is that it is the distance between the point $z$ and the origin 
+in the complex plane. If $z$ is represented by an arrow, then $|z|$ is the length of the arrow. 
+Note that if $z$ is real, i.e., if its imaginary part is equal to zero, then the absolute value of $z$ 
+is simply its absolute value as a real number. Thus, if $z = x + iy$ and $y = 0$, then
+
+$$
+|z| = \sqrt{x^2+ 0^2} = \sqrt{x^2} = |x|.
+$$
+
+An important property of the absolute value is the following.
+
+\begin{theorem} %(6.10) 
+The absolute value of the product of two complex numbers is the product of their absolute values; i.e., $|z_{1}z_{2}| = |z_{1}| |z_{2}|$.
+\end{theorem}
+
+\begin{proof}
+Let $z_{1} = x_{1} + iy_{1}$ and $z_{2} = x_{2} + iy_{2}$. Then we have 
+$z_{1}z_{2} = x_{1}x_{2} - y_{1}y_{2} + i(x_{1}y_{2} + x_{2}y_{1})$. 
+Hence, by the definition of absolute value,
+$$
+|z_{1}z_{2}|^{2} = (x_{1}x_{2} - y_{1}y_{2})^2 + (x_{1}y_{2} + x_{2}y_{1})^2.
+$$
+Simplifying, we get
+\begin{eqnarray*}
+|z_{1}z_{2}|^2 &=& x_{1}^{2} x_{2}^{2} - 2x_{1}x_{2}y_{1}y_{2} + y_{1}^{2}y_{2}^{2} 
++ x_{1}^{2}y_{2}^{2} + 2x_{1}x_{2}y_{1}y_{2} + x_{2}^{2}y_{1}^{2} \\
+                       &=& x_{1}^{2}(x_{2}^{2} + y_{2}^{2}) + y_{1}^{2}(x_{2}^{2} + y_{2}^{2})\\
+                       &=& (x_{1}^{2} + y_{1}^{2})(x_{2}^{2} + y_{2}^{2})\\
+                       &=&  |z_{1}|^{2} |z_{2}|^{2}.
+\end{eqnarray*}
+Thus $|z_{1}z_{2}| = |z_{1}|^{2} |z_{2}|^{2}$, and the proof is completed by taking 
+the positive square root of each side of the equation.
+\end{proof}
+
+As an illustration of Theorem (6.10), consider the complex numbers and $z_{2}$ shown 
+in Figure 19. The product $z_{1}z_{2}$ is equal to
+
+\begin{eqnarray*}
+z_{1}z_{2} = (2 + i3)(3 - i) &=& 6 + i9 - i2 - i^{2} 3\\
+                                         &=& 9 + i7. 
+\end{eqnarray*}
+
+\noindent The absolute values are 
+
+\begin{eqnarray*}
+        |z_{1}| &=& \sqrt{2^{2} + 3^{2}} = \sqrt{13}, \\
+        |z_{2}| &=& \sqrt{3^{2} + (- 1)^{2}} = \sqrt{10},\\
+|z_{1}z_{2}| &=& \sqrt{9^2 + 7^{2}} = \sqrt{130},
+\end{eqnarray*}
+
+\noindent which is in agreement with (6.10).
+
+If $z = x + iy$, then the \textbf{complex conjugate} of $z$, denoted by \={z}, 
+is defined to be the complex number
+$$
+\mbox{\={z}}\; = x- iy.
+$$
+\noindent The product of a complex number and its complex conjugate is always a nonnegative real
+number, since 
+$$
+z \mbox{\={z}}\; = (x + iy)(x - iy) = x^2 + y^2. 
+$$
+
+\noindent Since $x^2 + y^2 = |z|^2$, we obtain the formula
+$$
+z \mbox{\={z}}\; = |z|^2.
+$$
+
+The complex conjugate is a useful tool for computing the real and imaginary parts of the
+quotient of two complex numbers. If $z_{1}$ and $z_{2}$ are given and if $z_{2} \neq 0$,
+then
+
+$$
+\frac{z_1}{z_2} = \frac{z_1}{z_2} \frac{\mbox{ \={z}}_2}{\mbox{ \={z}}_2}
+ = \frac{z_{1}\mbox{ \={z}}_2}{| z_{2} |^2}
+$$
+
+\noindent and the denominator of the right side is a real number.
+
+
+%EXAMPLE 3. 
+\begin{example} 
+Compute the real and imaginary parts of the complex number $7 + i2$. The complex conjugate 
+of $7 - i2$ is the number $7 + i2$. Hence
+$$
+\frac{5 + i3}{7 - i2} = \frac{ 5 + i3}{ 7 - i2} \frac{7 + i2}{7+i2} = \frac{(5 + i3)(7 + i2)}{7^{2} +2^{2}}.
+$$
+\noindent Since $(5 + i3)(7 + i2) = 35 - 6 + i21 + i 10 = 29 + i31$, we obtain
+
+$$
+\frac{5 + i3}{7 - i2} = \frac{ 29 + i31}{ 53} = \frac{29}{53} + i \frac{31}{53}. 
+$$
+\noindent Thus the real part is $\frac{29}{53}$, and the imaginary part is $\frac{31}{53}$.
+\end{example}
+%334 TRIGONOME;TRIC FUNCTIONS [CHAP. 6 
+
+

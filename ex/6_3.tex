@@ -1,0 +1,167 @@
+\begin{exercises}
+
+\ex{6.3.1}
+Which of the six trigonometric functions are
+odd functions and which are even functions?
+
+\ex{6.3.2}
+Derive the formulas for the derivatives of the functions
+$\cot$, $\sec$, and $\csc$.
+
+\ex{6.3.3}
+Find the following derivatives.
+\begin{exenum}
+\x
+$\ddx \sec^2 x$
+\x
+$\ddx \tan (2x^2 - 1)$
+\x
+$\ddx \ln |\sec x|$
+\x
+$\frac{d}{dy} \cos y \tan y$
+\x
+$\frac{d}{dt} (\sec^2t - 1)$
+\x
+$\ddx \csc (x^3 - 1)$
+\x
+$\ddx \tan x \cot x$
+\x
+$\frac{d}{dt} \ln |\cot t|$.
+\end{exenum}
+
+\ex{6.3.4}
+Prove each of the following identities from the
+basic identities in sine and cosine
+developed in Section \secref{6.1}.
+\begin{exenum}
+\x
+$\tan(x+y) = \frac{\tan x + \tan y}{1 - \tan x \tan y}$
+\x
+$\csc x = \sec \left( x - \frac{\pi}2 \right)$
+\x
+$\cot(a+b) = \frac{\cot a\cot b-1}{\cot a+\cot b}$
+\x
+$\cot(x+\pi) = \cot x$.
+\end{exenum}
+
+\ex{6.3.5}
+Find the following intervals.
+\begin{exenum}
+\x
+$\int \tan 5x \; dx$
+\x
+$\int \cot x \; dx$
+\x
+$\int e^x \sec^2 e^x \; dx$
+\x
+$\int \tan^2 x \; dx$ \quad
+[\emph{Hint:} Use $\tan^2 x + 1 = \sec^2 x$.]
+\x
+$\int \tan^4 x \sec^2 x \; dx$
+\x
+$\int \sec^4 x \tan x \; dx$
+\x
+$\int \frac1{\sqrt{x}} \csc \sqrt{x} \cot \sqrt{x} \; dx$
+\x
+$\int \csc^4 x \; dx$.
+\end{exenum}
+
+\ex{6.3.6}
+Find $\ddx (\sec x + \tan x)$ and use the result
+to evaluate the integral
+\[
+\int \sec x \; dx = \int \sec x
+\frac{\sec x + \tan x}{\sec x + \tan x} \; dx
+.
+\]
+
+\ex{6.3.7}
+Find $\int \tan x \; dx = \int \frac{\tan x \sec x}{\sec x} \; dx$
+by substituting $u = \sec x$ and $\nxder{}ux$
+in the right side.
+Compare the answer obtained with Example
+\exref{6.3.1b}.
+
+\ex{6.3.8}
+Draw the graph of
+\begin{exenum}
+\x
+$\cot x$
+\x
+$\csc x$.
+\end{exenum}
+
+\ex{6.3.9}
+Evaluate the following limits.
+\begin{exenum}
+\x
+$\lim_{x\goesto0} \frac{\tan x}x$
+\x
+$\lim_{x\goesto0} x \cot 2x$.
+\end{exenum}
+
+\ex{6.3.10}
+Find the tangent of the angle between
+\begin{exenum}
+\x
+the straight lines $y-2x=1$ and $2y-x=4$.
+\x
+the straight lines $y+2x=2$ and $2y-x=2$.
+\x
+the tangent lines to the curves $y=x^2$
+and $x^2+y^2=1$ at their point of
+intersection in the first quadrant.
+\end{exenum}
+
+\ex{6.3.11}
+What is the domain and the range of each one
+of the six trigonometric functions?
+
+\ex{6.3.12}
+Evaluate each of the following indeterminate
+forms (see Problem \exref{5.4.13}):
+\begin{exenum}
+\x
+$\lim_{x\goesto0+} (\sin x)^{\tan x}$
+\x
+$\lim_{x\goesto0+} x^{1-\cos x}$.
+\end{exenum}
+
+\ex{6.3.13}
+If $\lim_{x\goesto a} f(x) = \lim_{x\goesto a} g(x) =
+\pm \infty$,
+it is not immediately apparent whether or not
+$\lim_{x\goesto a} (f(x)-g(x))$ exists.
+Such limits are commonly called
+\dt{indeterminate forms} of the type
+$\infty - \infty$.
+The usual method of evaluation is to express the
+difference $f(x) - g(x)$ as a quotient and then to
+try to find its limit.
+For example, we write
+\[
+\frac{e^x}{e^x-1} - \frac1x =
+\frac{xe^x - (e^x-1)}{x(e^x - 1)}
+,
+\]
+and, as $x$ approaches zero, the limit of the right
+side can be obtained by two applications of
+L'H\^opital's Rule.  Evaluate
+\begin{exenum}
+\x
+$\lim_{x\goesto0} \left(\frac{e^x}{e^x-1} - \frac1x\right)$
+\x
+$\lim_{x\goesto0} \left[\frac{(x^2+8)^{\frac13}}
+{2x^2} - \frac1{x^2}\right]$
+\x
+$\lim_{x\goesto0} \left(\frac{x^2+3x+5}
+{\sin x} - \frac5x\right)$
+\x
+$\lim_{t\goesto0} \left(\cot t - \frac{1-2t}t\right)$
+\x
+$\lim_{x\goesto0+} \left(\frac1x + \ln x\right)$
+\x
+$\lim_{x\goesto\frac{\pi}2} (\sec x - \tan x)$.
+\end{exenum}
+
+\end{exercises}

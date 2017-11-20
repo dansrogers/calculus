@@ -1,0 +1,122 @@
+\chapter{Conic Sections} \label{chp 3}
+
+We shall now consider a certain type of curve called a \textbf{conic section}. Each of these curves is the curve of intersection of a plane with a right circular cone and each is also the curve defined by a second-degree equation. It is also true that any second-degree equation in $x$ and $y$ defines one of these curves or a degenerate form of one of them. We encounter all of them---the circle, the parabola, the ellipse, and the hyperbola---frequently in mathematics and also in the physical world.
+
+\section{The Circle.}\label{sec 3.1} 
+ We looked at a circle in Chapter 1 and have a definition from a first course in
+plane geometry. This is still the definition: A \textbf{circle} is the locus of points in a plane at a given distance from a fixed point. The given distance is called the \textbf{radius} and the fixed point is called the \textbf{center}.
+
+If the center of the circle is at $(h, k)$, the distance from the center to a variable point $(x,y)$ is, by the distance formula, $\sqrt{(x-h)^2 + (y-k)^2}$. If the radius is $r$, we have an equation of the circle given by
+
+\begin{equation}
+\sqrt{(x-h)^2 + (y-k)^2} = r.   
+\label{eq3.1.1}
+\end{equation}
+\noindent An equivalent equation which is more commonly used is
+
+\begin{equation}
+(x-h)^2 + (y-k)^2 = r^2.  
+\label{eq3.1.2}
+\end{equation}
+\noindent It is easy to see that, not only do all points at a distance $r$ from $(h, k)$ lie on the graph of (2), but also all points on the graph of (2) are at a distance r from $(h, k)$.
+\medskip
+
+%EXAMPLE 1. 
+\begin{example}
+(a) Write an equation of the circle with center at the origin and radius 3. (b)
+Write an equation of the circle with center at $(-1, 2)$ and radius 5.
+
+\begin{description}
+\item[(a)] By the distance formula, the first circle has equation
+$$
+\sqrt{(x-0)^2 + (y-0)^2} = 3, \;\;\; \mbox{or} \;\;\;  x^2 + y^2 = 9.
+$$
+%132 SEC. 1] THE CIRCLE  133
+\item[(b)] By the distance formula, an equation for the second circle is\linebreak
+$\sqrt{[x-(-1)]^2 + (y-2)^2} = 5$. Equivalent equations are
+\begin{eqnarray*}
+(x + 1)^2 + (y - 2)^2 &=& 25, \\
+  x^2 + y^2 + 2x - 4y &=& 20.
+\end{eqnarray*}
+
+\end{description}
+
+As the following examples will show, any equation of the form $ax^2 + ay^2 + bx + cy + d = 0$ is, loosely speaking, an equation of a circle. The words ``loosely speaking" are inserted to cover possible degenerate cases. For example, if $a = 0$ and $b$ and $c$ are not both zero, the equation becomes an equation of a line. In another degenerate case ``the circle" may be just a point (if its radius is zero), and in another there may be no locus at all.
+\end{example}
+\medskip
+
+%EXAMPLE 2.
+\begin{example}
+Describe the graph of each of the following equations:
+
+\begin{quote}
+\begin{description}
+\item[(a) $x^2 + y^2 - 6x + 8y - 75 = 0$, ]
+\item[(b) $x^2 + y^2 + 12x - 2y + 37 = 0$, ]
+\item[(c) $x^2+y^2 - 4x- 5y+ 12 = 0$, ]
+\item[(d) $3x^2 + 3y^2 - 9x + 10y - \frac{71}{12} = 0$.]
+\end{description}
+\end{quote}
+
+The technique of completing the square is useful in problems of this type. In (a), we write equations equivalent to the given equation until we recognize the form.
+
+\begin{eqnarray*}
+               x^2 - 6x + y^2 + 8y &=& 75, \\
+ x^2 - 6x + 9 + y^2 + 8y + 16 &=& 75 + 9 + 16, \\
+             (x - 3)^2 + (y + 4)^2 &=& 100.
+\end{eqnarray*}
+\noindent The graph is a circle with center at $(3, - 4)$ and radius 10. 
+
+Applying the same technique to (b), we have
+
+\begin{eqnarray*}
+              x^2 + 12x + y^2 - 2y &=& -37, \\
+x^2 + 12x + 36 + y^2 - 2y + 1 &=& -37 + 36 + 1, \\
+               (x + 6)^2 + (y - 1)^2 &=& 0.
+\end{eqnarray*}
+\noindent The graph is a circle with center at $(- 6, 1)$ and radius 0; i.e., it is just the point $(- 6, 1)$. We may say that the graph consists of the single point, although we sometimes describe it as a point circle.
+%134 CONIC SECTIONS [CHAP, 3 - 
+
+The equation of (c) gives different results:
+
+\begin{eqnarray*}
+                            x^2 - 4x + y^2 - 5y &=& - 12, \\
+x^2 - 4x + 4 + y^2 - 5y + \frac{25}{4} &=& - 12 + 4 + \frac{25}{4}, \\
+               (x-2)^2 + (y - \frac{5}{2})^2 &=& -\frac{7}{4}.
+\end{eqnarray*}
+
+For any two real numbers $x$ and $y$, the numbers $(x-2)^2$ and $(y-\frac{5}{2})^2$ must both be nonnegative, while $-\frac{4}{7}$ is certainly negative. Hence there are no points in the plane satisfying this equation. However, the form of the last of the three equivalent equations is that of the equation of a circle, and we sometimes say that the graph is an imaginary circle with center at $(2, \frac{5}{2})$ and radius $\frac{1}{2}\sqrt{-7}$.
+
+Equation (d) requires a bit more manipulation:
+
+\begin{eqnarray*}
+                                                  3x^2 - 9x + 3y^2 + 10y &=& \frac{71}{12},\\
+                                         x^2 - 3x + y^2 + \frac{10}{3}y &=& \frac{71}{36},\\
+x^2 - 3x + \frac{9}{4} + y^2 + \frac{10}{3}y + \frac{29}{5} &=& \frac{71}{36} + \frac{9}{4} + \frac{25}{9}, \\
+                             (x - \frac{3}{2})^2 + (y + \frac{5}{3})^2 &=& 7.
+\end{eqnarray*}
+
+\noindent The graph is a circle with center at $(\frac{3}{2}, -\frac{5}{3})$ and radius $\sqrt7$.
+\end{example}
+\medskip
+
+By completing the square, as in the above examples, one can show that any equation of the form
+
+$$
+ax^2 + ay^2 + bx + cy + d = 0
+$$
+\noindent is an equation of a circle of positive radius if and only if $a \neq 0$ and $b^2 + c^2 > 4ad$.
+
+The circle is also the intersection of a right circular cone with a plane perpendicular to the axis of the cone. If the plane passes through the vertex of the cone, the intersection is a point.
+
+We can use the techniques of the calculus, as well as our knowledge of Euclidean geometry, to write an equation for a circle or for a line tangent to a circle, from given geometric conditions.
+
+%EXAMPLE 3. 
+\begin{example}
+Write an equation of the line which is tangent to the graph of $(x + 3)^2 + (y - 4)^2
+= 25$ at (1, 7). We may find the slope by use of the derivative, differentiating implicitly and remembering that one interpretation of the derivative is the slope of the tangent: $2(x + 3) + 2(y - 4)y' = 0$; hence $y' = - \frac{x + 3}{y - 4}$. The slope Or the tangent is $-\frac{1 + 3}{7 - 4} = - \frac{4}{3}$. We
+%SEC. 1] THE CIRCLE  135
+may also find the slope of the tangent by noting first that the radius to (1, 7) has slope $\frac{7-4}{1- (-3)}= \frac{3}{4}$ and then by remembering that the tangent is perpendicular to the radius and hence has slope $-\frac{4}{3}$. Thus the tangent line has equation $y-7 = - \frac{4}{3}(x-1)$ or $4x + 3y = 25$.
+\end{example}
+
+

@@ -1,0 +1,156 @@
+\section{The Hyperbola.} \label{sec 3.4}
+The fourth and last conic section is the hyperbola. By definition a \textbf{hyperbola} is the locus of points in a plane the absolute value of
+%152 CONIC SECT/ONS [CHAP. 3
+the difference of whose distances from two given points is a positive constant. The constant must be less than the distance between the two points, since the length of one side of a triangle must be greater than the absolute value of the difference between the lengths of the other two sides. The two given points are called the foci of the hyperbola.
+
+If we select $(-c, 0)$ and $(c, 0)$ as foci and $2a$ as the difference of distances, the point $(x, y)$ will lie on the hyperbola if and only if
+
+$$
+|\sqrt{(x - c)^2 + y^2} - \sqrt{(x + c)^2 + y^2} | = 2a.
+$$
+\noindent This equation is an abbreviation for the two equations
+
+\begin{eqnarray*}
+\sqrt{(x - c)^2 + y^2} - \sqrt{(x + c)^2 + y^2}  &=& 2a,\\
+\sqrt{(x + c)^2 + y^2} - \sqrt{(x - c)^2 + y^2}  &=& 2a.
+\end{eqnarray*}
+\noindent We shall simplify the first of these two equations and leave as Problem 1 at the end of the section the proof that a similar simplification of the second results in the same equation.
+
+The steps are similar to those for the simplification of the defining equation of an ellipse:
+
+\begin{eqnarray*}
+       \sqrt{(x - c)^2 + y^2}  &=& 2a + \sqrt{(x + c)^2 + y^2},\\
+               x^2 - 2cx + y^2 &=& 4a^2 + 4a \sqrt{(x + c)^2 + y^2} + x^2 + 2cx + c^2 + y^2,\\
+                      -4cx-4a^2 &=& 4a\sqrt{(x + c)^2 + y^2},\\
+c^2x^2 + 2{a^2}cx + a^4  &=& a^2(x^2 + 2cx + c^2 + y^2),\\
+(c^2 - a^2)x^2 - {a^2}y^2 &=& a^2(c^2 - a^2), 
+\end{eqnarray*}
+\noindent and finally
+
+$$
+\frac{x^2}{a^2} - \frac{y^2}{c^2 - a^2} = 1. 
+$$
+\noindent This last equation is closely akin to the equation of an ellipse; however, the second term is $\frac{y^2}{c^2 - a^2}$ instead of $\frac{y^2}{a^2 - c^2}$. For the hyperbola, it is the case that $2a < 2c$ and so $a < c$, and therefore $c^2 - a^2 > 0$. Thus it is $c^2 - a^2$ which we replace by $b^2$ to obtain the canonical equation for the hyperbola
+
+$$
+\frac{x^2}{a^2} - \frac{ y^2}{b^2} = 1. 
+$$
+\noindent We know, from the derivation, that the graph of this equation contains all points $(x, y)$ such that the distance between $(c, 0)$ and $(x, y)$ is $2a$ more than
+%SEC. 4] THE HYPERBOLA  153
+the distance between $(-c, 0)$ and $(x, y)$. In Problem 1 you will be asked to show that the graph also contains all points $(x, y)$ such that the distance between $(-c, 0)$ and $(x, y)$ is $2a$ more than the distance between $(c, 0)$ and $(x, y)$. In Problem 3 you will be asked to show that the graph contains only those points.
+
+By setting y equal to 0, we see that the graph cuts the $x$-axis at $(-a, 0)$ and $(a, 0)$. These points are called the \textbf{vertices} of the hyperbola and the line segment joining them the \textbf{transverse axis}. By writing the equivalent equation $y^2 = \frac{b^2}{a^2} (x^2 - a^2)$, we see that there are no points on the graph for $|x| < a$. Hence the graph cannot cut the $y$-axis. The curve is infinite in extent, since there are points on the graph for all $x$ such that $|x| > a$, and $|y|$ increases indefinitely as $|x|$ increases. The curve is symmetric with respect to both axes and to the origin, since  $(-p, q)$, $(p,-q)$, and $(-p,-q)$ all lie on the graph whenever $(p, q)$ does. Although the graph is infinite in extent, the central portion of it is sketched in Figure \f{3.12}. When we ask for the sketch of a hyperbola, it is the central part which is to be drawn.
+
+\putfig{4.5truein}{scanfig3_12}{}{fig 3.12}
+
+The graph of $y = \frac{b}{a} \sqrt{x^2 - a^2} $ is the upper half of the right branch of the hyperbola for $x \geq a$ and the upper half of the left branch for $x \leq -a$. In each case, since $|x| > \sqrt{x^2 - a^2}$, it is true that $\frac{b}{a} |x| > \frac{b}{a} \sqrt{x^2 - a^2}$.  However, the difference between the two functions $\frac{b}{a} |x|$ and $\frac{b}{a} \sqrt{x^2 - a^2}$ gets less and less as $|x|$ increases. Thus the upper half of the hyperbola lies below the graph of $y = \frac{b}{a} |x|$ but gets closer to it as $|x|$ increases. Similarly, the graph of $y = -\frac{b}{a}\sqrt{x^2 - a^2}$ is the lower half of the hyperbola and it lies
+%154 CONIC SECTIONS [CHAP. 3
+above the graph of $y = - \frac{b}{a} |x|$, but gets closer to it as $|x|$ increases. The union of the two graphs, those of $y = \frac{b}{a} |x|$ and $y = - \frac{b}{a} |x|$, is also the union of the graphs of the straight lines $y = -\frac{b}{a} x$ and $y = - \frac{b}{a} x$. These lines, approached by the hyperbola, are called the \textbf{asymptotes} of the hyperbola. They are of use in sketching the graph of a hyperbola, giving guidelines approached by the hyperbola. They are easily drawn as the diagonals of the rectangle with vertical sides passing through the vertices of the hyperbola and horizontal sides passing through $(0, -b)$ and $(0, b)$.
+\medskip
+
+%EXAMPLE 1. 
+\begin{example}
+Describe and sketch the graph of $\frac{x^2}{16} - \frac{y^2}{9} = 1$. Here we have $a = 4$, $b = 3$, and $c = 5$. The transverse axis is of length 8, the $x$-intercepts are $-4$ and 4, the foci are at $(-5, 0)$ and (5, 0), and the asymptotes are the lines $y = \frac{3}{4}x$ and $y = - \frac{3}{4}x$. A very useful device for remembering equations of the asymptotes is obtained by replacing the "1" in the equation of the hyperbola by "0":
+
+$$
+\frac{x^2}{16} - \frac{y^2}{9} = 0,
+$$
+\noindent which is equivalent to
+$$
+\Bigl(\frac{x}{4} + \frac{y}{3} \Bigr) \Bigl(\frac{x}{4} - \frac{y}{3} \Bigr) = 0.
+$$
+
+\putfig{4.5truein}{scanfig3_13}{}{fig 3.13}
+\noindent The graph of this equation is the union of the graphs of $\frac{x}{4} + \frac{y}{3} = 0$ and $\frac{x}{4} - \frac{y}{3} = 0$, equations of the asymptotes. The graph is sketched in Figure \f{3.13}.
+
+If the foci of the hyperbola are on the $y$-axis, at $(0, -c)$ and $(0, c)$ the equation will be $\frac{y^2}{a^2} - \frac{x^2}{b^2} = 1$. The graph will have branches opening upward and downward instead of to the right and left. The lines $y = \frac{a}{b}x$ and $y = -\frac{a}{b} x$ will be asymptotes.
+\end{example}
+\medskip
+
+%EXAMPLt 2. 
+\begin{example}
+Describe and sketch the graph of $4y^2 - 5x^2 = 20$. An equivalent equation is $\frac{y^2}{5} - \frac{x^2}{4} = 1$, from which we see that the vertices are at $(0, -\sqrt5)$ and $(0, \sqrt5)$. The transverse axis is vertical and of length $2\sqrt{5}$. The foci are at $(0, -3)$ and (0, 3) and the lines $y = -\frac{1}{2}\sqrt{5}x$ and $y = \frac{1}{2}\sqrt{5}x$ are the asymptotes. The branches open upward and downward, as can be seen in Figure \f{3.14}.
+
+\putfig{3.75truein}{scanfig3_14}{}{fig 3.14}
+
+The equations $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ and $\frac{y^2}{b^2} - \frac{x^2}{a^2} = 1$ have the same asymptotes, the lines $y = -\frac{b}{a} x$ and $y = - \frac{b}{a} x$, and they are called \textbf{conjugate hyperbola}.
+% 156 CONIC SECTIONS [CHAP. 3
+The first mentioned has its foci at $(-c, 0)$ and $(c, 0)$ and the latter has its foci at $(0, -c)$ and $(0, c)$, where $c = \sqrt{a^2 + b^2}$. The transverse axis of each is called the \textbf{conjugate axis} of the other.
+
+Examples 1 and 2 have each been a hyperbola with its center at the origin. The foci, however, may be anywhere in the plane and the midpoint of the segment joining them will be the center. If they are on a line parallel to one of the axes, an equation analogous to that of the ellipse can be written. In particular, if the foci are at $(h - c, k)$ and $(h + c, k)$, an equation of the hyperbola is $\frac{(x - h)^2}{a^2} - \frac{(y - k)^2}{b^2} = 1$, and an equation for the asymptotes is $ \frac{(x^2 - h^2)}{a^2}  - \frac{(y - k^2)}{b^2} = 0$.  The latter equation is equivalent to the separate equations, $y - k = \frac{b}{a} (x - h)$ and $y - k = - \frac{b}{a} (x - h)$. If the foci are at $(h, k - c)$ and $(h, k + c)$, an equation for the hyperbola is
+
+$$
+\frac{(y - k)^2}{a^2} - \frac{ (x - h)^2}{b^2} = 1. 
+$$
+\end{example}
+\medskip
+
+\putfig{4.5truein}{scanfig3_15}{}{fig 3.15}
+
+%EXAMPLE 3.
+\begin{example}
+Describe and sketch the graph of $\frac{(x + 2)^2}{9} - \frac{(y - 1)^2}{16} = 1$. The center of the hyperbola is at $(-2, 1)$, the foci are at $(-7, 1)$ and (3, 1), and the transverse axis is horizontal and of length 6. The asymptotes have equations $y - 1 = \frac{4}{3}(x + 2)$ and $y - 1 = - \frac{4}{3} (x + 2)$. The graph is sketched in Figure \f{3.15}.
+%SEC. 4] THE HYPERBOLA  157
+
+\noindent There is a focus-directrix definition of the hyperbola, analogous to those for the parabola and the ellipse. The distance from a point $(x, y)$ to the focus $(c, 0)$ is $\sqrt{(x - c)^2 + y^2}$. The point lies on the hyperbola if and only if $\frac{x^2}{a^2}  - \frac{y^2}{c^2 - a^2} = 1$, or $y^2 = a^2  - c^2 - x^2 + \frac{c^2}{a^2} x^2$. Thus the distance from a point on the hyperbola to the focus is
+
+\begin{eqnarray*}
+\sqrt{x^2 - 2cx + c^2 + \Bigl( a^2 - c^2 - x^2 + \frac{c^2}{ a^2}x^2 \Bigr)} 
+&=& \sqrt{\frac{c^2}{a^2}x^2 - 2cx + a^2}\\
+&=& \sqrt{\Bigl( \frac{c}{a}x - a \Bigr)^2}\\
+&=& \Bigl| \frac{c}{a} x - a \Bigr|.
+\end{eqnarray*}
+
+\noindent As with the ellipse, this distance is equal to $\frac{c}{a} \Bigl|x - \frac{a^2}{c}\Bigr|$, or $\frac{c}{a}$ times the distance to the line $x = \frac{a^2}{c}$.  This line is again called the \textbf{directrix}, and the ratio $\frac{c}{a}$ the \textbf{eccentricity}. However, for the hyperbola the eccentricity is greater than 1. The hyperbola can therefore also be defined as the locus of points the ratio of whose distances to the focus and to the directrix is a constant greater than 1. Corresponding to the focus $(-c, 0)$ is a second directrix $x = - \frac{a^2}{c}$.
+
+Not all hyperbolas with horizontal or vertical axes appear with equations in canonical form. But canonical equations can be found for them by factoring and completing the square.
+\end{example}
+\medskip
+
+%EXAMPLE 4. 
+\begin{example}
+Describe and sketch the graph of $16x^2 - 9y^2 - 32x - 54y - 641 = 0$. Equations equivalent to the given equations are
+\begin{eqnarray*}
+                   16(x^2 - 2x) _ 9(y^2 + 6y) &=& 641, \\
+       16(x^2 - 2x + 1) _ 9(y^2 + 6y + 9) &=& 641 + 16 \cdot 1 - 9 \cdot 9,\\
+                      16(x - 1 )^2 - 9(y + 3)^2 &=& 576,\\
+\frac{(x-1)^2}{36} - \frac{ (y+3)^2}{64} &=& 1.
+\end{eqnarray*}
+\noindent The hyperbola, opening to the right and left, has its center at $(1, - 3)$, its vertices at $(-5, -3)$ and $(7, -3)$, its foci at $(-9, -3)$ and $(11, -3)$, and the lines $y + 3 = \frac{4}{3}(x - 1)$ and $y + 3 = - \frac{4}{3}(x - 1)$ for asymptotes. The graph is sketched in Figure \f{3.16}.
+\end{example}
+%158 CONIC SECTIONS [CHAP. 3
+\putfig{4.5truein}{scanfig3_16}{}{fig 3.16}
+
+The method of Example 4 can be used to show that every equation of the type $ax^2 - by^2 + cx + dy + e = 0$ with $ab > 0$ has for its graph either a hyperbola or a pair of intersecting straight lines. Equivalent to the given equation are
+
+\begin{eqnarray*}
+a \Bigl( x^2 + \frac{c}{a} x \Bigr) - b \Bigl( y^2 - \frac{d}{b} y \Bigr) &=& - e,\\
+a \Bigl(x^2 + \frac{c}{a} x + \frac{c^2}{4a^2} \Bigr) - b \Bigl( y^2 - \frac{d}{b} y + \frac{d^2}{4b^2} \Bigr) &=&
+\frac{c^2}{4a} - \frac{d^2}{4b} - e,\\ 
+a \Bigl( x + \frac{c}{2a} \Bigr)^2 - b \Bigl( y - \frac{d}{2b} \Bigr)^2 &=& \frac{c^2}{4a} - \frac{d^2}{4b} - e. 
+\end{eqnarray*}
+\noindent If the expression on the right side of the equation has the
+same sign as $a$ and $b$, the graph is a hyperbola centered at $\Bigl( -\frac{c}{2a}, \frac{d}{2b} \Bigr)$ opening to the right and to the left. If the expression has sign opposite to $a$ and $b$, the graph is a hyperbola centered at $\Bigl(-\frac{c}{2a}, \frac{d}{2b}\Bigr)$ but opening upward and downward. If the expression is zero, the graph consists of the two
+straight lines
+
+$$
+y - \frac{d}{2b} = \sqrt{\frac{a}{b}} \Bigl(x + \frac{c}{2a} \Bigr) \;\;\; \mbox{and} \;\;\;
+y - \frac{d}{2b} = - \sqrt{\frac{a}{b}} \Bigl(x + \frac{c}{2a} \Bigr).
+$$
+
+One particular type of hyperbola with its axes neither horizontal nor vertical has a simple equation and appears frequently in mathematics. It is the hyperbola with foci at $(-a, -a)$ and $(a, a)$ and the difference of distances equal to $2a$. By definition, a point lies on this hyperbola if and only if
+$$
+| \sqrt{(x - a)^2 + (y - a)^2} -\sqrt{(x + a)^2 + (y + a)^2} | = 2a.
+$$
+%SEC. 4] THE HYPERBoLA  1S9
+
+\noindent Squarings and simplifications yield the equation
+$$
+xy = \frac{1}{2}a^2 .
+$$
+This hyperbola has the coordinate axes for its asymptotes and is drawn in Figure \f{3.17}. Its vertices are at $\Bigl( -\frac{a}{2}\sqrt{2}, -\frac{a}{2}\sqrt{2} \Bigr)$ and $\Bigl(\frac{a}{2}\sqrt{2}, \frac{a}{2}\sqrt{2} \Bigr)$.   
+ 
+\putfig{4.5truein}{scanfig3_17}{}{fig 3.17}
+
+\noindent With foci at $(-a, a)$ and $(a, -a)$, the equation is $xy = - \frac{1}{2}a^2$ and the two branches lie in the second and fourth quadrants. This type of hyperbola is called \textbf{equilateral,} as are the hyperbolas $\frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ and $\frac{y^2}{a^2} - \frac{x^2}{b^2} = 1$ with $a^2 = b^2$.
+

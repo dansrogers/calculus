@@ -1,0 +1,214 @@
+\section{Other Substitutions.}
+We have seen in Section 4 that any rational function $\frac{N(x)}{D(x)}$ can be integrated by the method of partial fractions. This result can be
+extended to show that any rational function of the six trigonometric functions can also be integrated. Such a function is defined as the result of replacing
+%SEC. 5] OTHER SUBSTTTUTIONS 397
+each occurrence of $x$ in $\frac{N(x)}{D(x)}$ by any one of the six possibilities: $\sin x, \cos x, \tan x, \cot x, \sec x$, or $\csc x$. An example is the function $F$ defined by
+
+$$
+F(x) = \frac{\sin^{2}x \cos x + 2\tan^{2}x + \sec x}{\cos^{2}x + 3 \cot x + 1},
+$$
+
+\noindent which is obtained in the manner just described from the rational function $\frac{x^3 + 2x^2 + x}{x^2 + 3x + 1}$. Since each one of the four functions $\tan x$, $\cot x$, $\sec x$, and $\csc x$ is a simple rational function $\sin x$ and $\cos x$,
+
+$$
+\begin{array}{ll}
+\tan x = \frac{\sin x}{\cos x},\;\;\; &   \sec x = \frac{1}{ \cos x},\\
+                                                                                               \\
+\cot x = \frac{\cos x}{\sin x},\;\;\; &   \csc x = \frac{1}{ \sin x },
+\end{array}
+$$
+
+\noindent it follows that every rational function of the six trigonometric functions is equal to a rational function of $\sin x$ and $\cos x$. Thus, in the above example, we have  
+
+
+\begin{eqnarray*}
+F(x) &=& \frac{\sin^2 x \cos x + 2 \frac{\sin^2 x}{\cos^2x} + \frac{1}{\cos x}}{\cos^2 x + 3 \frac{\cos x}{\sin x} + 1}\\
+&=& \frac{\sin^3 x \cos^3 x + 2 \sin^3x + \sin x \cos x}
+{\sin x \cos^4 x + 3 \cos^3 x + \sin x \cos^2 x}.
+\end{eqnarray*}
+
+\noindent It is therefore sufficient to show that every rational function of $\sin x$ and $\cos x$ can be integrated.
+
+Surprisingly enough, a simple substitution will transform any rational function of $\sin x$ and $\cos x$ into a rational function of a single variable. The substitution consists of defining $y$, a new variable of integration, by the equation
+
+
+\begin{equation}
+y = \tan \frac{x}{2}. 
+\label{eq7.5.1}
+\end{equation}
+
+\noindent We can express $\cos x$ in terms of $y$ by first writing
+
+$$
+\cos x = \cos 2 \cdot \frac{x}{2} = \cos^{2} \frac{x}{2} - \sin^{2} \frac{x}{2}.
+$$
+
+\noindent Since $\cos^{2} \frac{x}{2} + \sin^{2} \frac{x}{2} = 1$, we have
+
+$$
+\cos x = \frac{\cos^2 \frac{x}{2} - \sin^{2} \frac{x}{2}}{1} 
+= \frac{\cos^{2} \frac{x}{2} - \sin^{2} \frac{x}{2}}{\cos^{2} \frac{x}{2} + \sin^{2} \frac{x}{2}}.
+$$
+%398 TECHNIQUES OF INTEGRATION [CHAP. 7 
+\noindent Dividing numerator and denominator by $\cos^{2} \frac{x}{2}$,
+we get  
+
+$$
+\cos x = \frac{1 - \tan^{2} \frac{x}{2}}{1 + \tan^{2} \frac{x}{2}}
+= \frac{1 - y^2}{1 + y^2}. 
+$$
+
+\noindent Thus we have obtained the equation
+
+
+\begin{equation}
+\cos x= \frac{1- y^2}{1 + y^2}. 
+\label{eq7.5.2}
+\end{equation}
+
+\noindent In a similar fashion, 
+
+\begin{eqnarray*}
+\sin x &=& \sin 2 \cdot \frac{x}{ 2} = 2 \sin \frac{x}{2} \cos \frac{x}{2}\\
+&=& 2 \frac{\sin\frac{x}{2}}{\cos\frac{x}{2}} \cos^{2} \frac{x}{2}  
+= 2 \tan \frac{x}{2} [\frac{1}{2}(1 + \cos x)]  \\
+&=& \tan \frac{x}{2} (1 + \cos x)\\
+&=& y \Bigl(1 + \frac{1 - y^2}{1 + y^2} \Bigr) = \frac{2y}{1 + y^2}.
+\end{eqnarray*}
+
+\noindent Hence
+
+\begin{equation}
+\sin x =\frac{2y}{1 + y^2}. 
+\label{eq7.5.3}
+\end{equation}
+\noindent Finally, since $\frac{x}{2} = \arctan y$, or, equivalently, $x = 2 \arctan y$, we have 
+
+\begin{equation}
+dx = \frac{2 dy}{1 + y^2}.
+\label{eq7.5.4}
+\end{equation}
+\noindent By means of the substitutions given in formulas (2), (3), and (4), any integral of a rational function of $\sin x$ and $\cos x$ ean be transformed into an integral of a rational function of $y$. Since the latter can be integrated by partial fractions, we have proved that \textit{every rationalfunction of $\sin x$ and $\cos x$ can be integrated.}
+%SEC. 5] OTHER SUB5TITUTION5  399
+
+%EXAMPLE 1. 
+\begin{example}
+Integrate $\int \frac{\cos x}{1 + \cos x}$. If we let $y = \tan \frac{x}{2}$, then, as we have seen, we may replace $\cos x$ by $\frac{1 - y^2}{1 + y^2}$, and $dx$ by $\frac{2 dy}{1 + y^2}$. The integral then becomes
+
+\begin{eqnarray*}
+\int \frac{\cos x dx}{1 + \cos x} = \int \frac{\frac{1 - y^2}{1 + y^2} 
+\frac{2dy}{1 + y^2}}{ 1 + \frac{1 - y^2}{1 + y^2}}\\
+= \int \frac{2(1 - y^2) dy}{(1 + y^2)^2 + (1 + y^2)(1 - y^2)}\\
+= \int \frac{2 (1 - y^2)}{(1 + y^2)}dy = \int \frac{1 - y^2}{1 +y^2}dy.
+\end{eqnarray*}
+
+\noindent By division one finds that 
+$$
+\frac{1 - y^2}{1 + y^2} = -1 + \frac{2}{1 + y^2} .
+$$
+
+\noindent Hence
+
+\begin{eqnarray*}
+\int \frac{\cos x dx}{1 + \cos x} &=& \int \Bigl( -1 + \frac{2}{1 + y^2} \Bigr) dy\\
+&=& -y + 2 \arctan y + c.
+\end{eqnarray*}
+
+\noindent But $y = \tan \frac{x}{2}$ and $x = 2 \arctan y$, and we therefore conclude that
+
+$$
+\int \frac{\cos x dx}{1 + \cos x}  = - \tan \frac{x}{2}  + x + c.
+$$
+\end{example}
+
+We do not recommend that the above substitution formulas be memorized. However, one should remember the simple fact that any rational function of the six trigonometric functions is equal to a rational function of the sine and cosine, and one should also remember that a routine substitution procedure exists by which the integral of a function of the latter type can be reduced to the integral of a rational function. For the details, one will probably want to refer directly to formulas (1), (2), (3), and (4).
+
+There are other substitutions which simplify integrals, but none of them is as standard and automatic as the one just described. For example, $\int \frac {\sqrt x dx}{1 + \sqrt x}$ is not readily integrated. However, if we define a new variable of integration y by the equation $y = \sqrt x$, the substitution yields a simple integral.
+%400 TECHNIQUES OF INTEGRATION [CHAP. 7
+
+%EXAMPLE 2. 
+\begin{example}
+Evaluate the indefinite integral $\int \frac {\sqrt x dx}{1 + \sqrt x}$. 
+Let $y = \sqrt x$. Then $y^2 = x$ and $2y dy = dx$. Substituting for $\sqrt x$ and $dx$, we obtain
+
+$$
+\int \frac {\sqrt x dx}{1 + \sqrt x} = \int \frac{y \cdot 2y dy}{1 + y} 
+= \int \frac{2y^2}{1 + y} dy.
+$$
+
+\noindent Division yields the identity 
+
+$$
+\frac{2y^2}{1 + y} = 2y - 2 + \frac{2}{1 + y}. 
+$$
+
+\noindent Hence 
+
+\begin{eqnarray*}
+\int \frac{\sqrt x dx}{1 + \sqrt x} &=& \int \Bigl(2y - 2 + \frac{2}{1 + y} \Bigr) dy\\
+                                                 &=& y^2 - 2y + 2 \ln| 1 + y| + c.
+\end{eqnarray*}
+
+\noindent Since $\sqrt x$ is nonnegative, we have $|1 + y| = |1 + \sqrt x| = 1 + \sqrt x$. Thus 
+
+$$
+\int \frac{\sqrt x dx}{1 + \sqrt x} = x - 2\sqrt x + 2 \ln (1 + \sqrt x ) + c.
+$$
+
+The same integral can be evaluated by a different substitution. Let us define the variable $z$ by the equation $z = 1 + \sqrt x$. Then $\sqrt x = z - 1$ and $\sqrt x= (z- 1)^2$ and, as a result, $dx = 2(z- 1)dz$. After substitution, the integral becomes
+
+\begin{eqnarray*}
+\int \frac {\sqrt x dx}{1 + \sqrt x} &=& \int \frac{(z - 1) \cdot 2(z - 1)dz}{z}\\
+&=& \int \frac{2(z^2 - 2z + 1)dz}{z}\\
+&=& \int \Bigl(2z - 4 + \frac{2}{z} \Bigr)dz\\
+&=& z^2 - 4z + 2 \ln |z| + c.
+\end{eqnarray*}
+
+\noindent Again, since $\sqrt x$ is nonnegative, we have 
+$|z| = |1 + \sqrt x| = 1 + \sqrt x$. Hence, after substituting back, we get
+
+
+\begin{eqnarray*}
+\int \frac {\sqrt x dx}{1 + \sqrt x} 
+&=& (1 + \sqrt x)^2 - 4 (1 + \sqrt x) + 2 \ln (1 + \sqrt x) + c\\
+&=& 1 + 2\sqrt x + x - 4  - 4 \sqrt x + 2 \ln (1 + \sqrt x) + c\\
+&=& x - 2\sqrt x + 2 \ln(1 + \sqrt x) - 3 + c.
+\end{eqnarray*}
+\end{example}
+%SEC. 5] OTHER SUBSTITUTIONS  401
+
+The two solutions in Example 2 differ by a constant, in accordance with Theorem (5.4), page 114. The two substitutions differ in the initial goal: 
+In the first, we decided that the integral would be simpler if we replaced the radical by a new variable, and in the second we decided to replace 
+the denominator. There is little to choose between the two methods.
+
+%EXAMPLE 3. 
+\begin{example}
+Integrate $\int \frac{x^2 - 3}{(2x + 5)^{1/3}}dx$. If we define the variable $y$ by the equation $y = (2x + 5)^{1/3}$, then $y^3 = 2x + 5$ and $3y^{2}dy = 2 dx$. Hence $x = \frac{y^3 - 5}{2}$ and $dx = \frac{3y^2 dy}{2}$.  Substituting, we get
+
+\begin{eqnarray*}
+\int \frac{x^2 - 3}{(2x + 5)^{1/3}} dx
+&=& \int \frac{\Bigl[ \Bigl(\frac{y^3 - 5}{2} \Bigr)^2 - 3 \Bigr]}{y} \frac{3y^{2}dy}{2}\\
+&=& \frac{3}{2} \int y \Bigl( \frac{y^6 - 10 y^3 + 25}{4} - 3 \Bigr) dy \\
+&=& \frac{3}{8} \int (y^7 - 10 y^4 + 13y)dy \\
+&=& \frac{3}{8}(\frac{1}{8}y^8 - \frac{10}{5}y^5 + \frac{13}{2}y^2) + c\\
+&=& \frac{3}{64}(2x + 5)^{8/3} - \frac{3}{4}(2x + 5)^{5/3} 
++ \frac{39}{16}(2x + 5)^{2/3} + c.
+\end{eqnarray*}
+\end{example}
+
+There are no universal rules for integration by substitution. In most cases we are interested in replacing an involved function forming part of the integrand by a simpler one, frequently by a single new variable.
+
+In this chapter we have developed a number of techniques for finding indefinite integrals, or antiderivatives. However, it is by no means the case that these techniques will yield an antiderivative for every integrable function. For example, it is impossible to integrate $\int e^{-x^2} dx$ in the sense that the word ``integrate" has been used in this chapter. (Since $e^{-x^2}$ is everywhere continuous, an antiderivative certainly exists. In particular, the function $F$ defined by
+
+$$
+F(t) = \int_0^t e^{-x^2} dx,\;\;\; \mbox{for every real number}\; t,
+$$
+
+\noindent is an antiderivative as a result of the Fundamental Theorem of Calculus, page 200. However, it can be proved that no antiderivative of $e^{-x^2}$ can be expressed algebraically in terms of functions defined by compositions of rational functions, trigonometric functions, and
+exponential and logarithmic functions.) Nevertheless, the methods discussed in this and the preceding
+%402 TECHNIQUES OF INTEGRATION LCHAP. 7
+section have significantly increased the set of functions whose indefinite integrals we can find.
+
+The reader should be aware of the fact that there are in existence excellent tables of integrals in which frequently encountered integrals are tabulated. No such table contains all tractable integrals, but some are quite complete, and they are of immense practical value for those people
+whose work often leads them to problems requiring integration.
+

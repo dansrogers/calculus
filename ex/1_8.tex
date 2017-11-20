@@ -1,0 +1,132 @@
+\begin{exercises}
+
+\ex{1.8.1}
+In each of the following problems find $[f(g)]^\prime (x)$.
+\begin{exenum}
+\sx
+$f(y) = y^5$ and $g(x) = x^2 + 1$.
+\sx
+$f(y) = y^2 + 2y$ and $g(x) = x^2 - 2x + 2$.
+\sx
+$f(y) = y^3$ and $g(x) = \frac{x}{x^2+1}$.
+\sx
+$f(u) = \frac{u}{u+1}$ and $g(x) = x^2$.
+\sx
+$f(x) = x^{-2}$ and $g(x) = x^\frac13$.
+\sx
+$f(x) = x^4$ and $g(t) = \frac{t^2-1}{t^2+1}$.
+\sx
+$f(x) = g(x) = x^2 + 3x +2$.
+\end{exenum}
+
+\ex{1.8.2}
+Find $f^\prime$ given that
+\begin{exenum}
+\sx
+$f(x) = (1 + x^2)^{10}$
+\sx
+$f(x) = (x^4 + 3x^3 + 2x^2 + x +4)^6$
+\sx
+$f(x) = (t^2 + 1)^4(2t^2 - 3)^3$
+\sx
+$f(x) = \sqrt{x^3 -1}$
+\sx
+$f(x) = \left( \frac{x-1}{x+1} \right)^3$
+\sx
+$f(s) = \frac1{\sqrt{s^2 + 1}}$
+\sx
+$f(y) = \frac{y^2}{(y^2 +1)^{\frac32}}$
+\sx
+$f(u) = \frac5{\left( u + \frac1{\sqrt u} \right)^4}$.
+\end{exenum}
+
+\ex{1.8.3}
+If $f(y) = y^{-2}$ and $g(x)= \frac{x^{\frac12}}
+{\sqrt{5x^3 + 6x^2 + 4x}}$, compute the derivative of the composite
+function $f(g)$ in two ways:
+\begin{exenum}
+\sx
+By finding $f(g(x))$ first and then taking its derivative.
+\sx
+By the Chain Rule.
+\end{exenum}
+
+\ex{1.8.4}
+If $z = 5y^7 + 2y^2 + 1$ and $y = 2x^2 - 6$,
+find $\ddxof z$ and $\ddxof z (2)$.
+
+\ex{1.8.5}
+If $y = x^3$ and $x = \frac1{\sqrt{t^2+5}}$, compute
+$\nxder{}{y}{t}$ and $\nxder{}{y}{t} (2)$ using the Chain Rule.
+
+\ex{1.8.6}
+Let $y = x^2 + 3x + 2$ and $x = \frac{t-1}{t+1}$.
+Compute $\nxder{}{y}{t} (2)$ in two ways:
+\begin{exenum}
+\sx
+By evaluating the composite function $y(t)$ and then
+by taking its derivative.
+\sx
+By the Chain Rule.
+\end{exenum}
+
+\ex{1.8.7}
+Prove directly by induction on $n$ without using the Chain Rule
+that if $f$ is a differentiable function and $n$ is a positive integer,
+then $(f^n)^\prime = nf^{n-1}f^\prime$.
+
+\ex{1.8.8}
+Prove as a corollary of the Chain Rule that
+\[
+[f(g(h))]^\prime = f^\prime(g(h))g^\prime(h)h^\prime
+.
+\]
+
+\ex{1.8.9}
+Using Problem \exref{1.8.8}, show that if $w = f(z)$ and
+$z = g(y)$ and $y = h(x)$, then
+\[
+\ddxof w = \nxder{}{w}{z} \nxder{}{z}{y} \ddxof y
+.
+\]
+
+\ex{1.8.10}
+Let $w = z - \frac1z$, $z= \sqrt{y^3+1}$, and
+$y = 2x^3 - x + 1$.  Find $\ddxof w (1)$.
+
+\ex{1.8.11}
+Using Example \exampref{1.8.6}, compute
+\begin{exenum}
+\sx
+$\ddx (\sinh x)^2$
+\sx
+$\deriv{2}{} \sinh x$
+\sx
+$\deriv{2}{} \cosh x (0)$
+\sx
+$\ddx \sinh(\cosh x)$.
+\end{exenum}
+
+\ex{1.8.12}
+If $z = f(y)$ and $y = g(x)$, show that
+$\deriv{2}{z} = \nxder{2}{z}{y} \left( \deriv{}{y} \right)^2 +
+\nxder{}{z}{y} \deriv{2}{y}$.
+
+\ex{1.8.13}
+If $z = 2y^3 - 3y + 1$ and $y = x^2 - 1$, compute
+$\deriv{2}{z} (2)$ in two ways:
+\begin{exenum}
+\sx
+By evaluating the composite function $z(x)$ and finding
+$z^{\prime\prime} (2)$.
+\sx
+Using the result of Problem \exref{1.8.12}.
+\end{exenum}
+
+\ex{1.8.14}
+Let $f(x)$ be a differentiable function with the property that
+$f^\prime (x) = \frac1x$.  If $g(x)$ is a differentiable function
+with the property that its composition with $f$ is the identity
+function, i.e., $f(g(x)) = x$, prove that $g^\prime = g$.
+
+\end{exercises}

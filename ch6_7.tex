@@ -1,0 +1,343 @@
+\section{The Complex Exponential Function $e^{z}$.}
+ Consider the function $\varphi$ defined by 
+
+$$
+\varphi(x) = \cos x + i \sin x,
+$$
+
+\noindent for every real number $x$. This is a complex-valued function of a real variable. 
+The domain of $\varphi$ is the set $R$ of all real numbers. For every real number $x$, 
+we have
+$$
+|\varphi(x)| = \sqrt{\cos^{2}x + \sin^{2}x} = \sqrt{1} = 1.
+$$
+
+It follows that $\varphi (x)$ is a point on the unit circle in the complex plane, i.e., 
+the circle with center at the origin and radius 1. Conversely, every point on the 
+unit circle is equal to $(\cos x, \sin x)$, for some real number $x$, and we know that 
+$(\cos x, \sin x) = \cos x + i \sin x$. It follows that the range of $\varphi$ is the unit circle. 
+
+The function $\varphi$ has the following properties:
+\begin{theorem}
+$$
+\begin{array}{lrcl}
+\mathrm{( 7.1 )}&                             \varphi (0) &=& 1. \\
+\mathrm{( 7.2 )}&            \varphi (a) \varphi (b) &=& \varphi (a + b).\\
+\mathrm{( 7.3 )}& \frac{\varphi (a)}{\varphi (b)} &=& \varphi (a - b).\\
+\mathrm{( 7.4 )}&                            \varphi( -a) &=& \frac{1}{\varphi (a)}.
+\end{array}
+$$
+\end{theorem}
+
+
+\begin{proof}
+The proofs are completely straightforward. Thus (7.1) follows from the equations
+$$
+\varphi(0) = \cos 0 + i \sin 0 = \cos 0 = 1.
+$$
+To prove (7.2), we write
+\begin{eqnarray*}
+\varphi (a) \varphi (b) &=& (\cos a + i \sin a)(\cos b + i \sin b)\\
+                                  &=& \cos a \cos b - \sin a \sin b + i(\sin a \cos b + \cos a \sin b).
+\end{eqnarray*}
+The trigonometric identities for the cosine and sine of the sum of two numbers 
+then imply that
+$$
+ \varphi (a) \varphi (b) = \cos(a + b) + i \sin(a + b), 
+$$
+and the right side is by definition equal to $\varphi (a + b)$.
+Thus (7.2) is proved. As a special case of (7.2), we have
+$$
+\varphi (a - b) \varphi (b) = \varphi (a - b + b) = \varphi (a).
+$$
+On dividing by $\varphi(b)$, which is never zero, we get (7.3). The last result, (7.4), 
+is obtained by taking $a = 0$ in (7.3) and then substituting 1 for $\varphi (0)$ in accordance with (7.1). Thus
+\begin{eqnarray*}
+\frac{\varphi (0)}{\varphi (b)} &=& \varphi (0 - b),\\
+              \frac{1}{\varphi (b)} &=& \varphi (-b).
+\end{eqnarray*}
+\end{proof}
+
+The above four properties of $\varphi$ are also shared by the real-valued exponential function $\exp$ [we recall that $\exp(x) = e^{x}$]. This fact suggests the possibility of extending the domain and range of $\exp$ into the complex plane. That is, it suggests that the functions $\varphi$ and $\exp$ can be combined to
+give a complex-valued exponential function of a complex variable which will have the property
+that when its domain is restricted to the real numbers, it is simply $\exp$. We define such a
+function now. For every complex number $z = x + iy$, let  $\mbox{Exp}$ be the function defined by
+
+$$
+\mbox{Exp}(z) = \exp(x) \varphi(y).
+$$
+\noindent Thus
+$$
+\mbox{Exp}(z) = e^{x}(\cos y + i \sin y).
+$$
+If $z = x + i0$, then $z = x$ and $\mbox{Exp}(z) = \exp(x) \varphi (0) = \exp(x)$. Hence \textit{the function $\mbox{Exp}$ is an extension of the function $\exp$.}
+
+It is a routine matter to show that the function  $\mbox{Exp}$ has the exponential properties listed above for $\varphi$. Following the practice for the real-valued exponential, we shall write $\mbox{Exp}(z)$ as $e^z$. In this notation therefore, if $z = x + iy$, the definition reads
+$$
+ e^z = e^{x}(\cos y + i \sin y). 
+$$
+
+The exponential properties are
+\begin{theorem}
+$$
+\begin{array}{lrcl}
+\mathrm{( 7.1')}&                               e^0 &=& 1. \\
+\mathrm{( 7.2')}&        e^{z_{1}}e^{z_{2}} &=& e^{z_{1} + z_{2}}.\\
+\mathrm{( 7.3')}& \frac{e^{z_1}}{e^{z_2}} &=& e^{z_{1} - z_{2}}.\\
+\mathrm{( 7.4')}&                \frac{1}{e^z}  &=& e^{-z}.
+\end{array}
+$$
+\end{theorem}
+
+\begin{proof}
+The proofs simply use the fact that the functions $\exp$ and $e^z$
+separately have 
+these properties. Thus
+$$
+e^0 = e^{0+i0} = \exp(0) \varphi(0) = 1 \cdot 1 = 1. 
+$$
+Letting $z_{1} = x_{1} + iy_{1}$ and $z_{2} = x_{2} + iy_{2}$, we have 
+\begin{eqnarray*}
+e^{z_{1}}e^{z_{2}} &=& \exp(x_{1}) \varphi (y_{1}) \exp(x_{2})\varphi(y_{2})\\
+                              &=& \exp(x_{1} + x_{2}) \varphi (y_{1} + y_{2}). 
+\end{eqnarray*}
+\noindent Since $z_{1} + z_{2} = (x_{1} + x_{2}) + i(y_{1} + y_{2})$, the right side is by
+definition equal to $\mbox{Exp}(z_{1} + z_{2})$, which is $e^{z_{1}+z_2}$. The last two propositions, 
+(7.3') and (7.4'), are corollaries of (7.1') and (7.2') in exactly the same way that (7.3) 
+and (7.4) follow from (7.1) and (7.2).
+\end{proof}
+
+\noindent If $x$ is an arbitrary real number, then
+$$
+e^{ix} = e^{0+ix} = e^{0}(\cos x + i \sin x).
+$$
+
+\noindent Thus we have the equation 
+
+\begin{theorem} %(7.5) 
+$$
+e^{ix} = \cos x + i \sin x,  \;\;\;\mathrm{for~every~real~number}\; x.
+$$
+\end{theorem}
+
+ % Figure 20
+\putfig{4truein}{scanfig6_20}{}{fig 6.20}
+
+Thus if $x$ is any real number, the complex number $e^{ix}$ is the ordered pair 
+$(\cos x, \sin x)$. Hence $e^{ix}$ is the point on the unit circle obtained by starting 
+at the complex number 1 and measuring along the circle at a distance equal to the 
+absolute value of $x$, measuring in the counterclockwise direction if $x$ is positive 
+and in the clockwise direction if it is negative (see Figure 20). In terms of angle, 
+$x$ is the radian measure of the angle whose initial side is the
+%338 TRIGONOMETRIC FUNCTIONS [CIIAP. 6
+positive half of the real axis and whose terminal side contains the arrow representing $z$.
+
+Letting $x = \pi$ in (7.5), we get $e^{i\pi} = \cos \pi + i \sin \pi$. Since $\cos \pi = -1$ and 
+$\sin \pi = 0$, it follows that $e^{i\pi} = - 1$, which is equivalent to the equation
+
+$$
+ e^{i \pi} + 1 = 0 .
+$$
+
+\noindent This equation is most famous since it combines in a simple formula the three special numbers $\pi$, $e$, and $i$ with the additive and multiplicative identities 0 and 1.
+
+One of the most important features of the complex exponential function is that it provides an
+alternative way of writing complex numbers. We have
+
+\begin{theorem} %(7.6) 
+Every complex number $z$ can be written in the form $z = |z| e^{it}$, for some real number $t$.
+Furthermore, if $z = x + iy$ and $z \neq 0$, then $z = |z| e^{it}$ if and only if
+ $\cos t = \frac{x}{|z|}$ and $\sin t = \frac{y}{|z|}$.
+\end{theorem}
+
+
+\begin{proof}
+If $z = 0$, then $|z| = 0$, and so $0 = z = |z|e^{it}$, for every real number $t$.
+Next we suppose that $z \neq 0$. Then $|z| \neq 0$, and $\frac{z}{|z|}$ is defined and 
+lies on the unit circle because
+$$
+| \frac{z}{ |z|} | = \frac{|z|}{|z|} =1. 
+$$
+Hence there exists a real number $t$ such that $\frac{z}{|z|} = e^{it}$, and this proves the first statement in the theorem. Suppose that $z = x + iy$ and that $z \neq 0$. 
+If $z = |z|e^{it}$, then 
+$$
+x + iy = |z|e^{it} = |z|(\cos t + i \sin t).
+$$
+Two complex numbers are equal if and only if their real parts are equal and their imaginary
+parts are equal. Hence $x = |z| \cos t$ and $y =|z| \sin t$. Since $|z| \neq 0$, we conclude that $\cos t = \frac{x}{|z|}$ and $\sin t = \frac{y}{|z|}$ . Conversely, if we start from the last two equations, it follows that 
+$$
+x + iy = |z|(\cos t + i \sin t).
+$$
+The left side is equal to $z$, and the right side to $|z|e^{it}$. This completes the proof of the theorem.
+\end{proof}
+
+
+A complex number written as $z = |z| e^{it}$ is said to be in \textbf{exponential form}. The number $|z|$ is, of course, the absolute value of $z$, and the number $t$
+%SEC. 7] THE COMPLEX EXPONENTIAL FUNCTION  339
+is called the \textbf{angle}, or \textbf{argument}, of $z$. The latter is not uniquely determined by $z$. Since the trigonometric functions $\sin$ and $\cos$ have period $2\pi$, it follows that
+$$
+z = |z|e^{it} = |z|e^{i(t +2\pi n)},
+$$
+
+\noindent for every integer $n$.
+
+Consider two complex numbers written in exponential form:
+
+$$
+z_{1} = |z_1| e^{it_1} \;\;\; \mbox{and} \;\;\; z_{2} = |z_{2}| e^{it_{2}}.
+$$
+
+\noindent The product and ratio are given by
+$$
+z_{1}z_{2} = |z_1| |z_2| e^{it_1} e^{it_2}, \;\;\; \frac{z_1}{z_2} = \frac{|z_1|}{z_2} \frac{e^{it_1}}{e^{it_2}}.
+$$
+
+\noindent Hence by formulas (7.2') and (7.3') for the product and ratio of exponentials, we have
+$$
+z_{1}z_{2} = |z_{1}| |z_{2}| e^{i (t_{1} + t_{2})},\;\;\; \frac{ z_{1}}{z_{2}} =  e^{i (t_{1} - t_{2})}.
+$$
+
+\textit{That is, two complex numbers are multiplied by multiplying their absolute values and adding
+their angles. They are divided by dividing their absolute values and subtracting their angles.}
+\medskip
+
+%EXAMPLE 1. 
+\begin{example}
+Let $z_{1} = 3 + i4$ and $z_{2} = -2i$. Express $z_{1}, z_{2}, z_{1}z_{2}$, and $\frac{z_{1}}{z_{2}}$ in the exponential form $|z| e^{it}$, and plot the resulting arrows 
+in the complex plane. To begin with,
+
+
+\begin{eqnarray*}
+|z_{1}| &=& \sqrt{3^2 + 4^2} = 5,\\
+|z_{2}| &=& \sqrt{0^2 + (-2)^2} = 2.
+\end{eqnarray*}
+
+\noindent We next seek a real number $t_{1}$ such that $\cos t_{1} = \frac{3}{5}$ and 
+$\sin t_{1} = \frac{4}{5}$, and also a number $t_{2}$ such that $\cos t_{2} = 0$ and 
+$\sin t_{2} = - 1$. These are given by 
+
+\begin{eqnarray*}
+t_{1} &=& \arccos \frac{3}{5} = 0.93 \;\mbox{(approximately),} \\
+t_{2} &=& \arcsin(-1) = - \frac{\pi}{2}.
+\end{eqnarray*}
+
+\noindent Then
+
+\begin{eqnarray*}
+z_{1} &=& |z_{1}| e^{it_{1}} = 5e^{i(0.93)},\\
+z_{2} &=& |z_{2}| e^{it_{2}} = 2e^{-i(\pi/2)}.
+\end{eqnarray*}
+%340 TRIGONOMETRIC FUNCTIONS [CHAP. 6 
+
+\noindent Since $t_{1} + t_{2} = 0.93 - \frac{\pi}{2} = - 0.64$ (approximately) and 
+$t_{1} - t_{2} = 0.93 - \Bigl(-\frac{\pi}{2}\Bigr) = 2.50$ (approximately), we obtain 
+
+\begin{eqnarray*}
+               z_{1}z_{2} &=& |z_{1}| |z_{2}| e^{i(t_{1} + t_{2})} = 10 e^{-i(0.64)},   \\
+\frac{z_1}{z_2} &=& \frac{|z_1|}{|z_2|} e^{i(t_{1} - t_{2})} = \frac{5}{2} e^{i(2.50)} .
+\end{eqnarray*}
+
+%Figure 21
+\putfig{4.5truein}{scanfig6_21}{}{fig 6.21}
+
+The arrows representing $z_{1}, z_{2}, z_{1}z_{2}$ and $\frac{z_{1}}{z_{2}}$ are shown in Figure 21. To  locate these numbers geometrically using a ruler and protractor marked off in degrees, we would compute 
+
+\begin{eqnarray*}
+           t_{1} &=& 0.93 \;\;\mbox{radian} = 53 \;\mbox{degrees}, \\
+           t_{2} &=& - \frac{\pi}{2} \; \;\mbox{radians} = - 90 \; \;\mbox{degrees},\\
+t_{1} + t_{2} &=& - 0.64 \;\;\mbox{radian} = - 37 \; \;\mbox{degrees},\\
+ t_{1} - t_{2} &=& 2.50 \;\;\mbox{radians} = 143 \; \;\mbox{degrees}.
+\end{eqnarray*}
+%SEC. 7] THE COMPLEX EXPONENTIAL FUNCTION  341
+\noindent Of course, we can find the real and imaginary parts of $z_{1}z_{2}$ and $\frac{z_{1}}{z_{2}}$ by the computations
+\begin{eqnarray*}
+            z_{1}z_{2} &=& (3 + i4)(-2i) = 8 - i6, \\
+\frac{z_{1}}{z_{2}} &=& \frac{ 3 + i4}{-2i} = \frac{ 3 + i4}{- 2i} \frac{2i}{2i} 
+= \frac{-8 + i6}{4} = -2 + i \frac{3}{2}  .
+\end{eqnarray*}
+\end{example}
+
+If $z$ is a complex number, then $z^n$ can be defined inductively, for every nonnegative integer $n$, by 
+
+\begin{equation}
+z^0 = 1, 
+\label{eq6.7.1}
+\end{equation}
+
+\begin{equation}
+z^n = z(z^{n - 1}),\;\;\;\mbox{for}\; n > 0.  
+\label{eq6.7.2}
+\end{equation}
+
+\noindent Another useful property of the complex exponential function is
+
+\begin{theorem} %( 7.7 ) 
+$$
+(e^z)^n = e^{nz},  \;\;\;\mbox{for every nonnegative integer}\; n.
+$$
+\end{theorem}
+
+
+\begin{proof}
+By induction. If $n = 0$, then $(e^z)^n = (e^z)^0$. Since $e^z$ is a complex number, $(e^z)^0 = 1$, by equation (1). Moreover, in this case, $e^{nz} = e^{0z} = 1$, by (7.1'). Next suppose that $n > 0$. By equation (2), we have $(e^z)^n = e^{z}(e^z)^{n-1}$, and by hypothesis of induction $(e^z)^{n-1} = e^{(n-1)z} = e^{(n - 1)z}$.  Hence, by (7.2'),
+$$
+(e^z)^n = e^{z}e^{(n-1)z} = e^{z+(n-1)z},
+$$
+\noindent and, since $z + (n - 1)z = nz$, the proof is finished.
+\end{proof}
+
+Let $z$ be a complex number and $n$ a positive integer. A complex number $w$ is said to be an \textbf{$n$th root} of $z$ if $w^n = z$. We shall now show that
+
+\begin{theorem} %(7.8) 
+If $z \neq 0$, then there exist $n$ distinct $n$th roots of $z$.
+\end{theorem}
+
+
+\begin{proof}
+Let us write $z$ in exponential form: $z = |z| e^{it}$. By $|z|^{1/n}$ we mean the positive $n$th root of the real number $|z|$ (which we assume exists and is unique). Consider the complex number
+$$
+w_0 = |z|^{1/n} e^{i(t/n)}.
+$$
+It is easy to see that $w_0$ is an nth root of $z$, since
+\begin{eqnarray*}
+w_{0}^{n} &=&  (|z|^{1/n})^{n} (e^{i(t/n)})^n \\
+                &=& |z|e^{it} \\
+                &=& z . 
+\end{eqnarray*}
+However, $w_0$ is not the only $n$th root. We have already observed that 
+$$
+z = |z| e^{it} = |z| e^{i(t + 2\pi k)},
+$$
+for every integer $k$. If we set 
+$$
+w_{k} = |z|^{1/n} e^{i\frac{i + 2\pi k}{n}} ,
+$$
+then all these numbers are seen to be nth roots of $z$, since each one satisfies 
+the equation $w_{k}^{n} = z$. However, they are not all different. Note that $w_{k+1}$ is
+equal to the product $w_{k}e^{i(2\pi/n)}$. The angle of $e^{i(2\pi/n)}$ is $\frac{2\pi}{n}$ radians, and $\frac{2\pi}{n}$ is one $n$th the entire circumference of the unit circle. Thus $w_{k+1}$ is obtained from $w_k$ by adding an angle of $\frac{2\pi}{n}$ radians, or, equivalently, by rotating $w_k$ exactly $\frac{1}{n}$ of an entire rotation. If we begin with $w_k$ and form $w_{k+1}, w_{k+2}, . . . $ by successive rotations, when we get to $w_{k+n}$ we will be back at $wk$, where we started. Thus there are only $n$ distinct complex numbers among all the $w$'s. In particular,
+$$
+w_{k} = |z|^{1/n} e^{i\frac{i + 2\pi k}{n}}, \;\;\;  k = 0, . . ., n - 1, 
+$$
+are $n$ distinct nth roots of $z$. This completes the proof.
+\end{proof}
+
+An $n$th root of $z$ is a solution of the complex polynomial equation $w^n - z = 0$. It is a well-known theorem of algebra that a polynomial equation of degree $n$ cannot have more than $n$ roots. Hence we can strengthen the statement of (7.8) to read that every nonzero complex number $z$ has precisely $n$ distinct nth roots.
+
+%Figure 22 
+\putfig{2.75truein}{scanfig6_22}{}{fig 6.22}
+
+%EXAMPLE 2. 
+\begin{example}
+Find the three cube roots of the complex number $z = 1 + i$, and plot them
+in the complex plane. Writing $z$ in exponential form, we have
+
+$$
+z = \sqrt{2} e^{i(\pi/4)}
+$$
+\noindent (see Figure 22). Hence the three cube roots are
+$$
+w_k = (\sqrt 2)^{1/3} e ^{i \frac{\pi/4 + 2\pi k}{3}}, \;\;\; k = 0, 1, 2. 
+$$
+%SEC. 7] THE COMPLEX EXPONENTIAL FUNCTION  343
+\noindent Since $(\sqrt 2)^{1/3} = 2^{1/6} = 1.12$ (approximately) and $\frac{1}{3} \Bigl(\frac{\pi}{4}\Bigr)$ radius = 15 degrees, we see that $w_0$ is the complex number lying on the circle of radius 1.12 about the origin and making an angle of 15 degrees with the positive $x$-axis. The other two roots lie on the same circle and have angles of 15 + 120 degrees and 15 + 240 degrees, respectively. The three roots are thus $\sqrt[6]{2} e^{i(\pi/12)}$, $\sqrt[6]{2} e^{i(3\pi/4)}$, and  $\sqrt[6]{2} e^{i(17 \pi/12)}$.
+\end{example}

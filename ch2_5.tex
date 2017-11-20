@@ -1,0 +1,93 @@
+\section{Rolle's Theorem and Its Consequences.}\label{sec 2.5} 
+There are certain theoretical properties of differentiable functions which we are in a position to prove and which will aid us in our future work. Two of them express ideas which are geometrically obvious but, nevertheless, require proof. The first, due to the French mathematician Rolle and named for him, is illustrated in Figure \f{2.18}. The assertion is that a differentiable function which has a graph crossing the $x$-axis at a and also at $b$ must have on its graph at least one point between the crossing points where its tangent line is parallel to the $x$-axis.
+ 
+\begin{prop}[Rolle's Theorem]
+\label{thm 2.5.1}
+Assume that $a < b$ and that the function $f$ is continuous on the closed interval $[a, b]$ and differentiable on the open interval
+$(a, b)$. If $f(a) = f(b) = 0$, then there exists a real number $c$ such that $a < c < b$ and $f'(c) = 0$.
+\end{prop}
+
+\putfig{3.7truein}{scanfig2_18}{}{fig 2.18}
+
+\begin{proof}
+If $f(x) = 0$ for every $x$ in $[a, b]$, there is nothing to prove because $f$ is then a constant function and $f'(x) = 0$ for every $x$ in the interval. So we assume that $f$ is not constant on $[a,b]$. By Theorem (2.4) a function which is continuous at every point of a closed bounded interval has at least one absolute maximum point and at least one absolute minimum point. Since $f(x)$ does not equal zero for all $x$ in the closed interval and since $f(a) = f(b) = 0$, the function $f$ must have one of these extremes in the open interval. Let the abscissa of this point be $c$, and it follows by Theorem (2.3) that $f'(c) = 0$. This completes the proof.
+\end{proof}
+
+The reader should try to construct functions which do not satisfy all the conditions of the theorem to see why the conclusion will not then hold, and hence why all the conditions are essential to the theorem. One such example was graphed in Figure \f{2.7}.
+
+\putfig{3.7truein}{scanfig2_19}{}{fig 2.19}
+
+The second theorem tells us that a function which has a smooth graph between $(a, f(a))$ and $(b, f(b))$ has a point in between these two where the
+tangent to the graph is parallel to the line segment connecting these points (see Figure \f{2.19}). Because the point lies between the other two and the tangent at this ``in-between" point is parallel, this theorem is called the Mean Value Theorem.
+
+\begin{thm}[Mean Value Theorem] 
+\label{thm 2.5.2}
+Assume that $a < b$ and tha the function $f$ is continuous on the
+closed interval $[a, b]$ and differentiable on the open interval $(a, b)$. Then there exists a real number $c$ such that $a < c < b$ and
+$$
+f'(c)= \frac{f(b) - f(a)}{b - a},
+$$
+\noindent or, equivalently, such that $f(b) - f(a) = f' (c)(b - a)$.
+\end{thm}
+
+\begin{proof}
+This theorem is proved as a corollary to Rolle's Theorem by constructing a function which satisfies the conditions of Rolle's Theorem and gives the same result as if we had tilted the graph of Figure \f{2.19} and dropped it down. Such a function is
+$$
+F(x) = (x - a)f(b) + (a - b)f(x) + (b - x)f(a).
+$$
+Since $f$ is continuous on the closed interval and differentiable on the open interval, it follows that $F$ is, too. We also observe that
+\begin{eqnarray*}
+F(a) &=& 0 + (a - b)f(a) + (b - a)f(a) = 0.\\
+F(b) &=& (b - a)f(b) + (a - b)f(b) + 0 = 0.
+\end{eqnarray*}
+Thus the function $F$ satisfies all the conditions of Rolle's Theorem, and hence there is a real number $c$ strictly between a and b such that $F'(c) = 0$. The derivative of $F$ is given by
+$$
+F'(x) = f(b) + (a - b) f'(x) - f(a).
+$$
+It follows that
+$$
+F'(c) = f(b) + (a - b)f'(c) - f(a) = 0,
+$$
+which implies that $f(b) - f(a) = (b - a) f'(c)$. This completes the proof.
+\end{proof}
+
+Here again it is a good idea to try various examples to see why all the hypotheses of the theorem are necessary. Note that the equation which forms the conclusion of the Mean Value Theorem is equivalent to the one obtained by interchanging $a$ and $b$. Thus, if $b < a$, the Theorem remains true with $[a, b]$ and $(a, b)$ replaced by $[b, a]$ and $(b, a)$, respectively, and the inequalities $a < c < b$ replaced by $b < c < a$.
+
+One of the most important consequences of the Mean Value Theorem is that a function which has a zero derivative on an interval must be a constant function on that interval.
+\begin{prop}
+\label{thm 2.5.3}
+If $f'(x) = 0$ for euery $x$ in an interval, then there exists a constant $k$ such that $f(x) = k$ for every $x$ in the interval.
+\end{prop}
+
+\begin{proof}
+Pick an arbitrary point $a$ in the interval, and set $k = f(a)$. Let $b$ be any other point in the interval. We shall show that $f(b) = k$ also, and this will complete the proof. To be specific, let us assume that $a < b$; an exactly analogous argument can be made if $b < a$. By the Mean Value Theorem we know that $f(b) = f(a) + (b - a) f'(c)$ for some number $c$ in the open interval $(a, b)$, which is a subinterval of the larger interval referred to above. It follows from the hypothesis that $f'(c) = 0$. Since $f(a) = k$, we get $f(b) = k + (b - a) \cdot 0 = k$, and the result is proved.
+\end{proof}
+
+The preceding theorem has an important corollary---that two functions with the same derivative over an interval differ by a constant.
+
+\begin{prop}
+\label{thm 2.5.4}
+If $f' = g'$ on an interval, then $f$ and $g$ differ by a constant function on the interval.
+\end{prop}
+
+\begin{proof}
+Since $f' = g'$, we have $(f - g)'(x) = f'(x) - g'(x) = 0$ for every $x$ in the interval. By (5.3) there exists a number $k$ such that $k = (f - g)(x) = f(x) - g(x)$ for every $x$ in the interval.  This completes the proof.
+\end{proof}
+
+The significance of Theorem (5.4), which will be fully exploited in the study of integration in Chapter 4, is that it gives a way of describing the set of all functions which have a given function as derivative. Specifically, let $f$ be a function whose domain contains an interval $I$. Suppose that in one way or another we can find a function $F$ with the property that $F'(x) = f(x)$, for every $x$ in $I$. Then \textit{the set $F$ of all functions whose derivatives equal $f$ on $I$ consists of all functions which on $I$ differ from $F$ by a constant.} To prove this assertion, we first observe that, for every real number $c$, the function defined by $F(x) + c$ has derivative equal to $F'(x) + 0 = f(x)$, for each $x$ in $I$. Hence every function $F + c$ belongs to the set $F$. Conversely, if $G$ is
+any function in the set $F$, then by definition $G' = f = F'$ on $I$. It follows by (5.4) that there exists a real number $c$ (a constant) such that $G(x) - F(x) = c$, for every $x$ in $I$. Thus on $I$ the function $G$ differs from $F$ by a constant, and so the assertion is proved.
+\medskip
+
+\begin{example}
+\label{examp 2.5.1}
+If $f$ is the function defined by $f(x) = x^2 + 2x$, find the set of all functions with derivative equal to $f$. In this case the interval $I$ is the set of all real numbers, and it is easy to see that one function in the set is $\frac{x^3}{3} + x^2$, since
+$$
+\frac{d}{dx} \bigl( \frac{x^3}{3} + x^2 \bigr) = x^2 + 2x = f(x).
+$$
+\noindent Hence each function $G$ in the set is defined by
+$$
+G(x) = \frac{x^3}{3} + x^2 + c,
+$$
+\noindent for some real number $c$. As $c$ takes on all real number values, we get all members of the set. There are no other possibilities.
+\end{example}
+

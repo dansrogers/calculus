@@ -1,0 +1,260 @@
+\section{Straight Lines and Their Equations.}\label{sec 1.5}
+We shall define a \dt{straight line} in $\R^2$ to be any subset $L$
+consisting of all ordered pairs $(x, y)$
+such that
+\begin{equation}
+ ax + by + c = 0, \;\;\; \mbox{where} \;\;\; a^2 + b^2 > 0.
+\label{eq1.5.0}
+\end{equation}
+The inequality $a^2 + b^2 > 0$
+simply says that the constants $a$ and $b$ are not both equal to zero.
+Of course two different equations can define the same line.
+For example, the set of all ordered pairs $(x, y)$
+such that $4x - 3y + 5 = 0$ is the same line as the set of pairs for which $28x = 21y - 35$.
+For this reason,
+we speak of \emph{an} equation of a straight line
+and not \emph{the} equation.
+
+\begin{prop}\label{thm 1.5.1}
+Suppose that straight lines $L_1$ and $L_2$ are defined, respectioely, by
+\[
+\begin{array}{ll}
+a_{1}x + b_{1}y + c_1 = 0,  & {a_1}^2 + {b_1}^2 > 0,\vspace{.1in}\\
+a_{2}x + b_{2}y + c_2 = 0,  & {a_2}^2 + {b_2}^2 > 0.
+\end{array}
+\]
+Then $L_{1} = L_{2}$ if and only if there is a nonzero constant $k$
+such that
+\begin{eqnarray*}
+a_2 &=& ka_{1}, \\
+b_2 &=& kb_{1}, \\
+c_2 &=& kc_{1}.
+\end{eqnarray*}
+\end{prop}
+
+\begin{proof}
+If such a $k$ exists,
+then the two equations are equivalent, and so $L_1 = L_2$.
+Conversely, suppose that $L_1 = L_2$.
+We may assume without loss of generality that $b_{1} \neq 0$.
+Then the point $\Bigl(0, -\frac{c_1}{b_1} \Bigr)$ lies on $L_1$ since it satisfies the first equation; i.e.,
+\[
+a_{1} \cdot 0  + b_{1} \Bigl(- \frac{c_1}{b_1} \Bigr) + c_{1} = 0.
+\]
+Because the two lines are equal, the point also lies on $L_2$, and so
+\[
+a_2 \cdot 0 + b_2 \Bigl( - \frac{c_1}{b_1} \Bigr) + c_2 = 0.
+\]
+Hence
+\[
+c_2 = \Bigl( \frac{b_2}{b_1} \Bigr) c_1.
+\]
+In addition, the point $\Bigl(1, - \frac{a_1 + c_1}{b_1} \Bigr)$
+lies on $L_1$ because
+\[
+a_1 + b_{1} \Bigl( \frac{- a_1 - c_1}{ b_1} \Bigr) + c_1 = 0.
+\]
+This point then also lies on $L_2$, and this fact means that
+\[
+a_2 + b_{2} \Bigl(\frac{- a_1 - c_1}{b_1} \Bigr) + c_2 = 0.
+\]
+Hence
+\[
+a_2 = {\frac{b_2}{b_1}} a_{1} + {\frac{b_2}{b_1}} c_1 - c_2
+= \Bigl( \frac{b_2}{b_1} \Bigr) a_{1}.
+\]
+Since $b_2 = \Bigl( \frac{b_2}{b_1} \Bigr) b_1$ trivially,
+we obtain the desired conclusion by setting $k = \frac{b_2}{b_1}$.
+Note that $k \neq 0$, for if it were zero,
+we would get $a_2 = b_2 = 0$,
+contrary to assumption.
+\end{proof}
+
+One consequence of Theorem \thref{1.5.1}
+is that it enables us to recognize at a glance whether or not different equations define the same straight line.
+Another corollary arises in connection with the following definitions: A line $L$ defined by an equation $ax + by + c = 0$ with $a^2 + b^2 > 0$ will be called \dt{vertical} if $b = 0$ and \dt{horizontal} if $a = 0$.
+It follows from the theorem that $b$ must equal zero for every such equation which defines a vertical line and that $a$ must equal zero for every such equation which defines a horizontal line.
+Thus the definitions are not dependent on the particular equation which defines $L$.
+
+If $P = (a, b)$ and $Q = (c, d)$ are two points in $\R^2$ and $a \neq c$, the \dt{slope of the line segment} joining $P$ to $Q$ is, by definition,
+
+\[
+m(P, Q) = \frac{d - b}{c - a} .
+\]
+Note that
+
+\[
+m(P, Q) = \frac{d - b}{c - a} = \frac{b - d}{a - c} = m(Q, P) .
+\]
+The absolute value of $m(P, Q)$ is the ratio of the vertical to horizontal distance between $P$ and $Q$ (see Figure \figref{1.30}).
+It is simply a measure of steepness.
+A segment with positive slope goes up as it goes to the right; one with negative slope goes down as it goes to the right (Figure \figref{1.31}).
+If $a = c$, the segment is vertical, and the slope is not defined.
+
+\putfig{3.5truein}{scanfig1_30}{}{fig 1.30}
+
+\begin{prop}\label{thm 1.5.2}
+Let $L$ be the straight line defined by the equation $ax + by + c = 0$, where $b \neq 0$.
+If $P$ and $Q$ are any two distinct points on the line, then $m(P, Q) = -\frac{a}{b}$.
+\end{prop}
+
+\begin{proof}
+Let $P = (x_1, y_1)$ and $Q = (x_2, y_2)$.
+An equation equivalent to the original one is
+\begin{equation}
+y = - \Bigl( \frac{a}{b} \Bigr) x - \frac{c}{b} .
+\label{eq1.5.1}
+\end{equation}
+It follows that $x_1 \neq x_2$, since, otherwise, substitution in this equation would yield $y_1 = y_2$, which would then imply $P = Q$.
+We obtain
+\[
+m(P, Q) = \frac{y_2 - y_1}{x_2 - x_1} =  \frac{
+- \frac{a}{b} x_2
+- \frac{c}{b}
++ \frac{a}{b} x_1
++ \frac{c}{b}}
+{x_2 - x_1}  = -\frac{a}{b} ,
+\]
+and this completes the proof.
+\end{proof}
+
+\putfig{3truein}{scanfig1_31}{}{fig 1.31}
+
+As a result of Theorems \thref{1.5.1} and \thref{1.5.2},
+we can unambiguously define the \dt{slope of a nonvertical line $L$},
+which we shall denote by $m_{L}$,
+as follows:
+For any pair of distinct points $P$ and $Q$ on $L$, we define
+\[
+  m_{L} = m(P, Q).
+\]
+It follows at once that $m_{L}$ depends only on the line $L$.
+For if $P'$ and $Q'$ are any other two distinct points on the line, then
+\[
+m(P, Q) = - \frac{a}{b} = m(P', Q').
+\]
+(Since $L$ is not vertical, $b \neq 0$.) Furthermore, any other equation defining $L$ can be written $kax + kby + kc = 0$ with $k \neq 0$, and, of course, $-\frac{ka}{kb} = -\frac{a}{b}$.
+We note that the slope of a vertical line is not defined.
+
+\begin{example}
+\label{exam 1.5.1}
+Find an equation of the straight line $L$ through the point $(a, b)$ and with slope $m$.
+If $(x, y)$ is any other point on the line, then
+\[
+m = \frac{y - b}{x - a},
+\]
+which implies
+\begin{equation}
+ y - b = m(x - a).
+\label{eq1.5.2}
+\end{equation}
+This is an equation of the line.
+For suppose $L$ were defined by some equation $a_{1}x + b_{1}y + c_1 = 0$.
+An equivalent equation is
+\[
+y = -\Bigl( \frac {a_1}{b_1} \Bigr) x -\frac{c_1}{b_1},
+\]
+or, since $m = -\frac{a_1}{b_1}$,
+\begin{equation}
+y = mx - \frac{c_1}{b_1}.
+\label{eq1.5.3}
+\end{equation}
+Since we are given that $(a, b)$ lies on $L$, we get $b = ma - \frac{c_1}{b_1}$, or
+\[
+\frac{c_1}{b_1} = ma - b.
+\]
+Substitution in \eqref{1.5.3} yields $y = mx - ma + b$,
+which is equivalent to \eqref{1.5.2}.
+\end{example}
+
+Suppose that $S$ is an arbitrary subset of $\R^2$ with the following three properties:
+
+
+\begin{description}
+\item[(i)] $S$ contains a point $(a, b)$; i.e., $S$ is a nonempty set.
+\item[(ii)] The slope $m(P, Q)$ is defined and is equal to the same fixed number $m$, for every pair of distinct points $P$ and $Q$ in $S$.
+\item[(iii)] $S$ contains every point  $(x, y)$ in $\R^2$  which is connected to $(a, b)$ by a line segment of slope $m$.
+\end{description}
+
+These are certainly the geometric properties of a nonvertical straight line.
+It follows from (i) and (ii) that the coordinates of every point $(x, y)$ in $S$ satisfy the equation
+\begin{equation}
+y - b = m(x - a).
+\label{eq1.5.4}
+\end{equation}
+Conversely, it follows from (iii) that, for every pair of real numbers $x$ and $y$ which satisfy (4), the point $(x, y)$ must lie in $S$.
+Thus the set $S$ is the graph of (4), and, as such, it is a straight line.
+Since nonvertical straight lines, as we have defined them, have the above three properties, we conclude that our definition coincides with the natural geometric one.
+
+We define two lines $L_1$ and $L_2$ to be \dt{parallel} if they are both vertical or if they have the same slope.
+The following fact, which we shall prove later using trigonometry, can also be deduced from Figure \figref{1.32} by the methods of plane geometry.
+
+\putfig{3.75truein}{scanfig1_32}{}{fig 1.32}
+
+\begin{prop}\label{thm 1.5.3}
+Two nonvertical lines $L_1$ and $L_2$ with slopes $m_1$ and $m_2$, respectively, are perpendicular if and only if $m_{1}m_{2} = -1$.
+\end{prop}
+
+\begin{example}
+\label{exam 1.5.2}
+(a) Write an equation of the straight line $L_1$ that passes through $(-2, 4)$ and (3, 7).
+(b) Write an equation of the line $L_2$ passing through $(5, -2)$ and parallel to $L_1$.
+(c) Write an equation defining the line $L_3$ that passes through $(-1, -3)$ and is perpendicular to $L_1$.
+
+The slope of the segment joining $(-2, 4)$ and (3, 7) is $\frac{7 - 4}{3 + 2} = \frac{3}{5}$.
+An arbitrary point $(x, y)$ other than (3, 7) belongs to $L_1$ if and only if
+
+\[
+\frac{y - 7}{x - 3} = \frac{3}{5}.
+\]
+Hence an equation defining $L_1$ is $5(y - 7) = 3(x - 3)$, or, equivalently,
+\[
+3x - 5y + 26 = 0.
+\]
+The line $L_2$ also has slope 5.
+Since it passes through $(5, -2)$, it is defined by
+
+\[
+\frac{y + 2}{x - 5} = \frac{3}{5}  \;\;\; \mbox{if} \;\;\; x \neq 5,
+\]
+or, more generally, by $5(y + 2) = 3(x - 5)$, which is equivalent to
+
+\[
+3x - 5y - 25 = 0.
+\]
+The slope of the perpendicular is $-\frac{5}{3}$.
+Hence we obtain the equation
+
+\[
+\frac{y + 3}{x + 1} = - \frac{5}{3}, \;\;\;  x \neq -1,
+\]
+or $3y + 9 = -5x - 5$, as an equation of $L_3$.
+\end{example}
+
+What functions have graphs that are straight lines? The answer is an easy one.
+If $f$ is defined by
+
+\[
+f(x) = ax + b,    \;\;\;   - \infty < x < \infty,
+\]
+then its graph, which is the set of all ordered pairs $(x, y)$
+such that $y = ax + b$, is certainly a straight line.
+Conversely, if the graph of an arbitrary function $f$ is a straight line, then the equation $y = f(x)$ is equivalent to one of the form
+
+\begin{equation}
+a_{1}x + b_{1}y + c_1 = 0,  \;\;\;  {a_1}^2 + {b_1}^2 > 0.
+\label{eq1.5.5}
+\end{equation}
+If $b_1$ were zero, both points $\Bigl( - \frac{c_1}{b_1}, 0 \Bigr)$ and $\Bigl( -\frac{ c_1}{b_1}, 1 \Bigr)$ would satisfy (5),  but the definition of function makes this impossible for the equation $y = f(x)$.
+We conclude that $b_1 \neq 0$  and that (5) is therefore equivalent to
+
+\[
+y = - \Bigl(\frac{a_1}{b_1} \Bigr) x - \frac{c_1}{b_1}.
+\]
+It follows [see Theorem \thref{1.2.4}]
+that the functions $f(x)$ and
+$-\Bigl( \frac{a_1}{b_1} \Bigr) x -\frac{c_1}{b_1}$ are equal.
+Thus the functions whose graphs are straight lines
+are precisely those of the form $ax + b$.
+These are the polynomials of degree less than 2,
+the \dt{linear functions}.

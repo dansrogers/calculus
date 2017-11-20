@@ -1,0 +1,377 @@
+\section{Linear Differential Operators.} This section is divided into three parts. In the first, we shall systematically develop and extend the differential operators $D^2 + aD + b$ which were introduced in Section 1. In the second part we shall use these operators to obtain directly the general solutions of certain linear differential equations with constant coefficients. Finally, we shall show how these methods can be used to solve any linear differential equation with constant coefficients (whether homogeneous or not) provided we extend our range of functions to include those whose values may be complex numbers.
+
+By a \textbf{linear operator} we shall mean any function $L$ whose domain and range are sets of numerical-valued functions and which satisfies the equations
+\setcounter{equation}{0}
+\begin{equation}
+L(y_1 + y_2) = L(y_1) + L(y_2),  
+\label{eq11.3.1}
+\end{equation}
+\begin{equation}
+L(ky) = kL(y),  
+\label{eq11.3.2}
+\end{equation}
+
+\noindent for every real number $k$ and every $y, y_1$, and $y_2$ in the domain of $L$. [The function $L(y)$ is frequently written simply $L_y$.] An important example is the function $D$, which, to every differentiable function $y$, assigns its derivative $Dy = \frac{dy}{dx}$. Another example is the operation of multiplication by a real number. That is, for any real number $a$, the function $L$ defined by
+$$
+Ly= ay
+$$
+obviously satisfies (1) and (2) and hence is a linear operator.
+
+If $L_1$ and $L_2$ are linear operators, then their \textbf{sum} is the function $L_1 + L_2$ defined by
+\begin{equation}
+(L_1 + L_2)y = L_1y + L_2y,  
+\label{eq11.3.3}
+\end{equation}
+for every $y$ which is in the domains of both $L_1$ and $L_2$. lt is easy to show that
+
+
+\begin{theorem} If $L_1$ and $L_2$ nre linear operato's, then the sum $L_1 + L_2$ is also a linear operator.
+\end{theorem}
+
+\begin{proof}
+We shall show that $L_1 + L_2$, satisfies equation (1) by using successively the definition of $L_1 + L_2$, the linearity of $L_1$ and $L_2$, separately, the commutative law of addition for functions, and finally the definition again. Thus
+\begin{eqnarray*}
+(L_1 + L_2)(y_1 + y_2) &=& L_1(y_1 + y_2) + L_2(y_1 + y_2)\\
+&=& L_1y_1 + L_1y_2 + L_2y_1 + L_2y_2 \\
+&=& (L_1y_1 + L_2y_1) + (L_1y_2, + L_2y_2)\\
+&=& (L_1 + L_2)y_1 + (L_1 + L_2)y_2.
+\end{eqnarray*}
+
+The proof that $L_1 + L_2$ satisfies (2) is similar:
+\begin{eqnarray*}
+(L_1 + L_2)(ky) &=& L_1(ky) + L_2(ky) \\
+&=& kL_1y + kL_2y \\
+&=& k(L_1y + L_2y)\\
+&=& k(L_1 + L_2)y ,
+\end{eqnarray*}
+and this completes the proof.
+\end{proof}
+
+If $L_1$ and $L_2$ are linear operators, then the \textbf{composition} of $L_2$, followed by $L_1$ is the function denoted by $L_1L_2$ and defined by
+\begin{equation}
+(L_1L_2)y = L_1(L_2y),   
+\label{eq11.3.4}
+\end{equation}
+for every $y$ for which the right side is defined. The proof of the following proposition is entirely analogous to that of (3.1) and is left to the reader as an exercise.
+
+\begin{theorem}
+ If $L_1$ and $L_2$ are linear operators, then the composition $L_1L_2$ is also a /inear operator.
+\end{theorem}
+
+The composition $L_1L_2$ is also called the \textbf{product} of $L_1$ and $L_2$. There is no reason to suppose from the definition that the commutative law of multiplication holds, and, for linear operators in general, $L_1L_2 \neq L_2L_1$. However, the distributive laws hold:
+
+
+\begin{theorem}
+$$
+\left \{ \begin{array}{l}
+(L_1(L_2 + L_3) = L_1L_2 + L_1L_3,\\
+(L_1 + L_2)L_3 = L_1L_3 + L_2L_3.
+\end{array}
+\right .
+$$
+\end{theorem}
+
+\begin{proof}
+The first of these is proved as follows:
+\begin{eqnarray*}
+(L_1(L_1 + L_3))y &=& L_1((L_2 + L_3)y) \\
+&=& L_1(L_2y + L_3y) \\
+&=& L_1(L_2y) + L_1(L_3y)\\
+&=& (L_1L_2)y + (L_1L_3)y \\
+&=& (L_1L_2 + L_1L_3)y.
+\end{eqnarray*}
+
+The proof of the second is similar and is left as an exercise.
+\end{proof}
+
+An important example of the product of linear operators is the composition of a linear operator $L$ followed by the operation of multiplication by a real number $a$. This product, denoted $aL$, assigns to every $y$ in the domain of $L$ the value $(aL)y$ which is equal to the product of a with the function $Ly$. That is,
+
+\begin{theorem}
+(aL)y = a(Ly).
+\end{theorem}
+%632 DIFFIER ~ N TIA L E Q UA T10 NS [CHAP. tl
+
+The composition in the other order is the product $La$. Here we have $(La)y = L(ay)$, and the latter quantity, by the linearity of $L$ is equal to $a(Ly)$. Combining this with (3.4), we obtain the equation $(La)y = (aL)y$. Thus the operators $La$ and $aL$ are equal, and we have proved the following special case of the commutative law:
+\begin{theorem}
+aL = L a.
+\end{theorem}
+
+Another example of the product, already encountered, is the operator $D0$, which is the composition $D^2 = D D$ of $D$ with itself. More generally, for every integer $n > 1$, we define the operator $D^n$ inductively by
+$$
+D^n = DD^{n-1}.
+$$
+The domain of $D^n$ is the set of all e-times differentiable functions, and, for each such function $y$, we have
+$$
+D^ny = \frac{d^ny}{dx^n} .
+$$
+
+By repeated applications of (3.1) and (3.2), we may conclude that any function formed in a finite number of steps by taking sums and products of linear operators is itself a linear operator. As an example, consider a polynomial $p(t)$ of degree $n$; i.e.,
+$$
+p(t) = a_n t^n + a_{n-1} t^{n-1} + \cdots + a_1t + a_0, 
+$$
+where $a_0, . . ., a_n$ are real numbers and an $a_n \neq 0$. Then the function
+$$
+p(D) = a_nD^n + a_{n-1} D^{n-1} + \cdots + a_1D + a_0
+$$
+is a linear operator. To every $n$-times differentiable function $y$, it assigns as value the function
+\begin{eqnarray*}
+p(D)y &=& a_nD^n y + a_{n-1}D^{n-1}y + \cdots + a_1Dy + a_0y  \\
+&=& a_n \frac{d^ny}{dx^n} + a_{n-1}\frac{d^{n-1}y}{dx^{n-1}} + \cdots + a_1 \frac{dy}{dx}  + a_0y .
+\end{eqnarray*}
+We call $p(D)$ a \textbf{linear differential operator of order $n$.} It is the natural generalization of the differential operators of order 2, of the form $D^2 + aD + b$, which were discussed in Section 1. [Linear differential operators of types more general than $p(D)$ certainly exist; e.g., see Problem 9. They are of importance in more advanced treatments of differential equations, but we shall not study them here.]
+
+The polynomial differential operators $p(D)$ can be added and multiplied just like ordinary polynomials. In particular, the following theorem follows from the distributive laws (3.3) and the commutative law (3.5):
+%SEC. 3] LINEAR DIFFERENTIAL OPERATORS  633
+\begin{theorem}
+If $p(t)$ and $q(t)$ are polynomials and if $p(t)q(t) = r(t)$, then 
+$$
+p(D)q(D)= r(D) .
+$$
+\end{theorem}
+
+As an illustration, observe how (3.3) and (3.5) are used to prove the special case of this theorem in which $p(t) = at + b$ and $q(t) = ct + d$. First of all, we have
+\begin{eqnarray*}
+r(t) = p(t)q(t) &=& (at + b)(ct + d) \\
+                    &=& act^2 + bct + adt + bd. 
+\end{eqnarray*}
+Then 
+\begin{eqnarray*}
+p(D)q(D) &=& (aD + b)(cD + d) \\
+               &=& (aD + b)cD + (aD + b)d \\
+               &=& aDcD + bcD + aDd + bd \\
+               &=& acD^2 + bcD + adD + bd \\
+               &=& r(D) .
+\end{eqnarray*}
+The proof is the same in principle for arbitrary polynomials $p(t)$ and $q(t)$.
+
+It is a corollary of (3.6) that polynomial differential operators satisfy the commutative law of multiplication. Thus
+\begin{theorem}
+p(D)q(D) = q(D)p(D).
+\end{theorem}
+\noindent For, since $p(t)q(t) = q(t)p(t) = r(t)$, both sides of (3.7) are equal to $r(D)$.
+\medskip
+
+We begin the second part of the section by considering the differential equation
+$$
+\frac{d^2y}{dx^2} - 2 \frac{dy}{dx} - 3y = e^{-x}, 
+$$
+which, with the notation of differential operators, can be written
+
+\begin{equation}
+(D^2 - 2D - 3)y= e^{-x}.  
+\label{eq11.3.5}
+\end{equation}
+We have thus far defined the characteristic equation only for homogeneous, second-order, linear differential equations with constant coefficients. The generalization to nonhomogeneous and higher-order equations is: For any polynomial $p(t)$ and function $F(x)$, the \textbf{characteristic equation} of the differential equation
+$$
+p(D)y = F(x)
+$$
+is the equation $p(t) = 0$, and the polynomial $p(t)$ is its \textbf{characteristic polynomial.}
+%634 DIFFERENTIAL EQUATIONS [CHAP. 11
+
+Returning to (5), we see that the characteristic polynomial, which is $t^2 - 2t - 3$, factors into the product $(t - 3)(t + 1)$. It follows from (3.6) that $D^2 - 2D -  3 = (D - 3)(D + 1)$, and (5) can therefore be written
+$$
+(D - 3)(D + 1)y = e^{-x}.
+$$
+Let us define the function $u$ by setting $(D + 1)y = u$. Then (5) becomes equivalent to the pair of first-order linear equations
+$$
+\left \{ \begin{array}{l}
+(D - 3)u = e^{-x} ,  \mbox{\hspace{1in} (6)} \\
+(D+ 1)y = u.         \mbox{\hspace{1.2in} (7)}
+\end{array}
+\right .
+$$
+To solve (6), we use the technique developed in Section 2. For this equation, $P(x) = -3$ and $Q(x) = e^{-x}$. Hence an integrating factor is $e^{\int P(x)dx} = e^{-3x} $, and therefore
+$$
+\frac{d}{dx} (e^{-3x}u)= e ^{-3x} e^{-x} = e ^{-4x}.
+$$
+Integrating, we obtain
+$$
+e^{-3x} u = \int e^{-4x} dx + c_1 = - \frac{1}{4}e^{-4x} + c_1,
+$$
+whence
+$$
+u = e^{3x}(-\frac{1}{4}e^{-4x} + c_1) = -\frac{1}{4}e^{-x} + c_1e^{3x}.
+$$
+We now substitute this value for $u$ in equation (7) to obtain the first-order linear equation
+$$
+(D + 1)y =  -\frac{1}{4}e^{-x} + c_1e^{3x} .
+$$
+Here, $P(x) = 1$ and the integrating factor is $e^{x}$. Accordingly, we have
+\begin{eqnarray*}
+\frac{d}{dx} (e^{x} y) &=& e^{x} ( -\frac{1}{4}e^{-x} + c_1e^{3x}) \\
+                                 &=& -\frac{1}{4} + c_1e^{4x}.
+\end{eqnarray*}
+integration yields 
+$$
+e^x y = - \frac{1}{4} x + \frac{c_1}{4} e^{4x} + c_2.
+$$
+Replacing $\frac{c_1}{4}$ by $c_1$, and multiplying both sides by $e^{-x}$, we get finally
+$$
+y = \frac{1}{4}xe^{-x} + c_1e^{3x} + c_2e^{-x}.
+$$
+This, where $c_1$ and $c_2$ are arbitrary real constants, is the general solution to the differential equation
+$$
+\frac{d^2y}{dx^2} - 2 \frac{dy}{dx} - 3y = e^{-x}.
+$$
+% ´. 3] LINEAR DIFFERENTIAL OPERATORS  635
+
+This example illustrates the fact that we can in principle solve any secondorder, linear differential equation with constant coefficients provided the characteristic polynomial is the product of linear factors. Thus, if we are given
+$$
+(D^2 + aD + b)y = F(x),
+$$
+and if $t^2+ at + b = (t - r_1)(t - r_2)$, then the differential equation can be written
+$$
+(D - r_1)(D - r_2)y = F(x).
+$$
+If $u$ is defined by setting $(D - r_2)y= u$, then the original second-order equation is equivalent to the two first-order linear differential equations
+$$
+\left \{ \begin{array}{l}
+(D - r_1)u = F(x), \\
+(D - r_2)y= u,
+\end{array}
+\right .
+$$
+and these can be solved successively to find first $u$ and then $y$.
+
+The same technique can be applied to higher-order equations. Consider an arbitrary polynomial
+$$
+p(t) = t^n + a_{n-1} t^{n-1} + \cdots + a_1t + a_0,
+$$
+where $n > 1$ and $a_0, . . ., a_{n-1}$, are real constants. In addition, we assume that $p(t)$ is the product of linear factors; i.e.,
+$$
+p(t)= (t - r_1)(t - r_2) \cdots (t - r_n). 
+$$
+Let F(x) be given and consider the differential equation
+\setcounter{equation}{7}
+\begin{equation}
+p(D)y = F(x),  
+\label{eq11.3.8}
+\end{equation}
+which is the same as 
+$$
+\frac{d^ny}{dx^n} + a_{n-1} \frac{d^{n-1}y}{dx^{n-1}} + \cdots + a_1 \frac{dy}{dx} + a_0y = F(x) .
+$$
+Since the factorization of $p(t)$ is assumed, the differential equation can also be written
+$$
+(D - r_1)(D -  r_2) \cdots (D -  r_n)y = F(x). 
+$$
+The functions $u_1, . . ., u_{n-1}$ are defined by
+\begin{eqnarray*}
+       u_1 &=& (D - r_2) \cdots (D - r_n)y, \\
+      u_2 &=& (D - r_3) \cdots (D - r_n)y, \\
+  \vdots & & \\
+u_{n-1} &=& (D - r_n)y .
+\end{eqnarray*}
+%636 DIFFERENTIAL EQUATIONS [CHAP. 11
+Then (8) is equivalent to the following set of first-order linear differential equations
+$$
+\left \{ \begin{array}{l}
+(D - r_1)u_1 = F(x),\\
+(D - r_2)u_2 = u_1, \\
+\vdots \\
+(D - r_n)y = u_{n-1}, \\
+\end{array}
+\right .
+$$
+which can be solved successively to finally obtain $y$.
+\medskip
+
+ln Section 4 of Chapter 7 use was made of the fact that any polynomial with real coefficients and degree at least 1 can be written as the product of linear and irreducible quadratic factors (see page 386). Suppose $ct^2 + dt + e$ is irreducible. This is equivalent to the assertion that the discriminant $d^2 - 4ce$ is negative. According to the quadratic formula, the two roots of the equation $ct^2 + dt + e = 0$ are equal to $r_1 = \alpha + i\beta$ and $r_2 = \alpha - i\beta$, where $\alpha = - \frac{d}{2c}$ and $\beta = \frac{\sqrt{4ae - d^2}}{2c}$. By multiplying and substituting these values, one can then easily verify the equation
+$$
+c(t - r_1)(t - r_2) = ct^2 + dt + e.
+$$
+Thus any irreducible quadratic polynomial with real coefficients is the product of two linear factors with complex coefficients. It follows that, \textit{for any polynomial
+$$
+p(t) = a_nt^n + a_{n-1}t^{n-1} + \cdots + a_1t + a_0, 
+$$
+with real coefficients ai und with $n \geq 1$ and $a_n \neq 0$, we have 
+$$
+p(t) = a_n(t - r_1)(t - r_2) \cdots (t - r_n),
+$$
+where roots which are complex occur in conjugate pairs.}
+
+It is this fact which introduces the third part of this section. lt is very natural to ask the following: If the class of possible solutions is enlarged to include complex-valued functions of a real variable, can we proceed to solve linear differential equations with constant coefficients just as before, but with the added knowledge that now the characteristic polynomial can always be factored into linear factors? The answer is yes!
+
+To justify this answer, we must of course know the definition of the derivative. Let $f$ be a function whose domain $Q$ is a subset of the real numbers and whose range is a subset of the complex numbers. Then two real-valued functions $f_1$ and $f_2$ with domain $Q$ are defined by
+\begin{eqnarray*}
+f_1(x) &=& \mbox{real part of}\; f(x), \\
+f_2(x) &=& \mbox{imaginary part of}\; f(x).
+\end{eqnarray*}
+%SEC. 3] LIN' AR DIFFERENTIAL OPERATORS  637
+That is, we have $f(x) = f_1(x) + if_2(x)$, for every $x$ in $Q$. The \textbf{derivative} $f'$ is defined simply by the equation
+$$
+f'(x) = f'_1(x) + if'_2(x),
+$$
+for every $x$ for which both $f'_1(x)$ and $f'_2(x)$ exist. Alternatively, if we write $y = f(x), u = f_1(x)$, and $v = f_2(x)$, then $y = u + iv$, and we also use the notations 
+\begin{eqnarray*}
+f'(x) &=& \frac{dy}{dx} = \frac{du}{dx} + i \frac{dv}{dx} \\
+      &=& Dy = Du + i Dv.
+\end{eqnarray*}
+Logically, we must now go back and check that all the formal rules for differentiation and finding antiderivatives are still true for complex-valued functions, and the same applies to several theorems (see, for example, Problems 10 and 11). Much of this work is purely routine, and, to avoid an interruption of our study of differential equations, we shall omit it.
+
+It now follows, by factoring the operator $p(D)$ into linear factors, that any linear differential equation
+$$
+p(D)y= F(x)
+$$
+with constant coefficients can be solved. That is, it can first be replaced by an equivalent set of first-order linear differential equations. For each of these an explicit integrating factor $e^{\int P(x)dx}$ exists, and by solving them successively, we can eventually obtain the general solution $y$.
+
+
+%EXAMPLE 1. 
+\begin{example} Solve the differential equation $(D^2 + 1)y = 2x$. Since $t^2 + 1 = (t + i)(t - i)$, we have 
+$$
+(D + i)(D - i)y = 2x. 
+$$
+Let $(D - i)y = u$, and consider the first-order equation 
+$$
+(D + i)u = 2x.
+$$
+Since $P(x) = i$, an integrating factor is $e^{ix}$, and we obtain 
+$$
+\frac{d}{dx} (e^{ix} u) = e^{ix} 2x ,
+$$
+from which it follows by integrating that 
+$$
+e^{ix} u = 2 \int x e^{ix} dx + c_1.
+$$
+By integration by parts it can be verified that 
+\begin{equation}
+\int xe^{ax} dx = \frac{xe^{ax}}{a} - \frac{e^{ax}}{a^2} .
+\label{eq11.3.9}
+\end{equation}
+%638 DIFFERENTIAL EQUATIONS [c~rAP. ll
+In this case, $a = i$ and we know that $\frac{1}{i} = -i$ and that $i^2 = - 1$. Hence
+$$
+e^{ix}u = - 2ixe^{ix} + 2e^{ix} + c_1, 
+$$
+and so 
+$$
+u = - 2ix + 2 + c_1e^{-ix} .
+$$
+It therefore remains to solve the differential equation
+$$
+(D - i)y = - 2ix + 2 + c_1e^{-ix}.
+$$
+This time, an integrating factor is $e^{-ix}$. Hence
+$$
+\frac{d}{dx} (e^{-ix} y) = - 2ixe^{-ix} + 2e^{-ix} + c_1 e^{-2ix}.
+$$
+Integration [with a second application of (9)] yields
+$$
+e^{-ix}y = 2xe^{-ix} - \frac{c_1}{2i}e^{-i2x} + c_2.
+$$
+Replacing the constant $-\frac{c_1}{2i}$ by simply $c_1$, and multiplying both sides by $e^{ix}$, we obtain
+$$
+y = 2x + c_1 e^{-ix} + c_2 e^{ix} .
+$$
+If the function $y$ is real-valued, then it is easy to prove that $c_1$ and $c_2$ are complex conjugates [see (4.3), page 644]. In this case $c_1e^{-ix} + c_2e^{ix}$ may be replaced by $c_1 \cos x + c_2 \sin x$, where now the constants $c_1$ and $c_2$ denote arbitrary real numbers. We conclude that
+$$
+y = 2x + c_1 \cos x + c_2 \sin x 
+$$
+is the general real-valued solution to the original differential equation
+$$
+\frac{d^2y}{dx^2} + y = 2x.
+$$
+\end{example}
+
+The computations in this section were long and involved. The important fact we have shown is that the equations can be solved by an iteration of routine steps. As a practical matter, however, it is clear that some general computationally simple techniques are badly needed. These will be developed in the next two sections by breaking the problem into a homogeneous part and a nonhomogeneous part and attacking each one separately.
+

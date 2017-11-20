@@ -1,0 +1,211 @@
+\section{Work.}
+The concept in physics of the work done by a force acting on an object as it moves a given distance provides another important application of the definite integral.
+
+Throughout this section we shall consider only those situations in which
+the object moves in a straight line $L$, and in which the direction of the force
+%444 THE DEFINITE I~EGRAL (CO~INUED) [CHAP. 8
+$F$ is also along $L$. Mathematically, $F$ is a function, which may or may not be constant. We shall assume that $L$ is a coordinate axis and that, for every number $x$ on $L$, the value of the force $F$ at $x$ is equal to $F(x)$. The sign convention will be as follows: $F(x) > 0$ means that the direction of the force at $x$ is in the direction of increasing numbers on $L$, and $F(x) < 0$ means that the direction of the force is in the direction of decreasing numbers.
+
+We first consider the special case in which the force $F$ is constant as the object moves along $L$ from $a$ to $b$. Thus $F(x)= k$ for all $x$ such that $a \leq x \leq b $. Then the \textbf{work done by the force} denoted by $W$, is defined by the simple equation
+
+\begin{equation}
+W = k(b - a). 
+\label{eq8.5.1}
+\end{equation}
+\noindent Frequently, we wish to speak of the \textbf{work done against the force} which we shall denote by $W_*$. This is just the negative of $W$. Hence
+
+\begin{equation}
+W_* = -W = (-k)(b - a)  .
+\label{eq8.5.2}
+\end{equation}
+
+%Figure 21
+\putfig{2truein}{scanfig8_21}{}{fig 8.21}
+%EXAMPLE 1. 
+\begin{example}
+Compute the work done in raising a 10-pound weight a distance of 50 feet against the force of gravity. We choose a coordinate axis as shown in Figure 21 with the origin at the initial position of the object. The magnitude of the force is constant and equal to 10 pounds. Thus $|F(x)| = 10$. By our sign convention, however, $F(x)$ is negative, and so $F(x) = - 10$. The work done against the force of gravity in raising the weight is therefore given by
+\begin{eqnarray*}
+W_* &=& (-F(x))(b - a) = ( -( -10))(50 - 0) \\
+        &=& 500 \;\mbox{foot-pounds.}
+\end{eqnarray*}
+\end{example}
+%SEC. 5] w OR ~  445
+
+Next, let us consider the problem of defining the work done by a force $F$ which is not necessarily constant. We shall assume that the function $F$ is integrable over the closed interval having endpoints $a$ and $b$ (it may be that $a \leq b$ or that $b < a$). Then the \textbf{work done by the force} $F$ as the object moves from $a$ to $b$ will be denoted by $W(F, a, b)$ and is defined by
+
+
+\begin{equation}
+W(F, a, b) = \int_a^b F(x)dx.  
+\label{eq8.5.3}
+\end{equation}
+\noindent Thus work depends on the function $F$ and the numbers $a$ and $b$, and hence is a function of these three quantities. As in (1), we frequently abbreviate $W(F, a, b)$ as simply $W$.
+
+Is this definition of work a reasonable one? The answer is yes only if $W(F, a, b)$ has the properties which correspond to the physical concept we are trying to describe. For example, we should expect that the work done by a force in moving an object from $a$ to $b$ plus the work done in moving it from $b$ to $c$ should equal the work done in moving it from $a$ to $c$. This property is expressed in the equation
+
+\begin{theorem} %(5.1)
+$$ 
+W(F, a, b) + W(F, b, c) = W(F, a, c),
+$$
+\noindent which is an immediate corollary of the definition of $W(F, a, b)$ and the fundamental additive property of the integral [see Proposition (4.2), page 191]. Second, the work done by a greater force acting on an object as it moves from $a$ to $b$ in the direction of the force should certainly be larger than the work done by a smaller force. This is expressed in the proposition
+\end{theorem}
+
+\begin{theorem} %(5.2) 
+If $F_1(x) \leq F_2(x)$ for every $x$ such that $a \leq x \leq b$, then
+$$
+W(F_1, a, b) \leq W(F_2, a, b).
+$$
+\end{theorem} 
+\noindent This is also simply a restatement of one of the fundamental properties of the definite integral [see Proposition (4.3), page 191]. Finally, we note that the definition is consistent with the earlier one in equation (1). That is, if the force is constant, then the work is simply the product of the constant value and the change in position. Thus
+
+\begin{theorem} %(5.3) 
+If $F(x) = k$ for every $x$ in the closed interval with endpoints $a$ and $b$, then $$
+W(F, a, b) = k(b - a).
+$$
+\end{theorem} 
+
+The proof is just the elementary fact that $\int_a^b kdx = k(b - a)$ [see Proposition (4.1), page 191].
+%446 THE DEFINITE INTEGRAL (CONTINUED) [CHAP. 8
+
+We have just shown that work, as we have defined it, has three natural and apparently quite basic properties. This suggests that the definition is reasonable. Actually, we can conclude much more than that. We shall now show that our definition of $W(F, a, b)$ as a definite integral is the only one which has these three properties. That is, we have proved that the definition implies the properties, and we shall now prove, conversely, that the properties imply the definition.  This is such an important fact that we state it as a theorem:
+
+\begin{theorem} %(5.4) 
+\textbf{THEOREM.} 
+Let $W$ be a function which assigns to every function $F$ and any interval $[a, b]$ over which $F$ is integrable a real number $W(F, a, b)$ such that (5.1), (5.2), and (5.3) hold. Then
+$$
+W(F, a, b) = \int_a^b F(x) dx.
+$$
+\end{theorem}
+ 
+\begin{proof}
+Let $F$ be a function, and $[a, b]$ an interval over which $F$ is integrable. We shall first show that, for every partition $\sigma$ of $[a, b]$, the upper and lower sums, $U_\sigma$ and $L_\sigma$, satisfy the inequalities
+\begin{equation}
+L_\sigma \leq W(F, a, b) \leq U_\sigma.  
+\label{eq8.5.4}
+\end{equation}
+To do this, we let $\sigma = \{x_0, ..., x_n \}$ and assume the usual ordering:
+$$
+a = x_0 \leq x_1 \leq \cdots \leq x_n = b.
+$$
+As we have done in the past, we denote by $M_i$ the least upper bound of the values of $F$ on the ith subinterval $[x_{i-1}, x_i]$, and by $m_i$ the greatest lower bound. Then
+$$
+m_i \leq F(x) \leq M_i, \;\;\; \mbox{whenever}\; x_{i-1} \leq x \leq x_i. 
+$$
+The two constant functions with values Mi and mi, respectively, are certainly integrable over the subinterval $[x_{i-1}, x_i]$. Following the common practice of denoting a constant function by its value, we know, as a result of (5.2), that 
+$$
+W(m_i, x_{i-1}, x_i) \leq W(F, x_{i-1}, x_i) \leq W(M_i, x_{i-1}, x_i) .
+$$
+Using (5.3), we obtain
+\begin{eqnarray*}
+W(m_i, x_{i-1}, x_i) &=& m_i(x_i - x_{i-1}), \\
+W(M_i, x_{i-1}, x_i) &=& M_i(x_i - x_{i-1}). 
+\end{eqnarray*}
+Hence
+$$
+m_i(x_i - x_{i-1}) \leq W(F, x_{i -1}, x_i) \leq M_i(x_i - x_{i-1}).
+$$
+Adding these inequalities for $i = 1, ... , n$, we get
+$$
+\sum_{i=1}^n m_i(x_i - x_{i-1}) \leq \sum_{i=1}^n W(F, x_{i-1}, x_i) \leq \sum_{i=1}^n M_i(x_i - x_{i-1}).  
+$$
+The left and right sides of the inequalities in the preceding equation are precisely $L_\sigma$ and $U_\sigma$, respectively. It follows from repeated use of (5.1) that
+$$
+\sum_{i =1}^n W(F, x_{i-1}, x_i) = W(F, a, b),  
+$$
+and we have therefore proved that the inequalities (4) do hold.
+
+The proof of Theorem (5.4) is now essentially complete. Let $\sigma$ and $\tau$ be two arbitrary partitions of $[a, b]$. The union $U \cup T$ is the partition which is the common refinement of both. It is shown in the last line of the proof of Proposition (1.1), page 168, that
+$$
+L_\sigma \leq L_{\sigma \cup \tau} \leq U_{\sigma \cup \tau} \leq U_\tau .
+$$
+It follows from equation (4) that
+$$
+L_{\sigma \cup \tau} \leq W(F, a, b) \leq U_{\sigma \cup \tau}, 
+$$
+and we conclude that
+\begin{equation}
+L_\sigma \leq W(F, a, b) \leq U_\tau, 
+\label{eq8.5.5}
+\end{equation}
+for any two partitions $\sigma$ and $\tau$ of $[a, b]$. But, by assumption, $F$ is integrable over $[a, b]$, and that means that there is only one number, $\int_a^b F(x) dx$, which lies between all lower sums and all upper sums. Hence
+$$
+W(F, a, b) = \int_a^b F(x) dx, 
+$$
+\noindent and the proof is complete.
+\end{proof}
+
+The significance of Theorem (5.4) is more than just its present application to the definition of work. We can infer from this theorem another, and perhaps more basic, description of the definite integral. This is a description, or characterization, of the integral in terms of three of its properties. The theorem states that the integral $\int_a^b F$ is the only function which has these properties. Hence they may be regarded as a set of axioms for the integral. As such, they are sometimes called a set of \textbf{characteristic properties.}
+
+In the remainder of the section we shall give a few examples of the work done by, and also against, a nonconstant force.
+\medskip
+
+%EXAMPLE 2. 
+\begin{example}
+The physical principle known as Hooke's Law states that the force necessary to stretch a spring a distance $d$ from its rest position is proportional to $d$. The stretched spring exerts a restoring force which is equal in magnitude, but opposite in direction, to the force required to stretch it. Consider the spring shown in Figure 22, which is 1 foot long when under no tension. A 5-pound load $B$ attached to the end of the spring has stretched it to a length of 2 feet (i.e., an additional 1 foot from rest position). How much work is done by the restoring force of the spring if the load is raised $\frac{1}{2}$ foot?
+
+%Figure 22
+\putfig{2truein}{scanfig8_22}{}{fig 8.22}
+\noindent We choose a vertical $x$-axis with increasing values of $x$ pointing down, and for convenience take the origin to be the rest position. For $x \geq 0$, the restoring force $F(x)$ of the spring is upward and, therefore, $F(x) \leq 0$. It follows by Hooke's Law that
+$$
+F(x) = - kx,
+$$
+\noindent for some positive number $k$. To find the constant $k$, we use the fact that the 5-pound load $B$ has stretched the spring 1 foot. Hence $F(1) = - 5$, from which it follows that $-5 = -k \cdot 1$ and so $k = 5$. Thus
+$$
+F(x) = - 5x.
+$$
+\noindent In raising $B$ a distance of $\frac{1}{2}$ foot, the movement is from $x = 1$ to $x = \frac{1}{2}$. Hence the work $W$ done by the restoring force $F$ is given by
+\begin{eqnarray*}
+W &=& \int_1^{1/2} F(x)dx = \int_1^{1/2} ( - 5x)dx \\
+&=& \int_{1/2}^1 5xdx = 5\frac{x^2}{2} \big|_{1/2}^1 \\
+&=& 5(\frac{1}{2} - \frac{1}{8}) = \frac{15}{8} \;\mbox{foot-pounds.}
+\end{eqnarray*}
+\end{example}
+
+The \textbf{work done against the force} $F$ as the object moves from $a$ to $b$ will be denoted by $W_*(F, a, b)$, or simply by $W_*$ as before, and is by definition
+%S!C. 5] WORK  449
+the negative of the work done by the force $F$. Thus
+
+\begin{equation}
+ W_*(F, a, b) = -\int_a^b F(x) dx. 
+\label{eq8.5.6}
+\end{equation}
+
+%EXAMPLE 3. 
+\begin{example}
+Consider the spring in Example 2 loaded as shown in Figure 22. How many foot-pounds of work are required to pull the load $B$ down an additional 1 foot (i.e., so that the spring is stretched to a total length of 3 feet)? The total, or resultant, force $F(x)$ acting at $x$ is the sum of two forces: The first is the restoring force of the spring, which we have computed to be $-5x$, and the second is the force of gravity on $B$, which is equal to 5. (We ignore the weight of the spring.) Hence
+$$
+F(x) = 5 - 5x.
+$$
+\noindent The work required to pull the load B down an additional 1 foot, i.e., to move from $x = 1$ to $x = 2$, will be the work done against the resultant force $F$. Thus
+\begin{eqnarray*}
+W_* &=& -\int_1^2  F(x)dx = -\int_1^2 (5 - 5x) dx \\
+        &=& (\frac{5x^2}{2} - 5x)\big|_1^2 = \frac{5}{2} \;\mbox{foot-pounds}. 
+\end{eqnarray*}
+\end{example}
+
+%EXAMPLE 4. 
+\begin{example} According to Newton's Law of Gravitation, two bodies of masses $M$ and $m$ are attracted to each other by a force equal in magnitude to $G \frac{Mm}{r^2}$ where $r$ is the distance between them and $G$ is a universal constant. If the earth has mass $M$, find the work done in projecting a missile of mass $m$ radially outward 500 miles from the surface of the earth. Let the center of the earth be fixed at the origin of an axis along which the missile is projected in the direction of increasing $x$, as shown in Figure 23. By Newton's Law, the gravitational force $F(x)$ acting on the missile at $x$ is toward the origin and equal in magnitude to $G \frac{Mm}{x^2}$. By our sign convention, therefore,
+$$
+F(x) = -G \frac{Mm}{x^2}.
+$$
+\noindent Let $a = 4000$ miles, the radius of the earth, and let $b = 4500$. The work required to project the missile from $a$ to $b$ is equal to the work $W_*$ done against the force $F$ in moving from $a$ to $b$.
+
+%450 THE DEFINITE INTEGRAL (CONTINUED)[CHAP. 8
+%Figure 23
+\putfig{4.5truein}{scanfig8_23}{}{fig 8.23}
+
+\begin{eqnarray*}
+W_* &=& - \int_a^b F(x) dx \\
+&=& - \int_a^b -G \frac{Mm}{x^2} dx = GMm \int_a^b \frac{1}{x^2} dx \\
+&=& GMm (-\frac{1}{x}) \big|_a^b = GMm (\frac{1}{a} - \frac{1}{b})\\
+&=& GMm (\frac{1}{4000} - \frac{1}{4500}) .
+\end{eqnarray*}
+\noindent Suppose that we consider the work required to project the missile from the surface of the earth to points successively farther and farther away. We find that
+\begin{eqnarray*}
+\lim_{b \rightarrow \infty} W_* &=& \lim_{b \rightarrow \infty} GMm (\frac{1}{a} - \frac{1}{b} )  \\
+&=& \frac{GMm}{a}.
+\end{eqnarray*}
+
+\noindent This number can be regarded as the work necessary to carry the missile completely out of the earth's gravitational field. In this example we have, of course, ignored the gravitational forces which exist because of the presence of other bodies in the universe.
+\end{example}
+\vspace{.2in}
+

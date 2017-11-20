@@ -1,0 +1,345 @@
+\section{Nonhomogeneous Equations.} We continue to consider a given real-valued function $F(x)$, a given polynomial 
+$$
+p(t) = t^n + a_{n-1}t^{n-1} + \cdots + a_1t + a_0, 
+$$
+with real coefficients, and the resulting differential equation
+\begin{equation}
+p(D)y = F(x) .  
+\label{eq11.5.1}
+\end{equation}
+In this section our objective is to develop techniques for solving many examples of (1) quickly.  This is in contrast to Section 3, where it is demonstrated that (1) can always be solved by successively solving first-order linear equations. The task of solving all these first-order equations can be extremely tedious, and we therefore look for a simpler method.
+
+The technique to be discussed is based on two premises. The first is the fact, demonstrated in Section 4, that one can write down the general solution of the associated homogeneous equation
+\begin{equation}
+p(D)y = 0  
+\label{eq11.5.2}
+\end{equation}
+immediately, once $p(t)$ has been factored into irreducible polynomials. The second is Theorem (4.1), page 640, which asserts that the general solution of (1) is equal to the general solution of (2) plus any particular solution of (1).
+%SEC. 5] NONHOMOGENEOUS EQUATIONS  649
+Hence the problem of solving (1) reduces to that of finding \textit{any one solution.}
+
+As an introductory example, consider the differential equation 
+\begin{equation}
+(D^2 + 4D + 3)y = 3x^2 + 2x - 6. 
+\label{eq11.5.3}
+\end{equation}
+The characteristic polynomial is $t^2 + 4t + 3$, which factors into the product $(t + 1)(t + 3)$. The associated homogeneous equation is therefore
+$$
+(D + 1)(D + 3)y = 0, 
+$$
+and its general solution, which we shall denote by $y_h$, is given by
+$$
+y_h = c_1e^{-x} + c_2e^{-3x},
+$$
+for arbitrary real numbers $c_1$ and $c_2$. To obtain the general solution of (3), it remains to find a particular solution $y_p$, and any one is as good as any other. If we can find one, it follows by Theorem (4.1) that $y_h + y_p$ is the general solution of (3).
+
+Since the derivatives of polynomials are polynomials and since the right side of (3) is the polynomial $3x^2 + 2x - 6$, it is natural to seek a polynomial solution. Let us set 
+$$
+y_p = A_nx^n + A_{n-1}x^{n-1} + \cdots + A_0,  \;\;\;\mbox{with}\; A_n \neq 0,
+$$
+and try to find $n$ and coefficients $A_n, . . ., A_0$ so that $(D^2 + 4D + 3)y_p = 3x^2 + 2x - 6$. Since $Dy_p$ is a polynomial of degree $n - 1$, and $D^2y_p$ is a polynomial of degree $n - 2$, it follows that $(D^2 + 4D + 3)y_p$ is a polynomial of degree $n$. If this polynomial is to equal $3x^2 + 2x - 6$, for every $x$, then it must be the case that $n = 2$. Hence we let
+$$
+y_p = Ax^2 + Bx + C.
+$$
+Then 
+\begin{eqnarray*}
+Dy_p &=& 2Ax + B, \\
+D^2y_p &=& 2A, 
+\end{eqnarray*}
+and so
+\begin{eqnarray*}
+(D^2 + 4D + 3)y_p &=& 2A + 4(2Ax + B) + 3(Ax^2 + Bx + C)\\
+                               &=& 3Ax^2 + (8A + 3B)x + 2A + 4B + 3C.
+\end{eqnarray*}
+The right side of the preceding equation is equal to $3x^2 + 2x - 6$, for all real numbers $x$, if and only if
+\begin{eqnarray*}
+3 &=& 3A, \\
+2 &=& 8A + 3B,\\
+-6 &=& 2A + 4B + 3C.
+\end{eqnarray*}
+%650 DIFFERENTIAL EQUATIONS [CHAP. 11
+Solving these equations, we get $A = 1$, $B = - 2$, and $C = 0$. The function 
+$$
+y_p= x^2 - 2x 
+$$
+is therefore a particular solution of (3). It follows from Theorem (4.1) that 
+$$
+y = y_h + y_p = c_1e^{-x} + c_2 e^{-3x} + x^2 - 2x
+$$
+is the general solution, where $c_1$, and $c_2$ are arbitrary real numbers.
+
+A second example is the differential equation 
+\begin{equation}
+(D^2 + 4)y = 3e^{5x} .  
+\label{eq11.5.4}
+\end{equation}
+The characteristic polynomial $t^2 + 4$ is irreducible with roots $2i$ and $-2i$, and the general solution $y_h$ of the associated homogeneous equation $(D^2 + 4)y = 0$ is therefore given by
+$$
+y_h = c_1 \cos 2x + c_2 \sin 2x,
+$$
+for arbitrary real numbers $c_1$ and $c_2$. A particular solution $y_p$ of (4) will be any function with the property that its second derivative plus four times itself is equal to $3e^{5x}$. Since the derivative of an exponential function is again an exponential function, an intelligent guess is that a particular solution might be a function of the form 
+$$
+y_p = Ae^{5x}.
+$$
+Trying this, we obtain
+\begin{eqnarray*}
+Dy_p &=& 5Ae^{5x},\\
+D^2y_p &=& 25Ae^{5x},
+\end{eqnarray*}
+and so
+$$
+(D^2 + 4)y_p = 25Ae^{5x} + 4Ae^{5x} = 29Ae^{5x}.
+$$
+Obviously, $29Ae^{5x} = 3e^{5x}$ if and only if $A = \frac{3}{29}$. Hence a particular solution of the differential equation $(D^2 + 4)y = 3e^{5x}$ is
+$$
+y_p = \frac{3}{29} e^{5x}, 
+$$
+and it is a consequence of Theorem (4.1) that the general solution is
+$$
+y = y_h + y_p = c_1 \cos 2x + c_2 \sin 2x + \frac{3}{29} e^{5x},
+$$
+where $c_1$ and $c_2$ are arbitrary real constants.
+
+The method of finding particular solutions used in the above two examples is sometimes called the \textit{method of undetermined coefficients.}  For a third example, consider the differential equation
+\begin{equation}
+(D^2 + 4)y = 7 \sin 2x. 
+\label{eq11.5.5}
+\end{equation}
+%SEC. 5] NONHOMOGENEOUS EQUATIONS  651
+The associated homogeneous equation $(D^2 + 4)y = 0$ is the same as for equation (4), and its general solution is
+$$
+y_h = c_1 \cos 2x + c_2 \sin 2x.
+$$
+In attempting to find a particular solution of (5), one might reason from the experience of the preceding examples as follows: The right side is the function $7 \sin 2x$. Since the derivatives of any function which is a linear combination of sines and cosines are functions of the same type, a reasonable candidate for a particular solution is some function $y_p$ of the form
+$$
+y_p = A \sin 2x + B \cos 2x.
+$$
+However, when we try to determine values of the coefficients $A$ and $B$ which will make $y_p$ a solution, we find that $(D^2 + 4)y_p = 0$. This is actually not surprising, since any function of this type has already been shown to be a solution of the associated homogeneous equation. Hence we must try some other form for $y_p$.
+
+With some ingenuity and willingness to experiment, it is not at all impossible to discover a particular solution to (5). Nevertheless, this example serves to illustrate the desirability of analyzing our technique to reduce the amount of inspiration necessary. For this purpose, we again consider the differential equation (1); i.e.,
+$$
+p(D)y = F(x)   
+$$
+with given function $F(x)$ and polynomial $p(t)$ of degree $n$. To apply the method of undetermined coefficients, it is necessary that the right side of (1) is itself a solution of a homogeneous linear differential equation with constant coefficients. Hence in the discussion which follows, \textit{we make the assumption that there exists a polynomial $q(t)$ of degree m such that} $q(D)F(x) = 0$.
+
+Such a linear differential operator $q(D)$ is sometimes called an \textbf{annihilator} of the right side of (1). For the differential equation (3), a suitable annihilator is the operator $D^3$, since
+$$
+D^3 (3x^2 + 2x - 6) = 0.
+$$
+For equation (5), whose right side is the function $7 \sin 2x$, we have $D(7 \sin 2x) = 14 \cos 2x$ and $D^2(7 \sin 2x) = D(14 \cos 2x) = - 4(7 \sin 2x)$. Hence
+$$
+(D^2 + 4)7 \sin 2x = 0,
+$$
+and thus $D^2 + 4$ is an annihilator of the right side. Similarly, it is easy to see that
+$$
+(D - 5)3e^{5x} = 0,
+$$
+from which it follows that $D - 5$ is an annihilator of the right side of equation (4).
+%652 DIFFERENTIAL EQUATIONS [CHAP. 11
+
+Returning to the general case, we first observe that, if $y$ is an arbitrary solution of the differential equation (1), then
+$$
+q(D)p(D)y = q(D)F(x) = 0.
+$$
+That is, every solution of (1) is also a solution of the equation
+\begin{equation}
+q(D)p(D)y = 0,  
+\label{eq11.5.6}
+\end{equation}
+which is homogeneous and of order $m + n$. Let us denote by $y_*$ the general solution of (6), and by $y_h$ the general solution of the associated homogeneous equation of (1), i.e., of the equation $p(D)y = 0$. It is clear that $y_h$ is also a solution of (6). We know that $y_*$ contains $m + n$ arbitrary constants and that $y_h$ contains $n$. It follows from the form of the general solution of a homogeneous linear differential equation with constant coefficients, as presented in Theorem (4.4), page 646, that we can write
+\begin{equation}
+y_* = y_h + u,
+\label{eq11.5.7}
+\end{equation}
+where $u$ contains m arbitrary constants. It will follow that these are the ``undetermined coefficients" of the particular solution we are seeking.
+
+Let $y_1$ be a solution of (1); i.e., $y$ is some function with the property that $p(D)y_1 = F(x)$. Then $y$is also a solution of (6), and so there exists a set of values for the n constants in $y_h$ and for the m constants in $u$ such that, with these values substituted, we have
+$$
+y_1 = y_h + u.
+$$
+Hence 
+\begin{eqnarray*}
+F(x) = p(D)y_1 &=& p(D)(y_h + u) \\
+                        &=& p(D)y_h + p(D)u \\
+                        &=& 0 + p(D)u \\
+                        &=& p(D)u.
+\end{eqnarray*}
+Thus we have proved that there exists a set of values for the $m$ constants in $u$ such that, with these values substituted, the resulting function $u$ is a solution of the differential equation (1). Moreover, it can be proved that there is only one such set of values. Hence, as the following examples will illustrate, these ``undetermined coefficients" are uniquely determined by the equation
+\begin{equation}
+p(D)u = F(x).  
+\label{eq11.5.8}
+\end{equation}
+We take for the particular solution $y_p$ the function $u$ specified by equations (7) and (8).
+
+%EXAMPLE 1. 
+\begin{example} Find the general solution of the differential equation (5), i.e., of 
+$$
+(D^2 + 4)y = 7 \sin 2x.
+$$
+%SEC. 5] NONHOMOGENEOUS EQUATIONS  653
+As indicated earlier, the general solution of the associated homogeneous equation $(D^2 + 4)y = 0$
+is
+$$
+y_h = c_1 \cos 2x + c_2 \sin 2x.
+$$
+Moreover, we have observed that $(D^2 + 4)7 \sin 2x = 0$, and therefore the operator $D^2 + 4$ is an annihilator of the right side. Hence we consider the homogeneous fourth-order equation
+$$
+(D^2 + 4)(D^2 + 4)y = (D^2 + 4)^2 y = 0. 
+$$
+The general solution of this equation is given by 
+\begin{eqnarray*}
+y_* &=& (Ax + B) \cos 2x + (Cx + D) \sin 2x \\
+      &=& B \cos 2x + D \sin 2x + Ax \cos 2x + Cx \sin 2x, 
+\end{eqnarray*}
+for arbitrary real numbers, $A, B, C$, and $D$. It is clear that
+$$
+y_h = B \cos 2x + D \sin 2x, 
+$$
+and we therefore set
+$$
+u = Ax \cos 2x + Cx \sin 2x. 
+$$
+It follows that
+$$
+Du = A \cos 2x - 2Ax \sin 2x + C \sin 2x + 2Cx \cos 2x, 
+$$
+and
+\begin{eqnarray*}
+D^2u &=& - 2A\sin2x - 2A\sin2x - 4Ax\cos2x \\
+         &+& 2C \cos 2x + 2C \cos 2x - 4Cx \sin 2x \\
+         &=& (4C - 4Ax) \cos 2x + ( - 4A - 4Cx) \sin 2x. 
+\end{eqnarray*}
+Hence 
+\begin{eqnarray*}
+(D^2 + 4)u &=& (4C - 4Ax + 4Ax) \cos 2x + ( -4A - 4Cx + 4Cx) \sin 2x \\
+                  &=& 4C \cos 2x - 4A \sin 2x. 
+\end{eqnarray*}
+Setting $(D^2 + 4)u = 7 \sin 2x$, we obtain
+$$
+4C \cos 2x - 4A \sin 2x = 7 \sin 2x. 
+$$
+Since this equation is to be true for all real values of $x$, we
+conclude that $4C = 0$ and $- 4A = 7$. Thus $C = 0$ and $A = - \frac{7}{4}$. It follows that the function $u$, with these values substituted for the constants, is a solution of the given differential equation. We therefore set
+$$
+y_p = - \frac{7}{4} x \cos 2x, 
+$$
+and obtain
+$$
+y = y_h + y_p = c_1 \cos 2x + c_2 \sin 2x - \frac{7}{4} x \cos 2x 
+$$
+as the general solution.
+\end{example}
+%654 DIFFERENTIAL EQUAHONS [CHAP. ] 
+%EXAMPLE 2. 
+\begin{example} Find the general solution of the differential equation
+$$
+\frac{d^2y}{dx^2} + \frac{dy}{dx} - 2y = 5e^{-2x}.
+$$
+The characteristic polynomial is $t^2 + t - 2 = (t + 2)(t - 1)$, and the differential equation can therefore be written
+$$
+(D^2 + D - 2)y = (D + 2)(D - Dy = 5e^{-2x}.
+$$
+The general solution of the associated homogeneous equation
+$$
+(D + 2)(D - 1)y = 0 
+$$
+is given by
+$$
+y_h = c_1e^{-2x} + c_2e^{-2x} .
+$$
+The right side of the nonhomogeneous equation is the function $5e^{-2x}$. Since $D(5e^{-2x}) = - 2(5e^{-2x})$, it follows that
+$$
+(D + 2)5e^{-2x} = 0 ,
+$$
+and so $D + 2$ is an annihilator. We therefore consider the third-order homogeneous equation
+$$
+(D + 2)(D + 2)(D - 1)y = (D + 2)^2(D - 1)y = 0, 
+$$
+whose general solution is
+$$
+y_* = (Ax + B)e^{-2x} + Ce^{x}, 
+$$
+for any real numbers $A, B$, and $C$. Recognizing that $Be^{-2x} + Ce^x = y_h$, we set 
+$$
+u = Axe^{-2x}.
+$$
+The constant $A$ is evaluated by setting $(D^2 + D - 2)u = 5e^{-2x}$. Differentiating to obtain the left side, we get
+\begin{eqnarray*}
+    Du &=& Ae^{-2x} - 2Axe^{-2x},\\
+D^2u &=& - 2Ae^{-2x} - 2Ae^{-2x} + 4Axe^{-2x}\\
+          &=& - 4Ae^{-2x} + 4Axe^{-2x}. 
+\end{eqnarray*}
+Hence
+\begin{eqnarray*}
+(D^2 + D - 2)u &=& - 4Ae^{-2x} + 4Axe^{-2x} + Ae^{-2x} - 2Axe^{-2x} - 2Axe^{-2x}\\
+                       &=& - 3Ae^{-2x} .
+\end{eqnarray*}
+We therefore obtain the equation $-3Ae^{-2x} = 5e^{-2x}$, which implies that $A = - \frac{5}{3}$. Hence the function $u$ obtained by substituting this value for $A$ is a particular solution. Thus we take
+$$
+y_p = - \frac{5}{3} xe^{-2x},
+$$
+%SEC. 5] NONHOMOGENEOUS EQUATIONS 655
+and it follows that the general solution is given by
+$$
+y = y_h + y_p = c_1e^{-2x} + c_2e^{x} - \frac{5}{3}xe^{-2x}, 
+$$
+for arbitrary real numbers $c_1$ and $c_2$.
+\end{example}
+
+%EXAMPLE 3.
+\begin{example} Solve the differential equation
+$$
+D^3(D + 2)y = 8x + 1.
+$$
+The characteristic polynomial is $t^3(t + 2)$, whose roots 0 and $-2$ occur with multiplicities three and one, respectively. It follows that the general solution of the associated homogeneous equation is
+\begin{eqnarray*}
+y_h &=& (c_1x^2 + c_2x + c_3)e^{0x} + c_4e^{-2x} \\
+       &=& c_1x^2 + c_2x + c_3 + c_4e^{-2x} .
+\end{eqnarray*}
+The right side of the given nonhomogeneous equation is $8x + 1$, and the operator $D^2$ is an annihilator, since $D^2(8x + 1) = 0$. Hence we consider the sixth-order homogeneous equation
+$$
+D^2D^3(D + 2)y = D^5(D + 2)y = 0,
+$$
+the general solution of which is
+$$
+y_* = Ax^4 + Bx^3 + Cx^2 + Dx + E + Fe^{-2x}.
+$$
+It is obvious that $y_h = Cx^2 + Dx + E + Fe^{-2x}$, and we set 
+$$
+u = Ax^4 + Bx^3 .
+$$
+It follows that 
+\begin{eqnarray*}
+     Du &=& 4Ax^3 + 3Bx^2, \\
+ D^2u &=& 12Ax^2 + 6Bx, \\
+ D^3u &=& 24Ax + 6B, \\
+ D^4u &=& 24A, 
+\end{eqnarray*}
+and so
+\begin{eqnarray*}
+D^3(D + 2)u &=& D^4u + 2D^3u\\
+                    &=& 24A + 48Ax + 12B\\
+                    &=& 48Ax + 24A + 12B.
+\end{eqnarray*}
+Setting $D^3(D + 2)u = 8x + 1$, we obtain the equation 
+$$
+48Ax + 24A + 12B = 8x + 1,
+$$
+%656 DIFFERENTIAL EQUATIONS [CHAP. 11
+which is true for all real values of $x$ if and only if $A = \frac{1}{6}$ and $B = - \frac{1}{4}$. It follows that a particular solution of the differential equation
+$$
+D^3(D + 2)y = 8x + 1 
+$$
+is defined by
+$$
+y_p = \frac{1}{6}x^4 - \frac{1}{4}x^3,
+$$
+and the general solution is, therefore,
+$$
+y = y_h + y_p = c_1x^2 + c_2x + c_3 + c_4e^{-2x} + \frac{1}{6}x^4 - \frac{1}{4}x^3,
+$$
+for arbitrary real numbers $c_1, c_2$, and $c_3$, and $c_4$.
+\end{example}
+
+The method of undetermined coefficients which we have studied in this section is not applicable to all linear differential equations with constant coefficients. For example, it will not work for the equation $(D^2 + 2)y = \tan x$, because there is no polynomial $q(t)$ with the property that $q(D)\tan x = 0$. Of course, this equation can be solved by replacing it by two first-order linear equations and solving these successively as in Section 3. It can also be solved by another well-known technique, called the method of \textit{variation of parameters,} which we shall not discuss in this book. Finally, it is important to realize that there exist tables in which particular solutions of the equation $p(D)y = F(x)$ are tabulated for a variety of functions $F(x)$. In particular, see pages 112 to 114 of the book by E. J. Cogan and R. Z. Norman, \textit{Handbook of Calculus, Difference and Differential Equations,}  Prentice-Hall, 2nd ed., 1963.
+

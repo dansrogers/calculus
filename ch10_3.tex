@@ -1,0 +1,261 @@
+\section{Vectors in the Plane.} A \textbf{vector} in the plane is an ordered pair $(P, Q)$ of points in the plane. The point $P$ is called the \textbf{initial point} of the vector and $Q$ the \textbf{terminal point.} Geometrically, the vector $(P, Q)$ will be represented as a directed line segment, or arrow, from $P$ to $Q$, as illustrated in Figure 10. We shall use boldface lower-case letters to denote vectors. For example, if $\mbox{\bf{v}}$ is the vector with initial point $P$ and terminal point $Q$, then $\mbox{\bf{v}} = (P, Q)$.
+
+%Figure 10
+\putfig{1truein}{scanfig10_10}{}{fig 10.10}
+
+Having identified the plane with the set $R^2$ of all ordered pairs of real numbers, we see that a vector is determined by four real numbers: two coordinates of its initial point, and two of its terminal point. Let $\mbox{\bf{v}}$ be a vector with initial point $P = (a, b)$ and terminal point $Q = (c, d)$. Then the two numbers $v_1$ and $v_2$ given by the equations
+
+%(1)
+\begin{eqnarray*}
+v_1 &=& c - a,\\
+v_2 &=& d - b, \hspace{2in} (1)
+\label{eq10.3.1}
+\end{eqnarray*}
+
+%SEC. 3] VECTORS IN THE PLANE  561
+\noindent are defined to be \textbf{first} and \textbf{second coordinates,} respectively, of the vector $\mbox{\bf{v}}$ in $R^2$. Thus we have defined coordinates of a vector in $R^2$ as well as coordinates of a point in $R^2$. The definitions are not the same, although the concepts are certainly related.
+
+If a vector $\mbox{\bf{v}}$ has initial point $P = (a, b)$ and coordinates $v_1$ and $v_2$, then equations (1) tell us that the terminal point $Q = (c, d)$ is given by
+$$
+Q = (a + v_1, b + v_2).
+$$
+\noindent It follows that a vector is completely determined by its initial point and its coordinates. Hence, another notation for a vector, which we shall use, is
+
+%(2)
+\setcounter{equation}{1}
+\begin{equation}
+\mbox{\bf{v}} = (v_1, v_2)_P .  
+\label{eq10.3.2}
+\end{equation}
+\noindent [Although it would be consistent with this notation, we shall not write $(v_1, v_2)_{(a,b)}$ for the vector with initial point $(a, b)$ and coordinates $v_1$ and $v_2$.]
+
+The \textbf{length} of a vector $\mbox{\bf{v}} = (P, Q)$ in $R^2$ is denoted by $|\mbox{\bf{v}}|$ and defined by
+$$
+|\mbox{\bf{v}}| = distance(P, Q).
+$$
+\noindent If $P = (a, b)$ and $Q = (c, d)$, then the formula for the distance between two points implies that
+$$
+|\mbox{\bf{v}}| = \sqrt{(c - a)^2 + (d - b)^2} .
+$$
+\noindent From equations (1) it follows that the coordinates of the vector $\mbox{\bf{v}}$ are the two numbers $v_1 = c - a$ and $v_2 = d - b$. Hence
+
+\begin{theorem} The length of any vector $\mbox{\bf{v}} = (v_1, v_2)_P$ is given by
+
+$$
+|\mbox{\bf{v}}|= \sqrt {v_1^2 + v_2^2} . 
+$$
+\end{theorem}
+
+Thus the length of a vector depends only on its coordinates.
+
+%EXAMPLE 1. 
+\begin{example} Find the terminal point of each of the following vectors. Draw each one as an arrow in the $xy$-plane, and compute its length.
+ 
+\begin{quote}
+\begin{description}
+\item[(a)] $\textbf{v}\; = (1, 2)_P,  \;\;\mathrm{where}\; P = (1, 1),$
+\item[(b)] $\textbf{u}\; = (4, -1)_P, \;\;\mathrm{where}\;  P = (1, 1),$
+\item[(c)] $\textbf{w}\; = (-2, 5)_Q,\;\;\mathrm{where}\;  Q = (0, -1),$
+\item[(d)] $\textbf{x}\; = (3, -4)_O, \;\;\mathrm{where}\;  O = (0, 0).$
+
+\end{description}
+\end{quote} 
+%562 GEOMETRY IN THE PLANE [CHAP. 1O
+\noindent We have seen that, if $P = (a, b)$, then the terminal point of the vector $(v_1, v_2)_P$ is the ordered pair $(a + v_1, b + v_2)$. It follows that 
+$$
+\begin{array}{l}
+\mathrm{terminal~point~of~\bf{v}} = (1 + 1, 1 + 2) = (2, 3), \vspace{.1in}\\
+\mathrm{terminal~point~of~\bf{u}} = (1 + 4, 1 + (-1)) = (5, 0), \vspace{.1in}\\
+\mathrm{terminal~point~of~\bf{w}} = (0 + (-2), -1 + 5 ) = (-2, 4),\vspace{.1in}\\
+\mathrm{terminal~point~of~\bf{x}}  = (0 + 3, 0 + (-4)) = (3, -4).
+\end{array}
+$$
+%Figure I 1
+\putfig{3.25truein}{scanfig10_11}{}{fig 10.11}
+
+\noindent The vectors are drawn in Figure 11. Their respective lengths, computed from the formula in (3.1), are
+ 
+\begin{eqnarray*} 
+|\mbox{\bf{v}}|  &=& \sqrt{1^2 + 2^2} = \sqrt{5}, \vspace{.1in}\\
+|\mbox{\bf{u}}|  &=& \sqrt{4^2 + (-1)^2} = \sqrt{17}, \vspace{.1in}\\
+|\mbox{\bf{w}}|  &=& \sqrt{(-2)^2 + 5^2} = \sqrt{29},\vspace{.1in}\\
+|\mbox{\bf{x}}|  &=& \sqrt{3^2 + (-4)^2}  = \sqrt{25} = 5.
+\end{eqnarray*}
+\end{example}
+
+We shall denote the set of all vectors in $R^2$ by $\mathcal{V}$. For every point $P$ in $R^2$, the subset of $\mathcal{V}$ consisting of all vectors with initial point $P$ will be denoted by
+%SEC. 3] VECTORS IN THE PLANE  563
+$\mathcal{V}_P$. We shall now define, in each set $\mathcal{V}_P$, an operation of addition of vectors and an operation of multiplication of vectors by real numbers.
+
+Addition in $\mathcal{V}_P$ is defined as follows: If $\mbox{\bf{u}} = (u_1, u_2)_P$ and $\mbox{\bf{v}} = (v_1, v_2)_P$ are any two vectors in $\mathcal{V}_P$, then their sum $\mbox{\bf{u}} + \mbox{\bf{v}}$ is the vector defined by
+
+%(3)
+\begin{equation}
+\mbox{\bf{u} + \bf{v}} = (u_1 +v_1,u_2 + v_2)_P.   
+\label{eq10.3.3}
+\end{equation}
+\noindent Note that the sum of two vectors in $\mathcal{V}_P$ is again a vector in $\mathcal{V}_P$. Furthermore, if $\mbox{\bf{u}}$ is in $\mathcal{V}_P$ and $\mbox{\bf{v}}$ is in $\mathcal{V}_Q$, then their sum is not defined unless $P = Q$. That is, \textit{the sum of two vectors is defined if and only if they have the same initial point.}  For every vector $\mbox{\bf{v}} = (v_1, v_2)_P$, we denote the vector $(-v_1, -v_2)_P$ by $-\mbox{\bf{v}}$. In this way, subtraction of vectors in $\mathcal{V}_P$ is defined by the equation
+$$
+\mbox{\bf{u}} - \mbox{\bf{v}} = \mbox{\bf{u}} + (-\mbox{\bf{v}}), 
+$$
+
+\noindent which implies the following companion formula to (3):
+
+%(4)
+\begin{equation}
+\mbox{\bf{u}} - \mbox{\bf{v}} = (u_1 - v_1, u_2 - v_2)_P.  
+\label{eq10.3.4}
+\end{equation}
+\noindent The unique vector in $\mathcal{V}_P$ with both coordinates equal to zero is called the zero vector and will be denoted by $\mbox{\bf{0}}$. Thus
+
+$$
+\mbox{\bf{0}} = (0, 0)_P = (P, P).
+$$
+
+\noindent Obviously, the equations
+\begin{eqnarray*}
+\mbox{\bf{v}} + \mbox{\bf{0}} &=& \mbox{\bf{v}}, \\
+\mbox{\bf{v}}  - \mbox{\bf{v}} &=& \mbox{\bf{0}}
+\end{eqnarray*}
+
+\noindent are true for every vector $\mbox{\bf{v}}$ in $\mathcal{V}_P$. Geometrically the zero vector in $\mathcal{V}_P$ is represented simply by the point $P$. Of course, there are as many different zero vectors as there are points in the plane, and one cannot tell from the notation $\mbox{\bf{0}}$ to which set $\mathcal{V}_P$ a given zero vector belongs. It is obvious that every zero vector has length zero. Conversely, the length of a nonzero vector must be positive, since at least one of its coordinates is not zero. Hence
+
+\begin{theorem} A vector $\mbox{\bf{v}}$ is a zero vector if and only if $|\mbox{\bf{v}}| = 0$.
+\end{theorem} 
+
+Geometrically, the sum $\mbox{\bf{u}} + \mbox{\bf{v}}$ of two nonzero vectors $\mbox{\bf{u}}$ and $\mbox{\bf{v}}$ in $\mathcal{V}_P$ is the vector in $\mathcal{V}_P$ which is a diagonal of the parallelogram which has $\mbox{\bf{u}}$ and $\mbox{\bf{v}}$ as sides. This is the famous Parallelogram Law and is illustrated in Figure 12(a). It can be verified in a straightforward way by computing the slopes of the various line segments, and we omit the details. Similarly, the vector $-\mbox{\bf{v}}$ is represented geometrically as a directed line segment Iying in the
+%564 GEOMETRY IN THE PLANE [CHAP. 1O
+same straight line as $\mbox{\bf{v}}$, but in the opposite direction, as shown in Figure 12(b). Moreover, the vectors $\mbox{\bf{v}}$ and $-\mbox{\bf{v}}$ have the same length, since
+$$
+|\mbox{\bf{v}}| = \sqrt{v_1^2+v_2^2} = \sqrt{(-v_1)^2 + (-v_2)^2} = 
+|- \mbox{\bf{v}}|.
+$$
+%Figure 12
+\putfig{4.5truein}{scanfig10_12}{}{fig 10.12}
+
+The second algebraic operation in $\mathcal{V}_P$ is defined as follows: For every real number $a$ and every vector $\mbox{\bf{v}} = (v_1, v_2)_P$ in $\mathcal{V}_P$, we define a vector $a\mbox{\bf{v}}$, called the \textbf{product} of $a$ and $\mbox{\bf{v}}$, by the equation
+
+%(5)
+\begin{equation}
+ a\mbox{\bf{v}} = (av_1, av_2)_P .  
+\label{eq10.3.5}
+\end{equation}
+\noindent In traditional vector terminology, the real number $a$ is called a \textbf{scalar.} Note that we have \textit{not} defined a product of two vectors. If we compute the length of the vector $a\mbox{\bf{v}}$, we find that
+\begin{eqnarray*}
+|a\mbox{\bf{v}}| &=& \sqrt{(av_1)^2 + (av_2)^2} = \sqrt{a^2(v_1^2 + v_2^2)}\\
+&=& |a| \sqrt{v_1^2 + v_2^2}  = |a| |\mbox{\bf{v}}|, 
+\end{eqnarray*}
+
+\noindent a result which we summarize in the statement
+
+\begin{theorem} $|a\mbox{\bf{v}}| = |a| \; |\mbox{\bf{v}}|$, for every real num ber $a$ and every vector $\mbox{\bf{v}}$.
+\end{theorem}
+
+If $\mbox{\bf{v}}$ is an arbitrary nonzero vector in $\mathcal{V}_P$ and if $a \neq 0$, then the slope of the line segment joining $P$ to the terminal point of $\mbox{\bf{v}}$ is the same as that joining $P$ to the terminal point of $a\mbox{\bf{v}}$. Hence $P$ and the terminal points of $\mbox{\bf{v}}$ and $a\mbox{\bf{v}}$ lie on the same straight line. In addition, it is easy to check that the arrows representing $\mbox{\bf{v}}$ and $a\mbox{\bf{v}}$ are in the same or opposite direction according as a is positive or negative.
+%SEC. 31 VECTORS IN THE Pi ANE  565
+
+
+\begin{example} Let $P = (2, -1)$ and consider the two vectors $\mbox{\bf{u}} = (1, 5)_P$ and $\mbox{\bf{v}} = (2, -1)_P$. Compute and draw each of the following vectors in the same plane with $\mbox{\bf{u}}$ and $\mbox{\bf{v}}$. 
+ 
+\begin{quote}
+\begin{description}
+\item[(a)] $\mbox{\bf{u}} + \mbox{\bf{v}}, $
+\item[(b)] $-2\mbox{\bf{v}},$
+\item[(c)] $\mbox{\bf{u}} - 2\mbox{\bf{v}},$
+\item[(d)] $\frac{1}{4}(\mbox{\bf{u}} + \mbox{\bf{v}}).$
+\end{description}
+\end{quote} 
+ 
+\noindent The computations are very simple:
+
+\begin{eqnarray*}
+\mbox{\bf{u} + \bf{v}} &=& (1, 5)_P + (2, -1)_P = (3, 4)_P, \vspace{.1in}\\
+-2\mbox{\bf{v}} &=& - 2(2, -1)_P = (-4, 2)_P,               \vspace{.1in}\\
+\mbox{\bf{u}} - 2\mbox{\bf{v}} &=& (1, 5)_P - 2(2, -1)_P    \vspace{.1in}\\
+&=& (1, 5)_P + (-4, 2)_P = (-3, 7)_P, \vspace{.1in}\\
+\frac{1}{4}(\mbox{\bf{u}} + \mbox{\bf{v}}) &=& \frac{1}{4}(3, 4)_P = (\frac{3}{4}, 1)_P.
+\end{eqnarray*}
+
+%Figure 13 
+\putfig{3.75truein}{scanfig10_13}{}{fig 10.13}
+
+\noindent The directed line segments representing these vectors, as well as $\mbox{\bf{u}}$ and $\mbox{\bf{v}}$, are shown in Figure 13. The easiest way to draw them is to make a list of their terminal points. We recall that a vector with coordinates $v_1$ and $v_2$ and
+%566 GEOMETRY IN THE PLANE [CHAP. 10
+initial point $P = (a, b)$ has a terminal point equal to $(a + v_1, b + v_2)$. Hence 
+$$
+\begin{array}{ll}
+\mathrm{terminal~point~of~\bf{u}} &= (2 + 1, -1 + 5) = (3, 4),                   \vspace{.1in}\\
+\mathrm{terminal~point~of~\bf{v}} &= (2 + 2, -1 - 1) = (4, -2),                  \vspace{.1in}\\
+\mathrm{terminal~point~of~\bf{u}} + \mathrm{\bf{v}} &= (2 + 3, -1 + 4) = (5, 3),   \vspace{.1in}\\
+\mathrm{terminal~point~of~ -2\bf{v}} &= (2 - 4, -1 + 2) = (-2, 1),               \vspace{.1in}\\
+\mathrm{terminal~point~of~\bf{u}} - 2\mathrm{\bf{v}} &= (2 - 3, -1 + 7) = (-1, 6), \vspace{.1in}\\
+\mathrm{terminal~point~of~} \frac{1}{4}(\mathrm{\bf{u} + \bf{v}}) &= (2 + \frac{3}{4}, -1 + 1) = (2\frac{3}{4}, 0).
+\end{array}
+$$
+\end{example}
+
+The next theorem summarizes the algebraic facts about the set $\mathcal{V}_P$ of all vectors in the plane with initial point $P$.
+
+\begin{theorem} 
+For each point $P$ in $R^2$, vector addition and scalar multiplication in $\mathcal{V}_P$ have the following properties:
+\end{theorem}
+
+\begin{quote}
+
+\begin{description}
+\item[(i)] ASSOCIATIVITY 
+$$
+\mbox{\bf{u}} + (\mbox{\bf{v}} + \mbox{\bf{w}}) = (\mbox{\bf{u}} + \mbox{\bf{v}}) + \mbox{\bf{w}}\;\;\; \mbox{and}\;\;\; (ab)\mbox{\bf{v}} = a(b\mbox{\bf{v}}). 
+$$
+
+
+\item[(ii)] COMMUTATIVITY 
+$$
+\mbox{\bf{u}} + \mbox{\bf{v}} = \mbox{\bf{v}} + \mbox{\bf{u}}.
+$$
+
+\item[(iii)] EXISTENCE OF ADDITIVE IDENTITY
+
+
+There exists a vector $\mbox{\bf{0}}$ in $\mathcal{V}_P$ with the property that $\mbox{\bf{v}} + \mbox{\bf{0}} = \mbox{\bf{v}}$, for every vector $\mbox{\bf{v}}$ in $\mathcal{V}_P$.
+
+
+\item[(iv)] EXISTENCE OF SUBTRACTION
+
+For every vector $\mbox{\bf{v}}$ in $\mathcal{V}_P$, there exists a vector $-\mbox{\bf{v}}$ in $\mathcal{V}_P$ such that $\mbox{\bf{v}} + (-\mbox{\bf{v}}) = \mbox{\bf{0}}$.
+
+
+\item[(v)] DISTRIBUTIVITY 
+$$
+a(\mbox{\bf{u}} + \mbox{\bf{v}}) = a\mbox{\bf{u}} + a\mbox{\bf{v}} \;\;\;\mbox{and}\;\;\;  (a + b)\mbox{\bf{v}} = a\mbox{\bf{v}} + b\mbox{\bf{v}}.
+$$
+
+\item[(vi)] EXISTENCE OF SCALAR IDENTITY 
+$$
+1\mbox{\bf{v}} = \mbox{\bf{v}}.
+$$
+\end{description}
+\end{quote}
+
+The proof of this theorem follows easily from the definitions of vector addition and scalar multiplication, from the definitions of $\mbox{\bf{0}}$ and $-\mbox{\bf{v}}$, and from the corresponding properties of addition and multiplication of real
+%SEC. 3] VECTORS IN THE PLANE  567
+numbers given on page 2. The importance of the theorem is that every algebraic fact about vectors can be derived from the six properties listed. In fact, in abstract algebra, these properties are taken as a set of axioms: An arbitrary set $\mbox{\bf{V}}$ is called a \textbf{vector space} and its elements are called \textbf{vectors} if, for every pair of elements $\mbox{\bf{u}}$ and $\mbox{\bf{v}}$ in $\mbox{\bf{V}}$ and for every real number a, an element $\mbox{\bf{u}} + \mbox{\bf{v}}$ and an element $a\mbox{\bf{v}}$ in $\mbox{\bf{V}}$ are defined so that conditions (i) through (vi) are satisfied. This definition has proved to be of enormous value in mathematics and examples of vector spaces occur over and over again. In particular, Theorem (3.4) asserts that, for each point $P$ in $R^2$, the set $\mathcal{V}_P$ is a vector space.
+\medskip
+
+%EXAMPLE 3. 
+\begin{example} Let $\mbox{\bf{v}}$ be a nonzero vector in $R^2$. Then the set, which we shall denote by $R\mbox{\bf{v}}$, consisting of all products $t\mbox{\bf{v}}$, where $t$ is a real number, is an example of a vector space. For, if $P$ is the initial point of $\mbox{\bf{v}}$, then $\mbox{\bf{v}}$ lies in $\mathcal{V}_P$, and it follows that every product $t\mbox{\bf{v}}$ also lies in $\mathcal{V}_P$. Hence the sum of any two vectors in $R\bf{v}$ is defined, and, since
+$$
+t\mbox{\bf{v}} + s\mbox{\bf{v}} = (t + s)\mbox{\bf{v}}, 
+$$
+\noindent the sum is again in $R\mbox{\bf{v}}$. Similarly, if $t\mbox{\bf{v}}$ is in $R\mbox{\bf{v}}$ and if $s$ is any real number, then 
+$$
+s(t \mbox{\bf{v}})= (st)\mbox{\bf{v}},
+$$
+\noindent and $(st)\mbox{\bf{v}}$ is by definition in $R\mbox{\bf{v}}$. Thus vector addition and scalar multiplication are defined in the set $R\mbox{\bf{v}}$. Conditions (i), (ii), (v), and (vi) are automatically satisfied because they hold in the larger set $\mathcal{V}_P$. 
+Finally, conditions (iii) and (iv) are also satisfied, since
+$$
+\mbox{\bf{0}} = 0\mbox{\bf{v}} \;\;\;\mbox{and}\;\;\; - \mbox{\bf{v}} = (-1)\mbox{\bf{v}}.
+$$
+\noindent This completes the proof that $R\mbox{\bf{v}}$ is a vector space. The terminal points of all the vectors in $R\mbox{\bf{v}}$ form the straight line containing the initial and terminal points of the vector $\mbox{\bf{v}}$.
+\end{example}
+

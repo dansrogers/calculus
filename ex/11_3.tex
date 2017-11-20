@@ -1,0 +1,145 @@
+\begin{exercises}
+
+\ex{11.3.1}
+Find the general solution of each of the following
+differential equations.
+\begin{exenum}
+\x
+$\deriv2y + \dydx - 2y = 5{e^{-x}}$
+\x
+$(D+2)(D-1)y=6e^{-2x}$
+\x
+$(D^2-3D+2)y = 4x+3$
+\x
+$\deriv2y + y = e^x$
+\x
+$(D^2+1)y = x^2+1$.
+\end{exenum}
+
+\ex{11.3.2}
+Using equations \eqref{11.3.1} and \eqref{11.3.2},
+prove that, if $L$ is a linear operator, then
+\[
+L(y_1 - y_2) = L(y_1) - L(y_2)
+.
+\]
+
+\ex{11.3.3}
+Show that equations \eqref{11.3.1} and \eqref{11.3.2}
+can be replaced by a single equation.
+That is, prove that a function $L$ is a linear
+operator if and only if
+\[
+L(ay_1+by_2) = aLy_1 + bLy_2
+.
+\]
+
+\ex{11.3.4}
+Prove \thref{11.3.2}; i.e., if $L_1$ and $L_2$
+are linear operators, then the composition $L_1L_2$
+is also a linear operator.
+
+\ex{11.3.5}
+Prove the second equation in \thref{11.3.3}, i.e.,
+the distributive law
+$(L_1+L_2)L_3 = L_1L_3+L_2L_3$.
+
+\ex{11.3.6}
+It might at first seem more natural to define the product
+of two linear operators $L_1$ and $L_2$ by the equation
+\[
+(L_1L_2)y = (L_1y)(L_2y)
+.
+\]
+(This \emph{is} the way the product of two
+real-valued functions is defined.)
+Using this definition, show that, if $D$ is the derivative,
+the $D^2$ is not a linear operator.
+
+\ex{11.3.7}
+Let $f(x)$ be a given function and $L$ a linear operator.
+Define $f(x)L$ by the equation
+\[
+(f(x)L)y =f(x)(L_y)
+.
+\]
+Show that $f(x)L$ satisfies equations
+\eqref{11.3.1} and \eqref{11.3.2} and hence
+is a linear operator.
+
+\ex{11.3.8}
+\begin{exenum}
+\x
+Show that the operation of multiplication by a given
+function $f(x)$ is a linear operator.
+That is, prove that, if $M$ is defined by
+\[
+My = f(x)y
+,
+\]
+then $M$ is the linear operator.
+\x
+Show that the composition of a linear operator $L$
+followed by the operation of multiplication by
+$f(x)$ is just the operator $f(x)L$ defined in Problem
+\exref{11.3.7}.
+\end{exenum}
+
+\ex{11.3.9}
+(See Problems \exref{11.3.7} and \exref{11.3.8}.)
+If $f(x)$ is a differentiable function and if $D$
+is the derivative, then both linear operators
+$f(x)D$ and $Df(x)$ are examples of
+\dt{linear differential operators} more general
+than the type discussed in the text.
+Show that
+\[
+xD \ne Dx
+,
+\]
+by applying both sides to the function $y=x$.
+Thus the commutative law of multiplication fails.
+
+\ex{11.3.10}
+Let $f$ and $g$ be differentiable complex-valued
+functions of a real variable.
+Show that the ordinary product rule for
+differentiation is still valid; i.e., prove that
+\[
+\ddx (f(x)g(x)) =
+\left(\ddx f(x)\right)g(x) +
+f(x)\left(\ddx g(x)\right)
+.
+\]
+[\emph{Hint:} Let $f(x) = f_1(x)+if_2(x)$
+and $g(x) = g_1(x) + ig_2(x)$, and apply
+the definitions of the derivative and of multiplication
+of complex numbers.]
+
+\ex{11.3.11}
+\begin{exenum}
+\x
+Let $f$ be a complex-valued function of a real variable
+which is differentiable at every point $x$ of an
+interval $I$.
+Show that if $f^\prime(x)=0$, for every $x$ in $I$,
+then $f(x)$ is a constant on $I$.
+\x
+Let $f$ and $g$ be two complex-valued functions
+of a real variable with $f^\prime(x)=g^\prime(x)$
+at every point $x$ of some interval $I$.
+Show that there exists a complex number $c$
+such that $f(x)=g(x)+c$, for every $x$ in $I$.
+\end{exenum}
+
+\ex{11.3.12}
+Find the general solution of each of the following
+differential equations.
+\begin{exenum}
+\x
+$(D-1)^2(D+2)y=0$
+\x
+$\deriv3y-\deriv2y-4\dydx +4y = 0$.
+\end{exenum}
+
+\end{exercises}

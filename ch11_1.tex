@@ -1,0 +1,280 @@
+\chapter{Differential Equations} \label{chp 11}
+\section{Review.} This section is primarily a review of the differential equations studied in Section 5 of Chapter 5 and also in Section 8 of Chapter 6. We begin by recalling the definition of a first-order differential equation (see page 272): Consider an equation $F(x, y, z) = 0$ in which not all the variables need occur, but at least $z$ does. The equation
+\begin{equation}
+F \Big(x, y, \frac{dy}{dx} \Big) = 0 ,
+\label{eq11.1.1}
+\end{equation}
+obtained by substituting $\frac{dy}{dx}$ for $z$, is a first-order differential equation. By a solution of (1) is meant any differentiable function $f$ for which the equation
+
+$$
+F(x, f(x), f'(x))= 0
+$$
+is true for every $x$ in the domain of $f$. If $f$ is a solution, we write
+$$
+y = f(x).
+$$
+The general problem, given a differential equation, is to find all its solutions. A more specialized problem is to find a particular solution $y = f(x)$ which has a specified value $b$ at some specified number $a$, i.e., a solution for which $b = f(a)$.
+
+The simplest first-order differential equations are those of the type $\frac{dy}{dx} = f(x)$, where $f$ is some given function (not to be confused with the solutions $f$ discussed in the preceding paragraph). Every solution of this differential equation can be written
+$$
+y = \int f(x)dx + c,
+$$
+for some real number $c$. Hence if $c$ is left as an arbitrary undetermined constant of integration, we call $\int f(x) dx + c$ the general solution.
+
+We next considered differential equations of the form $\frac{dy}{dx} = \frac{f(x)}{g(y)}$, in which $f$ and $g$ are given functions. Equations of this type are called 
+%SEC. 1] REVIEW  615
+separable, since, if we use the fact that the derivative is equal to the ratio of two differentials, we can ``separate" the expression containing $x$ from that containing $y$ by writing the equivalent differential equation
+$$
+g(y) dy = f(x) dx.
+$$
+Integrating both sides, we get the equation
+$$
+\int g(y) dy = \int f(x) dx + c, 
+$$
+which defines the general solution y implicitly as a function of $x$. Note that the differential equation $\frac{dy}{dx} = f(x)$ discussed in the preceding paragraph is a separable equation in which $g(y) = 1$.
+
+Of special interest among separable equations is the first-order linear differential equation $\frac{dy}{dx} + ky = 0$, in which $k$ is a constant. This is the type of differential equation which describes the rate of decay of a radioactive substance and also the rate of growth of bacteria in a culture. lt can be solved without difficulty as a separable differential equation (see pages 276 and 277). However, this equation occurs sufficiently often and has such an obvious general solution that most people recognize it at sight. The general solution is
+$$
+y = ce^{-kx}.
+$$
+
+\begin{example} Find the general solution of each of the following differential equations:
+ 
+\begin{quote}
+\begin{description}
+\item[(a)] $\frac{dy}{dx} = \tan^4 x \sec^2 x,$
+\item[(b)] $\frac{dy}{dx} = e^{x+y},$ 
+\item[(c)] $\frac{dy}{dx} + 14y = 0.$
+\end{description}
+\end{quote}
+
+In (b) find the particular solution $y = f(x)$ such that $f(0) = -\ln2$, and in (c) find the particular solution which has value 5 when $x = 0$.
+
+The general solution of (a) can be obtained directly by integrating: 
+
+\begin{eqnarray*}
+y &=& \int \tan^4 x \sec^2 x dx + c\\
+   &=& \frac{1}{5} \tan^5 x + c.
+\end{eqnarray*}
+%616 DIFFERENTIAL EQ UA TIONS [CHAP. 1 l
+
+Equation (b) is separable, since $\frac{dy}{dx} = e^{x+y} = e^x e^y$. Hence we may write
+$$
+e^{-y} dy= e^x dx.
+$$
+Integrating both sides, we obtain the equation
+$$
+-e^{-y} = e^x + c, 
+$$
+which defines $y$ implicitly as a function of $x$. In this case, it is not difficult to solve for $y$ explicitly. We first get $e^y = \frac{1}{-c - e^x}$. Replacing the arbitrary constant $-c$ by simply $c$, and taking logarithms, we then obtain
+\begin{equation}
+y = \ln \frac{1}{c - e^x}   
+\label{eq11.1.2}
+\end{equation}
+as the general solution. To find the particular solution $y = f(x)$ for which $f(0) = - \ln 2$, we substitute these values in equation (2) and solve the resulting equation for $c$. Thus
+$$
+- \ln 2 = \ln \frac{1}{c - 1} .
+$$
+Since $-\ln 2 = \ln \frac{1}{2}$, it follows that $2 = c - 1$, and so $c = 3$. Hence the particular solution required is
+$$
+y = \ln \frac{1}{3 - e^x} . 
+$$
+
+The general solution of (c) can be written down on inspection. It is 
+$$
+y = ce^{-14x} .
+$$
+The particular solution which has value 5 when $x$ equals 0 is obtained by writing
+$$
+5 = ce^{-14 \cdot 0} = c .
+$$
+Hence the particular solution is
+$$
+y= 5e^{-14x}.
+$$
+\end{example}
+
+The definition of an nth-order differential equation, $n \geq 1$, is entirely analogous to that of a first-order equation. Let $F(x, y_0, y_1, ...., y_n) = 0$ be an equation in $n + 2$ variables in which not all the variables occur, but at least $y_n$ does. Then the equation
+\begin{equation}
+F \Big(x, y, \frac{dy}{dx}, \frac{d^2y}{dx^2} , ... , \frac{d^ny}{dx^n} \Big) = 0, 
+\label{eq11.1.3}
+\end{equation}
+%SEC. 1] REVIEW  617
+obtained by substituting the ith derivative $\frac{d^iy}{dx^i}$ for $y_i$ (where it is understood tliat $\frac{d^0y}{dx^0} = y$), is an \textbf{$n$th-order differential equation.}  A \textbf{solution} is any $n$-timesdifferentiable function $f$ such that the equation
+$$
+F(x, f(x), f'(x), f''(x), ... ,f^{(n)}(x)) = 0
+$$
+is true for every $x$ in the domain of $f$.
+
+Our study of higher-order differential equations has thus far been Ihnited to those of the type
+\begin{equation}
+\frac{d^2y}{dx^2} + a\frac{dy}{dx} + by = 0,  
+\label{eq11.1.4}
+\end{equation}
+where $a$ and $b$ are constants. Such an equation is a second-order, linear, homogeneous differential equation with constant coefficients (see page 344). It is called ``linear" because $y$ and its derivatives occur to no power higher than the first, ``homogeneous," because the right side is zero, and ``with constant coefficients," because a and b are constants.
+
+You will recall that the form of the general solution of the differential equation (4) is determined by the nature of the roots of its characteristic equation $t^2 + at + b = 0$. The roots of this equation are given by the quadratic formula
+$$
+r_1, r_2 = \frac{-a \pm \sqrt{a^2 - 4b}}{2} ,
+$$
+and there are three cases depending on the discriminant $a^2 - 4b$.
+\medskip
+
+\textit{Case 1.} If $a^2 - 4b$ is positive, then there are two distinct real roots $r_1$ and $r_2$ In this case the general solution of (4) is
+$$
+y = c_1e^{r_1x} + c_2e^{r_2x} ,
+$$ 
+where $c_1$ and $c_2$, are arbitrary constants.
+\medskip
+
+\textit{Case 2.} If $a^2 - 4b = 0$, then $r_1 = r_2 = r$ and the general solution of the differential equation (4) is
+$$
+y = (c_1x + c_2) e^{rx}, 
+$$
+where $c_1$ and $c_2$, are arbitrary constants.
+\medskip
+
+\textit{Case 3.} If $a^2 - 4b$ is negative, then $r_1$ and $r_2$ are distinct conjugate complex numbers, i.e., $r_1 = \alpha + i\beta, r_2 = \alpha - \beta$, and $\beta \neq 0$. In this case the general solution of (4) is
+
+$$
+y = e^{\alpha x}(c_1 \cos \beta x + c_2 \sin \beta x), 
+$$
+where $c_1$ and $c_2$, are arbitrary constants.
+%618 DlFFERENTlAL EQUATIONS [CHAP. 11
+
+The above statements imply that, if $y$ is any solution of the differential equation (4), then there exist real numbers $c_1$ and $c_2$ such that
+$$
+\begin{array}{ll}
+y = c_1 e^{r_1x} + c_2 e^{r_2 x} &\mbox{if}\; a^2 - 4b > 0, \\
+y = (c_1x + c_2)e^{rx}                 &\mbox{if}\; a^2 - 4b = 0, \\
+y = e^{\alpha x}(c_1 \cos \beta x + c_2 \sin \beta x) &\mbox{if}\; a^2 - 4b < 0.
+\end{array}
+$$
+This fact, first stated in Section 8 of Chapter 6, has not yet been proved, but will be in Section 4.
+
+Although we have thus far not used the letter $D$ to denote the derivative, this notation is quite useful in the study of differential equations. We write $Dy$ for $\frac{dy}{dx}$ and $D^2y$ for $\frac{d^2y}{dx^2}$. We then combine these symbols and the conventions of algebra to write $(D^2 + aD + b)y$ for $D^2y + aDy + by$. In so doing we have defined a function, denoted by $D^2 + aD + b$, which has the set of twice-differentiable functions as its domain and a set of functions as its range. This function assigns to each function $y$ in its domain the function
+$$
+(D^2 + aD + b)y = \frac{d^2y}{dx^2} + a\frac{dy}{dx} + by
+$$
+as value. Such a function is an example of a \textbf{differential operator.} Using it, the differential equation $\frac{d^2y}{dx^2} + a \frac{dy}{dx} + by = 0$ can be written
+$$
+(D^2 + aD + b)y = 0. \mbox{\hspace{2in} (4')}
+$$
+Note the similarity between the operator and the characteristic equation of the differential equation. The latter is the equation obtained by replacing $D$ in the operator by $t$ and setting the resulting quadratic polynomial equal to zero.
+
+\begin{example} Find the general solution of each of the following differential equations:
+ 
+\begin{quote}
+\begin{description}
+\item[(a)] $\frac{d^2y}{dx^2} - 5 \frac{dy}{dx} + 6y = 0,$
+\item[(b)] $(D^2 + 6D + 9)y = 0,$
+\item[(c)] $(D^2 - 6D + 10)y = 0.$
+
+\end{description}
+\end{quote} 
+
+For the first, the characteristic equation is $t^2 - 5t + 6 = 0$, which is equivalent to $(t - 2)(t - 3) = 0$. Hence the two roots are 2 and 3, and the general solution is given by
+$$
+y = c_1e^{2x} + c_2e^{3x}.
+$$
+%SEC. 1] REVIEW  619
+
+In (b), the characteristic equation is $t^2 + 6t + 9 = 0$, which is equivalent to $(t + 3)^2 = 0$. Thus there is only one root, $- 3$. The solutions of the differential equation are therefore all functions
+$$
+y = (c_1x + c_2)e^{-3x},
+$$
+where $c_1$, and $c_2$ are arbitrary constants.
+
+The characteristic equation for (c) is $t^2 - 6t + 10 = 0$ and, since its discriminant is equal to $-4$, the roots are not real. Solving the quadratic equation, we find that the roots are $3 + i$ and $3 - i$. Hence the general solution is
+$$
+y = e^{3x} (c_1 \cos x + c_2 \sin x).
+$$
+\end{example}
+
+\begin{example} 
+Find the particular solution of the differential equation $D(D - 5)y = 0$ which has value equal to 2 and derivative equal to $-15$ when $x = 0$. The characteristic equation is $t(t - 5) = 0$, whose roots are obviously 0 and 5. The general solution is therefore
+$$
+y = c_1 e^{0x} + c_2e^{5x} = c_1 + c_2e^{5x}.
+$$
+The derivative is
+$$
+y' = 5c_2 e^{5x} .
+$$
+When $x = 0$, we are told that $y = 2$ and $y' = -15$. Substituting these values in the preceding equations, we obtain
+\begin{eqnarray*}
+   2 &=& c_1 + c_2 e^{5 \cdot 0} = c_1 + c_2,\\
+-15 &=& 5c_2 e^{5 \cdot 0} \hspace{.25in} = 5c_2.
+\end{eqnarray*}
+It follows that $c_2 = - 3$ and thence that $c_1 = 5$. Hence the required solution is
+$$
+y = 5 - 3e^{5x}.
+$$
+\end{example}
+
+It is extremely useful to recognize alternative forms of the general solution of the differential equation $(D^2 + aD + b)y = 0$ in the case where the roots of the characteristic equation are the complex numbers $\alpha + i\beta$ and $\alpha - i \beta$. In particular, it is easy to verify that the functions
+\begin{equation}
+y = c e^{\alpha x} \sin(\beta x + k),  
+\label{eq11.1.5}
+\end{equation}
+\begin{equation}
+y = c e^{\alpha x} \cos(\beta x + k),  
+\label{eq11.1.6}
+\end{equation}
+%620 DIFFERENTIAL EQUATIONS [CIIAP. 11
+where $c$ and $k$ are arbitrary real numbers, are both solutions. To see that this is so, we expand (5) using the trigonometric identity for the sine of the sum of two numbers. The result is
+\begin{eqnarray*}
+y &=& ce^{\alpha x} (\sin \beta x \cos k + \cos \beta x \sin k)\\
+   &=& e^{\alpha x}[(c \sin k) \cos \beta x + (c \cos k) \sin \beta x].
+\end{eqnarray*}
+Setting $c_1 = c \sin k$ and $c_2 = c \cos k$, we obtain $y = e^{\alpha x}(c_1\cos \beta x + c_2\sin \beta x)$, which we know to be a solution. The proof for (6) is analogous.
+
+Conversely, any solution $y = e^{\alpha x}(c_1 \cos \beta x + c_2 \sin \beta x)$ can be written in the forms (5) and (6). For if both $c_1 = c_2 = 0$, then $y = 0$, and we need only set $c = 0$ in (5) and (6). If $c_1$ and $c_2$ are not both zero, then $\sqrt{c_1^2 + c_2^2} \neq 0$, and we can write
+$$
+y = \sqrt{c_1^2 + c_2^2}\; e^{\alpha x} \Big[\frac{c_1}{\sqrt{c_1^2 + c_2^2}} \cos \beta x +  \frac{c_2}{\sqrt{c_1^2 + c_2^2}} \sin \beta x \Big] .
+$$
+To put this equation in the form of (5), we set $c = \sqrt{c_1^2 + c_2^2}$ and observe that, since
+$$
+\Big(\frac{c_2}{\sqrt{c_1^2 + c_2^2}} \Big)^2 + \Big(\frac{c_1}{\sqrt{c_1^2 + c_2^2}} \Big)^2 = 1,
+$$
+it follows from our definition of the functions sine and cosine that there exists a real number $k$ such that $\cos k = \frac{c_2}{\sqrt{c_1^2 + c_2^2}}$ and $\sin k = \frac{c_1}{\sqrt{c_1^2 + c_2^2}}$.  Hence we get 
+\begin{eqnarray*}
+y &=& ce^{\alpha x}(\sin k \cos \beta x + \cos k \sin \beta x) \\
+   &=& ce^{\alpha x} \sin(\beta x + k).
+\end{eqnarray*}
+Again, by an analogous argument, the solution can also be written in the form of equation (6).
+
+An advantage in using the forms (5) and (6) for the general solution is that it is easy to see what the graphs of such functions look like. As the next example illustrates, they are all sinusoidal curves lying between the graphs of $y= ce^{\alpha x}$ end $y= -ce^{\alpha x}$.
+
+
+\begin{example} Find and draw the graph of the particular solution of the differential equation $(D^2 + 2D + \pi^2 + 1)y = 0$ which has value $\sqrt 2$ and derivative equal to $(\pi - 1) \sqrt 2$ when $x= 0$. The characteristic equation is $t^2 + 2t + \pi^2 + 1 = 0$, which has roots $-1 + i\pi$ and $-1 - i\pi$. Hence one form of the general solution is 
+$$
+y = ce^{-x} \sin(\pi x + k). 
+$$
+lts derivative is 
+$$
+\frac{dy}{dx} = -ce^{-x} \sin(\pi x + k) + c \pi e^{-x} \cos(\pi x + k).
+$$
+%SEC. 1] REVIEW  621
+Substituting the given values of $y$ and $\frac{dy}{dx}$ when $x = 0$ into the preceding two equations, we get  
+\begin{eqnarray*}
+\sqrt 2 &=& c \sin k,\\
+(\pi - 1)\sqrt 2 &=& -c \sin k + c \pi \cos k.
+\end{eqnarray*}
+Hence, $(\pi - 1)\sqrt 2 = -\sqrt 2 + c\pi \cos k$, from which we obtain
+$$
+\sqrt 2 = c \cos k. 
+$$
+%Figure I 
+\putfig{4.5truein}{scanfig11_1}{}{fig 11.1}
+
+\noindent Since $c \cos k$ does not equal zero, it follows that
+$$
+\tan k = \frac{c \sin k}{c \cos k} =  \frac{\sqrt 2}{\sqrt 2} =  1,
+$$
+and so $k = \frac{\pi}{4}$. This implies that $c = 2$, and we conclude that the particular solution is 
+$$
+y = 2e^{-x} \sin \Big(\pi x + \frac{\pi}{4} \Big) .
+$$
+The graph of this equation is drawn in Figure 1. Such a curve is frequently called an ``exponentially damped sine wave."
+\end{example}
+%622 DIFFIERENTIAL EQUATIONS [CHAP. 

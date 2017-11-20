@@ -1,0 +1,283 @@
+\section{Integrals of Velocity and Acceleration.} \label{sec 4.8} 
+In this section we shall develop some of the integral formulas associated with velocity and acceleration. Among these is the formula for the distance traveled by an object, or particle, which moves with velocity $v(t)$  during the time interval from $t = a$ to $t = b$.
+
+Consider a particle which, during some interval of time, moves along a straight line. We take the straight line to be a coordinate axis of real numbers, and denote the position of the particle on the line at time $t$ by $s(t)$. Thus $s$ is a real-valued function of a real variable with value $s(t)$ for every $t$ in some interval. We shall assume that $s$ is differentiable. In Section 3 of Chapter 2
+the velocity $v$ of the particle is defined to be the derivative of $s$. That is,
+
+$$
+v(t)= s'(t).
+$$
+\noindent Equivalent to this equation is the statement that $s$ is an antiderivative of $v$. It follows that
+
+\begin{equation}
+s(t) = \int v(t) dt + c.  
+\label{eq4.8.1}
+\end{equation}
+\noindent If we consider the motion of the particle from $t = a$ to $t = b$, and add the assumption that $v$ is continuous on $[a, b]$, then, by Corollary (5.3) of the Fundamental Theorem of Calculus (see page 204), we obtain the formula
+
+\begin{equation}
+s(b) - s(a) = \int_{a}^{b} v(t) dt.
+\label{eq4.8.2}
+\end{equation}
+%230 IP{TEGRATlON [CHAP. 4
+
+%EXAMPLE 1. 
+\begin{example}
+An object dropped from a cliff at time $t = 0$ falls with a velocity given by $v(t) = kt$. If we take the direction of increasing distance to be downward, and measure distance in feet and time in seconds, then $k = 32$ and $v(t)$ is in units of feet per second. How high is the cliff if the object hits the bottom 3 seconds after being dropped? The height equals the difference $s(3) - s(0)$. Hence
+
+\begin{eqnarray*}
+s(3) - s(0) &=& \int_{0}^{3} v(t)dt  \\
+            &=& \int_{0}^{3} 32t dt= 16t^{2} \Big|_{0}^{3}\\
+            &=& 144 \;\mbox{feet}.
+\end{eqnarray*}
+
+Acceleration is defined in Section 3 of Chapter 2 to be the derivative of velocity. Thus
+$$
+a(t) = v'(t),
+$$
+\noindent and, as before, an equivalent statement is that velocity is an antiderivative of acceleration. We therefore have the formula
+
+\begin{equation}
+v(t) = \int a(t) dt + c.  
+\label{eq4.8.3}
+\end{equation}
+\end{example}
+
+%EXAMPLE 2. 
+\begin{example} A body in free fall under the earth's gravitational pull falls with a constant acceleration $g$, equal in magnitude to 32 feet per second per second. Suppose that at time $t = 0$ a ball is projected straight up from the ground with an initial velocity $v_0$ = 256 feet per second. Write formulas for the subsequent velocity $v(t)$ and distance from the ground $s(t)$. What is the maximum height the ball attains? In this example we shall choose the direction of increasing distance to be upward. As a result, the gravitational acceleration is negative, and the starting point of our calculations is the equation $a(t) = - 32$. We have
+
+\begin{eqnarray*}
+v(t) &=& \int a(t) dt + c = \int (- 32) dt + c\\
+     &=& -32t + c, 
+\end{eqnarray*}
+
+\noindent whence 
+$$
+v(0) = -32 \cdot 0 + c = c.
+$$
+
+\noindent The initial velocity is given as $v_0= v(0)= 256$ feet per second. Hence $c = 256$ and
+$$
+v(t) = -32t + 256,
+$$
+%SEC. 8] INTEGRALS OF VELOCITY AND ACCELERATION  231
+\noindent which is one of the formulas asked for. The second integration yields 
+
+\begin{eqnarray*}
+s(t) &=& \int v(t) dt + c \\
+     &=& \int (-32t + 256) dt + c \\
+     &=& - 16t^2 + 256t + c.
+\end{eqnarray*}
+\noindent The constant of integration $c$ in the preceding equations has, of course, nothing to do with the one obtained from integrating $a(t)$. Here $s(0) = -16 \cdot 0^{2} + 256 \cdot 0 + c = c$. Since the ball is at ground level when $t = 0$, we conclude that $0 = s(0) = c$, and so
+
+$$
+s(t) = - 16t^2 + 256t,
+$$
+\noindent which is the second formula required. To find the maximum value of the function $s$, we compute its derivative and set it equal to zero:
+
+$$
+s'(t) = v(t) = - 32t + 256 = 0,
+$$
+\noindent whence it follows that 
+
+$$
+t = \frac{256}{32} = 8 \;\mbox{seconds}.
+$$
+\noindent Since $s''(t) = v'(t) = a(t) = - 32$, which is negative, we know that $s$ has a local maximum when $t = 8$, and it is easy to see that this local maximum is an absolute maximum. Thus the maximum height attained by the ball is equal to
+
+\begin{eqnarray*}
+s(8) &=& -16 \cdot 8^2 + 256 \cdot 8 \\
+     &=& - 2^{10} + 2^{11}\\
+     &=& 1024 \;\mbox{feet}.
+\end{eqnarray*}
+\end{example}
+\medskip
+
+It is important to realize that the quantity $s(b) - s(a)$ in (2) does not necessarily equal the distance traveled by the object, or particle, during the time interval from $t = a$ to $t = b$. This is because the number $s(t)$ simply gives the position of the particle on the line at time $t$. Thus in the preceding example of the ball we showed that
+
+$$
+s(t) = - 16t^2 + 256t.
+$$
+\noindent Substituting $t = 0$ and $t = 16$, respectively, we get
+
+$$
+\begin{array}{c}
+s(0) = -16 \cdot 0^2 + 256 \cdot 0 = 0, \\
+s(l6) = -16 \cdot 16^2 + 256 \cdot 16 = 0.
+\end{array}
+$$
+%232 INTEGRATION [CHAP. 4
+\noindent The interpretation of these equations is clear: The ball left the ground at time $t = 0$, and 16 seconds later it had fallen back. However, an insect who accompanied the ball on its flight would probably not report to his admiring friends and relatives that the total distance traveled was
+
+$$
+s(16) - s(0) = 0 - 0 = 0 \; \mbox{feet}.
+$$
+
+\noindent A similar situation is an automobile trip 10 miles down a road and back again. The distance traveled is presumably 20 miles, and not zero.
+
+It is not hard to guess the proper mod)fication of formula (2) to obtain a true distance formula. If we denote the distance traveled during the time interval from $t = a$ to $t = b$, where $a \leq b$, by $distance|_{a}^{b}$, then
+
+\begin{equation}
+distance \Big|_{a}^{b} = \int_{a}^{b} | v(t) | dt.  
+\label{eq4.8.4}
+\end{equation}
+
+Logically, however, there is no way to prove (4), since we have not given a mathematical definition of $distance|_{a}^{b}$. As a result, we shall take (4) as a definition after checking that it corresponds to our intuition. First of all, if $v(t)$ does not change sign from $t = a$ to $t = b$, then
+
+$$
+\int_{a}^{b} |v(t)| dt = \Big| \int_{a}^{b} v(t) at \Big|.
+$$
+\noindent (See Problem 4 at the end of this section.) Hence, by formula (2),
+
+$$
+\int_{a}^{b} |v(t)| dt = \Big| \int_{a}^{b} v(t) dt \Big| = | s(b) - s(a) |.
+$$
+\noindent The assumption that $v(t)$ does not change sign means that the direction of the motion does not change. In this case, we would certainly expect $|s(b) - s(a)|$, which equals the distance on the real line between the
+initial position $s(a)$ and the final position $s(b)$, to be the total distance traveled.
+
+Further motivation for the definition in formula (4) is obtained by going back to the definition of the definite integral. We assume that the function $|v(t)|$ is integrable over the interval $[a, b]$. Consider an arbitrary partition $\sigma = \{ t_0,..., t_n \} $ of $[a, b]$ such that
+
+$$
+a = t_0 \leq t_1 \leq ... \leq t_{n-1} \leq t_n = b.
+$$
+\noindent For each $i = 1,..., n$, we denote by $M_i$ the least upper bound of the set of all numbers $|v(t)|$, where $t$ is in the subinterval $[t_{i-1}, t_i]$. Similarly, let $m_i$ be the greatest lower bound. Thus the number $M_i$ is the maximum speed of the particle in the subinterval $[t_{i-1}, t_i]$, and $m_i$ is the minimum speed. Intuitively, therefore, the distance traveled by the particle during the sub
+%SEC. 8] INTEGRALS OF VELOCITY AND ACCEL 2RATION  233
+interval of time $[t_{i-1}, t_i]$ must be less than or equal to $M_i(t_{i} - t_{i - 1})$ and greater than or equal to $m_i(t_{i} - t_{i - 1})$. Consequently, the upper and lower sums,
+
+\begin{eqnarray*}
+U_{\sigma} &=& \sum_{i = 1}^{n} M_i(t_{i} - t_{i-1}),  \\
+L_{\sigma} &=& \sum_{i = 1}^{n} m_i(t_{i} - t_{i-1}),  
+\end{eqnarray*}
+\noindent are upper and lower bounds, respectively, of the total distance traveled. But the function $|v(t)|$ has been assumed to be integrable over $[a, b]$. It follows that there exists one and only one number, $\int_{a}^{b} |v(t)| dt$, such that
+
+$$
+L_{\sigma} \leq \int_{a}^{b}  |v(t)| dt < U_{\sigma},  
+$$
+
+\noindent for every partition $\sigma$ of $[a, b]$. This just)fies the adoption of formula (4) as the definition of $distance|_{a}^{b}$.
+
+%EXAMPLE 3. 
+\begin{example}
+A particle moves on the $x$-axis, and its position at time $t$ is given
+by $x(t) = 2t^3 - 21t^2 + 60t - 14$. Its velocity is the function $v$ defined by
+
+\begin{eqnarray*}
+v(t) = x'(t) &=& 6t^2 - 42t + 60 \\
+             &=& 6(t^2 - 7t + 10) = 6(t - 2)(t - 5).
+\end{eqnarray*}
+\noindent Find the total distance traveled by the particle during the time interval $t = 0$ to $t = 6$. Clearly, $v(t) = 0$ when $t = 2$ and $t = 5$, and the sign of $v(t)$ is as indicated by
+
+
+\begin{centering}
+\begin{picture}(400,60)(0,0)
+\put(15,20){\line(0,1){4}}
+\put(30,20){\line(0,1){4}}
+\put(45,20){\line(0,1){4}}
+\put(60,20){\line(0,1){4}}
+\put(75,20){\line(0,1){4}}
+\put(90,20){\line(0,1){4}}
+\put(0,40){+ + +}
+\put(38,40){- - - - -}
+\put(77,40){+ + + +}
+\put(150,40){sign of v(t)}
+\put(0,20){\line(30,0){200}}
+\put(28,10){2}
+\put(72,10){5}
+\put(180,10){t-axis}
+\end{picture}
+\end{centering}
+\medskip
+\noindent Hence
+$$
+| v(t) | = \left \{ 
+            \begin{array}{ll}
+               v(t)\;\;\;  & \mbox{if}\;  \infty < t \leq 2, \\
+              -v(t)\;\;\;  & \mbox{if}\; 2 \leq t \leq 5,    \\
+               v(t)\;\;\;  & \mbox{if}\; 5 \leq t < \infty.   
+             \end{array}
+             \right.
+$$
+\noindent Consequently,
+
+\begin{eqnarray*}
+distance \Big|_{0}^{6} &=& \int_{0}^{6} |v(t)| dt\\
+                   &=& \int_{0}^{2} v(t) dt - \int_{2}^{5} v(t) dt + \int_{5}^{6} v(t) dt.
+\end{eqnarray*}
+%234 INTEGRATION [CHAP. 4
+\noindent Since $x(t)$ is an antiderivative of $v(t)$,
+
+\begin{eqnarray*}
+\int_{0}^{2} v(t) dt &=& x(2) - x(0),\\
+\int_{2}^{5} v(t) dt &=& x(5) - x(2),  \\
+\int_{5}^{6} v(t) dt &=& x(6) - x(5), 
+\end{eqnarray*}
+\noindent and so
+
+$$
+\int_{0}^{6} |v(t)| dt = -x(0) + 2 \cdot x(2) - 2 \cdot x(5) + x(6).  
+$$
+\noindent Substitution in the equation for $x(t)$ yields $x(0) = - 14$, $x(2)= 38$, $x(5) = 11$, and $x(6) = 22$.  Hence
+
+\begin{eqnarray*} 
+distance \Big|_{0}^{6} &=& \int_{0}^{6} |v(t)| dt \\
+                   &=& 14 + 2 \cdot 38 - 2 \cdot 11 + 22 \\
+                   &=& 90.
+\end{eqnarray*}
+
+The motion described in this example is the same as in Example 1, page 105. By looking at Figure \figref{2.16}, Chapter \chref{2},
+one can see that the distance traveled by the particle during the time interval [0, 6] agrees with the value just obtained.
+\end{example}
+\medskip
+
+The integral formulas derived in this section all presuppose motion along a straight line. The reason for this restriction is that the definition of velocity, and consequently of acceleration, has been based on the possibility of representing the position of the particle at time $t$ by a real number $s(t)$ along a coordinate axis. A coordinate system on a line in turn is defined in terms of the distance between two points, and thus far the only measure of distance between points which we have is straight-line distance. ln Chapter 10 we shall introduce the notion of arc length along a curve and shall study the notions of velocity and acceleration for curvilinear motion. At this point, however, it is worth noting that if we think of obtaining a curve by bending a coordinate axis without stretching it, and if $s(t)$ measures position on the curve in the obvious way, then formulas (1), (2), (3), and (4) still hold. Thus if the speedometer reading on a car is given by some nonnegative and integrable function $f$ of time, then the distance traveled during the time interval $[a, b]$ is equal to $\int_{a}^{b} f(t) dt$ whether the road is straight or not.
+
+We conclude this section with another type of problem illustrating the integration of rates of change.
+%SEC. 8] INTEGRALS OF VELOCITY AND ACCELERATION  235
+
+%EXAMPLE 4. 
+\begin{example}
+Air is escaping from a spherical balloon so that its radius $r$ is decreasing at the rate of 2 inches per minute. Find the rate of change of the volume $V$ as a function of time if we are given that $r = 10$ inches when $t = 0$. What is the volume of the balloon when $t = 2$ minutes, and at what time will $V = 0$? The volume of a sphere is given by $V = \frac{4}{3} \pi r^3$, and we are given that
+
+$$
+\frac{dr}{dt} = -2.
+$$
+\noindent Hence 
+
+\begin{eqnarray*}
+r &=& \int \frac{dr}{dt} dt + c = \int (-2) dt + c \\
+  &=&  -2t + c.
+\end{eqnarray*}
+\noindent Setting $t = 0$, we see that the constant of integration $c$ is the value of the radius at $t = 0$, namely, 10 inches. Hence
+
+$$
+r = - 2t + 10.
+$$
+\noindent Since
+ 
+$$
+\frac{dV}{dt} = \frac{d}{dt} \Bigl( \frac{4}{3} \pi r^3 \Bigr) = \frac{4}{3} \pi \cdot 3r^2 \cdot \frac{dr}{dt},
+$$
+\noindent we obtain for the answer to the first part of the problem
+
+$$
+\frac{dV}{dt} = 4 \pi (- 2t + 10)^2 (- 2) = - 32 \pi (-t + 5)^2,
+$$
+\noindent where $t$ is measured in minutes and $\frac{dV}{dt}$ in cubic inches per minute. Clearly,
+
+$$
+V(t) = \frac{4}{3} \pi [r(t)]^3 = \frac{4}{3} \pi (- 2t + 10)^3.
+$$
+\noindent The volume of the balloon when $t = 2$ minutes is therefore
+
+$$
+V(2) = \frac{4}{3} \pi (- 2 \cdot 2 + 10)^3 = \frac{4}{3} \pi 6^3 = 288 \pi \;\mbox{cubic inches}, 
+$$
+\noindent and the volume will be zero when
+
+$$
+V(t) = \frac{4}{3}\pi (- 2t + 10)^3 = 0, 
+$$
+\noindent i.e., when $t = 5$ minutes.
+\end{example}
+ 
+

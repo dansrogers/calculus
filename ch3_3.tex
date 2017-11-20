@@ -1,0 +1,149 @@
+\section{The Ellipse.}\label{sec 3.3} 
+ A third conic section, quite fashionable these days as astronauts circle the earth in elliptical orbits, is the ellipse. In this section we shall derive its equation and study its properties.
+
+By definition, an \textbf{ellipse} is the locus of points in a plane the sum of whose distances from two given points is a constant. The constant, of course, must be greater than the distance between the two given points. The two points are called the foci of the ellipse. A simple equation for an ellipse is found if the points $(-c, 0)$ and $(c, 0)$ are used for foci and $2a$ for the constant sum of distances. The foci and the arbitrary point $(x, y)$ are shown in Figure \f{3.6}. The distance from $(x, y)$ to $(-c, 0)$ is $\sqrt{(x + c)^2 + (y - 0)^2}$, and that from $(x, y)$ to $(c, 0)$ is $\sqrt{(x - c)^2 + (y - 0)^2}$. The point $(x, y)$ lies on the ellipse if and only if the sum of these two distances is equal to $2a$. Hence an equation of the ellipse is
+
+\putfig{3.125truein}{scanfig3_6}{}{fig 3.6}
+
+$$
+\sqrt{(x + c)^2 + y^2} + \sqrt{(x - c)^2 + y^2} = 2a.
+$$
+\noindent Simpler equivalent equations are found by subtracting $\sqrt{(x - c)^2 + y^2}$ from both sides of the equation
+$$
+\sqrt{(x + c)^2 + y^2} = 2a - \sqrt{(x - c)^2 + y^2},
+$$
+\noindent squaring both sides of the equation and simplifying 
+
+$$
+\begin{array}{c}
+x^2 + 2cx + c^2 + y^2 = 4a^2 - 4a\sqrt{(x - c)^2 + y^2} + x^2 - 2cx + c^2 + y^2,\\
+4a\sqrt{(x-c)^2 + y^2} = 4a^2 - 4cx, 
+\end{array}
+$$
+\noindent dividing by 4 and squaring again
+
+$$
+a^2(x^2 - 2cx + c^2 + y^2) = a^4 - 2{a^2}cx + c^2{x^2},
+$$
+\noindent and simplifying again, 
+
+$$
+x^2(a^2 - c^2) + a^2y^2 = a^2(a^2 - c^2).
+$$
+%144 CONIC SECTloNS [CHAP. 3
+\noindent Finally, dividing by $a^2(a^2 - c^2)$ we have 
+
+$$
+\frac{x^2}{a^2} + \frac{y^2}{a^2 - c^2} = 1.
+$$
+\noindent Since $a > c$, it follows that $a^2 > c^2$, and we replace $a^2 - c^2$ by $b^2$. We then have the canonical form of an equation for the ellipse,
+
+$$
+\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1.
+$$
+\noindent This equation is derived in such a way that its graph contains all points which satisfy the locus condition. One of the problems at the end of the section will be to show that the graph contains only those points.
+
+\putfig{4.25truein}{scanfig3_7}{}{fig 3.7}
+
+By placing $y$ equal to 0, we obtain $x = \pm a$. The graph therefore cuts the $x$-axis at $(-a, 0)$ and at $(a, 0)$, and the numbers $a$ and $-a$ are the $x$ intercepts of the graph. The line segment between $(-a, 0)$ and $(a, 0)$ is called the \textbf{major axis} of the ellipse. Similarly, the graph cuts the $y$-axis at $(0,- b)$ and at $(0, b)$, and the numbers $b$ and $- b$ are the $y$-intercepts of the graph. The line segment between $(0, -b)$ and $(0, b)$ is called the \textbf{minor axis} of the ellipse. It is not difficult to see that there are no points on the graph for which $|x| > a$ or for $|y| > b$. Symmetry across both axes and across the origin can be seen by noting that $(-p, q)$, $(p, -q)$, and $(-p, -q)$ all lie on the graph if $(p, q)$ does. The complete curve is shown in Figure \f{3.7}.
+
+There is a simple method of constructing an ellipse by placing thumbtacks at the foci and looping around them a string of length $2a + 2c$. If a pencil is placed in the loop so as to hold it taut and moved in a complete turn around the foci, the curve traced is an ellipse. This is readily seen from the definition.
+\medskip
+
+%EXAMPLE 1. 
+\begin{example}
+Describe the graph of $4x^2 + 25y^2 = 100$ and draw it. An equivalent form of the equation is $\frac{x^2}{25} + \frac{y^2}{4} = 1$, from which it is apparent that the graph is an ellipse with $x$-intercepts of $-5$ and 5, major axis of length 10, $y$-intercepts of $-2$ and 2, and minor axis of length 4. The intersection of these axes, in this case the origin, is called the \textbf{center} of the ellipse. Using $a^2 = 25$, $a^2 - c^2 = 4$, we have $c^2 = 21$. Thus the foci are at $(-\sqrt {21}, 0)$ and $(\sqrt{21}, 0)$. The graph is drawn in Figure \f{3.8}.
+
+\putfig{4.25truein}{scanfig3_8}{}{fig 3.8}
+
+If the foci are located on the $y$-axis at $(0, c)$ and $(0, - c)$, an analogous derivation gives the equation
+$$
+\frac{x^2}{a^2 - c^2} + \frac{y^2}{a^2} = 1
+$$
+\noindent and its equivalent form 
+$$
+\frac{x^2}{b^2} + \frac{ y^2}{a^2} = 1.
+$$
+\noindent In this case, the major axis is the line segment between $(0,-a)$ and $(0, a)$, and the minor axis that between $(-b, 0)$ and $(b, 0)$.
+\end{example}
+\medskip
+%146 CONIC SECTIONS [CHAP. 3
+
+%EXAMPLE 2. 
+\begin{example}
+Describe and draw the graph of $4x^2 + y^2 = 36$. An equivalent form of the equation is $\frac{x^2}{9} + \frac{y^2}{36} = 1$, from which we see that the positive $y$-intercept is larger than the positive $x$-intercept and therefore that the foci are on the $y$-axis. The $x$-intercepts are 3 and $-3$, the $y$-intercepts are 6 and $-6$, and the foci are at $(0, \sqrt{36 - 9})$ and $(0, - 3 \sqrt3)$. The graph is drawn in Figure \f{3.9}. 
+\end{example}
+
+\putfig{3.25truein}{scanfig3_9}{}{fig 3.9}
+
+Examples 1 and 2 were each for an ellipse with its center at the origin. In a manner similar to that used in the last section, we can write an equation for an ellipse with center at $(h, k)$ and foci at $(h - c, k)$ and $(h + c, k)$. The equation is then
+$$
+\frac{(x-h)^2}{a^2} + \frac{(y-k)^2}{b^2} = 1.
+$$
+
+If the center is at $(h, k)$ and the foci at $(h, k - c)$ and $(h, k + c)$, an equation is
+$$
+\frac{(y-k)^2}{a^2} + \frac{(x - h)^2}{b^2} = 1 .
+$$
+\medskip
+%EXAMPLE 3. 
+\begin{example}
+Describe and sketch the graph of $\frac{(x + 4)^2}{9} + \frac{(y - 7)^2}{25} = 1$. The graph is an ellipse with center at $(-4, 7)$. The foci are above and below
+%SEC. 3| THE ELLEPSE  147
+the center;, the distance being $\sqrt{25 - 9} = 4$. Thus the foci are at $(-4, 3)$ and $(-4, 11)$. The ends of the major axis are $(-4, 7 - 5)$ or $(-4, 2)$ and $(-4, 7 + 5)$ or $(-4, 12)$. The ends of the minor axis are $(-4 - 3, 7)$ or $(-7, 7)$ and $(-4 + 3, 7)$ or $(-1, 7)$. The graph is drawn in Figure \f{3.10}.
+
+\putfig{3.25truein}{scanfig3_10}{}{fig 3.10}
+
+There is an alternative definition of the ellipse, one analogous to the definition of a parabola. It may be seen in considering the distance from a point $(x, y)$ to the focus $(c, 0)$. This distance is $\sqrt{(x - c)^2 + y^2}$. If the point lies on the ellipse, then $\frac{x^2}{a^2} + \frac{y^2}{a^2 - c^2} = 1$, or $y^2 = a^2 - x^2 - c^2 + \frac{x^2 c^2}{a^2}$. Thus the distance from the point to the focus is
+
+$$
+\sqrt{x^2 -2cx + c^2 + \Bigl(a^2 - x^2 - c^2 + \frac{x^2c^2}{a^2} \Bigr)},
+$$
+\noindent or
+
+$$
+\sqrt{\frac{x^2 c^2 }{a^2} - 2cx + a^2},
+$$
+\noindent or
+
+$$
+\Big| \frac{xc}{a} - a \Big|.
+$$
+\noindent This latter expression may be written $\frac{c}{a} \Bigl|x - \frac{a^2}{c} \Bigr|$.  But $\Bigl| x - \frac{a^2}{c} \Bigr|$ is the distance from the point $(x, y)$ to the line $x = \frac{a^2}{c}$. Thus the distance from the
+%148 CONIC SECTIONS [CHAP. 3 
+point to the focus $(c, 0)$ is times the distance from the point to the line $x = \frac{a^2}{c}$. This result could also be stated by noting that the ratio of the two distances (that to the focus and that to the line) is a constant for all points on the ellipse. The line is called a \textbf{directrix} for the ellipse and the constant ratio, $\frac{c}{a}$, is called the \textbf{eccentricity} of the ellipse. The eccentricity is less than 1. For all points on a parabola, the ratio of the two distances (that to the focus and that to the directrix) is also a constant, namely 1. A parabola is said to have eccentricity 1. Even as the ellipse has two foci, it also has two directrices. The other is the line $x = -\frac{a^2}{c}$, and the ratio of the distance between a point on the ellipse and the focus $(-c, 0)$ to the distance from the same point to the directrix $x = -\frac{a^2}{c}$ is the same constantc $\frac{c}{a}$.
+
+Not all equations for ellipses are in canonical form, but equivalent equations in canonical form can be found by factoring and completing the square.
+\end{example}
+\medskip
+
+%EXAMPLE 4. 
+\begin{example}
+Describe and draw the graph of $16x^2 + 25y^2 - 64x + 150y - 111 = 0$. Equations equivalent to this one are
+
+\begin{eqnarray*} 
+                16(x^2 - 4x) + 25(y^2 + 6y) &=& 111,\\
+    16(x^2 - 4x + 4) + 25(y^2 + 6y + 9) &=& 111 + 16 \cdot 4 + 25 \cdot 9, \\
+                    16(x - 2)^2 + 25(y + 3)^2 &=& 400,\\
+\frac{(x - 2)^2}{25} + \frac{(y + 3)^2}{16} &=& 1.
+\end{eqnarray*}
+\noindent From the last equation we can see that the graph is an ellipse with center at $(2, -3)$, horizontal major axis of length 10, vertical minor axis of length 8, and $c = \sqrt{25 - 16}$. Thus the foci are at $(-1, -3)$ and $(5, -3)$. The graph is shown in Figure \f{3.11}.
+\end{example}
+\medskip
+
+As Example 4 illustrates, almost every equation of the type $ax^2 + by^2 + cx + dy + e = 0$ with $ab > 0$ has an ellipse for its graph. The reason for the ``almost" can be seen as we write equivalent equations
+%SEC. 3] THE ELLIPSE  149
+
+\begin{eqnarray*}
+a \Bigl(x^2 + \frac{c}{a} x \Bigr) + b \Bigl( y^2 + \frac{d}{b} y \Bigr) &=& - e,\\
+a \Bigl(x^2 + \frac{c}{a} x + \frac{c^2}{4a^2} \Bigr) + b \Bigl( y^2 + \frac{d}{b} y + \frac{d^2}{4b^2} \Bigr)
+&=& \frac{c^2}{4a} + \frac{d^2}{4b} - e,\\ 
+a \Bigl(x + \frac{c}{2a} \Bigr)^2 + b \Bigl( y + \frac{d}{2b} \Bigr)^2 &=& \frac{c^2}{4a} + \frac{d^2}{4b} - e.
+\end{eqnarray*}
+\noindent If the expression on the right side of the last equation has the same sign as $a$ (and hence $b$), then the graph is an ellipse. If the expression on the right side is equal to zero, the graph is the single point $\Bigl(-\frac{c}{2a}, -\frac{d}{2b} \Bigr)$. If the expression on the right side has sign opposite to that of $a$, there is no graph, although the equation is said to have an imaginary ellipse for its graph. If $a = b$, the foci coincide and the graph is a circle.
+
+\putfig{4truein}{scanfig3_11}{}{fig 3.11}
+
+
+
+

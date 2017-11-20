@@ -1,0 +1,182 @@
+\begin{exercises}
+
+\ex{10.2.1}
+Find the arc lengths of the following parametrized
+curves.
+\begin{exenum}
+\x
+$\dilemma{x = t+1,}
+{y = t^{\frac32}, & \mbox{from $(2,1)$ to $(5,8)$.}}$
+\x
+$\dilemma{x = t^2,}
+{y = \frac23 (2t+1)^\frac32, & 
+\mbox{from $\left(x(0),y(0)\right) = (0, \frac23)$ to
+to $\left(x(4), y(4)\right) = (16,18)$.}}$
+\x
+$P(t) = (t^2, t^3)$, \quad from $P(0)$ to $P(2)$.
+\x
+$\dilemma{x(\theta) = a \cos^3\theta, & a>0,}
+{y(\theta) = a \sin^3\theta, & 
+\mbox{from $\left(x(0), y(0)\right) = (a,0)$ to
+$\left(x(\frac{\pi}2), y(\frac{\pi}2)\right) = (0,a)$.}}$
+\end{exenum}
+
+\ex{10.2.2}
+A particle in motion in the plane has position equal to
+\[
+P(t) = \left(t^2+t, \frac16(4t+3)^\frac32\right)
+\]
+at time $t$.  How far does the particle travel
+along its path from time $t=0$ to time $t=1$?
+
+\ex{10.2.3}
+Find the arc lengths of the graphs of
+each of the following functions $f$ between
+the points $(a, f(a))$ and $(b,f(b))$.
+\begin{exenum}
+\x
+$f(x) = x^\frac32$, $a=1$, and $b=4$.
+\x
+$f(x) = \frac23 (x^2+1)^\frac32$, $a=0$, and $b=2$.
+\x
+$f(x) = x^2$, $a=0$, and $b=\frac12$.
+\x
+$f(x) = \frac12(e^x + e^{-x})$, $a=-1$ and $b=1$.
+\end{exenum}
+
+\ex{10.2.4}
+Show that the circumference of an ellipse with the
+line segment joining $(-a,0)$ and $(a,0)$
+as major axis and the line segment joining
+$(0,-b)$ and $(0,b)$ as minor axis is
+given by an integral
+\[
+K \int_0^{2\pi} \sqrt{1+k\sin^2\theta} \; d\theta
+.
+\]
+Evaluate the constants $K$ and $k$ in terms
+of $a$ and $b$.
+(Do not attempt to evaluate the integral.)
+
+\ex{10.2.5}
+\begin{exenum}
+\x
+Let $g$ be a function which is continuously
+differentiable on the closed interval $[c,d]$.
+Prove, as a corollary of Theorem \thref{10.2.2},
+that the arc length ${L_c}^d$ of the graph
+of the equation $x = g(y)$ between the points
+$(g(c), c)$ and $(g(d), d)$ is given by the formula
+\[
+{L_c}^d = \int_c^d \sqrt{1+g^\prime(y)^2} \; dy
+.
+\]
+\x
+Find the arc length of the graph of the equation
+$x = \frac13(y^2+2)^\frac32$
+between the point
+$\left( \frac{2\sqrt2}2, 0 \right)$
+and the point
+$(2\sqrt6, 2)$.
+\x
+Express as a definite integral the arc length
+of that part of the graph of the equation
+$x = 2y - y^2$ for which $x \geq 0$.
+\end{exenum}
+
+\ex{10.2.6}
+The coordinates of a particle in motion
+in the plane are given by
+\[
+\dilemma{x=t^2,}
+{y = \frac23 t^3 - \frac12 t,}
+\]
+at time $t$.  What is the distance which the particle
+moves along its path of motion between the
+time $t=0$ and $t=2$?
+
+\ex{10.2.7}
+The same curve can be defined by
+more than one parametrization:
+\begin{exenum}
+\x
+\xlab{10.2.7a}
+Draw the curve defined parametrically by
+\[
+\dilemma{x(t) = t,}{y(t) = t, & 0 \leq t \leq 1.}
+\]
+\x
+\xlab{10.2.7b}
+Draw the curve defined parametrically by
+\[
+\dilemma{x(t) = \sin\pi t,}{y(t) = \sin\pi t, & 0 \leq t \leq 1.}
+\]
+\x
+Compute the arc lengths from $t=0$ to $t=1$
+for the parametrizations in \exref{10.2.7a}
+and \exref{10.2.7b}.
+\x
+Give a geometric interpretation which explains
+the difference between the arc lengths
+obtained for the two parametrizations.
+\end{exenum}
+
+\ex{10.2.8}
+Let $P:[a,b] \goesto \R^2$ and $Q:[c,d]\goesto R^2$
+be two parametrizations of the same curve
+$C$ such that all four coordinate functions
+are continuously differentiable.
+(A function is \dt{continuously differentiable}
+if its derivative exists and is continuous at
+every number in its domain.)
+Then $P$ and $Q$ are called
+\dt{equivalent parametrizations} of $C$
+if there exists a continuously differentiable
+function $f$ with domain $[a,b]$ and range $[c,d]$
+which has a continuously differentiable inverse
+function, and in addition satisfies
+
+(i) $f(a) = c$ and $f(b) = d$,
+
+(ii) $P(t) = Q(f(t)),$ for every $t$ in $[a,b]$.
+
+\begin{exenum}
+\x
+Using the Chain Rule and the Change of Variable
+Theorem for Definite Integrals
+(for the latter, see Theorem \thref{4.6.6}),
+prove that equivalent parametrizations assign
+the same arc length to $C$.
+\x
+Show that
+\[
+P(t) = (\cos t, \sin t), \quad 0 \leq t \leq \frac{\pi}2
+,
+\]
+\[
+Q(s) = \left( \frac{1-s^2}{1+s^2},
+\frac{2s}{1+s^2}\right), \quad 0 \leq s \leq 1
+,
+\]
+are equivalent parametrizations of the same curve
+$C$, and identify the curve.
+\x
+Show that
+\[
+P(t) = (\cos t, \sin t), \quad 0 \leq t \leq 2\pi
+,
+\]
+and
+\[
+Q(s) = (\cos 5t, \sin 5t), \quad 0 \leq t \leq 2\pi
+,
+\]
+are nonequivalent parametrizations of the circle.
+\end{exenum}
+
+\ex{10.2.9}
+Prove directly from the least upper bound definition
+that arc length is additive,
+i.e., that ${L_a}^b + {L_b}^c = {L_a}^c$.
+
+\end{exercises}

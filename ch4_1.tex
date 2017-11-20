@@ -1,0 +1,325 @@
+\chapter{Integration}\label{chp 4}
+
+There are two major topics in calculus, differentiation and integration. The theory of integration at first appears to have little connection with differentiation. However, we shall see that the two processes are indeed closely related.
+
+Differentiation deals with derivatives of real-valued functions, integration with integrals of real-valued functions defined on closed intervals. In this chapter we shall define and study the definite integral from $a$ to $b$ of a real-valued function $f$, which is denoted by $\int_{a}^{b} f$. The integral has countless applications both in mathematics and the sciences. One of the most important 
+enables us to find the area of a region more involved than those studied in plane geometry. If $f(x) \geq 0$ for every $x$ in $[a, b]$, then we shall see that $\int_{a}^{b} f$ is equal to the area of the region lying above the $x$-axis, below the graph of $f$, and between the vertical lines $x = a$ and $x = b$ (see Figure \f{4.1}). Thus the areas of many irregularly shaped regions can be found by integration.
+
+\putfig{3truein}{scanfig4_1}{}{fig 4.1}
+
+Another interesting application enables us to find the distance traveled by a particle which moves in a straight line. If the particle moves with a velocity equal to $v(t)$ at time $t$, then the distance travelbed during the interval of time from $t = a$ to $t = b$ is given by the integral $\int_{a}^{b} |v|$.
+
+It will be useful to recall some of the elementary ideas and notations of set theory. In particular, the \textbf{union} of two sets $P$ and $Q$, denoted by $P \cup Q$, is the set of elements that belong either to $P$,  or to $Q$, or to both. The \textbf{intersection}
+%164 IN7EGRATloN [CHAP. 4
+of $P$ and $Q$, denoted by $P \cap Q$, is the set of elements that belong to both $P$ and $Q$. If $P$ and $Q$ have no points in common, they are said to be \textbf{disjoint}. The set which contains no elements is called the
+\textbf{empty set} and will be denoted by $\phi$. Thus $P$ and $Q$ are disjoint if and only if $P \cap Q = \phi$.  Finally, the \textbf{difference}, $P - Q$, is the set of all elements of $P$ which do not belong to $Q$.
+
+\section{The Definite Integral.}
+ In defining the definite integral, we shall use the concepts of bounded
+sets discussed in Section 1 of Chapter 1. Recall that a number $u$ is said to be an \textbf{upper bound} of a set $S$ of real numbers if the inequality $x \leq u$ is satisfied for every number $x$ in $S$. Thus the numbers 100, 5, and 1 are all upper bounds of the closed interval $[0, 1]$. The Least Upper Bound Property (see page 7) states that every nonempty set of real numbers which has an upper bound has a least upper bound. For example, the number 1 is obviously the least upper bound of the interval [0,1]. Note that 1 is also the least upper bound of the open interval (0, 1).
+
+In the same way, a number $l$ is called a \textbf{lower bound} of $S$ provided $l \leq x$ for every $x$ in $S$.  The Greatest Lower Bound Property (see Problem 11, page 9) similarly asserts that if $S$ is nonempty and has a lower bound, then it has a greatest lower bound. Finally, a set is simply said to be \textbf{bounded if it has both an upper bound and a lower bound.}
+
+The notion of boundedness can be applied to functions. Specifically, a real-valued function $f$ of a real variable is said to be \textbf{bounded on an interval} $I$ if the following two conditions are satisfied:
+
+\begin{description}
+\item[(i)] $I$ is a subset of the domain of $f$.
+\item[(ii)] There exists a real number $k$ such that $|f(x)| \leq k$, for every $x$ in $I$.
+
+\end{description}
+
+\noindent The reader should be able to supply the straightforward argument which shows that condition (ii) is equivalent to the assertion that the set $S$ of all real numbers $f(x)$ for which $x$ is in $I$ is a bounded set. To illustrate the terminology, consider the two functions $f$ and $g$ defined by $f(x) = x^2$ and $g(x) = \frac{1}{x}$. The former is bounded on both the closed interval [0, 1] and the $x$ open interval (0, 1), whereas the latter is bounded on neither.
+
+Let $[a, b]$ be a closed interval, and let $\sigma = \{ x_0, . . ., x_n \}$ be a finite subset of $[a, b]$ which contains the endpoints $a$ and $b$. The set $\sigma$ subdivides, or partitions, the interval into subintervals, and, for this reason, we shall call it a \textbf{partition} of $[a, b]$.
+
+Let $f$ be a function which is bounded on the closed interval $[a, b]$, and let $\sigma =\{ x_0, . . ., x_n \}$ be a partition of $[a, b]$ in which
+$$
+a = x_0 \leq x_1 \leq ... \leq x_{n-1} \leq x_n = b.
+$$
+Since $f$ is bounded on the entire interval $[a, b]$, it is certainly bounded on each
+%SEC. 1] THE DEFINITE INTEGRAL  165
+subinterval $[x_{i - 1},  x_i]$, for $i = 1, . . ., n$. Hence the set $S$ consisting of all numbers $f(x)$ with $x$ in $[x_{i-1}, x_i]$ has a least upper bound, which we denote by $M_i$. Similarly, of course, the set $S$ has a greatest lower bound, which we denote by $m_i$. These numbers are illustrated for a typical subinterval in Figure \f{4.2}. We now define two numbers $U_{\sigma}$ and $L_{\sigma}$ called, respectively, the \textbf{upper sum} and the \textbf{lower sum} of $f$ \textbf{relative to the partition} $\sigma$ by the formulas
+
+\putfig{3truein}{scanfig4_2}{}{fig 4.2}
+
+\begin{equation}
+\begin{array}{ll}
+U_\sigma &= M_{1}(x_1- x_0) + M_{2}(x_2 - x_1) + ... + M_{n}(x_{n} - x_{n-1}), \vspace{.1in}\\
+L_\sigma &= m_{1}(x_1- x_0) + m_{2}(x_2 - x_1) + ... + m_{n}(x_{n} - x_{n-1}).
+\end{array}
+\label{eq4.1.1}
+\end{equation}
+\noindent Since $M_i \geq m_i$ and since $(x_i - x_{i-1} \geq 0$, for each $i = 1, . . ., n$, it follows that
+
+$$
+U_{\sigma} - L_{\sigma} = (M_1 - m_1) (x_1 - x_0) + (M_2 - m_2) (x_2 - x_1) + ... + (M_n - m_n) (x_n - x_{n-1}) \geq 0.
+$$
+\noindent Hence, we conclude that
+
+\begin{equation}
+L_{\sigma} \leq U_{\sigma}.
+\label{eq4.1.2}
+\end{equation}
+
+%EXAMPLE 1. 
+\begin{example}
+Let $f$ be the function defined by $f(x) = \frac{1}{x}$, let $[a, b] = [1, 3]$, and consider the partition $\sigma = \{ 1, \frac{2}{3}, 2, \frac{2}{5}, 3 \}$.  There are four subintervals, $[1, \frac{3}{2}]$, $[\frac{3}{2}, 2]$, $[2, \frac{5}{2}]$, and $[\frac{5}{2}, 3]$, and each one is of length $\frac{1}{2}$. It is clear from
+%166 IN7EGRATION [CHAP. 4
+Figure \f{4.3} that the maximum value of $f$ on each subinterval occurs at the left endpoint, and the minimum value occurs at the right endpoint. Hence
+$$
+\begin{array}{l}
+M_1 = f(1) = 1,                      \;\;\; m_1 = f(\frac{3}{2}) = \frac{2}{3}, \\
+\\
+M_2 = f(\frac{3}{2}) = \frac{2}{3},         \;\;\; m_2 = f(2) = \frac{1}{2}, \\
+\\
+M_3 = f(2) = \frac{1}{2},          \;\;\; m_3 = f(\frac{5}{2}) = \frac{2}{5}, \\
+\\
+M_4 = f(\frac{5}{2}) = \frac{2}{5}, \;\;\; m_4 = f(3) = \frac{1}{3}.
+\end{array}
+$$
+\noindent It follows that 
+
+\begin{eqnarray*}
+U_{\sigma} &=& 1 \cdot \frac{1}{2} + \frac{2}{3} \cdot \frac{1}{2} + \frac{1}{2} \cdot \frac{1}{2} + \frac{2}{5} \cdot
+\frac{1}{2}, \\
+ L_{\sigma} &=& \;\;\;\;\;\;\;\;\;\;\;\; \frac{2}{3} \cdot \frac{1}{2} + \frac{1}{2} \cdot \frac{1}{2} + \frac{2}{5} \cdot
+\frac{1}{2} +
+\frac{1}{3} \cdot \frac{1}{2}.
+\end{eqnarray*}
+  
+\putfig{4truein}{scanfig4_3}{}{fig 4.3}
+
+\noindent Continuing the computation, we obtain
+
+\begin{eqnarray*}
+U_{\sigma} &=& \frac{1}{2} \Bigl(1 + \frac{2}{3} + \frac{1}{2} + \frac{2}{5} \Bigr) = \frac{1}{2} \frac{ 30 + 20 + 15 +
+12}{30} =
+\frac{77}{60},  \\ 
+L_{\sigma} &=& \frac{1}{2} \Bigl( \frac{2}{3} + \frac{1}{2} + \frac{2}{5} + \frac{1}{3} \Bigr) = \frac{1}{2}
+\frac{ 20 + 15 + 12 + 10}{30} = \frac{57}{60}, 
+\end{eqnarray*}
+\noindent for the values of the upper and lower sums of $f$ relative to $\sigma$.
+\end{example}
+\medskip
+
+In the paragraph preceding Example 1, it is proved that, for a given partition $\sigma$, the lower sum is less than or equal to the upper sum. We shall now prove the much stronger fact that all the lower sums are less than or equal to all the upper sums More precisely,
+
+\begin{theorem} %(1.1) 
+Let $f$ be bounded on $[a, b]$. If $\sigma$ and $\tau$ are any two partitions if $[a, b]$, then $L_{\sigma} \leq U_{\tau}$.
+\end{theorem}
+%SEC. 1] THE DEFINITE INTEGRAL  167
+
+\begin{proof}
+The argument will be divided into three parts.
+
+\begin{description}
+\item[(i)] If $\tau$ is obtained from $\sigma$ by adjoining just one new number $y$, then $L_{\sigma} \leq L_{\tau} \leq U_{\tau}
+\leq U_{\sigma}$.
+
+\end{description}
+ 
+Let $\sigma = \{ x_0, . . . x_n \}$ and $a = x_0 \leq x_1 \leq ... \leq x_n = b$, and let the upper and lower sums $U_{\sigma}$ and $L_{\sigma}$ be defined as in (1), page 165. We shall assume that $y$ lies in the $k$th subinterval $[x_{k-1}, x_k]$.  Then
+
+$$
+\tau = \{ x_0, ..., x_{k-1}, y, x_k, ..., x_n \}
+$$
+\noindent and 
+
+$$
+\sigma = x_0 \leq ... \leq x_{k-1} \leq y \leq x_k \leq ... \leq x_n = b.
+$$
+\noindent Abbreviating the expressions least upper bound and greatest lower bound by l.u.b. and g.l.b., respectively, let
+\begin{eqnarray*}
+M_{k}'  &=&\mbox{l.u.b. of the set of all numbers} \;f(x) \;\mbox{with}\; x_{k-1} \leq x \leq y,\\
+M_{k}'' &=&\mbox{l.u.b. of the set of all numbers} \;f(x) \;\mbox{with}\; y \leq x \leq x_{k},  \\
+m_{k}'  &=&\mbox{g.l.b. of the set of all numbers} \;f(x) \;\mbox{with}\; x_{k-1} \leq x \leq y,\\
+m_{k}'' &=&\mbox{g.l.b. of the set of all numbers} \;f(x) \;\mbox{with}\; y \leq x \leq x_k. 
+\end{eqnarray*}
+These numbers are illustrated in Figure \f{4.4}.
+\putfig{3.5truein}{scanfig4_4}{}{fig 4.4}
+The key idea in the entire proof is the fact that the least upper bound of $f$ on any set $S$ is greater than or equal to its least upper bound on any subset of $S$, and, similarly, the greatest lower bound of $f$ on $S$ is less than or equal to its greatest lower bound on a subset of $S$. This means that
+\begin{eqnarray*}
+M_{k} \geq M_{k}'   & \;\;\;\mbox{and}\;\;\; &      M_{k} \geq M_{k}'',\\
+m_{k} \leq m_{k}'   & \;\;\;\mbox{and}\;\;\; &      m_{k} \leq m_{k}'',
+\end{eqnarray*}
+as is borne out by Figure \f{4.4}. Hence 
+\begin{eqnarray*}
+M_{k}(x_{k} - x_{k-1}) &=& M_{k}(x_{k} - y) + M_{k} (y - x_{k-1}) \\
+                       &\geq& M_{k}'' (x_{k} - y) + M_{k}' (y - x_{k - 1}), \\
+m_{k}(x_{k} - x_{k-1}) &=& m_{k}(x_{k} - y) + m_{k}(y - x_{k -1}) \\
+                       &\leq& m_{k}'' (x_{k} - y) + m_{k}' (y - x_{k - 1}).
+\end{eqnarray*}
+But the other terms in the upper and lower sums are the same for the two partitions. We conclude that $U_{\sigma} \geq U_{\tau}$ and that $L_{\sigma} \leq L_{\tau}$. Since it follows from (2) that $L_{\tau} \leq U_{\tau}$, we obtain
+\begin{equation}
+L_{\sigma} \leq L_{\tau} \leq U_{\tau} \leq U_{\sigma}. 
+\label{eq4.1.3}
+\end{equation}
+
+ 
+\begin{description}
+\item[(ii)] If $\sigma$ is a subset of $\tau$, then the preceding inequalities (3) are still satisfied.
+
+
+This follows by repeated applications of part (i), since the partition $\tau$ can be obtained from $\sigma$ by adjoining one number at a time.
+
+
+\item[(iii)] If $\sigma$ and $\tau$ are any two partitions, then $L_{\sigma} \leq U_{\tau}$
+
+\end{description}
+
+Both $\sigma$ and $\tau$ are subsets of the partition $\sigma \cup \tau$ consisting of their union. Hence, one application of part (ii) gives $L_{\sigma} \leq L_{\sigma \cup \tau}$, and another application yields $U_{\sigma \cup
+\tau} \leq U_{\tau}$. Combining these inequalities with $L_{\sigma \cup \tau} \leq U_{\sigma \cup \tau}$, we obtain
+$$
+L_{\sigma} \leq L_{\sigma \cup \tau} \leq U_{\sigma \cup \tau} \leq U_{\tau}, 
+$$
+\noindent and the proof of (1.1) is complete.
+\end{proof}
+
+Theorem (1.1) states that, for a given function $f$ bounded on an interval $[a, b]$, if we consider all partitions of $[a, b]$, then every lower sum is less than or equal to every upper sum. It is instructive to picture the relative positions of these numbers on the real line. If we indicate each lower sum by a right hand parenthesis, ``)", and each upper sum by a left-hand parenthesis, ``(", the situation looks as shown in Figure \f{4.5} (except that in general there are infinitely many sums of both kinds). The question naturally arises as to the existence of numbers in between the two sets, and this brings us to the definitions of integrability and of the definite integral:  Let the function $f$ be bounded on the closed interval $[a, b]$. Then $f$ is said to be \textbf{integrable over} $[a, b]$ if there exists one and only one number $J$ such that
+
+\begin{equation}
+L_{\sigma} \leq J \leq U_{\tau},
+\label{eq4.1.4}
+\end{equation}
+
+
+\putfig{4.5truein}{scanfig4_5}{}{fig 4.5}
+
+%SEC. 1l THE DEFINITE INTEGRAL  169
+\noindent for any two partitions $\sigma$ and $\tau$ of $[a, b]$. If $f$ is integrable over $[a, b]$, then the uniqbue number $J$ is called the \textbf{definite integral of $f$ from $a$ to $b$}, and is denoted by $\int_{a}^{b} f$. That is,
+
+$$
+J = \int_{a}^{b} f.
+$$
+
+Almost all the functions encountered in a first course in calculus are integrable over the closed intervals on which they are bounded. The reason is that for these functions the differences between the upper and lower sums can be made arbitrarily small by taking partitions which subdivide the interval into smaller and smaller subintervals. Many conditions which ensure that a function is integrable are known. Among these, we shall consider two [see Theorems (3.3) and (5.1)]. The second condition is continuity. We shall see that if $f$ is continuous at every point of a closed interval $[a, b]$, then $f$ is integrable over $[a, b]$.
+
+If $f$ is a function bounded on $[a, b]$, there are, according to the definition, two conditions which must be satisfied for $f$ to be integrable over $[a, b]$. The first is that there must exist a number $J$ such that the inequalities (4) hold for all partitions $\sigma$ and $\tau$ of the interval. The second is that there must be only one such number. It is not hard to prove that the first condition is always satisfied (see Problem 9 at the end of this section). It is the second which may fail, as the following example illustrates. Let $f$ be the function defined by
+
+$$
+f(x) = \left \{ \begin{array} {ll}
+                                  0  &\;\;\;\mbox{if $x$ is rational,}\\
+                                  1  &\;\;\;\mbox{if $x$ is irrational.}
+             \end{array}
+          \right.
+$$
+\noindent This function is bounded on the interval [0, 1]. However, if a is any partition whatever of [0,1], it is easy to see that $U_{\sigma} = 1$ and $L_{\sigma} = 0$. This means that every number $J$ between, and including, 0 and 1 will satisfy (4). The function is therefore not integrable because $J$ is not unique.
+
+%EXAMPLE 2. 
+\begin{example}
+Assuming that the function $f$ defined by $f(x) = \frac{1}{x}$ is integrable over the interval [1, 3], prove that   
+$$
+\frac{57}{60} \leq \int_{1}^{3} f \leq \frac{77}{60}.
+$$
+\noindent This is the function and interval described in Example 1. For the partition $\sigma = \{ 1, \frac{3}{2}, 2, \frac{5}{2}, 3 \}$, we saw that $L_{\sigma} = \frac{57}{60}$ and $U_{\sigma} =\frac{77}{60}$; hence the integral is bounded by these two numbers.
+\end{example}
+\medskip
+
+%EXAMPLE3. 
+\begin{example}
+Consider the function $f$ defined by $f(x)= x^2 $. Assumingthat $f$ is integrable over the interval [0, 1], show that
+
+$$
+\frac{6}{25} \leq \int_{0}^{1} f \leq \frac{11}{25}.
+$$
+
+%170 MTrEGRATloN [CHAP.4 
+\noindent We use the partition $\sigma = \{ 0, \frac{1}{5},\frac{2}{5}, \frac{3}{5}, \frac{4}{5}, 1 \}$ and compute the upper and lower sums $U_{\sigma}$ and $L_{\sigma}$. The points of the partition are given by $x_i = \frac{i}{5}$, for $i= 0, ..., 5$. Hence 
+
+$$
+x_i - x_{i-1} = \frac{1}{5},   \;\;\;\mbox{for}\;\;\;    i = 1, . . ., 5.
+$$
+\noindent Since in this case the subintervals are all of length $\frac{1}{5}$, equations (1) can be simplified to read
+
+\begin{eqnarray*}
+U_{\sigma} &=& \frac{1}{5}(M_1 + ... + M_5),\\
+L_{\sigma} &=& \frac{1}{5}(m_1 + ... + m_5).  
+\end{eqnarray*}
+\noindent It is clear from Figure \f{4.6} that the maximum value of $f$ on each subinterval $[x_{i - 1}, x_i]$ occurs at the right endpoint, and the minimum value occurs at the left endpoint.  Hence $M_i = f(x_i)$ and $m_i = f(x_{i -1})$. Since $f(x) = x^2$, we have
+
+\putfig{4truein}{scanfig4_6}{}{fig 4.6}
+
+$$
+\begin{array}{ll}
+M_{i} &= x_{i}^2 = \frac{i^2}{25} \\
+m_{i} &= x_{i-1}^2 = \frac{(i - 1)^2}{25}  
+\end{array}
+\left\}  i = 1,..., 5.
+\right .
+$$
+\noindent Thus 
+
+\begin{eqnarray*}
+U_{\sigma} &=& \frac{1}{5} \Bigl( \frac{1^2}{25} + \frac{2^2}{25} + \frac{3^2}{25} + \frac{4^2}{25} + \frac{5^2}{25} \Bigr),
+\\ L_{\sigma} &=& \frac{1}{5} \Bigl( \frac{0^2}{25} + \frac{1^2}{25} + \frac{2^2}{25} + \frac{3^2}{25} + \frac{4^2}{25} \Bigr) .
+\end{eqnarray*}
+\noindent Since $1^2+2^2+3^2+4^2+5^2= 55$ and $0^2+ 1^2+2^2+3^2+4^2= 30$, it follows that 
+
+\begin{eqnarray*}
+U_{\sigma} &=& \frac{1}{5}\frac{55}{25} = \frac{11}{25},\\
+L_{\sigma} &=& \frac{1}{5}\frac{30}{25} = \frac{6}{25}.
+\end{eqnarray*}
+
+This establishes the desired bounds, since $L_{\sigma} \leq \int_{0}^{1} f \leq U_{\sigma}$.
+\end{example}
+\medskip
+% SEC. 1] IHE DEFINITE INTEGRAL  171
+
+An alternativbe notation for the integral, which we shall use interchangeably with $\int_{a}^{b} f$, is $\int_{a}^{b} f(x) dx$. This is the traditional way of writing the integral, and its usefulness will become increasingly apparent as we go on. In a later section we shall show how the $dx$ which appears to the right of the integral sign may be interpreted as a differential. At present, however,  it is important to realize that $dx$ is only a part of the notation for the integral. The variable $x$ which occurs in ia $\int_{a}^{b} f(x) dx$ is often called a \textbf{dummy variable}. This name serves as a reminder of the fact that the value of the integral depends only on the function $f$ and the numbers $a$ and $b$. Its value is not determined by giving a value of $x$. Thus
+$$
+\int_{a}^{b} f = \int_{a}^{b} f (x) dx = \int_{a}^{b} f (y) dy = \int_{a}^{b} f (t) dt = etc.,
+$$
+\noindent and $x$, $y$, and $t$ each occurs as a dummy variable. Thus the inequalities established in Examples 2 and 3 can alternatively be written
+
+\begin{eqnarray*}
+\frac{57}{60} \leq \int_{1}^{3} \frac{1}{x} dx \leq \frac{77}{60},\\
+\frac{6}{25} \leq \int_{0}^{1} x^2 dx \leq \frac{11}{25}.
+\end{eqnarray*}
+
+\putfig{3.5truein}{scanfig4_7}{}{fig 4.7}
+ 
+Although we shall not give a definition of area in this book, the basic properties of area can be used to establish its connection with the definite integral. Let the area of a set $P$ be denoted by $area (P)$. 
+Two basic properties are:
+
+\begin{theorem} %(1.2)
+The area of a set is never negative: $area(P) \geq 0$.
+\end{theorem}
+
+\begin{theorem} %(1.3)
+If $P$ is a subset of $Q$, then $area(P) \leq area(Q)$.
+\end{theorem}
+
+In addition, we shall assume the elementary facts about the areas of rectangles.
+
+% 172 IPEFEGRA TlO N [CHAP. 4
+
+Let $f$ be a function which is integrable over the interval $[a, b]$, and which also satisfies the inequality $f(x) \geq 0$ for every $x$ in $[a, b]$. Let $P$ be the region under the curve. That is, $P$ is the set of all points $(x, y)$ in the plane such that $a \leq x \leq b$ and $0 \leq y \leq f(x)$ (see Figure \f{4.7}). Next, consider two partitions $\sigma$ and $\tau$ of $[a,b]$. The lower sum $L_{\sigma}$ is the area of the union of rectangles contained in $P$; hence, by (1.3) we conclude that $L_{\sigma} < area (P)$. Conversely, $P$ is a subset of the union of rectangles the sum of whose area is the upper sum $U_{\tau}$. Hence $area (P) \leq U_{\tau}$, and we have shown that
+
+$$
+L_{\sigma}  \leq area(P) \leq U_{\tau},
+$$
+\noindent for any two partitions $\sigma$ and $\tau$. But the integrability of $f$ asserts that the definite integral $\int_{a}^{b} f(x) dx$ is the only number with this property. Thus we have proved
+
+\begin{theorem} %(1.4) 
+$$
+\int_{a}^{b} f(x) dx = area(P),  \;\;\; \mbox{if}\; f(x) \geq 0\; \mbox{for every}\; x\; \mbox{in}\; [a,b].
+$$
+\end{theorem}
+\medskip
+
+%EXAMPLE 4. 
+\begin{example}
+Assuming the formula for the area of a circle and the integrability of the function $\sqrt{1- x^2}$ over the interval [0, 1], compute
+ 
+$$
+\int_{0}^{1} \sqrt{1 - x^2} dx.
+$$
+\noindent The graph of the function $\sqrt{1 - x^2}$ is the upper half of the circle $x^2 + y^2 = 1$ shown in Figure \f{4.8}. It follows from (1.4) that the integral in question is equal $y$-axis to one fourth of the area of the circle. Hence
+$$
+\int_{0}^{1} \sqrt{1 - x^2} dx = \frac{\pi}{4}.
+$$
+\end{example}
+
+\putfig{3truein}{scanfig4_8}{}{fig 4.8}
+%SEC. 1] THE DEFINITE INTEGRAL 173 PROBLEMS
+

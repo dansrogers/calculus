@@ -1,0 +1,189 @@
+\begin{exercises}
+
+\ex{9.8.1}
+For each of the values of $n$ indicated,
+compute the Taylor polynomial $T_n$
+which approximates the function $f$ near
+the number $a$.
+\begin{exenum}
+\x
+$f(x) = \frac1{x+1}$, $a=0$, $n=0$, $1$, and $2$.
+\x
+$f(x) = \frac1{1+x^2}$, $a=0$, $n=0$, $2$, and $4$.
+\x
+$f(x) = \frac1{1+x^2}$, $a=1$, $n=0$, $1$, and $2$.
+\x
+$f(x) = \sqrt{x+1}$, $a=3$, $n=1$, $2$, and $3$.
+\x
+$f(x) = \sin x$, $a=\frac{\pi}4$, $n=0$, $1$, and $2$.
+\end{exenum}
+
+\ex{9.8.2}
+Compute the formula,
+for an arbitrary nonnegative integer $n$,
+for the approximating Taylor polynomial
+to the function $f$ about the number $a$.
+\begin{exenum}
+\x
+$f(x) = \cos x$, \quad $a=0$
+\x
+$f(x) = \ln x$, \quad $a=1$.
+\end{exenum}
+
+\ex{9.8.3}
+For $n=0$, $1$, and $2$, compute the Taylor
+polynomial $T_n$ which approximates the
+function $f$ near $0$.
+Draw the graphs of the three polynomials together
+with the graph of $f$.
+\begin{exenum}
+\x
+$f(x) = e^x$
+\x
+$f(x) = \cos x$.
+\end{exenum}
+
+\ex{9.8.4}
+Let $p$ be a polynomial in $x$ of degree
+$\leq m$; i.e., the function $p$ is defined
+by an equation
+\[
+p(x) = a_0 + a_1x + \cdots + a_mx^m
+,
+\]
+and let $T_n$ be the Taylor polynomial which
+approximates $p$ near an arbitrary real number
+$a$.  Prove, as a simple consequence of
+Taylor's formula with the remainder,
+that $p(x) = T_n(x)$, for every real number $x$
+provided $n \geq m$.
+
+\ex{9.8.5}
+For each of the values of $n$ indicated,
+compute the approximation $T_n$ to the
+polynomial $p$ near the number $a$.
+\begin{exenum}
+\x
+$p(x) = x^2+3x-1$, $a=2$, $n=1$, $2$, and $3$.
+\x
+$p(x) = 2x^3-5x^2+3$, $a=0$, $n=1$, $2$, and $3$.
+\x
+$p(x) = x^4+3x^2+x+2$, $a=0$,
+$n=3$, $4$, and $17$.
+\x
+$p(x) = x^3-1$, $a=1$, $n=2$, $3$, and $4$.
+\end{exenum}
+
+\ex{9.8.6}
+Prove that, for every real number $x$,
+\[
+\cos x = \sum_{i=0}^\infty (-1)^i
+\frac{x^{2i}}{(2i)!} =
+1 - \frac{x^2}2 + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots
+.
+\]
+
+\ex{9.8.7}
+For each of the following functions,
+compute the Taylor series about $a$.
+\begin{exenum}
+\x
+$e^x$, if $a=0$
+\x
+$\frac{e^x}{e^2}$, if $a=2$
+\x
+$\arctan x$, if $a=0$.
+\end{exenum}
+
+\ex{9.8.8}
+\begin{exenum}
+\x
+Compute the cubic Taylor polynomial $p(x)$
+which approximates the function $\frac1{x+2}$
+for values of $x$ near the number $1$.
+\x
+Show that, for every $x$ in the interval
+$[0,2]$, the approximation $p(x)$ differs
+in absolute value from $\frac1{x+2}$
+by less that $0.04$.
+\end{exenum}
+
+\ex{9.8.9}
+Show that $\sin x$ differs in absolute value
+from the approximation $x - \frac{x^3}6$
+by no more that $\frac{\pi^5}{15\cdot2^8}
+= 0.025$ (approximately) for every $x$ in the interval
+$\left[ -\frac{\pi}2, \frac{\pi}2 \right]$.
+
+\ex{9.8.10}
+The Taylor approximation $T_n$ to a function $f$
+about the number $a$ is frequently called the
+\emph{best polynomial approximation
+of degree $\leq n$} to the function $f$ near $a$
+because it can be shown that $T_n$ is the
+only polynomial of degree $\leq n$ with the property
+that, as $x$ approaches $a$, the difference
+$f(x) - T_n(x)$ approaches zero
+faster than $(x-a)^n$.
+
+Prove the following part of the above assertion:
+If $f$ has continuous $(n+1)$st derivative
+in an open interval containing $a$, then
+$\lim_{x\goesto{a}} \frac{f(x)-T_n(x)}
+{(x-a)^n} = 0$.
+
+\ex{9.8.11}
+What cubic polynomial best approximates
+$x^4-2x^3+3x-3$ near $x=2$?
+
+\ex{9.8.12}
+Another statement of Taylor's Theorem which
+gives a different form for the remainder
+is the following:
+\emph{Let $f$ be a function with continuous
+$(n+1)\mathrm{st}$ derivative at every point
+of the interval $[a,b]$.  Then
+\[
+f(b) = f(a) + f^\prime(a)(b-a) + \cdots +
+\frac1{n!} f^{(n)} (a)(b-a)^n
+\]
+\[
++ \int_a^b \frac{(b-t)^n}{n!} f^{(n+1)}
+(t) \; dt
+.
+\]}
+\begin{exenum}
+\x
+\xlab{9.8.12a}
+Using integration by parts, show that
+\[
+\int_a^b \frac{(b-t)^n}{n!} f^{(n+1)} (t) \; dt
+\]
+\[
+= - \frac1{n!} f^{(n)} (a)(b-a)^n +
+\int_a^b \frac{(b-t)^{n-1}}{(n-1)!}
+f^{(n)} (t) \; dt
+.
+\]
+\x
+Using induction on $n$ and the result of part
+\exref{9.8.12a}, prove the above form of
+Taylor's Theorem in which the remainder
+appears as an integral.
+\end{exenum}
+
+\ex{9.8.13}
+Let $f$ have a continuous second derivative
+at every point of an interval containing the
+number $a$ in its interior, and let
+$f^\prime(a) = 0$.
+Show that $f$ has a local maximum value
+at $a$ if $f^{\prime\prime} (a) < 0$, and a
+local minimum value at $a$ if $f^{\prime\prime}
+(a) > 0$.
+[\emph{Hint:} Use the Taylor Formula
+$f(x) = T_1(x) + R_1$ and the fact that,
+if a continuous function is positive (or negative)
+at $a$, then it is positive (or negative) near $a$.]
+
+\end{exercises}

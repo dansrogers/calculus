@@ -1,0 +1,202 @@
+\section{First-Order Linear Differential Equations.} A differential equation which can be written in the form
+$$
+a_1(x) \frac{dy}{dx} + a_0(x)y = b(x),
+$$
+where $a_1, a_0$, and $b$ are given functions of $x$ and where $a_1$ is not the zero function, is a \textbf{first-order linear ditTerential equation.} In this section we shall show
+%624 DIFFERENTIAL EQUATIONS [CHAP. 11
+how to obtain the general solution of equations of this type. Since $a_1$ is by assumption not the zero function, we can divide both sides of the above equation by $a_1(x)$. Setting $\frac{a_0(x)}{a_1(x)} = P(x)$ and $\frac{b(x)}{a_1(x)} = Q(x)$, we therefore obtain the differential equation
+\begin{equation}
+\frac{dy}{dx} + P(x)y = Q(x),   
+\label{eq11.2.1}
+\end{equation}
+which is the form we shall use in deriving the solution. We shall assume that the functions $P$ and $Q$ are continuous, thus assuring ourselves that they have antiderivatives.
+
+Let us suppose that the function $y = f(x)$ is a solution to the differential equation (1). We shall derive a formula which expresses $y$ in terms of $P$ and $Q$ and a constant $c$ of integration. Conversely, it will be a simple matter to verify that any function $y$ defined by this formula is a solution to (1). Hence the formula gives the general solution to the differential equation.
+
+The derivative of the product of $y$ and a function $\varphi$ is given by
+\begin{equation}
+\frac{d}{dx} (\varphi(x)y) = \varphi(x) + \varphi'(x)y. 
+\label{eq11.2.2}
+\end{equation}
+Note that the first term on the right has $\frac{dy}{dx}$ as a factor and the second has $y$ as a factor, and that the same is true of the two terms on the left side of equation (1). This fact suggests seeking a function $\varphi$ which has the property that, if both sides of (1) are multiplied by $\varphi(x)$, then the left side of the resulting equation is the derivative of the product $\varphi(x)y$. If both sides of (1) are multiplied by an arbitrary $\varphi(x)$, the result is
+\begin{equation}
+\varphi(x) \frac{dy}{dx} + \varphi(x)P(x)y = \varphi(x)Q(x) . 
+\label{eq11.2.3}
+\end{equation}
+Comparison of this equation with (2) shows that its left side is equal to $\frac{d}{dx} (\varphi(x)y)$ provided $\varphi(x)P(x)y = \varphi'(x)y$, which will in turn be true provided
+\begin{equation}
+\varphi(x)P(x) = \varphi'(x).  
+\label{eq11.2.4}
+\end{equation}
+
+However, it is easy to find a function $\varphi$ which satisfies (4), since, as a differential equation with $\varphi$ the unknown function, it is separable. Solving it, we obtain
+$$
+\frac{\varphi'(x)}{\varphi(x)} = P(x)
+$$
+%SEC. 21 F I PST-ORDER L INEA R DI F FER ENTIAL EQU ATIONS 625
+Whence 
+$$
+\int \frac{\varphi'(x)}{\varphi(x)} dx = \int P(x) dx ,
+$$
+which implies 
+$$
+\ln |\varphi(x)| = \int P(x) dx + c, 
+$$
+and so 
+$$
+|\varphi(x)| = e^{\int P(x)dx+c} .
+$$
+Since we are only seeking a solution to (4), and not the most general form of the solution, we may assume that $\varphi(x)$ is positive and also ignore the constant of integration. We conclude that if
+\begin{equation}
+\varphi(x) = e^{\int P(x) dx},
+\label{eq11.2.5}
+\end{equation}
+\textit{then the left side of eguation (3) is equal to} $\frac{d}{dx} (\varphi(x)y)$.
+
+With (5), equation (3) therefore becomes
+$$
+\frac{d}{dx} (\varphi(x)y) = \varphi(x)Q(x). 
+$$
+integration yields 
+$$
+\varphi(x)y = \int \varphi(x) Q(x) dx + c,
+$$
+and so 
+$$
+y = \frac{1}{\varphi(x)} \Big[ \int \varphi(x) Q(x) dx + c \Big] ,
+$$
+for some real number $c$. Replacing $\varphi(x)$ by $e^{\int P(x)dx}$, we obtain the promised formula:
+\begin{theorem}
+$$
+y = e^{- \int P(x)dx} \Big[\int e^{\int P(x)dx} Q(x) dx + c \Big]  .
+$$
+\end{theorem}
+
+Suppose next that $c$ is an arbitrary constant and that the function $y$ is
+dcfined by (2.1). Then
+$$
+ye^{\int P(x)dx} = \int e^{\int P(x)dx} Q(x) + c.
+$$
+%626 DIFFERENTIAL EQUATIONS [ClIAP. 1 1
+The derivative of the right side of this equation is $e^{\int P(x)dx}Q(x)$ and that of the left side is
+$$
+\frac{dy}{dx} e^{\int P(x)dx} + yP(x)e^{\int P(x)dx} .
+$$
+Hence
+$$
+e^{\int P(x)dx} \Big[\frac{dy}{dx} + P(x)y \Big] = e^{\int P(x)dx} Q(x), 
+$$
+which implies at once that $\frac{dy}{dx} + P(x)y = Q(x)$; i.e., $y$ is a solution to (1). We conclude that formula (2.1) gives the general solution to the differential equation (1).
+
+We strongly recommend that no one memorize (2.1). The important fact to remember is that, if the first-order linear differential equation $\frac{dy}{dx} + P(x)y = Q(x)$ is multiplied through by $\varphi(x) = e^{\int P(x)dx}$, then the left side of the resulting equation is equal to the derivative of the product $\varphi(x)y$. Consequently, the new equation can be integrated to give
+$$
+\varphi(x)y = \int \varphi(x) Q(x) dx + c,
+$$
+which can then be solved for $y$. This function $\varphi(x) = e^{\int P(x)dx}$, which enables us to change a seemingly nonintegrable sum into the derivative of a product by multiplication, is called an \textbf{integrating factor.}
+
+
+\begin{example} %EXAMPLE 1. 
+Solve the differential equation 
+$$
+x^2 \frac{dy}{dx} - 3xy - 2x^2 = 4x^4 .
+$$
+To put this in the form of (1), we add $2x^2$ to both sides and then divide by $x^2$. The result is
+\begin{equation}
+\frac{dy}{dx} - \frac{3}{x} = 4x^2 + 2,  
+\label{eq11.2.6}
+\end{equation}
+where $P(x) = -\frac{3}{x}$ and $Q(x) = 4x^2 + 2$. An antiderivative of $P(x)$ is given by  
+$$
+\int P(x) dx = \int -\frac{3}{x} dx = -3 \ln |x| = \ln |x^{-3}|,
+$$
+and it follows that the function
+$$
+\varphi(x) = e^{\int P(x)dx} = e^{\ln |x^{-3}|} = |x^{-3}|
+$$
+% SEC. 2] FIRST-ORDER LTNEAR DIFFERENTIAL EQUATIONS  627
+is an integrating factor. Equation (4) shows that if $\varphi(x)$ is an integrating factor, then so also is $-\varphi(x)$. Hence we may drop the absolute values and write simply
+$$
+\varphi(x) = x^{-3}. 
+$$
+Multiplying both sides of (6) by $x^{-3}$, we obtain 
+$$
+x^{-3} \frac{dy}{dx} - 3x^{-4}y = 4x^{-1} + 2x^{-3} ,
+$$
+It is easy to see that the left side of this equation is equal to $\frac{d}{dx}(x^{-3}y)$. Hence
+$$
+\frac{d}{dx} (x^{-3} y) = 4x^{-1} + 2x^{-3}, 
+$$
+and so 
+\begin{eqnarray*}
+x^{-3}y &=& \int (4x^{-1} + 2x^{-3}) dx + c\\
+            &=& 4 \ln |x| + 2 \frac{x^{-2}}{-2} + c \\
+            &=& 4 \ln |x| - \frac{1}{x^2} + c,
+\end{eqnarray*}
+where $c$ is an arbitrary constant. It follows that 
+
+$$
+y = 4x^{3} \ln |x| - x + cx^{3}
+$$ 
+is the general solution.
+\end{example}
+
+%EXAMPLE 2. 
+\begin{example} Find the general solution of the differential equation 
+$$
+\frac{dy}{dx} + 3y = 2 \sin x.
+$$
+Note that this is a first-order linear differential equation with constant coefficients, but that it is not homogeneous, because the right side is not the zero function. In this example we have $P(x) = 3$ and $Q(x) = 2 \sin x$. Hence
+$$
+\int P(x)dx = \int 3 dx = 3x ,
+$$ 
+and an integrating factor is
+$$
+\varphi(x) =  e^{\int P(x)dx} = e^{3x} . 
+$$
+lt follows that
+$$
+\frac{d}{dx} (e^{3x} y) = 2e^{3x} \sin x,
+$$
+% 628 DIFFERENTIAL EQ UA TIONS [CHAP. 
+and so 
+\begin{equation}
+e^{3x} y = \int 2e^{3x} \sin x dx + c.  
+\label{eq11.2.7}
+\end{equation}
+To evaluate $\int 2e^{3x} \sin xdx = 2\int e^{3x} \sin x dx$, we use integration by parts twice:
+\begin{eqnarray*}
+\int e^{3x} \sin x dx &=& - \int e^{3x} d \cos x \\
+&=& -e^{3x} - \cos x + \int \cos x de^{3x} \\
+&=& -e^{3x} \cos x + 3 \int e^{3x} \cos x dx. \\
+\int e^{3x} \cos x dx &=& \int e^{3x} d \sin x \\
+&=& e^{3x} \sin x - \int \sin x de^{3x}\\
+&=& e^{3x} \sin x - 3\int e^{3x} \sin x dx.
+\end{eqnarray*}
+Combining these results, we get
+$$
+\int e^{3x} \sin x dx = - e^{3x} \cos x  + 3e^{3x} \sin x - 9 \int e^{3x} \sin x dx,
+$$
+whence
+$$
+10 \int e^{3x} \sin x dx = e^{3x}(3 \sin x - \cos x),
+$$
+and so
+$$
+2\int e^{3x} \sin x dx = \frac{e^{3x}}{5} (3 \sin x - \cos x).
+$$
+Returning to (7), we have
+$$
+e^{3x}y = \frac{e^{3x}}{5} (3 \sin x - \cos x) + c,
+$$
+and consequently the general solution of the differential equation is given by 
+\begin{equation}
+y = \frac{1}{5} (3 \sin x - \cos x) + ce^{-3x}  ,  
+\label{eq11.2.8}
+\end{equation}
+where $c$ is an arbitrary constant.
+\end{example}
+
+Note that the above solution (8) of the differential equation of Example 2 is the sum of two terms. The second, which is $ce^{-3x}$, is thc general solution
+%SEC 2] FIRST-ORDER LINEAR DIFFERENTIAL EQUATIONS  629
+of the homogeneous differential equation $\frac{dy}{dx} + 3y = 0$. The first term, $\frac{1}{5}(3 \sin x - \cos x)$, is one particular solution of the nonhomogeneous differential equation $\frac{dy}{dx} + 3y = 2 \sin x$. As we shall see, this situation is typical of the solutions of linear differential equations.
+

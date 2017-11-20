@@ -1,0 +1,508 @@
+\section{Integrals of Trigonometric Functions.}
+Products of trigonometric functions, powers of trigonometric functions, 
+and products of their powers are all functions which we need to integrate 
+at various times. In this section techniques will be developed for finding
+antiderivatives of the commonly encountered functions of these types.
+
+The first and simplest occur with the integrals
+
+\begin{equation}
+\begin{array}{l}
+\int \cos ax \cos bx dx, \\
+\int \sin ax \sin bx dx,  \\
+\int \sin ax \cos bx dx, \;\;\;\mbox{in which}\; a \neq b.
+\end{array}
+\label{eq7.2.1}
+\end{equation}
+
+\noindent None of these can be integrated directly, but eaeh of the three integrands is a term in the expansions of $\cos(ax + bx)$ and $\cos(ax - bx)$ or in the expansions of $\sin(ax + bx)$ and $\sin(ax - bx)$. We can use these addition formulas to change products to sums or differences, and the latter ean be integrated easily. 
+
+%EXAMPLE 1. 
+\begin{example}
+Integrate: 
+
+$$
+\mbox{(a)}\;\;\; \int \sin 8x \sin 3x dx, \;\;\;\mbox{(b)}\;\;\; \int \sin 7x \cos 2x dx.
+$$
+%SEC 2] ~NTEGRArS OF TR`GoNOMPTR~c FUNCT'aNS  363
+
+The integrand $\sin 8x \sin 3x$ in (a) is one term in the expansion of $\cos(8x + 3x)$ and also in the
+expansion of $\cos(8x - 3x)$. That is, we have 
+
+ \begin{eqnarray*}
+\cos(8x + 3x) &=& \cos 8x \cos 3x - \sin 8x \sin 3x,\\
+\cos(8x - 3x) &=& \cos 8x \cos 3x + \sin 8x \sin 3x. 
+\end{eqnarray*}
+
+\noindent Subtracting the first from the second, we get
+
+$$
+\cos(8x - 3x) - \cos(8x + 3x) = 2 \sin 8x \sin 3x. 
+$$
+
+\noindent Hence, since $8x - 3x = 5x$ and $8x + 3x = 11x$,
+we obtain 
+
+$$
+\sin 8x \sin 3x = 2 (\cos 5x - \cos 11x), 
+$$
+
+\noindent and so
+
+\begin{eqnarray*}
+\int \sin 8x \sin 3x dx &=& \frac{1}{2} \int (\cos 5x - \cos 11x) dx\\
+&=& \frac{1}{10} \sin 5x - \frac{1}{22} \sin 11x + c.
+\end{eqnarray*}
+
+For the integral in (b), we use the formulas for the sine of the sum and
+difference of two numbers: 
+
+\begin{eqnarray*}
+\sin(7x + 2x) &=& \sin 7x \cos 2x + \cos 7x \sin 2x, \\
+\sin(7x - 2x) &=& \sin 7x \cos 2x - \cos 7x \sin 2x. 
+\end{eqnarray*}
+
+\noindent Adding, we have 
+$$
+\sin(7x + 2x) + \sin(7x - 2x) = 2 \sin 7x \cos 2x.
+$$
+
+\noindent Hence
+$$
+\sin 7x \cos 2x = \frac{1}{2} (\sin 9x + \sin 5x), 
+$$
+
+\noindent and
+
+\begin{eqnarray*}
+\int \sin 7x \cos 2x dx &=& \frac{1}{2}\int (\sin 9x + \sin 5x) dx\\
+&=& - \frac{1}{18} \cos 9x - \frac{1}{10} \cos 5x + c.
+\end{eqnarray*}
+\end{example}
+
+It should be clear that, using the formulas for the cosine and sine of the sum and difference of two numbers as in Example 1, we can readily evaluate any integral of the type given in equations (1).
+\medskip
+
+We next consider integrals of the type
+
+
+\begin{equation}
+\int \cos^{m} x \sin^{n}x dx, 
+\label{eq7.2.2}
+\end{equation}
+% ~ ~ ~ --< 364 TECHNIQUES OF INTEGRATION [CHAP. 7
+
+\noindent \textit{in which at least one of the exponents m and n is an odd positive integer} 
+(the other exponent need only be a real number). Suppose that $m = 2k + 1$, 
+where $k$ is a nonnegative integer. Then
+
+\begin{eqnarray*}
+\cos^{m} x \sin^{n} x &=& \cos^{2k+1}x \sin^{n}x\\
+                                 &=& (\cos^{2}x)^{k} \sin^{n} x \cos x.
+\end{eqnarray*} 
+
+\noindent Using the identity $\cos^{2}x = 1 - \sin^{2}x$, we obtain
+
+$$
+\int \cos^{m}x \sin^{n}x dx = \int (1 - \sin^{2}x)^{k} \sin^{n}x \cos x dx.
+$$
+
+\noindent The factor $(1 - \sin^{2}x)^k$ can be expanded by the Binomial Theorem, 
+and the result is that $\int \cos^{m}x \sin^{n}x dx$ can be written as a sum of constant multiples of integrals of the form $\int \sin^{q}x \cos x dx$. Since
+
+$$
+\int \sin^{q} x  \cos x dx = \{ \begin{array}{ll}
+\frac{1}{q + 1} \sin ^{q + 1} x + c     & \;\;\; \mbox{if}\; q \neq -1,\\
+\ln |\sin x| + c                                   & \;\;\; \mbox{if}\; q = - 1,
+\end{array}
+$$
+\noindent it follows that $\int \cos^{m}x \sin^{n}x dx$ can be readily evaluated. 
+An entirely analogous argument follows if the exponent $n$ is an odd positive integer.
+
+
+%EXAMPLE 2. 
+\begin{example}
+Integrate
+$$
+\mbox{(a)}\;\;\; \int \cos^{3}4x dx, \;\;\;          \mbox{(b)}\;\;\; \int \sin^{5}x \cos^{4}x dx.
+$$
+
+The integral in (a) illustrates that the method just described is applicable to odd positive
+integer powers of the sine or cosine (i.e., either $m$ or $n$ may be zero). We obtain
+
+\begin{eqnarray*}
+\int \cos^{3}4x dx &=& \int \cos^{2}4x \cos 4x dx\\
+&=& \int(1- \sin^{2}4x) \cos 4x dx \\
+&=& \int \cos 4x dx - \int \sin^{2}4x \cos 4x dx\\
+&=& \frac{1}{4} \sin 4x - \frac{1}{12} \sin^{3} 4x + c.
+\end{eqnarray*}
+
+In (b) it is the exponent of the sine which is an odd positive
+integer.
+% SEC. 2] INTEGRALS OF TRIGONOMETRIC FUNCTIONS  365
+Hence
+\begin{eqnarray*}
+\int \sin^{5}x \cos^{4}x dx &=& \int (\sin^{2} x)^{2} \cos^{4}x \sin x dx\\
+&=& \int (1- \cos^{2}x)^{2} \cos^{4}x \sin x dx\\ 
+&=& \int (1 - 2 \cos^{2} x + \cos^{4}x) \cos^{4}x \sin x dx\\ 
+&=& \int \cos^{4}x \sin x dx - 2\int \cos^{6}x \sin x dx + \int \cos^{8}x \sin x dx\\
+&=& \frac{1}{5} \cos^{5}x + \frac{2}{7} \cos^{7}x - \frac{1}{9} \cos^{9}x + c. 
+\end{eqnarray*}
+\end{example}
+
+The third type of integral we consider consists of those of the form
+
+
+\begin{equation}
+\int \cos^{m}x \sin^{n}x dx   
+\label{eq7.2.3}
+\end{equation}
+
+\noindent \textit{in which both m and n are even nonnegative integers.}  These functions are not so simple to integrate as those containing an odd power. We first consider the special case in which either $m = 0$ or $n = 0$. The simplest nontrivial examples are the two integrals 
+$\int \cos^{2}x dx$ and $\int \sin^{2}x dx$, which can be integrated by means of the identities
+
+\begin{eqnarray*}
+\cos^{2}x &=& \frac{1}{2}(1 + \cos 2x), \\
+\sin^{2}x &=& \frac{1}{2}(1- \cos 2x).
+\end{eqnarray*}
+
+\noindent These are useful enough to be worth memorizing, but they can also be derived quickly by
+addition and subtraction from the two more primitive identities
+
+\begin{eqnarray*}
+         1 &=& \cos^{2}x + \sin^{2}x,\\
+\cos 2x &=& \cos^{2}x - \sin^{2}x.
+\end{eqnarray*}
+
+\noindent Evaluation of the two integrals is now a simple matter. We get
+
+\begin{eqnarray*}
+\int \cos^{2}x dx &=& \frac{1}{2} \int (1 + \cos 2x) dx = \frac{x}{2} + \frac{1}{4} \sin 2x + c, \\
+\int \sin^{2}x dx &=& \frac{1}{2} \int (1 - \cos 2x) dx = \frac{x}{2} - \frac{1}{4} \sin 2x + c.
+\end{eqnarray*}
+
+Going on to the higher powers, consider the integral $\int \cos^{2i} x dx$, where $i$ is an arbitrary positive integer. We write
+
+\begin{eqnarray*}
+\cos^{2i} x = (\cos^{2}x)^i &=& [\frac{1}{2}(1 + \cos 2x)]^i\\
+                                         &=& \frac{1}{2i} (1 + \cos 2x)^{i}.
+\end{eqnarray*}
+
+%366 TECHNIQUES OF I~EGRATION [CHAP. 7
+
+\noindent The factor $(1 + \cos 2x)^i$ can be expanded by the Binomial Theorem. The result is that $\cos^{2i}x$ can be written as a surli of constant multiples of functions of the form $\cos^{j}2x$, and in each of these $j < 2i$. The terms in this sum for which $j$ is odd are all of the type already shown to be integrable. The terms for which $j$ is even are of the type now under consideration. However, the exponents $j$ are all smaller than the original power $2i$. For each function $\cos^{j}2x$ with $j$ even and nonzero, we repeat the process just described. Again, the resulting even powers of the cosine will be reduced. 
+By repetition of these expansions, the even powers of the cosine can eventually all be reduced to zero. It follows that, although the process may be a tedious one, the integral $\int \cos^{2i}xdx$ can always be evaluated. The argument for $\int \sin^{2i}x dx$ is entirely analogous.
+
+
+%EXAMPLE 3.
+\begin{example}
+Integrate $\int \sin^{6}2x dx$. We write 
+
+\begin{eqnarray*}
+\sin^{6}2x 
+&=& (\sin^{2} 2x)^3 = [\frac{1}{2}(1 - \cos4x)]^3\\ 
+&=& \frac{1}{8}(1 - 3 \cos 4x + 3 \cos^{2}4x - \cos^{3} 4x)\\ 
+&=&  \frac{1}{8} [ 1 - 3 \cos 4x + \frac{3}{2} ( 1 + \cos 8x) - \cos^{3} 4x] \\
+&=& \frac{5}{16} - \frac{3}{8} \cos4x + \frac{3}{16} \cos 8x - \frac{1}{8} \cos^{3}4x. 
+\end{eqnarray*}
+
+\noindent Hence
+
+$$
+\int \sin^{6}2x dx = \frac{5x}{16} - \frac{3}{32} \sin 4x + \frac{3}{128} \sin 8x 
+- \frac{1}{8} \int \cos^{3} 4x dx.
+$$
+\noindent In Example 2 we have shown that
+
+$$
+\int \cos^{3}4x dx = \frac{1}{4} \sin 4x - \frac{1}{12} \sin^{3} 4x + c.
+$$
+
+\noindent We conclude that 
+
+\begin{eqnarray*}
+\int \sin^{6}2x dx &=& \frac{5x}{16} - \frac{3}{32} \sin 4x + \frac{3}{128} \sin 8x - \frac{1}{32} \sin 4x + \frac{1}{96} \sin^{3}4x + c \\
+&=& \frac{5x}{16} - \frac{1}{8} \sin 4x + \frac{3}{128} \sin 8x + \frac{1}{96} \sin^{3}4x + c.
+\end{eqnarray*}
+\end{example}
+
+Returning to the general case, we can now integrate $\int \cos^{m}x \sin^{n}xdx$, where $m$ and $n$ are arbitrary nonnegative even integers. For, setting $m = 2i$ and $n = 2j$, we can write
+
+\begin{eqnarray*}
+\cos^{m}x \sin^{n}x &=& \cos^{2i} x (\sin^{2} x)^j \\
+                               &=& \cos^{2i} x(1 - \cos^{2} x)^j.
+\end{eqnarray*}
+%SEC. 2] INTEGRALS OF TRIGONOMETRIC FUNCTIONS  367
+
+\noindent When expanded, the right side is a sum of constant multiples of even powers of 
+$\cos x$, and we have shown that each of these can be integrated. This completes the argument. Actually, if neither $m$ nor $n$ is zero, we can save time by using the identity 
+
+$$
+\sin x \cos x = \frac{1}{2} \sin 2x, 
+$$
+\noindent as illustrated in the following example.
+
+
+%EXAMPLE 4. 
+\begin{example}
+Integrate $\int \cos^{4}x \sin^{2}x dx$. Since $\sin^{2}x$ is the factor with the smaller exponent, we write
+
+\begin{eqnarray*}
+\cos^4x \sin^{2}x &=& \cos^{2}x (\cos^{2}x \sin^{2}x)\\
+&=& \cos^{2}x (\sin x \cos x)^2\\
+&=& [ \frac{1}{2} ( 1 + \cos 2x)]( \frac{1}{2} \sin 2x)^2.
+\end{eqnarray*}
+
+\noindent Expanding, we get 
+
+\begin{eqnarray*}
+\cos^{4}x \sin^{2}x &=& \frac{1}{8}(1 + \cos 2x) \sin^{2}2x\\
+&=& \frac{1}{8} \sin^{2}2x + \frac{1}{8} \sin^{2}2x \cos2x\\
+&=& \frac{1}{16} ( 1 - \cos 4x) + \frac{1}{8} \sin^{2}2x \cos 2x.
+\end{eqnarray*}
+
+\noindent Hence
+\begin{eqnarray*}
+\int \cos^{4}x \sin^{2}x dx &=& \frac{1}{16} \int dx - \frac{1}{16} \int \cos 4x dx 
++ \frac{1}{8} \int \sin^{2}2x \cos 2x dx \\
+&=& \frac{x}{16} - \frac{1}{64} \sin 4x + \frac{1}{48} \sin^{3}2x + c.
+\end{eqnarray*}
+\end{example}
+
+An important alternative method for integrating positive integer powers of the sine and cosine
+is by means of recursion (or reduction) formulas. In Section 1 [see (1.2), page 359], such a
+formula was developed, expressing $\int \cos^{n}x dx$ in terms of $\int \cos^{n-2}x dx$. 
+Following the derivation, $\int \cos^{5} 2x dx$ is evaluated with two applications of the formula.
+A similar reduction formula for $\int \sin^{n}x dx$ was given in Problem 4, page 361. 
+Certainly no one should memorize these formulas, but, if they are available, they undoubtedly provide the most automatic way of performing the integration.
+\medskip
+
+We next turn to the problem of evaluating
+
+
+\begin{equation}
+\int \tan^{n}x dx,  
+\label{eq7.2.4}
+\end{equation}
+%368 TECHNIQUES OF INTEGRATION [CHAP. 7
+
+\noindent \textit{where $n$ is an arbitrary positive integer.}  For $n = 1$, the integral is an elementary one:
+
+$$
+\int \tan x dx = \int \frac{\sin x}{\cos x} dx = 
+\left \{ \begin{array}{r}
+- \ln |\cos x| + c,\\
+  \ln |\sec x| + c. 
+\end{array}
+\right.
+$$
+
+\noindent For $n \geq 2$, there is a reduction formula, which is easily derived as follows. 
+Using the identity $\sec^{2} x - 1 = \tan^{2}x$, we have
+
+
+\begin{eqnarray*}
+\int \tan^{n}x dx &=& \int  \tan^{n-2}x \tan^{2}x dx\\
+&=& \int \tan^{n-2} x (\sec^{2}x - 1)dx\\
+&=& \int \tan^{n-2}x \sec^{2}x dx - \int \tan^{n-2}x dx.
+\end{eqnarray*}
+
+Since $\frac{d}{dx} \tan x = \sec^{2}x$, the first integral on the right is equal to
+$$
+\int \tan^{n-2} x d \tan x.
+$$
+
+Hence we obtain
+
+\begin{theorem} %(2.1)
+$$
+\int \tan^{n} x dx = \frac{1}{n -1} \tan^{n-1} x - \int \tan^{n -2}x dx. 
+$$
+\end{theorem}
+
+\noindent However, we generally perform such integrations without explicit use of the reduction formula (2.1). We simply carry out this technique of replacing $\tan^{2}x$ by 
+$\sec^{2}x - 1$ as often as necessary.
+
+%EXAMPLE 5. 
+\begin{example}
+Integrate $\tan 5x dx$. Factoring and substituting, we get
+\begin{eqnarray*}
+\int \tan^{5}x dx &=& \int \tan^{3}x \tan^{2}x dx \\
+&=& \int \tan^{3}x(\sec^{2}x - 1)dx \\
+&=& \int \tan^{3}x \sec^{2}x dx - \int \tan^{3}x dx \\
+&=& \frac{1}{4} \tan^{4}x - \int \tan x (\sec^{2} x - 1 ) dx\\
+&=& \frac{1}{4} \tan^{4} x - \int \tan x \sec^{2}x dx + \int \tan x dx \\
+&=& \frac{1}{4} \tan^{4} x - \frac{1}{2} \tan^{2} x + \ln |\sec x| + c.
+\end{eqnarray*}
+\end{example}
+
+%SEC. 2] INTEGRALS OF TRIGONOMETRIC FUNCTIONS  369
+
+The difficulty in evaluating the integral
+
+
+\begin{equation}
+\int \sec^{n}xdx,   
+\label{eq7.2.5}
+\end{equation}
+\noindent \textit{where $n$ is a positive integer,} depends on whether $n$ is even or odd. 
+If $n = 2i$, for some positive integer $i$, then
+
+$$
+\sec^{n}x = (\sec^{2}x)^{i-1} \sec^{2} x = (1 + \tan^{2}x)^{i-1} \sec^{2}x.
+$$
+
+\noindent Hence, if $n$ is even, $\sec^{n}x$ can be expanded into a sum of multiples of integrals of the form
+$$
+\int \tan^{j} x \sec^{2} x dx = \frac{1}{j + 1} \tan^{j + 1} x + c.
+$$
+
+\noindent If $n$ is odd, the problem is not so simple. We shall use the reduction formula
+
+
+\begin{theorem} %(2.2)
+$$
+\int \sec^{n} x dx = \frac{\sec^{n-2} x \tan x}{n - 1} + \frac{n - 2}{n - 1} \int \sec^{n-2} xdx.
+$$
+\end{theorem}
+
+\noindent This formula is derived by integration by parts [see Problem 6(b), page 362] and is
+applicable for any integer $n \geq 2$, whether even or odd. With a finite number of applications, $\int \sec^{n} x dx$ can therefore be reduced to an expression in which the only remaining integral is $\int dx$ or $\int \sec x dx$, according as $n$ is even or odd. Hence, if $n$ is odd, we need to know $\int \sec x dx$. An ingenious method of integration is to consider the pair of functions $\sec x$ and $\tan x$ and to observe that the derivative of each one is equal to $\sec x$ times the other. Writing this fact in terms of differentials, we have
+
+
+\begin{eqnarray*}
+d \sec x &=& \sec x \tan x dx,\\
+d \tan x  &=& \sec^{2}x dx = \sec x \sec x dx. 
+\end{eqnarray*}
+
+
+\noindent Adding and factoring, we obtain
+$$
+d(\sec x + \tan x) = \sec x(\tan x + \sec x) dx.
+$$
+\noindent Hence
+
+$$
+\sec x dx = \frac{d(\sec x + \tan x)}{\sec x + \tan x},
+$$ 
+
+\noindent from which follows the useful formula
+
+\begin{theorem} %( 2.3 ) 
+$$
+\int \sec x dx = \ln |\sec x + \tan x| + c.
+$$
+\end{theorem}
+%370 TECHNIQUES OF INTEGRATION [CHA~. 7
+
+%EXAMPLE 6. 
+\begin{example} 
+Integrate $\int \sec^{5} x dx$. Using the reduction formula (2.2) twice, we have
+
+\begin{eqnarray*}
+\int \sec^{5}x dx &=& \frac{\sec^{3} x \tan x}{4} + \frac{3}{4} \int \sec^{3}x dx\\
+&=& \frac{\sec^{3}x \tan x}{4} + \frac{3}{4} \Bigl( \frac{\sec x \tan x}{2} + \frac{1}{2} \int \sec x dx \Bigr). 
+\end{eqnarray*}
+
+\noindent From this and (2.3), we conclude that
+$$
+\int \sec^{5} x dx = \frac{\sec^{3}x \tan x}{4} + \frac{ 3 \sec x \tan x}{8}  + \frac{ 3}{8}
+\ln | \sec x + \tan x | + c. 
+$$
+\end{example}
+
+Of course, the integration of $\int \cot^{n}x dx$ parallels the technique for integrating 
+$\int \tan^{n}x dx$, and the integration of $\int \csc^{n} x dx$ parallels that for $\int \sec^{n}x dx$. 
+The reduction formula corresponding to (2.2) is
+
+
+\begin{theorem} %(2.4)
+$$
+\int \csc^{n} x dx = -\frac{\csc^{n - 2} x \cot x}{n - 1} + \frac{n - 2}{n - 1} \int \csc^{n - 2} x dx .
+$$
+\end{theorem}
+
+The last type of integral to be discussed consists of those of the form
+
+\begin{equation}
+\int \sec^{m}x \tan^{n}x dx,  
+\label{eq7.2.6}
+\end{equation}
+
+\noindent \textit{where $m$ and $n$ are positive integers.} There are a number of variations, depending on whether each of $m$ and $n$ is even or odd. We shall consider 
+three cases:
+
+\textit{Case 1. $m$ is even.} Then $m = 2k$, for some positive integer $k$. Hence
+
+\begin{eqnarray*}
+\int \sec^{m}x \tan^{n}x dx &=& \int \sec^{2k}x \tan^{n}x dx \\
+&=& \int \sec^{2k-2}x \tan^{n}x \sec^{2}x dx\\
+&=& \int (\sec^{2}x)^{k-1} \tan^{n}x \sec^{2} xdx\\
+&=& \int (1 + \tan^{2}x)^{k-1} \tan^{n}x \sec^{2}x dx.
+\end{eqnarray*}
+
+\noindent We can now expand $(1 + \tan^{2}x)^{k-1}$, and the result is that the original integral can be written as a sum of constant multiples of integrals of the form $\int \tan^{j}x \sec^{2}x dx$. As we have seen, each of these is equal to $\int u^{j}du$, with $u = \tan x$, and is easily integrated.
+%SEC. 21 INTEGRALS OF TRIGONOM} TR[C FUNCTIONS  371
+
+\textit{Case 2. $n$ is odd.} Then $n = 2k + 1$, for some nonnegative integer $k$. We write
+ 
+\begin{eqnarray*}
+\int \sec^{m}x \tan^{n} x dx &=& \int \sec^{m}x \tan^{2k+1}x dx  \\
+&=& \int \sec^{m - 1}x (\tan^{2}x)^{k} \sec x \tan x dx \\
+&=& \int \sec^{m - 1}x (\sec^{2}x - 1)^{k} \sec x \tan x dx.
+\end{eqnarray*}
+
+\noindent Again we expand by use of the Binomial Theorem. In this case, the original integral becomes a sum of constant multiples of integrals of the form $\int \sec^{j}x \sec x \tan x dx$, each of which can be integrated, since
+
+\begin{eqnarray*}
+\int \sec^{j}x \sec x \tan x dx &=& \int \sec^{j}x d(\sec x)\\
+&=& \frac{1}{ j + 1} \sec^{j+1} x + c.
+\end{eqnarray*}
+
+\textit{Case 3. $n$ is even.} Then $n = 2k$, for some positive integer $k$. In this case, we have
+
+\begin{eqnarray*}
+\int \sec^{m} x \tan^{n} xdx &=& \int \sec^{m}x \tan^{2k}x dx\\
+&=& \int \sec^{m}x (\tan^{2}x)^{k}dx \\
+&=& \int \sec^{m}x (\sec^{2}x - 1)^{k} dx.
+\end{eqnarray*}
+
+\noindent This time, if we expand the integrand, we get a sum of constant multiples of integrals of the type $\int \sec^{j}x dx$, and we can use the reduction formula (2.2) on each of them.
+
+The three cases discussed are not mutually exclusive, and one may have a choice. 
+For example, if $m$ is even and $n$ odd, the integral may be found by the techniques of 
+Case 1 or that of Case 2. If $m$ and $n$ are both even, either the techniques described 
+in Case I or Case 3 may be used.
+
+%EXAMPLE 7. 
+\begin{example}
+Evaluate the integrals
+$$
+\mbox{(a)}\;\;\;  \int \sec^{4} x \tan^{6} xdx, \;\;\;\mbox{(b)}\;\;\; \int \sec^{3} x \tan^{5} xdx.
+$$
+%372 TECHNIQUES OF INTEGRATION [CHAP. 7
+   
+For (a) we write 
+\begin{eqnarray*}
+\int \sec^{4}x \tan^{6}x dx &=& \int \sec^{2}x \tan^{6} x \sec^{2}x dx \\
+&=& \int (1 + \tan^{2}x) \tan^{6}x \sec^{2}x dx \\
+&=& \int \tan^{6}x \sec^{2}x dx + \int \tan^{8}x \sec^{2}x dx\\
+&=& \frac{1}{7} \tan^{7}x + \frac{1}{9} \tan^{9}x + c.
+\end{eqnarray*}
+
+\noindent It is also possible to evaluate this integral by the technique described in Case 3. 
+However, the resulting computation would be so much longer that it would be foolish to do so.
+
+For (b) we use the method of Case 2. Factoring, we get
+\begin{eqnarray*}
+\int \sec^{3} x \tan^{5} x dx 
+&=&  \int \sec^{2} x \tan^{4} x \sec x \tan x dx \\
+&=& \int \sec^{2} x (\sec^{2} x - 1)^{2} \sec x \tan x dx \\
+&=& \int \sec^{2} x (\sec^{4} x - 2 \sec^{2} x + 1) \sec x \tan x dx \\
+&=& \int \sec^{6} x \sec x \tan x dx - 2\int \sec^{4} x \sec x \tan x dx \\
+&+& \int \sec^{2} x \sec x \tan x dx \\
+&=& \frac{1}{7} \sec^{7} x - \frac{2}{5} \sec^{5} x + \frac{1}{3} \sec^{3} x + c.
+\end{eqnarray*}
+
+We conclude with the remark that techniques for integrating $\int \csc^{m} x \cot^{n}x$ are analogous to those for $\int \sec^{m} x \tan^{n} x dx$.
+\end{example}

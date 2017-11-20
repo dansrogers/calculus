@@ -1,0 +1,441 @@
+\chapter*{Appendix A.  Properties of Limits}
+
+In this appendix we shall establish the fundamental properties of
+limits stated without proof in
+Theorem \thref{1.4.1}.
+Before restating the theorem and giving the proof,
+we recall one of the basic facts about inequalities and absolute values,
+which we shall use.
+Called the \textbf{triangle inequality}, it asserts that,
+for any two real numbers $a$ and $b$,
+$$
+|a \pm b| \leq |a| + |b|.
+$$
+This result is stated and proved for $a + b$ in \thref{1.4.1}.
+It holds equally well for $a - b$, since
+$$
+|a - b| = |a + (-b)| \leq |a| + |-b| = |a| + |b|.
+$$
+The theorem, which we shall prove, is the following:
+
+\begin{theorem}
+If $\lim_{x \rightarrow a} f(x) = b_1$,
+and $\lim_{x \rightarrow a} g(x) = b_2$, then 
+
+\begin{description}
+\item[(i)] $\lim_{x \rightarrow a} [f(x) + g(x)] = b_1 + b_2$. 
+\item[(ii)] $\lim_{x \rightarrow a} cf(x) = cb_1$.  
+\item[(iii)] $\lim_{x \rightarrow a} f(x)g(x) = b_1b_2$.
+\item[(iv)] $\lim_{x \rightarrow a} \frac{f(x)}{g(x)} = \frac{b_1}{b_2} \;provided \; b_2 \neq 0$.
+\end{description}
+\end{theorem}
+
+According to the definition of limit, the hypotheses tell us that, for any positive number $\epsilon$, there exist positive numbers $\delta_1$, and $\delta_2$ such that if $x$ is in the domains of both $f$ and $g$ and if $0 < |x - a| < \delta_1$ and $0 < |x - a| < \delta_2$, then $|f(x) - b_1| < \epsilon$ and $|g(x) - b_2| < \epsilon$. Where it is relevant in the proofs which follow, we shall assume without explicitly stating it the condition that $x$ lies in the appropriate domain of $f$ or $g$ (or both).
+\medskip
+
+\noindent \textit{Proof of} (i). Let $\epsilon$ be an arbitrary positive number. Then there exist positive numbers $\delta_1$ and $\delta_2$ such that $|f(x) - b_1| < \frac{\epsilon}{2}$ whenever $0 < |x - a| < \delta_1$, and $|g(x) - b_2| < \frac{\epsilon}{2}$, whenever $0 < |x - a| < \delta_2$. (It is legitimate to write
+%APP. A] PROPERTIES OF LIMITS  665
+$\frac{\epsilon}{2}$ in these inequalities, since the definition specifies the existence of $\delta'$s for \textit{any} positive number $\epsilon$. Given a choice of $\epsilon$, we can then take $\frac{\epsilon}{2}$ to be the number which implies the existence of $\delta_1$ and $\delta_2$.) We set
+$$
+\delta = \mbox{minimum}\; \{ \delta_1, \delta_2 \}. 
+$$
+Let us now suppose that $0 < |x - a| < \delta$. It follows that $0 < |x - a| < \delta_1$ and $0 < |x - a| < \delta_2$, and thence that $|f(x) - b_1| < \frac{\epsilon}{2}$ and $|g(x) - b_2| < \frac{\epsilon}{2}$. Clearly,
+$$
+|[f(x) + g(x)] - [b_1 + b_2]| = |[f(x) - b_1|] + [g(x) - b_2]|. 
+$$
+Hence, using the triangle inequality, we obtain
+$$
+|[f(x) + g(x)] - [b_1 + b_2]| < |f(x) - b_1| + |g(x) - b_2| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon .
+$$
+Thus we have shown that, for any $\epsilon > 0$, there exists a $ \delta > 0$ such that, whenever $0 < |x - a| < \delta$, then $|[f(x) + g(x)] - [b_1 + b_2]| < \epsilon$. By the definition of limit we have therefore proved that 
+$$
+\lim_{x \rightarrow a} [f(x) + g(x)] = b_1 + b_2,
+$$
+which is the result (i).
+\medskip
+
+\noindent \textit{Proof of} (ii). Suppose first that $c = 0$. Then $cf$ is the constant function with value 0, and $cb_1 = 0$. Hence
+$$
+|cf(x) - cb_1| = |0 - 0| = 0 ,
+$$
+for every $x$ in the domain of $f$. Thus, for any two positive numbers $\epsilon$ and $\delta$, it is trivially true that
+$$
+|cf(x) - cb_1| < \epsilon, \;\;\;\mbox{whenever}\; 0 < |x - a| < \delta,
+$$
+and (ii) is therefore proved in this special case. We next assume that $c \neq 0$, and choose an arbitrary positive number $\epsilon$. There then exists a positive number $\delta$ such that
+$$
+|f(x) - cb_1| < \frac{\epsilon}{|c|} , \;\;\;\mbox{whenever}\; 0 < |x - a| < \delta.
+$$
+It follows immediately that
+$$
+|cf(x) - cb_1| = |c[ f(x) - b_1]| = |c| |f(x) - b_1| < |c| \frac{\epsilon}{|c|} = \epsilon
+$$
+whenever $0 < |x - a| < \delta$. This completes the proof of (ii).
+%666 PROPERTIES OF LIMITS [APP. A
+\medskip
+
+\noindent \textit{Proof of} (iii). Let $\epsilon$ be an arbitrary positive number. Select a positive number $M$ such that $|b_1| < M$ and $|b_2| < M$. Then there exist positive numbers $\delta_1$, $\delta_2$, and $\delta_3$ such that
+$$
+\begin{array}{ll}
+|f(x) - b_1| < \frac{\epsilon}{2M}, \;\mbox{provided}\; &0 < |x - a| < \delta_1, \\
+|g(x) - b_2| < \frac{\epsilon}{2M}, \;\mbox{provided}\; &0 < |x - a| < \delta_2,\\
+|g(x) - b_2| < M -  |b_2|,                \;\mbox{provided}\; &0 < |x - a| < \delta_3.
+\end{array}
+$$
+We set
+$$
+\delta = \mbox{minimum}\; \{ \delta_1, \delta_2, \delta_3 \},
+$$
+and in the remainder of the argument we assume that $0 < |x - a| < \delta$. It then follows that all three of the above inequalities hold. Using the last one together with the triangle inequality, we first observe that
+$$
+|g(x)| = |(g(x) - b_2) + b_2| \leq |g(x) - b_2| + |b_2| < (M - |b_2|) + |b_2| = M.
+$$
+Next we obtain
+\begin{eqnarray*}
+|f(x)g(x) - b_ib_2| 
+&=& | f(x)g(x) - b_1g(x) + b_1g(x) - b_1b_2 | \\
+&=& | g(x)[f(x) - b_1] + b_1[g(x) - b_2] | \\
+&\leq& | g(x) [f(x) - b_1] | + |b_1[g(x) - b_2] | \\
+&=& | g(x)| |f(x) - b_1| + | b_1| |g(x) - b_2 |. 
+\end{eqnarray*}
+Finally, therefore,
+$$
+|f(x)g(x) - b_1b_2| < M \frac{\epsilon}{2M} + M \frac{\epsilon}{2M} = \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon ,
+$$
+and the proof of (iii) is finished.
+\medskip
+
+\noindent \textit{Proof of} (iv). We shall prove the simpler statement:
+$$
+\lim_{x \rightarrow a} \frac{1}{g(x)} = \frac{1}{b_2}, \;\;\;\mbox{provided}\; b_2 \neq 0. \hspace{1in} ( 1 )
+$$
+This fact, together with (iii), then implies 
+$$
+\lim_{x \rightarrow a} \frac{f(x)}{g(x)} = \lim_{x \rightarrow a} f(x) \frac{1}{g(x)} = b_1 \frac{1}{b_2} = \frac{b_1}{b_2} ,
+$$
+which is the result (iv). Since it is assumed that $b_2 \neq 0$, there exists a number m such that $0 < m < |b_2|$. Hence there exists a positive number $\delta_1$ such that
+$$
+|g(x) - b_2| < |b_2| - m,
+$$
+%APP. A] PRC!PERTTES OF T,TMTTS 667
+whenever $0 < |x - a| < \delta_1$. But 
+\begin{eqnarray*}
+|b_2| = |-b_2| &=& |(g(x) - b_2) - g(x)| \\
+                         &\leq& |g(x) - b_2| + |g(x)| .
+\end{eqnarray*}
+Hence, if $0 < |x - a| < \delta_1$, we have 
+$$
+|g(x)| > |b_2| - |g(x) - b_2| > |b_2| - (|b_2| - m) = m .
+$$
+Taking reciprocals, we therefore obtain
+$$
+\frac{1}{|g(x)|} < \frac{1}{m}, \;\mbox{whenever}\; 0 < |x - a| < \delta_1.
+$$
+Now let $\epsilon$ be an arbitrary positive number. There exists a positive number $\delta_2$ such that
+$$
+|g(x) - b_2| < m |b_2| \epsilon, \;\mbox{whenever}\; 0 < |x - a| < \delta_2.
+$$
+We set
+$$
+\delta = \mbox{minimum}\; \{ \delta_1, \delta_2 \}.
+$$
+It follows that, if $0 < |x - a| < \delta$, then
+
+\begin{eqnarray*}
+\Big|\frac{1}{g(x)} - \frac{1}{b_2}\Big| 
+&=& \Big|\frac{b_2 - g(x)}{b_2 g(x)} \Big| \\
+&=& \frac{1}{|g(x)|} \frac{1}{|b_2|} |g(x) - b_2| \\
+&<& \frac{1}{m} \frac{1}{|b_2|} |g(x) - b_2| \\
+&<& \frac{1}{m |b_2|} m |b_2| \epsilon = \epsilon.
+\end{eqnarray*}
+Thus (1) is proved, and, as we have seen, (1) and (iii) imply (iv). This completes the proof of the theorem.
+
+
+\chapter*{Appendix B.  Properties of the Definite Integral}
+
+Five basic properties of the definite integral are listed at the beginning of Section 4 of Chapter 4. Of these, two are proved in the text and one is left as an exercise. The remaining two will be proved here.
+
+Let $f$ be a function which is bounded on a closed interval $[a, b]$. This implies that $[a, b]$ is contained in the domain of $f$ and that there exists a positive number $B$ such that $|f(x)| < B$ for all $x$ in $[a, b]$. We recall that, for every partition $\sigma$ of $[a, b]$, there are defined the upper and lower sums for $f$ relative to $\sigma$, which are denoted by $U_\sigma$ and $L_\sigma$, respectively. Moreover, it has been shown (see page 168) that
+$$
+L_\sigma \leq L_{\sigma \cup \tau} \leq U_{\sigma \cup \tau} \leq U_\tau,  \hspace{1in}( 1 )
+$$
+for any two partitions $\sigma$ and $\tau$ of $[a, b]$. The function $f$ is defined to be integrable over $[a, b]$ if there exists one and only one number, denoted $\int_a^b f$, with the property that  
+$$
+L_\sigma \leq \int_a^b f \leq U_\tau , 
+$$
+for any two partitions $\sigma$ and $\tau$ of $[a, b]$. It is an immediate consequence of this definition and the inequalities (1) that $f$ is integrable over $[a, b]$ if and only if, for any positive number $\epsilon$, there exists a partition $\sigma$ of $[a, b]$ such that $U_\sigma - L_\sigma < \epsilon$. A similar corollary, which we shall also usebin the subsequent proofs, is the statement that $f$ is integrable over $[a, b]$ and $\int_a^b f = J$ if and only if, for every positive number $\epsilon$, there exists a partition $\sigma$ of $[a, b]$ such that $|U_\sigma - J| < \epsilon$ and $|J - L_\sigma| < \epsilon$.
+
+
+The first property of the definite integral, which we shall establish in this section, is presented in the following theorem:
+\medskip
+
+\noindent \textbf{THEOREM 1.}~
+The function $f$ is integrable over the intervals $[a, b]$ and $[b, c]$ if and only if it is integrable over their union $[a, c]$. Furthermore,
+$$
+\int_a^b f + \int_b^c f  = \int_a^c f.
+$$
+%APP. B] PROPERTIES OF THE DEFINTTE INTEGRAL  6~
+\proof We first assume that $f$ is integrable over $[a, b]$ and over $[b, c]$. Let $\epsilon$ be an arbitrary positive number. Then there exists a partition $\sigma_1$ of $[a, b]$, and a partition $\sigma_2$ of $[b, c]$ such that the following inequalities hold: 
+\begin{eqnarray*}
+\Big| U_{\sigma_1} - \int_a^b f \Big| < \frac{\epsilon}{2} , \;\;\;
+\Big| \int_a^b - L_{\sigma_1} f \Big| < \frac{\epsilon}{2}  , \\
+\Big| U_{\sigma_2} - \int_b^c f \Big| < \frac{\epsilon}{2} , \;\;\;  
+\Big| \int_b^c - L_{\sigma_2} f \Big| < \frac{\epsilon}{2} .
+\end{eqnarray*}
+It follows from these that
+
+\begin{eqnarray*}
+\Big| (U_{\sigma_1} + U_{\sigma_2}) - \Big( \int_a^b f + \int_b^c f \Big) \Big| < \epsilon ,\\
+\Big| \Big(\int_a^b f + \int_b^c f \Big) - \Big(L_{\sigma_1} + L_{\sigma_2} \Big) \Big| < \epsilon .
+\end{eqnarray*}
+Let us set ${\sigma_1} \cup {\sigma_2} = \sigma$. This union is a partition of $[a, c]$, and it is obvious that
+
+\begin{eqnarray*}
+U_{\sigma_1} + U_{\sigma_2} = U_\sigma, \\
+L_{\sigma_1} + L_{\sigma_2} = L_\sigma . 
+\end{eqnarray*}
+Hence 
+\begin{eqnarray*}
+\Big| U_\sigma  -  \Big(\int_a^b f + \int_b^c f \Big) \Big| \leq \epsilon, \\
+\Big| \Big(\int_a^b f + \int_b^c f \Big) - L_\sigma \Big| \leq \epsilon .
+\end{eqnarray*}
+These inequalities imply that $f$ is integrable over $[a, c]$ and also that
+$$
+\int_a^c f = \int_a^b f + \int_b^c f .
+$$
+
+It remains to prove that, if $f$ is integrable over $[a, c]$, then it is integrable over $[a, b]$ and over $[b, c]$. We choose an arbitrary positive number $\epsilon$. Since $f$ is integrable over $[a, c]$, there exists a partition $\sigma$ of $[a, c]$ such that $U_\sigma - L_\sigma < \epsilon$. Let us form a refinement of the partition $\sigma$ by adjoining the number $b$. That is, we set
+$$
+\sigma' = \sigma \cup \{ b \}.
+$$
+(It is, of course, possible that $\sigma$ already contains $b$, in which case $\sigma' = \sigma$.) Then
+$$
+L_\sigma \leq L_{\sigma'} \leq U_{\sigma'} \leq U_{\sigma'},
+$$
+%670 PROPlSRTli 5 OF THE' DEMNlTE INTEGRAL [APT. B
+from which it follows that $U_{\sigma'}  - L_{\sigma'}, < \epsilon$. But, since $b$ belongs to $\sigma'$, we can write $\sigma' = \sigma_1 \cup \sigma_2$, where $\sigma_1$ is a partition of $[a, b]$ and $\sigma_2$ is a partition of $[b, c]$. Moreover,
+\begin{eqnarray*}
+U_{\sigma'} = U_{\sigma_1} + U_{\sigma_2},\\
+L_{\sigma'} = L_{\sigma_1} + L_{\sigma_2} .
+\end{eqnarray*}
+Hence 
+$$
+(U_{\sigma_1} - L_{\sigma_1}) + (U_{\sigma_2} - L_{\sigma_2}) = U_{\sigma'}  - L_{\sigma'} < \epsilon, 
+$$
+Since $U_{\sigma_1} - L_{\sigma_1}$ and $U_{\sigma_2} - L_{\sigma_2}$
+are both nonnegative, it follows that 
+\begin{eqnarray*}
+U_{\sigma_1} - L_{\sigma_1} < \epsilon,\\
+U_{\sigma_2} - L_{\sigma_2} < \epsilon .
+\end{eqnarray*}
+The first of these inequalities implies that $f$ is integrable over $[a, b]$, and the second that $f$ is integrable over $[b, c]$. This completes the proof of Theorem 1.
+
+The second result to be proved is the following:
+\medskip
+
+\noindent \textbf{THEOREM 2.}~
+If $f$ and $g$ are integrable over $[a, b]$, then so is their sum and 
+$$
+\int_a^b (f + g) = \int_a^b f + \int_a^b g .
+$$
+
+\medskip
+
+\proof Let $\epsilon$ be an arbitrary positive number. By taking, if necessary, the common refinement $\sigma_1 \cup \sigma_2$ of two partitions of $[a, b]$, we may select a partition $\sigma$ of $[a, b]$ such that
+$$
+\begin{array}{ll}
+\Big| U_\sigma^{(f)} - \int_a^b f \Big| < \frac{\epsilon}{2} , \;\;\;&
+\Big| \int_a^b f - L_\sigma^{(f)} \Big| < \frac{\epsilon}{2} , \vspace{.1in}\\
+\Big| U_\sigma^{(g)} - \int_a^b g \Big| < \frac{\epsilon}{2},\;\;\;&
+\Big| \int_a^b g - L_\sigma^{(g)} \Big| < \frac{\epsilon}{2} ,
+\end{array}
+$$
+where $U_\sigma^{(f)}$ and $L_\sigma^{(f)}$ are, respectively, the upper and lower sums for $f$ relative to $\sigma$, and $U_\sigma^{(g)}$ and $L_\sigma^{(g)}$ are the same for $g$. We conclude from the above inequalities that
+$$
+\Big| ( U_\sigma^{(f)} + U_\sigma^{(g)} ) - \Big(\int_a^b f + \int_a^b g \Big) \Big| < \epsilon, \hspace{1in}( 2 )
+$$
+
+$$
+\Big| \Big(\int_a^b f + \int_a^b g \Big) - (L_\sigma^{(f)} + L_\sigma^{(g)}) \Big| < \epsilon . \hspace{1in}( 3 )
+$$
+Let  $[x_{i-1}, x_i]$ be the ith subinterval of the partition $\sigma$. We denote by $M_i^{(f)}$ and $M_i^{(g)}$ the least upper bounds of the values of $f$ and of $g$, respectively, on
+%APP. B] PROPERTIES OF THE DEFINITE INTEGRAL  671
+$[x_{i-1}, x_i]$, and by $m_i^{(f)}$ and $m_i^{(g)}$ the analogous greatest lower bounds. Then
+$$
+m_i^{(f)} + m_i^{(g)} \leq f(x) + g(x) \leq M_i^{(f)} + M_i^{(g)}, 
+$$
+for every $x$ in $[x_{i-1}, x_i]$. It follows that 
+$$
+m_i^{(f)} + m_i^{(g)} \leq m_i^{(f+g)} \leq M_i^{(f+g)} \leq M_i^{(f)} + M_i^{(g)} ,
+$$
+where $m_i^{(f+g)}$ and $M_i^{(f+g)}$ are, respectively, the greatest lower bound and the least upper bound of the values of $f + g$ on $[x_{i-1}, x_i]$. By multiplying each term in the preceding chain of inequalities by $(x_i - x_{i-1})$ and then summing on $i$, we obtain
+$$
+L_\sigma^{(f)} + L_\sigma^{(g)} \leq L_\sigma^{(f+g)} \leq U_\sigma^{(f+g)} \leq U_\sigma^{(f)} + U_\sigma^{(g)},  \hspace{1in}(4 )
+$$
+where $U_\sigma^{(f+g)}$ and $L_\sigma^{(f+g)}$ are the upper and lower sums, respectively, for $f + g$ relative to $\sigma$. The inequalities (2), (3), and (4) imply that
+
+\begin{eqnarray*}
+\Big| U_\sigma^{(f+g)} - \Big(\int_a^b f + \int_a^b g \Big) \Big| < \epsilon, \\
+\Big| \Big(\int_a^b f + \int_a^b g \Big) - L_\sigma^{(f+g)} \Big| < \epsilon .
+\end{eqnarray*}
+It follows from these two inequalities that the function $f + g$ is integrable over $[a, b]$ and that
+$$
+\int_a^b (f + g) = \int_a^b f + \int_a^b g.
+$$
+This completes the proof of Theorem 2.
+ 
+
+\chapter*{Appendix C.  Equivalent Definitions of the Integral}
+
+The purpose of this section is to prove that the definite integral $\int_a^b f$, defined on page 169 in terms of upper and lower sums, can be equivalently defined as the limit of Riemann sums. The fact that these two approaches to the integral are the same is stated without proof in Theorem (2.1), page 414, and we shall now supply the details of the argument. The ``if" and the ``only if" directions of the proof wil1 be treated separately.
+
+Let $f$ be a real-valued function which is bounded on the closed interval $[a, b]$. This implies, according to our definition of boundedness, that $[a, b]$ is contained in the domain of $f$. Let $\sigma = \{x_0, . . ., x_n \}$ be a partition of $[a, b]$ such that
+$$
+a = x_0 \leq x_1 \leq  \cdots \leq < x_n = b.
+$$
+If an arbitrary number $x_i^*$ is chosen in the ith subinterval $[x_{i-1}, x_i]$, then the sum  
+$$
+R_\sigma = \sum_{i=1}^n f(x_i^*)(x_i - x_{i-1}) 
+$$
+is a Riemann sum for $f$ relative to $\sigma$. The fineness of a partition $\sigma$ is measured by its mesh, which is denoted by $\|\sigma\|$ and defined by
+$$
+\|\sigma\| = \mbox{maximum}_{1 \leq i \leq n} \{(x_i - x_{i-1}) \}. 
+$$
+The first of the two theorems is:
+\medskip
+
+\noindent \textbf{THEOREM 1.}~ If $f$ is bounded on $[a, b]$ and if $\lim_{\| \sigma \| \rightarrow 0} R_\sigma = L$, then $f$ is integrable over $[a, b]$ and $\int_a^b f = L$.   
+
+
+\proof  We assume that $a < b$, since otherwise $L = 0 = \int_a^a f$ and the result is trivial. It is a consequence of the definition of integrability that the conclusion of Theorem 1 is implied by the following proposition: For any positive number $\epsilon $, there exists a partition $\sigma$ of $[a, b]$ such that, where $U_\sigma $ and $L_\sigma$ are, respectively, the upper and lower sums for $f$ relative to $\sigma$, then $|U_\sigma - L | < \epsilon$ and $|L - L_\sigma| < \epsilon$. It is this that we shall prove.
+%APP. C] EQUIVALENT DEFINITIONS OF THE INTEGRAL  673
+
+We first prove that, if $U_\sigma$ is the upper sum for $f$ relative to any partition $\sigma$ of $[a, b]$, then there exists a Riemann sum $R_\sigma^{(1)}$ for $f$ relative to $\sigma$ such that $| U_\sigma - R_\sigma^{(1)} |$ is arbitrarily small. Let $\sigma = \{ x_0, . . ., x_n \}$ be the partition with the usual proviso that 
+$$
+a = x_0 \leq x_1 \leq \cdots \leq x_n = b, 
+$$
+and let $\epsilon$ be an arbitrary positive number. For each $i = 1, . . ., n$, set $M_i$ equal to the least upper bound of the values of $f$ in the subinterval $[x_{i-1}, x_i]$. Then there exists a number $x_i^*$ in $[x_{i-1}, x_i]$ such that 
+$$
+0 \leq M_i - f(x_i^*) \leq \frac{\epsilon}{2(b - a)} .
+$$ 
+Hence
+$$
+0 \leq M_i (x_i - x_{i-1}) - f(x_i^*)(x_i - x_{i-1}) \leq \frac{\epsilon}{2(b - a)} (x_i - x_{i-1}) , 
+$$
+and so
+$$
+0 \leq \sum_{i=1}^n M_i (x_i - x_{i-1}) - \sum_{i=1}^n f(x_i^*)(x_i - x_{i-1}) \leq \frac{\epsilon}{2(b - a)} \sum_{i=1}^n (x_i - x_{i-1})
+$$
+However, 
+\begin{eqnarray*}
+\sum_{i=1}^n M_i (x_i - x_{i-1}) = U_\sigma , \\
+\frac{\epsilon}{2 (b - a)} \sum_{i=1}^n (x_i - x_{i-1}) = \frac{\epsilon}{2(b - a)} (b - a) = \frac{\epsilon}{2} . 
+\end{eqnarray*}
+Moreover, $\sum_{i=1}^n f(x_i^*)(x_i - x_{i-1})$ is a Riemann sum for $f$ relative to $\sigma$, which we denote by $R_\sigma^{(1)}$. Thus the preceding inequalities become
+$$
+0 \leq U_\sigma - R_\sigma^{(1)} \leq \frac{\epsilon}{2},  \hspace{1in}( 1 )
+$$
+which proves the assertion at the beginning of the paragraph.
+
+In an entirely analogous manner, we can prove that, if $L_\sigma$ is the lower sum relative to an arbitrary partition $\sigma$ of $[a, b]$ and if $\epsilon$ is any positive number, then there exists a Riemann sum $R_\sigma^{(2)}$ such that
+$$
+0 \leq R_\sigma^{(2)} - L_\sigma \leq \frac{\epsilon}{2} . \hspace{1in}( 2 )
+$$
+We are now ready to use the premise of Theorem 1 --- the fact that $\lim_{\|\sigma\| \rightarrow 0} R_\sigma = L$. Let $\epsilon$ be an arbitrary positive number. Then there exists a positive number $\delta$ such that, if $\sigma$ is any partition of $[a, b]$ with mesh less than 3, then
+$$
+|R_\sigma - L| < \frac{\epsilon}{2},
+$$
+%674 EQUIVALENT DEFINITIONS OF THE INTEGRAL [APP C
+for every Riemann sum $R_\sigma$. Accordingly, let $\sigma$ be a partition of $[a, b]$ with $\| \sigma \| < \delta$, and let $U_\sigma$ and $L_\sigma$ be, respectively, the upper and lower sums for $f$ relative to this partition. It follows from the preceding two paragraphs that there exist Riemann sums $R_\sigma^{(1)}$ and $R_\sigma^{(2)}$, for $f$ relative to $\sigma$ such that
+\begin{eqnarray*}
+|U_\sigma - R_\sigma^{(1)}| &\leq& \frac{\epsilon}{2} , \\
+|R_\sigma^{(2)} - L_\sigma| &\leq& \frac{\epsilon}{2} ,
+\end{eqnarray*}
+[see inequalities (1) and (2)]. Since the mesh of $\sigma$ is less than $\delta$, we have 
+\begin{eqnarray*}
+                                               |R_\sigma^{(1)} - L_\sigma|  &<& \frac{\epsilon}{2} ,\\
+|L_\sigma - R_\sigma^{(2)} | = |R_\sigma^{(2)} - L_\sigma| &<& \frac{\epsilon}{2} .
+\end{eqnarray*}
+Hence 
+\begin{eqnarray*}
+|U_\sigma - L| 
+&=& |(U_\sigma - R_\sigma) + (R_\sigma - L)| \\
+&\leq& |U_\sigma - R_\sigma + I R_\sigma - L | \\
+&<& \frac{\epsilon}{2}  + \frac{\epsilon}{2}  = \epsilon,
+\end{eqnarray*}
+and, similarly,
+\begin{eqnarray*}
+|L - L_\sigma|
+&=& |(L - R_\sigma^{(2)}) + (R_\sigma ^{(2)} - L_\sigma)\\
+&\leq& |L - R_\sigma ^{(2)}| + |R_\sigma ^{(2)} - L |\\
+&<& \frac{\epsilon}{2}  + \frac{\epsilon}{2}  = \epsilon .
+\end{eqnarray*}
+Thus both $|U_\sigma - L|$ and $|L - L_\sigma|$ are less than $\epsilon$, and the proof of Theorem 1 is complete.
+
+The converse proposition is the following:
+\medskip
+
+\noindent \textbf{THEOREM 2.}~
+If $f$ is integrable over $[a, b]$, then $\lim_{\|\sigma \| \rightarrow 0} R_\sigma = \int_a^b f.$
+
+
+\proof  We assume from the outset that $a < b$. Let $\epsilon$ be an arbitrary positive number. Since $f$ is integrable, there exist partitions of $[a, b]$ with upper and lower sums arbitrarily close to $\int_a^b f$. By taking, if necessary, the common refinement $\sigma \cup \tau$ of two partitions $\sigma$ and $\tau$ (see the inequalities $L_\sigma \leq L_{\sigma \cup \tau} \leq U_{\sigma \cup \tau} \leq U_\tau$ on page 168), we may choose a partition $\sigma_0 = \{ x_0, . . ., x_n \}$ of $[a, b]$ such that
+\begin{eqnarray*}
+U_{\sigma_0} - \int_a^b f &<& \frac{\epsilon}{2} ,  \\
+\int_a^b f - L_{\sigma_0} &<& \frac{\epsilon}{2} .
+\end{eqnarray*}
+%APP. C] EQUIVALENT DEFINITIONS OF THE INTEGRAL  675
+The assumption of integrability implies that the function $f$ is bounded on $[a, b]$. Thus there exists a positive number $B$ such that $If(x)l \leq B$ for every $x$ in $[a, b]$. We define   
+$$
+\delta = \frac{\epsilon}{4Bn} .
+$$
+
+Next, let $\sigma$ be any partition of $[a, b]$ with mesh less than $\delta$. Consider the common refinement $\sigma \cup \sigma_0$. Since
+$$
+L_{\sigma_0} \leq L_{\sigma \cup \sigma_0} \leq \int_a^b f \leq U_{\sigma \cup \sigma_0} \leq U_{\sigma_0}  , 
+$$
+we have
+$$
+U_{\sigma \cup \sigma_0} - \int_a^b f < \frac{\epsilon}{2} , \hspace{1in}( 3 )
+$$
+$$
+\int_a^b f - L_{\sigma \cup \sigma_0} < \frac{\epsilon}{2} . \hspace{1in}( 4 )
+$$
+The partition $\sigma \cup \sigma_0$ may be regarded as having been obtained from $\sigma$ by the addition of at most $n - 1$ new points of $\sigma_0$. Hence at most $n - 1$ of the subintervals of $\sigma$ have been further partitioned by the inclusion of points of $\sigma_0$ in their interiors. Each of these further partitioned subintervals has length less than $b$. It follows that, on each of them, the contribution to the difference $U_\sigma - U_{\sigma \cup \sigma_0}$ is less than the product $\delta (2B)$. On those subintervals of $\sigma$ which have not been hit by points of $\sigma_0$ in their interiors, the corresponding terms of $U_\sigma$ and of $U_{\sigma \cup \sigma_0}$ are the same. We conclude that
+$$
+U_\sigma - U_{\sigma \cup \sigma_0} < (n - 1) \delta (2B), 
+$$
+and, similarly,
+$$
+L_{\sigma \cup \sigma_0} - L_\sigma < (n - 1) \delta (2B).
+$$
+However,
+$$
+(n - 1) \delta (2B) = (n - 1)\frac{\epsilon}{4nB} (2B) < \frac{\epsilon}{2} .
+$$
+Hence
+\begin{eqnarray*}
+U_\sigma - U_{\sigma \cup \sigma_0} &<& \frac{\epsilon}{2} ,\\
+L_{\sigma \cup \sigma_0} - L_\sigma &<& \frac{\epsilon}{2} .
+\end{eqnarray*}
+Combining these inequalities with (3) and (4), we conclude that
+$$
+U_\sigma - \int_a^b f < \epsilon, \hspace{1in}( 5 )  
+$$
+$$
+\int_a^b f - L_\sigma < \epsilon.\hspace{1in} ( 6 )
+$$
+for every partition $\sigma$ with mesh less than $b$.
+%676 EQUIVALENT DEFINITIONS OF THE INTEGRAL [APP. C
+
+Finally, let $R_\sigma$ be an arbitrary Riernann sum for $f$ relative to a partition $\sigma$ of $[a, b]$ with mesh less than $\delta$. We know that
+$$
+L_\sigma \leq R_\sigma \leq U_\sigma 
+$$
+(see page 413). These inequalities together with those in (5) and (6) immediately imply that
+$$
+|R_\sigma - \int_a^b f| < \epsilon .
+$$
+Hence $\lim_{||\sigma|| \rightarrow 0} R_\sigma = \int_a^b f$ and the proof of Theorem 2 is complete.  
+
+The conjunction of Theorems 1 and 2 is equivalent to Theorem (2.1), page 414. We have therefore proved that the definite integral defined in terms of upper and lower sums is the same as the limit of Riemann sums.

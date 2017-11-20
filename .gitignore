@@ -1,0 +1,5 @@
+*eps-converted-to.pdf
+*.aux
+*.log
+*.out
+build/

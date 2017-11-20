@@ -1,0 +1,378 @@
+\section{The Chain Rule.}\label{sec 1.8}
+The theorems in Section \secref{1.7}
+were concerned with finding
+the derivatives of functions that were constructed from other functions
+using the algebraic operations of addition,
+multiplication by a constant, multiplication, 
+and division.
+In this section we shall derive a similar formula,
+called the \dt{Chain Rule}, 
+for the derivative of the composition $f(g)$
+of a differentiable function $g$ with a differentiable function $f$.
+Before giving the theorem,
+we remark that an alternative way
+of writing the definition of the derivative of a function $f$ is
+\begin{equation}
+f'(a) = \lim_{x \goesto a}\frac{f(x) - f(a)}{x - a} . 
+\label{eq1.8.1}
+\end{equation}
+The substitution $x = a + t$
+will transform \eqref{1.8.1}
+into the expression that we have heretofore used for the derivative.
+An equation equivalent to \eqref{1.8.1} is
+$$
+\lim_{x \goesto a} \Bigl[ \frac{f(x)- f(a)}{x-a} - f'(a) \Bigr] = 0.
+$$
+We next define a function $r$ (dependent on both $f$ and $a$) by
+
+\begin{equation}
+r(x) = \left \{ \begin{array}{ll}
+\frac{f(x) - f(a)}{x - a} - f'(a), & \mbox{if}\;\;\; x \neq a,\\
+                                0, & \mbox{if}\;\;\; x = a.
+\end{array}
+\right.
+\label{eq1.8.2}
+\end{equation}
+Note that the two functions $f$ and $r$ have the same domain.
+Furthermore, as a result of \eqref{1.8.2},
+we have
+$$
+\lim_{x \goesto a} r(x) = 0 = r(a),  
+$$
+i.e., the function $r$ is continuous at $a$.
+From the definition of $r$,
+we obtain the equation
+\begin{equation}
+f(x) - f(a) = [f'(a) + r(x)] (x - a),   
+\label{eq1.8.3}
+\end{equation}
+which is true for every $x$ in the domain of $f$. We now prove:
+
+\begin{prop}[The Chain Rule]
+\label{thm 1.8.1}
+If $f$ and $g$ are differentiable functions,
+then so is the composite function $f(g)$. Moreover, $[f(g)]' = f'(g)g'$. 
+\end{prop}
+
+\begin{proof}
+Let $a$ be a number in the domain of $g$ such that $g(a)$
+is in the domain of $f$. 
+By definition
+\begin{eqnarray*}
+[ f (g)]'(a)
+&=& \lim_{x \goesto a}\frac{(f(g))(x) - (f(g))(a)}{x - a}\\
+&=& \lim_{x \goesto a}\frac{f(g(x)) - f(g(a))}{x - a}.
+\end{eqnarray*}
+The intuitive idea behind the Chain Rule can be seen by writing 
+\begin{eqnarray*}
+[f(g)]'(a)
+&=& \lim_{x \goesto a}
+\Bigl[ \frac{f(g(x)) - f(g(a))}{g(x) - g(a)}
+\frac{g(x) - g(a)}{x - a} \Bigr] \\
+&=& \Bigl[ \lim_{x \goesto a} \frac{f(g(x)) - f(g(a))}{g(x) - g(a)} \Bigr]
+\Bigl[ \lim_{x \goesto a}\frac{g(x) - g(a)}{x - a} \Bigr].
+\end{eqnarray*}
+Setting $y = g(x)$ and $b = g(a)$
+and noting that $y$ approaches $b$ as $x$ approaches $a$,
+we have
+\begin{eqnarray*}
+[f(g)]'(a)
+&=&
+\lim_{y \goesto b}\frac{ f(y) - f(b)}{y - b} 
+lim_{x \goesto a} \frac{ g(x) - g(a)}{x - a}\\
+&=& f'(b)g'(a)\\
+&=& (f'(g(a))g'(a)\\
+&=& (f'(g)g')(a),
+\end{eqnarray*}
+which is the desired result.
+
+This argument fails to be a rigorous proof because there is no reason
+to suppose that $g(x) - g(a) \neq 0$ for all $x$ sufficiently close to $a$.
+To overcome this difficulty, we use equation \eqref{1.8.3}.
+With a typical element in the domain of $f$ denoted by $y$ instead of
+$x$ and with the derivative evaluated at $b$, equation \eqref{1.8.3}
+implies that
+$$
+f(y) - f(b) = [f'(b) + r(y)](y - b),
+$$
+Moreover, $\lim_{y \goesto b} r(y) = 0$.
+Substituting $y = g(x)$ and $b = g(a)$, we get
+$$
+f(g(x)) - f(g(x)) = [f'(g(a)) + r(g(x))][g(x) - g(a)].
+$$
+Hence 
+$$
+\frac{f (g(x) ) - f (g(a) )}{x - a}
+= [f'(g(a)) + r(g(x))] \frac{g(x) - g(a)}{x - a} . 
+$$
+We know that $\lim_{x \goesto a} \frac{g(x) - g(a)}{x - a} = g'(a)$.
+In addition, since $g$ is differentiable at $a$, it is continuous there
+[see Theorem \thref{1.6.1}],
+and so $\lim_{x \goesto a} g(x) = g(a) = b$.
+Since $\lim_{y \goesto b} r(y) = 0$,
+it follows that $|r(y)|$ can be made arbitrarily small
+by taking $y$ sufficiently close to $b$.
+Because $\lim_{x \goesto a} g(x) = b$,
+we may therefore conclude that $\lim_{x \goesto a} r(g(x)) = 0$.
+The basic limit theorem \thref{1.4.1}
+asserts that the  limit of a sum or product is the sum or product,
+respectively, of the limits.
+Hence
+\begin{eqnarray*}
+[f(g)]'(a)
+&=& \lim_{x \goesto a}\frac{f(g(x) ) - f(g(a) )}{x - a}\\
+&=& \Bigl[\lim_{x \goesto a} f'(g(a) ) 
++ \lim_{x \goesto a} r (g(x) ) \Bigr]
+\lim_{x \goesto a}\frac{g(x) - g(a)}{x-a}\\
+&=& [f'(g(a)) + 0]g'(a) = f'(g(a))g'(a)\\
+&=& (f'(g)g')(a), 
+\end{eqnarray*}
+and the proof of the Chain Rule is complete.
+\end{proof}
+
+\begin{example}
+\label{exam 1.8.1}
+If $F(x) = (x^2 + 2)^3$, compute $F'(x)$.
+One way to do this problem is to expand $(x^2 + 2)^3$
+and use the differentiation formulas developed in Section \secref{1.7}.
+\begin{eqnarray*}
+F(x) &=& (x^2 + 2)^3 = x^6 + 6x^4 + 12x^2 + 8, \\
+F'(x) &=& 6x^5 + 24x^3 + 24x.
+\end{eqnarray*}
+Another method uses the Chain Rule.
+Let $g$ and $f$ be the functions defined, respectively,
+by $g(x) = x^2 + 2$ and $f(y) = y^3$. Then
+$$
+f(g(x)) = (x^2 + 2)^3 = F(x),
+$$
+and, according to the Chain Rule,
+$$
+F'(x) = [f (g(x))]' = f'(g(x))g'(x) .
+$$
+Since $g'(x) = 2x$ and  $f'(y) = 3y^2$, we get $f'(g(x)) = 3(x^2 + 2)^2$
+and
+\begin{eqnarray*}
+F'(x) &=& 3(x^2 + 2)^2(2x)\\
+&=& 6x(x^4 + 4x^2 + 4),
+\end{eqnarray*}
+which agrees with the alternative solution above.
+\end{example}
+
+\begin{example}
+\label{exam 1.8.2}
+Find the derivative of the function $(3x^7 + 2x)^{128}$.
+In principle, we could expand by the binomial theorem,
+but with the Chain Rule at our disposal
+that would be absurd.
+Let $g(x) = 3x^7 + 2x$ and $f(y) = y^{128}$.
+Then $g'(x) = 21x^6 + 2$ and $f'(y) = 128y^{127}$.
+Setting $y = 3x^7 + 2x$, we get
+\begin{eqnarray*}
+((3x^7 + 2x)^{128})' &=& [f(g(x))]' = f'(g(x))g'(x)\\
+                                &=& 128{(3x^7 + 2x)^{127}}(21x^6 + 2).
+\end{eqnarray*}
+\end{example}
+
+The above two examples are instances of the following
+corollary of the Chain Rule:
+If $f$ is a differentiable function, then
+$$
+(f^n)' = nf^{n-1}f',    \;\;\; \mbox{for any integer} \; n.
+$$
+To prove it, let $F(y) = y^n$.
+Then $F(f) = f^n$,
+and we know that $F'(y) = ny^{n-1}$.
+Consequently, $(f^n)' = [F(f)]' = F'(f) f' = nf^{n-1}f'$.
+A significant generalization of this result is
+
+\begin{prop}
+\label{thm 1.8.2}
+If $f$ is a positive differentiable function
+and $r$ is any rational number,
+then $(f^r)' = rf^{r-1}f'$.
+\end{prop}
+
+The requirement that $f$ is positive assures that $f^r$ is defined.
+A nonpositive number cannot be raised to an arbitrary rational power.
+However, as we shall show later (see \thref{5.4.6},
+the requirement that $r$ be a rational number is unnecessary.
+Theorem \thref{1.8.2} is actually true for any real number $r$.
+
+\begin{proof}
+Let $r = \frac{m}{n}$,
+where $m$ and $n$ are integers,
+and set $h = f^r = f^{m/n}$.
+Then $h^n = (f^{m/n})^n = f^m$,
+which implies that $(h^n)' = (f^m)'$.
+Using the above formula for
+the derivative of an integral power of a function, we get
+\[
+nh^{n-1}h' = mf^{m-1}f'.
+\]
+Solving for $h'$, we obtain 
+\begin{eqnarray*}
+h'
+&=& \frac{m}{n} {h^{1 - n}{f^{m-1}} f'}\\
+&=& \frac{m}{n}{(f^r)^{1- n}{f^{m -1}}f'}\\
+&=& r{f^{r - rn + m - 1}} f'\\
+&=& rf^{r -1} f'.
+\end{eqnarray*}
+
+This completes the proof---almost.
+Note that we have in the argument tacitly assumed that $h$,
+the function whose derivative we are seeking, is differentiable.
+Is it?
+If it is, how do we know it?
+The answer to the first question is yes,
+but the answer to the second is not so easy.
+The problem can be reduced to a simpler one:
+\emph{
+If $n$ is a positive integer
+and $g$ is the function defined by
+$g(x) = x^{1/n}$, for $x > 0$,
+then $g$ is differentiable.}
+If we know this fact,
+we are out of the difficulty
+because the Chain Rule tells us that
+the composition of two differentiable functions is differentiable.
+Hence $g(f)$ is differentiable, and $g(f) = f^{1/n}$.
+From this it follows that $(f^{1/n})^m$ is differentiable,
+and $(f^{1/n})^m = f^{m/n}$.
+(When we express $r$ as a ratio $\frac{m}{n}$,
+we can certainly take $n$ to be positive.)
+A proof that $x^{1/n}$ is differentiable, if $x > 0$,
+is most easily given as an application of the
+Inverse Function Theorem \thref{5.3.4}, \chref{5}.
+However, the intuitive reason is simple:
+If $y = x^{1/n}$ and $x > 0$,
+then $y^n = x$,
+and by interchanging $x$ and y we obtain the equation $x^n = y$.
+The latter equation defines a smooth curve
+whose slope at every point is given by the derivative
+$\frac{dy}{dx} = nx^{n-1}$.
+Interchanging $x$ and $y$ amounts geometrically to
+a reflection about the line $y = x$.
+We conclude that the original curve $y = x^{1/n}, x > 0$,
+has the same intrinsic shape and smoothness
+as that defined by $y = x^n, y > 0$.
+It therefore must have a tangent line at every point,
+which means that $x^{1/n}$ is differentiable.
+\end{proof}
+
+\begin{example}
+\label{exam 1.8.3}
+If $y = x^{1/n}$, then
+$$
+\frac{dy}{dx} = \frac{1}{n} x^{(1/n)-1} = \frac{1}{nx^{1-1/n}}, \;\;\; x > 0.
+$$
+\end{example}
+
+\begin{example}
+\label{exam 1.8.4}
+Find the derivative of the function $F(x) = (3x^2 + 5x + 1)^{5/3}$.
+If we let $f(x) = 3x^2 + 5x + 1$, then Theorem (8.2) implies that
+\begin{eqnarray*}
+F'(x)
+&=& \frac{5}{3} f(x)^{2/3} f'(x)        \\
+&=& \frac{5}{3} (3x^2 + 5x + 1)^{2/3}(6x + 5).
+\end{eqnarray*}
+\end{example}
+
+With the $\frac{d}{dx}$ notation for the derivative,
+the Chain Rule can be written in a form that is impossible to forget.
+Let $f$ and $g$ be two differentiable functions.
+The formation of the composite function $f(g)$
+is suggested by writing $u = g(x)$ and $y = f(u)$.
+Thus $x$ is transformed by $g$ into $u$,
+and the resulting $u$ is then transformed by
+$f$ into $y = f(u) = f(g(x))$.
+We have
+\begin{eqnarray*}
+\frac{du}{dx} &=& g'(x),    \\
+\frac{dy}{du} &=& f'(u),     \\
+\frac{dy}{dx} &=& [f(g(x))]'.
+\end{eqnarray*}
+By the Chain Rule,
+$[f(g(x))]' = f'(g(x))g'(x) = f'(u)g'(x)$,
+and so
+\begin{equation}
+\frac{dy}{dx} = \frac{dy}{du}\frac{du}{dx}. 
+\label{eq1.8.4}
+\end{equation}
+The idea that one can simply cancel out $du$
+in \eqref{1.8.4}
+is very appealing
+and accounts for the popularity of the notation.
+It is important to realize that the cancellation is valid
+because the Chain Rule is true, and \emph{not} vice versa.
+Thus far, $du$ is simply a part of the notation for the derivative
+and means nothing by itself.
+Note also that \eqref{1.8.4}
+is incomplete
+in the sense that it does not say explicitly
+at what points to evaluate the derivatives.
+We can add this information by writing
+$$
+\frac{dy}{dx} (a) = \frac{dy}{du} (u(a)) \frac{du}{dx}(a).
+$$
+
+\begin{example}
+\label{exam 1.8.5}
+If $w = z^2 + 2z + 3$ and $z = \frac{1}{x}$,
+find $\frac{dw}{dx}(2)$. By the Chain Rule,
+\begin{eqnarray*}
+\frac{dw}{dx} &=& \frac{dw}{dz} \frac{dz}{dx}      \\
+                     &=& (2z + 2) \Bigl( - \frac{1}{x^2} \Bigr).
+\end{eqnarray*}
+When $x = 2$, we have $z = \frac {1}{2}$. Hence 
+
+$$
+\frac{dw}{dx} (2) = (2 \cdot \frac{1}{2} + 2)( -\frac{1}{4}) = - \frac{3}{4}.
+$$
+\end{example}
+
+\begin{example}
+\label{exam 1.8.6}
+Two functions,
+which we shall define in Chapter \chref{11},
+are the hyperbolic sine and the hyperbolic cosine,
+denoted by $\sinh x$ and $\cosh x$ respectively.
+These functions are differentiable and have the interesting property that
+\begin{eqnarray*}
+\frac{d}{dx} \sinh x  &=& \cosh x, \\
+\frac{d}{dx} \cosh x &=& \sinh x.
+\end{eqnarray*}
+Furthermore, $\sinh (0) = 0$ and $\cosh (0) = 1$.
+Compute the derivatives at $x= 0$ of
+\begin{quote}
+(a) $(\cosh x)^2$,
+
+(b) the composite function $\sinh (\sinh x)$. 
+\end{quote}
+By \thref{1.8.2},
+we obtain for (a)
+$$
+\frac{d}{dx}(\cosh x)^2 = 2 \cosh x \frac{d}{dx} \cosh x = 2 \cosh x \sinh x,
+$$
+and so 
+$$
+\frac{d}{dx} {(\cosh x)^2}(0) = 2 \cosh 0 \sinh 0 = 0.
+$$
+Part (b) requires the full force of the Chain Rule:
+Setting $u = \sinh x$, we obtain
+\begin{eqnarray*}
+\frac{d}{dx} \sinh u
+&=& \frac{d}{du} \sinh u \frac{du}{dx}  \\
+&=& \cosh u \cosh x, 
+\end{eqnarray*}
+or
+\[
+\frac{d}{dx} \sinh (\sinh x) = \cosh (\sinh x) \cosh x.
+\]
+Hence
+\begin{eqnarray*}
+\frac{d}{dx} \sinh (\sinh x)(0)
+&=& \cosh (\sinh 0) \cosh 0   \\
+&=& \cosh 0 \cosh 0 = 1.
+\end{eqnarray*}
+\end{example}

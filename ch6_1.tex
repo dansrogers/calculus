@@ -1,0 +1,234 @@
+\chapter{Trigonometric Functions}\label{chp 6}
+ 
+Although the reader is probably familiar with the geometry of sines and cosines, etc., in terms of angles, our definitions will emphasize them as functions of a real variable. Thus the stage is set for the development of the differential and integral calculus of these important functions.  Later in the chapter we introduce complex numbers where exponential and trigonometric functions are blended in the famous equation $e^{ix} = \cos x + i \sin x$. We conclude with an application to linear differential equations.
+
+\section{Sine and Cosine.}
+In this section we shall define and study the elementary properties of two real-valued functions, the sine and the cosine, abbreviated $\sin$ and $\cos$, respectively. Both functions have as domain the entire set of all real numbers, and, as we shall see in Section 2, both are differentiable functions.
+
+The definitions will be made in terms of what is called arc length, by which is meant the distance from one point on a curve to another measured along the curve. This is a new concept, for although we have defined the straight-line distance between two points on page 11, we have not yet treated distance along a curve. Actually we shall postpone the discussion of arc length in general to Section 2 of Chapter 10 because here we need it only for distance along a circle, in fact, only along the particular circle $C$ which is the graph of the equation $x^2 + y^2 = 1$ in the $xy$-plane. However, we shall assume that the idea of distance along this curve is understood. For example, we assume the familiar fact that the arc length of the whole circle $C$, i.e., its circumference, is equal to $2\pi$.
+
+Let $t$ be an arbitrary positive real number. We denote by $P(t)$ the point on the
+circle $C$ whose distance from the fixed point (1, 0) along $C$ in the counterclockwise direction is equal to $t$. Intuitively, we take a piece of string of length $t$, fasten one end at (1, 0), and wrap the string counterclockwise around $C$. Then $P(t)$ is the point on the circle to which the other end of the string reaches. Next, for every negative number $t$, let $P(t)$ be the point on $C$ whose distance from the same fixed point (1, 0) along the curve in the clockwise direction is equal to $-t$. That is, this time we wrap the string in the opposite direction. Finally, for $t = 0$, we set $P(0) = (1,0)$. The definition
+%282 TRIGONOMETRIC FUNCTIONS [CHAP. 6
+is illustrated in Figure \f{6.1}. Thus, to every real number $t$, we have assigned a point $P(t)$ which is an ordered pair of real numbers. Note that, because the circumference of the circle $C$ is $2\pi$, it follows that
+
+\begin{equation}
+P(t + 2\pi) = P(t), 
+\label{eq6.1.1}
+\end{equation}
+\noindent for every real number $t$.  
+ 
+\putfig{4truein}{scanfig6_1}{}{fig 6.1}
+
+The cosine and sine are now defined as follows: $\cos(t)$ is the $x$-coordinate of $P(t)$, and $\sin(t)$ is the $y$-coordinate. More briefly, we write $\cos t$ and $\sin t$. Thus
+
+$$
+P(t) = (\cos t, \sin t).  
+$$
+
+\noindent For example, from Figure \f{6.1}, in which $P(5)$ is seen to be in the fourth quadrant, we may
+conclude that $\cos 5$ is positive and that $\sin 5$ is negative. It is clear geometrically that, if the
+difference between two real numbers $t$ and a is small, then the point $P(t)$ is close to the point
+$P(a)$ and hence the differences between their corresponding coordinates are small. More precisely, both $| \cos t - \cos a |$ and $| \sin t - \sin a|$ can be made arbitrarily small by choosing $|t - a|$ sufficiently small. It follows that the cosine and the sine are eontinuous functions. Their
+common domain is the set of all real numbers.
+
+For certain values of $t$ which are simple fractions of the total eircumference $2\pi$, it is easy to
+locate the point $P(t)$ on the circle and then to read off the coordinates $\cos t$ and $\sin t$. For example (see Figure \f{6.2}),
+
+\begin{eqnarray*}
+                P(0) &=& (1,0),\\
+P \Bigl(\frac{\pi}{4} \Bigr) &=& (\frac{1}{2} \sqrt2, \frac{1}{2} \sqrt2),\\
+%SEC. 1] SINE AND COSINE 283
+ P \Bigl(\frac{\pi}{2}\Bigr) &=& (0, 1),\\
+                               P(\pi) &=& (-1, 0),\\
+P \Bigl(\frac{3\pi}{2}\Bigr) &=& (0, -1), 
+\end{eqnarray*}
+
+\noindent from which it follows at once that 
+\begin{eqnarray*}
+                \cos 0 &=& 1 \;\mbox{and}\; \sin 0 = 0, \\
+ \cos \frac{\pi}{4} &=&  \sin \frac{\pi}{4} = \frac{1}{2} \sqrt2,\\
+ \cos \frac{\pi}{2} &=& 0 \;\mbox{and}\; \sin \frac{\pi}{2} = 1, \\
+               \cos \pi &=& -1 \;\mbox{and}\; \sin \pi = 0, \\
+\cos \frac{3\pi}{2} &=& 0 \;\mbox{and}\; \sin \frac{3\pi}{2} = -1, 
+\end{eqnarray*}
+
+\noindent The reader should be thoroughly familiar with all these values---not by sheer memory, 
+but from an understanding of $P(t)$ and its location on the circle $C$.
+
+\putfig{4truein}{scanfig6_2}{}{fig 6.2}
+
+Most of the important properties of the functions $\cos$ and $\sin$ can be expressed in a few equations called trigonometric identities. Some of these are obvious from the definition of $P(t)$. To begin with, it follows from (1) that
+$$
+(\cos(t + 2\pi), \sin(t + 2\pi)) = P(t + 2\pi) = P(t) = (\cos t, \sin t), 
+$$
+\noindent and so
+
+
+\begin{theorem} %(1.1)
+$$
+\begin{array}{l}
+\cos(t + 2\pi) = \cos t \\
+\sin(t + 2\pi) = \sin t 
+\end{array}
+\left\}\;  \mbox{for every real number}\; t.
+\right .
+$$
+\end{theorem}
+% 284 TRIGONOMETRIC FUNCTIONS [CHAP. 6
+
+The property of $\cos$ and $\sin$ stated in these two equations is expressed in words by saying that
+$\cos$ and $\sin$ are \textbf{periodic functions} with \textbf{period} $2\pi$. That is, each time the value of the variable is increased by $2\pi$, the value of each function is repeated.
+
+Next, since $P(t)$ lies on the circle defined by $x^2 + y^2 = 1$, the coordinates of $P(t)$ must satisfy this equation. Hence
+
+
+\begin{theorem} %( 1.2 ) 
+$$
+(\cos t)^2 + (\sin t)^2 = 1,  \;\;\;\mbox{for every real number}\; t.
+$$
+\end{theorem}
+
+There is a strong tradition for abbreviating $(\cos t)^n$ and $(\sin t)^n$ by $\cos^{n}t$ and $\sin^{n}t$, respectively, provided $n$ is a positive integer. [However, one \textit{never} writes $\sin^{-1}t$ for $(\sin t)^{-1}$.] As a result, (1.2) is usually written
+$$
+\cos^{2} t + \sin^{2} t = 1.
+$$
+
+The third basic property of $\cos$ and $\sin$ comes from the relation between $P(t) = (\cos t, \sin t)$ and $P(-t) = (\cos(-t), \sin(-t))$. It is not hard to see that the difference between measuring the arc length $|t|$ in the counterclockwise direction from (1, 0) and measuring the same distance in the clockwise direction will be only a difference of sign in the $y$-coordinate of $P(t)$.  That is,
+$$
+P(-t) = (\cos(-t), \sin(-t)) = (\cos t, -\sin t).
+$$
+\noindent It follows that 
+
+\begin{theorem} %( 1.3 ) 
+$$
+\begin{array}{l}
+\cos(- t) = \cos t  \\
+\sin(- t) = - \sin t
+\end{array}
+  \} \; \mbox{for every real number $t$.}
+$$
+\end{theorem}
+
+Thus the cosine is an even function, and the sine is an odd function (see pages 90 and 92).
+
+If $a$ and $b$ are any two real numbers, what can we say about the relative positions of the points
+$P(a)$, $P(b)$ and $P(a + b)$ on the circle $C$ defined by $x^2 + y^2 = 1$ ? lt follows from the definition of $P(t)$ that the point $P(a + b)$ is obtained by moving from $P(0) = (1, 0)$ a distance $|a + b|$ along $C$ counterclockwise or clockwise according as $a + b$ is positive or negative. However, it is important to realize that $P(a + b)$ can be reached in two steps another way: First, move from $P(0)$ a distance $|a|$ along $C$, counterclockwise or clockwise according as $a$ is positive or negative. This move will take us to $P(a)$. Second, move from $P(a)$ a distance $|b|$ along $C$, counterclockwise if $b$ is positive and clockwise if $b$ is negative. By examining the different cases--- $a > 0$ and $b > 0$, then $a < 0$ and $b > 0$, etc.---one can verify that the final point reached in these two steps is $P(a + b)$. Note, however, that in the
+% S[C. 1] S[N' AND COSINE  285
+second step we move from $P(a)$ to $P(a + b)$ in exactly the same way that we would move from
+$P(0)$ to $P(b)$ according to the definition of $P(b)$---by moving along $C$ the same distance and in the same direction. Thus the distance moved along the circle from $P(a)$ to $P(a + b)$ is equal to the distance moved from $P(0)$ to $P(b)$. It follows that the straight-line distances are the same, too. That is, \textit{the straight-line distance between $P(a + b)$ and $P(a)$ is equal to the straight-line distance between $P(b)$ and $P(0)$.} This important fact is illustrated in Figure \f{6.3}.
+
+
+\putfig{2.75truein}{scanfig6_3}{}{fig 6.3}
+
+We can now derive a formula for the cosine of the difference of two numbers, $\cos(c-d)$, in terms of the cosines and sines of $c$ and $d$. Let $a = d$ and $b = c - d$. Then $a + b = c$, and it follows directly from the conclusion of the preceding paragraph that the straight-line distance between $P(c)$ and $P(d)$ is equal to the straight-line distance between $P(c - d)$ and (1, 0). But
+
+
+\begin{eqnarray*}
+P(c) &=& (\cos c, \sin c),\\
+P(d) &=& (\cos d, \sin d),\\
+P(c-d) &=& (\cos (c-d), \sin (c-d)).
+\end{eqnarray*}
+
+\noindent Hence by the formula for the distance between two points, 
+$$
+\sqrt{(\cos c - \cos d)^2 + (\sin c - \sin d)^2}
+= \sqrt{(\cos (c - d) - 1)^2 + (\sin (c - d) - 0)^2}.
+$$
+\noindent Squaring both sides and multiplying out, we get 
+
+\begin{eqnarray*}
+&&\cos^{2}c - 2 \cos c \cos d + \cos^{2}d + \sin^{2}c - 2 \sin c \sin d + \sin^{2}d\\
+&&= \cos^{2}(c - d) - 2 \cos(c - d) + 1 + \sin^{2}(c - d).
+\end{eqnarray*}
+%286 TRIGONOMETRIC FUNCTIONS [CHAP. 6
+\noindent This equation can be greatly simplified by use of the formula $\cos^{2}t + \sin^{2}t = 1$ three times.  The result is
+$$
+2 - 2 \cos c \cos d - 2 \sin c \sin d = 2 - 2 \cos(c - d), 
+$$
+\noindent from which follows the identity
+
+\begin{theorem} %(1.4) 
+$$
+\begin{array}{c}
+\cos(c - d) = \cos c \cos d + \sin c \sin d, \\
+\; \mbox{for all real numbers $c$ and $d$.} 
+\end{array}
+$$
+\end{theorem}
+
+A similar formula for $\cos(c + d)$ can be obtained easily from (1.3) and (1.4). We have 
+
+$$
+\cos(c + d) = \cos(c - (-d)) = \cos c \cos(-d) + \sin c \sin(-d).  
+$$
+
+\noindent Since $\cos(-d) = \cos d$, and $\sin(-d) = -\sin d$, we get
+
+\begin{theorem} %(1.5 ) 
+$$
+\begin{array}{c}
+\cos(c + d) = \cos c \cos d - \sin c \sin d, \\ 
+\;\mbox{for all real numbers $c$ and $d$.} 
+\end{array}
+$$
+\end{theorem}
+
+Taking $c = \frac{\pi}{2}$ in (1.4), we get $ \cos \Bigl(\frac{\pi}{2} - d \Bigr) = \cos \frac{\pi}{2} \cos d + \sin \frac{\pi}{2} \sin d$. Since $\cos \frac{\pi}{2} = 0$ and $\sin \frac{\pi}{2} = 1$, the result is the useful equation $\cos \Bigl(\frac{\pi}{2} - d \Bigr) = \sin d$. This equation implies its mate. If we write it letting $d = \frac{\pi}{2} - a$, then $\frac{\pi}{2} - d = a$ and we obtain $\cos a = \sin \Bigl(\frac{\pi}{2} - a\Bigr)$. Thus we have proved the symmetric pair of identities 
+
+\begin{theorem} %(1.6 )
+$$
+\begin{array}{l}
+\cos \Bigl(\frac{\pi}{2} - a\Bigr) = \sin a  \\
+\sin \Bigl(\frac{\pi}{2} - a\Bigr) = \cos a
+\end{array}
+ \} \;\mbox{for every real number $a$.}  
+$$
+\end{theorem}
+
+The remaining two identities are the formulas for the sine of the sum and difference of two numbers. The first follows easily from (1.4) and (1.6):
+
+\begin{eqnarray*}
+\sin (a + b) &=& \cos \Bigl(\frac{\pi}{2} - (a + b) \Bigr) = \cos \Bigl(\Bigl(\frac{\pi}{2} -a\Bigr) - b\Bigr)\\
+                  &=& \cos \Bigl(\frac{\pi}{2} -a\Bigr) \cos b + \sin \Bigl(\frac{\pi}{2} - a\Bigr) \sin b \\
+                  &=& \sin a \cos b + \cos a \sin b.
+\end{eqnarray*}
+%src. 1] SINE AND COSINE 287
+
+\noindent Thence, by (1.3), 
+\begin{eqnarray*}
+\sin(a-b) &=& \sin(a + (-b)) \\
+              &=& \sin a \cos(-b) + \cos a \sin(-b) \\
+              &=& \sin a \cos b - \cos a \sin b. 
+\end{eqnarray*}
+
+\noindent We write these together in the formula
+
+\begin{theorem} %( 1.7 ) 
+$$
+\begin{array}{c}
+\sin(a \pm  b) = \sin a \cos b \pm \cos a \sin b, \\
+\mbox{for all real numbers $a$ and $b$}.
+\end{array}
+$$
+\end{theorem}
+
+An alternative approach to the trigonometric functions is made with a domain of angles instead
+of real numbers. We shall show that the two approaches are in no way contradictory.
+
+It is assumed that the reader knows what an angle is and what its initial side, its terminal side, and its vertex are. An angle $\alpha$ is said to be in standard position on a Cartesian grid if it has its vertex at the origin and its initial side lies along the positive $x$-axis. If any point, excluding the vertex, on the terminal side is chosen, it has an abscissa $x$ and an ordinate $y$ and lies at a distance $d$ from the origin. Although each point on the terminal side has its $x$, its $y$, and its $d$, it is easy to see that the ratios $\frac{x}{d}$ and $\frac{y}{d}$ are independent of the choice of the point, i.e., in Figure \f{6.4} we have $\frac{x}{d} = \frac{x_1}{d_1}$ and $\frac{y}{d} = \frac{y_1}{d_1}$.  
+
+\putfig{2.75truein}{scanfig6_4}{}{fig 6.4}
+
+Since the location of the terminal side depends on the angle, each of these ratios is a function of
+the angle and we define the cosine of $\alpha$ to be $\frac{x}{d}$ and the sine of $\alpha$ to be $\frac{y}{d}$. Since we may choose any point (not the origin) on the terminal side, we could simplify the process by choosing the point where
+% 288 TRIGONOMETRIC FUNCTIONS [CHAP. 6
+$d = 1$. This, of course, is the point where the terminal side euts the eirele with equation $x^2 +
+y^2 = 1$. Then $\cos \alpha$ is the abscissa of that point and $\sin a$ its ordinate. Hence in many ways the two approaches are the same.
+
+We have not yet mentioned units for measuring angles. If we piek a unit to agree with the are
+length, we would have exact agreement: The cosine of an angle of $u$ such units is equal to the
+cosine of the real number $u$ and the sine of an angle of $u$ sueh units is equal to the sine of the
+real number $u$. This unit is ealled the \textbf{radian} and it should be obvious that there are $2\pi$ radians in an angle of one revolution. Another unit, probably more familiar to the reader, is the \textbf{degree,} which is $\frac{1}{360}$ of a revolution and $\frac{\pi}{180}$ of a radian. Thus the cosine of an angle of $d$ degrees is equal to the cosine of the real number $\frac{\pi d}{180}$.
+
+ 

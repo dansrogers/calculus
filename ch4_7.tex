@@ -1,0 +1,222 @@
+\section{Area between Curves.}
+ Let $f$ be a function which is integrable over the interval $[a, b]$ and
+whose graph may cross the $x$-axis a finite number of times in the interval. It was shown in Section 4 that the relation between area and the definite integral is given by the formula
+
+\begin{equation}
+\int_{a}^{b} f(x) dx = area(P^{+}) - area(P^{-}),   
+\label{eq4.7.1}
+\end{equation}
+\noindent where $P^{+}$ is the set of all points $(x,y)$ such that 
+$a \leq x \leq b$ and $0 \leq y \leq f(x)$, and $P^{-}$ is the set of all points $(x, y)$ such that $a \leq x \leq b$
+% 220 IA~FEGRA TIO N [CHAP. 4
+and $f(x) \leq y \leq 0$. If we exclude their boundaries, then either or both of the regions $P^{+}$ and $P^{-}$ may consist of several pieces. This possibility is illustrated in Figure \f{4.17}, which shows the graph of a continuous function $f$ 
+which crosses the $x$-axis at the four points $a$, $b$, $c$, and $d$.  For the regions shown in the figure, we have
+
+\putfig{4.5truein}{scanfig4_17}{}{fig 4.17}
+
+\begin{eqnarray*}
+area(P^{+}) &=& \int_{a}^{b} f(x) dx + \int_{c}^{d} f(x) dx,\\
+area(P^{-}) &=& - \int_{b}^{c} f(x) dx.
+\end{eqnarray*}
+
+\noindent Since $area(P^{+} \cup P^{-}) = area(P^{+}) + area(P^{-})$, it follows that
+
+$$
+area(P^{+} \cup P^{-}) = \int_{a}^{b} f(x) dx - \int_{b}^{c} f(x) dx + \int_{c}^{d} f(x) dx.
+$$
+\noindent Suppose in this example that $F$ is an antiderivative of $f$ on the interval $[a, d]$; i.e., we have $F'(x) = f(x)$ for every $x$ in $[a, d]$. Then
+
+\begin{eqnarray*}
+\int_{a}^{b} f(x) dx &=& F(b) - F(a),\\
+\int_{b}^{c} f(x) dx &=& F(c) - F(b), \\
+\int_{c}^{d} f(x) dx &=& F(d) - F(c).
+\end{eqnarray*}
+
+\noindent Hence the total area is given by
+\begin{eqnarray*}
+area(P^{+} \cup P^{-}) &=& [F(b) - F(a)] - [F(c) - F(b)] + [F(d) - F(c)] \\
+                                    &=& -F(a) + 2F(b) - 2F(c) + F(d).
+\end{eqnarray*}
+%S[C. 7] AREA BETWEEN CURVES  221
+
+In this section we shall extend (1) to compute the areas of regions with more complicated boundaries. The principal result here is the following:
+
+\begin{theorem} %(7.1) 
+Let the functions $f$ and $g$ be integrable over a closed interval $[a, b]$, and suppose that $g(x) \leq f(x)$ for every $x$ in $[a, b]$. If $R$ is the set of all points $(x, y)$ such that $a \leq  x \leq  b$ and $g(x) \leq  y \leq  f(x)$, then
+$$
+ area(R) = \int_{a}^{b} [f(x) - g(x)]dx.
+$$
+\end{theorem}
+
+\putfig{4.5truein}{scanfig4_18}{}{fig 4.18}
+ 
+\begin{proof}
+The region $R$ is illustrated in Figure \f{4.18}(a). The only complicating feature of the proof is the fact that $g$ or $f$, or both, may take on negative values in the interval $[a, b]$. If this happens [as it does in Figure \f{4.18}(a)], we shall simply slide, or translate, the graphs of $g$ and $f$ upward so that the region between them lies above the $x$-axis and its area is unchanged. The sliding, or translation, is shown geometrically in Figure \f{4.18}(b), and can be accomplished anaIytically as follows. Let $l$ be a lower bound for the values of the function $g$ on the interval $[a, b]$; i.e., we choose a number $l$ such that $l \leq g(x)$ for every $x$ in $[a, b]$. Such a number certainly exists since $g$ is assumed to be integrable over $[a, b]$, and is therefore bounded on $[a, b]$. In addition, if it does happen that $g(x) \geq 0$ for every $x$ in $[a, b]$, then we take $l = 0$. We now define functions $f^{*}$ and $g^{*}$ by
+\begin{eqnarray*}
+f^{*}(x) &=& f(x) + |l|, \\
+g^{*}(x) &=& g(x) + |l|. 
+\end{eqnarray*}
+Their graphs and the region between them, which is
+denoted by $R^{*}$, is shown in Figure \f{4.18}(b). It is obvious that
+$$
+area(R) = area(R^*).
+$$
+Let $P$ be the set of points bounded by the graph of $g^{*}$, the $x$-axis, and the lines $x = a$ and $x = b$.
+By the integral formula for area, we know that  
+\begin{eqnarray*}
+area(P \cup R^{*}) &=& \int_{a}^{b} f^{*}(x) dx,\\
+           area(P) &=& \int_{a}^{b} g^{*}(x) dx.
+\end{eqnarray*}
+Since $area(R^{*}) = area(P \cup R^{*}) - area(P)$, we obtain
+\begin{eqnarray*}
+area(R) &=& area(R^{*}) = \int_{a}^{b} f^{*}(x) dx - \int_{a}^{b} g^{*}(x) dx  \\
+        &=& \int_{a}^{b} [f^{*}(x) - g^{*}(x)]dx.
+\end{eqnarray*}
+However, 
+\begin{eqnarray*}
+f^{*}(x) - g^{*}(x) &=& [f(x) + |l| ] - [g(x) + |l| ] \\
+                    &=& f(x) - g(x).
+\end{eqnarray*}
+Hence
+$$
+area(R) = \int_{a}^{b} [f(x) - g(x)] dx, 
+$$
+and the proof is complete.
+\end{proof}
+
+It should be remarked that, rigorously speaking, the above proof omits some logical details. These occur in our use of the function \textit{area}. To begin with, we have not in this book attempted to give a mathematical definition of the area of a set, although we have shown that if \textit{area} does exist and satisfies certain simple properties, then the integral formula (1) is valid. Moreover, in the preceding paragraph we have tacitly assumed some of the properties of area which are obvious to the intuition, but logically would require proof. For example, we assumed that area is invariant under translation when we asserted that $area(R)= area(R^{*})$. In the same way, our statement that $area(R^{*}) = area(P \cup R^{*}) - area(P)$ [see Figure \f{4.18}(b)] was based solely on geometric intuition. There is nothing wrong with omitting these details, but it is important that a careful reader realize that the omissions are there.
+
+%EXAMPLE 1.
+\begin{example} 
+Compute the area of the region $R$ bounded by the graphs of the functions $f(x) = 2x - 1$ and $g(x) = - (2x - 1)^2$. and the lines $x = 1$ and $x= 2$. Since
+
+\begin{eqnarray*}
+g(x) \leq 0, && \;\;\;\mbox{for every}\; x, \\
+f(x) \geq 0, &&\;\;\;\mbox{if}\; 1 \leq x \leq 2,
+\end{eqnarray*}
+it follows that $g(x) \leq f(x)$ on the interval [1, 2]. Both functions are continuous and hence integrable, and so (7.1) is applicable. We obtain
+
+$$
+area(R) = \int_{1}^{2} [f(x) - g(x)] dx. 
+$$
+\noindent Since $f(x)-g(x) = (2x-1) + (2x-1)^2 = 4x^2 - 2x$, the answer is
+
+\begin{eqnarray*}
+area(R) &=& \int_{1}^{2} (4x^2 - 2x) dx = (\frac{4}{3}x^3 - x^2) \Big|_{1}^{2}\\
+             &=& (\frac{32}{3} - 4) - (\frac{4}{3} - 1) = \frac{19}{3}. 
+\end{eqnarray*}
+\end{example}
+\medskip
+
+%EXAMPLE 2. 
+\begin{example}
+Find the area of the region $R$ lying between the lines $x = - 1$ and $x = 2$ and between the curves $y = x^2$ and $y = x^3$. We first sketch the
+lines and curves in question and indicate the region $R$ by shading (see Figure \f{4.19}). Observe that
+
+\begin{eqnarray*}
+x^3 \leq x^2, &&\;\;\;\mbox{if}\; - 1 \leq x \leq 1,\\
+x^2 \leq x^3, &&\;\;\;\mbox{if}\; 1 \leq x \leq 2.
+\end{eqnarray*}
+\putfig{3.25truein}{scanfig4_19}{}{fig 4.19}
+
+% 224 INTEGRATION [CHAP. 4
+\noindent Writing $R$ as the union of regions $R_1$ and $R_2$, as is done in the figure, we have, by (7.1),
+
+\begin{eqnarray*}
+area(R_1) &=& \int_{-1}^{1} (x^2 - x^3) dx, \\
+area(R_2) &=& \int_{1}^{2} (x^3 - x^2) dx.
+\end{eqnarray*}
+\noindent Hence 
+
+\begin{eqnarray*}
+area(R) &=& area(R_1) + area(R_2)\\
+             &=& \int_{-1}^{1} (x^2 - x^3) dx + \int_{1}^{2} (x^3 - x^2) dx.
+\end{eqnarray*}
+
+\noindent The function $F(x) =\frac{x^3}{3} - \frac{x^4}{4}$ is clearly an indefinite integral of $x^2 - x^3$.  Thus
+
+\begin{eqnarray*}
+\int_{-1}^{1} (x^2 - x^3)dx &=& F(x) \Big|_{-1}^{1}  = F(1) - F( - 1),\\
+\int_{1}^{2} (x^3 - x^2) dx &=& - \int_{1}^{2} (x^2 - x^3)dx\\
+                            &=& -F(x) \Big|_{1}^{2} = - F(2) + F(1).
+\end{eqnarray*}
+\noindent Finally, therefore, 
+
+\begin{eqnarray*}
+area(R) &=& F(1) - F( - 1) - F(2) + F(1)\\
+        &=& \frac{1}{12} + \frac{7}{12} + \frac{4}{3} + \frac{1}{12} = \frac{25}{12}.
+\end{eqnarray*}
+\end{example}
+\medskip
+
+Because of symmetry, each of the integral formulas for area which we have developed has an obvious counterpart for functions of $y$. For example, if $f$ is the function of $y$ whose graph is drawn in Figure \f{4.20}, then
+
+$$
+\int_{c}^{d} f(y) dy = area(P^{+}) - area(P^{-}),
+$$
+\noindent where $P^{+}$ and $P^{-}$ are the regions indicated in the figure.
+
+Sometimes a curve in the $xy$-plane can be defined as the graph of a function of $y$ and not as a function of $x$. An example is the parabola defined by the equation $(y -1)^2 = x - 1$ and illustrated in Figure \f{4.21}. Although this equation cannot be solved uniquely for $y$ in terms of $x$, it is easy to do the opposite. We get
+
+$$
+x = (y -1)^2 + 1 = y^2 - 2y + 2,
+$$
+%SEC. 7] AREA BETWEEN CURVES  225
+\noindent and so the curve is the graph of the function $f$ defined by $f(y) = y^2 - 2y + 2$. The area of the region $P$ bounded by the parabola, the two coordinate axes, and the horizontal line $y = 2$ is given by
+
+\begin{eqnarray*}
+area(P) &=& \int_{0}^{2} f(y)dy = \int_{0}^{2} (y^2 - 2y + 2) dy \\
+        &=& \Bigl( \frac{y^3}{3} - y^2 + 2y \Bigr) \Big|_{0}^{2} = \frac{8}{3}.
+\end{eqnarray*}
+
+\putfig{2.5truein}{scanfig4_20}{}{fig 4.20}
+
+\putfig{3.25truein}{scanfig4_21}{}{fig 4.21}
+
+%EXAMPLE 3. 
+\begin{example}
+Express the area of the shaded region $Q$ in Figure \f{4.22}(a) as a sum of definite
+integrals. There are many different ways to do this. We shall
+%226 IN7EGRATION [CHAP. 4
+begin by subdividing $Q$ into four subregions $Q_1$, $Q_2$, $Q_3$, and $Q_4$ using the two vertical lines $x = a_1$, and $x = a_2$ as shown in Figure \f{4.22}(b).
+
+Consider for a moment the region $Q_1$ alone. Every horizontal line $L$ which intersects $Q_1$ cuts its boundary in at most two points. Suppose that $L$ crosses the $y$-axis at the point $(0, y)$. Moving along $L$ from left to right, we denote the $x$-coordinate of the first point encountered on the boundary of $Q_1$, by $g_{1}(y)$. In this way a function $g_{1}$ is defined whose graph forms the ``western boundary" of $Q_{1}$. In fact, $Q_1$ is the region between $y = b_1$ and $y = b_2$ [see Figure \f{4.22}(b)] and also between the curves $x = g_{1}(y)$ and $x = a_1$. By the counterpart of (7.1) for functions of $y$, we therefore obtain
+
+\[
+area(Q_1) = \int_{b_1}^{b_2} [a_1 - g_1(y)] dy.  
+\]
+
+\putfig{4.5truein}{scanfig4_22}{}{fig 4.22}
+
+Turning next to the region $Q_2$, we see that the ``northern boundary" is the graph of a function $f_1$, and the ``southern boundary" is the graph of a
+% SEC. 7] AREA BETWEEN CURVES  227
+function $f_2$. These functions are indicated in Figure \f{4.22}(c). Hence 
+
+$$
+area( Q_2) = \int_{a_1}^{a_2} [f_{1}(x) - f_{2}(x)]dx. 
+$$
+\noindent Similarly, we have 
+
+$$
+area(Q_3) = \int_{a_1}^{a_2} [h_{1}(x) - h_{2}(x)] dx, 
+$$
+\noindent and also 
+
+\[
+area(Q_4) = \int_{c_1}^{c_2}  [g_{2}(y) - a_{2}]dy.
+\]
+\noindent Since $area(Q) = area(Q_1) + area(Q_2) + area(Q_3) + area(Q_4)$, we therefore obtain finally
+
+\begin{eqnarray*}
+area(Q) =
+&&
+\int_{b_1}^{b_2} [a_{1} - g_{1}(y)] dy
++
+\int_{a_1}^{a_2} [f_{1}(x) - f_{2}(x)] dx
+\\
+&&+
+\int_{a_1}^{a_2} [h_{1}(x) - h_{2}(x)] dx
++ \int_{c_1}^{c_2} [g_{2}(y) - a_{2}] dy.
+\end{eqnarray*}
+ 
+\end{example}

@@ -1,0 +1,156 @@
+\begin{exercises}
+
+\ex{1.4.1}
+Compute the following limits.
+\begin{exenum}
+\sx
+$\lim_{x \goesto 1} \frac{x^3-1}{x-1}$
+\sx
+$\lim_{x \goesto 2} \frac{x^2 - 5x +6}{x-2}$
+\sx
+$\lim_{x \goesto 3} \frac{x^2-5x+6}{x-3}$
+\sx
+$\lim_{x \goesto 1} \left( \frac{x^2}{x-1} - \frac{1}{x-1} \right)$
+\sx
+$\lim_{x \goesto 0} x^{\frac32}$
+\sx
+$\lim_{x \goesto 0} \frac{\sqrt{x+1}-1}x$
+\sx
+$\lim_{x \goesto 0} |x|$
+\sx
+$\lim_{h \goesto 0} \left( \frac{1-h^2}{h^2} + \frac{6h^2-1}{h^2} \right )$
+\sx
+$\lim_{x \goesto 0} \frac{(a+x)^3 + 2(a+x) - a^3 - 2a}x$
+\sx
+$\lim_{h \goesto 0} \frac{2(x+h)^2 - (x+h) - 2x^2 +x}h$.
+\end{exenum}
+
+\ex{1.4.2}
+For each of the following functions, find those numbers (if any)
+at which the function is not continuous.
+\begin{exenum}
+\sx
+$x^3 + 3x - 1$
+\sx
+$f(x) = |x|$
+\sx
+$\frac{x^3+x+1}{x^2-x-2}$
+\sx
+$g(x) = \frac{x^3-3x-2}{x-2}$
+\sx
+$\sqrt{x+3}$
+\sx
+$h(x) = \frac{|x|}x$
+\sx
+$f(x) = \dilemma{|x|,&  |x| \leq 1}{2-x^2,&  |x| > 1}$
+\sx
+$F(x)= \dilemma{1,& \mbox{if $x$ is rational}}{0,& \mbox{if $x$ is irrational}}$
+\sx
+$f(x)= \dilemma
+{x^2 +2x +1,& \mbox{if $x \ne 1$}}
+{1,& \mbox{if  $x = 1$}}
+$
+\end{exenum}
+
+\ex{1.4.3}
+A function $f$ is said to have a \dt{removable discontinuity} if it is not continuous at $a$,
+but can be assigned a value $f(a)$ [or possibly reassigned a new value $f(a)$]
+such that it becomes continuous there.
+\begin{exenum}
+\sx
+Locate the removable discontinuities in Problem \exref{1.4.2}.
+\sx
+Show that the only discontinuities a rational function can have are either
+removable or infinite.  That is, if $r(x)$ is a rational function that is not
+continuous at $a$, show that either $a$ is a removable discontinuity
+or $\lim_{x \goesto a} |r(x)| = + \infty$.
+\end{exenum}
+
+\ex{1.4.4}
+Using Theorem \thref{1.4.1}, prove that if $\lim_{x \goesto a} f(x) = b_1$ and
+$\lim_{x \goesto a} g(x) = b_2$, then
+\[
+\lim_{x \goesto a} [f(x)-g(x)] = b_1 - b_2
+.
+\]
+
+\ex{1.4.5}
+Show that
+\begin{exenum}
+\sx
+$\lim_{x \goesto +\infty} f(x)=b$ if and only if 
+$\lim_{t \goesto 0+} f \left( \frac1t \right) = b$.
+\sx
+$\lim_{x \goesto -\infty} f(x)=b$ if and only if 
+$\lim_{t \goesto 0-} f \left( \frac1t \right) = b$.
+\end{exenum}
+
+\ex{1.4.6}
+Using Problem \exref{1.4.5}, compute
+\begin{exenum}
+\sx
+$\lim_{x \goesto \infty} \frac1{1+x}$
+\sx
+$\lim_{x \goesto \infty} \frac{3x+1}x$
+\sx
+$\lim_{t \goesto -\infty} \frac{4t^2 - 3t + 1}{t^2}$
+\sx
+$\lim_{t \goesto \infty} \frac{3t^3 + 7t^2 -2}{t^3+1}$.
+\end{exenum}
+
+\ex{1.4.7}
+True or false?
+\begin{exenum}
+\sx
+If $\lim_{x \goesto a} f(x)=b$, then $\lim_{x \goesto a+} f(x)=b$
+and $\lim_{x \goesto a-} f(x) = b$.
+\sx
+If $\lim_{x \goesto a+} f(x)=b$ and $\lim_{x \goesto a-} f(x)=b$,
+then $\lim_{x \goesto a} f(x) = b$.
+\end{exenum}
+
+\ex{1.4.8}
+Define a function $f$ and draw its graph such that 
+$\lim_{x \goesto 2+} f(x) = 2$ and $\lim_{x \goesto 2-} f(x) = 0$.
+
+\ex{1.4.9}
+Compute
+\begin{exenum}
+\sx
+$\lim_{x \goesto 2} \frac1{x^2 - 4x +4}$
+\sx
+$\lim_{x \goesto 2} \frac{x}{x^2 + 3x -10}$
+\sx
+$\lim_{x \goesto 3+} \frac{|x| - 3}{x-3}$
+\sx
+$\lim_{x \goesto 1} \frac{\sqrt{x-1}}{x-1}$
+\end{exenum}
+
+\ex{1.4.10}
+Does the set of rational functions satisfy axioms \ref{axiom.i} 
+through \ref{axiom.vi} of section \secref{1.1}?
+(\emph{Hint:} Be careful; note Problem \exref{1.4.3}.)
+
+\ex{1.4.11}
+Give the formal definition in terms of inequalities of
+$\lim_{x \goesto a+} f(x)=b$.
+
+\ex{1.4.12}
+Define a function $f$ and draw its graph such that
+$\lim_{x \goesto \infty} f(x) \ne \lim_{x \goesto -\infty} f(x)$,
+although both limits exist.
+
+\ex{1.4.13}
+Prove that it is impossible to choose a rational function in 
+Problem \exref{1.4.12}.
+
+\ex{1.4.14}
+Give the formal definition in terms of inequalities and absolute values of
+\begin{exenum}
+\sx
+$\lim_{x \goesto a} f(x) = \infty$
+\sx
+$\lim_{x \goesto -\infty} f(x) = +\infty$
+\end{exenum}
+
+\end{exercises}

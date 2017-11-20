@@ -1,0 +1,271 @@
+\section{Infinite Series: Definition and Properties.}
+We are now ready to define infinite series. Consider an infinite sequence of real numbers $a_m, a_{m+1},
+%482 INFINITE SERIES [CHAP. 9
+a_{m+2},... .$ From this sequence $\{a_i\}$ we construct another sequence $\{s_n\}$ with the same domain, called the \textbf{sequence of partial sums} and defined by
+\begin{eqnarray*}
+      s_m &=& a_m, \\
+s_{m+1} &=& a_m + a_{m+1}, \\
+s_{m+2} &=& a_m + a_{m+1} + a_{m+2}, \\
+\vdots
+\end{eqnarray*}
+\noindent That is, for every integer $n \geq m$, the number $s_n$ is given by
+
+\begin{equation}
+s_n = \sum_{i=m}^n a_i = a_m + \cdots + a_n . 
+\label{eq9.2.1}
+\end{equation}
+\noindent If the sequence $\{s_n\}$ of partial sums converges, we define its limit to be the value of the \textbf{infinite series} determined by the original sequence $\{a_i\}$, and we write
+
+\begin{equation}
+\sum_{i=m}^\infty a_i = \lim_{n \rightarrow \infty} s_n.
+\label{eq9.2.2}
+\end{equation}
+
+
+\begin{example}
+Show that
+$$
+\sum_{i=0}^\infty \frac{1}{2^i} = 1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \cdots = 2.
+$$
+\noindent For this series the sequence of partial sums is given by 
+\begin{eqnarray*}
+s_0 &=& 1, \\
+s_1 &=& 1 + \frac{1}{2}, \\
+s_2 &=& 1 + \frac{1}{2} + \frac{1}{4},\\
+\vdots  
+\end{eqnarray*}
+
+\noindent and, more generally, by
+$$
+s_n = 1 + \frac{1}{2} + \cdots + \frac{1}{2^n} .
+$$
+\noindent Note that $s_0 = 2 - 1$, $s_1 = 2 - \frac{1}{2}$, and $s_2 = 2 - \frac{1}{4}$. It is not hard to show that $s_n = 2 - \frac{1}{2^n}$ for every positive integer $n$. Hence
+$$
+\lim_{n \rightarrow \infty} s_n = \lim_{n \rightarrow \infty} (2 - \frac{1}{2^n}) = 2, 
+$$
+\noindent and it then follows from the above definition that $\sum_{n=0}^\infty \frac{1}{2^i} = 2$. 
+
+\end{example}
+%SEC. 2] [NFiNITE SERIES: DEFINITION AND PROPERTIES  483
+
+If, for a given sequence of real numbers $a_m, a_{m+1}, . . .$, it happens that the corresponding sequence of partial sums does not converge, then the value of the infinite series is not defined. In this case we shall follow the customary terminology and say that the infinite series $\sum_{i=m}^\infty a_i$ \textbf{diverges.} On the other hand, if the sequence of partial sums does converge, we shall say that the infinite series $\sum_{i=m}^\infty a_i$ \textbf{converges.} Summarizing the above definitions (1) and (2) in a single formula, we obtain the equation
+
+\begin{equation}
+\sum_{i=m}^\infty a_i = \lim_{n \rightarrow \infty} \sum_{i=m}^n a_i,  
+\label{eq9.2.3}
+\end{equation}
+
+\noindent in which the series on the left converges if and only if the limit on the right exists.
+
+Our first theorem states that if an infinite series $\sum_{i=m}^\infty a_i$ converges, then the sequence $\{ a_i \}$ must converge to zero:
+
+\begin{theorem} %(2.1) 
+If $\sum_{i=m}^\infty a_i$ converges, then $\lim_{n \rightarrow \infty} a_n  = 0.$
+\end{theorem}
+
+\begin{proof}
+Let $s = \{ s_n \}$ be the sequence of partial sums. Since the infinite series converges, there exists a real number $L$ such that
+$$
+\sum_{i=m}^\infty a_i = \lim_{n \rightarrow \infty} s_n = L.
+$$
+Let $s'$ be the sequence defined by $s'_n = s_{n-1}$, for every integer $n \geq m + 1$. The range of the function $s'$ is the same as that of $s$, and the order is the same. That is, enumeration of the terms of both sequences gives the same list of numbers: $s_m, s_{m+1}, ....$ We conclude that 
+$$
+\lim_{n \rightarrow \infty} s'_n = \lim_{n \rightarrow \infty} s_n. 
+$$
+We next observe that, for every integer $n \geq m + 1$, 
+$$
+a_n = s_n - s_{n-1} = s_n - s'_n.
+$$
+Since the limit of the sum or difference of two convergent sequences is the sum or difference of their limits [see Theorem (1.1), page 475], we have 
+$$
+\lim_{n \rightarrow \infty} a_n = \lim_{n \rightarrow \infty} s_n - \lim_{n \rightarrow \infty} s'_n = L - L = 0,  
+$$
+and the proof is complete.
+\end{proof}
+
+As a result of Theorem (2.1) we see at once that both infinite series 
+ 
+\begin{eqnarray*}
+                \sum_{i=0}^\infty (-1)^i 2 &=& 2 - 2 + 2 - 2 + \cdots , \\
+\sum_{i=1}^\infty (2 + \frac{1}{i^2}) &=& 3 + 2\frac{1}{4} + 2\frac{1}{9} + 2\frac{1}{16} + \cdots
+\end{eqnarray*}
+%484 INFINITE SERIES [CHAP. 9
+\noindent are divergent. For the first, $\lim_{n \rightarrow \infty} a_n = \lim_{n \rightarrow \infty} (-1)^n 2$, which does not exist, and for the second, $\lim_{n \rightarrow \infty} a_n = \lim_{n \rightarrow \infty} (2 + \frac{1}{n^2}) = 2.$
+
+[\textit{Warning:}  The converse of Theorem (2.1) is false. That is, it is not true that if $\lim_{n \rightarrow \infty} a_n = 0$, then $\sum_{i=m}^\infty a_i$ converges. A well-known counterexample is the series discussed in the following example.]
+
+\begin{example} 
+Show that the infinite series 
+$$
+\sum_{k=1}^\infty \frac{1}{k} = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \cdots
+$$
+\noindent diverges. This series is called the \textbf{harmonic series} and is particularly interesting because it diverges in spite of the fact that $\lim_{n \rightarrow \infty} \frac{1}{n} = 0$. To prove divergence, $s_n$ we first observe that $s_n$, the $n$th partial sum of the series, is given by
+$$
+s_n = 1 + \frac{1}{2} + \cdots + \frac{1}{n}.
+$$
+
+%Figure 3 
+\putfig{4.25truein}{scanfig9_3}{}{fig 9.3}
+
+\noindent Next, consider Figure 3, which shows the graph of the function $\frac{1}{x}$ between $x = 1$ and $x = n + 1$. With respect to the partition $\sigma = \{ 1, 2, . . ., n+1 \}$, the upper sum $U_\sigma$ is equal to the sum of the areas of the shaded rectangles and is given by  
+$$
+U_\sigma = 1 + \frac{1}{2} + \cdots + \frac{1}{n} .
+$$
+%SEC. 2] INFINITE SERIES: DEFINITION AND PROPERTIES  485
+
+\noindent Thus $U_\sigma = s_n$. Since every upper sum is greater than or equal to the corresponding definite integral, we obtain
+$$
+s_n = U_\sigma \geq \int_1^{n+1} \frac{1}{x} dx = \ln (n + 1).
+$$
+\noindent We know that $\ln(n + 1)$ increases without bound as $n$ increases, hence the same is true of $s_n$. Thus
+$$
+\lim_{n \rightarrow \infty} s_n  = \infty,
+$$
+
+\noindent which completes the proof that the harmonic series diverges.
+\end{example}
+
+The next theorem states that infinite series have what is commonly called the property of \textbf{linearity}. The result is a useful one because it shows that convergent infinite series may be added in the natural way and also multiplied by real numbers. Note that we have come across the property of linearity before. It is one of the basic features of finite series and also of definite integrals.
+
+\begin{theorem} %(2.2)
+If $\sum_{i=m}^ \infty a_i$ and $\sum_{i=m}^ \infty  b_i$ are convergent infinite series and if $c$ is a real number, then the series $\sum_{i=m}^ \infty (a_i + b_i)$ and $\sum_{i=m}^ \infty ca_i$ are also convergent, and
+
+\begin{quote}
+\begin{description}
+\item[(i)] $\sum_{i=m}^\infty (a_i + b_i) = \sum_{i=m}^\infty a_i + \sum_{i=m}^\infty b_i .$
+\item[(ii)] $\sum_{i=m}^\infty ca_i = c \sum_{i=m}^\infty a_i.$
+
+\end{description}
+\end{quote}
+\end{theorem}
+
+\begin{proof}
+The proofs of (i) and (ii) are direct corollaries of the corresponding parts of Theorem (1.1), page 475. Let $\{ s_n \}$ and $\{ t_n \}$, be the two convergent sequences of partial sums corresponding to $\sum_{i=m}^\infty a_i$ and $\sum_{i=m}^\infty b_i$, respectively. That is,
+$$
+s_n = \sum_{i=m}^n a_i, \;\;\; t_n = \sum_{i=m}^n b_i,
+$$
+\begin{equation}
+\sum_{i=m}^\infty s_n = \lim_{n \rightarrow \infty} s_n, \;\;\;
+\sum_{i=m}^\infty b_i = \lim_{n \rightarrow \infty} t_n.   
+\label{eq9.2.4}
+\end{equation}
+By part (i) of Theorem (1.1), we have
+\begin{equation}
+\lim_{n \rightarrow \infty} (s_n + t_n) = \lim_{n \rightarrow \infty} s_n + \lim_{n \rightarrow \infty} t_n, 
+\label{eq9.2.5}
+\end{equation}
+which shows, first of all, that $\{ s_n + t_n \}$ is a convergent sequence. The linearity property of finite sums implies that
+$$
+s_n + t_n = \sum_{i=m}^n a_i + \sum_{i=m}^n b_i = \sum_{i=m}^n (a_i + b_i),
+$$
+from which we conclude that $\{ s_n + t_n \}$ is the sequence of partial sums corresponding to the series $\sum_{i=m}^\infty (a_i + b_i)$. Hence
+\begin{equation}
+\sum_{i=m}^\infty (a_i + b_i) = \lim_{n \rightarrow \infty} (s_n + t_n). 
+\label{eq9.2.6}
+\end{equation}
+Substituting from equations (6) and (4) into equation (5), we obtain 
+$$
+\sum_{i=m}^\infty (a_i + b_i) = \sum_{i=m}^\infty a_i + \sum_{i=m}^\infty b_i,
+$$
+and this completes the proof of part (i). Part (ii) is proved in the same way, and we omit the details.
+\end{proof}
+
+As an application of Theorem (2.2) we may conclude that \textit{if a series $\sum_{i=m}^\infty a_i$ diverges and if $c \neq 0$, then $\sum_{i=m}^\infty ca_i$ also diverges.} For if the latter series converges, we know from part (ii) of (2.1) that
+$$
+\frac{1}{c} \sum_{i=m}^\infty ca_i = \sum_{i=m}^\infty \frac{1}{c} ca_i = \sum_{i=m}^\infty a_i.
+$$
+
+\noindent and that the series on the right converges, contrary to assumption. For example, since the harmonic series $\sum_{i=1}^\infty \frac{1}{i}$ diverges, it follows at once that the series   
+$$
+\sum_{i=1}^\infty \frac{1}{5i} = \frac{1}{5} + \frac{1}{10} + \frac{1}{15} + \cdots
+$$
+\noindent also diverges.
+
+It is an important corollary of the next theorem that the convergence or divergence of an infinite series is unaffected by the addition or deletion of any finite number of terms at the beginning.
+
+\begin{theorem} %(2.3) 
+If $m < 1$, then the series $\sum_{i=m}^\infty a_i$ converges if and only if $\sum_{i=l}^\infty a_i$ a converges. lf either converges, then
+$$
+\sum_{i=m}^\infty a_i = \sum_{i=m}^{l-1} a_i + \sum_{i=l}^\infty a_i
+$$
+\end{theorem}
+
+
+\begin{proof}
+Let $\{ s_n \}$ and $\{ t_n \}$ be the sequences of partial sums for $\sum_{i=m}^\infty a_i$ and $\sum_{i=l}^\infty a_i$, respectively. Then
+\begin{eqnarray*}
+s_n &=& \sum_{i=m}^n a_i, \;\;\;\mbox{for every integer}\; n \geq m,\\
+t_n  &=& \sum_{i=l}^n a_i,    \;\;\;\mbox{for every integer}\; n \geq l.
+\end{eqnarray*}
+If $n$ is any integer greater than or equal to $l$, then obviously 
+$$
+\sum_{i=m}^n a_i = \sum_{i=m}^{l-1} a_i + \sum_{i=l}^n a_i.
+$$
+Hence
+$$
+s_n = \sum_{i=m}^{l-1} a_i + t_n, \;\;\;\mbox{for every integer}\; n \geq l.
+$$
+The number $\sum_{i=m}^{l-1} a_i$ does not depend on $n$, and is fixed throughout the proof. Thus, for $n \geq l$, the sequences $\{ s_n \}$ and $\{ t_n \}$ differ by a constant. It follows that one converges if and only if the other does and that
+$$
+\lim_{n \rightarrow \infty} s_n = \sum_{i=m}^{l-1} a_i + \lim_{n \rightarrow \infty} t_n,
+$$
+(see Problem 7, page 481). This completes the proof, since by definition,
+$$
+\lim_{n \rightarrow \infty} s_n = \sum_{i=m}^\infty a_i \;\;\;\mbox{and}\;\;\; \lim_{n \rightarrow \infty} t_n = \sum_{i=l}^\infty a_i .
+$$
+\end{proof}
+
+As an illustration, consider an infinite series $\sum_{i=0}^\infty a_i$ whose first thousand terms we know nothing about, but which has the property that $a_n = \frac{1}{2^n}$ for every integer $n > 1000$. We have shown in Example 1 that the series $\sum_{i=0}^\infty  \frac{1}{2^i}$ converges, and it follows by Theorem (2.3) that $\sum_{i=1001}^\infty \frac{1}{2^i}$ also converges. Since the latter series is precisely the series $\sum_{i=1001}^\infty a_i$, a second application of (2.3) establishes the convergence of the original series $\sum_{i=1}^\infty a_i$. 
+
+An \textbf{infinite geometric series} is one of the form
+$$
+\sum_{i=0}^\infty ar^i = a + ar + ar^2 + \cdots ,  
+$$
+\noindent in which $a$ and $r$ are arbitrary real numbers. For example, by taking $a = 1$ and $r = \frac{1}{2}$ we obtain the convergent series $\sum_{i=0}^\infty \frac{1}{2^i}$. In studying the question of the convergence or divergence of geometric series, it is sufficient to take $a = 1$ and consider the simpler series
+
+
+\begin{equation}
+\sum_{i=0}^\infty = 1 + r + r^2 + \cdots .   
+\label{eq9.2.7}
+\end{equation}
+%488 INF/NITE SERIES [CHAP. 9 
+\noindent For if this series converges, then so does $\sum_{i=0}^\infty ar^i$, and
+$$
+\sum_{i=0}^\infty ar^i = a \sum_{i=0}^\infty r^i .
+$$
+
+\noindent On the other hand, if (7) diverges and $a \neq 0$, then $\sum_{i=0}^\infty ar^i$ also diverges. The principal result about the convergence of geometric series is the followIng:
+
+\begin{theorem} %(2.4) 
+The geometric series (7) converges if and only if 
+$ -1 < r < 1$. If it converges, then
+
+$$
+\sum_{i=0}^\infty r^i = \frac{1}{1 - r} .
+$$
+\end{theorem}
+
+\begin{proof}
+If $r = 1$, the series (7) is the divergent series $1 + 1 + 1 + \cdots $. Hence, in what follows, we shall assume that $r \neq 1$. The sequence $\{ s \}$ of partial sums is defined by
+$$
+s_n = \sum_{i=0}^n r^i = 1 + r+ \cdots + r^n,
+$$
+for every integer $n \geq 0$. Observe that
+\begin{eqnarray*}
+1 + rs_n &=& 1 + r(1 + r + \cdots + r^n) \\
+              &=& 1 + r + r^2 + \cdots + r^{n+1} = s_{n+1}.
+\end{eqnarray*}
+On the other hand, we have the equation
+$$
+s_n + r^{n + 1} = s_{n +1}. 
+$$
+It follows that $1 + rs_n = s_n + r^{n+1}$ whence $1 - r^{n+1} = s_n(1 - r)$, and so
+$$
+s = \frac{1 - r^{n + 1}}{1 - r}
+$$
+The proof is completed by considering two cases. First of all, suppose that $-1 < r < 1$. Then $\lim_{n \rightarrow \infty} r^{n+1} = \lim_{n \rightarrow \infty} r^n = 0$ (see Problem 5, page 481), and therefore
+$$
+\sum_{x=0}^\infty r^i = \lim_{n \rightarrow \infty} s_n = \frac{1 - 0}{1 - r } = \frac{1}{1 - r} . 
+$$
+\noindent Second, suppose that $r \leq - 1$ or $r > 1$. For neither of these possibilities does $\lim_{n \rightarrow \infty} r^{n+1}$ exist (again, see Problem 5, page 481). It follows that $\lim_{n \rightarrow \infty} s_n$ also does not exist, and hence the series $\sum_{i=0}^\infty r^i$ diverges. This completes the proof.
+\end{proof}

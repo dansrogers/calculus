@@ -1,0 +1,287 @@
+\section{Polar Coordinates.} Since the set $R^2$ of all ordered pairs of real numbers has been identified with the set of all points in the plane, every point is uniquely determined by its $x$- and $y$-coordinates. An alternative way of specifying points in the plane is the following: To every ordered pair $(r, \theta)$ of real numbers, we assign the point $P = (x, y)$ in $R^2$ defined by
+
+\begin{equation} 
+\begin{array}{l}        
+x = r\cos \theta, \vspace{.1in}   \\
+y = r\sin \theta. 
+\end{array}
+\label{eq10.6.1}
+\end{equation}
+The pair $(r, \theta)$ is called a pair of \textbf{polar coordinates} of the point $P = (x, y)$.
+
+In giving the geometric interpretation of polar coordinates of a point, we distinguish three separate possibilities:
+
+\textit{Case 1.} $r > 0$. Then $r$ is the distance between $P = (x, y)$ and the origin, since 
+\begin{eqnarray*}
+distance(P, (0, 0)) 
+&=& \sqrt{x^2 + y^2} = \sqrt{r^2\cos^2 \theta + r^2 \sin^2 \theta} \\ 
+&=& \sqrt{r^2(\cos^2 \theta + sin^2 \theta)} = \sqrt{r^2} \\
+&=& r.
+\end{eqnarray*}
+
+\noindent The number $\theta$ is the radian measure of the angle which has its vertex at the origin, its initial side the positive $x$-axis, and its terminal side the line segment joining the origin to $P$. An example is shown in Figure 22.
+
+\textit{Case 2.} $r = 0$. Then $P$ is the origin regardless of the value of $\theta$, since 
+$$
+P = (x, y) = (0 \cos \theta, 0 \sin \theta) = (0, 0).
+$$
+%SEC. 6] POLAR COORDINATES 591 .  
+\setcounter{figure}{21}
+%Figure 22
+\putfig{3.5truein}{scanfig10_22}{}{fig 10.22}
+
+\textit{Case 3.} $r < 0$. In this case the point $P = (x, y)$ is symmetric with respect to the origin to the point with polar coordinates $(|r|, \theta)$. This fact is illustrated in Figure 23. To prove it, we first observe that
+\begin{eqnarray*}
+-r \cos(\theta + \pi) &=& -r \cos \theta \cos \pi + r \sin \theta \sin \pi = r \cos \theta, \\
+-r \sin(\theta + \pi) &=& -r \sin \theta \cos \pi  - r\cos \theta \sin \pi = r \sin \theta.
+\end{eqnarray*}
+
+%Figure 23
+\putfig{4.5truein}{scanfig10_23}{}{fig 10.23}
+
+\noindent In the present situation r is negative. Hence $-r$ is positive, and $|r| = -r$. The preceding equations therefore imply 
+
+\begin{eqnarray*}
+r \cos \theta &=& |r| \cos(\theta + \pi), \\
+r \sin \theta &=& |r| \sin(\theta + \pi).
+\end{eqnarray*}
+
+\noindent Thus
+\begin{eqnarray*}  
+P = (x, y) &=& (r \cos \theta, r \sin \theta) \\
+               &=& (|r| \cos(\theta + \pi), |r| \sin(\theta + \pi)),  \;\;\;\mbox{if}\; r < 0,
+\end{eqnarray*}
+\noindent and this is precisely what is asserted above.
+%592 GEOMETRY IN THE PLANE [CHAP. 1O
+ 
+The major difference between polar coordinates and the familiar $x$- and $y$-coordinates is that if a given point $P = (x, y)$ has one pair of polar coordinates $(r, \theta)$, then it has \textit{infinitely many:} If $n$ is any integer, then
+\begin{eqnarray*}
+r \cos \theta &=& r \cos(\theta + 2\pi n), \\
+r \sin \theta &=& r \sin (\theta + 2\pi n),
+\end{eqnarray*}
+
+\noindent and it therefore follows that, for every integer $n$, the ordered pair $(r, \theta + 2\pi n)$ is a pair of polar coordinates for the one point $P = (x, y) = (r \cos \theta, r \sin \theta)$. In addition, as shown in Case 3, we have
+\begin{eqnarray*}
+-r \cos(\theta + \pi) &=& r \cos \theta, \\
+-r \sin(\theta + \pi) &=& r \sin \theta.
+\end{eqnarray*}
+\noindent Hence $(-r, \theta + \pi)$ is also a pair of polar coordinates of $P$. We conclude that there is no such thing as the polar coordinates of a point.
+
+%Figure 24
+\putfig{4truein}{scanfig10_24}{}{fig 10.24}
+
+Of course, it is also important to realize that every point $P = (x, y)$ has \textit{at least one} pair of polar coordinates (and thence infinitely many). This is not hard to show. We set $r = \sqrt{x^2 + y^2}$. If $r = 0$, then $x = y = 0$ and $P$ is the origin. In this case, $(r, \theta) = (0, \theta)$ is a pair of polar coordinates of $P$ for any choice of $\theta$. If $r > 0$, then $P$ is not the origin, and we let $Q$ be the point on the unit circle (defined by $x^2 + y^2 = 1$) which lies on the half-line emanating from the origin and passing through $P$ (see Figure 24). From our definition of the functions sine and cosine, we know that $Q = (\cos \theta, \sin \theta)$ for some number $\theta$. It follows that
+$$
+P = (r \cos \theta, r \sin \theta),
+$$
+\noindent and so $(r, \theta)$ is a pair of polar coordinates of $P$.
+%SEC. 6] POLAR COORDINATES  593
+
+%EXAMPLE 1. 
+\begin{example} Determine the $x$- and $y$-coordinates of the points with the following polar coordinates, and plot the points in the plane.
+\begin{eqnarray*}
+P_1: (r, \theta) &=& \Big( 2, \frac{\pi}{6}  \Big),\\
+P_2: (r, \theta) &=& \Big( -2, \frac{\pi}{6} \Big),\\
+P_3: (r, \theta) &=& \Big( 2, -\frac{\pi}{6} \Big),\\
+P_4: (r, \theta) &=& \Big( 2, \frac{7\pi}{6} \Big),\\
+P_5: (r, \theta) &=& \Big( 3, \frac{10\pi}{6} \Big),\\
+P_6: (r, \theta) &=& ( 0, \pi ).
+\end{eqnarray*}
+
+\noindent If $(r, \theta)$ is a pair of polar coordinates of a point $P$, then the $x$- and $y$-coordinates of $P$ are given by
+$$
+(x, y) = (r \cos \theta, r \sin \theta).
+$$
+\noindent Hence, for each of the above, we get 
+\begin{eqnarray*}
+P_1 = (x, y) &=&  \Big(2 \cos \frac{\pi}{6},  2 \sin \frac{\pi}{6}  \Big) = (\sqrt 3, 1), \\
+P_2 = (x, y) &=&  \Big(-2 \cos \frac{\pi}{6}, -2\sin \frac{\pi}{6}  \Big)= ( -\sqrt 3, - 1), \\
+P_3 = (x, y) &=&  \Big(2 \cos (-\frac{\pi}{6}), 2 \sin (-\frac{\pi}{6})  \Big) \\
+&=&  \Big(2 \cos \frac{\pi}{6}, -2 \sin \frac{\pi}{6}  \Big) = (\sqrt 3, -1), \\
+P_4 =  (x, y) &=&  \Big(2 \cos \frac{7\pi}{6}, 2 \sin \frac{7\pi}{6}  \Big) \\
+&=&  \Big(-2 \cos \frac{\pi}{6} -2\sin \frac{\pi}{6}  \Big)= (-\sqrt 3, -1), \\
+P_5 = (x, y) &=&  \Big(3 \cos  \frac{10\pi}{3}, 3 \sin \frac{10\pi}{3}  \Big)\\
+&=&  \Big(3 \cos \frac{4\pi}{3}, 3 \sin\frac{4\pi}{3}  \Big) =  \Big(-\frac{3}{2}, -\frac{3\sqrt3}{2}  \Big) \\
+P_6 = (x, y) &=& (0 \cos \pi, 0 \sin \pi) = (0, 0).
+\end{eqnarray*}
+%594 GEOMETRY IN THE PLANE [CHAP. 1O
+\noindent The points are plotted in Figure 25. Note that $P_2 = P_4$ even though the polar coordinates defining them are different. Although we have found the rectangular coordinates of each point, these are not necessary for plotting. For example, the point $P_1$ with polar coordinates $ \Big(2, \frac{\pi}{6} \Big)$ is most easily plotted by drawing from the origin the line segment of length 2, which makes an angle of $\frac{\pi}{6}$ radians with the positive $x$-axis.  
+
+%Figure 25
+\putfig{3.25truein}{scanfig10_25}{}{fig 10.25}
+
+We next study curves in the plane defined by equations in polar coordinates. Let $F$ be a real-valued function of two real variables. The set of all points in the plane whose polar coordinates satisfy the equation
+
+\begin{equation}
+F(r, \theta) = 0   
+\label{eq10.6.2}
+\end{equation}
+will be called the \textbf{graph in polar coordinates,} or simply, the \textbf{polar graph} of the equation. More formally: The polar graph of equation (2) is the set of all points $P = (x, y)$ for which there exists a pair $(r, \theta)$ such that $F(r, \theta) = 0$ and
+
+$$
+\left \{\begin{array}{c}
+x = r \cos \theta,\\
+y = r \sin \theta.
+\end{array}
+\right .
+$$
+
+Frequently, $r$ is explicitly defined as a function of $\theta$. This means that there is a real-valued function $f$ of one real variable, and we consider the equation
+
+\begin{equation}
+r = f(\theta)   .
+\label{eq10.6.3}
+\end{equation}
+
+%SEC. 61 POLAR COORDINATES  595
+\noindent The \textbf{polar graph} of this equation is that of the equation $r - f(\theta) = 0$, which is a special case of equation (2) in the preceding paragraph. It follows that the polar graph of $r = f (\theta)$ is the set of all points $(x, y)$ such that 
+\begin{equation}
+\left \{ \begin{array}{c}
+x = f(\theta) \cos \theta, \\
+y = f(\theta) \sin \theta,
+\end{array}
+\right .
+\label{eq10.6.4}
+\end{equation}
+for every $\theta$ in the domain of $f$. If $f$ is a continuous function with domain an interval of real numbers, then equations (4) constitute a parametrization, and so the polar graph of $r = f(\theta)$ is a parametrized curve.
+\end{example}
+
+%EXAMPLE 2. 
+\begin{example} Identify and draw the curve defined by the equation 
+ 
+\begin{equation}
+r = 4 \cos \theta   
+\label{eq10.6.5}
+\end{equation}
+\noindent in polar coordinates. By the curve defined by an equation $r = f(\theta)$ in polar coordinates we mean, of course, the polar graph of $r = f(\theta)$. A partial list of values of $\theta$ and $r$ which satisfy equation (5) is given in Figure 26, and the points which have these pairs as polar coordinates are plotted. \textit{Since the cosine is an even, function, i.e., since $\cos(-\theta) = \cos \theta$, it follows that the resulting curce is symmetric about the $x$-axis.}  The periodicity of the cosine implies that we may limit values of $\theta$ to an interval of length $2\pi$. However, we can do considerably better than that. The fact that
+$$
+\cos(\theta + \pi) = -\cos \theta
+$$
+\noindent implies that if $r = 4 \cos \theta$, then $-r = 4 \cos(\theta + \pi)$. But we have already observed that $(r, \theta)$ and $(-r, \theta + \pi)$ are polar coordinates of the same point. lt follows that all the points of the curve will be included even if the values of $\theta$ are limited to the interval $[-\frac{\pi}{2}, \frac{\pi}{2}]$. Finally, in view of the symmetry about the $x$-axis, it is sufficient in plotting points to consider only values in $[0,\frac{\pi}{2}]$.
+
+It appears from Figure 26 that the polar graph of $r = 4 \cos \theta$ is the circle of radius 2 with center at the point $P = (2, 0)$. This can be verified as follows: An equation with the same polar graph is
+
+\begin{equation}
+r^2 = 4r \cos \theta. 
+\label{eq10.6.6}
+\end{equation}
+\noindent Since $x = r \cos \theta, y = r \sin \theta$, and $x^2 + y^2 = r^2$, the polar graph of (6) is the same as the graph of the equation 
+
+$$
+x^2 + y^2 = 4x
+$$
+
+\noindent in rectangular coordinates. This equation is equivalent to 
+$$
+x^2 - 4x + 4 + y^2 = 4,
+$$
+%596 GEOMETRY IN THE PLANE [CHAP. 1O 
+Figure 26 
+\putfig{2.5truein}{scanfig10_26}{}{fig 10.26}
+
+\noindent which is the same as
+$$
+(x - 2)^2 + y^2 = 2^2.
+$$
+\noindent The latter is the standard form of the equation of the circle of radius 2 with center at (2, 0).
+\end{example}
+
+%EXAMPLE 3. 
+\begin{example}
+A parabola is by definition the set of all points in the plane which are equidistant from a fixed line and a fixed point not on the line (see page 136). The line is called the directrix, and the point the focus. Find an equation in polar coordinates of the parabola whose focus is the origin and whose directrix is the vertical line cutting the $x$-axis in the point (-1, 0). The parabola is drawn in Figure 27.
+
+An equation of a curve in polar coordinates means an equation $F(r, \theta) = 0$ whose polar graph is the given curve. In the present example, let $(r, \theta)$, with $r > 0$, be a pair of polar coordinates of an arbitrary point on the parabola. Then $r$ is the distance from the point to the focus, and, as can be seen from the figure, the distance from the point to the directrix is $1 + r \cos \theta$. Hence the geometric condition which defines the parabola is expressed in polar coordinates by the equation
+$$
+r = 1 + r \cos \theta, 
+$$
+\noindent which is equivalent to
+$$
+r (1 - \cos \theta) = 1, 
+$$
+\noindent and thence to
+
+\begin{equation}
+r = \frac{1}{1 - \cos \theta} .
+\label{eq10.6.7}
+\end{equation}
+%SEC. 6] POLAR COORDINATES 597
+
+%Figure 27
+\putfig{3.375truein}{scanfig10_27}{}{fig 10.27}
+
+\noindent Conversely, if $r$ and $\theta$ satisfy equation (7), it is clear that they are the polar coordinates of a point which satisfies the conditions for Iying on the parabola.
+\end{example}
+
+%EXAMPLE 4. 
+\begin{example} Draw the curve defined by the equation
+$$
+r = a \theta,  \;\;\; - \infty  < \theta < \infty,
+$$
+\noindent in polar coordinates, where $a$ is some positive constant. The polar graph of this equation is called an \textbf{Archimedean spiral.} If $\theta = 0$, then $r = a \cdot 0 = 0$, and we conclude that the origin is a point on the curve. As $\theta$ increases from zero, so does $r$, and it follows that a spiral is traced out in the counterclockwise direction. This part of the curve is drawn with a solid line in Figure 28. Thus the curve drawn with the solid line is the polar graph of the equation
+$$
+r = a\theta, \;\;\; 0 \leq \theta < \infty.
+$$
+\noindent For negative $\theta$, the polar graph of $r = a\theta$ is obtained by reflecting the graph for positive $\theta$ about the $y$-axis. This part of the curve, indicated by a dashed dine in the figure, is a spiral in the clockwise direction. One way to verify this assertion of symmetry about the $y$-axis is to write the equations which define the curve parametrically. They are
+
+$$
+\left \{ \begin{array}{ll}
+x = r \cos \theta = a\theta \cos \theta, &\\
+y = r \sin \theta = a\theta \sin \theta, \;\;\;& -\infty < \theta < \infty .
+\end{array}
+\right .
+$$
+\noindent That is, we have a parametrization
+$$
+P(\theta) = (x(\theta), y(\theta)) = (a\theta \cos \theta, a\theta \sin \theta),
+$$
+%598 GEOMETRY IN THE PLANE [CHAP. 10
+
+%Figure 28 
+\putfig{4.5truein}{scanfig10_28}{}{fig 10.28}
+
+\noindent for every real number $\theta$. Since the functions cosine and sine are, respectively, even and odd, we obtain 
+\begin{eqnarray*}
+x(-\theta) &=& a(-\theta) \cos(-\theta) = -a\theta \cos \theta = -x(\theta), \\
+y(-\theta) &=& a(-\theta) \sin(-\theta) = -a\theta (-\sin \theta) = y(\theta).
+\end{eqnarray*}
+
+\noindent It follows that the point $P(-\theta) = (-x(\theta), y(\theta))$ is situated symmetrically across the $y$-axis from the point $P(\theta) = (x(\theta), y(\theta))$, and thus the curve is symmetric about the $y$-axis.
+\end{example}
+
+%EXAMPLE 5. 
+\begin{example} Draw the curve, called a \textbf{lemniscate}, defined by the equation
+$$
+r^2 = 2a^2 \cos 2\theta, \;\;\; a \neq 0, 
+$$
+\noindent in polar coordinates.
+
+We first observe that the polar graph of this equation is symmetric about the origin; i.e., if the pair $(r, \theta)$ satisfies the equation, then so does $(-r, \theta)$. This fact is a consequence of the equations 
+
+$$
+r^2 = 2a^2 \cos 2\theta = (-r)^2.
+$$
+\noindent In addition, if $(r, \theta)$ satisfies the equation, then so does $(r, -\theta)$, since the cosine is an even function. Thus the polar graph is also symmetric about the $x$-axis. It follows from these observations of symmetry that the entire curve
+%SEC. 6] POLAR COORDINATES  599
+is obtained from that part which lies in the first quadrant of the $xy$-plane (those points for which $x \geq 0$ and $y \geq 0$) by reflecting about both the $x$-axis and the $y$-axis. Moreover, any point on the curve in the first quadrant has polar coordinates for which $r \geq 0$ and $0 \leq \theta \leq \frac{\pi}{2}$ Finally, if $(r, \theta)$ satisfies the equation, then
+$$
+\cos 2\theta = \frac{r^2}{2a^2} \geq 0 .
+$$
+\noindent However, for values of $\theta$ in the interval $\Bigl[0, \frac{\pi}{2}\Bigr], \cos 2\theta$ is nonnegative only if $0 \leq \theta \leq \frac{\pi}{4}$. We conclude that the entire curve is obtained by symmetry from those points which have polar coordinates $(r, \theta)$ with $r \geq 0$ and $0 \leq \theta \leq \frac{\pi}{4}$. A partial list of such pairs is given in Table 2, and the corresponding points are shown on the curve in Figure 29.
+
+\putfig{3.625truein}{scanfig10_29}{}{fig 10.29}
+\setcounter{table}{1}
+\begin{table}\label{table 10.2}
+\centering
+\begin{tabular}{c|l|c} \hline
+
+$\theta$            & $r = \sqrt{2a^2 \cos{2\theta}}$ & Approximate value      \vspace {1ex} \\ \hline
+0                       & $\sqrt2 \;|a|$                                                           & $1.4\;|a|$ \vspace {1ex} \\
+$\frac{\pi}{12}$ & $\sqrt2 \;|a|\;\Bigl(\frac{\sqrt3}{2}\Bigr)^{1/2} = \sqrt[4]{3} \;|a|$ & $1.3\;|a|$ \vspace {1ex} \\
+$\frac{\pi}{8}$   & $\sqrt2 \;|a|\;\Bigl(\frac{\sqrt2}{2}\Bigr)^{1/2} = \sqrt[4]{2} \;|a|$ & $1.2\;|a|$ \vspace {1ex} \\
+$\frac{\pi}{6}$   & $\sqrt2 \;|a|\;(\frac{1}{2})^{1/2} = |a|$                          & $|a|$   \vspace {1ex} \\
+$\frac{\pi}{4}$   & 0                                                                           & 0 \vspace {1ex} \\ \hline
+\end{tabular}
+\caption{}
+\end{table}
+\end{example}
+

@@ -1,0 +1,250 @@
+\chapter{Infinite Series} \label{chp 9}
+Addition of real numbers is basically a binary operation: Given any \textit{two} real numbers $a$ and $b$, there is defined a real number denoted by $a + b$ and called their sum. The sum of numbers $a_1, ..., a_n$, where  $n \geq 3$, is then defined by repeated applications of the binary operation. For example, one way of grouping the terms is given by
+$$
+( \cdots (((a_1 + a_2) + a_3) + a_4) + \cdots + a_{n-1}) + a_n .
+$$
+\noindent The Associative Law of Addition implies that the sums obtained by all the different possible groupings are the same; so we can discard the parentheses and write
+$$
+\sum_{i=1}^n a_i = a_1 + \cdots + a_n .
+$$
+\noindent Thus addition of any finite number of terms is defined. However, without further definitions, the sum of an infinite number of terns makes no sense at all. In this chapter we shall make the necessary definitions and develop the theory of infinite series. Two examples are
+
+\begin{eqnarray*}
+\sum_{i = 0}^\infty  \frac{1}{2^i} &=& 1 + \frac{1}{2} +  \frac{1}{4} +  \frac{1}{8} +  \frac{1}{16} + \cdots , \\
+\sum_{i = 1}^\infty (-1)^i(2i + 1) &=& -3 + 5 - 7 + 9 - 11 + \cdots .
+\end{eqnarray*}
+
+\noindent Later in the chapter we shall consider infinite series in which each term contains the power of an independent variable. An example is the series
+$$
+1 + x + \frac{x^2}{2} + \frac{x^3}{3} + \frac{x^4}{4} + \cdots,
+$$
+\noindent which, for every real number $x$, is an infinite series of real nun bers. We shall see that many functions can be defined by these power series, and this fact is of fundamental importance in mathematics and its applications.
+%474 INFINITE SERIES [CHAP. 9
+
+\section{Sequences and Their Limits.} Infinite series are defined in terms of limits of infinite sequences, and make sense only in these terms. We therefore begin by reviewing the ideas of sequences which were introduced in Section 2 of Chapter 4. Following that, we shall develop some additional facts about the limits of infinite sequences. The definition of infinite series, i.e., of the sum of an infinite number of terms, will be given in Section 2.
+
+An \textbf{infinite sequence} is a function whose domain consists of all integers greater than or equal to some integer $m$. In the normal terminology of functions the value of a sequence $s$ at an integer $i$ in its domain would be denoted by $s(i)$. However, it is customary with sequences to denote this value by $s_i$. Thus
+$$
+s_i = s(i), \;\;\; \mbox{for every integer}\;\;\; i \geq m.
+$$
+\noindent The sequence $s$ itself is frequently denoted by $\{s_i\}$ or by an indicated enumeration of its values: $s_m, s_{m + 1}, s_{m + 2} ...$. In the majority of examples $m$ is either 0 or 1, and the first term of the sequence is then $s_0$ or $s_1$, respectively.
+
+An infinite sequence $s$ of real numbers is said to \textbf{converge} to a real number $L$, or, alternatively, the number $L$ is called the \textbf{limit} of the sequence $s$, written
+$$
+\lim_{n \rightarrow \infty} s_n = L,
+$$
+\noindent if the difference $s_n - L$ is arbitrarily small in absolute value for every sufficiently large integer $n$. The formal definition is therefore: $\lim_{n \rightarrow \infty} s_n = L$ if, for every positive real number $\epsilon$, there exists an integer $N$ such that $|s_n -L| < \epsilon$ for every integer $n > N$.
+
+Geometrically, a sequence $s$ of real numbers is an indexed set of points on the real line. If the sequence converges to $L$, then the points $s_n$ of the sequence cluster ever more closely about $L$ as $n$ increases (see Figure 1). That is, $s_n$ lies arbitrarily close to $L$ if $n$ is aufficiently large.
+
+%Figure I
+\putfig{4.5truein}{scanfig9_1}{}{fig 9.1}
+
+If the numbers $s_n$ become arbitrarily large as $n$ increases, then the sequence does not converge and no limit exists. In the special case that, for every real number $B$, the values $s_n$ are all greater than $B$ for sufficiently large $n$, we shall write
+$$
+\lim_{n \rightarrow \infty} s_n = \infty .
+$$
+\noindent The complete definition is: $\lim_{n \rightarrow \infty} s_n = \infty$ if, for every real number $B$, there exists an integer $N$ such that $s_n > B$ for every integer $n > N$. A simple
+%SEC. 1] SEQUENCES AND THEIR LIMITS  475
+example of a sequence which ``converges to infinity" in this way is the sequence of positive integers 1, 2, 3, 4, 5, .... By reversing the single inequality $s_n > B$ in the above definition, we obtain the analogous definition of 
+$$
+\lim_{n \rightarrow \infty} s_n = - \infty .
+$$
+
+lt should not be supposed that if an infinite sequence $s$ of real numbers fails to converge, then it follows that $\lim_{n \rightarrow \infty} s_n = \pm \infty$. For example, the oscillating sequence    
+$$
+1, -1, 1, -1, 1, -1, ...
+$$
+\noindent is bounded and does not converge. Another example is the sequence 
+$$
+0,1,0,2,0,3,0,4, ... ,
+$$
+\noindent defined, for every integer $n \geq 1$, by
+$$
+s_n = \left\{ \begin{array}{ll}
+\frac{n}{2} &  \mbox{if $n$ is even,} \\
+0               & \mbox{if $n$ is odd.}
+\end{array}
+\right .
+$$
+
+\noindent This sequence is not bounded and does not converge, since, as $n$ increases, there exist arbitrarily large values $s_n$. However, because of the regular recurrence of the value 0, it also does not satisfy $\lim_{n \rightarrow \infty} s_n = \infty$.
+
+The basic algebraic properties of limits of real-valued functions of a real variable, which are summarized in Theorem (4.1), page 32, also hold for infinite sequences of real numbers. We have
+
+%(1.1) 
+\begin{theorem} If sequences $\{s_n\}$ and $\{t_n\}$ converge and if $c$ is a real number, then
+ 
+\begin{quote}
+\begin{description}
+\item[(i)]  $\lim_{n \rightarrow \infty} (s_n + t_n) = \lim_{n \rightarrow \infty} s_n + \lim_{n \rightarrow \infty} t_n.$
+\item[(ii)]  $\lim_{n \rightarrow \infty} (cs_n) = c \lim_{n \rightarrow \infty} s_n.$
+\item[(iii)]  $\lim_{n \rightarrow \infty} (s_n t_n) = (\lim_{n \rightarrow \infty} s_n)(\lim_{n \rightarrow \infty} t_n).$
+\item[(iv)]  $\lim_{n \rightarrow \infty} \frac{s_n}{t_n}  = \frac{\lim_{n \rightarrow \infty} s_n}{\lim_{n \rightarrow \infty} t_n}, \;\;\; \mbox{provided} \; \lim_{n \rightarrow \infty} t_n \neq 0.$  
+\end{description}
+\end{quote} 
+\end{theorem}
+
+We give the proof of (i). Let $L_1 = \lim_{n \rightarrow \infty} s_n$, and $L_2 = \lim_{n \rightarrow \infty} t_n$, and choose an arbitrary number $\epsilon$. To prove (i) we use the fact that there exist integers $N_1$ and $N_2$, such that
+$$
+|s_i - L_1 | < \frac{\epsilon}{2} \;\;\;  \mbox{and}\;\;\;  |t_j - L_2| < \frac{\epsilon}{2},
+$$
+%476 INFINIFE SERIES [CHAP. 9
+for every integer $i > N_1$ and $j > N_2$. If we set $N$ equal to the larger of $N_1$ and $N_2$, then, for every integer $n > N$, we have
+$$
+|s_n - L_1| < \frac{\epsilon}{2}\;\;\; \mbox{and}\;\;\; | t_n - L_2 | < \frac{\epsilon}{2} .
+$$
+Since $(s_n + t_n) - (L_1 + L_2) = (s_n - L_1) + (t_n - L_2)$ and since $|a + b| \leq |a| + |b|$ for any two numbers $a$ and $b$, it follows that
+\begin{eqnarray*}
+|(s_n + t_n) - (L_1 + L_2)| = |(s_n - L_1) + (t_n - L_2)|
+&\leq& |s_n - L_1| + |t_n - L_2 | \\
+&<& \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon ,
+\end{eqnarray*}
+
+\noindent for $n > N$. This completes the proof of (i). The proofs of the other parts of the theorem are similar, and the methods are exactly the same as those used in Appendix A to prove (4.1), page 32.
+
+Similar to (1.1) is the following result, whose proof we omit. 
+
+\begin{theorem} %(1.2) 
+If $\lim_{n \rightarrow \infty} s_n$ is the real number $L$ and if $\lim_{n \rightarrow \infty} t_n = \pm \infty$, then
+
+\begin{quote}
+\begin{description}
+
+\item[(i)] $\lim_{n \rightarrow \infty} \frac{s_n}{t_n} = 0.$ 
+\item[(ii)] $\lim_{n \rightarrow \infty} \frac{t_n}{s_n} 
+= \left\{ \begin{array}{ll}
+\pm \infty  &\;\;\;\mbox{if}\; L > 0, \\
+\mp \infty  &\;\;\;\mbox{if}\; L < 0.
+       \end{array}
+       \right .
+$
+\end{description}
+\end{quote} 
+\end{theorem}
+
+Actually we have already used (1.1) and (1.2) in Chapter 4 in evaluating definite integrals as the limits of upper and lower sums. The following example is included primarily as a review.
+
+%EXAMPLE 1. 
+\begin{example}
+Determine whether or not each of the following sequences converges, and evaluate the limit if it does.
+ 
+\begin{quote}
+\begin{description}
+\item[(a)] $\{a_n\}\; \mbox{defined by}\; a_n = \frac{2n^2 + 5n + 2}{3n^2 - 7},$ 
+\item[(b)] $\{b_i\}\; \mbox{defined by}\; b_i  = \frac{2^{i + 1} i}{(i + 1)2^{i}3},$ 
+\item[(c)] $\{c_k\}\; \mbox{defined by}\; c_k  = \frac{k + 1}{k^2 + 1},$ 
+\item[(d)] $\{d_k\}\; \mbox{defined by}\; d_k = (-1)^k \frac{k^2 + 1}{k + 1}.$
+\end{description}
+\end{quote}
+
+\noindent Note that the definition of each of the above sequences is incomplete because we have neglected to specify the domain. However, the omission does not matter, since we are concerned only with the question of the limit of each
+%SEC. 1] SEQUENCES AND THEIR LiMiTS  477
+sequence. It follows immediately from the definition of convergence that the limit of an infinite sequence is unaffected by dropping or adding a finite number of terms at the beginning. 
+
+For (a), after dividing numerator and denominator by $n^2$, we get
+$$
+\frac{2n^2 + 5n + 2}{3n^2 - 7} = \frac{2 + \frac{5}{n} + \frac{2}{n^2} }{3 - \frac{7}{n^2}} . 
+$$
+
+\noindent Using (1.1) and (1.2), we conclude that
+
+\begin{eqnarray*}
+\lim_{n \rightarrow \infty} a_n 
+&=& \lim_{n \rightarrow \infty} \frac{2 + \frac{5}{n} + \frac{2}{n^2}}{3 - \frac{7}{n^2}} \\
+&=& \frac{2+0+0}{ 3 - 0} = \frac{2}{3} .
+\end{eqnarray*}
+
+\noindent So the sequence $\{a_n\}$ converges to $\frac{2}{3}$.
+
+The $i$th term of the sequence $\{b_i \}$ can be written 
+$$
+b_i = \frac{2^{i + 1} i}{(i + 1)2^{i} 3} = \frac{2}{3(1 + \frac{1}{i})} .
+$$
+
+\noindent Since $\lim_{i \rightarrow \infty} (1 + \frac{1}{i}) = 1 + 0 = 1$, we have  
+$$
+\lim_{i \rightarrow \infty} b_i = \frac{ 2}{3 \lim_{i \rightarrow \infty} (1 + \frac{1}{i})} = \frac{2}{3} .
+$$
+\noindent Hence the sequence $\{b_i \}$ also converges to the limit $\frac{2}{3}$ .
+
+For large values of $k$, the number $k + 1$ is approximately equal to $k$, and the number $k^2 + 1$ is approximately equal to $k^2$. Thus the behavior of the ratio $\frac{k + 1}{k^2 + 1}$, as $k$ increases, is the same as that of $\frac{k}{k^2} = \frac{1}{k}$, which approaches zero. We conclude that the sequence $\{c_k\}$ converges to zero. A more systematic analysis is obtained by writing
+$$
+\frac{k + 1}{k^2 + 1} = \frac{k (1 + \frac{1}{k})}{k^2 (1 + \frac{1}{k^2})} 
+= \frac{1}{k} \frac{(1 + \frac{1}{k})}{(1 + \frac{1}{k^2})} ,
+$$
+%478 INFlNlTE SERIES [CHAP. 9 
+from which it follows by (1.1) and (1.2) that
+$$
+\lim_{k \rightarrow \infty} c_k = \lim_{k \rightarrow \infty} \frac{k + 1}{k^2+ 1} = 0 \frac{(1 + 0)}{(1 + 0)} = 0.
+$$
+
+The sequence obtained by taking the absolute value of each term in (d)
+is one which increases without bound. That is, it is clear that $|d_k| = \frac{k^2+ 1}{k + 1}$ and that 
+$$
+\lim_{k \rightarrow \infty} |d_k| = \lim_{k \rightarrow \infty} \frac{k^2+ 1}{k + 1} = \infty.
+$$ 
+However, the factor $(-1)^k$ implies that the terms of the sequence $\{d_k \}$ alternate in sign, and for this sequence we can conclude only that no limit exists.
+\end{example}
+
+A sequence $s$ of real numbers is said to be an \textbf{increasing sequence} if
+
+\begin{equation}
+s_{i+1} \geq s_i,  
+\label{eq9.1.1}
+\end{equation}
+\noindent for every integer $i$ in the domain of $s$. If the inequality (1) is reversed so that $s_{i+1} \leq s_i$, for every $i$ in the domain of $s$, then we say that $s$ is a \textbf{decreasing sequence.} A sequence is \textbf{monotonic} if it is either increasing or decreasing. Note that, just as in the analogous definitions for functions, we use ``increasing" and ``decreasing" in the weak sense. That is, an increasing sequence is one which is strictly speaking nondecreasing, and a decreasing sequence is one which is literally nonincreasing.
+
+The following two theorems will form the basis of some fundamental conclusions about infinite series. Both are statements about increasing sequences, and corresponding to each there is an obvious analogous theorem about decreasing sequences.
+
+\begin{theorem} %(1.3) 
+Let $s$ be an infinite sequence of real numbers. If $s$ is increasing and if $\lim_{n \rightarrow \infty} s_n  = L$, then $s_n \leq L$ for every $n$ in the domain of $s$.
+\end{theorem}
+
+\begin{proof}
+Suppose that the conclusion is false. Then there exists an integer $N$ such that $s_N > L$. Let $a$ be the positive number $s_N - L$. Since $s$ is an increasing sequence, we know that $s_n  \geq s_N$ for all $n \geq N$. It follows that 
+$$
+s_n - L \geq s_N - L = a,
+$$
+for all $n \geq N$. Since the difference $s_n - L$ is greater than or equal to the positive constant $a$, it cannot be arbitrarily small. Hence the sequence cannot approach $L$ as a limit, contradicting the premise that $\lim_{n \rightarrow \infty} s_n = L$. This completes the proof.
+\end{proof}
+
+A sequence $s$ of real numbers is said to be \textbf{bounced above} by a real number $B$ if $s_n \leq B$ for every $n$ in the domain of $s$. If the inequality is reversed to read $B \leq s_n$, we obtain the analogous definition of a sequence $s$ which is \textbf{bounded below} by $B$. The second theorem is:
+
+
+\begin{theorem}
+(1.4) Let $s$ be an infinite sequence of real numbers. If $s$ is increasing and bounded above by $B$, then $s$ converges and $\lim_{n \rightarrow \infty} s_n \leq B$.
+\end{theorem}
+
+It is easy to see geometrically that (1.4) must be true. Because the sequence is increasing, each point $s_n$ on the real line lies at least as far to the right as its predecessor $s_{n-1}$ (see Figure 2). In addition, we are given that no points lie to the right of $B$. Hence the points of the sequence must ``pile up" or cluster at some point less than or equal to $B$. The proof which follows serves to make these intuitive ideas precise.
+
+%Figure 2
+\putfig{4.5truein}{scanfig9_2}{}{fig 9.2}
+
+\begin{proof}
+The range of $s$, which is the set of all numbers $s_n$ has the number $B$ as an upper bound. By the Least Upper Bound Property (see page 7), this set has a least upper bound, which we denote by $L$. Obviously,
+\begin{equation}
+L \leq B. 
+\label{eq9.1.2}
+\end{equation}
+We contend that $\lim_{n \rightarrow \infty} s_n = L$. Since $L$ is an \textit{upper} bound, we have $s_n \leq L$ for every $n$ in the domain of $s$. Since $L$ is a \textit{least} upper bound, there must exist values $s_n$ of the sequence which are arbitrarily close to $L$. That is, for any $\epsilon > 0$, there exists an integer $N$ such that $|L - s_N| = L - s_N < \epsilon$. Since the sequence is increasing, we have $s_n \geq s_N$ for all $n \geq N$. Hence $-s_n \leq -s_N$ and so
+$$
+| L - s_n | = L - s_n \leq L - s_N < \epsilon , 
+$$
+for every integer $n \geq N$. This proves that $\lim_{n \rightarrow \infty} s_n = L$ and this fact, together with the inequality (2) completes the proof.
+\end{proof}
+
+It should be remarked that the essential ideas of Theorems (1.3) and (1.4) are not limited to sequences. For example, by making only trivial changes in the proofs, we obtain the following analogous results about an arbitrary real-valued function fdefined on an interval $[a, \infty)$:
+
+\begin{theorem} (1.3') 
+If $f$ is increasing and if $\lim_{x \rightarrow \infty} f(x) = L$, then $f(x) \leq L$ for every $x$ in $[a, \infty)$.
+\end{theorem}
+%480 INFIP/ITE SERIES [CHAP. 9
+\begin{theorem} (1.4') 
+If $f$ is increasing and if $f(x) \leq B$ for some number $B$ and for every $x$ in $[a, \infty)$, then $\lim_{x \rightarrow \infty} f(x)$ exists and, furthermore, $\lim_{x \rightarrow \infty} f(x) \leq B$.
+\end{theorem}
+
+The latter asserts that every increasing bounded function must approach a limit, a result which we assumed without proof in the proof of the Comparison Test for Integrals on page 469.
+
+
+

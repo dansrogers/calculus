@@ -1,0 +1,192 @@
+\chapter{The Definite Integral (Continued)} \label{chp 8}
+\section{Average Value of a Function.}\label{sec 8.1} 
+Let $f$ be a real-valued function of a real variable which is bounded on the closed interval $[a, b]$. Furthermore, let $f$ be integrable over $[a, b]$. Then the \textbf{mean}, or \textbf{average value}, of $f$ on the interval $[a, b]$ will be denoted by $M_a^b(f)$ and is defined by
+
+$$
+M_a^b(f) = \left\{ \begin{array}{ll}
+                                \frac{1}{b - a} \int_a^b f, &\;\;\; \mbox{if}\; a < b,\\
+                                f(a),                                &\;\;\; \mbox{if}\; a = b.
+      \end{array}
+                                \right .
+$$
+\noindent If $a < b$, then it follows at once from the definition that
+$$
+(b - a)M_a^b(f) = \int_a^b f .
+$$
+\noindent This equation is also true if $a = b$, for then,both sides are equal to zero. We conclude that
+
+\begin{theorem} %(1.1)
+$$
+\int_a^b f = (b - a)M_a^b(f). 
+$$
+\end{theorem}
+
+If $f$ is nonnegative on $[a, b]$, i.e., if $f(x) \geq 0$ for every $x$ such that $a \leq x \leq b$, then (1.1) yields a good geometric interpretation of the mean $M_a^b(f)$. Let $P$ be the set of all points $(x,y)$ such that $a \leq x \leq b$ and $0 \leq y \leq f(x)$, as shown in Figure 1. Then
+$$
+area(P) = \int_a^b f = (b - a)M_a^b(f).
+$$
+\noindent It follows that $M_a^b(f)$ is equal to the height of a rectangle with the same base and the same area as $P$.
+%406 THE DEFINITE INTEGRAL (CONTINUED) [CHAP. 8
+%Figure I
+\putfig{2.75truein}{scanfig8_1}{}{fig 8.1}
+%EXAMPLE 1. 
+\begin{example} Let $f$ be the function defined by $f(x) = x^2 - x + 1$. Find the average value of $f$ on the interval $[0, 2]$, draw the graph of $f$, and show on it the rectangle with base $[0, 2]$ and area equal to the area under the curve. The graph is shown in Figure 2. The mean, or average value, of $f$ is given by
+\begin{eqnarray*}
+M_0^2( f ) &=& \frac{1}{2 - 0} \int_0^2 f (x) dx\\
+&=& \frac{1}{2} \int_0^2 (x^2 - x + 1)dx \\
+&=& \frac{1}{2}(\frac{x^3}{3} - \frac{x^2}{2} + x) \big|_0^2 = \frac{4}{3} .
+\end{eqnarray*}
+
+
+% Figure 2
+\putfig{3.5truein}{scanfig8_2}{}{fig 8.2}
+%SEC. 1] AVERAGE VALUE OF A FUNCTION  407
+
+The words ``mean" and ``average value" are common in our vocabularies and have intuitive meaning for most of us. To use them as names for $M_a^b(f)$ is a sensible thing to do only if this quantity, as we have defined it, has the properties we associate with these words. We shall now show that it does.
+
+First, let us verify that the average value of a velocity function agrees with our earlier definition of average velocity. We consider a particle moving along a straight line, which we take to be a coordinate axis. The position and instantaneous velocity of the particle at time $t$ are denoted by $s(t)$ and $v(t)$, respectively, and we know that $s'(t) = v(t)$. Suppose that the interval of motion is from time $t = a$ to time $t = b$ and that $a < b$. Assuming that $v$ is a continuous function, we have
+$$
+\int_a^b v(t) dt = s(b) - s(a).
+$$
+\noindent According to the definition on page 104, the average velocity $v_{av}$ is equal to 
+$$
+v_{av} = \frac{s(b) - s(a)}{b - a} .   
+$$
+\noindent The mean, or average value, of the function $v$ on the interval $[a, b]$ is given by 
+\begin{eqnarray*}
+M_a^b(v) &=& \frac{1}{b-a} \int_a^b v(t) dt\\
+                &=& \frac{s(b) - s(a)}{b-a} = v_{av}.
+\end{eqnarray*}
+\noindent Hence the two definitions agree.
+
+The basic properties of the average value of a function correspond closely to the basic properties of the definite integral as they are enumerated at the beginning of Section 4 of Chapter 4. To begin with, we would expect a function which is constant on an interval to have, on that interval, an average value equal to the constant value of the function. The following proposition states that this is so.
+\end{example}
+
+\begin{theorem} %(1.2) 
+If $f(x) = k$ for every $x$ in the interval $[a, b]$, then $M_a^b (f) = k$.
+\end{theorem}
+
+The proof is an immediate corollary of the definition of the mean $M_a^b (f)$ and of Theorem (4.1), page 191. The reader should supply the details.
+
+If one function is less than or equal to another function on some interval, then the lesser one should have the smaller average value. Thus we expect the theorem:
+
+\begin{theorem} %(1.3) 
+If $f$ and $g$ are integrable over $[a, b]$ and if $f (x) \leq g(x)$ for every $x$ in $[a, b]$, then $M_a^b (f) \leq M_a^b (g)$.
+\end{theorem}
+%408 THE DEFINITE IN7~EGRAL (CONTINUED) [CHAP. 8
+
+The proof follows easily from Theorem (4.3), page 191.
+
+We introduce the third property of the average value of a function by means of an example. Suppose that on a 5-hour automobile trip the average velocity is 45 miles per hour during the first 3 hours and 30 during the last 2 hours. What is the average velocity for the whole trip? To get the answer, we observe that the total distance traveled is
+$$
+45 \cdot 3 + 30 \cdot 2 = 195 \;\mbox{miles.}
+$$
+The average velocity over 5 hours is, therefore,
+$$
+\frac{195}{5} = 39 \;\mbox{mph.}
+$$
+If we denote the instantaneous velocity of the automobile by $v(t)$, and assume that the trip began at time $t = 0$, then we can express the fact that the average velocity over the first 3 hours was 45 miles per hour by the equation $M_0^3(v) = 45$. Similarly, we are given $M_3^5(v) = 30$ and have shown that $M_0^5(v) = 39$. Since $3 \cdot 45 + 2 \cdot 30 = 5 \cdot 39$, we can write
+$$
+(3 - 0)M_0^3(v) + (5 - 3)M_3^5(v) = (5 - 0)M_0^5(v).
+$$
+
+Abstracting from this example, we conclude that the average value of a function should have the property expressed in the proposition:
+
+\begin{theorem} %(1.4) 
+If $f$ is integrable over $[a, b]$ and $[b, c]$, then
+$$
+(b - a)M_a^{b}(f) + (c - b)M_b^{c}(f) = (c - a)M_a^{c}(f).
+$$
+\end{theorem}
+
+
+\begin{proof}
+Since $(b - a)M_a^b(f) = \int_a^b f$, the conclusion of (1.4) is equivalent to the equation
+$$
+\int_a^b f + \int_b^c f = \int_a^c f .
+$$
+But this is one of the basic properties of the definite integral [see Theorem (4.2), page 191], so the proof is complete.
+\end{proof}
+
+The next theorem states the properties of the mean corresponding to Theorems (4.4) and (4.5), page 191.
+
+\begin{theorem} %(1.5) 
+If $f$ and $g$ are integrable over $[a, b]$ and if $k$ is any real number, then
+ 
+\begin{quote}
+\begin{description}
+\item[(i)] $M_a^b(kf)= kM_a^b(f),$ 
+\item[(ii)] $M_a^b(f + g) = M_a^b(f ) + M_a^b(g).$
+
+\end{description}
+\end{quote}
+ 
+The proofs are left as exercises.
+\end{theorem}
+%SEC. ]] AVERAGE VALUE OF A FUNCTION  409
+%EXAMPLE 2. 
+\begin{example}
+Let us see whether the definition of average value of a function agrees with our intuition in a simple example. Let $f$ be the linear function defined by
+$$
+f(x) = \frac{1}{2} x + 1, 
+$$
+\noindent whose graph is shown in Figure 3. What is the average value of $f$ between
+2 and 6?
+
+%Figure 3
+\putfig{3.5truein}{scanfig8_3}{}{fig 8.3}
+
+We have $f(2) = \frac{1}{2} \cdot 2 + 1 = 2$ and $f(6) = \frac{1}{2} \cdot 6 + 1 = 4$. Since the graph of $f$ is a straight line, the region below the curve is a trapezoid. It would seem natural for the average value of $f$ on the interval to be the length of the median, which is given by
+$$
+\frac{f(2) + f(6)}{2} = \frac{2 + 4}{2} = 3. 
+$$
+\noindent Computation of $M_2^6(f)$ yields 
+
+\begin{eqnarray*}
+M_2^6(f) &=& \frac{1}{6 - 2} \int_2^6 (\frac{1}{2}x + 1)dx \\
+&=& \frac{1}{4} (\frac{x^2}{4} + x)\Big|_2^6 \\
+&=& \frac{1}{4} [( \frac{36}{4} + 6) - (\frac{4}{4} + 2)] \\
+&=& \frac{1}{4} (15 - 3) = 3.
+\end{eqnarray*}
+\end{example}
+
+In motivating the definition of the mean, or average value, of a function, we have seen its very close connection with the definite integral. Since a beginning student of calculus probably has a greater feeling for the idea of average than for that of an integral, it is fruitful to reverse our point of view.
+% 410 THE DEFINITE INTEGRAL (CONTINUED) [CHAP. 8
+That is, if we were to ask the question ``What really is the definite integral of a function?", one answer is that it is a weighted average. Specifically, as stated in (1.1), the integral $\int_a^bf$ is equal to the product of $b - a$ and the average value of $f$ on the interval $[a, b]$.
+
+We conclude this section with a theorem which is sometimes called the integral form of the Mean Value Theorem. It asserts that if $f$ is continuous, the number $M_a^b(f)$, which we have called an average value, is quite literally the value of the function $f$ for some number between $a$ and $b$.
+\medskip
+
+\begin{theorem} %(1.6) 
+INTEGRAE FORM OF MEAN VALUE THEOREM. 
+If $a < b$ and if $f$ is continuous on the interval $[a, b]$, then there exists a number $c$ such that $a < c < b$ and $M_a^b(f) = f(c)$.
+\end{theorem}
+
+
+\begin{proof}
+Since $f$ is continuous at every point of $[a, b]$, it follows by the Fundamental Theorem of Calculus that the function $F$, defined by
+$$
+F(x) = \int_a^b f(t) dt, \;\;\;\mbox{for every $x$ in $[a, b]$,}
+$$
+\noindent is differentiable. Furthermore,
+$$
+F'(x) = f (x), \;\;\;\mbox{for every $x$ in $[a, b]$.}
+$$
+A differentiable function is necessarily continuous [see (6.1), page 55], and so $F$ more than satisfies the hypotheses of the Mean Value Theorem, (5.2), page 113. That theorem therefore implies that there exists a number $c$ such that $a < c < b$ and
+$$
+F(b) - F(a) = (b - a)F'(c).
+$$
+But $F'(c) = f(c)$, and
+$$
+F(b) - F(a) = \int_a^b f(x)dx.
+$$
+Hence
+$$
+\int_a^b f (x) dx = (b - a) f(c), 
+$$
+and so 
+$$
+f(c) = \frac{1}{b - a} \int_a^b f(x) dx = M_a^b(f).
+$$
+This completes the proof.
+\end{proof}

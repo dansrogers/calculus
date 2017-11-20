@@ -1,0 +1,160 @@
+\section{Alternating Series.} 
+Special among infinite series which contain both positive and negative terms are those whose terms alternate in sign. More precisely, we define the series $\sum_{i=m}^\infty a_i$ to be \textbf{alternating} if $a_{i}a_{i+1} < 0$ for every integer $i \geq m$. It follows from this definition that an alternating series is one which can be written in one of the two forms
+$$
+\sum_{i=1}^\infty  (-1)^{i}b_{i}\;\;\; \mbox{or} \;\;\;  \sum_{i=m}^\infty (-1)^{i+1}b_{i},
+$$
+
+\noindent where $b_i > 0$ for every integer $i \geq m$. An example is the \textbf{alternating harmonic series}
+$$
+\sum_{i=1}^\infty  (-1)^{i+1} = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \cdots .
+$$
+An alternating series converges under surprisingly weak conditions. The next theorem gives two simple hypotheses whose conjunction is sufficient to imply convergence.
+
+\begin{theorem} %(4.1) THEOREM
+The alternuting series $\sum_{i=m}^\infty a_i$ concerges if:
+
+\begin{quote}
+\begin{description}
+\item[(i)]  $|a_{n + 1}| \leq |a_n|, \;\;\; \mathrm{for every integer} n \geq m, \;\mathrm{and}$ 
+\item[(ii)] $\lim_{n \rightarrow \infty} a_n = 0 \;\mathrm{(or, equivalently,} \; \lim_{n \rightarrow \infty} |a_n| = 0).$
+\end{description}
+\end{quote}
+\end{theorem}
+
+\begin{proof}
+We shall assume for convenience and with no loss of generality that $m = 0$ and that $a_i = (-1)^{i} b_i$, with $b_i > 0$ for every integer $i \geq 0$. The series is therefore $\sum_{i=0}^\infty (-1)^{i} b_i$, and the hypotheses (i) and (ii) become
+\begin{quote}
+\begin{description}
+\item[(i')] $b_{n + 1} \leq b_n, \;\;\; \mbox{for every integer $n \geq 0$, and}$  
+\item[(ii')] $\lim_{n \rightarrow \infty} b_n = 0.$
+\end{description}
+\end{quote}
+The proof is completed by showing the convergence of the sequence $\{s_n \}$ of partial sums, which is defined recursively by the equations
+\begin{eqnarray*}
+s_0 &=& (-1)^0 b_0= b_0,\\
+s_n &=& s_{n-1} + ( - 1 )^n b_n, \;\;\; n  = 1, 2, 3, ....  
+\end{eqnarray*}
+
+The best proof that $\lim_{n \rightarrow \infty} s_n$, exists is obtained by an illustration. In Figure 5 we first plot the point $s_0 = b_0$ and then the point $s_1 = s_0 - b_1$. Next we
+plot $s_2 = s_1 + b_2$ and observe that, since $b_2 \leq b_1$, we have $s_2 \leq s_0$. After that comes $s_3 = s_2 - b_3$ and, since $b_3 \leq b_2$ it follows that $s_1 \leq s_3$. Continuing in this way, we see that the odd-numbered points of the sequence $\{s_n\}$ form an increasing subsequence:
+
+\putfig{3.75truein}{scanfig9_5}{}{fig 9.5}
+
+
+\begin{equation}
+s_1 \leq s_3 \leq s_5 \leq \cdots \leq s_{2n-1} \leq \cdots,  
+\label{eq9.4.1}
+\end{equation}
+and the even-numbered points form a decreasing subsequence:
+$$
+s_0 \geq s_2 \geq s_4 \geq \cdots \geq s_{2n} \geq \cdots.
+$$
+Furthermore, every odd-numbered partial sum is less than or equal to every even-numbered one. Thus the increasing sequence (1) is bounded above by any one of the numbers $s_{2n}$, and it therefore converges [see (1.4), page 479]. That is, there exists a real number $L$ such that 
+$$
+\lim_{n \rightarrow \infty}  s_{2n - 1} = L.  
+$$
+For every integer $n \geq 1$, we have
+$$
+s_{2n} = s_{2n - 1} + b_{2n}, 
+$$
+and, since it follows from (ii') that $\lim_{n \rightarrow \infty}  b_{2n} = 0$, we conclude that 
+\begin{eqnarray*}
+\lim_{n \rightarrow \infty}  s_{2n}  &=& \lim_{n \rightarrow \infty}  s_{2n - 1}  + \lim_{n \rightarrow \infty}  s_{2n}  \\
+                                                     &=&  L - 0 = L.
+\end{eqnarray*}
+
+We have shown that both the odd-numbered subsequences $\{s_{2n-1} \}$ and the even-numbered subsequence $\{ s_{2n} \}$ converge to the same limit $L$. This implies that $\lim_{n \rightarrow \infty} s_n = L$. For, given an arbitrary real number $ \epsilon > 0$, we have proved that there exist integers $N_1$, and $N_2$, such that
+\begin{eqnarray*}
+|s_{2n-1} - L| &<& \epsilon, \;\;\;\mbox{whenever}\; 2n - 1 > N_1, \\
+|s_{2n} -L| &<& \epsilon,     \;\;\;\mbox{whenever}\; 2n > N_2. 
+\end{eqnarray*}
+Hence, if $n$ is any integer (odd or even) which is greater than both $N_1$ and $N_2$, then $|s_n - L| < \epsilon$. Thus
+$$
+L = \lim_{n \rightarrow \infty} s_n = \sum_{i=0}^\infty (-1)^{i} b_i,
+$$
+and the proof is complete.
+\end{proof}
+
+As an application of Theorem (4.1) consider the alternating harmonic series
+$$
+\sum_{ i=1}^\infty (-1)^{i + 1} \frac{1}{i} = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \cdots .
+$$
+\noindent The hypotheses of the theorem are obviously satisfied:
+ 
+\begin{quote}
+\begin{description}
+\item[(i)] $\frac{1}{n + 1} \leq \frac{1}{n}, \;\;\; \mbox{for every integer $n \geq 1$, and}$ 
+\item[(ii)] $\lim_{n \rightarrow \infty} (-1)^{n+1} \frac{1}{n} = \lim_{n \rightarrow \infty} \frac{1}{n} = 0.$ 
+
+\end{description}
+\end{quote}
+ 
+Hence it follows that the alternating harmonic series is convergent. It is interesting to compare this series with the ordinary harmonic series
+$ \sum_{i=1}^\infty \frac{1}{i} = 1 + \frac{1}{2} + \frac{1}{3} +\frac{1}{4} + \cdots $, which we have shown to be divergent. We see that the alternating harmonic series is a convergent infinite series $\sum_{i=m}^{\infty} a_i$ for which the corresponding series of absolute values $\sum_{i=m}^{\infty} |a_i|$ fail diverges.
+
+For practical purposes, the value of a convergent infinite series $\sum_{i=m}^{\infty}  a_i$ is usually approximated by a partial $\sum_{i=m}^{\infty}  a_i$. The \textbf{error} in the approximation, denoted by $E_n$, is the absolute value of the difference between the true value of the series and the approximating partial sum; i.e.,
+$$
+E_n = | \sum_{i=m}^{\infty}  a_i - \sum_{i=m}^{n}  a_i | .  
+$$
+\noindent ln general, it is a difficult problem to know how large $n$ must be chosen to cosure that the error $E_n$ be less than a given size. However, for those alternating series which satisfy the hypotheses of Theorem (4.1), the problem is an easy one.
+
+\begin{theorem}  %(4.2) 
+If the ulternating series $\sum_{i=m}^{\infty} a_i$ satisfies hypotheses (i) and (ii) of Theorem (4.1), then the error $E_n$ is less than or equal to the absolute value of the first omitted term. That is,
+$$
+E_n \leq |a_{n+1}|,  \;\;\; \mbox{for every integer} \; n \geq m.
+$$
+\end{theorem}
+
+\begin{proof}
+We shall use the same notation as in the proof of (4.1). Thus we assume that $ m = 0$ and that $a_i = (-1)^{i} b_i$ where $b_i > 0$ for every integer $i \geq 0$. The value of the series is the number $L$, and the error $E_n$ is therefore given by
+$$
+E_n = | \sum_{i=0}^{\infty} a_i - \sum_{i=0}^{n}  a_i | = |L - s_n| .
+$$
+Since $|a_{n+1}| = b_{n+1}$, the proof is completed by showing that
+$$
+|L - s_n| \leq b_{n+1}, \; \mbox{for every integer}\; n \geq 0.
+$$
+Geometrically, $|L - s_n|$ is the distance between the points $L$ and $s_n$ and it can be seen immediately from Figure 5 that the preceding inequality is true. To arrive at the conclusion formally, we recall that $\{s_{2n-1} \}$ is an increasing sequence converging to $L$, and that $\{s_{2n} \}$ is a decreasing sequence converging to $L$. Thus if $n$ is odd, then $n + 1$ is even and
+$$
+s_n \leq L \leq s_{n+1}.
+$$
+On the other hand, if $n$ is even, then $n + 1$ is odd and
+$$
+s_{n +1} \leq L \leq s_n.
+$$
+In either case, we have $|L - s_n| \leq |s_{n+1} - s_n|$. Hence, for every integer $n \geq 0$, 
+$$
+E_n = |L - s_n| \leq |s_{n+1} - s_n| = |a_{n+1}|,
+$$
+and the proof is complete.
+\end{proof}
+
+In Table 1 we have computed some partial sums which approximate the value of the alternating harmonic series. Each entry in the second column is an approximation, and the corresponding entry in the third column is the upper bound on the error provided by Theorem (4.2).
+
+%TABLE 1 
+\begin{table}
+\centering
+\begin{tabular}{r|c|c}
+\hline
+\multicolumn{3}{c}
+{\textit{Alternating harmonic series:} $\sum_{i=1}^\infty (-1)^{i+1} \frac{1}{i}$ . } \vspace{.1in}\\ 
+\hline 
+\multicolumn{3}{c}
+{Partial sums: $s_n = 1 - \frac{1}{2} + \frac{1}{3} - \cdots + (-1)^{n+1} \frac{1}{n} $. }\vspace{.1in}\\ \hline
+    $n$ & $s_n$ = approximation & $|a_{n+1}| = \frac{1}{n + 1}$ = upper bound for error \\ \hline
+         1 &                      1  & $\frac{1}{2}$ \\ \hline
+         2 &     $\frac{1}{2}$ & $\frac{1}{3}$ \\ \hline
+         3 &     $\frac{5}{6}$ & $\frac{1}{4}$ \\ \hline
+         4 &   $\frac{7}{12}$ & $\frac{1}{5}$ \\ \hline
+       10 &          0.6460 & 0.0910 \\ \hline
+     100 &          0.6882 & 0.0099 \\ \hline
+   1000 &          0.6926 & 0.0010 \\ \hline
+10,000 &          0.6931 & 0.0001 \\ \hline
+\end{tabular}
+\caption{TABLE 1}
+\label{table 9.1}
+\end{table}
+\medskip
+
+%502 INFINITE SERIES kHAP. 9 
+

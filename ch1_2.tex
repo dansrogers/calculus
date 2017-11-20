@@ -1,0 +1,460 @@
+\section{Ordered Pairs of Real Numbers, the $xy$-Plane, Functions.}
+\label{sec 1.2} 
+
+The set whose members consist of just the two elements $a$ and $b$
+is denoted $\{ a, b \}$.
+The notation is not perfect
+because it suggests that the members $a$ and $b$ have been ordered:
+$a$ is written first and $b$ second.
+Actually no ordering is present because $\{ a, b \} = \{ b, a \}$.
+Note also that if $a = b$,
+then $\{ a, b \} = \{ b, a \} = \{ a \}$.
+It can happen, however, that the ingredient of order is essential.
+We therefore introduce the notion of
+an \dt{ordered pair} $(a, b)$
+whose first member is $a$ and whose second member  is $b$.
+The characteristic property of ordered pairs is
+\[
+(a, b) = (c, d)
+\provx{if and only if  $a = c$ and $b=d$.}
+\]
+In particular $(a, b) = (b, a)$ \emph{if and only if} $a = b$.
+In Section \secref{1.1}
+we saw that the set $\R$ of all real numbers
+can be thought of as a straight line.
+We shall now show that every ordered pair $(a, b)$
+of real numbers $a$ and $b$
+can be identified with a point in a plane.
+This brings up a notational problem:
+Is $(5, 7)$ the ordered pair of real numbers
+or is it the open interval consisting of all $x$
+such that $5 < x < 7$?
+The answer is that it is impossible to tell
+out of context---just as it is impossible to tell whether the word
+``well" is the noun or the adverb.
+
+Consider two distinct real number lines drawn in a plane
+so that they intersect at the number $0$ on each line.
+One of the lines is traditionally drawn horizontal
+and called the \dt{$x$-axis},
+and the other is made perpendicular to it
+and called the \dt{$y$-axis}.
+The orientation is chosen so that the number $1$ on the $x$-axis
+lies to the right of $0$,
+and the number $1$ on the $y$-axis is above $0$.
+It is also customary to use the same scale of distances on both axes.
+For every ordered pair $(a, b)$ of real numbers,
+let $L_a$ be the line parallel to the $y$-axis
+that cuts the $x$-axis at $a$,
+and let $M_b$ be the line parallel to the $x$-axis
+that cuts the $y$-axis at $b$.
+We assign the point of intersection of $L_a$ and $M_b$
+to the ordered pair $(a, b)$ (see Figure \figref{1.6}).
+The numbers $a$ and $b$ are called the \dt{coordinates} of the point.
+$a$ is the \dt{$x$-coordinate}
+(or \dt{abscissa})
+and $b$ is the \dt{$y$-coordinate}
+(or \dt{ordinate}).
+
+\putfig{3truein}{scanfig1_6}{}{fig 1.6}
+
+If the pairs $(a, b)$ and $(c, d)$ are not equal,
+then the points in the plane assigned to them will be different.
+In addition, every point in the plane has a number pair assigned to it:
+Starting with a point, draw the two lines through it
+which are parallel to the $x$-axis and the $y$-axis.
+One line cuts the $x$-axis at a number $a$,
+and the other cuts the $y$-axis at $b$.
+The ordered pair $(a, b)$ has the original point assigned to it.
+It follows that our assignment
+\[
+\mbox{pair} \goesto \mbox{point}
+\]
+is a one-to-one correspondence
+between the set of all ordered pairs of real numbers,
+which we denote by $\R^2$,
+and the set of all points of the plane.
+It is convenient simply to identify $\R^2$ with the plane
+together with the two axes.
+
+\begin{example}
+\label{exam 1.2.1}
+Plot the points
+$(1, 2), (-2, 3), (0, 1), (4, 0), (-2, -3)$, and $(2, -3)$
+on the $xy$-plane
+(see Figure \figref{1.7}).
+\end{example}
+
+\putfig{3truein}{scanfig1_7}{}{fig 1.7}
+
+The usefulness of the idea of an ordered pair
+is by no means limited to pairs of real numbers.
+In plane geometry, for example,
+we may consider the set of all ordered pairs $(T, p)$
+in which $T$ is a triangle and $p$ is the point of intersection
+of its medians.
+In the three-dimensional extension of the $xy$-plane,
+the set $\R^3$ of all ordered triples $(a, b, c)$ of real numbers
+is identified with the set of all points in three-dimensional space.
+The definition of an ordered triple
+can be reduced to that of an ordered pair
+by defining $(a, b, c)$ to be $((a, b), c)$.
+
+\putfig{3truein}{scanfig1_8}{}{fig 1.8}
+
+Let $P = (a, b)$ and $Q = (c, d)$
+be arbitrary elements in the set
+$\R^2$ of all ordered pairs of real numbers.
+We define the \dt{distance} between $P$ and $Q$ by the formula
+\begin{equation}
+\label{eq1.2.1}
+\dist(P, Q) = \sqrt{(a - c)^2 + (b - d)^2}.     
+\end{equation}
+Three simple corollaries of this definition are:
+
+\begin{prop}
+\label{thm 1.2.1}
+$\dist(P, Q) \geq 0$; i.e., distance is never negative.
+\end{prop}
+\begin{prop} %(2.2)
+\label{thm 1.2.2}
+$\dist(P, Q) = 0$
+if and only if $P = Q$. 
+\end{prop}
+\begin{prop} %(2.3)
+\label{thm 1.2.3}
+$\dist(P, Q) = \dist (Q, P)$. 
+\end{prop}
+
+Another consequence of (1)
+is that it is no longer simply a matter of tradition and convenience
+that we draw the $y$-axis perpendicular to the $x$-axis.
+It follows from consideration of the Pythagorean Theorem
+and its converse (see Figure \figref{1.8})
+that the above definition of distance between elements of $\R^2$
+corresponds with our geometric notion of the distance between points
+in the Euclidean plane
+if and only if the two coordinate axes are perpendicular
+and the scales are the same on both.
+
+\putfig{3truein}{scanfig1_9}{}{fig 1.9}
+
+\begin{example}
+\label{exam 1.2.2}
+Let $C$ be the subset of the $xy$-plane
+consisting of all points whose distance from (1,1) is equal to 2.
+Thus $C$ is the circle shown in Figure \figref{1.9}.
+If $(x, y)$ is an arbitrary point in the $xy$-plane,
+its distance from $(1,1)$
+is equal to
+$\sqrt{(x - 1)^2 + (y - 1)^2}$.
+Hence, $(x, y)$ belongs to $C$
+if and only if
+\begin{equation}
+\sqrt{(x - 1)^2 + (y - 1)^2} = 2.  
+\label{eq1.2.2}
+\end{equation}
+Numbers $x$ and $y$ satisfy (2)
+if and only if they satisfy 
+\begin{equation}
+(x - 1)^2 + (y - 1)^2 = 4.        
+\label{eq1.2.3}
+\end{equation}
+Thus $C$ is the set of all ordered pairs $(x, y)$
+that satisfy (3)---or that satisfy (2).
+Either (2) or (3) is therefore called
+\dt{an equation of the circle} $C$.
+\end{example}
+
+The set of all points $(x, y)$ in the plane
+that satisfy a given equation is called the
+\dt{graph} of the equation.
+Hence, in the above example,
+the circle $C$ is the graph of the equation
+$(x - 1)^2 + (y - 1)^2 = 4$.
+
+\begin{example}
+\label{exam 1.2.3}
+Let $L$ be the set of all ordered pairs $(x, y)$
+such that $y = 2x - 3$.
+For each real number $x$,
+there is one and only one number $y$
+such that $(x, y)$ belongs to $L: y = 2x - 3$.
+To see what $L$ looks like,
+we plot five of its points (see Table \tabref{1.1}).
+As shown in Figure \figref{1.10},
+all these points lie on a straight line.
+In Section \secref{1.5}
+we shall justify the natural conjecture
+that this straight line is the set $L$.
+\end{example}
+
+\begin{table}
+\centering
+\begin{tabular}{r|c} \hline
+$x$  &  $y=2x - 3$     \\ \hline
+ -1  &   -5            \\
+  0  &   -3            \\
+  1  &   -1            \\
+  2  &    1            \\
+  3  &    3            \\ \hline
+\end{tabular}
+\caption{}
+\label{table 1.1}
+\end{table}
+
+\putfig{2.5truein}{scanfig1_10}{}{fig 1.10}
+
+\begin{example}
+\label{exam 1.2.4}
+The set of all pairs $(x, y)$
+such that $y^2 = x$ is the curve shown in Figure \figref{1.11}.
+This curve is a parabola,
+one of the conic sections,
+which are studied in greater detail in Chapter \chref{3}.
+At present we shall be satisfied with plotting a few points and connecting
+them with a smooth curve (see Table \tabref{1.2}).
+
+\putfig{3truein}{scanfig1_11}{}{fig 1.11}
+
+\begin{table}
+\centering
+\begin{tabular}{r|r} \hline
+$y$        &  $x$      \\ \hline
+  0          &   0         \\
+$\pm1$  &   1         \\
+$\pm2$  &   4         \\ \hline
+\end{tabular}
+\caption{}
+\label{table 1.2}
+\end{table}
+\end{example}
+
+A \dt{function} $f$ is any set $f$ of ordered pairs
+such that whenever $(a, b)$ and $(a, c)$ belong to $f$,
+then $b = c$.
+Note that every subset of the $xy$-plane is a set of ordered pairs,
+but not every subset is a function.
+In particular, the parabola in Example \exampref{1.2.4} is not,
+because it contains both (4, 2) and $(4, -2)$.
+On the other hand,
+the straight line in Example \exampref{1.2.3} is a function.
+This condition that a function
+must never contain two pairs $(a, b)$ and $(a, c)$ with $b \neq c$
+means geometrically that a subset of the $xy$-plane is a function
+if and only if it never intersects a line parallel to the $y$-axis
+in more than one point.
+Hence it is an easy matter to decide which of the following sets
+are functions and which are not:
+\begin{quote}
+(i) The set $f$ of all pairs $(x, y)$ such that $y = x + 1$.
+
+(ii) The set $g$ of all pairs $(x, y)$ such that $x^2 + y^2 = 1$.
+
+(iii) The set $F$ of all pairs $(x, y)$ such that $y = x^2 + 2x + 2$.
+
+(iv) The set $h$ of all pairs $(x, y)$ such that $2x + 3y = 1$.
+
+(v) The set $G$ of all pairs $(x, y)$ such that $y = \sqrt {x + 2}$.
+
+(vi) The set $H$ of all pairs $(x, y)$ such that $y^4 = x$.
+\end{quote}
+The sets $f$, $F$, $h$, and $G$ are functions,
+but $g$ and $H$ are not.
+
+The \dt{domain} of a function $f$ is the set of all elements $a$
+for which there is a corresponding $b$
+such that $(a, b)$ belongs to $f$.
+Analogously, the \dt{range} of $f$ is the set of all elements $b$
+for which there is an $a$
+such that $(a, b)$ belongs to $f$.
+In (i),
+the domain of $f$ is the set $\R$ of all real numbers and so is the range.
+On the other hand, in (iii),
+although the domain of $F$ is equal to $\R$,
+the range is the interval consisting of all real numbers $y \geq 1$,
+because we can write $x^2 + 2x + 2 = (x + 1)^2 + 1 \geq 1$.
+
+If a pair $(a, b)$ belongs to a function $f$,
+we call $b$ the \dt{value of $f$ at $a$} and write $b = f(a)$.
+Note that the meaning of $f(a)$ is unambiguous
+only because the definition of a function
+forbids having $(a, b)$ and $(a, c)$ both belong to $f$ if $b \neq c$.
+Therefore the second member of any ordered pair that belongs to $f$
+is determined by the first member.
+
+\begin{example}
+\label{exam 1.2.5}
+In (i),
+\[
+\begin{array}{ll}
+f(x) = x + 1,                &f(a) = a + 1, \vspace{.1in}\\
+f(0) = 1,                      &f(3 + 4) = (3 + 4) + 1 = 8, \vspace{.1in}\\
+f(-1) = -1 + 1 = 0,       &f(a + b) = a + b + 1 .
+\end{array}
+\]
+In (v),
+\[
+\begin{array}{ll}
+G(x) = \sqrt{x + 2},       &G(2x + y) = \sqrt{2x + y + 2}, \vspace{.1in}\\
+G(0) = \sqrt2,               &G(-2) = 0, \vspace{.1in}\\
+G(2) = 2,                      &G(-3) \mbox{is not defined} .
+\end{array}
+\]
+\end{example}
+
+To each element $a$ in the domain of a function $f$
+there corresponds a value $f(a)$ in the range.
+This correspondence between domain and range,
+which is pictured in Figure \figref{1.12},
+\putfig{3truein}{scanfig1_12}{}{fig 1.12}
+is the central idea in the definition of a function.
+Thus the function $f$ that consists of all ordered pairs $(x, y)$
+such that $y = x^2$ and $-1 \leq x \leq 2$
+is interpreted as the rule of correspondence
+which assigns to each number in the interval $[-1, 2]$ its square.
+We can describe $f$ completely and simply by writing
+\[
+f(x) = x^2,       \;\;\;     -1 \leq x \leq 2.
+\]
+Examples of other functions are
+\[
+g(x) = \sqrt{x - 1}, \prov{-1 \leq x < \infty},
+\]
+\[
+F(x) = x^2, \prov{-\infty < x < \infty,}
+\]
+\[
+h(x) = \frac{x}{x + 2}, \prov{x \neq -2} .
+\]
+Note that the functions $f$ and $F$ immediately above
+are \emph{not} equal,
+although $f$ is a subset of $F$.
+Two functions are equal
+if they are one and the same set of ordered pairs.
+It follows that
+
+\begin{prop}
+\label{thm 1.2.4}
+Functions $f$ and $g$ are equal
+if and only if they have the same domain $D$
+and $f(x) = g(x)$ for every element $x$ in $D$. 
+\end{prop}
+
+Thus any complete description of a function
+must include a description of its domain.
+Sometimes this information is in fact omitted.
+We shall adopt the convention that
+if no explicit description of the domain of a function is given,
+then its domain is assumed to be the largest set of real numbers
+that makes sense.
+For example, the domain of the function $H$ defined by
+\[
+H(x) = \frac{1}{x^2 - x - 2} = \frac{1}{(x + 1)(x - 2)}
+\]
+is assumed to be the entire set of real numbers
+with the exception of $-1$ and 2.
+
+It is sometimes helpful to think of a function
+as a computing machine.
+Imagine a computing machine,
+named $f$,
+which is provided with an input tape,
+an output tape,
+and a button (see Figure \figref{1.13}).
+\putfig{3truein}{scanfig1_13}{A computing machine.}{fig 1.13}
+One writes a number $x$ on the input tape
+and pushes the button.
+If $x$ is one of the inputs which the machine will accept,
+i.e., if $x$ is in the domain of $f$,
+the machine whirs contentedly and prints an output,
+which we denote $f(x)$,
+on the output tape.
+If $x$ is not in the prescribed domain,
+either nothing happens or a red light flashes.
+
+We have already seen that
+one of the best ways of describing a subset of $\R^2$
+is to draw a picture of it.
+If this subset happens to be a function,
+we call the picture the graph of the function.
+More specifically,
+if a function $f$ is a subset of $\R^2$,
+its \dt{graph} is the set of all points in the plane
+that correspond to ordered pairs of the form $(x, f(x))$.
+Note that the graph of $f$
+depends on the correspondence between ordered pairs and points;
+i.e., it depends on the choice of axes.
+To illustrate this,
+in Figure \figref{1.14}
+\putfig{2truein}{scanfig1_14}{Two graphs of the function $f(x)=x^3$.}{fig 1.14}
+we have drawn the graph of the function $f$
+defined by $f(x) = x^3$
+for two sets of axes.
+For a single choice of axes,
+we simply identify ordered pairs and points,
+and under this identification
+a function and its graph become the same thing.
+
+Most of the functions encountered in an introduction to calculus
+are defined by means of a single equation;
+e.g., $h(x) = x^3 + 3$.
+It is a bad mistake, however,
+to assume that this is always true.
+The function $F$ given by
+\[
+F(x) = \left \{ \begin{array}{ll}
+        x^2 + 1           &\mbox{if $x \geq 0$},\\
+        -\frac{x}{2}      &\mbox{if $x < 0$},
+                   \end{array}
+\right. 
+\]
+requires two equations for its definition.
+The graph of $F$ is shown in Figure \figref{1.15}.
+\putfig{2.5truein}{scanfig1_15}
+{A function not defined by a simple formula.}{fig 1.15}
+Another function,
+which is so wild that it is impossible to draw its graph,
+is the following:
+\[
+g(x) = \left \{ \begin{array}{ll}
+				0        & \mbox{if $x$ is rational,}\\
+				1        & \mbox{if $x$ is irrational.}							\end{array}
+\right.
+\]
+The ordered pairs that comprise a function
+are not necessarily pairs of numbers.
+An example is the function,
+mentioned earlier in this section,
+which assigns to each triangle
+the point of intersection of its medians.
+It is possible for the domain of a function to be
+a set of ordered pairs.
+Consider the function $f$ consisting of all ordered pairs $((x, y), z)$,
+where $x, y$, and $z$ are numbers that satisfy
+$x \geq y$ and $z = 2x^2 + y^2$.
+We describe this function simply as follows:
+\begin{equation}
+f(x, y) = 2x^2 + y^2,          \;\;\;  x \geq y.  
+\label{eq1.2.4}
+\end{equation}
+As a final example of a function,
+consider the rule of correspondence that assigns to each person
+his or her male parent.
+
+As we have indicated,
+the definition of a function is appallingly general.
+One of our tasks is to delineate properly
+the kinds of functions studied in calculus.
+To begin with,
+a function $f$ is said to be \dt{real-valued}
+if its range is a subset of $\R$, the set of real numbers.
+If the domain of $f$ is a subset of $\R$,
+we call $f$ a \dt{function of a real variable}.
+The function $f(x, y)$ defined in \eqref{1.2.4}
+has as its domain a subset of $\R^2$.
+It is a real-valued function of two real variables.
+For the most part,
+a first course in calculus is a study of
+real-valued functions of one real variable.
+

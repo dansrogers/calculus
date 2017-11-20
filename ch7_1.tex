@@ -1,0 +1,291 @@
+\chapter{Techniques of Integration} \label{chp 7}
+
+We have found indefinite integrals for many functions. Nevertheless, there are many seemingly simple functions for which we have as yet no method of integration. Among these, for example, are $\ln x$ and $\sqrt{a^2 - x^2}$, since we have no way of finding $\int \ln x dx$ and $\int \sqrt{a^2 - x^2} dx$. In this chapter we shall develop a number of techniques, each of which will enlarge the set of functions which we can integrate.
+
+\section{Integration by Parts.}\label{sec 7.1} 
+One of the most powerful methods of integration comes from the formula for finding the derivative of the product of two functions. If $u$ and $v$ are both differentiable functions of $x$, we recall that $\frac{d}{dx} uv = u\frac{dv}{dx}+ v\frac{du}{dx}$. As a consequence, of course, it is true that $u \frac{dv}{dx} = \frac{d}{dx}uv - v \frac{du}{dx}$. From this last equation it follows that  
+
+$$
+\int u \frac{dv}{dx} dx  = \int  \Bigl(\frac{d}{dx} uv - v \frac{du}{dx} \Bigr) dx.
+$$
+\noindent Since the integral of a difference is equal to the difference of the integrals, the last equation is equivalent to
+$$
+\int u \frac{dv}{dx} dx =  \int \frac{d}{dx} (uv) dx - \int v \frac{du}{dx} dx.
+$$
+\noindent But $\int \frac{d}{dx}(uv) dx = uv + c$. Hence, leaving the constant of integration as a by-product of the last integral, we obtain
+
+\begin{theorem} %( 1.1 ) 
+$$
+\int u \frac{dv}{dx} dx = uv - \int v \frac{du}{dx} dx. 
+$$
+\end{theorem}
+
+This is the formula for the technique of integration by parts. To use it, the function to be integrated must be factored into a product of two functions,
+%SEC 1] INTEGRATION BY PARTS  355
+one to be labeled $u$ and the other $\frac{dv}{dx}$. If we can recover $v$ from $\frac{dv}{dx}$, then we hope that $\int v \frac{du}{dx} dx$ is easier to find than $\int u \frac{dv}{dx} dx$. As we shall see, the trick is to find the right factorization.  Sometimes it is obvious, and sometimes it is not.
+
+
+%EXAMPLE 1. 
+\begin{example} Integrate
+$$
+\mbox{(a)}\; \int \ln x dx, \;\;\; \mbox{(b)}\; \int x \sin x dx.
+$$
+
+\noindent For (a), consider the factorization $\ln x \cdot 1$, and let $u = \ln x$ and $\frac{dv}{dx} = 1$. 
+Then $\frac{du}{dx} = \frac{1}{x}$ and $v = x$ (we normally do not concern ourselves with a constant of integration at this point---we look for \textit{some} $v$, not the most general $v$). Integrating by parts, we have
+
+$$
+\begin{array}{ccccl}
+            \int \ln x  \cdot  1  \cdot dx &=& (\ln x)(x) &-& \int x \cdot \frac{1}{x} \cdot dx,\\
+\updownarrow \;\;\; \updownarrow & &\updownarrow \;\;\;\;\; \updownarrow & & \;\;\;\updownarrow \;\;\;\updownarrow\\
+                     u \;\;\; \frac{dv}{dx}   & & u\;\;\;\;\; v & & \;\;\; v \;\;\; \frac{du}{dx}
+\end{array}
+$$
+
+\noindent or
+\begin{eqnarray*}
+\int \ln x dx &=& x \ln x - \int dx\\
+                  &=& x \ln x - x + c.
+\end{eqnarray*}
+
+\noindent If this is the correct answer, its derivative will be the integrand. Checking, we get
+ \begin{eqnarray*}
+\frac{d}{dx} (x \ln x - x + c) &=& 1 \cdot \ln x+ x \cdot \frac{1}{x} - 1 + 0 \\
+                                          &=& \ln x + 1 - 1 = \ln x.
+ \end{eqnarray*}
+
+For (b) we have choices. We can try letting $u = x$ and $\frac{dv}{dx} = \sin x$,
+or we can try $u = \sin x$ and $\frac{dv}{dx} = x$, or even $u = x \sin x$ and $\frac{dv}{dx} = 1$.  Trial and error shows that the first suggestion works and the others do not. If $u = x$ and $\frac{dv}{dx} = \sin x$, then we have $\frac{du}{dx} = 1$ and $v = -\cos x$. The integration-by-parts formula implies that
+$$
+\int x \sin x dx = (x)(-\cos x) - \int (-\cos x)(1) dx,
+$$
+%356 TECHNIQUES OF INTEGRATION [CHAP. 7
+
+\noindent or
+\begin{eqnarray*}
+\int x \sin x dx &=& - x \cos x + \int \cos x dx \\
+                      &=& -x \cos x + \sin x + c.
+\end{eqnarray*}
+\end{example}
+
+Although it is not true that every function can be written as a product of functions which will lead to a simplification of integrals---this technique is of little use if $\int v \frac{du}{dx} dx$ is not easier to integrate than $\int u \frac{dv}{dx} dx$---it is true that many can and that they can be integrated as were the two integrals in Example 1. 
+The problem is to find the best function to call $u$. Sometimes the technique of integration by parts must be used more than once in a problem.
+
+
+%EXAMPLE 2.
+\begin{example} 
+Integrate $\int (3x^2 - 4x + 7) e^{2x} dx$. If we let $u = 3x^2 - 4x + 7$ and 
+$\frac{dv}{dx} = e^{2x}$, then $\frac{du}{dx} = 6x - 4$ and $v = \frac{1}{2}e^{2x}$.
+
+\begin{eqnarray*}
+\int (3x^2 - 4x + 7)e^{2x} dx 
+&=& (3x^2 - 4x + 7)(\frac{1}{2}e^{2x}) - \int (\frac{1}{2} e^{2x})(6x - 4) dx\\
+&=& \frac{1}{2}(3x^2 - 4x + 7)e^{2x} - \int (3x - 2)e^{2x}dx.
+\end{eqnarray*}
+
+\noindent This last integral again involves a product of a polynomial and $e^{2x}$, so we apply the technique again. Let $u_1 = 3x - 2$ and $\frac{dv_1}{dx} = e^{2x}$.
+Then $\frac{du_1}{dx} = 3$ and $v_1 = \frac{1}{2}e^{2x}$. Thus  
+
+\begin{eqnarray*}
+\int (3x - 2)e^{2x} dx 
+&=& (3x - 2)(\frac{1}{2}e^{2x}) - \int (\frac{1}{2}e^{2x})(3) dx \\
+&=& \frac{1}{2} (3x - 2)e^{2x} - \frac{3}{2} \int e^{2x}dx  \\
+&=& \frac{1}{2} (3x - 2)e^{2x} - \frac{3}{4}e^{2x} + c_1. 
+\end{eqnarray*}
+
+\noindent Substituting, we have
+\begin{eqnarray*}
+\int (3x^2 - 4x + 7)e^{2x}dx
+&=& \frac{1}{2}(3x^2 - 4x + 7)e^{2x} - [\frac{1}{2}(3x - 2)e^{2x} - \frac{3}{4} e^{2x} + c_1] \\
+&=& [(\frac{3}{2}x^2 - 2x + \frac{7}{2} - \frac{3}{2}x + 1 + \frac{3}{4})e^{2x} ] + c\\
+&=& (\frac{3}{2} x^2 - \frac{7}{2} x + \frac{21}{4})e^{2x} + c.
+\end{eqnarray*}
+\end{example}
+
+%SEC. 1] INTEGRATION BY PAETS  357
+
+Generally, faced with the product of a polynomial and a trigonometric or exponential function, it is best to let the polynomial be u and the transcendental function be $\frac{dv}{dx}$. In this way, the degree of the polynomial is reduced by one each time the product is integrated by parts. However, faced with a product of transcendental functions, the choice may not be quite so obvious.
+
+%EXAMPLE 3. 
+\begin{example}
+Integrate $\int e^{2x} \cos 3xdx$. Let us select $e^{2x}$ as $u$ and $\cos 3x$ as $\frac{dv}{dx}$. 
+Then $\frac{du}{dx} = 2e^{2x}$ and $v = \frac{1}{3} \sin 3x$. Thus
+
+
+\begin{eqnarray*}
+\int e^{2x} \cos 3x dx = (e^{2x})(\frac{1}{3} \sin 3x) - \int (\frac{1}{3} \sin 3x)(2e^{2x}) dx \\
+= \frac{1}{3} e^{2x} \sin 3x - \frac{2}{3} \int e^{2x} \sin 3x dx. 
+\end{eqnarray*}
+
+\noindent At this point a second integration by parts is necessary. The reader should check that the choice of $\sin 3x$ for $u$ will lead back to an identity. We choose $e^{2x}$ for $u_1$ and $\sin 3x$ for $\frac{dv_1}{dx}$. Then $\frac{du_1}{dx} = 2e^{2x}$ and $v_1 = - \frac{1}{3} \cos 3x$. 
+Hence 
+\begin{eqnarray*}
+\int e^{2x} \sin 3x dx 
+&=& (e^{2x})(-\frac{1}{3} \cos 3x) - \int (- \frac{1}{3} \cos 3x)(2e^{2x}) dx \\
+&=& - \frac{1}{3} e^{2x} \cos 3x + \frac{2}{3} \int e^{2x} \cos 3x dx. 
+\end{eqnarray*}
+
+\noindent Substituting, we have
+
+$$
+\int e^{2x} \cos 3x dx 
+= \frac{1}{3} e^{2x} \sin 3x - \frac{2}{3} \Bigl( -\frac{1}{3} e^{2x} \cos 3x 
++ \frac{2}{3} \int e^{2x} \cos3x dx \Bigr)
+$$
+
+\noindent or
+
+$$
+\int e^{2x} \cos 3x dx = \frac{1}{3} e^{2x} \sin 3x + \frac{2}{9} e^{2x} \cos 3x 
+- \frac{4}{9} \int e^{2x} \cos 3x dx.
+$$
+
+\noindent This does not look much simpler, since we have found an integral in terms of itself. 
+But, if we add $\frac{4}{9} \int e^{2x} \cos 3x dx$ to each side of the equation (supplying the constant of integration at the same time), we have
+
+$$
+\frac{13}{9} \int e^{2x} \cos 3x dx = \frac{e^{2x}}{9} (3 \sin 3x + 2 \cos 3x) + c_1.
+$$
+
+\noindent Finally, therefore, 
+
+$$
+\int e^{2x} \cos 3x dx = \frac{e^{2x}}{13} (3 \sin 3x + 2 \cos 3x) + c.
+$$
+%358 TECHNIQU~ OF I~EGRATION [CHAP. 7
+
+\noindent If we had chosen $\cos 3x$ as $u$ in the first integration by parts and $\sin 3x$ as $u_1$ in the second integration by parts, the integral could be found in the same way that we just found it.
+\end{example}
+
+The differential of a function was introduced in Section 6 of Chapter 2 and was shown to satisfy the equation $dF(x) = F'(x) dx$. As a result, the symbol $dx$ which occurs in an indefinite integral $\int f(x) dx$ may be legitimately regarded as a differential since, if $F'(x) = f(x)$, then $dF(x) = f(x)dx$. Moreover, if $u$ is a differentiable function of $x$, then
+$$
+dF(u) = F'(u) du = f (u) du, 
+$$
+\noindent so we write
+$$
+F(u) + c = \int f (u) du. 
+$$
+\noindent [see (6.7) on page 216]. Using differentials, we obtain a very compact form for the formula for integration by parts. Since $du = \frac{du}{dx}dx$ and $dv = \frac{dv}{dx} dx$, substitution in (1.1) yields 
+
+\medskip
+\noindent \textbf{Theorem (7.1.1')} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$$
+\int udv = uv - \int v du. 
+$$
+%\end{theorem}
+\medskip
+We have less to write when we use this form of the formula, but the result is the same.
+
+
+%EXAMPLE4.
+\begin{example}
+Integrate $\int x \ln x dx$. lf we use (1.1'), we set $u= \ln x$ and $dv = x dx$. 
+Then $du = \frac{1}{x}dx$ and $v = \frac{1}{2} x^2$. Hence
+
+\begin{eqnarray*}
+\int x \ln x dx &=& (\ln x)(\frac{1}{2}x^2) - \int (\frac{1}{2}x^2 ) \Bigl( \frac{1}{x} dx \Bigr) \\
+&=& \frac{1}{2} x^{2} \ln x - \frac{1}{2} \int x dx\\
+&=& \frac{1}{2} x^{2} \ln x - \frac{1}{4} x^2 + c.
+\end{eqnarray*}
+\end{example}
+
+In the remainder of this chapter we shall take full advantage of the streamlined notation offered by the differential and shall use it freely when making substitutions in indefinite integrals.
+%SEC. 1] INTEGRATION BY PARTS  359
+
+%EXAMPLE 5. 
+\begin{example}
+Find $\int x \ln(x + 1) dx$. This example illustrates the fact that a judicious choice of a constant of integration ean sometimes simplify the computation. Set $u = \ln(x + 1)$ and $dv = xdx$. Then $du = \frac{1}{x + 1} dx$ and we may take $v = \frac{x^2}{2}$. If we do this, we have
+
+\begin{eqnarray*}
+\int x \ln(x + 1) dx 
+&=& \ln(x + 1 ) \frac{x^2}{2} - \int \frac{ x^2}{2} \frac{1}{x + 1} dx\\
+&=& \frac{1}{2} x^{2} \ln(x + 1) - \frac{1}{2} \int \frac{x^2}{x + 1} dx.
+\end{eqnarray*}
+
+\noindent Dividing, we find that $\frac{x^2}{x + 1} = x - 1 + \frac{1}{x + 1}$, and hence 
+\begin{eqnarray*}
+\int x \ln(x + 1) dx &=& \frac{1}{2} x^{2} \ln(x + 1) - \frac{1}{2} \int \Bigl(x - 1 + \frac{1}{x + 1} \Bigr) dx\\
+&=& \frac{1}{2} x ^{2} \ln(x + 1) - \frac{1}{2} (\frac{1}{2} x^2 - x + \ln |x + 1|) + c\\
+&=& \frac{1}{2}(x^2 - 1) \ln(x + 1) - \frac{1}{4} x^2 + \frac{1}{2} x + c.
+\end{eqnarray*}
+
+\noindent [Since $\ln(x + 1)$ makes sense only if $x + 1 > 0$, we have replaced $\ln |x + 1|$ 
+by $\ln(x + 1).]$ The same result is reached more quickly if we take $v = \frac{x^2}{2} + c = 
+\frac{x^2 + k}{2}$.  Then integration by parts gives
+
+$$
+\int x \ln(x+ 1)dx = \ln(x+ 1)\frac{x^2 + k}{2} - \int \frac{x^2 + k}{2} \frac{1}{x+ 1} dx. 
+$$
+
+\noindent Since we have a free choice for $k$, we shall choose $k =  -1$ and then
+$\frac{x^2 + k}{2} \frac{1}{ x + 1} = \frac{x^2 - 1}{2} \frac{1}{x + 1} = \frac{x - 1}{2}$.  
+The problem becomes
+
+\begin{eqnarray*}
+\int x \ln(x + 1)dx &=& \ln(x + 1) \frac{x^2 - 1}{2} - \int \frac{ x - 1}{2} dx\\
+                           &=& \frac{1}{2} (x^2 - 1) \ln(x + 1) - \frac{1}{4} x^2 + \frac{1}{2} x + c.
+\end{eqnarray*}
+\end{example}
+
+The method of integration by parts can frequently be used to obtain a recursion formula for one integral in terms of a simpler one. As an example, we derive the useful identity
+\begin{theorem} %(1.2) 
+\label{thm 7.1.2}
+For every integer $n \geq 2$,
+$$
+\int \cos^{n} x dx = \frac{\cos^{n - 1}x \sin x}{n} + \frac{n-1}{n} \int \cos ^{n-2} x dx.
+$$
+\end{theorem}
+
+\begin{proof}
+We write $\cos^{n} x$ as the product $\cos^{n - 1} x \cos x$, and let $u = \cos^{n - 1} x$ 
+and $dv = \cos x dx$.  Then $v = \sin x$ and $du = (n - 1) \cos^{n-2} x (-\sin x dx) 
+= - (n - 1) \cos^{n-2} x \sin x dx$. Hence
+\begin{eqnarray*}
+\int \cos^{n} x dx &=& \cos^{n-1} x \sin x - \int \sin x[ -(n - 1) \cos^{n-2}x \sin x dx]\\
+                           &=& \cos^{n-1} x \sin x + (n - 1) \int \cos^{n-2}x \sin^{2}x dx.
+\end{eqnarray*}
+Replacing $\sin^{2}x$ by $1 - \cos^{2}x$, the equation becomes 
+\begin{eqnarray*}
+\int \cos^{n}x dx 
+&=& \cos^{n-1} x \sin x + (n -1)\int \cos^{n-2} x (1 - \cos^{2}x) dx \\
+&=& \cos^{n - 1} x \sin x + (n -1) \int \cos^{n - 2} x dx - (n -1) \int \cos^{n} x dx .
+\end{eqnarray*}
+Adding $(n-1) \int \cos^{n} x dx$ to both sides of the equation, we obtain 
+$$
+n \int \cos^{n} x dx = \cos^{n - 1} x \sin x + (n - 1) \int \cos^{n -2} x dx,
+$$
+whence \thref{7.1.2} follows at once upon division by $n$.
+\end{proof}
+
+Thus by repeated applications of the recursion formula (1.2), the integral $\int \cos^{n} x dx$ can be reduced eventually to a polynomial in $\sin x$ and $\cos x$. If $n$ is even, the final integral is
+$$
+\int \cos^{0} x dx = \int dx = x + c, 
+$$
+\noindent and, if $n$ is odd, it is
+$$
+\int \cos x dx = \sin x + c.
+$$
+
+%EXAMPLE 6. 
+\begin{example}
+Use the recursion formula (1.2) to find $\int cos^{5}2x dx$. We first write $\int \cos^{5}2x dx = \frac{1}{2} \int \cos^{5} 2x d(2x)$ and then
+$$
+\int \cos^{5}2x d(2x) = \frac{\cos^{4} 2x \sin 2x}{5} + \frac{4}{5} \int  \cos^{3}2x d(2x).  
+$$
+\noindent A second application of the formula yields
+$$
+\int \cos^{3} 2x d(2x) = \frac{\cos^{2} 2x \sin 2x}{3} + \frac{2}{3} \int \cos 2x d(2x), 
+$$
+
+\noindent and, of course,
+$$
+\int \cos 2x d(2x) = \sin 2x + c_1.
+$$
+% 58C. 1] INTEGRATION BY PARTS 361
+\noindent Combining, we have 
+\begin{eqnarray*}
+\int \cos^{5} 2x dx &=& \frac{1}{2} \Bigl[ \frac{\cos^{4} 2x\sin 2x}{5} 
++ \frac{4}{5} \Big\{ \frac{ (\cos^{2} 2x \sin 2x}{3} + \frac{2}{3} ( \sin 2x + c_1) \Big\} \Bigr] \\
+&=& \frac{1}{10} \cos^{4} 2x \sin 2x + \frac{2}{15} \cos^{2} 2x \sin 2x + \frac{4}{15} \sin 2x + c.
+\end{eqnarray*}
+\end{example}

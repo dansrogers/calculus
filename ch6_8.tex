@@ -1,0 +1,314 @@
+\section{Differential Equations.}
+ In this section we shall show how to obtain the general solution of any
+differential equation of the form
+
+
+\begin{equation}
+\frac{d^{2}y}{dx^2} + a \frac{dy}{dx}  + by = 0, 
+\label{eq6.8.1}
+\end{equation}
+\noindent where $a$ and $b$ are real constants. Differential equations of this type occur
+frequently in mechanics and also in the theory of electric circuits. Equation (1) is a \textbf{second-
+order differential equation,} since it contains the second derivative $\frac{d^{2}y}{dx^2}$ but no 
+higher derivative.  It is called \textbf{linear} because each one of $y, \frac{dy}{dx}$, and $\frac{d^{2}y}{dx^2}$ occurs, if at all, to the first power. That is, if we set $\frac{dy}{dx} = z$ 
+and $\frac{d^{2}y}{dx^2} = w$, then (1) becomes $w + az + by = 0$, and the left side is a
+linear polynomial, or polynomial of first degree, in $w, z$, and $y$. A secondorder linear
+differential equation more general than (1) is
+
+
+$$
+\frac{d^{2}y}{dx^2} + f(x) \frac{dy}{dx} + g(x)y  = h(x),
+$$
+%SEC. 8] DIFFERENTIAL EQUATIONS  345
+
+\noindent where $f$, $g$, and $h$ are given functions of $x$. Equation (1) is a special case, 
+called \textbf{homogeneous}, because $h$ is the zero function, and said to have \textbf{constant coefilcients,} since  $f$ and $g$ are constant functions. Thus the topic of this section becomes: the study of second-order, linear, homogeneous differential equations with constant coefficients.
+
+An important and easily proved property of differential equations of this kind is the following:
+
+\begin{theorem} %(8.1) 
+If $y_1$ and $y_2$ are any two solutions of the differential equation (1), and if $c_1$ 
+and $c_2$ are any two real numbers, then $c_{1}y_{1} + c_{2}y_{2}$ is also a solution.
+\end{theorem}
+
+
+\begin{proof}
+The proof uses only the elementary properties of the derivative. We know that
+$$
+\frac{d}{dx}(c_{1}y_{1} + c_{2}y_{2}) = c_{1} \frac{dy_1}{dx} + c_{2} \frac{dy_2}{dx}.
+$$
+Hence
+\begin{eqnarray*}
+\frac{d^2}{{dx}^2} (c_{1}y_{1} + c_{2}y_{2}) &=& \frac{d}{dx}\Bigl(c_{1} \frac{dy_1}{dx} + c_{2} \frac{dy_2}{dx}\Bigr) \\
+&=& c_{1} \frac{d^{2}y_1}{{dx}^2} + c_{2} \frac{d^{2}y_2}{{dx}^2}.
+\end{eqnarray*}
+To test whether or not $c_{1}y_{1} + c_{2}y_{2}$ is a solution, 
+we substitute it for $y$ in the differential equation:
+\begin{eqnarray*}
+&& \frac{d^{2}}{dx^2} (c_{1}y_{1} + c_{2}y_{2}) + a \frac{d}{dx} (c_{1}y_{1} + c_{2}y_{2}) + b(c_{1}y_{1} + c_{2}y_{2})\\
+&=& c_{1} \frac{d^{2}y_1}{dx^2} + c_{2} \frac{d^{2}y_2}{dx^2} + ac_{1} \frac{dy_1}{dx} + ac_{2} \frac{dy_2}{ dx} + bc_{1}y_{1} + bc_{2}y_{2}\\
+&=& c_{1}\Bigl(\frac{d^{2}y_1}{dx^2} + a \frac{dy_1}{dx} + by_1\Bigr) 
+     + c_{2}\Bigl(\frac{d^{2}y_2}{dx^2} + a \frac{dy_2}{dx} + by_2\Bigr).
+\end{eqnarray*}
+The expressions in parentheses in the last line are both zero because, 
+$y_1$ and $y_2$ are by assumption solutions of the differential equation. 
+Hence the top line is also zero, and so $c_{1}y_{1} + c_{2}y_{2}$ is a solution. 
+This completes the proof.
+\end{proof}
+
+It follows in particular that the sum and difference of any two solutions of (1) is a solution, 
+and also that any constant multiple of a solution is again a solution. Finally, note that the 
+constant function 0 is a solution of (1) for any constants $a$ and $b$.
+
+In Section 5 of Chapter 5 we found that the general solution of the differential equation $\frac{dy}{dx} + ky = 0$ is the function $y = ce^{-kx}$, where $c$ is an arbitrary real number. 
+This differential equation is first-order, linear, homogeneous, and with constant coefficients. 
+Let us see whether by any chance an
+%346 TRIGONOMETRIC FUNCTIONS LCHAP. 6
+exponential function might also be a solution of the second-order differential equation 
+$\frac{d^{2}y}{dx^2} + a \frac{dy}{dx} + by = 0$. Let $y = e^{rx}$, where $r$ is any real number.
+Then 
+$$
+\frac{dy}{dx} = re^{rx}, \;\;\; \frac{d^{2}y}{dx^2} = r^{2} e^{rx} .
+$$
+\noindent Hence
+\begin{eqnarray*}
+\frac{d^{2}y}{dx^2} + a \frac{dy}{dx} + by &=& r^{2}e^{rx} + are^{rx} + be^{rx} \\
+&=& (r^2 + ar + b)er^{rx}.
+\end{eqnarray*}
+
+\noindent Since $e^{rx}$ is never zero, the right side is zero if and only if $r^2 + ar + b = 0$. 
+That is, we have shown that
+
+\begin{theorem} %(8.2) 
+The function $e^{rx}$ is a solution of $\frac{d^{2}y}{dx^2} + a \frac{dy}{dx} + by = 0$ 
+if and only if the real number $r$ is a solution of $t^2 + at + b = 0$.
+\end{theorem}
+
+The latter equation is called the \textbf{characteristic equation} of the differential equation.
+\medskip
+
+%EXAMPLE 1. 
+\begin{example}
+Consider the differential equation $\frac{d^{2}y}{dx^2} - \frac{dy}{dx} - 6y = 0$. 
+Its characteristic equation is $t^2 - t - 6 = 0$. 
+Since $t^2 - t - 6 = (t - 3)(t + 2)$, the two solutions, or roots, are 3 and -2. Hence, by (8.2), 
+both functions $e^{3x}$ and $e^{-2x}$ are solutions of the differential equation.  
+It follows by (8.1) that the function 
+$$
+y = c_{1} e^{3x} = + c_{2}e^{-2x}
+$$
+\noindent is a solution for any two real numbers $c_1$ and $c_2$.
+\end{example}
+
+The form of the general solution of the differential equation
+$$
+\frac{d^{2}y}{dx^{2}} + a \frac{dy}{dx} + dx + by = 0
+$$
+\noindent depends on the roots of the characteristic equation $t^2 + at + b = 0$. 
+There are three different cases to be considered.
+\medskip
+
+\textit{Cuse 1.}  The characteristic equation has distinct real roots. This is the simplest case. 
+We have
+$$
+t^2 + at + b = (t - r_1)(t - r_2),
+$$
+%SEC. 8] DIFFERENTIAL EQUATIONS  347
+\noindent where $r_1$, and $r_2$ are real numbers and $r_{1} \neq r_2$. Both functions $e^{r_{1}x}$ and $e^{r_{2}x}$ are solutions of the differential equation, and so is any linear combination $c_{1}e^{r_{1}x} + c_{2}e^{r_{2}x}$. Moreover it can be shown, although we 
+defer the proof until Chapter 11, that if $y$ is any solution of the differential equation, then
+
+
+\begin{equation}
+y = c_{1}e^{r_{1}x} + c_{2}e^{r_{2}x} ,
+\label{eq6.8.2}
+\end{equation}
+
+\noindent for some two real numbers $c_1$ and $c_2$. Hence we say that (2) is the general solution. In Example 1 the function $c_{1}e^{3x} + c_{2}e^{-2x}$ is therefore the general solution 
+of the differential equation $\frac{d^{2}y}{dx^2} - \frac{dy}{dx} - 6y = 0$.
+\medskip
+
+\textit{Case 2.} The characteristic equation has complex roots. The roots of $t^2 + at + b = 0$ 
+are given by the quadratic formula
+$$
+r_{1}, r_{2} = \frac{-a \pm \sqrt{a^2 - 4b}}{2}.
+$$
+\noindent Since $a$ and $b$ are real, $r_1$ and $r_2$ are complex if and only if $a^2 - 4b < 0$, which we now assume.  Setting $\alpha = - \frac{a}{2}$ and $\beta = \frac{\sqrt{4b - a^2}}{2}$, 
+we have
+$$
+r_1 = \alpha + i\beta, \;\;\;  r_2 = \alpha - i\beta.
+$$
+\noindent Note that $r_1$, and $r_2$ are complex conjugates of each other.
+
+Motivated by the situation in Case 1, in which $r_1$ and $r_2$ were real, we consider the 
+complex-valued function $c_{1}e^{r_{1}x} + c_{2}e^{r_{2}x}$, where we now allow $c_1$ 
+and $c_2$, to be complex numbers. We shall show that
+
+\begin{theorem} %(8.3) 
+If $c_1$ and $c_2$ are any two complex conjugates of each other and if $r_1$ and $r_2$ 
+are complex solutions of the characteristic equation, then the function 
+
+$$
+y = c_{1}e^{r_{1}x} + c_{2}e^{r_{2}x}
+$$
+
+\noindent is real-valued.  Moreover it is a solution of the differential equation (1).
+\end{theorem}
+
+
+\begin{proof}
+Let $c_1 = \gamma + i\delta$ and $c_2 = \gamma - i\delta$. Since $r_1 = \alpha + i\beta$ and $r_2 = \alpha - i\beta$, we have
+\begin{eqnarray*}
+c_{1}e^{r_{1}x} + c_{2}e^{r_{2}x} &=& (\gamma + i\delta) e^{(\alpha + i\beta)x} + 
+(\gamma - i \delta) e^{(\alpha - i\beta)x}\\
+&=& e^{\alpha x}[(\gamma + i \delta) e^{i\beta x} + (\gamma - i\delta) e^{-i\beta x}].
+\end{eqnarray*}
+Recall that $e^{i\beta x} = \cos \beta x + i \sin \beta x$ and $e^{-i\beta x} = 
+\cos(\beta x) + i sin(-\beta x) = \cos \beta x - i \sin \beta x$. Substituting, we get
+\begin{eqnarray*}
+c_{1}e^{r_{1}x} + c_{2}e^{r_{2}x} &=& e^{\alpha x} [(\gamma + i\delta)(\cos \beta x + i \sin \beta x) 
++ (\gamma - i\delta)(\cos \beta x - i \sin \beta x)]\\
+&=& e^{\alpha x} (2\gamma \cos \beta x - 2\delta \sin \beta x).
+\end{eqnarray*}
+The right side is certainly real-valued, and this proves the first statement of the theorem.
+Since $\gamma$ and $\delta$ are arbitrary real numbers, so are $2\gamma$ and $-2\delta$. We may therefore replace $2\gamma$ by $k_1$ and $-2\delta$ by $k_2$. We prove the second statement of the theorem by showing that the function
+\begin{equation}
+y = e^{\alpha x}(k_{1} \cos \beta x + k_{2} \sin \beta x)   
+\label{eq6.8.3}
+\end{equation}
+is a solution of the differential equation. Let $y_1 = e^{\alpha x} \cos \beta x$ and 
+$y_2 = e^{ax} \sin \beta x$. Since $y = k_{1}y_1 + k_{2}y_2$, it follows by (8.1) that it is enough to show that $y_1$ and $y_2$ separately are solutions of the differential equation. We give the proof for $y_1$ and leave it to the reader to check it for $y_2$.  By the product rule,
+\begin{eqnarray*}
+\frac{dy_1}{dx} &=& \frac{d}{dx} (e^{\alpha x}\cos \beta x) 
+= \alpha e^{\alpha x} \cos \beta x - \beta e^{\alpha x} \sin \beta x \\
+                        &=& e^{\alpha x}(\alpha \cos \beta x - \beta \sin \beta x).
+\end{eqnarray*}
+Hence 
+\begin{eqnarray*}
+\frac{d^{2}y_1}{dx^2} &=& \alpha e^{\alpha x}(\alpha \cos \beta x - \beta \sin \beta x) +  e^{\alpha x}(-\alpha \beta \sin \beta x - \beta^{2} \cos \beta x) \\
+&=& e^{\alpha x} [(\alpha^2  - \beta^2) \cos \beta x - 2\alpha\beta \sin \beta x].
+\end{eqnarray*}
+Thus
+\begin{eqnarray*}
+\frac{d^{2}y_1}{dx^2} + a \frac{dy_1}{dx} + by_1 
+&=& e^{\alpha x}[(\alpha^2 - \beta^2) \cos \beta  x - 2\alpha \beta \sin \beta x] \\
+& & + ae^{\alpha x}(\alpha \cos \beta x - \beta \sin \beta x) + be^{\alpha x} \cos \beta x \\
+&=& e^{\alpha x}([(\alpha^2 - \beta^2) + a\alpha + b] \cos \beta x - \beta (2\alpha + a) \sin \beta x).
+\end{eqnarray*}
+But, remembering that $r_1 = \alpha + i \beta$ and $r_2 = \alpha - i \beta$ and that 
+these are the roots of the characteristic equation, we read from the quadratic formula that
+$$
+\alpha = - \frac{a}{2}, \;\;\; \beta = \frac{\sqrt{4b - a^2}}{2}.
+$$
+Hence
+\begin{eqnarray*}
+(\alpha^2 - \beta^2) + a \alpha + b 
+&=& \Bigl( -\frac{a}{2} \Bigr)^2 - \Bigl( \frac{\sqrt{4b - a^2}}{2} \Bigr)^2 + a \Bigl(- \frac{a}{2} \Bigr) + b\\
+&=& \frac{a^2}{4} - b + \frac{a^2}{4} -\frac{a^2}{2} + b = 0, 
+\end{eqnarray*}
+and also 
+$$
+2 \alpha + a = 2 \Bigl(-\frac{a}{2} \Bigr) + a = -a + a = 0,
+$$
+whence we get
+\begin{eqnarray*}
+\frac{d^{2}y_1}{dx^2} + \alpha \frac {dy_1}{dx} + by_1 &=& e^{\alpha x} 
+(0 \cdot \cos \beta x - \beta \cdot 0 \cdot  \sin \beta x) \\
+&=& 0,
+\end{eqnarray*}
+and so $y_1$ is a solution. Assuming the analogous proof for $y_2$, it follows that $y$, 
+as defined by (3), is also a solution and the proof is complete.
+\end{proof}
+
+It can be shown, although again we defer the proof, that if $y$ is any real solution to the
+differential equation (1), and if the roots $r_1$ and $r_2$ of the characteristic equation are complex, then
+\begin{equation}
+y = c_{1}e^{r_{1}x} + c_{2}e^{r_{2}x} ,  
+\label{eq6.8.4}
+\end{equation}
+for some complex number $c_1$ and its complex conjugate $c_2$. Hence, if the roots are complex, the general solution of the differential equation can be written either as (4), or in the equivalent form,
+\begin{equation}
+ y = e^{\alpha x}(k_{1} \cos \beta x + k_{2} \sin \beta x),  
+\label{eq6.8.5}
+\end{equation}
+where $r_1 = \alpha + i\beta$ and $r_2 = a - i \beta$, and $k_1$ and $k_2$ are arbitrary real numbers. Note that solutions (2) and (4) look the same, even though they involve different kinds of $r$'s and different kinds of $c$'s.
+
+
+%EXAMPLE 2. 
+\begin{example}
+Find the general solution of the differential equation
+$$
+\frac{d^{2}y}{dx^2} + 4 \frac{dy}{dx} + 13y = 0.
+$$
+The characteristic equation is $t^2 + 4t + 13 = 0$. Using the quadratic formula, we find the roots
+\begin{eqnarray*}
+r_1, r_2 &=& \frac{- 4 \pm \sqrt{16 - 4 \cdot 13}}{2} = \frac{- 4 \pm \sqrt{-36}}{2}\\
+             &=& -2 \pm 3i.
+\end{eqnarray*}
+
+Hence, by (4), the general solution can be written
+$$
+y = c_{1}e^{(-2+3i)x}= + c_{2}e^{(-2-3i)x},
+$$
+\noindent where $c_1$ and $c_2$ are complex conjugates of each other. Unless otherwise stated, however, the solution should appear as an obviously real-valued
+%350 TRIGONOMETRIC FUNCTIONS [CHAP. 6
+function. That is, it should be written without the use of complex numbers as in (5). Hence the
+preferred form of the general solution is
+$$
+y = e^{-2x}(k_{1} \cos 3x + k_{2} \sin 3x).
+$$
+\end{example}
+
+We now consider the remaining possibility.
+\medskip
+
+\textit{Case 3.} The characteristic equation $t^2 + at + b = 0$ has only one root $r$. In this case, 
+we have $t^2 + at + b = (t - r)(t - r)$, and the quadratic formula yields $r = - \frac{a}{2}$ and $\sqrt{a^2 - 4b} = 0$.
+
+Theorem (8.2) is still valid, of course, and so one solution of the differtial equation $\frac{d^{2}y}{dx^2} + a \frac{dy}{dx} + by = 0$ is obtained by taking $y = e^{rx}$. 
+We shall show that, in the case of only one root, 
+$xe^{rx}$ is also a solution. Setting $y = xe^{rx}$, we obtain
+\begin{eqnarray*}
+          \frac{dy}{dx} &=& e^{rx} + xre^{rx} = e^{rx} (1 + rx),\\
+\frac{d^{2}y}{dx^2} &=& re^{rx}(1 + rx) + e^{rx} \cdot r\\
+                              &=& re^{rx} (2 + rx).
+\end{eqnarray*}
+
+\noindent Hence 
+\begin{eqnarray*}
+\frac{d^{2}y}{dx^2} + a \frac{dy}{dx} + by &=& re^{rx}(2 + rx) + ae^{rx}(1 + rx) + bxe^{rx}\\
+&=& e^{rx}(2r + r^{2}x + a + arx + bx) \\
+&=& e^{rx}[x(r^2 + ar + b) + (a + 2r)].
+\end{eqnarray*}
+
+\noindent Since $r$ is a root of $t^2 + at + b$, we know that $r^2 + ar + b = 0$. Moreover, we have seen that $r = -\frac{a}{2}$, and so $a + 2r = 0$. It follows that the last expression in the above equations is equal to zero, which shows that the function $xe^{rx}$ is a solution of the differential equation.
+
+Thus $e^{rx}$ is one solution, and $xe^{rx}$ is another. It follows by (8.1) that, for any two real
+numbers $c_1$ and $c_2$, a solution is given by
+$$
+y = c_{1}xe^{rx} + c_{2}e^{rx} = (c_{1}x + c_{2})e^{rx},
+$$
+
+\noindent Conversely, it can be shown that if $y$ is any solution of the differential equation (1), 
+and if the characteristic equation has only one root $r$, then
+
+
+\begin{equation}
+y = (c_{1}x + c_2)e^{rx}
+\label{eq6.8.6}
+\end{equation}
+%SEC. 8] DIFFERENTIAL EQUATIONS  351
+
+\noindent for some pair of real numbers $c_1$ and $c_2$. The general solution in the case of a single root is therefore given by (6).
+
+%EXAMPLE 3. 
+\begin{example} Find the general solution of the differential equation $9y'' - 6y' + y = 0$. Here we
+ have used the common notation $y'$ and $y''$ for the first and second derivatives of the unknown function $y$. Dividing the equation by 9 to obtain a leading coefficient of 1, we get $y'' - \frac{2}{3}y' + \frac{1}{9}y = 0$, for which the characteristic equation is $t^2 - \frac{2}{3}t + \frac{1}{9} = 0$. Since $t^2 - \frac{2}{3}t + \frac{1}{9} = (t - \frac{1}{3})(t - \frac{1}{3})$, there is only one root, $r = 3$. Hence
+$$
+y = (c_{1}x + c_{2})e^{x/3}
+$$
+\noindent is the general solution.
+\end{example}
+
+The solution of a differential equation can be checked just as simply as an indefinite integral, by
+differentiation and substitution.
+

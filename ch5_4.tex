@@ -1,0 +1,344 @@
+\section{Other Exponential and Logarithm Functions.} \label{sec 5.4} 
+If $m$ and $n$ are integers and $n > 0$, then
+$$
+2^{m/n} = \sqrt[n]{2^{m}}.
+$$
+
+\noindent Hence, for any rational number $r$, the number $2^r$ is defined. But what is $2^x$ if $x$ is not rational? More generally, how should $a^x$ be defined for an arbitrary real number $x$ and a positive number $a$?
+
+If $x$ is a rational number and $a$ is positive, we have shown that $\ln a^{x} = x \ln a$, and therefore $a^{x} = e^{x \ln a}$. However, $e^{x \ln a}$ is defined for every real number $x$. We shall take advantage of this fact, and, if $x$ is real but not rational, we \textit{define} $a^x$ to be $e^{x \ln a}$.
+Consequently,  for every real number $x$, we have
+
+$$
+a^{x} = e^{x \ln a}, \;\;\; a > 0.  
+$$
+
+This function, so defined, has all the familiar properties of an exponential function:
+
+\begin{theorem}
+\label{thm 5.4.1}
+$$
+\left \{
+\begin{array}{l}
+a^{x} > 0, \;\;\; -\infty < x < \infty,\\
+\\
+a^{0} = 1,\\
+\\
+a^{1} = a,\\
+\\
+a^{x} \cdot a^{y} = a^{x + y},\\
+\\
+a^{-x} = \frac{1}{a^x},\\
+\\
+\frac{a^x}{a^y} = a^{x-y}.
+\end{array}
+\right.
+$$
+\end{theorem}
+
+The proofs follow readily from the properties of the functions $\ln$ and $\exp$. For example, 
+$$
+a^{1} = e^{1 \ln a} = e ^{\ln a} = a,
+$$
+
+$$
+a^{x} \cdot a^{y} = e ^{x \ln a} \cdot e ^{y \ln a} = e^{x \ln a + y \ln a} 
+= e^{(x + y)\ln a} = a^{x + y}.
+$$
+
+The derivative of $a^{x}$ is easily computed from its defining equation. Since 
+
+$$
+\frac{d}{dx}a^{x} = \frac{d}{dx} e^{x \ln a} = e^{x \ln a} \frac{d}{dx} (x \ln a) 
+= a^{x} \ln a,
+$$
+we have the formula
+\begin{theorem}
+\label{thm 5.4.2}
+$$
+\frac{d}{dx} a^{x} = a^{x} \ln a.
+$$
+\end{theorem}
+More generally, if $u$ is a differentiable function of $x$, the Chain Rule implies that 
+\begin{equation}
+\frac{d}{dx} a^{u} = a^{u} \ln a \frac{du}{dx}.
+\label{eq5.4.1}
+\end{equation}
+
+%EXAMPLE 1. 
+\begin{example}
+Compute the derivative of each of the following functions:
+$$
+(a)\; 2^x, \;\;\;(b)\; 2^{(x^2)}, \;\;\;(c)\; 2^{(2^x)}.
+$$
+
+\noindent For (a) we get
+$$
+\frac{d}{dx} 2^{x}  = 2^{x} \ln 2; 
+$$
+\noindent for (b),
+
+\begin{eqnarray*}
+\frac{d}{dx} 2^{(x^2)} 
+&=& 2^{(x^2)} \ln 2 \frac{d}{dx} x^2 = 2^{(x^2)} (\ln 2) (2x) \\
+&=& x 2^{x^{2} + 1} \ln 2;
+\end{eqnarray*}
+
+\noindent and for (c), 
+
+\begin{eqnarray*}
+\frac{d}{dx} 2^{(2^x)} 
+&=& 2^{(2^{x})} \ln 2 \frac{d}{dx} 2^{x} = 2^{(2^{x})} (\ln 2) 2^{x} \ln 2 \\
+&=& 2^{2^{x} +x} (\ln 2)^2.
+\end{eqnarray*}
+\end{example}
+
+If $a = 1$, then $a^{x} = e^{x \ln 1} = e^{0} = 1$ for every real number $x$. Hence $1^{x}$ is the constant function 1.
+%264 LOGARITHMS AND EXPONENTIAL FUNCTIONS [CHAP. 5
+
+If $a > 1$, then the graph of the function $a^{x}$ resembles the graph of $e^{x}$. The slope of the tangent line to the graph is always positive, for if $a > 1$, then $\ln a > 0$, and, since $a^{x} > 0$, we see that
+$$
+\frac{d}{dx} a^x = a^{x} \ln a > 0.
+$$
+
+This means that $a^x$ is a strictly increasing function (see Problem 10 at the end of this section). The second derivative is also always positive, since
+
+$$
+\frac{d^2}{dx^2} a^x = \frac{d}{dx} (a^{x} \ln a) = a^{x}(\ln a)^2 > 0.
+$$
+
+\noindent Hence the graph is concave upward for all $x$. Moreover, there are no extreme points, critical points, or points of inflection. The graph is drawn in Figure \f{5.7}. It is relatively flat on the left, passes through $\Bigl( -1, -\frac{1}{a} \Bigr)$, (0, 1), and $(1, a)$, and goes upward to the right. For greater values of $a$, the graph is flatter on the left and steeper on the right.
+
+
+\putfig{3.25truein}{scanfig5_7}{}{fig 5.7}
+
+If $0 < a < 1$, the function $a^x$ may be studied by considering it in another form, $\Bigl( \frac{1}{a} \Bigr)^{-x}$. Since $\frac{1}{a} > 1$, the graph of the function $\Bigl( \frac{1}{a} \Bigr)^{x}$ is of the type described in the preceding
+paragraph, and the graph of $a$, which is equal to $\Bigl( \frac{1}{a} \Bigr)^{-x}$ , is the same curve reflected across the $y$-axis. It is steep on the left, passes through $\Bigl( -1, \frac{1}{a} \Bigr)$, (0, 1), and $(1, a)$, and flattens out as it goes to to the right. It is drawn in Figure \f{5.8}.
+%SEC, 4] OTHER EXPONENTIAL AND LOGARiTrIM FUNCTIONS 265 
+
+Every derivative formula has a corresponding integral formula. Since
+$$
+\frac{d}{dx} \Bigl( \frac{a^x}{ \ln a} \Bigr) = \frac{1}{\ln a} \frac{d}{dx} a^{x} = a^{x},
+$$
+\noindent the integral formula corresponding to (4.2) is
+
+\begin{theorem} %(4.3)
+$$
+\int a^x dx = \frac{a^x}{\ln a} + c.  
+$$
+\end{theorem}
+
+As always, the Chain Rule provides a generalization. If $u$ is a differentiable function of $x$, then
+\begin{equation}
+\int a^{u} \frac{du}{dx} dx = \frac{a^u}{\ln a} + c.
+\label{eq5.4.2}
+\end{equation}
+
+\putfig{3.25truein}{scanfig5_8}{}{fig 5.8}
+
+%EXA MPLE 2
+\begin{example}
+Compute each of the following indefinite integrals:
+
+$$
+(a) \int 3^{y}dy, \;\;\; (b) \int x 10^{x^2 - 7} dx, \;\;\; (c) \int\frac{1}{x}\; (2.31)^{\ln x} dx.
+$$
+
+\noindent A direct use of (4.3) gives for (a)
+
+$$
+\int  3^{y} dy = \frac{ 3^y}{\ln 3} + c.
+$$
+\noindent Since $\frac{d}{dx}(x^2 - 7) = 2x$, integral (b) can be written 
+$\frac{1}{2} \int 10^{x^2 - 7} \cdot 2x \cdot dx$, which by (2) is equal to 
+$\frac{1}{2} \frac{10^{x^2 - 7}}{\ln 10}
++ c$. Hence
+
+$$
+\int x 10^{x^2 - 7} dx = \frac{10^{x^{2} - 7}}{2 \ln 10} + c.
+$$
+% 266 LOGARITHMS AND EXPONENTIAL FUNCTIONS [CHAP. 5
+
+\noindent For part (c) we note that $\frac{d}{dx} \ln x = \frac{1}{x}$, and therefore that the integral is of the form in (2). Thus
+
+$$
+\int (2.31)^{\ln x} \frac{1}{x}dx = \frac{(2.31)^{\ln x}}{\ln 2.31} + c.
+$$
+\end{example}
+
+It was proved on page 241 that $\ln a^r = r \ln a$, for every rational number $r$ and every positive real number $a$. We are now in a position to remove the restriction that $r$ be rational. Let $x$ be an arbitrary real number. Then $a^x = e^{x \ln a}$, and so $\ln a^x = \ln e^{x \ln a} = \ln \exp(x \ln a)$.  Since $\ln$ and $\exp$ are inverse functions of each other it follows that 
+$\ln \exp(x \ln a) = x \ln a$.  We have therefore proved that
+
+ 
+\begin{theorem} %(4.4)
+$\ln a^x = x \ln a$, for every real number $x$ and every positive real number $a$. 
+\end{theorem}
+
+Another of the well-known laws of exponents now follows easily: 
+
+\begin{theorem} %(4.5) 
+$(a^x)^y = a^{xy}$ for all real numbers $x$ and $y$ and every positive real number $a$.
+\end{theorem}
+
+\begin{proof}
+If we let $a^x = b$, then $(a^x)^y = b^y = e^{y \ln b}$. Replacing $b$ in the last expression, we have
+$$
+(a^x)^y = e^{y \ln a^x},
+$$
+and, using (4.4), 
+$$
+e^{y \ln a^x}  = e^{y(x \ln a)} = e^{xy \ln a}.
+$$
+Since $e^{xy \ln a} = a^{xy}$, it follows that $(a^x)^y = a^{xy}$, and the proof is complete.
+\end{proof}
+
+In particular, $(e^x)^y = e^{xy}$ for all real numbers $x$ and $y$.
+
+Let $a$ be any real number, and consider the function $f$ defined for every positive real number $x$ by
+$$
+f(x) = x^{a}.
+$$
+
+\noindent Hitherto in this section we have considered the function $a^x$. Now we reverse the roles of constant and variable. One of the basic rules of differentiation proved in Chapter 1 states that, if $a$ is a rational number, then
+$$
+f'(x) = \frac{d}{dx} x^a = ax^{a - 1}.
+$$
+\noindent We now remove the restriction that $a$ be rational. Observe first that $x^a$ is certainly a differentiable function, since it is the composition of differentiable functions:
+$$
+x^a= e^{a \ln x} = \mbox{exp} (a\; \ln x).
+$$
+% SEC. 4] OTHER EXPONENTIAL AND LOGARTTHM FUNCTIONS 267
+
+\noindent Knowing this, we use implicit differentiation to compute its derivative. Let $y = x^a$. Then $\ln y = \ln x^a = a \ln x$, and so
+
+\begin{eqnarray*}
+             \frac{d}{dx} \ln y &=& \frac{d}{dx} a \ln x,\\
+              \frac{1}{y} \frac{dy}{dx} &=& a \frac{1}{x},\\
+                          \frac{dy}{dx} &=& \frac{ay}{x}.
+\end{eqnarray*}
+
+\noindent Since $y = x^a$, it follows that $\frac{ay}{x}=\frac{ax^a}{x}= ax^{a-1}$. Thus we have proved that
+
+\begin{theorem}
+\label{thm 5.4.6}
+$$
+\frac{d}{dx}x^a = ax^{a-1}, \; \mbox{for any real number $a$}.  
+$$
+\end{theorem}
+
+The technique of taking logarithms and differentiating implicitly,
+which was used in proving \thref{5.4.6},
+can also be used to compute the derivative of a positive differentiable function which is raised to a power which is itself a differentiable function. For example, to compute $\frac{d}{dx} x^{x}$, 
+we let $y = x^{x}$. Then 
+$$
+\ln y= \ln x^{x}= x \ln x, 
+$$
+
+\noindent and it follows that
+
+\begin{eqnarray*}
+\frac{1}{y} \frac{dy}{dx} &=& \frac{d}{dx} (x \ln x) = x \frac{1}{x} + \ln x = 1 + \ln x, \\
+            \frac{dy}{dx} &=& y( 1 + \ln x) = x^{x} ( 1 + \ln x), \;\;\;(x > 0). 
+\end{eqnarray*}
+
+\noindent This technique is known as \textbf{logarithmic differentiation} and is a basic tool for finding derivatives. We can use it to derive a formula for $\frac{d}{dx} u^{v}$, where $u$ is a positive differentiable function of $x$ and $v$ is any differentiable function of $x$.  Let $y = u^v$, and then $\ln y = v \ln u$. Hence
+
+\begin{eqnarray*}
+\frac{1}{y} \frac{dy}{dx} 
+&=& \frac{d}{dx} (v \ln u) = v \frac{1}{u} \frac{du}{dx} + \ln u \frac{du}{dx},\\
+\frac{dy}{dx} &=& y \Bigl( \frac{v}{u} \frac{du}{ dx} + \ln u \frac{dv}{dx} \Bigr),\\
+\frac{dy}{dx} &=& u^{v}  \Bigl( \frac{v}{u} \frac{du}{dx} + \ln u \frac{dv}{dx} \Bigr),
+\end{eqnarray*}
+% 268 LOGARITHMS AND EXPONEN7IAL FUNCTIONS [CH^P 5 
+\noindent and finally, therefore, 
+
+\begin{equation}
+\frac{d}{dx} u^{v} = vu^{v - 1}\frac{du}{dx} + u^{v} \ln u \frac{dv}{dx}.
+\label{eq5.4.3}
+\end{equation}
+
+\noindent We do not suggest that the reader memorize this formula. It is more important to be able to use the method of logarithmic differentiation.
+\medskip 
+
+%EXAMPLE 3. 
+\begin{example}
+Find $\frac{d}{dx} (x^2 + 1) ^{e^x}$.  Letting $y = (x^{2} + 1)^{e^x}$ and taking natural logarithms, we have
+$$
+\ln y = \ln (x^2 + 1)^{e^x} = e^x \ln (x^2 + 1).
+$$
+\noindent Differentiating, we obtain 
+
+\begin{eqnarray*}
+\frac{1}{y} \frac{dy}{dx} &=& e^{x} \frac {1}{x^{2}+1} 2x + e^{x} \ln (x^{2} + 1),\\
+\frac{dy}{dx}&=& ye^{x} \Bigl[ \frac{2x}{x^2 + 1} + \ln (x^2 + 1) \Bigr).
+\end{eqnarray*}
+
+\noindent Hence
+$$
+\frac{d}{dx} (x^2 + 1)^{e^x} = e^{x}(x^2 + 1)^{e^{x}} \Bigl[ \frac{2x}{x^2 + 1} + \ln (x^{2} + 1) \Bigr].
+$$
+\end{example}
+
+The function $a^x$ is strictly monotonic if $a$ is positive and not equal to 1, increasing if $a > 1$ and decreasing if $0 < a < 1$. Moreover, it has a nonzero derivative at every $x$. It follows by Theorem (3.4), page 261, that $a^x$ has a differentiable inverse function. Even as the inverse function of $e^x$ is the natural logarithm, we call the inverse function of $a^x$ the \textbf{logarithm to the base} $a$. Hence
+
+$$
+  y = \mbox{log}_{a}x \;\;\; \mbox{if and only if}  \;x = a^{y}.
+$$
+
+We emphasize that $a$ must be a positive number different from 1 and that $\log_{a}x$ is defined only for positive values of $x$. The so-called \textbf{common logarithm}, usually denoted by simply log and
+encountered in the usual tables of logarithms, is the logarithm to the base 10. Thus $\log 100 = \log_{10} 100 = 2$, since $10^2 = 100$. The logarithm to the base a has the same algebraic properties as the natural logarithm:
+
+\begin{theorem} %( 4.7 )
+$$
+\left \{
+ \begin{array}{l}
+\mbox{log}_{a} 1 = 0, \\
+\\
+\mbox{log}_{a} a = 1,\\
+\\
+\mbox{log}_{a} pq = \mbox{log}_{a}p + \log_{a}q,\\
+\\
+\mbox{log}_{a}\frac{p}{q} = \log_{a}p - log_{a}q,\\
+\\
+\mbox{log}_{a}p', = b \log_{a}p.
+\end{array}
+\right.
+$$
+\end{theorem}
+%SEC. 41 OTHE ~ EXPONENTIAL AND i OGARITHM FUNCTIONS 269
+
+The above properties hold for every positive real number $a$ different from 1, for all positive real numbers $p$ and $q$, and for every real number $b$. Each one may be proved by considering the corresponding exponential function. Note that since $a^x$ and $\log_{a}x$ are inverse functions of each
+other,
+$$
+\left \{
+ \begin{array}{ll}
+\log_{a}a^x = x,\;\;\;     &\mbox{for all real}\; x, \\
+a^{\log_{a} x} = x,\;\;\;  &\mbox{for all positive real}\; x.
+\end{array}
+\right.
+$$
+
+\noindent For example, if we let $x = \log_{a}p$ and $y = \log_{a}q$, then we have $p = a^{x}$ and $q = a^{y}$,  and so
+
+
+\begin{eqnarray*}
+\log_{a}pq &=& \log_{a}(a^{x} a^{y}) = \log_{a}a^{x + y} = x + y\\
+          &=& \log_{a}p + \log_{a}q.
+\end{eqnarray*}
+
+\noindent The other properties are proved in the same way.
+
+To compute the derivative of $\log_{a}x$, we let $y = \log_{a}x$. The equivalent exponential equation is $x = a^y$,  from which it follows that $\ln x = \ln a^y = y \ln a$. By implicit differentiation, therefore,
+
+\begin{eqnarray*}
+\frac{d}{dx}(y \ln a) &=& \frac{d}{dx} \ln x,\\
+  \ln a \frac{dy}{dx} &=& \frac{1}{x}.
+\end{eqnarray*}
+
+\noindent Solving for $\frac{dy}{dx}$, which equals $\frac{d}{dx} \log_{a}x$, we obtain
+
+\begin{theorem} %(4.8) 
+$$
+\frac{d}{dx} \log_{a}x = \frac{1}{\ln a} \frac{1}{x}.
+$$
+\end{theorem}

@@ -1,0 +1,364 @@
+\section{Improper Integrals.}
+It is assumed in the definition of integrability (pages 168f) that if a function is integrable over an interval, then it is necessarily bounded on that interval. Hence the function $f$ defined by $f(x) = \frac{1}{x^2}$ is not integrable over [0, 1] because it satisfies neither condition for boundedness: The number 0 is not in the domain of $f$, and there is no upper bound for $f$ [for values of $x$ near zero $f(x)$ becomes arbitrarily large]. The fact that $f(0)$ is not defined is not a serious difficulty because, as was proved in Section 6, the values of a function at any finite set of points can be defined arbitrarily without affecting the integrability of the function. Thus we could set 
+$$
+f(x) = \left\{ \begin{array}{ll}
+\frac{1}{x^2}\;\;\;&   \mbox{if}\; x \neq 0,\\
+3                       &   \mbox{if}\; x = 0,
+            \end{array}
+\right .
+$$
+\noindent and thereby satisfy the first condition of boundedness. However, there is no way to make $f$ bounded on [0, 1] by changing a finite number of its values.
+
+In this section we shall show that it is possible to extend the concept of integrability to include many functions which are not bounded on their
+%SEC, 7] I M P ROP ER I NTEGRALS  461
+intervals of integration. In addition, the extensions will allow the possibility of integrating over intervals which are not bounded. These integrals are called improper integrals. Two examples are
+$$
+\begin{array}{ll}
+\int_0^1 \frac{1}{\sqrt x} dx\; &\mbox{unbounded integrand,}\\ 
+&\\
+\int_0^\infty e^{-x} dx  \;        &\mbox{unbounded interval. }
+\end{array}
+$$
+
+Let $(a, b]$ be a half-open interval (containing $b$ but not $a$), and let $f$ be a function which is integrable over the closed interval $[t, b]$ for every number $t$ in $(a, b]$. The integral $\int_t^b f$ is thus defined if $a < t \leq b$, and our definition will concern the limit
+
+
+\begin{equation}
+\lim\lim_{t \rightarrow a_{+}} \int_t^b f.  
+\label{eq8.7.1}
+\end{equation}
+\noindent We consider the following three cases:
+
+(i) \textit{The function $f$ is bounded on $(a, b]$.}  It is not difficult in this case to prove that $f$ is integrable over the closed interval $[a, b]$ and, in addition, that the limit (1) exists and is equal to $\int_a^b f$. [If $a$ is not in the domain of $f$, we define $f(a)$ arbitrarily.]
+
+(ii) \textit{The function $f$ is not bounded on $(a, b]$, but the limit} (1) \textit{exists.} In this case $f$ is not integrable over $[a, b]$ according to our original dbefinition. Hence we define the \textbf{improper integral,} which is still denoted by $\int_a^b f$, to be the limit (1).
+
+(iii) \textit{The limit} (1) \textit{does not exist.} In this case the integral is not defined. 
+
+Thus, if the limit exists, we have the equation
+$$
+\int_a^b f = \lim_{t \rightarrow a_{+}} \int_t^b f. 
+$$
+\noindent If $f$ is bounded on $(a, b]$, the integral is called \textbf{proper.}  If $f$ is not bounded on $(a, b]$, the improper integral exists only if the limit exists. However, the traditional terminology, which we shall adopt, is that the improper integral is \textbf{convergent} if the limit exists and \textbf{divergent} if it does not.
+
+In spite of the improper integrals defined in this section, we emphasize that whenever we say that $f$ is integrable over $[a, b]$ we mean it in the sense of the original definition of integrability, in which $[a, b]$ is a bounded interval and $f$ is bounded on it.
+%462 THE DEFlNlTE INTEGRAL (CONTINUED) [CHAP. 8
+
+The situation is analogous if $[a, b)$ is a half-open interval and $f$ is integrable over $[a, t]$ for any $t$ in $[a, b)$. We have
+$$
+\int_a^b f= \lim_{t \rightarrow b_{-}} \int_a^t f  
+$$
+\noindent If $f$ is bounded on $[a, b)$, then $f$ is integrable over $[a, b]$, and $\int_a^b f$ is a proper integral. If $f$ is not bounded, the integral is improper, and it is convergent or divergent according as the limit does or does not exist.
+
+
+%EXAMPLE 1. 
+\begin{example}
+Classify each of the following integrals as proper or improper. If improper, determine whether convergent or divergent, and, if convergent, evaluate it.
+$$
+\begin{array}{ll}
+  \mbox{(a)}\; \int_0^1 \frac{1}{\sqrt x} dx,  \;\;\;  
+&\mbox{(c)}\; \int_0^2 \frac{1}{2 - x} dx, \\
+&\\
+  \mbox{(b)}\; \int_0^1 \frac{1}{x^2} dx,   \;\;\;     
+&\mbox{(d)}\; \int_0^1 \sin \frac{1}{x} dx.
+\end{array}
+$$
+
+Since $\frac{1}{\sqrt x}$ takes on arbitrarily large values near 0, we know that $\int_0^1\frac{1}{\sqrt x} dx$ is not a proper integral. For every $t$ in (0, 1], 
+$$
+\int_t^1 \frac{1}{\sqrt x} dx = 2\sqrt x \big|_t^1 = 2(1 - \sqrt t) .
+$$ 
+\noindent Since $\lim_{t \rightarrow 0_{+}} 2(1 - \sqrt t)$ exists, we get 
+$$
+\int_0^1 \frac{1}{\sqrt x} dx =  \lim_{t \rightarrow 0_{+}} 2(1 - \sqrt t) = 2. 
+$$
+\noindent Hence (a) is a convergent improper integral with value 2.
+
+The values of $\frac{1}{x^2}$ also increase without bound as $x$ approaches zero, and (b) is therefore not a proper integral. For every $t$ in (0, 1],
+$$
+\int_t^1 \frac{1}{x^2} dx = -\frac{1}{x} \Big|_t^1 = \frac{1}{t} - 1.
+$$
+% SEC. 7] IMPROPER INTEGRALS 463
+\noindent However,
+$$
+\lim_{t \rightarrow 0_{+}} \int_t^1  \frac{1}{x^2} dx= \lim_{t \rightarrow 0_{+}}  \frac{1}{t} - 1 = \infty,  
+$$
+\noindent and, since the limit does not exist, the improper integral is divergent.
+
+The function $\frac{1}{2 - x}$ is not bounded on [0, 2), and so (c) is also an improper integral. For every $t$ such that $0 \leq t < 2$, we have
+\begin{eqnarray*}
+\int_0^t \frac{1}{2 - x} dx 
+&=& - \ln |2 - x|\Big|_0^t  \\
+&=&  - \ln(2 - t) + \ln 2 = \ln \frac{2}{2 - t}.
+\end{eqnarray*}
+\noindent Hence 
+$$
+\lim_{t \rightarrow 2_{-}} \int_0^t \frac{1}{2 - x} dx = \lim_{t \rightarrow 2_{-}} \ln \frac{2}{2 - t}  = \infty,
+$$
+\noindent and we conclude that $\int_0^2 \frac{1}{2 - x} dx$ is a divergent improper integral.
+
+Since $|\sin \frac{1}{x} | \leq 1$ for all nonzero $x$, the function $f$ defined by $f(x) = \sin \frac{1}{x}$ is bounded on (0,1]. It is also continuous at every point of that interval. We now assign a value, say 0, to $f(0)$, and it follows by Theorems (6.1) and (6.3) that $f$ is integrable over [0, 1], and the value of $\int_0^1 f(x) dx$ is independent of the choice of $f(0)$. As in Section 6, we therefore consider $\int_0^1 \sin \frac{1}{x} dx$ to be a proper integral.
+\end{example}
+
+We next define improper integrals over unbounded intervals. Let $a$ be a given real number and $f$ a function which, for every $t \geq a$, is integrable over $[a, t]$. If the limit $\lim_{t \rightarrow \infty} \int_a^t f$ exists, we define it to be the value of the \textbf{contvergent improper integral} $\int_a^\infty f$. Thus
+
+$$
+\int_a^\infty f = \lim_{t \rightarrow \infty} \int_a^t f.
+$$
+\noindent If the limit does not exist, the integral of  $f$ over $[a, \infty)$ also does not exist. Although it is not defined, we follow tradition and say that the improper integral is \textbf{divergent.}
+% 464 THE DEFINITE INTEGRAL (CONTINUED) [CHAP. 8
+
+As before, the analogous definition is given for the unbounded interval $(-\infty, a]$. We have
+$$
+\int_{-\infty}^a f = \lim_{t \rightarrow {-\infty}} \int_t^a f ,
+$$
+\noindent and the improper integral $\int_{-\infty}^a f$ is convergent if the limit exists, and divergent if it does not.
+
+%EXAMPLE 2. 
+\begin{example}
+Test the following improper integrals for convergence or divergence, and evaluate the convergent ones.
+$$
+\begin{array}{ll}
+\mbox{(a)}\; \int_0^\infty e^{-x} dx, \;\;\; &\mbox{(c)}\; \int_2^\infty \frac{1}{x^2} dx,\\
+&\\
+\mbox{(b)}\; \int_1^\infty \frac{1}{\sqrt x} dx, \;\;\; &\mbox{(d)}\; \int_{-\infty}^t \frac{1}{1+x^2} dx
+\end{array}
+$$
+
+For (a) we have
+$$
+\int_0^t  e^{-x} dx = -e^{-x}\Big|_0^t  = 1- e^{-t} .
+$$
+\noindent Hence 
+$$
+\int_0^\infty  e^{-x} dx = \lim_{t \rightarrow \infty} (1 - e^{-t}) = 1 - 0 = 1,
+$$
+\noindent and so the integral is convergent and equal to 1.
+
+Similarly, for (b),
+$$
+\int_1^t \frac{1}{\sqrt x} dx = 2 \sqrt x \Big|_1^t = 2 \sqrt t - 2.
+$$
+\noindent However, since $\lim_{t \rightarrow \infty} (2\sqrt t - 2) = \infty$, we conclude that $\int_1^{\infty} \frac{1}{\sqrt x} dx$ is a divergent integral.
+
+For (c) we obtain
+$$
+\int_2^t \frac{1}{x^2} dx = - \frac{1}{x} \Big|_2^t = \frac{1}{2} - \frac{1}{t} .
+$$
+%SEC. 7] IMPROPER INTEGRALS  465
+\noindent From this it follows that $\int_2^{\infty} \frac{1}{x^2} dx$ is convergent and equal to $\frac{1}{2}$, since 
+$$
+\int_2^{\infty} \frac{1}{x^2} dx = \lim_{t \rightarrow \infty} (\frac{1}{2} - \frac{1}{t}) = \frac{1}{2} .
+$$
+
+
+If the integral in (d) exists, its value depends on $t$. Hence in testing for convergence, we use another variable.
+$$
+\int_s^t \frac{1}{1 + x^2} dx = \arctan x \Big|_s^t = \arctan t - \arctan s.
+$$
+\noindent Since $\lim_{s \rightarrow -\infty} \arctan s = - \frac{\pi}{2}$, we conclude that 
+\begin{eqnarray*}
+\int_{-\infty}^t \frac{1}{1 + x^2} dx 
+&=& \lim_{s \rightarrow -\infty} (\arctan t - \arctan s) \\
+&=& \arctan t + \frac{\pi}{2} ,
+\end{eqnarray*}
+\noindent and the integral is convergent for all real values of $t$.
+\end{example}
+
+We next enlarge the class of improper integrals to include integrands which are unbounded near both endpoints of the interval of integration. Let $(a, c)$ be an open interval (we include the possibility that $a = -\infty$, or $c = \infty$, or both), and let $f$ be a function which is integrable over every closed subinterval $[s, t]$ of $(a, c)$. Choose an arbitrary point $b$ in $(a, c)$, and consider the two integrals $\int_a^b f$ and $\int_b^c f$. If either of these is proper, their sum is equal to  $\int_a^c f$, and we need no new definition. If both $\int_a^b f$ and $\int_b^c f$ are improper integrals, then we define the improper integral $\int_a^c f$ to be their sum. Furthermore, $\int_a^c f$ is defined to be convergent if and only if \textit{both} $\int_a^b f$ and $\int_b^c f$ are convergent; otherwise, $\int_a^c f$ is defined to be divergent. Thus, in all cases, we have the equation
+
+
+\begin{equation}
+\int_a^c f = \int_a^b f + \int_b^c f.
+\label{eq8.7.2}
+\end{equation}
+\noindent For the definition to be a valid one, it is necessary to know that $\int_a^c f$, as defined in (2), is independent of the choice of $b$. Hence, we need the following simple theorem, whose proof is left as an exercise.
+%466 THE DEFINITE INTEGRAL (CONTINUED) [CHAP. 8
+
+\begin{theorem} %(7.1) 
+If $f$ is integrable ov1er every closed subintercal $[s, t]$ of $(a, c)$, and if $b_1$ and $b_2$, belong to $(a, c)$, then
+$$
+\int_a^{b_1} f + \int_{b_1}^c f = \int_a^{b_2} f + \int_{b_2}^c f  .
+$$
+\end{theorem}
+
+%EXAMPLE 3. 
+\begin{example}
+Classify each of the following improper integrals as convergent or divergent. Evaluate, if convergent.
+$$
+\mbox{(a)}\; \int_0^{\infty} \frac{1}{x^2} dx,  \;\;\;\mbox{(b)}\; \int_{-\infty}^\infty \frac{1}{1 + x^2} dx.
+$$
+\noindent For (a) we write
+$$
+\int_0^{\infty} \frac{1}{x^2} dx = \int_0^1 \frac{1}{x^2} dx + \int_1^{\infty} \frac{1}{x^2} dx 
+$$
+\noindent We have already shown in Example 1(b) that $\int_0^1 \frac{1}{x^2} dx$ is divergent, and it follows that $\int_0^{\infty} \frac{1}{x^2} dx$ is divergent. For (b) we have 
+$$
+\int_{-\infty}^\infty \frac{1}{1 + x^2} dx = \int_{-\infty}^0 \frac{1}{1 + x^2} dx + \int_0^{\infty} \frac{1}{1 + x^2} dx, 
+$$
+\noindent and 
+\begin{eqnarray*}
+\int_{-\infty}^0 \frac{1}{1 + x^2} dx &=& \lim_{t \rightarrow -\infty} \arctan x \Big|_t^0 \\
+&=& \lim_{t \rightarrow -\infty} (0 - \arctan t) = -(-\frac{\pi}{2}) = \frac{\pi}{2}.
+\end{eqnarray*}
+\noindent Similarly, 
+$$
+\int_0^\infty \frac{1}{1 + x^2} dx = \lim_{t \rightarrow \infty} \arctan t = \frac{\pi}{2} .
+$$
+\noindent Hence $\int_{-\infty}^\infty \frac{1}{1 + x^2} dx$ is a convergent integral equal to $\frac{\pi}{2} + \frac{\pi}{2} = \pi$.
+\end{example}
+
+As a final extension of the class of improper integrals, we include the
+possibility that the integrand may be unbounded near a finite number of points in the interior of the interval of integration. Let $(a, b)$ be an open interval (including possibly $a = -\infty$, or $b = \infty$, or both), let $a_1, ... , a_n$
+%SEC. 7] INfPROPER INTEGRALS  467
+be points of $(a, b)$ such that $a_1 < \cdots < a_n$ and let $f$ be a function which is integrable over every closed bounded subinterval of $(a, b)$ which contains none of the points $a_1, ... , a_n$. Then the equation
+
+
+\begin{equation}
+\int_a^b f = \int_a^{a_1} f + \cdots + \int_{a_n}^b f   
+\label{eq8.7.3}
+\end{equation}
+\noindent is either a consequence of the theory so far developed, or is taken as the definition of the improper integral $\int_a^b f$. As before, $\int_a^b f$ is divergent if any one of the integrals on the right is divergent, and is otherwise either convergent or proper.
+
+%EXAMPLE 4. 
+\begin{example}
+Classify each of the following integrals, and evaluate any which are not divergent.
+ 
+\begin{quote}
+\begin{description}
+\item[(a)] $\int_{-1}^1 \frac{1}{x^{1/3}} dx,$ 
+\item[(b)] $\int_{-1}^1 \frac{1}{x} dx,$
+\item[(c)] $\int_0^3 \frac{1}{(x-1)(x-3)} dx.$
+\end{description}
+\end{quote} 
+\noindent Since each integrand has arbitrarily large values near one or more points of the interval of integration, we conclude that none of the integrals is proper. 
+
+For (a) we first observe that
+$$
+\int \frac{1}{x^{1/3}} dx = \frac{2}{3} x^{3/2} + c,
+$$
+\noindent from which we obtain 
+\begin{eqnarray*}
+\int_{-1}^0 \frac{1}{x^{1/3}} dx 
+&=& \lim_{t \rightarrow 0_{-}} \int_{-1}^t \frac{1}{x^{1/3}} dx \\
+&=& \lim_{t \rightarrow 0_{-}} \frac{3}{2} t^{2/3} - \frac{3}{2} = -\frac{3}{2} ,
+\end{eqnarray*}
+
+\noindent and, in the same way, 
+
+\begin{eqnarray*}
+\int_0^1 \frac{1}{x^{1/3}} dx 
+&=& \lim_{t \rightarrow 0_{+}} \int_t^1 \frac{1}{x^{1/3}} dx \\
+&=& \frac{3}{2} - \lim_{t \rightarrow 0_{+}} \frac{3}{2} t^{2/3} = \frac{3}{2} .
+\end{eqnarray*}
+% 468 THE DEFINITE INTEGRAL (CONTINUED) [CHAP. 8
+\noindent From the definition in (3) it follows that 
+\begin{eqnarray*}
+\int_{-1}^1\frac{1}{x^{1/3}} dx 
+&=& \int_{-1}^0 \frac{1}{x^{1/3}} dx + \int_0^1 \frac{1}{x^{1/3}} dx \\
+&=& - \frac{3}{2} + \frac{3}{2} = 0
+\end{eqnarray*}
+\noindent Hence (a) is a convergent improper integral equal to 0.
+
+If (b) is convergent, it follows from the definition that 
+$$
+\int_{-1}^1 \frac{1}{x} dx = \int_{-1}^0 \frac{1}{x} dx + \int_{0}^1 \frac{1}{x} dx,
+$$
+
+\noindent and that both integrals on the right are convergent. However, 
+\begin{eqnarray*} 
+\int_0^1 \frac{1}{x} dx 
+&=& \lim_{t \rightarrow 0_{+}} \int_t^1 \frac{1}{x}dx \\
+&=& \lim_{t \rightarrow 0_{+}}  (\ln 1 - \ln t) = \infty ,
+\end{eqnarray*}
+\noindent and $\int_{-1}^0 \frac{1}{x} dx$ is similarly divergent. We conclude that $\int_{-1}^1 \frac{1}{x} dx$ is divergent.
+(\textit{Warning:} Failure to note the discontinuity of the function $\frac{1}{x}$ at 0 can result in the following incorrect computation: 
+$$
+\int_{-1}^1 \frac{1}{x} dx = \ln |x| \Big|_{-1}^1 = 0 - 0 = 0.) 
+$$
+
+If the integral (c) is convergent, then it is given by
+$$
+\int_0^3 \frac{1}{(x- 1)(x - 3)} dx = 
+\int_0^1 \frac{1}{(x- 1)(x - 3)} dx + 
+\int_1^3 \frac{1}{(x- 1)(x - 3)} dx ,
+$$
+\noindent and both integrals on the right are convergent. However, it is easy to show that neither is convergent. A partial-fractions decomposition yields
+$$
+\frac{1}{(x- 1)(x - 3)} = -\frac{1}{2} \frac{1}{x- 1} + \frac{1}{2} \frac{1}{x- 3},
+$$
+\noindent and so 
+ \begin{eqnarray*}
+\int \frac{1}{(x- 1)(x - 3)} dx 
+&=& - \frac{1}{2} \ln |x - 1| + \frac{1}{2} \ln |x - 3| + c \\
+&=& \frac{1}{2} \ln |\frac{x - 3}{x - 1} | + c.
+ \end{eqnarray*}
+%s~c. 73 IMP ROPER INTEGRALS 469
+\noindent In particular, therefore, 
+\begin{eqnarray*}
+\int_0^1 \frac{1}{(x-1)(x-3)}dx 
+&=& \lim_{t \rightarrow 1_{-}} \int_0^t \frac{1}{(x-1)(x-3)} dx \\
+&=& \big( \lim_{t \rightarrow 1_{-}} \frac{1}{2} \ln \Big| \frac{t-3}{t-1} \Big| \big) - \frac{1}{2} \ln 3 = \infty, 
+\end{eqnarray*}
+which is sufficient to establish that (c) is divergent.
+\end{example}
+
+We conclude this section with a theorem which gives a convenient test for the convergence or divergence of improper integrals. Called the Comparison Test for Integrals, it can frequently be used to classify an improper integral whose integrand has no simple antiderivative, such as $\int_0^{\infty} e^{-x^2} dx.$
+
+\begin{theorem} %(7.2) 
+\textbf{CONIPARISON TEST FOR INTEGRALS.}  Let $f$ and $g$ be integrable over every bounded closed subinterval of a not necessarily bounded interval $(a, b)$. If $|(x)| \leq g(x)$ for every $x$ in $(a, b)$ and if $\int_a^b g$ is either convergent or proper, then $\int_a^b f$ is also either convergent or proper.
+\end{theorem}
+
+Since an open interval can be split into two pieces, this theorem also holds for half-open intervals. For simplicity, we shall prove it for the interval $(a, b]$.
+
+
+\proof We first prove that $\int_a^b |f|$ is either convergent or proper. We shall assume without proof the theorem which states that if a function $f$ is integrable over an interval, then so is $|f|$. [In most applications of (7.2) the function $f$ is continuous at every point of $(a, b]$. In this case, $|f|$ is also continuous and the problem does not arise.] Since
+
+
+\begin{equation}
+0 \leq |f(x)| \leq g(x),  
+\label{eq8.7.4}
+\end{equation}
+\noindent for every $x$ in $(a, b]$, it follows that 
+$$
+\int_t^b |f| \leq \int_t^b g,
+$$
+\noindent for every $t$ in $(a, b]$. Since $g$ has nonnegative values, $\int_t^b g$ increases as $t$ approaches $a$ from the right. Hence
+$$
+\int_t^b g \leq \lim_{t \rightarrow a_{+}} \int_t^b g = \int_a^b g, 
+$$
+\noindent and therefore
+$$
+\int_t^b |f| \leq \int_a^b g, 
+$$
+\noindent for every $t$ in $(a, b]$. But $\int_t^b |f|$ also increases as $t$ approaches $a$ from the right, and the preceding inequality shows that it is bounded from above by the
+%470 ThrE DEFINITE INTEGRAL (CONTINUED) [CHAP. 8
+number $\int_a^b g$. An increasing bounded function must approach a limit. Hence $\lim_{t \rightarrow a_{+}} \int_t^b |f|$ exists, and therefore $\int_a^b |f|$ is either convergent or proper.  
+
+Since $-f(x) \leq |f(x)|$, it follows that 
+
+\begin{equation}
+0 \leq f(x) + | f(x) | \leq 2g(x),   
+\label{eq8.7.5}
+\end{equation}
+\noindent for every $x$ in $(a, b]$. In this part of the proof, the inequalities (5) are the analogues of (4). In exactly the same way as in the preceding paragraph they imply that  
+$$
+\int_t^b (f+ |f|) \leq 2\int_a^b g
+$$
+\noindent and thence that the integral $\int_a^b (f + |f|)$ is either proper or convergent. Finally, therefore, we have 
+$$
+\lim_{t \rightarrow a_{+}} \int_t^b f = \lim_{t \rightarrow a_{+}} \int_t^b ( f +  |f| ) - \lim_{t \rightarrow a_{+}} \int_t^b |f| .
+$$
+\noindent Since both limits on the right exist, so does the one on the left. We conclude that $\int_a^b f$ if is either proper or convergent, and the proof is complete.
+
+%EXAMPLE 5. 
+\begin{example}
+Prove that $\int_0^{\infty} e^{-x^2}dx$ is convergent. Since $x^2 \geq x$ whenever $x \geq 1$, it follows that $e^{-x^2} \leq e^{-x}$ for $x \geq 1$. An exponential is never negative, so $e^{-x^2} = |e^{-x^2}|$, and therefore
+$$
+ |e^{-x^2}| \leq  e^{-x}, \;\;\;\mbox{for}\;    x \geq 1.
+$$
+The convergence of $\int_0^\infty e^{-x}dx$, shown in Example 2, implies the convergence of $\int_1^\infty e^{-x} dx$. It follows by the comparison test, i.e., by Theorem (7.2), that $\int_1^\infty e^{-x^2}dx$ is a convergent integral. This, in turn, implies the convergence of $\int_0^\infty e^{-x^2} dx$.
+\end{example}
+
+\vspace{.2in}
+

@@ -1,0 +1,167 @@
+\section{Maximum and Minimum Problems.}\label{sec 2.2} 
+In sketching the graph of a function, we spent some time looking for maximum and minimum points, both local and absolute. This idea suggests that we can use the same technique to find that value (or those values) of a variable which maximize or minimize a length, an area, or a profit. For example, what should be the dimensions of the rectangular field which can be enclosed with a fixed length of fencing but has the greatest area? Or, what are the dimensions of the quart can which can be made from the least amount of tin? Or, if the telephone company were to reduce the rate per instrument for each new instrument over a certain number, what number of telephones would give them the greatest profit?
+
+These are all problems which can be solved by calculus and, more specifically, by the technique developed in Section 1. However, before we tackle them, we shall consider the theorems which justify the methods which we shall use in solving them.
+
+\begin{prop} %(2.1) 
+\label{thm 2.2.1}
+If a belongs to an open interval in the domain of $f$, if $f'(a)$ exists, and if $(a, f(a))$ is a local extreme point \textrm{(either a maximum or a minimum)}, then $f'(a) = 0$.
+\end{prop}
+
+\begin{proof}
+Geometrically this theorem is obvious. We shall prove it, only in the case that $(a,f(a))$ is a local maximum point, since a similar proof (with the inequalities reversed) is valid for a local minimum point. Since $(a,f(a))$ is a local maximum point, $f(a + t) \leq f(a)$ for all $t$ in some open interval containing 0. Thus $f(a + t)-f(a) \leq 0$. If $t$ is negative, $\frac{f(a+t) - f(a)}{t} \geq 0$ and 
+$$
+\lim_{t \rightarrow 0-} \frac{f(a + t) - f(a)}{t} \geq 0.
+$$
+If $t$ is positive, 
+\begin{eqnarray*}
+\frac{f(a + t)-f(a)}{t} \leq 0 \;\;\; \mbox{and} \\
+\lim_{t \rightarrow 0+} \frac{ f(a + t)-f(a)}{t} \leq 0 .
+\end{eqnarray*}
+Since $f'(a)$ exists, the two limits above must have a common value which is $f'(a)$.  Thus $f'(a)$ is both greater than or equal to zero and also less than or equal to zero. The only number which satisfies both of these conditions is zero, hence $f'(a) = 0$. This completes the proof.
+\end{proof}
+
+In our sketches we found points where the first derivative vanished. If the curve was concave downward at that point, we identified a local maximum point; if the curve was concave upward at that point, we identified a local minimum point. We summarize this result in the following theorem.
+
+\begin{prop} %(2.2) 
+\label{thm 2.2.2}
+Let $f$ be a function with a continuous second derivative and with $f'(a) = 0$. Then $(a, f(a))$ is a local maximum point if $f''(a) < 0$ and is a local minimum point if $f''(a) > 0$.
+\end{prop}
+
+This theorem is easily proved when we have more mathematics at our command. Specifically, it follows quickly from Taylor's Formula with the Remainder (see Problem 13, page 540). For the work at hand, it will be sufficient to understand the theorem and to be able to use it.
+
+If the domain of $f$ is restricted to a closed interval, we may find an absolute extreme point which lies on the boundary of the interval. Consider the function graphed in Figure \f{2.11}. This function is defined on the closed interval $[a, d]$ and has a local minimum point at$(c, f(c))$. However, there are several points in $[a, d]$ which are lower than $(c,f(c))$, and the absolute minimum point is $(a, f(a))$. Similarly, $(b, f(b))$ is a local maximum point but $(d, f(d))$ is the absolute maximum point.  This suggests the following theorem.
+
+\putfig{3.5truein}{scanfig2_11}{}{fig 2.11}
+
+\begin{prop} 
+\label{thm 2.2.3}
+Let $f$ be a differentiable function whose domain is restricted to a closed interval containing $a$.  If $(a, f(a))$ is an extreme point then $f'(a) = 0$ or $a$ is an endpoint of the interval.
+\end{prop}
+
+\begin{proof}
+This theorem is an immediate corollary of Theorem (2.1). Let the domain be $[c, d]$. If $a \neq c$ and $a \neq d$, then $a$ lies in the open interval $(c, d)$ and, by Theorem (2.1), $f'(a) = 0$. If $a = c$ or $a = d$, then $a$ is an endpoint of the interval.
+\end{proof}
+
+For many functions, Theorem (2.3) has the virtue of reducing an apparently impossible problem to a simple one. In principle, the problem of finding the maximum values of a function over a closed interval involves the examination of $f(x)$ for every $x$ in the interval, i.e., for an infinite number of points. This theorem tells us that we need look only at those values of $x$ at which the first derivative vanishes and those which are endpoints. For most functions there is only a small finite number of such points.
+
+Theorem (2.3) tells us where to look for the extreme points of a differentiable function defined on a closed interval, but it does not guarantee the existence of any. To complete the theory, we add a statement of the following fundamental existence theorem.
+
+\begin{prop} %(2.4) 
+\label{thm 2.2.4}
+Every real-valued continuous function whose domain is a closed bounded interval has at least one absolufe maximum point and at least one absolute minimum point.
+\end{prop}
+
+We omit the proof. The result sounds perfectly obvious, of course, and it is obvious in the sense that if continuity means what we want it to mean, then (2.4) must be true. To see whether it, in fact, follows logically from our definitions, of course, requires proof. Further insight into the theorem may be found in Problems 21 and 22, where it is shown that functions that do not satisfy the hypotheses of (2.4) can fail to have absolute extreme points.
+
+Let us now look at the problems suggested at the beginning of the section.
+\medskip
+
+%EXAMPLE 1. 
+\begin{example}
+\label{exam 2.2.1}
+What are the dimensions of the largest rectangular field which can be enclosed with 200 feet of fencing? Should it be long and narrow, short and wide, or somewhere in between? If we let $x$ be the number of feet in the length, then $100-x$ will represent the width, and we can write the area $A$ as a function of $x$:
+
+$$
+A(x) = x(100 - x) = 100x - x^2
+$$ 
+
+\putfig{3truein}{scanfig2_12}{}{fig 2.12}
+
+\noindent (see Figure \f{2.12}). Note that the domain of $A$ is the interval consisting of all $x$
+%SEC. 2] MAXIMUM AND MINIMUM PROBLEMS  97
+such that $0 < x < 100$. We want to find that value of $x$ which will give a maximum value of $A$. Taking derivatives, we obtain $A'(x)= 100 - 2x$ and $A''(x)= -2$. Setting $A'$ equal to zero, we find $x= 50$. Since $A'(50) = 0$ and $A''(50) = -2 < 0$, we know that 50 is that value of $x$ which maximizes $A$. Thus the field, which is 50 feet long and $100 - 50 = 50$ feet wide, is the largest rectangular field which can be enclosed with 200 feet of fencing.
+\end{example}
+\medskip
+
+The problem of solving a maximum or minimum problem consists of setting up the function to be maximized or minimized and then taking derivatives. The theorems of this section tell how to proceed from there.
+
+%EXAMPLE 2. 
+\begin{example}
+\label{exam 2.2.2}
+What are the dimensions of the cylindrical quart can which can be made from the least amount of tin? This problem is important to the manufacturer who produces tin cans and is more concerned with the amount of tin used than with the shape of the can. Should he make tall cans with a small radius or short cans with a large radius? We shall ignore seams and assume that tin cans are perfect cylinders. The volume of a cylinder is $\pi {r^2}h$ and a quart contains $57\frac{3}{4}$ cubic inches. Thus if $r$ is the radius of the can in inches and $h$ is the height in inches, $\pi {r^2}h = 57 \frac{3}{4}$ or $\frac{231}{4}$(see Figure \f{2.13}). The area is the sum of the lateral surface area and the area of the bottom and the top: $A = 2\pi rh + 2\pi {r^2}$. The area depends on $r$ and $h$, but we can use our volume equation to find $h$ as a function of $r: h = \frac{231}{4\pi {r^2}}$, and then write
+
+\putfig{2truein}{scanfig2_13}{}{fig 2.13}
+
+$$
+A(r) = 2\pi r \bigl( \frac{231}{4\pi {r^2}} \bigr) + 2\pi r^2 = \frac{231}{2r} + 2\pi {r^2}.
+$$
+% 98 APPI ICATIONS OF THE DERIVATIVE [CHAT. 2
+\noindent The domain of $A$ is the set of positive real numbers. Taking derivatives, we have $A'(r) = - \frac{231}{2r^2} + 4 \pi r$ and
+$A''(r) = \frac{231}{r^2} + 4 \pi$. Setting $A'$ equal to zero, we have $8 \pi r^3 = 231$, or $r = \frac{1}{2} \sqrt[3]{\frac{231}{\pi}} = 2.10$ (approximately). Since $A'(2.10) = 0$ and $A''(2.10) > 0$, 2.10 gives a minimum value to $A$. $h = \frac{231}{4 \pi (2.10)^2} = 4.20$ (approximately). The desired can will look square in profile, 2.10 inches in radius and 4.20 inches high. This problem could also have been solved by writing $r$ as a function of $h: r = \sqrt{\frac{231}{4\pi h}}$ and then writing $A(h) = 2\pi \sqrt {\frac{231}{4\pi h}} h + 2\pi \cdot \frac{231}{4\pi h}$, although this area function is not as nice as $A(r)$. Another method involves thinking of $h$ as a function of $r$, writing $A(r)$ containing both $h$ and $r$, and differentiating implicity. Thus we write
+
+$$
+\pi {r^2}h = \frac{231}{4} \;\;\;\mbox{and} \;\;\; A(r) = 2 \pi rh + 2 \pi r^2. 
+$$
+Differentiating with respect to $r$, we obtain
+
+$$
+\pi r^2 \frac{dh}{dr} + \pi h \cdot 2r = 0 \;\;\; \mbox{and} \;\;\; A'(r) = 
+2 \pi r \frac{dh}{dr} + 2\pi h + 2 \pi \cdot 2r.
+$$
+\noindent From the first, $\frac{dh}{dr} = -\frac{2 \pi rh}{\pi r^2} = -\frac{2h}{r}$. Substituting this in the second, we find $A'(r) = 2 \pi r \Bigl( -\frac{2h}{r} \Bigr) + 2 \pi h + 4 \pi r = 4 \pi r - 2\pi h$. Setting $A'(r) = 0$, we get  
+
+$$
+h= 2r.
+$$
+
+\noindent Substitution in the volume equation yields $\pi r^{2}(2r) = \frac{231}{4}$, or $8 \pi r^3 = 231$, as in the other solution. This same method could have been used with differentiation with respect to $h$.
+
+In each of the preceding examples, the domain of the function was an interval of positive real numbers. However, if a problem involves the number of objects which will maximize or minimize a particular function, it will have a domain of positive integers. In this case, we may still do the problem as if it were one with the entire set of real numbers as the domain of the function, and then consider those positive integers which lie on either side of the $x$-coordinate of the critical point of this function.
+\end{example}
+
+%EXAMPLE 3. 
+\begin{example}
+\label{exam 2.2.3}
+A telephone company which serves a small community makes an annual profit of \$12 per subscriber if it has 725 subscribers or fewer. They
+% SEC. 23 MAX[MUM AND MINIMUM r ROBLEMS  99
+decide to reduce the rate by a fixed sum for each subscriber over 725, thereby reducing the profit I cent per subscriber. Thus there will be a profit of \$11.99 on each of 726 subscribers, \$11.98 on each of 727, etc. What is the number of subscribers which will give them the greatest profit?
+
+If we let $x$ be the number of subscribers over 725, there will then be $725 + x$ subscribers and the profit per subscriber will be $1200 - x$ cents. The total profit will be $P(x) = (725 + x)(1200 - x) = 870,000 + 475x - x^2$. The domain of $P$ is the set of positive integers, but let us treat the problem as if the domain were $R$. The derivatives are $P'(x)= 475 - 2x$ and $P''(x) = -2$. The value of $x$ which makes $P'$ zero is $237\frac{1}{2}$, and it also makes $P''$ negative, thereby ensuring a maximum for $P$. We find $P(237) = 926,406$ and $P(238) = 926,406$. Thus the profit is the same for 725 + 237 = 962 subscribers and for 725 + 238 = 963 subscribers. If we visualize the graph of $P$, we see a parabola concave downward with its maximum point at $(237\frac{1}{2}, 926,406\frac{1}{4})$. If we delete all points which do not have integral coefficients, then the points (237, 926,406) and (238, 926,406) are maximum points equally spaced on either side of the high point of the parabola and just lower than the high point. The profit of the telephone company will increase with each new subscriber until they have 962 subscribers. The addition of one more subscriber will not alter the profit, but it will then decrease with each new subscriber after the 963rd one.
+\end{example}
+
+%EXAMPLE 4. 
+\begin{example}
+\label{exam 2.2.4}
+Consider the function $f$ defined by
+$$
+f(x) = \frac{x^3}{3} - x^2 + \frac{2}{3},  \;\;\; -2 \leq x \leq 3.
+$$
+
+\noindent The domain of $f$ is the closed interval $[-2, 3]$. Find the maximum and minimum values. The derivatives are $f'(x) = x^2 - 2x = x(x - 2)$ and $f''(x) = 2x - 2 = 2(x - 1)$. Setting $f'(x) = 0$, we find solutions $x = 0$ and $x = 2$. By Theorem (2.3) we need evaluate $f(x)$ only where $x = 0$ and $x = 2$ [where $f'(x) = 0$] and at the endpoints of the interval, $x = -2$ and $x = 3$. These values are
+
+\begin{eqnarray*}
+f(-2) &=& -6,\\
+f(0) &=& \frac{2}{3}, \\
+f(2) &=& - \frac{2}{3},\\
+f(3) &=& \frac{2}{3}.
+\end{eqnarray*}
+
+\noindent Thus the maximum value of $f$ is $\frac{2}{3}$, and the minimum value is $-6$. Note that the maximum value of the function occurs at two points, one of which is a local maximum and the other the right endpoint of the interval. The minimum
+%1OO APPLICATIONS OF THE DER/VAT/VE [CHAP. 2
+value, on the other hand, does not occur at a local minimum point, but at the Ieft endpoint. The graph of the function is shown in Figure \f{2.14}.
+\end{example}
+
+\putfig{3.5truein}{scanfig2_14}{}{fig 2.14}
+
+We summarize the techniques for solving maximum and minimum problems as follows:
+
+\begin{enumerate}
+\item Set up the function to be maximized or minimized. If it can easily be set up as a function of one variable, it should be. If it cannot easily be set up as a function of one variable, it should be accompanied by an equation relating the two variables.
+
+\item Take first and second derivatives of the function. Set the first derivative equal to zero and solve the resulting equation. Evaluate the second derivative at those values of $x$ for which the first derivative equals zero.
+
+
+\item If the function is a ``nice" function defined on an open interval, its maximum will occur where $f'(x) = 0$ and $f''(x) < 0$ and its minimum will occur where $f'(x) = 0$ and $f''(x) > 0$.
+
+
+\item If the function has a closed interval for its domain, evaluate the function at both endpoints to see if maximum or minimum values occur there.
+
+
+\item If the function has a domain restricted to integers, evaluate the function at integers near the values which give a maximum or a minimum value to the continuous function.
+\end{enumerate}
+ 
+%SEC. 2] MAXIMUM AND MINIMUM PROBLEMS  101
+Sometimes the geometric or physical properties of the problem make it obvious that a critical point is of the desired type, i.e., a maximum or a minimum. If this happens, it is not necessary to compute the second derivative, although it may still be used as a check. The complete behavior of the function whose extreme points are desired can always be found by carefully plotting its graph.
+
+
