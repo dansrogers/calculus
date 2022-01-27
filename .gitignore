@@ -3,3 +3,7 @@
 *.log
 *.out
 build/
+*.fls
+*.tex~
+*.toc
+*.fdb_latexmk
