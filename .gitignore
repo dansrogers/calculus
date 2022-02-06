@@ -7,3 +7,4 @@ build/
 *.tex~
 *.toc
 *.fdb_latexmk
+*.gz
